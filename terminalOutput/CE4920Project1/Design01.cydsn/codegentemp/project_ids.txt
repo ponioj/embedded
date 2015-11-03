@@ -1,0 +1,7 @@
+C:\repositories\embedded\trunk\terminalOutput\CE4920Project1\Design01.cydsn\Design01.cyprj|e7b25c26-e471-4eb3-9ab3-7a8bffa95704
+C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|e70208e8-864c-427e-8cbb-0ab9e217c744
+C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|fa72c442-0fff-4b50-9a36-31e15d58679f
+C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|d6d8613e-e730-41a5-b3f9-62b1ec5b3398
+C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|0863f899-def2-4fd6-a826-7143809937fe
+C:\repositories\embedded\trunk\terminalOutput\CE4920Project1\USBFS_HID01.cydsn\USBFS_HID01.cyprj|8afccd12-36f5-43f1-98e7-04ccb258994c
+C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\default\CyReferenceLibrary\CyReferenceLibrary.cylib\CyReferenceLibrary.cyprj|513791ae-3ad0-4cea-9da7-a600758acd2d

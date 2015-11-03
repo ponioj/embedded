@@ -1,0 +1,7 @@
+C:\Users\JohnP\OneDrive\College\2015-2016 Senior Year\0 Fall Quarter\CE4920 011\Lab\project\CE4920Project1\Design01.cydsn\Design01.cyprj|2a61b2ea-ff9f-4228-b4b7-4eaed6f44a06
+C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|c4efdaaf-2486-44ed-a0d4-843daee38a1f
+C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|f1a1858c-53b4-40ab-851a-d6083ace9238
+C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|6856641d-5c1d-42fd-8d57-6676057b3b80
+C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|897706ac-060e-41c5-a157-357b588d33da
+C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\default\CyReferenceLibrary\CyReferenceLibrary.cylib\CyReferenceLibrary.cyprj|32c968a1-316e-48b2-aec9-06a0e73e5d51
+C:\Users\JohnP\OneDrive\College\2015-2016 Senior Year\0 Fall Quarter\CE4920 011\Lab\project\CE4920Project1\USBFS_HID01.cydsn\USBFS_HID01.cyprj|873f356a-6b8f-452e-a851-8e1ca87867e2

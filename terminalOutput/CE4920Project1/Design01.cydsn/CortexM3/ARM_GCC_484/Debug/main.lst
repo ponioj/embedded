@@ -1,0 +1,847 @@
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccRoP1o2.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"main.c"
+  15              		.text
+  16              	.Ltext0:
+  17              		.cfi_sections	.debug_frame
+  18              		.section	.text.main,"ax",%progbits
+  19              		.align	2
+  20              		.global	main
+  21              		.thumb
+  22              		.thumb_func
+  23              		.type	main, %function
+  24              	main:
+  25              	.LFB63:
+  26              		.file 1 ".\\main.c"
+   1:.\main.c      **** /* ========================================
+   2:.\main.c      ****  *
+   3:.\main.c      ****  * Copyright YOUR COMPANY, THE YEAR
+   4:.\main.c      ****  * All Rights Reserved
+   5:.\main.c      ****  * UNPUBLISHED, LICENSED SOFTWARE.
+   6:.\main.c      ****  *
+   7:.\main.c      ****  * CONFIDENTIAL AND PROPRIETARY INFORMATION
+   8:.\main.c      ****  * WHICH IS THE PROPERTY OF your company.
+   9:.\main.c      ****  *
+  10:.\main.c      ****  * ========================================
+  11:.\main.c      **** */
+  12:.\main.c      **** #include <project.h>
+  13:.\main.c      **** #include "states.h"
+  14:.\main.c      **** /* State types and variables */
+  15:.\main.c      **** 
+  16:.\main.c      **** extern STATE currentState;
+  17:.\main.c      **** 
+  18:.\main.c      **** int main()
+  19:.\main.c      **** {
+  27              		.loc 1 19 0
+  28              		.cfi_startproc
+  29              		@ args = 0, pretend = 0, frame = 0
+  30              		@ frame_needed = 0, uses_anonymous_args = 0
+  31 0000 10B5     		push	{r4, lr}
+  32              		.cfi_def_cfa_offset 8
+  33              		.cfi_offset 4, -8
+  34              		.cfi_offset 14, -4
+  20:.\main.c      ****     CyGlobalIntEnable; /* Enable global interrupts. */
+  35              		.loc 1 20 0
+  36              	@ 20 ".\main.c" 1
+  37 0002 62B6     		CPSIE   i
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccRoP1o2.s 			page 2
+
+
+  38              	@ 0 "" 2
+  21:.\main.c      **** 
+  22:.\main.c      ****    
+  23:.\main.c      ****     /* Place your initialization/startup code here (e.g. MyInst_Start()) */
+  24:.\main.c      ****     currentState = STATE_RESET;
+  39              		.loc 1 24 0
+  40              		.thumb
+  41 0004 0120     		movs	r0, #1
+  42 0006 104B     		ldr	r3, .L12
+  43 0008 1860     		str	r0, [r3]
+  25:.\main.c      ****     LCD_ClearDisplay();
+  44              		.loc 1 25 0
+  45 000a FFF7FEFF 		bl	LCD_WriteControl
+  46              	.LVL0:
+  26:.\main.c      ****     for(;;)
+  27:.\main.c      ****     {      
+  28:.\main.c      ****         /* Place your application code here. */            
+  29:.\main.c      ****         switch (currentState) {
+  47              		.loc 1 29 0
+  48 000e 0E4C     		ldr	r4, .L12
+  49              	.L11:
+  50 0010 2368     		ldr	r3, [r4]
+  51 0012 042B     		cmp	r3, #4
+  52 0014 FCD8     		bhi	.L11
+  53 0016 DFE803F0 		tbb	[pc, r3]
+  54              	.L5:
+  55 001a 0B       		.byte	(.L4-.L5)/2
+  56 001b 03       		.byte	(.L6-.L5)/2
+  57 001c 07       		.byte	(.L7-.L5)/2
+  58 001d 13       		.byte	(.L8-.L5)/2
+  59 001e 0F       		.byte	(.L9-.L5)/2
+  60 001f 00       		.p2align 1
+  61              	.L6:
+  30:.\main.c      ****             case STATE_RESET:
+  31:.\main.c      ****                 currentState = State_reset();
+  62              		.loc 1 31 0
+  63 0020 FFF7FEFF 		bl	State_reset
+  64              	.LVL1:
+  65 0024 2060     		str	r0, [r4]
+  32:.\main.c      ****                 break;
+  66              		.loc 1 32 0
+  67 0026 F3E7     		b	.L11
+  68              	.L7:
+  33:.\main.c      ****             case STATE_START:
+  34:.\main.c      ****                 currentState = State_start();
+  69              		.loc 1 34 0
+  70 0028 FFF7FEFF 		bl	State_start
+  71              	.LVL2:
+  72 002c 2060     		str	r0, [r4]
+  35:.\main.c      ****                 break; 
+  73              		.loc 1 35 0
+  74 002e EFE7     		b	.L11
+  75              	.L4:
+  36:.\main.c      ****             case STATE_SLEEP:
+  37:.\main.c      ****                 currentState = State_sleep();
+  76              		.loc 1 37 0
+  77 0030 FFF7FEFF 		bl	State_sleep
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccRoP1o2.s 			page 3
+
+
+  78              	.LVL3:
+  79 0034 2060     		str	r0, [r4]
+  38:.\main.c      ****                 break;
+  80              		.loc 1 38 0
+  81 0036 EBE7     		b	.L11
+  82              	.L9:
+  39:.\main.c      ****             case STATE_MOVING:
+  40:.\main.c      ****                 currentState = State_moving();
+  83              		.loc 1 40 0
+  84 0038 FFF7FEFF 		bl	State_moving
+  85              	.LVL4:
+  86 003c 2060     		str	r0, [r4]
+  41:.\main.c      ****                 break;
+  87              		.loc 1 41 0
+  88 003e E7E7     		b	.L11
+  89              	.L8:
+  42:.\main.c      ****             case STATE_PROFILE_SELECTION:
+  43:.\main.c      ****                 currentState = State_profile_selection();
+  90              		.loc 1 43 0
+  91 0040 FFF7FEFF 		bl	State_profile_selection
+  92              	.LVL5:
+  93 0044 2060     		str	r0, [r4]
+  44:.\main.c      ****                 break;
+  94              		.loc 1 44 0
+  95 0046 E3E7     		b	.L11
+  96              	.L13:
+  97              		.align	2
+  98              	.L12:
+  99 0048 00000000 		.word	currentState
+ 100              		.cfi_endproc
+ 101              	.LFE63:
+ 102              		.size	main, .-main
+ 103              		.comm	Prev_state,4,4
+ 104              		.comm	currentState,4,4
+ 105              		.comm	timer_value,4,4
+ 106              		.comm	timer_status,4,4
+ 107              		.comm	heartbeatCounter,4,4
+ 108              		.comm	heartrate,4,4
+ 109              		.text
+ 110              	.Letext0:
+ 111              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\3.2\\psoc creator\\import\\gnu\\arm\\4.8.
+ 112              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\3.2\\psoc creator\\import\\gnu\\arm\\4.8.
+ 113              		.file 4 "Generated_Source\\PSoC5/cytypes.h"
+ 114              		.file 5 ".\\states.h"
+ 115              		.file 6 "Generated_Source\\PSoC5/core_cm3.h"
+ 116              		.file 7 ".\\heartrate.h"
+ 117              		.file 8 "Generated_Source\\PSoC5/LCD.h"
+ 118              		.section	.debug_info,"",%progbits
+ 119              	.Ldebug_info0:
+ 120 0000 E3010000 		.4byte	0x1e3
+ 121 0004 0400     		.2byte	0x4
+ 122 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 123 000a 04       		.byte	0x4
+ 124 000b 01       		.uleb128 0x1
+ 125 000c 75010000 		.4byte	.LASF29
+ 126 0010 01       		.byte	0x1
+ 127 0011 D4000000 		.4byte	.LASF30
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccRoP1o2.s 			page 4
+
+
+ 128 0015 88000000 		.4byte	.LASF31
+ 129 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 130 001d 00000000 		.4byte	0
+ 131 0021 00000000 		.4byte	.Ldebug_line0
+ 132 0025 02       		.uleb128 0x2
+ 133 0026 01       		.byte	0x1
+ 134 0027 06       		.byte	0x6
+ 135 0028 3A020000 		.4byte	.LASF0
+ 136 002c 02       		.uleb128 0x2
+ 137 002d 01       		.byte	0x1
+ 138 002e 08       		.byte	0x8
+ 139 002f 7A000000 		.4byte	.LASF1
+ 140 0033 02       		.uleb128 0x2
+ 141 0034 02       		.byte	0x2
+ 142 0035 05       		.byte	0x5
+ 143 0036 1A020000 		.4byte	.LASF2
+ 144 003a 02       		.uleb128 0x2
+ 145 003b 02       		.byte	0x2
+ 146 003c 07       		.byte	0x7
+ 147 003d F5000000 		.4byte	.LASF3
+ 148 0041 03       		.uleb128 0x3
+ 149 0042 26000000 		.4byte	.LASF9
+ 150 0046 02       		.byte	0x2
+ 151 0047 37       		.byte	0x37
+ 152 0048 4C000000 		.4byte	0x4c
+ 153 004c 02       		.uleb128 0x2
+ 154 004d 04       		.byte	0x4
+ 155 004e 05       		.byte	0x5
+ 156 004f 31020000 		.4byte	.LASF4
+ 157 0053 02       		.uleb128 0x2
+ 158 0054 04       		.byte	0x4
+ 159 0055 07       		.byte	0x7
+ 160 0056 DD000000 		.4byte	.LASF5
+ 161 005a 02       		.uleb128 0x2
+ 162 005b 08       		.byte	0x8
+ 163 005c 05       		.byte	0x5
+ 164 005d 00000000 		.4byte	.LASF6
+ 165 0061 02       		.uleb128 0x2
+ 166 0062 08       		.byte	0x8
+ 167 0063 07       		.byte	0x7
+ 168 0064 52010000 		.4byte	.LASF7
+ 169 0068 04       		.uleb128 0x4
+ 170 0069 04       		.byte	0x4
+ 171 006a 05       		.byte	0x5
+ 172 006b 696E7400 		.ascii	"int\000"
+ 173 006f 02       		.uleb128 0x2
+ 174 0070 04       		.byte	0x4
+ 175 0071 07       		.byte	0x7
+ 176 0072 45010000 		.4byte	.LASF8
+ 177 0076 03       		.uleb128 0x3
+ 178 0077 55000000 		.4byte	.LASF10
+ 179 007b 03       		.byte	0x3
+ 180 007c 41       		.byte	0x41
+ 181 007d 41000000 		.4byte	0x41
+ 182 0081 03       		.uleb128 0x3
+ 183 0082 74000000 		.4byte	.LASF11
+ 184 0086 04       		.byte	0x4
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccRoP1o2.s 			page 5
+
+
+ 185 0087 B4       		.byte	0xb4
+ 186 0088 2C000000 		.4byte	0x2c
+ 187 008c 02       		.uleb128 0x2
+ 188 008d 04       		.byte	0x4
+ 189 008e 04       		.byte	0x4
+ 190 008f 6E000000 		.4byte	.LASF12
+ 191 0093 02       		.uleb128 0x2
+ 192 0094 08       		.byte	0x8
+ 193 0095 04       		.byte	0x4
+ 194 0096 15010000 		.4byte	.LASF13
+ 195 009a 02       		.uleb128 0x2
+ 196 009b 01       		.byte	0x1
+ 197 009c 08       		.byte	0x8
+ 198 009d 04020000 		.4byte	.LASF14
+ 199 00a1 02       		.uleb128 0x2
+ 200 00a2 04       		.byte	0x4
+ 201 00a3 07       		.byte	0x7
+ 202 00a4 F1010000 		.4byte	.LASF15
+ 203 00a8 03       		.uleb128 0x3
+ 204 00a9 EF000000 		.4byte	.LASF16
+ 205 00ad 05       		.byte	0x5
+ 206 00ae 11       		.byte	0x11
+ 207 00af 68000000 		.4byte	0x68
+ 208 00b3 05       		.uleb128 0x5
+ 209 00b4 28010000 		.4byte	.LASF32
+ 210 00b8 01       		.byte	0x1
+ 211 00b9 12       		.byte	0x12
+ 212 00ba 68000000 		.4byte	0x68
+ 213 00be 00000000 		.4byte	.LFB63
+ 214 00c2 4C000000 		.4byte	.LFE63-.LFB63
+ 215 00c6 01       		.uleb128 0x1
+ 216 00c7 9C       		.byte	0x9c
+ 217 00c8 0D010000 		.4byte	0x10d
+ 218 00cc 06       		.uleb128 0x6
+ 219 00cd 0E000000 		.4byte	.LVL0
+ 220 00d1 84010000 		.4byte	0x184
+ 221 00d5 DF000000 		.4byte	0xdf
+ 222 00d9 07       		.uleb128 0x7
+ 223 00da 01       		.uleb128 0x1
+ 224 00db 50       		.byte	0x50
+ 225 00dc 01       		.uleb128 0x1
+ 226 00dd 31       		.byte	0x31
+ 227 00de 00       		.byte	0
+ 228 00df 08       		.uleb128 0x8
+ 229 00e0 24000000 		.4byte	.LVL1
+ 230 00e4 95010000 		.4byte	0x195
+ 231 00e8 08       		.uleb128 0x8
+ 232 00e9 2C000000 		.4byte	.LVL2
+ 233 00ed A6010000 		.4byte	0x1a6
+ 234 00f1 08       		.uleb128 0x8
+ 235 00f2 34000000 		.4byte	.LVL3
+ 236 00f6 B7010000 		.4byte	0x1b7
+ 237 00fa 08       		.uleb128 0x8
+ 238 00fb 3C000000 		.4byte	.LVL4
+ 239 00ff C8010000 		.4byte	0x1c8
+ 240 0103 08       		.uleb128 0x8
+ 241 0104 44000000 		.4byte	.LVL5
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccRoP1o2.s 			page 6
+
+
+ 242 0108 D9010000 		.4byte	0x1d9
+ 243 010c 00       		.byte	0
+ 244 010d 09       		.uleb128 0x9
+ 245 010e 08010000 		.4byte	.LASF17
+ 246 0112 06       		.byte	0x6
+ 247 0113 2A06     		.2byte	0x62a
+ 248 0115 19010000 		.4byte	0x119
+ 249 0119 0A       		.uleb128 0xa
+ 250 011a 76000000 		.4byte	0x76
+ 251 011e 0B       		.uleb128 0xb
+ 252 011f FA010000 		.4byte	.LASF18
+ 253 0123 05       		.byte	0x5
+ 254 0124 14       		.byte	0x14
+ 255 0125 8C000000 		.4byte	0x8c
+ 256 0129 05       		.uleb128 0x5
+ 257 012a 03       		.byte	0x3
+ 258 012b 00000000 		.4byte	heartrate
+ 259 012f 0B       		.uleb128 0xb
+ 260 0130 5D000000 		.4byte	.LASF19
+ 261 0134 07       		.byte	0x7
+ 262 0135 14       		.byte	0x14
+ 263 0136 8C000000 		.4byte	0x8c
+ 264 013a 05       		.uleb128 0x5
+ 265 013b 03       		.byte	0x3
+ 266 013c 00000000 		.4byte	heartbeatCounter
+ 267 0140 0B       		.uleb128 0xb
+ 268 0141 30000000 		.4byte	.LASF20
+ 269 0145 07       		.byte	0x7
+ 270 0146 15       		.byte	0x15
+ 271 0147 68000000 		.4byte	0x68
+ 272 014b 05       		.uleb128 0x5
+ 273 014c 03       		.byte	0x3
+ 274 014d 00000000 		.4byte	timer_status
+ 275 0151 0B       		.uleb128 0xb
+ 276 0152 2D010000 		.4byte	.LASF21
+ 277 0156 07       		.byte	0x7
+ 278 0157 16       		.byte	0x16
+ 279 0158 68000000 		.4byte	0x68
+ 280 015c 05       		.uleb128 0x5
+ 281 015d 03       		.byte	0x3
+ 282 015e 00000000 		.4byte	timer_value
+ 283 0162 0B       		.uleb128 0xb
+ 284 0163 0E000000 		.4byte	.LASF22
+ 285 0167 01       		.byte	0x1
+ 286 0168 10       		.byte	0x10
+ 287 0169 A8000000 		.4byte	0xa8
+ 288 016d 05       		.uleb128 0x5
+ 289 016e 03       		.byte	0x3
+ 290 016f 00000000 		.4byte	currentState
+ 291 0173 0B       		.uleb128 0xb
+ 292 0174 1B000000 		.4byte	.LASF23
+ 293 0178 05       		.byte	0x5
+ 294 0179 2F       		.byte	0x2f
+ 295 017a A8000000 		.4byte	0xa8
+ 296 017e 05       		.uleb128 0x5
+ 297 017f 03       		.byte	0x3
+ 298 0180 00000000 		.4byte	Prev_state
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccRoP1o2.s 			page 7
+
+
+ 299 0184 0C       		.uleb128 0xc
+ 300 0185 09020000 		.4byte	.LASF24
+ 301 0189 08       		.byte	0x8
+ 302 018a 3A       		.byte	0x3a
+ 303 018b 95010000 		.4byte	0x195
+ 304 018f 0D       		.uleb128 0xd
+ 305 0190 81000000 		.4byte	0x81
+ 306 0194 00       		.byte	0
+ 307 0195 0E       		.uleb128 0xe
+ 308 0196 1C010000 		.4byte	.LASF25
+ 309 019a 05       		.byte	0x5
+ 310 019b 21       		.byte	0x21
+ 311 019c A8000000 		.4byte	0xa8
+ 312 01a0 A6010000 		.4byte	0x1a6
+ 313 01a4 0F       		.uleb128 0xf
+ 314 01a5 00       		.byte	0
+ 315 01a6 0E       		.uleb128 0xe
+ 316 01a7 39010000 		.4byte	.LASF26
+ 317 01ab 05       		.byte	0x5
+ 318 01ac 23       		.byte	0x23
+ 319 01ad A8000000 		.4byte	0xa8
+ 320 01b1 B7010000 		.4byte	0x1b7
+ 321 01b5 0F       		.uleb128 0xf
+ 322 01b6 00       		.byte	0
+ 323 01b7 0E       		.uleb128 0xe
+ 324 01b8 69010000 		.4byte	.LASF27
+ 325 01bc 05       		.byte	0x5
+ 326 01bd 1F       		.byte	0x1f
+ 327 01be A8000000 		.4byte	0xa8
+ 328 01c2 C8010000 		.4byte	0x1c8
+ 329 01c6 0F       		.uleb128 0xf
+ 330 01c7 00       		.byte	0
+ 331 01c8 0E       		.uleb128 0xe
+ 332 01c9 24020000 		.4byte	.LASF28
+ 333 01cd 05       		.byte	0x5
+ 334 01ce 27       		.byte	0x27
+ 335 01cf A8000000 		.4byte	0xa8
+ 336 01d3 D9010000 		.4byte	0x1d9
+ 337 01d7 0F       		.uleb128 0xf
+ 338 01d8 00       		.byte	0
+ 339 01d9 10       		.uleb128 0x10
+ 340 01da 3D000000 		.4byte	.LASF33
+ 341 01de 05       		.byte	0x5
+ 342 01df 25       		.byte	0x25
+ 343 01e0 A8000000 		.4byte	0xa8
+ 344 01e4 0F       		.uleb128 0xf
+ 345 01e5 00       		.byte	0
+ 346 01e6 00       		.byte	0
+ 347              		.section	.debug_abbrev,"",%progbits
+ 348              	.Ldebug_abbrev0:
+ 349 0000 01       		.uleb128 0x1
+ 350 0001 11       		.uleb128 0x11
+ 351 0002 01       		.byte	0x1
+ 352 0003 25       		.uleb128 0x25
+ 353 0004 0E       		.uleb128 0xe
+ 354 0005 13       		.uleb128 0x13
+ 355 0006 0B       		.uleb128 0xb
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccRoP1o2.s 			page 8
+
+
+ 356 0007 03       		.uleb128 0x3
+ 357 0008 0E       		.uleb128 0xe
+ 358 0009 1B       		.uleb128 0x1b
+ 359 000a 0E       		.uleb128 0xe
+ 360 000b 55       		.uleb128 0x55
+ 361 000c 17       		.uleb128 0x17
+ 362 000d 11       		.uleb128 0x11
+ 363 000e 01       		.uleb128 0x1
+ 364 000f 10       		.uleb128 0x10
+ 365 0010 17       		.uleb128 0x17
+ 366 0011 00       		.byte	0
+ 367 0012 00       		.byte	0
+ 368 0013 02       		.uleb128 0x2
+ 369 0014 24       		.uleb128 0x24
+ 370 0015 00       		.byte	0
+ 371 0016 0B       		.uleb128 0xb
+ 372 0017 0B       		.uleb128 0xb
+ 373 0018 3E       		.uleb128 0x3e
+ 374 0019 0B       		.uleb128 0xb
+ 375 001a 03       		.uleb128 0x3
+ 376 001b 0E       		.uleb128 0xe
+ 377 001c 00       		.byte	0
+ 378 001d 00       		.byte	0
+ 379 001e 03       		.uleb128 0x3
+ 380 001f 16       		.uleb128 0x16
+ 381 0020 00       		.byte	0
+ 382 0021 03       		.uleb128 0x3
+ 383 0022 0E       		.uleb128 0xe
+ 384 0023 3A       		.uleb128 0x3a
+ 385 0024 0B       		.uleb128 0xb
+ 386 0025 3B       		.uleb128 0x3b
+ 387 0026 0B       		.uleb128 0xb
+ 388 0027 49       		.uleb128 0x49
+ 389 0028 13       		.uleb128 0x13
+ 390 0029 00       		.byte	0
+ 391 002a 00       		.byte	0
+ 392 002b 04       		.uleb128 0x4
+ 393 002c 24       		.uleb128 0x24
+ 394 002d 00       		.byte	0
+ 395 002e 0B       		.uleb128 0xb
+ 396 002f 0B       		.uleb128 0xb
+ 397 0030 3E       		.uleb128 0x3e
+ 398 0031 0B       		.uleb128 0xb
+ 399 0032 03       		.uleb128 0x3
+ 400 0033 08       		.uleb128 0x8
+ 401 0034 00       		.byte	0
+ 402 0035 00       		.byte	0
+ 403 0036 05       		.uleb128 0x5
+ 404 0037 2E       		.uleb128 0x2e
+ 405 0038 01       		.byte	0x1
+ 406 0039 3F       		.uleb128 0x3f
+ 407 003a 19       		.uleb128 0x19
+ 408 003b 03       		.uleb128 0x3
+ 409 003c 0E       		.uleb128 0xe
+ 410 003d 3A       		.uleb128 0x3a
+ 411 003e 0B       		.uleb128 0xb
+ 412 003f 3B       		.uleb128 0x3b
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccRoP1o2.s 			page 9
+
+
+ 413 0040 0B       		.uleb128 0xb
+ 414 0041 49       		.uleb128 0x49
+ 415 0042 13       		.uleb128 0x13
+ 416 0043 11       		.uleb128 0x11
+ 417 0044 01       		.uleb128 0x1
+ 418 0045 12       		.uleb128 0x12
+ 419 0046 06       		.uleb128 0x6
+ 420 0047 40       		.uleb128 0x40
+ 421 0048 18       		.uleb128 0x18
+ 422 0049 9742     		.uleb128 0x2117
+ 423 004b 19       		.uleb128 0x19
+ 424 004c 01       		.uleb128 0x1
+ 425 004d 13       		.uleb128 0x13
+ 426 004e 00       		.byte	0
+ 427 004f 00       		.byte	0
+ 428 0050 06       		.uleb128 0x6
+ 429 0051 898201   		.uleb128 0x4109
+ 430 0054 01       		.byte	0x1
+ 431 0055 11       		.uleb128 0x11
+ 432 0056 01       		.uleb128 0x1
+ 433 0057 31       		.uleb128 0x31
+ 434 0058 13       		.uleb128 0x13
+ 435 0059 01       		.uleb128 0x1
+ 436 005a 13       		.uleb128 0x13
+ 437 005b 00       		.byte	0
+ 438 005c 00       		.byte	0
+ 439 005d 07       		.uleb128 0x7
+ 440 005e 8A8201   		.uleb128 0x410a
+ 441 0061 00       		.byte	0
+ 442 0062 02       		.uleb128 0x2
+ 443 0063 18       		.uleb128 0x18
+ 444 0064 9142     		.uleb128 0x2111
+ 445 0066 18       		.uleb128 0x18
+ 446 0067 00       		.byte	0
+ 447 0068 00       		.byte	0
+ 448 0069 08       		.uleb128 0x8
+ 449 006a 898201   		.uleb128 0x4109
+ 450 006d 00       		.byte	0
+ 451 006e 11       		.uleb128 0x11
+ 452 006f 01       		.uleb128 0x1
+ 453 0070 31       		.uleb128 0x31
+ 454 0071 13       		.uleb128 0x13
+ 455 0072 00       		.byte	0
+ 456 0073 00       		.byte	0
+ 457 0074 09       		.uleb128 0x9
+ 458 0075 34       		.uleb128 0x34
+ 459 0076 00       		.byte	0
+ 460 0077 03       		.uleb128 0x3
+ 461 0078 0E       		.uleb128 0xe
+ 462 0079 3A       		.uleb128 0x3a
+ 463 007a 0B       		.uleb128 0xb
+ 464 007b 3B       		.uleb128 0x3b
+ 465 007c 05       		.uleb128 0x5
+ 466 007d 49       		.uleb128 0x49
+ 467 007e 13       		.uleb128 0x13
+ 468 007f 3F       		.uleb128 0x3f
+ 469 0080 19       		.uleb128 0x19
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccRoP1o2.s 			page 10
+
+
+ 470 0081 3C       		.uleb128 0x3c
+ 471 0082 19       		.uleb128 0x19
+ 472 0083 00       		.byte	0
+ 473 0084 00       		.byte	0
+ 474 0085 0A       		.uleb128 0xa
+ 475 0086 35       		.uleb128 0x35
+ 476 0087 00       		.byte	0
+ 477 0088 49       		.uleb128 0x49
+ 478 0089 13       		.uleb128 0x13
+ 479 008a 00       		.byte	0
+ 480 008b 00       		.byte	0
+ 481 008c 0B       		.uleb128 0xb
+ 482 008d 34       		.uleb128 0x34
+ 483 008e 00       		.byte	0
+ 484 008f 03       		.uleb128 0x3
+ 485 0090 0E       		.uleb128 0xe
+ 486 0091 3A       		.uleb128 0x3a
+ 487 0092 0B       		.uleb128 0xb
+ 488 0093 3B       		.uleb128 0x3b
+ 489 0094 0B       		.uleb128 0xb
+ 490 0095 49       		.uleb128 0x49
+ 491 0096 13       		.uleb128 0x13
+ 492 0097 3F       		.uleb128 0x3f
+ 493 0098 19       		.uleb128 0x19
+ 494 0099 02       		.uleb128 0x2
+ 495 009a 18       		.uleb128 0x18
+ 496 009b 00       		.byte	0
+ 497 009c 00       		.byte	0
+ 498 009d 0C       		.uleb128 0xc
+ 499 009e 2E       		.uleb128 0x2e
+ 500 009f 01       		.byte	0x1
+ 501 00a0 3F       		.uleb128 0x3f
+ 502 00a1 19       		.uleb128 0x19
+ 503 00a2 03       		.uleb128 0x3
+ 504 00a3 0E       		.uleb128 0xe
+ 505 00a4 3A       		.uleb128 0x3a
+ 506 00a5 0B       		.uleb128 0xb
+ 507 00a6 3B       		.uleb128 0x3b
+ 508 00a7 0B       		.uleb128 0xb
+ 509 00a8 27       		.uleb128 0x27
+ 510 00a9 19       		.uleb128 0x19
+ 511 00aa 3C       		.uleb128 0x3c
+ 512 00ab 19       		.uleb128 0x19
+ 513 00ac 01       		.uleb128 0x1
+ 514 00ad 13       		.uleb128 0x13
+ 515 00ae 00       		.byte	0
+ 516 00af 00       		.byte	0
+ 517 00b0 0D       		.uleb128 0xd
+ 518 00b1 05       		.uleb128 0x5
+ 519 00b2 00       		.byte	0
+ 520 00b3 49       		.uleb128 0x49
+ 521 00b4 13       		.uleb128 0x13
+ 522 00b5 00       		.byte	0
+ 523 00b6 00       		.byte	0
+ 524 00b7 0E       		.uleb128 0xe
+ 525 00b8 2E       		.uleb128 0x2e
+ 526 00b9 01       		.byte	0x1
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccRoP1o2.s 			page 11
+
+
+ 527 00ba 3F       		.uleb128 0x3f
+ 528 00bb 19       		.uleb128 0x19
+ 529 00bc 03       		.uleb128 0x3
+ 530 00bd 0E       		.uleb128 0xe
+ 531 00be 3A       		.uleb128 0x3a
+ 532 00bf 0B       		.uleb128 0xb
+ 533 00c0 3B       		.uleb128 0x3b
+ 534 00c1 0B       		.uleb128 0xb
+ 535 00c2 49       		.uleb128 0x49
+ 536 00c3 13       		.uleb128 0x13
+ 537 00c4 3C       		.uleb128 0x3c
+ 538 00c5 19       		.uleb128 0x19
+ 539 00c6 01       		.uleb128 0x1
+ 540 00c7 13       		.uleb128 0x13
+ 541 00c8 00       		.byte	0
+ 542 00c9 00       		.byte	0
+ 543 00ca 0F       		.uleb128 0xf
+ 544 00cb 18       		.uleb128 0x18
+ 545 00cc 00       		.byte	0
+ 546 00cd 00       		.byte	0
+ 547 00ce 00       		.byte	0
+ 548 00cf 10       		.uleb128 0x10
+ 549 00d0 2E       		.uleb128 0x2e
+ 550 00d1 01       		.byte	0x1
+ 551 00d2 3F       		.uleb128 0x3f
+ 552 00d3 19       		.uleb128 0x19
+ 553 00d4 03       		.uleb128 0x3
+ 554 00d5 0E       		.uleb128 0xe
+ 555 00d6 3A       		.uleb128 0x3a
+ 556 00d7 0B       		.uleb128 0xb
+ 557 00d8 3B       		.uleb128 0x3b
+ 558 00d9 0B       		.uleb128 0xb
+ 559 00da 49       		.uleb128 0x49
+ 560 00db 13       		.uleb128 0x13
+ 561 00dc 3C       		.uleb128 0x3c
+ 562 00dd 19       		.uleb128 0x19
+ 563 00de 00       		.byte	0
+ 564 00df 00       		.byte	0
+ 565 00e0 00       		.byte	0
+ 566              		.section	.debug_aranges,"",%progbits
+ 567 0000 1C000000 		.4byte	0x1c
+ 568 0004 0200     		.2byte	0x2
+ 569 0006 00000000 		.4byte	.Ldebug_info0
+ 570 000a 04       		.byte	0x4
+ 571 000b 00       		.byte	0
+ 572 000c 0000     		.2byte	0
+ 573 000e 0000     		.2byte	0
+ 574 0010 00000000 		.4byte	.LFB63
+ 575 0014 4C000000 		.4byte	.LFE63-.LFB63
+ 576 0018 00000000 		.4byte	0
+ 577 001c 00000000 		.4byte	0
+ 578              		.section	.debug_ranges,"",%progbits
+ 579              	.Ldebug_ranges0:
+ 580 0000 00000000 		.4byte	.LFB63
+ 581 0004 4C000000 		.4byte	.LFE63
+ 582 0008 00000000 		.4byte	0
+ 583 000c 00000000 		.4byte	0
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccRoP1o2.s 			page 12
+
+
+ 584              		.section	.debug_line,"",%progbits
+ 585              	.Ldebug_line0:
+ 586 0000 94010000 		.section	.debug_str,"MS",%progbits,1
+ 586      02007101 
+ 586      00000201 
+ 586      FB0E0D00 
+ 586      01010101 
+ 587              	.LASF6:
+ 588 0000 6C6F6E67 		.ascii	"long long int\000"
+ 588      206C6F6E 
+ 588      6720696E 
+ 588      7400
+ 589              	.LASF22:
+ 590 000e 63757272 		.ascii	"currentState\000"
+ 590      656E7453 
+ 590      74617465 
+ 590      00
+ 591              	.LASF23:
+ 592 001b 50726576 		.ascii	"Prev_state\000"
+ 592      5F737461 
+ 592      746500
+ 593              	.LASF9:
+ 594 0026 5F5F696E 		.ascii	"__int32_t\000"
+ 594      7433325F 
+ 594      7400
+ 595              	.LASF20:
+ 596 0030 74696D65 		.ascii	"timer_status\000"
+ 596      725F7374 
+ 596      61747573 
+ 596      00
+ 597              	.LASF33:
+ 598 003d 53746174 		.ascii	"State_profile_selection\000"
+ 598      655F7072 
+ 598      6F66696C 
+ 598      655F7365 
+ 598      6C656374 
+ 599              	.LASF10:
+ 600 0055 696E7433 		.ascii	"int32_t\000"
+ 600      325F7400 
+ 601              	.LASF19:
+ 602 005d 68656172 		.ascii	"heartbeatCounter\000"
+ 602      74626561 
+ 602      74436F75 
+ 602      6E746572 
+ 602      00
+ 603              	.LASF12:
+ 604 006e 666C6F61 		.ascii	"float\000"
+ 604      7400
+ 605              	.LASF11:
+ 606 0074 75696E74 		.ascii	"uint8\000"
+ 606      3800
+ 607              	.LASF1:
+ 608 007a 756E7369 		.ascii	"unsigned char\000"
+ 608      676E6564 
+ 608      20636861 
+ 608      7200
+ 609              	.LASF31:
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccRoP1o2.s 			page 13
+
+
+ 610 0088 433A5C72 		.ascii	"C:\\repositories\\embedded\\trunk\\terminalOutput\\"
+ 610      65706F73 
+ 610      69746F72 
+ 610      6965735C 
+ 610      656D6265 
+ 611 00b6 43453439 		.ascii	"CE4920Project1\\Design01.cydsn\000"
+ 611      32305072 
+ 611      6F6A6563 
+ 611      74315C44 
+ 611      65736967 
+ 612              	.LASF30:
+ 613 00d4 2E5C6D61 		.ascii	".\\main.c\000"
+ 613      696E2E63 
+ 613      00
+ 614              	.LASF5:
+ 615 00dd 6C6F6E67 		.ascii	"long unsigned int\000"
+ 615      20756E73 
+ 615      69676E65 
+ 615      6420696E 
+ 615      7400
+ 616              	.LASF16:
+ 617 00ef 53544154 		.ascii	"STATE\000"
+ 617      4500
+ 618              	.LASF3:
+ 619 00f5 73686F72 		.ascii	"short unsigned int\000"
+ 619      7420756E 
+ 619      7369676E 
+ 619      65642069 
+ 619      6E7400
+ 620              	.LASF17:
+ 621 0108 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 621      52784275 
+ 621      66666572 
+ 621      00
+ 622              	.LASF13:
+ 623 0115 646F7562 		.ascii	"double\000"
+ 623      6C6500
+ 624              	.LASF25:
+ 625 011c 53746174 		.ascii	"State_reset\000"
+ 625      655F7265 
+ 625      73657400 
+ 626              	.LASF32:
+ 627 0128 6D61696E 		.ascii	"main\000"
+ 627      00
+ 628              	.LASF21:
+ 629 012d 74696D65 		.ascii	"timer_value\000"
+ 629      725F7661 
+ 629      6C756500 
+ 630              	.LASF26:
+ 631 0139 53746174 		.ascii	"State_start\000"
+ 631      655F7374 
+ 631      61727400 
+ 632              	.LASF8:
+ 633 0145 756E7369 		.ascii	"unsigned int\000"
+ 633      676E6564 
+ 633      20696E74 
+ 633      00
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccRoP1o2.s 			page 14
+
+
+ 634              	.LASF7:
+ 635 0152 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 635      206C6F6E 
+ 635      6720756E 
+ 635      7369676E 
+ 635      65642069 
+ 636              	.LASF27:
+ 637 0169 53746174 		.ascii	"State_sleep\000"
+ 637      655F736C 
+ 637      65657000 
+ 638              	.LASF29:
+ 639 0175 474E5520 		.ascii	"GNU C 4.8.4 20140526 (release) [ARM/embedded-4_8-br"
+ 639      4320342E 
+ 639      382E3420 
+ 639      32303134 
+ 639      30353236 
+ 640 01a8 616E6368 		.ascii	"anch revision 211358] -mcpu=cortex-m3 -mthumb -g -O"
+ 640      20726576 
+ 640      6973696F 
+ 640      6E203231 
+ 640      31333538 
+ 641 01db 67202D66 		.ascii	"g -ffunction-sections\000"
+ 641      66756E63 
+ 641      74696F6E 
+ 641      2D736563 
+ 641      74696F6E 
+ 642              	.LASF15:
+ 643 01f1 73697A65 		.ascii	"sizetype\000"
+ 643      74797065 
+ 643      00
+ 644              	.LASF18:
+ 645 01fa 68656172 		.ascii	"heartrate\000"
+ 645      74726174 
+ 645      6500
+ 646              	.LASF14:
+ 647 0204 63686172 		.ascii	"char\000"
+ 647      00
+ 648              	.LASF24:
+ 649 0209 4C43445F 		.ascii	"LCD_WriteControl\000"
+ 649      57726974 
+ 649      65436F6E 
+ 649      74726F6C 
+ 649      00
+ 650              	.LASF2:
+ 651 021a 73686F72 		.ascii	"short int\000"
+ 651      7420696E 
+ 651      7400
+ 652              	.LASF28:
+ 653 0224 53746174 		.ascii	"State_moving\000"
+ 653      655F6D6F 
+ 653      76696E67 
+ 653      00
+ 654              	.LASF4:
+ 655 0231 6C6F6E67 		.ascii	"long int\000"
+ 655      20696E74 
+ 655      00
+ 656              	.LASF0:
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccRoP1o2.s 			page 15
+
+
+ 657 023a 7369676E 		.ascii	"signed char\000"
+ 657      65642063 
+ 657      68617200 
+ 658              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.8.4 20140526 (release) [ARM/embedded-4_8-br

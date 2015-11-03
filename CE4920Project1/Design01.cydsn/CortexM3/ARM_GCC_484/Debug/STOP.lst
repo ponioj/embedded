@@ -1,0 +1,2021 @@
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccypH71i.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"STOP.c"
+  15              		.text
+  16              	.Ltext0:
+  17              		.cfi_sections	.debug_frame
+  18              		.section	.text.STOP_Interrupt,"ax",%progbits
+  19              		.align	2
+  20              		.global	STOP_Interrupt
+  21              		.thumb
+  22              		.thumb_func
+  23              		.type	STOP_Interrupt, %function
+  24              	STOP_Interrupt:
+  25              	.LFB3:
+  26              		.file 1 ".\\Generated_Source\\PSoC5\\STOP.c"
+   1:.\Generated_Source\PSoC5/STOP.c **** /*******************************************************************************
+   2:.\Generated_Source\PSoC5/STOP.c **** * File Name: STOP.c  
+   3:.\Generated_Source\PSoC5/STOP.c **** * Version 1.70
+   4:.\Generated_Source\PSoC5/STOP.c **** *
+   5:.\Generated_Source\PSoC5/STOP.c **** *  Description:
+   6:.\Generated_Source\PSoC5/STOP.c **** *   API for controlling the state of an interrupt.
+   7:.\Generated_Source\PSoC5/STOP.c **** *
+   8:.\Generated_Source\PSoC5/STOP.c **** *
+   9:.\Generated_Source\PSoC5/STOP.c **** *  Note:
+  10:.\Generated_Source\PSoC5/STOP.c **** *
+  11:.\Generated_Source\PSoC5/STOP.c **** ********************************************************************************
+  12:.\Generated_Source\PSoC5/STOP.c **** * Copyright 2008-2015, Cypress Semiconductor Corporation.  All rights reserved.
+  13:.\Generated_Source\PSoC5/STOP.c **** * You may use this file only in accordance with the license, terms, conditions, 
+  14:.\Generated_Source\PSoC5/STOP.c **** * disclaimers, and limitations in the end user license agreement accompanying 
+  15:.\Generated_Source\PSoC5/STOP.c **** * the software package with which this file was provided.
+  16:.\Generated_Source\PSoC5/STOP.c **** *******************************************************************************/
+  17:.\Generated_Source\PSoC5/STOP.c **** 
+  18:.\Generated_Source\PSoC5/STOP.c **** 
+  19:.\Generated_Source\PSoC5/STOP.c **** #include <cydevice_trm.h>
+  20:.\Generated_Source\PSoC5/STOP.c **** #include <CyLib.h>
+  21:.\Generated_Source\PSoC5/STOP.c **** #include <STOP.h>
+  22:.\Generated_Source\PSoC5/STOP.c **** 
+  23:.\Generated_Source\PSoC5/STOP.c **** #if !defined(STOP__REMOVED) /* Check for removal by optimization */
+  24:.\Generated_Source\PSoC5/STOP.c **** 
+  25:.\Generated_Source\PSoC5/STOP.c **** /*******************************************************************************
+  26:.\Generated_Source\PSoC5/STOP.c **** *  Place your includes, defines and code here 
+  27:.\Generated_Source\PSoC5/STOP.c **** ********************************************************************************/
+  28:.\Generated_Source\PSoC5/STOP.c **** /* `#START STOP_intc` */
+  29:.\Generated_Source\PSoC5/STOP.c **** #include "system.h"
+  30:.\Generated_Source\PSoC5/STOP.c **** /* `#END` */
+  31:.\Generated_Source\PSoC5/STOP.c **** 
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccypH71i.s 			page 2
+
+
+  32:.\Generated_Source\PSoC5/STOP.c **** #ifndef CYINT_IRQ_BASE
+  33:.\Generated_Source\PSoC5/STOP.c **** #define CYINT_IRQ_BASE      16
+  34:.\Generated_Source\PSoC5/STOP.c **** #endif /* CYINT_IRQ_BASE */
+  35:.\Generated_Source\PSoC5/STOP.c **** #ifndef CYINT_VECT_TABLE
+  36:.\Generated_Source\PSoC5/STOP.c **** #define CYINT_VECT_TABLE    ((cyisraddress **) CYREG_NVIC_VECT_OFFSET)
+  37:.\Generated_Source\PSoC5/STOP.c **** #endif /* CYINT_VECT_TABLE */
+  38:.\Generated_Source\PSoC5/STOP.c **** 
+  39:.\Generated_Source\PSoC5/STOP.c **** /* Declared in startup, used to set unused interrupts to. */
+  40:.\Generated_Source\PSoC5/STOP.c **** CY_ISR_PROTO(IntDefaultHandler);
+  41:.\Generated_Source\PSoC5/STOP.c **** 
+  42:.\Generated_Source\PSoC5/STOP.c **** 
+  43:.\Generated_Source\PSoC5/STOP.c **** /*******************************************************************************
+  44:.\Generated_Source\PSoC5/STOP.c **** * Function Name: STOP_Start
+  45:.\Generated_Source\PSoC5/STOP.c **** ********************************************************************************
+  46:.\Generated_Source\PSoC5/STOP.c **** *
+  47:.\Generated_Source\PSoC5/STOP.c **** * Summary:
+  48:.\Generated_Source\PSoC5/STOP.c **** *  Set up the interrupt and enable it. This function disables the interrupt, 
+  49:.\Generated_Source\PSoC5/STOP.c **** *  sets the default interrupt vector, sets the priority from the value in the
+  50:.\Generated_Source\PSoC5/STOP.c **** *  Design Wide Resources Interrupt Editor, then enables the interrupt to the 
+  51:.\Generated_Source\PSoC5/STOP.c **** *  interrupt controller.
+  52:.\Generated_Source\PSoC5/STOP.c **** *
+  53:.\Generated_Source\PSoC5/STOP.c **** * Parameters:  
+  54:.\Generated_Source\PSoC5/STOP.c **** *   None
+  55:.\Generated_Source\PSoC5/STOP.c **** *
+  56:.\Generated_Source\PSoC5/STOP.c **** * Return:
+  57:.\Generated_Source\PSoC5/STOP.c **** *   None
+  58:.\Generated_Source\PSoC5/STOP.c **** *
+  59:.\Generated_Source\PSoC5/STOP.c **** *******************************************************************************/
+  60:.\Generated_Source\PSoC5/STOP.c **** void STOP_Start(void)
+  61:.\Generated_Source\PSoC5/STOP.c **** {
+  62:.\Generated_Source\PSoC5/STOP.c ****     /* For all we know the interrupt is active. */
+  63:.\Generated_Source\PSoC5/STOP.c ****     STOP_Disable();
+  64:.\Generated_Source\PSoC5/STOP.c **** 
+  65:.\Generated_Source\PSoC5/STOP.c ****     /* Set the ISR to point to the STOP Interrupt. */
+  66:.\Generated_Source\PSoC5/STOP.c ****     STOP_SetVector(&STOP_Interrupt);
+  67:.\Generated_Source\PSoC5/STOP.c **** 
+  68:.\Generated_Source\PSoC5/STOP.c ****     /* Set the priority. */
+  69:.\Generated_Source\PSoC5/STOP.c ****     STOP_SetPriority((uint8)STOP_INTC_PRIOR_NUMBER);
+  70:.\Generated_Source\PSoC5/STOP.c **** 
+  71:.\Generated_Source\PSoC5/STOP.c ****     /* Enable it. */
+  72:.\Generated_Source\PSoC5/STOP.c ****     STOP_Enable();
+  73:.\Generated_Source\PSoC5/STOP.c **** }
+  74:.\Generated_Source\PSoC5/STOP.c **** 
+  75:.\Generated_Source\PSoC5/STOP.c **** 
+  76:.\Generated_Source\PSoC5/STOP.c **** /*******************************************************************************
+  77:.\Generated_Source\PSoC5/STOP.c **** * Function Name: STOP_StartEx
+  78:.\Generated_Source\PSoC5/STOP.c **** ********************************************************************************
+  79:.\Generated_Source\PSoC5/STOP.c **** *
+  80:.\Generated_Source\PSoC5/STOP.c **** * Summary:
+  81:.\Generated_Source\PSoC5/STOP.c **** *  Sets up the interrupt and enables it. This function disables the interrupt,
+  82:.\Generated_Source\PSoC5/STOP.c **** *  sets the interrupt vector based on the address passed in, sets the priority 
+  83:.\Generated_Source\PSoC5/STOP.c **** *  from the value in the Design Wide Resources Interrupt Editor, then enables 
+  84:.\Generated_Source\PSoC5/STOP.c **** *  the interrupt to the interrupt controller.
+  85:.\Generated_Source\PSoC5/STOP.c **** *  
+  86:.\Generated_Source\PSoC5/STOP.c **** *  When defining ISR functions, the CY_ISR and CY_ISR_PROTO macros should be 
+  87:.\Generated_Source\PSoC5/STOP.c **** *  used to provide consistent definition across compilers:
+  88:.\Generated_Source\PSoC5/STOP.c **** *  
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccypH71i.s 			page 3
+
+
+  89:.\Generated_Source\PSoC5/STOP.c **** *  Function definition example:
+  90:.\Generated_Source\PSoC5/STOP.c **** *   CY_ISR(MyISR)
+  91:.\Generated_Source\PSoC5/STOP.c **** *   {
+  92:.\Generated_Source\PSoC5/STOP.c **** *   }
+  93:.\Generated_Source\PSoC5/STOP.c **** *   Function prototype example:
+  94:.\Generated_Source\PSoC5/STOP.c **** *   CY_ISR_PROTO(MyISR);
+  95:.\Generated_Source\PSoC5/STOP.c **** *
+  96:.\Generated_Source\PSoC5/STOP.c **** * Parameters:  
+  97:.\Generated_Source\PSoC5/STOP.c **** *   address: Address of the ISR to set in the interrupt vector table.
+  98:.\Generated_Source\PSoC5/STOP.c **** *
+  99:.\Generated_Source\PSoC5/STOP.c **** * Return:
+ 100:.\Generated_Source\PSoC5/STOP.c **** *   None
+ 101:.\Generated_Source\PSoC5/STOP.c **** *
+ 102:.\Generated_Source\PSoC5/STOP.c **** *******************************************************************************/
+ 103:.\Generated_Source\PSoC5/STOP.c **** void STOP_StartEx(cyisraddress address)
+ 104:.\Generated_Source\PSoC5/STOP.c **** {
+ 105:.\Generated_Source\PSoC5/STOP.c ****     /* For all we know the interrupt is active. */
+ 106:.\Generated_Source\PSoC5/STOP.c ****     STOP_Disable();
+ 107:.\Generated_Source\PSoC5/STOP.c **** 
+ 108:.\Generated_Source\PSoC5/STOP.c ****     /* Set the ISR to point to the STOP Interrupt. */
+ 109:.\Generated_Source\PSoC5/STOP.c ****     STOP_SetVector(address);
+ 110:.\Generated_Source\PSoC5/STOP.c **** 
+ 111:.\Generated_Source\PSoC5/STOP.c ****     /* Set the priority. */
+ 112:.\Generated_Source\PSoC5/STOP.c ****     STOP_SetPriority((uint8)STOP_INTC_PRIOR_NUMBER);
+ 113:.\Generated_Source\PSoC5/STOP.c **** 
+ 114:.\Generated_Source\PSoC5/STOP.c ****     /* Enable it. */
+ 115:.\Generated_Source\PSoC5/STOP.c ****     STOP_Enable();
+ 116:.\Generated_Source\PSoC5/STOP.c **** }
+ 117:.\Generated_Source\PSoC5/STOP.c **** 
+ 118:.\Generated_Source\PSoC5/STOP.c **** 
+ 119:.\Generated_Source\PSoC5/STOP.c **** /*******************************************************************************
+ 120:.\Generated_Source\PSoC5/STOP.c **** * Function Name: STOP_Stop
+ 121:.\Generated_Source\PSoC5/STOP.c **** ********************************************************************************
+ 122:.\Generated_Source\PSoC5/STOP.c **** *
+ 123:.\Generated_Source\PSoC5/STOP.c **** * Summary:
+ 124:.\Generated_Source\PSoC5/STOP.c **** *   Disables and removes the interrupt.
+ 125:.\Generated_Source\PSoC5/STOP.c **** *
+ 126:.\Generated_Source\PSoC5/STOP.c **** * Parameters:  
+ 127:.\Generated_Source\PSoC5/STOP.c **** *   None
+ 128:.\Generated_Source\PSoC5/STOP.c **** *
+ 129:.\Generated_Source\PSoC5/STOP.c **** * Return:
+ 130:.\Generated_Source\PSoC5/STOP.c **** *   None
+ 131:.\Generated_Source\PSoC5/STOP.c **** *
+ 132:.\Generated_Source\PSoC5/STOP.c **** *******************************************************************************/
+ 133:.\Generated_Source\PSoC5/STOP.c **** void STOP_Stop(void)
+ 134:.\Generated_Source\PSoC5/STOP.c **** {
+ 135:.\Generated_Source\PSoC5/STOP.c ****     /* Disable this interrupt. */
+ 136:.\Generated_Source\PSoC5/STOP.c ****     STOP_Disable();
+ 137:.\Generated_Source\PSoC5/STOP.c **** 
+ 138:.\Generated_Source\PSoC5/STOP.c ****     /* Set the ISR to point to the passive one. */
+ 139:.\Generated_Source\PSoC5/STOP.c ****     STOP_SetVector(&IntDefaultHandler);
+ 140:.\Generated_Source\PSoC5/STOP.c **** }
+ 141:.\Generated_Source\PSoC5/STOP.c **** 
+ 142:.\Generated_Source\PSoC5/STOP.c **** 
+ 143:.\Generated_Source\PSoC5/STOP.c **** /*******************************************************************************
+ 144:.\Generated_Source\PSoC5/STOP.c **** * Function Name: STOP_Interrupt
+ 145:.\Generated_Source\PSoC5/STOP.c **** ********************************************************************************
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccypH71i.s 			page 4
+
+
+ 146:.\Generated_Source\PSoC5/STOP.c **** *
+ 147:.\Generated_Source\PSoC5/STOP.c **** * Summary:
+ 148:.\Generated_Source\PSoC5/STOP.c **** *   The default Interrupt Service Routine for STOP.
+ 149:.\Generated_Source\PSoC5/STOP.c **** *
+ 150:.\Generated_Source\PSoC5/STOP.c **** *   Add custom code between the coments to keep the next version of this file
+ 151:.\Generated_Source\PSoC5/STOP.c **** *   from over writting your code.
+ 152:.\Generated_Source\PSoC5/STOP.c **** *
+ 153:.\Generated_Source\PSoC5/STOP.c **** * Parameters:  
+ 154:.\Generated_Source\PSoC5/STOP.c **** *
+ 155:.\Generated_Source\PSoC5/STOP.c **** * Return:
+ 156:.\Generated_Source\PSoC5/STOP.c **** *   None
+ 157:.\Generated_Source\PSoC5/STOP.c **** *
+ 158:.\Generated_Source\PSoC5/STOP.c **** *******************************************************************************/
+ 159:.\Generated_Source\PSoC5/STOP.c **** CY_ISR(STOP_Interrupt)
+ 160:.\Generated_Source\PSoC5/STOP.c **** {
+  27              		.loc 1 160 0
+  28              		.cfi_startproc
+  29              		@ args = 0, pretend = 0, frame = 0
+  30              		@ frame_needed = 0, uses_anonymous_args = 0
+  31              		@ link register save eliminated.
+ 161:.\Generated_Source\PSoC5/STOP.c ****     /*  Place your Interrupt code here. */
+ 162:.\Generated_Source\PSoC5/STOP.c ****     /* `#START STOP_Interrupt` */
+ 163:.\Generated_Source\PSoC5/STOP.c ****     currentState = STATE_STOP;
+  32              		.loc 1 163 0
+  33 0000 0622     		movs	r2, #6
+  34 0002 014B     		ldr	r3, .L2
+  35 0004 1A60     		str	r2, [r3]
+  36 0006 7047     		bx	lr
+  37              	.L3:
+  38              		.align	2
+  39              	.L2:
+  40 0008 00000000 		.word	currentState
+  41              		.cfi_endproc
+  42              	.LFE3:
+  43              		.size	STOP_Interrupt, .-STOP_Interrupt
+  44              		.section	.text.STOP_SetVector,"ax",%progbits
+  45              		.align	2
+  46              		.global	STOP_SetVector
+  47              		.thumb
+  48              		.thumb_func
+  49              		.type	STOP_SetVector, %function
+  50              	STOP_SetVector:
+  51              	.LFB4:
+ 164:.\Generated_Source\PSoC5/STOP.c ****     /* `#END` */
+ 165:.\Generated_Source\PSoC5/STOP.c **** }
+ 166:.\Generated_Source\PSoC5/STOP.c **** 
+ 167:.\Generated_Source\PSoC5/STOP.c **** 
+ 168:.\Generated_Source\PSoC5/STOP.c **** /*******************************************************************************
+ 169:.\Generated_Source\PSoC5/STOP.c **** * Function Name: STOP_SetVector
+ 170:.\Generated_Source\PSoC5/STOP.c **** ********************************************************************************
+ 171:.\Generated_Source\PSoC5/STOP.c **** *
+ 172:.\Generated_Source\PSoC5/STOP.c **** * Summary:
+ 173:.\Generated_Source\PSoC5/STOP.c **** *   Change the ISR vector for the Interrupt. Note calling STOP_Start
+ 174:.\Generated_Source\PSoC5/STOP.c **** *   will override any effect this method would have had. To set the vector 
+ 175:.\Generated_Source\PSoC5/STOP.c **** *   before the component has been started use STOP_StartEx instead.
+ 176:.\Generated_Source\PSoC5/STOP.c **** * 
+ 177:.\Generated_Source\PSoC5/STOP.c **** *   When defining ISR functions, the CY_ISR and CY_ISR_PROTO macros should be 
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccypH71i.s 			page 5
+
+
+ 178:.\Generated_Source\PSoC5/STOP.c **** *   used to provide consistent definition across compilers:
+ 179:.\Generated_Source\PSoC5/STOP.c **** *
+ 180:.\Generated_Source\PSoC5/STOP.c **** *   Function definition example:
+ 181:.\Generated_Source\PSoC5/STOP.c **** *   CY_ISR(MyISR)
+ 182:.\Generated_Source\PSoC5/STOP.c **** *   {
+ 183:.\Generated_Source\PSoC5/STOP.c **** *   }
+ 184:.\Generated_Source\PSoC5/STOP.c **** *
+ 185:.\Generated_Source\PSoC5/STOP.c **** *   Function prototype example:
+ 186:.\Generated_Source\PSoC5/STOP.c **** *     CY_ISR_PROTO(MyISR);
+ 187:.\Generated_Source\PSoC5/STOP.c **** *
+ 188:.\Generated_Source\PSoC5/STOP.c **** * Parameters:
+ 189:.\Generated_Source\PSoC5/STOP.c **** *   address: Address of the ISR to set in the interrupt vector table.
+ 190:.\Generated_Source\PSoC5/STOP.c **** *
+ 191:.\Generated_Source\PSoC5/STOP.c **** * Return:
+ 192:.\Generated_Source\PSoC5/STOP.c **** *   None
+ 193:.\Generated_Source\PSoC5/STOP.c **** *
+ 194:.\Generated_Source\PSoC5/STOP.c **** *******************************************************************************/
+ 195:.\Generated_Source\PSoC5/STOP.c **** void STOP_SetVector(cyisraddress address)
+ 196:.\Generated_Source\PSoC5/STOP.c **** {
+  52              		.loc 1 196 0
+  53              		.cfi_startproc
+  54              		@ args = 0, pretend = 0, frame = 0
+  55              		@ frame_needed = 0, uses_anonymous_args = 0
+  56              		@ link register save eliminated.
+  57              	.LVL0:
+ 197:.\Generated_Source\PSoC5/STOP.c ****     cyisraddress * ramVectorTable;
+ 198:.\Generated_Source\PSoC5/STOP.c **** 
+ 199:.\Generated_Source\PSoC5/STOP.c ****     ramVectorTable = (cyisraddress *) *CYINT_VECT_TABLE;
+  58              		.loc 1 199 0
+  59 0000 014B     		ldr	r3, .L5
+  60 0002 1B68     		ldr	r3, [r3]
+  61              	.LVL1:
+ 200:.\Generated_Source\PSoC5/STOP.c **** 
+ 201:.\Generated_Source\PSoC5/STOP.c ****     ramVectorTable[CYINT_IRQ_BASE + (uint32)STOP__INTC_NUMBER] = address;
+  62              		.loc 1 201 0
+  63 0004 5864     		str	r0, [r3, #68]
+  64 0006 7047     		bx	lr
+  65              	.L6:
+  66              		.align	2
+  67              	.L5:
+  68 0008 08ED00E0 		.word	-536810232
+  69              		.cfi_endproc
+  70              	.LFE4:
+  71              		.size	STOP_SetVector, .-STOP_SetVector
+  72              		.section	.text.STOP_GetVector,"ax",%progbits
+  73              		.align	2
+  74              		.global	STOP_GetVector
+  75              		.thumb
+  76              		.thumb_func
+  77              		.type	STOP_GetVector, %function
+  78              	STOP_GetVector:
+  79              	.LFB5:
+ 202:.\Generated_Source\PSoC5/STOP.c **** }
+ 203:.\Generated_Source\PSoC5/STOP.c **** 
+ 204:.\Generated_Source\PSoC5/STOP.c **** 
+ 205:.\Generated_Source\PSoC5/STOP.c **** /*******************************************************************************
+ 206:.\Generated_Source\PSoC5/STOP.c **** * Function Name: STOP_GetVector
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccypH71i.s 			page 6
+
+
+ 207:.\Generated_Source\PSoC5/STOP.c **** ********************************************************************************
+ 208:.\Generated_Source\PSoC5/STOP.c **** *
+ 209:.\Generated_Source\PSoC5/STOP.c **** * Summary:
+ 210:.\Generated_Source\PSoC5/STOP.c **** *   Gets the "address" of the current ISR vector for the Interrupt.
+ 211:.\Generated_Source\PSoC5/STOP.c **** *
+ 212:.\Generated_Source\PSoC5/STOP.c **** * Parameters:
+ 213:.\Generated_Source\PSoC5/STOP.c **** *   None
+ 214:.\Generated_Source\PSoC5/STOP.c **** *
+ 215:.\Generated_Source\PSoC5/STOP.c **** * Return:
+ 216:.\Generated_Source\PSoC5/STOP.c **** *   Address of the ISR in the interrupt vector table.
+ 217:.\Generated_Source\PSoC5/STOP.c **** *
+ 218:.\Generated_Source\PSoC5/STOP.c **** *******************************************************************************/
+ 219:.\Generated_Source\PSoC5/STOP.c **** cyisraddress STOP_GetVector(void)
+ 220:.\Generated_Source\PSoC5/STOP.c **** {
+  80              		.loc 1 220 0
+  81              		.cfi_startproc
+  82              		@ args = 0, pretend = 0, frame = 0
+  83              		@ frame_needed = 0, uses_anonymous_args = 0
+  84              		@ link register save eliminated.
+ 221:.\Generated_Source\PSoC5/STOP.c ****     cyisraddress * ramVectorTable;
+ 222:.\Generated_Source\PSoC5/STOP.c **** 
+ 223:.\Generated_Source\PSoC5/STOP.c ****     ramVectorTable = (cyisraddress *) *CYINT_VECT_TABLE;
+  85              		.loc 1 223 0
+  86 0000 014B     		ldr	r3, .L8
+  87 0002 1B68     		ldr	r3, [r3]
+  88              	.LVL2:
+ 224:.\Generated_Source\PSoC5/STOP.c **** 
+ 225:.\Generated_Source\PSoC5/STOP.c ****     return ramVectorTable[CYINT_IRQ_BASE + (uint32)STOP__INTC_NUMBER];
+ 226:.\Generated_Source\PSoC5/STOP.c **** }
+  89              		.loc 1 226 0
+  90 0004 586C     		ldr	r0, [r3, #68]
+  91 0006 7047     		bx	lr
+  92              	.L9:
+  93              		.align	2
+  94              	.L8:
+  95 0008 08ED00E0 		.word	-536810232
+  96              		.cfi_endproc
+  97              	.LFE5:
+  98              		.size	STOP_GetVector, .-STOP_GetVector
+  99              		.section	.text.STOP_SetPriority,"ax",%progbits
+ 100              		.align	2
+ 101              		.global	STOP_SetPriority
+ 102              		.thumb
+ 103              		.thumb_func
+ 104              		.type	STOP_SetPriority, %function
+ 105              	STOP_SetPriority:
+ 106              	.LFB6:
+ 227:.\Generated_Source\PSoC5/STOP.c **** 
+ 228:.\Generated_Source\PSoC5/STOP.c **** 
+ 229:.\Generated_Source\PSoC5/STOP.c **** /*******************************************************************************
+ 230:.\Generated_Source\PSoC5/STOP.c **** * Function Name: STOP_SetPriority
+ 231:.\Generated_Source\PSoC5/STOP.c **** ********************************************************************************
+ 232:.\Generated_Source\PSoC5/STOP.c **** *
+ 233:.\Generated_Source\PSoC5/STOP.c **** * Summary:
+ 234:.\Generated_Source\PSoC5/STOP.c **** *   Sets the Priority of the Interrupt. 
+ 235:.\Generated_Source\PSoC5/STOP.c **** *
+ 236:.\Generated_Source\PSoC5/STOP.c **** *   Note calling STOP_Start or STOP_StartEx will 
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccypH71i.s 			page 7
+
+
+ 237:.\Generated_Source\PSoC5/STOP.c **** *   override any effect this API would have had. This API should only be called
+ 238:.\Generated_Source\PSoC5/STOP.c **** *   after STOP_Start or STOP_StartEx has been called. 
+ 239:.\Generated_Source\PSoC5/STOP.c **** *   To set the initial priority for the component, use the Design-Wide Resources
+ 240:.\Generated_Source\PSoC5/STOP.c **** *   Interrupt Editor.
+ 241:.\Generated_Source\PSoC5/STOP.c **** *
+ 242:.\Generated_Source\PSoC5/STOP.c **** *   Note This API has no effect on Non-maskable interrupt NMI).
+ 243:.\Generated_Source\PSoC5/STOP.c **** *
+ 244:.\Generated_Source\PSoC5/STOP.c **** * Parameters:
+ 245:.\Generated_Source\PSoC5/STOP.c **** *   priority: Priority of the interrupt, 0 being the highest priority
+ 246:.\Generated_Source\PSoC5/STOP.c **** *             PSoC 3 and PSoC 5LP: Priority is from 0 to 7.
+ 247:.\Generated_Source\PSoC5/STOP.c **** *             PSoC 4: Priority is from 0 to 3.
+ 248:.\Generated_Source\PSoC5/STOP.c **** *
+ 249:.\Generated_Source\PSoC5/STOP.c **** * Return:
+ 250:.\Generated_Source\PSoC5/STOP.c **** *   None
+ 251:.\Generated_Source\PSoC5/STOP.c **** *
+ 252:.\Generated_Source\PSoC5/STOP.c **** *******************************************************************************/
+ 253:.\Generated_Source\PSoC5/STOP.c **** void STOP_SetPriority(uint8 priority)
+ 254:.\Generated_Source\PSoC5/STOP.c **** {
+ 107              		.loc 1 254 0
+ 108              		.cfi_startproc
+ 109              		@ args = 0, pretend = 0, frame = 0
+ 110              		@ frame_needed = 0, uses_anonymous_args = 0
+ 111              		@ link register save eliminated.
+ 112              	.LVL3:
+ 255:.\Generated_Source\PSoC5/STOP.c ****     *STOP_INTC_PRIOR = priority << 5;
+ 113              		.loc 1 255 0
+ 114 0000 4001     		lsls	r0, r0, #5
+ 115              	.LVL4:
+ 116 0002 C0B2     		uxtb	r0, r0
+ 117 0004 014B     		ldr	r3, .L11
+ 118 0006 1870     		strb	r0, [r3]
+ 119 0008 7047     		bx	lr
+ 120              	.L12:
+ 121 000a 00BF     		.align	2
+ 122              	.L11:
+ 123 000c 01E400E0 		.word	-536812543
+ 124              		.cfi_endproc
+ 125              	.LFE6:
+ 126              		.size	STOP_SetPriority, .-STOP_SetPriority
+ 127              		.section	.text.STOP_GetPriority,"ax",%progbits
+ 128              		.align	2
+ 129              		.global	STOP_GetPriority
+ 130              		.thumb
+ 131              		.thumb_func
+ 132              		.type	STOP_GetPriority, %function
+ 133              	STOP_GetPriority:
+ 134              	.LFB7:
+ 256:.\Generated_Source\PSoC5/STOP.c **** }
+ 257:.\Generated_Source\PSoC5/STOP.c **** 
+ 258:.\Generated_Source\PSoC5/STOP.c **** 
+ 259:.\Generated_Source\PSoC5/STOP.c **** /*******************************************************************************
+ 260:.\Generated_Source\PSoC5/STOP.c **** * Function Name: STOP_GetPriority
+ 261:.\Generated_Source\PSoC5/STOP.c **** ********************************************************************************
+ 262:.\Generated_Source\PSoC5/STOP.c **** *
+ 263:.\Generated_Source\PSoC5/STOP.c **** * Summary:
+ 264:.\Generated_Source\PSoC5/STOP.c **** *   Gets the Priority of the Interrupt.
+ 265:.\Generated_Source\PSoC5/STOP.c **** *
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccypH71i.s 			page 8
+
+
+ 266:.\Generated_Source\PSoC5/STOP.c **** * Parameters:
+ 267:.\Generated_Source\PSoC5/STOP.c **** *   None
+ 268:.\Generated_Source\PSoC5/STOP.c **** *
+ 269:.\Generated_Source\PSoC5/STOP.c **** * Return:
+ 270:.\Generated_Source\PSoC5/STOP.c **** *   Priority of the interrupt, 0 being the highest priority
+ 271:.\Generated_Source\PSoC5/STOP.c **** *    PSoC 3 and PSoC 5LP: Priority is from 0 to 7.
+ 272:.\Generated_Source\PSoC5/STOP.c **** *    PSoC 4: Priority is from 0 to 3.
+ 273:.\Generated_Source\PSoC5/STOP.c **** *
+ 274:.\Generated_Source\PSoC5/STOP.c **** *******************************************************************************/
+ 275:.\Generated_Source\PSoC5/STOP.c **** uint8 STOP_GetPriority(void)
+ 276:.\Generated_Source\PSoC5/STOP.c **** {
+ 135              		.loc 1 276 0
+ 136              		.cfi_startproc
+ 137              		@ args = 0, pretend = 0, frame = 0
+ 138              		@ frame_needed = 0, uses_anonymous_args = 0
+ 139              		@ link register save eliminated.
+ 277:.\Generated_Source\PSoC5/STOP.c ****     uint8 priority;
+ 278:.\Generated_Source\PSoC5/STOP.c **** 
+ 279:.\Generated_Source\PSoC5/STOP.c **** 
+ 280:.\Generated_Source\PSoC5/STOP.c ****     priority = *STOP_INTC_PRIOR >> 5;
+ 140              		.loc 1 280 0
+ 141 0000 014B     		ldr	r3, .L14
+ 142 0002 1878     		ldrb	r0, [r3]	@ zero_extendqisi2
+ 143              	.LVL5:
+ 281:.\Generated_Source\PSoC5/STOP.c **** 
+ 282:.\Generated_Source\PSoC5/STOP.c ****     return priority;
+ 283:.\Generated_Source\PSoC5/STOP.c **** }
+ 144              		.loc 1 283 0
+ 145 0004 4009     		lsrs	r0, r0, #5
+ 146              	.LVL6:
+ 147 0006 7047     		bx	lr
+ 148              	.L15:
+ 149              		.align	2
+ 150              	.L14:
+ 151 0008 01E400E0 		.word	-536812543
+ 152              		.cfi_endproc
+ 153              	.LFE7:
+ 154              		.size	STOP_GetPriority, .-STOP_GetPriority
+ 155              		.section	.text.STOP_Enable,"ax",%progbits
+ 156              		.align	2
+ 157              		.global	STOP_Enable
+ 158              		.thumb
+ 159              		.thumb_func
+ 160              		.type	STOP_Enable, %function
+ 161              	STOP_Enable:
+ 162              	.LFB8:
+ 284:.\Generated_Source\PSoC5/STOP.c **** 
+ 285:.\Generated_Source\PSoC5/STOP.c **** 
+ 286:.\Generated_Source\PSoC5/STOP.c **** /*******************************************************************************
+ 287:.\Generated_Source\PSoC5/STOP.c **** * Function Name: STOP_Enable
+ 288:.\Generated_Source\PSoC5/STOP.c **** ********************************************************************************
+ 289:.\Generated_Source\PSoC5/STOP.c **** *
+ 290:.\Generated_Source\PSoC5/STOP.c **** * Summary:
+ 291:.\Generated_Source\PSoC5/STOP.c **** *   Enables the interrupt to the interrupt controller. Do not call this function
+ 292:.\Generated_Source\PSoC5/STOP.c **** *   unless ISR_Start() has been called or the functionality of the ISR_Start() 
+ 293:.\Generated_Source\PSoC5/STOP.c **** *   function, which sets the vector and the priority, has been called.
+ 294:.\Generated_Source\PSoC5/STOP.c **** *
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccypH71i.s 			page 9
+
+
+ 295:.\Generated_Source\PSoC5/STOP.c **** * Parameters:
+ 296:.\Generated_Source\PSoC5/STOP.c **** *   None
+ 297:.\Generated_Source\PSoC5/STOP.c **** *
+ 298:.\Generated_Source\PSoC5/STOP.c **** * Return:
+ 299:.\Generated_Source\PSoC5/STOP.c **** *   None
+ 300:.\Generated_Source\PSoC5/STOP.c **** *
+ 301:.\Generated_Source\PSoC5/STOP.c **** *******************************************************************************/
+ 302:.\Generated_Source\PSoC5/STOP.c **** void STOP_Enable(void)
+ 303:.\Generated_Source\PSoC5/STOP.c **** {
+ 163              		.loc 1 303 0
+ 164              		.cfi_startproc
+ 165              		@ args = 0, pretend = 0, frame = 0
+ 166              		@ frame_needed = 0, uses_anonymous_args = 0
+ 167              		@ link register save eliminated.
+ 304:.\Generated_Source\PSoC5/STOP.c ****     /* Enable the general interrupt. */
+ 305:.\Generated_Source\PSoC5/STOP.c ****     *STOP_INTC_SET_EN = STOP__INTC_MASK;
+ 168              		.loc 1 305 0
+ 169 0000 0222     		movs	r2, #2
+ 170 0002 014B     		ldr	r3, .L17
+ 171 0004 1A60     		str	r2, [r3]
+ 172 0006 7047     		bx	lr
+ 173              	.L18:
+ 174              		.align	2
+ 175              	.L17:
+ 176 0008 00E100E0 		.word	-536813312
+ 177              		.cfi_endproc
+ 178              	.LFE8:
+ 179              		.size	STOP_Enable, .-STOP_Enable
+ 180              		.section	.text.STOP_GetState,"ax",%progbits
+ 181              		.align	2
+ 182              		.global	STOP_GetState
+ 183              		.thumb
+ 184              		.thumb_func
+ 185              		.type	STOP_GetState, %function
+ 186              	STOP_GetState:
+ 187              	.LFB9:
+ 306:.\Generated_Source\PSoC5/STOP.c **** }
+ 307:.\Generated_Source\PSoC5/STOP.c **** 
+ 308:.\Generated_Source\PSoC5/STOP.c **** 
+ 309:.\Generated_Source\PSoC5/STOP.c **** /*******************************************************************************
+ 310:.\Generated_Source\PSoC5/STOP.c **** * Function Name: STOP_GetState
+ 311:.\Generated_Source\PSoC5/STOP.c **** ********************************************************************************
+ 312:.\Generated_Source\PSoC5/STOP.c **** *
+ 313:.\Generated_Source\PSoC5/STOP.c **** * Summary:
+ 314:.\Generated_Source\PSoC5/STOP.c **** *   Gets the state (enabled, disabled) of the Interrupt.
+ 315:.\Generated_Source\PSoC5/STOP.c **** *
+ 316:.\Generated_Source\PSoC5/STOP.c **** * Parameters:
+ 317:.\Generated_Source\PSoC5/STOP.c **** *   None
+ 318:.\Generated_Source\PSoC5/STOP.c **** *
+ 319:.\Generated_Source\PSoC5/STOP.c **** * Return:
+ 320:.\Generated_Source\PSoC5/STOP.c **** *   1 if enabled, 0 if disabled.
+ 321:.\Generated_Source\PSoC5/STOP.c **** *
+ 322:.\Generated_Source\PSoC5/STOP.c **** *******************************************************************************/
+ 323:.\Generated_Source\PSoC5/STOP.c **** uint8 STOP_GetState(void)
+ 324:.\Generated_Source\PSoC5/STOP.c **** {
+ 188              		.loc 1 324 0
+ 189              		.cfi_startproc
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccypH71i.s 			page 10
+
+
+ 190              		@ args = 0, pretend = 0, frame = 0
+ 191              		@ frame_needed = 0, uses_anonymous_args = 0
+ 192              		@ link register save eliminated.
+ 325:.\Generated_Source\PSoC5/STOP.c ****     /* Get the state of the general interrupt. */
+ 326:.\Generated_Source\PSoC5/STOP.c ****     return ((*STOP_INTC_SET_EN & (uint32)STOP__INTC_MASK) != 0u) ? 1u:0u;
+ 193              		.loc 1 326 0
+ 194 0000 044B     		ldr	r3, .L22
+ 195 0002 1B68     		ldr	r3, [r3]
+ 196 0004 13F0020F 		tst	r3, #2
+ 197 0008 01D0     		beq	.L21
+ 198 000a 0120     		movs	r0, #1
+ 199 000c 7047     		bx	lr
+ 200              	.L21:
+ 201 000e 0020     		movs	r0, #0
+ 327:.\Generated_Source\PSoC5/STOP.c **** }
+ 202              		.loc 1 327 0
+ 203 0010 7047     		bx	lr
+ 204              	.L23:
+ 205 0012 00BF     		.align	2
+ 206              	.L22:
+ 207 0014 00E100E0 		.word	-536813312
+ 208              		.cfi_endproc
+ 209              	.LFE9:
+ 210              		.size	STOP_GetState, .-STOP_GetState
+ 211              		.section	.text.STOP_Disable,"ax",%progbits
+ 212              		.align	2
+ 213              		.global	STOP_Disable
+ 214              		.thumb
+ 215              		.thumb_func
+ 216              		.type	STOP_Disable, %function
+ 217              	STOP_Disable:
+ 218              	.LFB10:
+ 328:.\Generated_Source\PSoC5/STOP.c **** 
+ 329:.\Generated_Source\PSoC5/STOP.c **** 
+ 330:.\Generated_Source\PSoC5/STOP.c **** /*******************************************************************************
+ 331:.\Generated_Source\PSoC5/STOP.c **** * Function Name: STOP_Disable
+ 332:.\Generated_Source\PSoC5/STOP.c **** ********************************************************************************
+ 333:.\Generated_Source\PSoC5/STOP.c **** *
+ 334:.\Generated_Source\PSoC5/STOP.c **** * Summary:
+ 335:.\Generated_Source\PSoC5/STOP.c **** *   Disables the Interrupt in the interrupt controller.
+ 336:.\Generated_Source\PSoC5/STOP.c **** *
+ 337:.\Generated_Source\PSoC5/STOP.c **** * Parameters:
+ 338:.\Generated_Source\PSoC5/STOP.c **** *   None
+ 339:.\Generated_Source\PSoC5/STOP.c **** *
+ 340:.\Generated_Source\PSoC5/STOP.c **** * Return:
+ 341:.\Generated_Source\PSoC5/STOP.c **** *   None
+ 342:.\Generated_Source\PSoC5/STOP.c **** *
+ 343:.\Generated_Source\PSoC5/STOP.c **** *******************************************************************************/
+ 344:.\Generated_Source\PSoC5/STOP.c **** void STOP_Disable(void)
+ 345:.\Generated_Source\PSoC5/STOP.c **** {
+ 219              		.loc 1 345 0
+ 220              		.cfi_startproc
+ 221              		@ args = 0, pretend = 0, frame = 0
+ 222              		@ frame_needed = 0, uses_anonymous_args = 0
+ 223              		@ link register save eliminated.
+ 346:.\Generated_Source\PSoC5/STOP.c ****     /* Disable the general interrupt. */
+ 347:.\Generated_Source\PSoC5/STOP.c ****     *STOP_INTC_CLR_EN = STOP__INTC_MASK;
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccypH71i.s 			page 11
+
+
+ 224              		.loc 1 347 0
+ 225 0000 0222     		movs	r2, #2
+ 226 0002 014B     		ldr	r3, .L25
+ 227 0004 1A60     		str	r2, [r3]
+ 228 0006 7047     		bx	lr
+ 229              	.L26:
+ 230              		.align	2
+ 231              	.L25:
+ 232 0008 80E100E0 		.word	-536813184
+ 233              		.cfi_endproc
+ 234              	.LFE10:
+ 235              		.size	STOP_Disable, .-STOP_Disable
+ 236              		.section	.text.STOP_Start,"ax",%progbits
+ 237              		.align	2
+ 238              		.global	STOP_Start
+ 239              		.thumb
+ 240              		.thumb_func
+ 241              		.type	STOP_Start, %function
+ 242              	STOP_Start:
+ 243              	.LFB0:
+  61:.\Generated_Source\PSoC5/STOP.c **** {
+ 244              		.loc 1 61 0
+ 245              		.cfi_startproc
+ 246              		@ args = 0, pretend = 0, frame = 0
+ 247              		@ frame_needed = 0, uses_anonymous_args = 0
+ 248 0000 08B5     		push	{r3, lr}
+ 249              		.cfi_def_cfa_offset 8
+ 250              		.cfi_offset 3, -8
+ 251              		.cfi_offset 14, -4
+  63:.\Generated_Source\PSoC5/STOP.c ****     STOP_Disable();
+ 252              		.loc 1 63 0
+ 253 0002 FFF7FEFF 		bl	STOP_Disable
+ 254              	.LVL7:
+  66:.\Generated_Source\PSoC5/STOP.c ****     STOP_SetVector(&STOP_Interrupt);
+ 255              		.loc 1 66 0
+ 256 0006 0448     		ldr	r0, .L28
+ 257 0008 FFF7FEFF 		bl	STOP_SetVector
+ 258              	.LVL8:
+  69:.\Generated_Source\PSoC5/STOP.c ****     STOP_SetPriority((uint8)STOP_INTC_PRIOR_NUMBER);
+ 259              		.loc 1 69 0
+ 260 000c 0720     		movs	r0, #7
+ 261 000e FFF7FEFF 		bl	STOP_SetPriority
+ 262              	.LVL9:
+  72:.\Generated_Source\PSoC5/STOP.c ****     STOP_Enable();
+ 263              		.loc 1 72 0
+ 264 0012 FFF7FEFF 		bl	STOP_Enable
+ 265              	.LVL10:
+ 266 0016 08BD     		pop	{r3, pc}
+ 267              	.L29:
+ 268              		.align	2
+ 269              	.L28:
+ 270 0018 00000000 		.word	STOP_Interrupt
+ 271              		.cfi_endproc
+ 272              	.LFE0:
+ 273              		.size	STOP_Start, .-STOP_Start
+ 274              		.section	.text.STOP_StartEx,"ax",%progbits
+ 275              		.align	2
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccypH71i.s 			page 12
+
+
+ 276              		.global	STOP_StartEx
+ 277              		.thumb
+ 278              		.thumb_func
+ 279              		.type	STOP_StartEx, %function
+ 280              	STOP_StartEx:
+ 281              	.LFB1:
+ 104:.\Generated_Source\PSoC5/STOP.c **** {
+ 282              		.loc 1 104 0
+ 283              		.cfi_startproc
+ 284              		@ args = 0, pretend = 0, frame = 0
+ 285              		@ frame_needed = 0, uses_anonymous_args = 0
+ 286              	.LVL11:
+ 287 0000 10B5     		push	{r4, lr}
+ 288              		.cfi_def_cfa_offset 8
+ 289              		.cfi_offset 4, -8
+ 290              		.cfi_offset 14, -4
+ 291 0002 0446     		mov	r4, r0
+ 106:.\Generated_Source\PSoC5/STOP.c ****     STOP_Disable();
+ 292              		.loc 1 106 0
+ 293 0004 FFF7FEFF 		bl	STOP_Disable
+ 294              	.LVL12:
+ 109:.\Generated_Source\PSoC5/STOP.c ****     STOP_SetVector(address);
+ 295              		.loc 1 109 0
+ 296 0008 2046     		mov	r0, r4
+ 297 000a FFF7FEFF 		bl	STOP_SetVector
+ 298              	.LVL13:
+ 112:.\Generated_Source\PSoC5/STOP.c ****     STOP_SetPriority((uint8)STOP_INTC_PRIOR_NUMBER);
+ 299              		.loc 1 112 0
+ 300 000e 0720     		movs	r0, #7
+ 301 0010 FFF7FEFF 		bl	STOP_SetPriority
+ 302              	.LVL14:
+ 115:.\Generated_Source\PSoC5/STOP.c ****     STOP_Enable();
+ 303              		.loc 1 115 0
+ 304 0014 FFF7FEFF 		bl	STOP_Enable
+ 305              	.LVL15:
+ 306 0018 10BD     		pop	{r4, pc}
+ 307              		.cfi_endproc
+ 308              	.LFE1:
+ 309              		.size	STOP_StartEx, .-STOP_StartEx
+ 310 001a 00BF     		.section	.text.STOP_Stop,"ax",%progbits
+ 311              		.align	2
+ 312              		.global	STOP_Stop
+ 313              		.thumb
+ 314              		.thumb_func
+ 315              		.type	STOP_Stop, %function
+ 316              	STOP_Stop:
+ 317              	.LFB2:
+ 134:.\Generated_Source\PSoC5/STOP.c **** {
+ 318              		.loc 1 134 0
+ 319              		.cfi_startproc
+ 320              		@ args = 0, pretend = 0, frame = 0
+ 321              		@ frame_needed = 0, uses_anonymous_args = 0
+ 322 0000 08B5     		push	{r3, lr}
+ 323              		.cfi_def_cfa_offset 8
+ 324              		.cfi_offset 3, -8
+ 325              		.cfi_offset 14, -4
+ 136:.\Generated_Source\PSoC5/STOP.c ****     STOP_Disable();
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccypH71i.s 			page 13
+
+
+ 326              		.loc 1 136 0
+ 327 0002 FFF7FEFF 		bl	STOP_Disable
+ 328              	.LVL16:
+ 139:.\Generated_Source\PSoC5/STOP.c ****     STOP_SetVector(&IntDefaultHandler);
+ 329              		.loc 1 139 0
+ 330 0006 0248     		ldr	r0, .L32
+ 331 0008 FFF7FEFF 		bl	STOP_SetVector
+ 332              	.LVL17:
+ 333 000c 08BD     		pop	{r3, pc}
+ 334              	.L33:
+ 335 000e 00BF     		.align	2
+ 336              	.L32:
+ 337 0010 00000000 		.word	IntDefaultHandler
+ 338              		.cfi_endproc
+ 339              	.LFE2:
+ 340              		.size	STOP_Stop, .-STOP_Stop
+ 341              		.section	.text.STOP_SetPending,"ax",%progbits
+ 342              		.align	2
+ 343              		.global	STOP_SetPending
+ 344              		.thumb
+ 345              		.thumb_func
+ 346              		.type	STOP_SetPending, %function
+ 347              	STOP_SetPending:
+ 348              	.LFB11:
+ 348:.\Generated_Source\PSoC5/STOP.c **** }
+ 349:.\Generated_Source\PSoC5/STOP.c **** 
+ 350:.\Generated_Source\PSoC5/STOP.c **** 
+ 351:.\Generated_Source\PSoC5/STOP.c **** /*******************************************************************************
+ 352:.\Generated_Source\PSoC5/STOP.c **** * Function Name: STOP_SetPending
+ 353:.\Generated_Source\PSoC5/STOP.c **** ********************************************************************************
+ 354:.\Generated_Source\PSoC5/STOP.c **** *
+ 355:.\Generated_Source\PSoC5/STOP.c **** * Summary:
+ 356:.\Generated_Source\PSoC5/STOP.c **** *   Causes the Interrupt to enter the pending state, a software method of
+ 357:.\Generated_Source\PSoC5/STOP.c **** *   generating the interrupt.
+ 358:.\Generated_Source\PSoC5/STOP.c **** *
+ 359:.\Generated_Source\PSoC5/STOP.c **** * Parameters:
+ 360:.\Generated_Source\PSoC5/STOP.c **** *   None
+ 361:.\Generated_Source\PSoC5/STOP.c **** *
+ 362:.\Generated_Source\PSoC5/STOP.c **** * Return:
+ 363:.\Generated_Source\PSoC5/STOP.c **** *   None
+ 364:.\Generated_Source\PSoC5/STOP.c **** *
+ 365:.\Generated_Source\PSoC5/STOP.c **** * Side Effects:
+ 366:.\Generated_Source\PSoC5/STOP.c **** *   If interrupts are enabled and the interrupt is set up properly, the ISR is
+ 367:.\Generated_Source\PSoC5/STOP.c **** *   entered (depending on the priority of this interrupt and other pending 
+ 368:.\Generated_Source\PSoC5/STOP.c **** *   interrupts).
+ 369:.\Generated_Source\PSoC5/STOP.c **** *
+ 370:.\Generated_Source\PSoC5/STOP.c **** *******************************************************************************/
+ 371:.\Generated_Source\PSoC5/STOP.c **** void STOP_SetPending(void)
+ 372:.\Generated_Source\PSoC5/STOP.c **** {
+ 349              		.loc 1 372 0
+ 350              		.cfi_startproc
+ 351              		@ args = 0, pretend = 0, frame = 0
+ 352              		@ frame_needed = 0, uses_anonymous_args = 0
+ 353              		@ link register save eliminated.
+ 373:.\Generated_Source\PSoC5/STOP.c ****     *STOP_INTC_SET_PD = STOP__INTC_MASK;
+ 354              		.loc 1 373 0
+ 355 0000 0222     		movs	r2, #2
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccypH71i.s 			page 14
+
+
+ 356 0002 014B     		ldr	r3, .L35
+ 357 0004 1A60     		str	r2, [r3]
+ 358 0006 7047     		bx	lr
+ 359              	.L36:
+ 360              		.align	2
+ 361              	.L35:
+ 362 0008 00E200E0 		.word	-536813056
+ 363              		.cfi_endproc
+ 364              	.LFE11:
+ 365              		.size	STOP_SetPending, .-STOP_SetPending
+ 366              		.section	.text.STOP_ClearPending,"ax",%progbits
+ 367              		.align	2
+ 368              		.global	STOP_ClearPending
+ 369              		.thumb
+ 370              		.thumb_func
+ 371              		.type	STOP_ClearPending, %function
+ 372              	STOP_ClearPending:
+ 373              	.LFB12:
+ 374:.\Generated_Source\PSoC5/STOP.c **** }
+ 375:.\Generated_Source\PSoC5/STOP.c **** 
+ 376:.\Generated_Source\PSoC5/STOP.c **** 
+ 377:.\Generated_Source\PSoC5/STOP.c **** /*******************************************************************************
+ 378:.\Generated_Source\PSoC5/STOP.c **** * Function Name: STOP_ClearPending
+ 379:.\Generated_Source\PSoC5/STOP.c **** ********************************************************************************
+ 380:.\Generated_Source\PSoC5/STOP.c **** *
+ 381:.\Generated_Source\PSoC5/STOP.c **** * Summary:
+ 382:.\Generated_Source\PSoC5/STOP.c **** *   Clears a pending interrupt in the interrupt controller.
+ 383:.\Generated_Source\PSoC5/STOP.c **** *
+ 384:.\Generated_Source\PSoC5/STOP.c **** *   Note Some interrupt sources are clear-on-read and require the block 
+ 385:.\Generated_Source\PSoC5/STOP.c **** *   interrupt/status register to be read/cleared with the appropriate block API 
+ 386:.\Generated_Source\PSoC5/STOP.c **** *   (GPIO, UART, and so on). Otherwise the ISR will continue to remain in 
+ 387:.\Generated_Source\PSoC5/STOP.c **** *   pending state even though the interrupt itself is cleared using this API.
+ 388:.\Generated_Source\PSoC5/STOP.c **** *
+ 389:.\Generated_Source\PSoC5/STOP.c **** * Parameters:
+ 390:.\Generated_Source\PSoC5/STOP.c **** *   None
+ 391:.\Generated_Source\PSoC5/STOP.c **** *
+ 392:.\Generated_Source\PSoC5/STOP.c **** * Return:
+ 393:.\Generated_Source\PSoC5/STOP.c **** *   None
+ 394:.\Generated_Source\PSoC5/STOP.c **** *
+ 395:.\Generated_Source\PSoC5/STOP.c **** *******************************************************************************/
+ 396:.\Generated_Source\PSoC5/STOP.c **** void STOP_ClearPending(void)
+ 397:.\Generated_Source\PSoC5/STOP.c **** {
+ 374              		.loc 1 397 0
+ 375              		.cfi_startproc
+ 376              		@ args = 0, pretend = 0, frame = 0
+ 377              		@ frame_needed = 0, uses_anonymous_args = 0
+ 378              		@ link register save eliminated.
+ 398:.\Generated_Source\PSoC5/STOP.c ****     *STOP_INTC_CLR_PD = STOP__INTC_MASK;
+ 379              		.loc 1 398 0
+ 380 0000 0222     		movs	r2, #2
+ 381 0002 014B     		ldr	r3, .L38
+ 382 0004 1A60     		str	r2, [r3]
+ 383 0006 7047     		bx	lr
+ 384              	.L39:
+ 385              		.align	2
+ 386              	.L38:
+ 387 0008 80E200E0 		.word	-536812928
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccypH71i.s 			page 15
+
+
+ 388              		.cfi_endproc
+ 389              	.LFE12:
+ 390              		.size	STOP_ClearPending, .-STOP_ClearPending
+ 391              		.comm	timer_value,4,4
+ 392              		.comm	timer_status,4,4
+ 393              		.comm	heartbeatCounter,4,4
+ 394              		.comm	heartrate,4,4
+ 395              		.comm	speed,4,4
+ 396              		.comm	Prev_state,4,4
+ 397              		.comm	currentState,4,4
+ 398              		.comm	PROFILE,4,4
+ 399              		.comm	increasingHr,4,4
+ 400              		.comm	average,4,4
+ 401              		.text
+ 402              	.Letext0:
+ 403              		.file 2 "Generated_Source\\PSoC5/cytypes.h"
+ 404              		.file 3 "./states.h"
+ 405              		.file 4 "./heartrate.h"
+ 406              		.file 5 "./motor.h"
+ 407              		.section	.debug_info,"",%progbits
+ 408              	.Ldebug_info0:
+ 409 0000 78030000 		.4byte	0x378
+ 410 0004 0400     		.2byte	0x4
+ 411 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 412 000a 04       		.byte	0x4
+ 413 000b 01       		.uleb128 0x1
+ 414 000c CF000000 		.4byte	.LASF44
+ 415 0010 01       		.byte	0x1
+ 416 0011 6A000000 		.4byte	.LASF45
+ 417 0015 A1020000 		.4byte	.LASF46
+ 418 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 419 001d 00000000 		.4byte	0
+ 420 0021 00000000 		.4byte	.Ldebug_line0
+ 421 0025 02       		.uleb128 0x2
+ 422 0026 04       		.byte	0x4
+ 423 0027 05       		.byte	0x5
+ 424 0028 696E7400 		.ascii	"int\000"
+ 425 002c 03       		.uleb128 0x3
+ 426 002d 04       		.byte	0x4
+ 427 002e 07       		.byte	0x7
+ 428 002f 8E010000 		.4byte	.LASF0
+ 429 0033 03       		.uleb128 0x3
+ 430 0034 01       		.byte	0x1
+ 431 0035 06       		.byte	0x6
+ 432 0036 F7010000 		.4byte	.LASF1
+ 433 003a 03       		.uleb128 0x3
+ 434 003b 01       		.byte	0x1
+ 435 003c 08       		.byte	0x8
+ 436 003d 99000000 		.4byte	.LASF2
+ 437 0041 03       		.uleb128 0x3
+ 438 0042 02       		.byte	0x2
+ 439 0043 05       		.byte	0x5
+ 440 0044 76020000 		.4byte	.LASF3
+ 441 0048 03       		.uleb128 0x3
+ 442 0049 02       		.byte	0x2
+ 443 004a 07       		.byte	0x7
+ 444 004b 4B010000 		.4byte	.LASF4
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccypH71i.s 			page 16
+
+
+ 445 004f 03       		.uleb128 0x3
+ 446 0050 04       		.byte	0x4
+ 447 0051 05       		.byte	0x5
+ 448 0052 86020000 		.4byte	.LASF5
+ 449 0056 03       		.uleb128 0x3
+ 450 0057 04       		.byte	0x4
+ 451 0058 07       		.byte	0x7
+ 452 0059 BD000000 		.4byte	.LASF6
+ 453 005d 03       		.uleb128 0x3
+ 454 005e 08       		.byte	0x8
+ 455 005f 05       		.byte	0x5
+ 456 0060 00000000 		.4byte	.LASF7
+ 457 0064 03       		.uleb128 0x3
+ 458 0065 08       		.byte	0x8
+ 459 0066 07       		.byte	0x7
+ 460 0067 A3010000 		.4byte	.LASF8
+ 461 006b 03       		.uleb128 0x3
+ 462 006c 04       		.byte	0x4
+ 463 006d 07       		.byte	0x7
+ 464 006e 42020000 		.4byte	.LASF9
+ 465 0072 04       		.uleb128 0x4
+ 466 0073 04       		.byte	0x4
+ 467 0074 78000000 		.4byte	0x78
+ 468 0078 05       		.uleb128 0x5
+ 469 0079 03       		.uleb128 0x3
+ 470 007a 01       		.byte	0x1
+ 471 007b 08       		.byte	0x8
+ 472 007c 4B020000 		.4byte	.LASF10
+ 473 0080 06       		.uleb128 0x6
+ 474 0081 80020000 		.4byte	.LASF11
+ 475 0085 02       		.byte	0x2
+ 476 0086 B4       		.byte	0xb4
+ 477 0087 3A000000 		.4byte	0x3a
+ 478 008b 06       		.uleb128 0x6
+ 479 008c 7A010000 		.4byte	.LASF12
+ 480 0090 02       		.byte	0x2
+ 481 0091 B6       		.byte	0xb6
+ 482 0092 56000000 		.4byte	0x56
+ 483 0096 03       		.uleb128 0x3
+ 484 0097 04       		.byte	0x4
+ 485 0098 04       		.byte	0x4
+ 486 0099 64000000 		.4byte	.LASF13
+ 487 009d 03       		.uleb128 0x3
+ 488 009e 08       		.byte	0x8
+ 489 009f 04       		.byte	0x4
+ 490 00a0 67010000 		.4byte	.LASF14
+ 491 00a4 07       		.uleb128 0x7
+ 492 00a5 B8000000 		.4byte	.LASF15
+ 493 00a9 02       		.byte	0x2
+ 494 00aa 5E01     		.2byte	0x15e
+ 495 00ac B0000000 		.4byte	0xb0
+ 496 00b0 08       		.uleb128 0x8
+ 497 00b1 80000000 		.4byte	0x80
+ 498 00b5 07       		.uleb128 0x7
+ 499 00b6 0E000000 		.4byte	.LASF16
+ 500 00ba 02       		.byte	0x2
+ 501 00bb 6001     		.2byte	0x160
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccypH71i.s 			page 17
+
+
+ 502 00bd C1000000 		.4byte	0xc1
+ 503 00c1 08       		.uleb128 0x8
+ 504 00c2 8B000000 		.4byte	0x8b
+ 505 00c6 07       		.uleb128 0x7
+ 506 00c7 EA010000 		.4byte	.LASF17
+ 507 00cb 02       		.byte	0x2
+ 508 00cc 7001     		.2byte	0x170
+ 509 00ce 72000000 		.4byte	0x72
+ 510 00d2 06       		.uleb128 0x6
+ 511 00d3 9B020000 		.4byte	.LASF18
+ 512 00d7 03       		.byte	0x3
+ 513 00d8 11       		.byte	0x11
+ 514 00d9 25000000 		.4byte	0x25
+ 515 00dd 09       		.uleb128 0x9
+ 516 00de 18020000 		.4byte	.LASF26
+ 517 00e2 01       		.byte	0x1
+ 518 00e3 9F       		.byte	0x9f
+ 519 00e4 00000000 		.4byte	.LFB3
+ 520 00e8 0C000000 		.4byte	.LFE3-.LFB3
+ 521 00ec 01       		.uleb128 0x1
+ 522 00ed 9C       		.byte	0x9c
+ 523 00ee 0A       		.uleb128 0xa
+ 524 00ef 8A000000 		.4byte	.LASF20
+ 525 00f3 01       		.byte	0x1
+ 526 00f4 C3       		.byte	0xc3
+ 527 00f5 00000000 		.4byte	.LFB4
+ 528 00f9 0C000000 		.4byte	.LFE4-.LFB4
+ 529 00fd 01       		.uleb128 0x1
+ 530 00fe 9C       		.byte	0x9c
+ 531 00ff 1E010000 		.4byte	0x11e
+ 532 0103 0B       		.uleb128 0xb
+ 533 0104 9B010000 		.4byte	.LASF22
+ 534 0108 01       		.byte	0x1
+ 535 0109 C3       		.byte	0xc3
+ 536 010a C6000000 		.4byte	0xc6
+ 537 010e 01       		.uleb128 0x1
+ 538 010f 50       		.byte	0x50
+ 539 0110 0C       		.uleb128 0xc
+ 540 0111 50020000 		.4byte	.LASF19
+ 541 0115 01       		.byte	0x1
+ 542 0116 C5       		.byte	0xc5
+ 543 0117 1E010000 		.4byte	0x11e
+ 544 011b 01       		.uleb128 0x1
+ 545 011c 53       		.byte	0x53
+ 546 011d 00       		.byte	0
+ 547 011e 04       		.uleb128 0x4
+ 548 011f 04       		.byte	0x4
+ 549 0120 C6000000 		.4byte	0xc6
+ 550 0124 0D       		.uleb128 0xd
+ 551 0125 03020000 		.4byte	.LASF24
+ 552 0129 01       		.byte	0x1
+ 553 012a DB       		.byte	0xdb
+ 554 012b C6000000 		.4byte	0xc6
+ 555 012f 00000000 		.4byte	.LFB5
+ 556 0133 0C000000 		.4byte	.LFE5-.LFB5
+ 557 0137 01       		.uleb128 0x1
+ 558 0138 9C       		.byte	0x9c
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccypH71i.s 			page 18
+
+
+ 559 0139 4B010000 		.4byte	0x14b
+ 560 013d 0C       		.uleb128 0xc
+ 561 013e 50020000 		.4byte	.LASF19
+ 562 0142 01       		.byte	0x1
+ 563 0143 DD       		.byte	0xdd
+ 564 0144 1E010000 		.4byte	0x11e
+ 565 0148 01       		.uleb128 0x1
+ 566 0149 53       		.byte	0x53
+ 567 014a 00       		.byte	0
+ 568 014b 0A       		.uleb128 0xa
+ 569 014c 27020000 		.4byte	.LASF21
+ 570 0150 01       		.byte	0x1
+ 571 0151 FD       		.byte	0xfd
+ 572 0152 00000000 		.4byte	.LFB6
+ 573 0156 10000000 		.4byte	.LFE6-.LFB6
+ 574 015a 01       		.uleb128 0x1
+ 575 015b 9C       		.byte	0x9c
+ 576 015c 70010000 		.4byte	0x170
+ 577 0160 0E       		.uleb128 0xe
+ 578 0161 5E010000 		.4byte	.LASF23
+ 579 0165 01       		.byte	0x1
+ 580 0166 FD       		.byte	0xfd
+ 581 0167 80000000 		.4byte	0x80
+ 582 016b 00000000 		.4byte	.LLST0
+ 583 016f 00       		.byte	0
+ 584 0170 0F       		.uleb128 0xf
+ 585 0171 A7000000 		.4byte	.LASF25
+ 586 0175 01       		.byte	0x1
+ 587 0176 1301     		.2byte	0x113
+ 588 0178 80000000 		.4byte	0x80
+ 589 017c 00000000 		.4byte	.LFB7
+ 590 0180 0C000000 		.4byte	.LFE7-.LFB7
+ 591 0184 01       		.uleb128 0x1
+ 592 0185 9C       		.byte	0x9c
+ 593 0186 9B010000 		.4byte	0x19b
+ 594 018a 10       		.uleb128 0x10
+ 595 018b 5E010000 		.4byte	.LASF23
+ 596 018f 01       		.byte	0x1
+ 597 0190 1501     		.2byte	0x115
+ 598 0192 80000000 		.4byte	0x80
+ 599 0196 21000000 		.4byte	.LLST1
+ 600 019a 00       		.byte	0
+ 601 019b 11       		.uleb128 0x11
+ 602 019c 8F020000 		.4byte	.LASF27
+ 603 01a0 01       		.byte	0x1
+ 604 01a1 2E01     		.2byte	0x12e
+ 605 01a3 00000000 		.4byte	.LFB8
+ 606 01a7 0C000000 		.4byte	.LFE8-.LFB8
+ 607 01ab 01       		.uleb128 0x1
+ 608 01ac 9C       		.byte	0x9c
+ 609 01ad 12       		.uleb128 0x12
+ 610 01ae DE020000 		.4byte	.LASF47
+ 611 01b2 01       		.byte	0x1
+ 612 01b3 4301     		.2byte	0x143
+ 613 01b5 80000000 		.4byte	0x80
+ 614 01b9 00000000 		.4byte	.LFB9
+ 615 01bd 18000000 		.4byte	.LFE9-.LFB9
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccypH71i.s 			page 19
+
+
+ 616 01c1 01       		.uleb128 0x1
+ 617 01c2 9C       		.byte	0x9c
+ 618 01c3 11       		.uleb128 0x11
+ 619 01c4 69020000 		.4byte	.LASF28
+ 620 01c8 01       		.byte	0x1
+ 621 01c9 5801     		.2byte	0x158
+ 622 01cb 00000000 		.4byte	.LFB10
+ 623 01cf 0C000000 		.4byte	.LFE10-.LFB10
+ 624 01d3 01       		.uleb128 0x1
+ 625 01d4 9C       		.byte	0x9c
+ 626 01d5 0A       		.uleb128 0xa
+ 627 01d6 CA010000 		.4byte	.LASF29
+ 628 01da 01       		.byte	0x1
+ 629 01db 3C       		.byte	0x3c
+ 630 01dc 00000000 		.4byte	.LFB0
+ 631 01e0 1C000000 		.4byte	.LFE0-.LFB0
+ 632 01e4 01       		.uleb128 0x1
+ 633 01e5 9C       		.byte	0x9c
+ 634 01e6 27020000 		.4byte	0x227
+ 635 01ea 13       		.uleb128 0x13
+ 636 01eb 06000000 		.4byte	.LVL7
+ 637 01ef C3010000 		.4byte	0x1c3
+ 638 01f3 14       		.uleb128 0x14
+ 639 01f4 0C000000 		.4byte	.LVL8
+ 640 01f8 EE000000 		.4byte	0xee
+ 641 01fc 0A020000 		.4byte	0x20a
+ 642 0200 15       		.uleb128 0x15
+ 643 0201 01       		.uleb128 0x1
+ 644 0202 50       		.byte	0x50
+ 645 0203 05       		.uleb128 0x5
+ 646 0204 03       		.byte	0x3
+ 647 0205 00000000 		.4byte	STOP_Interrupt
+ 648 0209 00       		.byte	0
+ 649 020a 14       		.uleb128 0x14
+ 650 020b 12000000 		.4byte	.LVL9
+ 651 020f 4B010000 		.4byte	0x14b
+ 652 0213 1D020000 		.4byte	0x21d
+ 653 0217 15       		.uleb128 0x15
+ 654 0218 01       		.uleb128 0x1
+ 655 0219 50       		.byte	0x50
+ 656 021a 01       		.uleb128 0x1
+ 657 021b 37       		.byte	0x37
+ 658 021c 00       		.byte	0
+ 659 021d 13       		.uleb128 0x13
+ 660 021e 16000000 		.4byte	.LVL10
+ 661 0222 9B010000 		.4byte	0x19b
+ 662 0226 00       		.byte	0
+ 663 0227 0A       		.uleb128 0xa
+ 664 0228 DD010000 		.4byte	.LASF30
+ 665 022c 01       		.byte	0x1
+ 666 022d 67       		.byte	0x67
+ 667 022e 00000000 		.4byte	.LFB1
+ 668 0232 1A000000 		.4byte	.LFE1-.LFB1
+ 669 0236 01       		.uleb128 0x1
+ 670 0237 9C       		.byte	0x9c
+ 671 0238 85020000 		.4byte	0x285
+ 672 023c 0E       		.uleb128 0xe
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccypH71i.s 			page 20
+
+
+ 673 023d 9B010000 		.4byte	.LASF22
+ 674 0241 01       		.byte	0x1
+ 675 0242 67       		.byte	0x67
+ 676 0243 C6000000 		.4byte	0xc6
+ 677 0247 38000000 		.4byte	.LLST2
+ 678 024b 13       		.uleb128 0x13
+ 679 024c 08000000 		.4byte	.LVL12
+ 680 0250 C3010000 		.4byte	0x1c3
+ 681 0254 14       		.uleb128 0x14
+ 682 0255 0E000000 		.4byte	.LVL13
+ 683 0259 EE000000 		.4byte	0xee
+ 684 025d 68020000 		.4byte	0x268
+ 685 0261 15       		.uleb128 0x15
+ 686 0262 01       		.uleb128 0x1
+ 687 0263 50       		.byte	0x50
+ 688 0264 02       		.uleb128 0x2
+ 689 0265 74       		.byte	0x74
+ 690 0266 00       		.sleb128 0
+ 691 0267 00       		.byte	0
+ 692 0268 14       		.uleb128 0x14
+ 693 0269 14000000 		.4byte	.LVL14
+ 694 026d 4B010000 		.4byte	0x14b
+ 695 0271 7B020000 		.4byte	0x27b
+ 696 0275 15       		.uleb128 0x15
+ 697 0276 01       		.uleb128 0x1
+ 698 0277 50       		.byte	0x50
+ 699 0278 01       		.uleb128 0x1
+ 700 0279 37       		.byte	0x37
+ 701 027a 00       		.byte	0
+ 702 027b 13       		.uleb128 0x13
+ 703 027c 18000000 		.4byte	.LVL15
+ 704 0280 9B010000 		.4byte	0x19b
+ 705 0284 00       		.byte	0
+ 706 0285 0A       		.uleb128 0xa
+ 707 0286 5F020000 		.4byte	.LASF31
+ 708 028a 01       		.byte	0x1
+ 709 028b 85       		.byte	0x85
+ 710 028c 00000000 		.4byte	.LFB2
+ 711 0290 14000000 		.4byte	.LFE2-.LFB2
+ 712 0294 01       		.uleb128 0x1
+ 713 0295 9C       		.byte	0x9c
+ 714 0296 AD020000 		.4byte	0x2ad
+ 715 029a 13       		.uleb128 0x13
+ 716 029b 06000000 		.4byte	.LVL16
+ 717 029f C3010000 		.4byte	0x1c3
+ 718 02a3 13       		.uleb128 0x13
+ 719 02a4 0C000000 		.4byte	.LVL17
+ 720 02a8 EE000000 		.4byte	0xee
+ 721 02ac 00       		.byte	0
+ 722 02ad 11       		.uleb128 0x11
+ 723 02ae BA010000 		.4byte	.LASF32
+ 724 02b2 01       		.byte	0x1
+ 725 02b3 7301     		.2byte	0x173
+ 726 02b5 00000000 		.4byte	.LFB11
+ 727 02b9 0C000000 		.4byte	.LFE11-.LFB11
+ 728 02bd 01       		.uleb128 0x1
+ 729 02be 9C       		.byte	0x9c
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccypH71i.s 			page 21
+
+
+ 730 02bf 11       		.uleb128 0x11
+ 731 02c0 41000000 		.4byte	.LASF33
+ 732 02c4 01       		.byte	0x1
+ 733 02c5 8C01     		.2byte	0x18c
+ 734 02c7 00000000 		.4byte	.LFB12
+ 735 02cb 0C000000 		.4byte	.LFE12-.LFB12
+ 736 02cf 01       		.uleb128 0x1
+ 737 02d0 9C       		.byte	0x9c
+ 738 02d1 16       		.uleb128 0x16
+ 739 02d2 38020000 		.4byte	.LASF34
+ 740 02d6 04       		.byte	0x4
+ 741 02d7 13       		.byte	0x13
+ 742 02d8 96000000 		.4byte	0x96
+ 743 02dc 05       		.uleb128 0x5
+ 744 02dd 03       		.byte	0x3
+ 745 02de 00000000 		.4byte	heartrate
+ 746 02e2 16       		.uleb128 0x16
+ 747 02e3 D5010000 		.4byte	.LASF35
+ 748 02e7 03       		.byte	0x3
+ 749 02e8 15       		.byte	0x15
+ 750 02e9 96000000 		.4byte	0x96
+ 751 02ed 05       		.uleb128 0x5
+ 752 02ee 03       		.byte	0x3
+ 753 02ef 00000000 		.4byte	average
+ 754 02f3 16       		.uleb128 0x16
+ 755 02f4 81010000 		.4byte	.LASF36
+ 756 02f8 03       		.byte	0x3
+ 757 02f9 16       		.byte	0x16
+ 758 02fa 25000000 		.4byte	0x25
+ 759 02fe 05       		.uleb128 0x5
+ 760 02ff 03       		.byte	0x3
+ 761 0300 00000000 		.4byte	increasingHr
+ 762 0304 16       		.uleb128 0x16
+ 763 0305 39000000 		.4byte	.LASF37
+ 764 0309 03       		.byte	0x3
+ 765 030a 18       		.byte	0x18
+ 766 030b 25000000 		.4byte	0x25
+ 767 030f 05       		.uleb128 0x5
+ 768 0310 03       		.byte	0x3
+ 769 0311 00000000 		.4byte	PROFILE
+ 770 0315 16       		.uleb128 0x16
+ 771 0316 14000000 		.4byte	.LASF38
+ 772 031a 03       		.byte	0x3
+ 773 031b 35       		.byte	0x35
+ 774 031c D2000000 		.4byte	0xd2
+ 775 0320 05       		.uleb128 0x5
+ 776 0321 03       		.byte	0x3
+ 777 0322 00000000 		.4byte	currentState
+ 778 0326 16       		.uleb128 0x16
+ 779 0327 21000000 		.4byte	.LASF39
+ 780 032b 03       		.byte	0x3
+ 781 032c 37       		.byte	0x37
+ 782 032d D2000000 		.4byte	0xd2
+ 783 0331 05       		.uleb128 0x5
+ 784 0332 03       		.byte	0x3
+ 785 0333 00000000 		.4byte	Prev_state
+ 786 0337 16       		.uleb128 0x16
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccypH71i.s 			page 22
+
+
+ 787 0338 12020000 		.4byte	.LASF40
+ 788 033c 05       		.byte	0x5
+ 789 033d 12       		.byte	0x12
+ 790 033e 25000000 		.4byte	0x25
+ 791 0342 05       		.uleb128 0x5
+ 792 0343 03       		.byte	0x3
+ 793 0344 00000000 		.4byte	speed
+ 794 0348 16       		.uleb128 0x16
+ 795 0349 53000000 		.4byte	.LASF41
+ 796 034d 04       		.byte	0x4
+ 797 034e 14       		.byte	0x14
+ 798 034f 96000000 		.4byte	0x96
+ 799 0353 05       		.uleb128 0x5
+ 800 0354 03       		.byte	0x3
+ 801 0355 00000000 		.4byte	heartbeatCounter
+ 802 0359 16       		.uleb128 0x16
+ 803 035a 2C000000 		.4byte	.LASF42
+ 804 035e 04       		.byte	0x4
+ 805 035f 15       		.byte	0x15
+ 806 0360 25000000 		.4byte	0x25
+ 807 0364 05       		.uleb128 0x5
+ 808 0365 03       		.byte	0x3
+ 809 0366 00000000 		.4byte	timer_status
+ 810 036a 16       		.uleb128 0x16
+ 811 036b 6E010000 		.4byte	.LASF43
+ 812 036f 04       		.byte	0x4
+ 813 0370 16       		.byte	0x16
+ 814 0371 25000000 		.4byte	0x25
+ 815 0375 05       		.uleb128 0x5
+ 816 0376 03       		.byte	0x3
+ 817 0377 00000000 		.4byte	timer_value
+ 818 037b 00       		.byte	0
+ 819              		.section	.debug_abbrev,"",%progbits
+ 820              	.Ldebug_abbrev0:
+ 821 0000 01       		.uleb128 0x1
+ 822 0001 11       		.uleb128 0x11
+ 823 0002 01       		.byte	0x1
+ 824 0003 25       		.uleb128 0x25
+ 825 0004 0E       		.uleb128 0xe
+ 826 0005 13       		.uleb128 0x13
+ 827 0006 0B       		.uleb128 0xb
+ 828 0007 03       		.uleb128 0x3
+ 829 0008 0E       		.uleb128 0xe
+ 830 0009 1B       		.uleb128 0x1b
+ 831 000a 0E       		.uleb128 0xe
+ 832 000b 55       		.uleb128 0x55
+ 833 000c 17       		.uleb128 0x17
+ 834 000d 11       		.uleb128 0x11
+ 835 000e 01       		.uleb128 0x1
+ 836 000f 10       		.uleb128 0x10
+ 837 0010 17       		.uleb128 0x17
+ 838 0011 00       		.byte	0
+ 839 0012 00       		.byte	0
+ 840 0013 02       		.uleb128 0x2
+ 841 0014 24       		.uleb128 0x24
+ 842 0015 00       		.byte	0
+ 843 0016 0B       		.uleb128 0xb
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccypH71i.s 			page 23
+
+
+ 844 0017 0B       		.uleb128 0xb
+ 845 0018 3E       		.uleb128 0x3e
+ 846 0019 0B       		.uleb128 0xb
+ 847 001a 03       		.uleb128 0x3
+ 848 001b 08       		.uleb128 0x8
+ 849 001c 00       		.byte	0
+ 850 001d 00       		.byte	0
+ 851 001e 03       		.uleb128 0x3
+ 852 001f 24       		.uleb128 0x24
+ 853 0020 00       		.byte	0
+ 854 0021 0B       		.uleb128 0xb
+ 855 0022 0B       		.uleb128 0xb
+ 856 0023 3E       		.uleb128 0x3e
+ 857 0024 0B       		.uleb128 0xb
+ 858 0025 03       		.uleb128 0x3
+ 859 0026 0E       		.uleb128 0xe
+ 860 0027 00       		.byte	0
+ 861 0028 00       		.byte	0
+ 862 0029 04       		.uleb128 0x4
+ 863 002a 0F       		.uleb128 0xf
+ 864 002b 00       		.byte	0
+ 865 002c 0B       		.uleb128 0xb
+ 866 002d 0B       		.uleb128 0xb
+ 867 002e 49       		.uleb128 0x49
+ 868 002f 13       		.uleb128 0x13
+ 869 0030 00       		.byte	0
+ 870 0031 00       		.byte	0
+ 871 0032 05       		.uleb128 0x5
+ 872 0033 15       		.uleb128 0x15
+ 873 0034 00       		.byte	0
+ 874 0035 27       		.uleb128 0x27
+ 875 0036 19       		.uleb128 0x19
+ 876 0037 00       		.byte	0
+ 877 0038 00       		.byte	0
+ 878 0039 06       		.uleb128 0x6
+ 879 003a 16       		.uleb128 0x16
+ 880 003b 00       		.byte	0
+ 881 003c 03       		.uleb128 0x3
+ 882 003d 0E       		.uleb128 0xe
+ 883 003e 3A       		.uleb128 0x3a
+ 884 003f 0B       		.uleb128 0xb
+ 885 0040 3B       		.uleb128 0x3b
+ 886 0041 0B       		.uleb128 0xb
+ 887 0042 49       		.uleb128 0x49
+ 888 0043 13       		.uleb128 0x13
+ 889 0044 00       		.byte	0
+ 890 0045 00       		.byte	0
+ 891 0046 07       		.uleb128 0x7
+ 892 0047 16       		.uleb128 0x16
+ 893 0048 00       		.byte	0
+ 894 0049 03       		.uleb128 0x3
+ 895 004a 0E       		.uleb128 0xe
+ 896 004b 3A       		.uleb128 0x3a
+ 897 004c 0B       		.uleb128 0xb
+ 898 004d 3B       		.uleb128 0x3b
+ 899 004e 05       		.uleb128 0x5
+ 900 004f 49       		.uleb128 0x49
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccypH71i.s 			page 24
+
+
+ 901 0050 13       		.uleb128 0x13
+ 902 0051 00       		.byte	0
+ 903 0052 00       		.byte	0
+ 904 0053 08       		.uleb128 0x8
+ 905 0054 35       		.uleb128 0x35
+ 906 0055 00       		.byte	0
+ 907 0056 49       		.uleb128 0x49
+ 908 0057 13       		.uleb128 0x13
+ 909 0058 00       		.byte	0
+ 910 0059 00       		.byte	0
+ 911 005a 09       		.uleb128 0x9
+ 912 005b 2E       		.uleb128 0x2e
+ 913 005c 00       		.byte	0
+ 914 005d 3F       		.uleb128 0x3f
+ 915 005e 19       		.uleb128 0x19
+ 916 005f 03       		.uleb128 0x3
+ 917 0060 0E       		.uleb128 0xe
+ 918 0061 3A       		.uleb128 0x3a
+ 919 0062 0B       		.uleb128 0xb
+ 920 0063 3B       		.uleb128 0x3b
+ 921 0064 0B       		.uleb128 0xb
+ 922 0065 27       		.uleb128 0x27
+ 923 0066 19       		.uleb128 0x19
+ 924 0067 11       		.uleb128 0x11
+ 925 0068 01       		.uleb128 0x1
+ 926 0069 12       		.uleb128 0x12
+ 927 006a 06       		.uleb128 0x6
+ 928 006b 40       		.uleb128 0x40
+ 929 006c 18       		.uleb128 0x18
+ 930 006d 9742     		.uleb128 0x2117
+ 931 006f 19       		.uleb128 0x19
+ 932 0070 00       		.byte	0
+ 933 0071 00       		.byte	0
+ 934 0072 0A       		.uleb128 0xa
+ 935 0073 2E       		.uleb128 0x2e
+ 936 0074 01       		.byte	0x1
+ 937 0075 3F       		.uleb128 0x3f
+ 938 0076 19       		.uleb128 0x19
+ 939 0077 03       		.uleb128 0x3
+ 940 0078 0E       		.uleb128 0xe
+ 941 0079 3A       		.uleb128 0x3a
+ 942 007a 0B       		.uleb128 0xb
+ 943 007b 3B       		.uleb128 0x3b
+ 944 007c 0B       		.uleb128 0xb
+ 945 007d 27       		.uleb128 0x27
+ 946 007e 19       		.uleb128 0x19
+ 947 007f 11       		.uleb128 0x11
+ 948 0080 01       		.uleb128 0x1
+ 949 0081 12       		.uleb128 0x12
+ 950 0082 06       		.uleb128 0x6
+ 951 0083 40       		.uleb128 0x40
+ 952 0084 18       		.uleb128 0x18
+ 953 0085 9742     		.uleb128 0x2117
+ 954 0087 19       		.uleb128 0x19
+ 955 0088 01       		.uleb128 0x1
+ 956 0089 13       		.uleb128 0x13
+ 957 008a 00       		.byte	0
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccypH71i.s 			page 25
+
+
+ 958 008b 00       		.byte	0
+ 959 008c 0B       		.uleb128 0xb
+ 960 008d 05       		.uleb128 0x5
+ 961 008e 00       		.byte	0
+ 962 008f 03       		.uleb128 0x3
+ 963 0090 0E       		.uleb128 0xe
+ 964 0091 3A       		.uleb128 0x3a
+ 965 0092 0B       		.uleb128 0xb
+ 966 0093 3B       		.uleb128 0x3b
+ 967 0094 0B       		.uleb128 0xb
+ 968 0095 49       		.uleb128 0x49
+ 969 0096 13       		.uleb128 0x13
+ 970 0097 02       		.uleb128 0x2
+ 971 0098 18       		.uleb128 0x18
+ 972 0099 00       		.byte	0
+ 973 009a 00       		.byte	0
+ 974 009b 0C       		.uleb128 0xc
+ 975 009c 34       		.uleb128 0x34
+ 976 009d 00       		.byte	0
+ 977 009e 03       		.uleb128 0x3
+ 978 009f 0E       		.uleb128 0xe
+ 979 00a0 3A       		.uleb128 0x3a
+ 980 00a1 0B       		.uleb128 0xb
+ 981 00a2 3B       		.uleb128 0x3b
+ 982 00a3 0B       		.uleb128 0xb
+ 983 00a4 49       		.uleb128 0x49
+ 984 00a5 13       		.uleb128 0x13
+ 985 00a6 02       		.uleb128 0x2
+ 986 00a7 18       		.uleb128 0x18
+ 987 00a8 00       		.byte	0
+ 988 00a9 00       		.byte	0
+ 989 00aa 0D       		.uleb128 0xd
+ 990 00ab 2E       		.uleb128 0x2e
+ 991 00ac 01       		.byte	0x1
+ 992 00ad 3F       		.uleb128 0x3f
+ 993 00ae 19       		.uleb128 0x19
+ 994 00af 03       		.uleb128 0x3
+ 995 00b0 0E       		.uleb128 0xe
+ 996 00b1 3A       		.uleb128 0x3a
+ 997 00b2 0B       		.uleb128 0xb
+ 998 00b3 3B       		.uleb128 0x3b
+ 999 00b4 0B       		.uleb128 0xb
+ 1000 00b5 27       		.uleb128 0x27
+ 1001 00b6 19       		.uleb128 0x19
+ 1002 00b7 49       		.uleb128 0x49
+ 1003 00b8 13       		.uleb128 0x13
+ 1004 00b9 11       		.uleb128 0x11
+ 1005 00ba 01       		.uleb128 0x1
+ 1006 00bb 12       		.uleb128 0x12
+ 1007 00bc 06       		.uleb128 0x6
+ 1008 00bd 40       		.uleb128 0x40
+ 1009 00be 18       		.uleb128 0x18
+ 1010 00bf 9742     		.uleb128 0x2117
+ 1011 00c1 19       		.uleb128 0x19
+ 1012 00c2 01       		.uleb128 0x1
+ 1013 00c3 13       		.uleb128 0x13
+ 1014 00c4 00       		.byte	0
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccypH71i.s 			page 26
+
+
+ 1015 00c5 00       		.byte	0
+ 1016 00c6 0E       		.uleb128 0xe
+ 1017 00c7 05       		.uleb128 0x5
+ 1018 00c8 00       		.byte	0
+ 1019 00c9 03       		.uleb128 0x3
+ 1020 00ca 0E       		.uleb128 0xe
+ 1021 00cb 3A       		.uleb128 0x3a
+ 1022 00cc 0B       		.uleb128 0xb
+ 1023 00cd 3B       		.uleb128 0x3b
+ 1024 00ce 0B       		.uleb128 0xb
+ 1025 00cf 49       		.uleb128 0x49
+ 1026 00d0 13       		.uleb128 0x13
+ 1027 00d1 02       		.uleb128 0x2
+ 1028 00d2 17       		.uleb128 0x17
+ 1029 00d3 00       		.byte	0
+ 1030 00d4 00       		.byte	0
+ 1031 00d5 0F       		.uleb128 0xf
+ 1032 00d6 2E       		.uleb128 0x2e
+ 1033 00d7 01       		.byte	0x1
+ 1034 00d8 3F       		.uleb128 0x3f
+ 1035 00d9 19       		.uleb128 0x19
+ 1036 00da 03       		.uleb128 0x3
+ 1037 00db 0E       		.uleb128 0xe
+ 1038 00dc 3A       		.uleb128 0x3a
+ 1039 00dd 0B       		.uleb128 0xb
+ 1040 00de 3B       		.uleb128 0x3b
+ 1041 00df 05       		.uleb128 0x5
+ 1042 00e0 27       		.uleb128 0x27
+ 1043 00e1 19       		.uleb128 0x19
+ 1044 00e2 49       		.uleb128 0x49
+ 1045 00e3 13       		.uleb128 0x13
+ 1046 00e4 11       		.uleb128 0x11
+ 1047 00e5 01       		.uleb128 0x1
+ 1048 00e6 12       		.uleb128 0x12
+ 1049 00e7 06       		.uleb128 0x6
+ 1050 00e8 40       		.uleb128 0x40
+ 1051 00e9 18       		.uleb128 0x18
+ 1052 00ea 9742     		.uleb128 0x2117
+ 1053 00ec 19       		.uleb128 0x19
+ 1054 00ed 01       		.uleb128 0x1
+ 1055 00ee 13       		.uleb128 0x13
+ 1056 00ef 00       		.byte	0
+ 1057 00f0 00       		.byte	0
+ 1058 00f1 10       		.uleb128 0x10
+ 1059 00f2 34       		.uleb128 0x34
+ 1060 00f3 00       		.byte	0
+ 1061 00f4 03       		.uleb128 0x3
+ 1062 00f5 0E       		.uleb128 0xe
+ 1063 00f6 3A       		.uleb128 0x3a
+ 1064 00f7 0B       		.uleb128 0xb
+ 1065 00f8 3B       		.uleb128 0x3b
+ 1066 00f9 05       		.uleb128 0x5
+ 1067 00fa 49       		.uleb128 0x49
+ 1068 00fb 13       		.uleb128 0x13
+ 1069 00fc 02       		.uleb128 0x2
+ 1070 00fd 17       		.uleb128 0x17
+ 1071 00fe 00       		.byte	0
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccypH71i.s 			page 27
+
+
+ 1072 00ff 00       		.byte	0
+ 1073 0100 11       		.uleb128 0x11
+ 1074 0101 2E       		.uleb128 0x2e
+ 1075 0102 00       		.byte	0
+ 1076 0103 3F       		.uleb128 0x3f
+ 1077 0104 19       		.uleb128 0x19
+ 1078 0105 03       		.uleb128 0x3
+ 1079 0106 0E       		.uleb128 0xe
+ 1080 0107 3A       		.uleb128 0x3a
+ 1081 0108 0B       		.uleb128 0xb
+ 1082 0109 3B       		.uleb128 0x3b
+ 1083 010a 05       		.uleb128 0x5
+ 1084 010b 27       		.uleb128 0x27
+ 1085 010c 19       		.uleb128 0x19
+ 1086 010d 11       		.uleb128 0x11
+ 1087 010e 01       		.uleb128 0x1
+ 1088 010f 12       		.uleb128 0x12
+ 1089 0110 06       		.uleb128 0x6
+ 1090 0111 40       		.uleb128 0x40
+ 1091 0112 18       		.uleb128 0x18
+ 1092 0113 9742     		.uleb128 0x2117
+ 1093 0115 19       		.uleb128 0x19
+ 1094 0116 00       		.byte	0
+ 1095 0117 00       		.byte	0
+ 1096 0118 12       		.uleb128 0x12
+ 1097 0119 2E       		.uleb128 0x2e
+ 1098 011a 00       		.byte	0
+ 1099 011b 3F       		.uleb128 0x3f
+ 1100 011c 19       		.uleb128 0x19
+ 1101 011d 03       		.uleb128 0x3
+ 1102 011e 0E       		.uleb128 0xe
+ 1103 011f 3A       		.uleb128 0x3a
+ 1104 0120 0B       		.uleb128 0xb
+ 1105 0121 3B       		.uleb128 0x3b
+ 1106 0122 05       		.uleb128 0x5
+ 1107 0123 27       		.uleb128 0x27
+ 1108 0124 19       		.uleb128 0x19
+ 1109 0125 49       		.uleb128 0x49
+ 1110 0126 13       		.uleb128 0x13
+ 1111 0127 11       		.uleb128 0x11
+ 1112 0128 01       		.uleb128 0x1
+ 1113 0129 12       		.uleb128 0x12
+ 1114 012a 06       		.uleb128 0x6
+ 1115 012b 40       		.uleb128 0x40
+ 1116 012c 18       		.uleb128 0x18
+ 1117 012d 9742     		.uleb128 0x2117
+ 1118 012f 19       		.uleb128 0x19
+ 1119 0130 00       		.byte	0
+ 1120 0131 00       		.byte	0
+ 1121 0132 13       		.uleb128 0x13
+ 1122 0133 898201   		.uleb128 0x4109
+ 1123 0136 00       		.byte	0
+ 1124 0137 11       		.uleb128 0x11
+ 1125 0138 01       		.uleb128 0x1
+ 1126 0139 31       		.uleb128 0x31
+ 1127 013a 13       		.uleb128 0x13
+ 1128 013b 00       		.byte	0
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccypH71i.s 			page 28
+
+
+ 1129 013c 00       		.byte	0
+ 1130 013d 14       		.uleb128 0x14
+ 1131 013e 898201   		.uleb128 0x4109
+ 1132 0141 01       		.byte	0x1
+ 1133 0142 11       		.uleb128 0x11
+ 1134 0143 01       		.uleb128 0x1
+ 1135 0144 31       		.uleb128 0x31
+ 1136 0145 13       		.uleb128 0x13
+ 1137 0146 01       		.uleb128 0x1
+ 1138 0147 13       		.uleb128 0x13
+ 1139 0148 00       		.byte	0
+ 1140 0149 00       		.byte	0
+ 1141 014a 15       		.uleb128 0x15
+ 1142 014b 8A8201   		.uleb128 0x410a
+ 1143 014e 00       		.byte	0
+ 1144 014f 02       		.uleb128 0x2
+ 1145 0150 18       		.uleb128 0x18
+ 1146 0151 9142     		.uleb128 0x2111
+ 1147 0153 18       		.uleb128 0x18
+ 1148 0154 00       		.byte	0
+ 1149 0155 00       		.byte	0
+ 1150 0156 16       		.uleb128 0x16
+ 1151 0157 34       		.uleb128 0x34
+ 1152 0158 00       		.byte	0
+ 1153 0159 03       		.uleb128 0x3
+ 1154 015a 0E       		.uleb128 0xe
+ 1155 015b 3A       		.uleb128 0x3a
+ 1156 015c 0B       		.uleb128 0xb
+ 1157 015d 3B       		.uleb128 0x3b
+ 1158 015e 0B       		.uleb128 0xb
+ 1159 015f 49       		.uleb128 0x49
+ 1160 0160 13       		.uleb128 0x13
+ 1161 0161 3F       		.uleb128 0x3f
+ 1162 0162 19       		.uleb128 0x19
+ 1163 0163 02       		.uleb128 0x2
+ 1164 0164 18       		.uleb128 0x18
+ 1165 0165 00       		.byte	0
+ 1166 0166 00       		.byte	0
+ 1167 0167 00       		.byte	0
+ 1168              		.section	.debug_loc,"",%progbits
+ 1169              	.Ldebug_loc0:
+ 1170              	.LLST0:
+ 1171 0000 00000000 		.4byte	.LVL3
+ 1172 0004 02000000 		.4byte	.LVL4
+ 1173 0008 0100     		.2byte	0x1
+ 1174 000a 50       		.byte	0x50
+ 1175 000b 02000000 		.4byte	.LVL4
+ 1176 000f 10000000 		.4byte	.LFE6
+ 1177 0013 0400     		.2byte	0x4
+ 1178 0015 F3       		.byte	0xf3
+ 1179 0016 01       		.uleb128 0x1
+ 1180 0017 50       		.byte	0x50
+ 1181 0018 9F       		.byte	0x9f
+ 1182 0019 00000000 		.4byte	0
+ 1183 001d 00000000 		.4byte	0
+ 1184              	.LLST1:
+ 1185 0021 04000000 		.4byte	.LVL5
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccypH71i.s 			page 29
+
+
+ 1186 0025 06000000 		.4byte	.LVL6
+ 1187 0029 0500     		.2byte	0x5
+ 1188 002b 70       		.byte	0x70
+ 1189 002c 00       		.sleb128 0
+ 1190 002d 35       		.byte	0x35
+ 1191 002e 25       		.byte	0x25
+ 1192 002f 9F       		.byte	0x9f
+ 1193 0030 00000000 		.4byte	0
+ 1194 0034 00000000 		.4byte	0
+ 1195              	.LLST2:
+ 1196 0038 00000000 		.4byte	.LVL11
+ 1197 003c 07000000 		.4byte	.LVL12-1
+ 1198 0040 0100     		.2byte	0x1
+ 1199 0042 50       		.byte	0x50
+ 1200 0043 07000000 		.4byte	.LVL12-1
+ 1201 0047 1A000000 		.4byte	.LFE1
+ 1202 004b 0100     		.2byte	0x1
+ 1203 004d 54       		.byte	0x54
+ 1204 004e 00000000 		.4byte	0
+ 1205 0052 00000000 		.4byte	0
+ 1206              		.section	.debug_aranges,"",%progbits
+ 1207 0000 7C000000 		.4byte	0x7c
+ 1208 0004 0200     		.2byte	0x2
+ 1209 0006 00000000 		.4byte	.Ldebug_info0
+ 1210 000a 04       		.byte	0x4
+ 1211 000b 00       		.byte	0
+ 1212 000c 0000     		.2byte	0
+ 1213 000e 0000     		.2byte	0
+ 1214 0010 00000000 		.4byte	.LFB3
+ 1215 0014 0C000000 		.4byte	.LFE3-.LFB3
+ 1216 0018 00000000 		.4byte	.LFB4
+ 1217 001c 0C000000 		.4byte	.LFE4-.LFB4
+ 1218 0020 00000000 		.4byte	.LFB5
+ 1219 0024 0C000000 		.4byte	.LFE5-.LFB5
+ 1220 0028 00000000 		.4byte	.LFB6
+ 1221 002c 10000000 		.4byte	.LFE6-.LFB6
+ 1222 0030 00000000 		.4byte	.LFB7
+ 1223 0034 0C000000 		.4byte	.LFE7-.LFB7
+ 1224 0038 00000000 		.4byte	.LFB8
+ 1225 003c 0C000000 		.4byte	.LFE8-.LFB8
+ 1226 0040 00000000 		.4byte	.LFB9
+ 1227 0044 18000000 		.4byte	.LFE9-.LFB9
+ 1228 0048 00000000 		.4byte	.LFB10
+ 1229 004c 0C000000 		.4byte	.LFE10-.LFB10
+ 1230 0050 00000000 		.4byte	.LFB0
+ 1231 0054 1C000000 		.4byte	.LFE0-.LFB0
+ 1232 0058 00000000 		.4byte	.LFB1
+ 1233 005c 1A000000 		.4byte	.LFE1-.LFB1
+ 1234 0060 00000000 		.4byte	.LFB2
+ 1235 0064 14000000 		.4byte	.LFE2-.LFB2
+ 1236 0068 00000000 		.4byte	.LFB11
+ 1237 006c 0C000000 		.4byte	.LFE11-.LFB11
+ 1238 0070 00000000 		.4byte	.LFB12
+ 1239 0074 0C000000 		.4byte	.LFE12-.LFB12
+ 1240 0078 00000000 		.4byte	0
+ 1241 007c 00000000 		.4byte	0
+ 1242              		.section	.debug_ranges,"",%progbits
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccypH71i.s 			page 30
+
+
+ 1243              	.Ldebug_ranges0:
+ 1244 0000 00000000 		.4byte	.LFB3
+ 1245 0004 0C000000 		.4byte	.LFE3
+ 1246 0008 00000000 		.4byte	.LFB4
+ 1247 000c 0C000000 		.4byte	.LFE4
+ 1248 0010 00000000 		.4byte	.LFB5
+ 1249 0014 0C000000 		.4byte	.LFE5
+ 1250 0018 00000000 		.4byte	.LFB6
+ 1251 001c 10000000 		.4byte	.LFE6
+ 1252 0020 00000000 		.4byte	.LFB7
+ 1253 0024 0C000000 		.4byte	.LFE7
+ 1254 0028 00000000 		.4byte	.LFB8
+ 1255 002c 0C000000 		.4byte	.LFE8
+ 1256 0030 00000000 		.4byte	.LFB9
+ 1257 0034 18000000 		.4byte	.LFE9
+ 1258 0038 00000000 		.4byte	.LFB10
+ 1259 003c 0C000000 		.4byte	.LFE10
+ 1260 0040 00000000 		.4byte	.LFB0
+ 1261 0044 1C000000 		.4byte	.LFE0
+ 1262 0048 00000000 		.4byte	.LFB1
+ 1263 004c 1A000000 		.4byte	.LFE1
+ 1264 0050 00000000 		.4byte	.LFB2
+ 1265 0054 14000000 		.4byte	.LFE2
+ 1266 0058 00000000 		.4byte	.LFB11
+ 1267 005c 0C000000 		.4byte	.LFE11
+ 1268 0060 00000000 		.4byte	.LFB12
+ 1269 0064 0C000000 		.4byte	.LFE12
+ 1270 0068 00000000 		.4byte	0
+ 1271 006c 00000000 		.4byte	0
+ 1272              		.section	.debug_line,"",%progbits
+ 1273              	.Ldebug_line0:
+ 1274 0000 73010000 		.section	.debug_str,"MS",%progbits,1
+ 1274      02008600 
+ 1274      00000201 
+ 1274      FB0E0D00 
+ 1274      01010101 
+ 1275              	.LASF7:
+ 1276 0000 6C6F6E67 		.ascii	"long long int\000"
+ 1276      206C6F6E 
+ 1276      6720696E 
+ 1276      7400
+ 1277              	.LASF16:
+ 1278 000e 72656733 		.ascii	"reg32\000"
+ 1278      3200
+ 1279              	.LASF38:
+ 1280 0014 63757272 		.ascii	"currentState\000"
+ 1280      656E7453 
+ 1280      74617465 
+ 1280      00
+ 1281              	.LASF39:
+ 1282 0021 50726576 		.ascii	"Prev_state\000"
+ 1282      5F737461 
+ 1282      746500
+ 1283              	.LASF42:
+ 1284 002c 74696D65 		.ascii	"timer_status\000"
+ 1284      725F7374 
+ 1284      61747573 
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccypH71i.s 			page 31
+
+
+ 1284      00
+ 1285              	.LASF37:
+ 1286 0039 50524F46 		.ascii	"PROFILE\000"
+ 1286      494C4500 
+ 1287              	.LASF33:
+ 1288 0041 53544F50 		.ascii	"STOP_ClearPending\000"
+ 1288      5F436C65 
+ 1288      61725065 
+ 1288      6E64696E 
+ 1288      6700
+ 1289              	.LASF41:
+ 1290 0053 68656172 		.ascii	"heartbeatCounter\000"
+ 1290      74626561 
+ 1290      74436F75 
+ 1290      6E746572 
+ 1290      00
+ 1291              	.LASF13:
+ 1292 0064 666C6F61 		.ascii	"float\000"
+ 1292      7400
+ 1293              	.LASF45:
+ 1294 006a 2E5C4765 		.ascii	".\\Generated_Source\\PSoC5\\STOP.c\000"
+ 1294      6E657261 
+ 1294      7465645F 
+ 1294      536F7572 
+ 1294      63655C50 
+ 1295              	.LASF20:
+ 1296 008a 53544F50 		.ascii	"STOP_SetVector\000"
+ 1296      5F536574 
+ 1296      56656374 
+ 1296      6F7200
+ 1297              	.LASF2:
+ 1298 0099 756E7369 		.ascii	"unsigned char\000"
+ 1298      676E6564 
+ 1298      20636861 
+ 1298      7200
+ 1299              	.LASF25:
+ 1300 00a7 53544F50 		.ascii	"STOP_GetPriority\000"
+ 1300      5F476574 
+ 1300      5072696F 
+ 1300      72697479 
+ 1300      00
+ 1301              	.LASF15:
+ 1302 00b8 72656738 		.ascii	"reg8\000"
+ 1302      00
+ 1303              	.LASF6:
+ 1304 00bd 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1304      20756E73 
+ 1304      69676E65 
+ 1304      6420696E 
+ 1304      7400
+ 1305              	.LASF44:
+ 1306 00cf 474E5520 		.ascii	"GNU C 4.8.4 20140526 (release) [ARM/embedded-4_8-br"
+ 1306      4320342E 
+ 1306      382E3420 
+ 1306      32303134 
+ 1306      30353236 
+ 1307 0102 616E6368 		.ascii	"anch revision 211358] -mcpu=cortex-m3 -mthumb -g -O"
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccypH71i.s 			page 32
+
+
+ 1307      20726576 
+ 1307      6973696F 
+ 1307      6E203231 
+ 1307      31333538 
+ 1308 0135 67202D66 		.ascii	"g -ffunction-sections\000"
+ 1308      66756E63 
+ 1308      74696F6E 
+ 1308      2D736563 
+ 1308      74696F6E 
+ 1309              	.LASF4:
+ 1310 014b 73686F72 		.ascii	"short unsigned int\000"
+ 1310      7420756E 
+ 1310      7369676E 
+ 1310      65642069 
+ 1310      6E7400
+ 1311              	.LASF23:
+ 1312 015e 7072696F 		.ascii	"priority\000"
+ 1312      72697479 
+ 1312      00
+ 1313              	.LASF14:
+ 1314 0167 646F7562 		.ascii	"double\000"
+ 1314      6C6500
+ 1315              	.LASF43:
+ 1316 016e 74696D65 		.ascii	"timer_value\000"
+ 1316      725F7661 
+ 1316      6C756500 
+ 1317              	.LASF12:
+ 1318 017a 75696E74 		.ascii	"uint32\000"
+ 1318      333200
+ 1319              	.LASF36:
+ 1320 0181 696E6372 		.ascii	"increasingHr\000"
+ 1320      65617369 
+ 1320      6E674872 
+ 1320      00
+ 1321              	.LASF0:
+ 1322 018e 756E7369 		.ascii	"unsigned int\000"
+ 1322      676E6564 
+ 1322      20696E74 
+ 1322      00
+ 1323              	.LASF22:
+ 1324 019b 61646472 		.ascii	"address\000"
+ 1324      65737300 
+ 1325              	.LASF8:
+ 1326 01a3 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1326      206C6F6E 
+ 1326      6720756E 
+ 1326      7369676E 
+ 1326      65642069 
+ 1327              	.LASF32:
+ 1328 01ba 53544F50 		.ascii	"STOP_SetPending\000"
+ 1328      5F536574 
+ 1328      50656E64 
+ 1328      696E6700 
+ 1329              	.LASF29:
+ 1330 01ca 53544F50 		.ascii	"STOP_Start\000"
+ 1330      5F537461 
+ 1330      727400
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccypH71i.s 			page 33
+
+
+ 1331              	.LASF35:
+ 1332 01d5 61766572 		.ascii	"average\000"
+ 1332      61676500 
+ 1333              	.LASF30:
+ 1334 01dd 53544F50 		.ascii	"STOP_StartEx\000"
+ 1334      5F537461 
+ 1334      72744578 
+ 1334      00
+ 1335              	.LASF17:
+ 1336 01ea 63796973 		.ascii	"cyisraddress\000"
+ 1336      72616464 
+ 1336      72657373 
+ 1336      00
+ 1337              	.LASF1:
+ 1338 01f7 7369676E 		.ascii	"signed char\000"
+ 1338      65642063 
+ 1338      68617200 
+ 1339              	.LASF24:
+ 1340 0203 53544F50 		.ascii	"STOP_GetVector\000"
+ 1340      5F476574 
+ 1340      56656374 
+ 1340      6F7200
+ 1341              	.LASF40:
+ 1342 0212 73706565 		.ascii	"speed\000"
+ 1342      6400
+ 1343              	.LASF26:
+ 1344 0218 53544F50 		.ascii	"STOP_Interrupt\000"
+ 1344      5F496E74 
+ 1344      65727275 
+ 1344      707400
+ 1345              	.LASF21:
+ 1346 0227 53544F50 		.ascii	"STOP_SetPriority\000"
+ 1346      5F536574 
+ 1346      5072696F 
+ 1346      72697479 
+ 1346      00
+ 1347              	.LASF34:
+ 1348 0238 68656172 		.ascii	"heartrate\000"
+ 1348      74726174 
+ 1348      6500
+ 1349              	.LASF9:
+ 1350 0242 73697A65 		.ascii	"sizetype\000"
+ 1350      74797065 
+ 1350      00
+ 1351              	.LASF10:
+ 1352 024b 63686172 		.ascii	"char\000"
+ 1352      00
+ 1353              	.LASF19:
+ 1354 0250 72616D56 		.ascii	"ramVectorTable\000"
+ 1354      6563746F 
+ 1354      72546162 
+ 1354      6C6500
+ 1355              	.LASF31:
+ 1356 025f 53544F50 		.ascii	"STOP_Stop\000"
+ 1356      5F53746F 
+ 1356      7000
+ 1357              	.LASF28:
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccypH71i.s 			page 34
+
+
+ 1358 0269 53544F50 		.ascii	"STOP_Disable\000"
+ 1358      5F446973 
+ 1358      61626C65 
+ 1358      00
+ 1359              	.LASF3:
+ 1360 0276 73686F72 		.ascii	"short int\000"
+ 1360      7420696E 
+ 1360      7400
+ 1361              	.LASF11:
+ 1362 0280 75696E74 		.ascii	"uint8\000"
+ 1362      3800
+ 1363              	.LASF5:
+ 1364 0286 6C6F6E67 		.ascii	"long int\000"
+ 1364      20696E74 
+ 1364      00
+ 1365              	.LASF27:
+ 1366 028f 53544F50 		.ascii	"STOP_Enable\000"
+ 1366      5F456E61 
+ 1366      626C6500 
+ 1367              	.LASF18:
+ 1368 029b 53544154 		.ascii	"STATE\000"
+ 1368      4500
+ 1369              	.LASF46:
+ 1370 02a1 433A5C72 		.ascii	"C:\\repositories\\embedded\\trunk\\CE4920Project1\\"
+ 1370      65706F73 
+ 1370      69746F72 
+ 1370      6965735C 
+ 1370      656D6265 
+ 1371 02cf 44657369 		.ascii	"Design01.cydsn\000"
+ 1371      676E3031 
+ 1371      2E637964 
+ 1371      736E00
+ 1372              	.LASF47:
+ 1373 02de 53544F50 		.ascii	"STOP_GetState\000"
+ 1373      5F476574 
+ 1373      53746174 
+ 1373      6500
+ 1374              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.8.4 20140526 (release) [ARM/embedded-4_8-br

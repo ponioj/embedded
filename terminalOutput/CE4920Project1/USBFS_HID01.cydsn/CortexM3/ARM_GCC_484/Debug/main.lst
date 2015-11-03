@@ -1,0 +1,723 @@
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccIbnncj.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 6
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"main.c"
+  15              		.text
+  16              	.Ltext0:
+  17              		.cfi_sections	.debug_frame
+  18              		.global	mouseData
+  19              		.bss
+  20              		.align	2
+  21              		.type	mouseData, %object
+  22              		.size	mouseData, 3
+  23              	mouseData:
+  24 0000 000000   		.space	3
+  25              		.global	bSNstring
+  26 0003 00       		.data
+  27              		.align	2
+  28              		.type	bSNstring, %object
+  29              		.size	bSNstring, 16
+  30              	bSNstring:
+  31 0000 0E       		.byte	14
+  32 0001 03       		.byte	3
+  33 0002 46       		.byte	70
+  34 0003 00       		.byte	0
+  35 0004 57       		.byte	87
+  36 0005 00       		.byte	0
+  37 0006 53       		.byte	83
+  38 0007 00       		.byte	0
+  39 0008 4E       		.byte	78
+  40 0009 00       		.byte	0
+  41 000a 30       		.byte	48
+  42 000b 00       		.byte	0
+  43 000c 31       		.byte	49
+  44 000d 00       		.byte	0
+  45 000e 0000     		.space	2
+  46              		.section	.text.main,"ax",%progbits
+  47              		.align	2
+  48              		.global	main
+  49              		.thumb
+  50              		.thumb_func
+  51              		.type	main, %function
+  52              	main:
+  53              	.LFB63:
+  54              		.file 1 ".\\main.c"
+   1:.\main.c      **** /*******************************************************************************
+   2:.\main.c      **** * File Name: main.c
+   3:.\main.c      **** *
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccIbnncj.s 			page 2
+
+
+   4:.\main.c      **** * Version: 2.1
+   5:.\main.c      **** *
+   6:.\main.c      **** * Description:
+   7:.\main.c      **** *  This project enumarates on the computer as a 3-button  mouse. 
+   8:.\main.c      **** *  When the code is run, mouse cursor moves from the right to the left. 
+   9:.\main.c      **** *
+  10:.\main.c      **** * Refer to description on schematic for test procedure.
+  11:.\main.c      **** *
+  12:.\main.c      **** * Related Document:
+  13:.\main.c      **** *  Device Class Definition for Human Interface Devices (HID)
+  14:.\main.c      **** *  Firmware Specification- Version 1.11
+  15:.\main.c      **** *
+  16:.\main.c      **** ********************************************************************************
+  17:.\main.c      **** * Copyright 2012, Cypress Semiconductor Corporation. All rights reserved.
+  18:.\main.c      **** * This software is owned by Cypress Semiconductor Corporation and is protected
+  19:.\main.c      **** * by and subject to worldwide patent and copyright laws and treaties.
+  20:.\main.c      **** * Therefore, you may use this software only as provided in the license agreement
+  21:.\main.c      **** * accompanying the software package from which you obtained this software.
+  22:.\main.c      **** * CYPRESS AND ITS SUPPLIERS MAKE NO WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
+  23:.\main.c      **** * WITH REGARD TO THIS SOFTWARE, INCLUDING, BUT NOT LIMITED TO, NONINFRINGEMENT,
+  24:.\main.c      **** * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+  25:.\main.c      **** *******************************************************************************/
+  26:.\main.c      **** 
+  27:.\main.c      **** #include <device.h>
+  28:.\main.c      **** 
+  29:.\main.c      **** #define MOUSE_ENDPOINT      (0x01u)
+  30:.\main.c      **** #define MOUSE_DATA_LEN      (0x03u)
+  31:.\main.c      **** #define CURSOR_STEP         (0x05u)     /* Step size */
+  32:.\main.c      **** 
+  33:.\main.c      **** /* Mouse packet array: button, X, Y */
+  34:.\main.c      **** uint8 mouseData[MOUSE_DATA_LEN] = {0u, 0u, 0u}; 
+  35:.\main.c      **** uint8 bSNstring[16]={0x0Eu, 0x03u, 'F', 0u, 'W', 0u, 'S', 0u, 'N', 0u, '0', 0u, '1', 0u};
+  36:.\main.c      **** 
+  37:.\main.c      **** int main()
+  38:.\main.c      **** {
+  55              		.loc 1 38 0
+  56              		.cfi_startproc
+  57              		@ args = 0, pretend = 0, frame = 8
+  58              		@ frame_needed = 1, uses_anonymous_args = 0
+  59 0000 80B5     		push	{r7, lr}
+  60              		.cfi_def_cfa_offset 8
+  61              		.cfi_offset 7, -8
+  62              		.cfi_offset 14, -4
+  63 0002 82B0     		sub	sp, sp, #8
+  64              		.cfi_def_cfa_offset 16
+  65 0004 00AF     		add	r7, sp, #0
+  66              		.cfi_def_cfa_register 7
+  39:.\main.c      ****     uint8 counter = 0u;
+  67              		.loc 1 39 0
+  68 0006 0023     		movs	r3, #0
+  69 0008 FB71     		strb	r3, [r7, #7]
+  40:.\main.c      ****     
+  41:.\main.c      ****     /* Enable Global Interrupts */
+  42:.\main.c      ****     CyGlobalIntEnable;
+  70              		.loc 1 42 0
+  71              	@ 42 ".\main.c" 1
+  72 000a 62B6     		CPSIE   i
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccIbnncj.s 			page 3
+
+
+  73              	@ 0 "" 2
+  43:.\main.c      ****     
+  44:.\main.c      ****     /* Set user defined Serial Number string descriptor */
+  45:.\main.c      ****     USBFS_1_SerialNumString(&bSNstring[0u]);
+  74              		.loc 1 45 0
+  75              		.thumb
+  76 000c 1748     		ldr	r0, .L8
+  77 000e FFF7FEFF 		bl	USBFS_1_SerialNumString
+  46:.\main.c      ****     
+  47:.\main.c      ****     /* Start USBFS device 0 with 3V operation */
+  48:.\main.c      ****     USBFS_1_Start(0u, USBFS_1_3V_OPERATION); 
+  78              		.loc 1 48 0
+  79 0012 0020     		movs	r0, #0
+  80 0014 0021     		movs	r1, #0
+  81 0016 FFF7FEFF 		bl	USBFS_1_Start
+  49:.\main.c      **** 
+  50:.\main.c      ****     /* Wait for Device to enumerate */
+  51:.\main.c      ****     while(!USBFS_1_GetConfiguration());
+  82              		.loc 1 51 0
+  83 001a 00BF     		nop
+  84              	.L2:
+  85              		.loc 1 51 0 is_stmt 0 discriminator 1
+  86 001c FFF7FEFF 		bl	USBFS_1_GetConfiguration
+  87 0020 0346     		mov	r3, r0
+  88 0022 002B     		cmp	r3, #0
+  89 0024 FAD0     		beq	.L2
+  52:.\main.c      **** 
+  53:.\main.c      ****     /* Enumeration is done, load endpoint 1. Do not toggle the first time. */
+  54:.\main.c      ****     USBFS_1_LoadInEP(MOUSE_ENDPOINT, mouseData, MOUSE_DATA_LEN);
+  90              		.loc 1 54 0 is_stmt 1
+  91 0026 0120     		movs	r0, #1
+  92 0028 1149     		ldr	r1, .L8+4
+  93 002a 0322     		movs	r2, #3
+  94 002c FFF7FEFF 		bl	USBFS_1_LoadInEP
+  95              	.L7:
+  55:.\main.c      ****     
+  56:.\main.c      ****     while(1)
+  57:.\main.c      ****     {
+  58:.\main.c      ****         /* Wait for ACK before loading data */
+  59:.\main.c      ****         while(!USBFS_1_GetEPAckState(MOUSE_ENDPOINT));
+  96              		.loc 1 59 0
+  97 0030 00BF     		nop
+  98              	.L3:
+  99              		.loc 1 59 0 is_stmt 0 discriminator 1
+ 100 0032 0120     		movs	r0, #1
+ 101 0034 FFF7FEFF 		bl	USBFS_1_GetEPAckState
+ 102 0038 0346     		mov	r3, r0
+ 103 003a 002B     		cmp	r3, #0
+ 104 003c F9D0     		beq	.L3
+  60:.\main.c      ****         
+  61:.\main.c      ****         /* ACK has occurred, load the endpoint and toggle the data bit */
+  62:.\main.c      ****         USBFS_1_LoadInEP(1u, mouseData, MOUSE_DATA_LEN);
+ 105              		.loc 1 62 0 is_stmt 1
+ 106 003e 0120     		movs	r0, #1
+ 107 0040 0B49     		ldr	r1, .L8+4
+ 108 0042 0322     		movs	r2, #3
+ 109 0044 FFF7FEFF 		bl	USBFS_1_LoadInEP
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccIbnncj.s 			page 4
+
+
+  63:.\main.c      ****         
+  64:.\main.c      ****         /* When our counts hits 128 */
+  65:.\main.c      ****         if(counter == 128u)
+ 110              		.loc 1 65 0
+ 111 0048 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 112 004a 802B     		cmp	r3, #128
+ 113 004c 03D1     		bne	.L4
+  66:.\main.c      ****         {
+  67:.\main.c      ****             /* Start moving the mouse to the right */
+  68:.\main.c      ****             mouseData[1u] = CURSOR_STEP;
+ 114              		.loc 1 68 0
+ 115 004e 084B     		ldr	r3, .L8+4
+ 116 0050 0522     		movs	r2, #5
+ 117 0052 5A70     		strb	r2, [r3, #1]
+ 118 0054 05E0     		b	.L5
+ 119              	.L4:
+  69:.\main.c      ****         }
+  70:.\main.c      ****         /* When our counts hits 255 */
+  71:.\main.c      ****         else if(counter == 255u)
+ 120              		.loc 1 71 0
+ 121 0056 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 122 0058 FF2B     		cmp	r3, #255
+ 123 005a 02D1     		bne	.L5
+  72:.\main.c      ****         {
+  73:.\main.c      ****             /* Start moving the mouse to the left */
+  74:.\main.c      ****             mouseData[1u] = (uint8)-(int8)CURSOR_STEP;
+ 124              		.loc 1 74 0
+ 125 005c 044B     		ldr	r3, .L8+4
+ 126 005e FB22     		movs	r2, #251
+ 127 0060 5A70     		strb	r2, [r3, #1]
+ 128              	.L5:
+  75:.\main.c      ****         }
+  76:.\main.c      **** 
+  77:.\main.c      ****         counter++;
+ 129              		.loc 1 77 0
+ 130 0062 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 131 0064 0133     		adds	r3, r3, #1
+ 132 0066 FB71     		strb	r3, [r7, #7]
+  78:.\main.c      ****     }
+ 133              		.loc 1 78 0
+ 134 0068 00BF     		nop
+  59:.\main.c      ****         while(!USBFS_1_GetEPAckState(MOUSE_ENDPOINT));
+ 135              		.loc 1 59 0
+ 136 006a E1E7     		b	.L7
+ 137              	.L9:
+ 138              		.align	2
+ 139              	.L8:
+ 140 006c 00000000 		.word	bSNstring
+ 141 0070 00000000 		.word	mouseData
+ 142              		.cfi_endproc
+ 143              	.LFE63:
+ 144              		.size	main, .-main
+ 145              		.text
+ 146              	.Letext0:
+ 147              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\3.2\\psoc creator\\import\\gnu\\arm\\4.8.
+ 148              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\3.2\\psoc creator\\import\\gnu\\arm\\4.8.
+ 149              		.file 4 "Generated_Source\\PSoC5/cytypes.h"
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccIbnncj.s 			page 5
+
+
+ 150              		.file 5 "Generated_Source\\PSoC5/core_cm3.h"
+ 151              		.section	.debug_info,"",%progbits
+ 152              	.Ldebug_info0:
+ 153 0000 2B010000 		.4byte	0x12b
+ 154 0004 0400     		.2byte	0x4
+ 155 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 156 000a 04       		.byte	0x4
+ 157 000b 01       		.uleb128 0x1
+ 158 000c 5F010000 		.4byte	.LASF20
+ 159 0010 01       		.byte	0x1
+ 160 0011 0F010000 		.4byte	.LASF21
+ 161 0015 38000000 		.4byte	.LASF22
+ 162 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 163 001d 00000000 		.4byte	0
+ 164 0021 00000000 		.4byte	.Ldebug_line0
+ 165 0025 02       		.uleb128 0x2
+ 166 0026 01       		.byte	0x1
+ 167 0027 06       		.byte	0x6
+ 168 0028 34010000 		.4byte	.LASF0
+ 169 002c 02       		.uleb128 0x2
+ 170 002d 01       		.byte	0x1
+ 171 002e 08       		.byte	0x8
+ 172 002f F3000000 		.4byte	.LASF1
+ 173 0033 02       		.uleb128 0x2
+ 174 0034 02       		.byte	0x2
+ 175 0035 05       		.byte	0x5
+ 176 0036 55010000 		.4byte	.LASF2
+ 177 003a 02       		.uleb128 0x2
+ 178 003b 02       		.byte	0x2
+ 179 003c 07       		.byte	0x7
+ 180 003d 0E000000 		.4byte	.LASF3
+ 181 0041 03       		.uleb128 0x3
+ 182 0042 40010000 		.4byte	.LASF9
+ 183 0046 02       		.byte	0x2
+ 184 0047 37       		.byte	0x37
+ 185 0048 4C000000 		.4byte	0x4c
+ 186 004c 02       		.uleb128 0x2
+ 187 004d 04       		.byte	0x4
+ 188 004e 05       		.byte	0x5
+ 189 004f 06010000 		.4byte	.LASF4
+ 190 0053 02       		.uleb128 0x2
+ 191 0054 04       		.byte	0x4
+ 192 0055 07       		.byte	0x7
+ 193 0056 C0000000 		.4byte	.LASF5
+ 194 005a 02       		.uleb128 0x2
+ 195 005b 08       		.byte	0x8
+ 196 005c 05       		.byte	0x5
+ 197 005d 00000000 		.4byte	.LASF6
+ 198 0061 02       		.uleb128 0x2
+ 199 0062 08       		.byte	0x8
+ 200 0063 07       		.byte	0x7
+ 201 0064 D2000000 		.4byte	.LASF7
+ 202 0068 04       		.uleb128 0x4
+ 203 0069 04       		.byte	0x4
+ 204 006a 05       		.byte	0x5
+ 205 006b 696E7400 		.ascii	"int\000"
+ 206 006f 02       		.uleb128 0x2
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccIbnncj.s 			page 6
+
+
+ 207 0070 04       		.byte	0x4
+ 208 0071 07       		.byte	0x7
+ 209 0072 2B000000 		.4byte	.LASF8
+ 210 0076 03       		.uleb128 0x3
+ 211 0077 DB010000 		.4byte	.LASF10
+ 212 007b 03       		.byte	0x3
+ 213 007c 41       		.byte	0x41
+ 214 007d 41000000 		.4byte	0x41
+ 215 0081 03       		.uleb128 0x3
+ 216 0082 BA000000 		.4byte	.LASF11
+ 217 0086 04       		.byte	0x4
+ 218 0087 B4       		.byte	0xb4
+ 219 0088 2C000000 		.4byte	0x2c
+ 220 008c 03       		.uleb128 0x3
+ 221 008d B5000000 		.4byte	.LASF12
+ 222 0091 04       		.byte	0x4
+ 223 0092 B7       		.byte	0xb7
+ 224 0093 25000000 		.4byte	0x25
+ 225 0097 02       		.uleb128 0x2
+ 226 0098 04       		.byte	0x4
+ 227 0099 04       		.byte	0x4
+ 228 009a 4F010000 		.4byte	.LASF13
+ 229 009e 02       		.uleb128 0x2
+ 230 009f 08       		.byte	0x8
+ 231 00a0 04       		.byte	0x4
+ 232 00a1 18010000 		.4byte	.LASF14
+ 233 00a5 02       		.uleb128 0x2
+ 234 00a6 01       		.byte	0x1
+ 235 00a7 08       		.byte	0x8
+ 236 00a8 01010000 		.4byte	.LASF15
+ 237 00ac 02       		.uleb128 0x2
+ 238 00ad 04       		.byte	0x4
+ 239 00ae 07       		.byte	0x7
+ 240 00af E3010000 		.4byte	.LASF16
+ 241 00b3 05       		.uleb128 0x5
+ 242 00b4 4A010000 		.4byte	.LASF23
+ 243 00b8 01       		.byte	0x1
+ 244 00b9 25       		.byte	0x25
+ 245 00ba 68000000 		.4byte	0x68
+ 246 00be 00000000 		.4byte	.LFB63
+ 247 00c2 74000000 		.4byte	.LFE63-.LFB63
+ 248 00c6 01       		.uleb128 0x1
+ 249 00c7 9C       		.byte	0x9c
+ 250 00c8 DB000000 		.4byte	0xdb
+ 251 00cc 06       		.uleb128 0x6
+ 252 00cd 1F010000 		.4byte	.LASF24
+ 253 00d1 01       		.byte	0x1
+ 254 00d2 27       		.byte	0x27
+ 255 00d3 81000000 		.4byte	0x81
+ 256 00d7 02       		.uleb128 0x2
+ 257 00d8 91       		.byte	0x91
+ 258 00d9 77       		.sleb128 -9
+ 259 00da 00       		.byte	0
+ 260 00db 07       		.uleb128 0x7
+ 261 00dc 27010000 		.4byte	.LASF17
+ 262 00e0 05       		.byte	0x5
+ 263 00e1 2A06     		.2byte	0x62a
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccIbnncj.s 			page 7
+
+
+ 264 00e3 E7000000 		.4byte	0xe7
+ 265 00e7 08       		.uleb128 0x8
+ 266 00e8 76000000 		.4byte	0x76
+ 267 00ec 09       		.uleb128 0x9
+ 268 00ed 81000000 		.4byte	0x81
+ 269 00f1 FC000000 		.4byte	0xfc
+ 270 00f5 0A       		.uleb128 0xa
+ 271 00f6 AC000000 		.4byte	0xac
+ 272 00fa 02       		.byte	0x2
+ 273 00fb 00       		.byte	0
+ 274 00fc 0B       		.uleb128 0xb
+ 275 00fd E9000000 		.4byte	.LASF18
+ 276 0101 01       		.byte	0x1
+ 277 0102 22       		.byte	0x22
+ 278 0103 EC000000 		.4byte	0xec
+ 279 0107 05       		.uleb128 0x5
+ 280 0108 03       		.byte	0x3
+ 281 0109 00000000 		.4byte	mouseData
+ 282 010d 09       		.uleb128 0x9
+ 283 010e 81000000 		.4byte	0x81
+ 284 0112 1D010000 		.4byte	0x11d
+ 285 0116 0A       		.uleb128 0xa
+ 286 0117 AC000000 		.4byte	0xac
+ 287 011b 0F       		.byte	0xf
+ 288 011c 00       		.byte	0
+ 289 011d 0B       		.uleb128 0xb
+ 290 011e 21000000 		.4byte	.LASF19
+ 291 0122 01       		.byte	0x1
+ 292 0123 23       		.byte	0x23
+ 293 0124 0D010000 		.4byte	0x10d
+ 294 0128 05       		.uleb128 0x5
+ 295 0129 03       		.byte	0x3
+ 296 012a 00000000 		.4byte	bSNstring
+ 297 012e 00       		.byte	0
+ 298              		.section	.debug_abbrev,"",%progbits
+ 299              	.Ldebug_abbrev0:
+ 300 0000 01       		.uleb128 0x1
+ 301 0001 11       		.uleb128 0x11
+ 302 0002 01       		.byte	0x1
+ 303 0003 25       		.uleb128 0x25
+ 304 0004 0E       		.uleb128 0xe
+ 305 0005 13       		.uleb128 0x13
+ 306 0006 0B       		.uleb128 0xb
+ 307 0007 03       		.uleb128 0x3
+ 308 0008 0E       		.uleb128 0xe
+ 309 0009 1B       		.uleb128 0x1b
+ 310 000a 0E       		.uleb128 0xe
+ 311 000b 55       		.uleb128 0x55
+ 312 000c 17       		.uleb128 0x17
+ 313 000d 11       		.uleb128 0x11
+ 314 000e 01       		.uleb128 0x1
+ 315 000f 10       		.uleb128 0x10
+ 316 0010 17       		.uleb128 0x17
+ 317 0011 00       		.byte	0
+ 318 0012 00       		.byte	0
+ 319 0013 02       		.uleb128 0x2
+ 320 0014 24       		.uleb128 0x24
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccIbnncj.s 			page 8
+
+
+ 321 0015 00       		.byte	0
+ 322 0016 0B       		.uleb128 0xb
+ 323 0017 0B       		.uleb128 0xb
+ 324 0018 3E       		.uleb128 0x3e
+ 325 0019 0B       		.uleb128 0xb
+ 326 001a 03       		.uleb128 0x3
+ 327 001b 0E       		.uleb128 0xe
+ 328 001c 00       		.byte	0
+ 329 001d 00       		.byte	0
+ 330 001e 03       		.uleb128 0x3
+ 331 001f 16       		.uleb128 0x16
+ 332 0020 00       		.byte	0
+ 333 0021 03       		.uleb128 0x3
+ 334 0022 0E       		.uleb128 0xe
+ 335 0023 3A       		.uleb128 0x3a
+ 336 0024 0B       		.uleb128 0xb
+ 337 0025 3B       		.uleb128 0x3b
+ 338 0026 0B       		.uleb128 0xb
+ 339 0027 49       		.uleb128 0x49
+ 340 0028 13       		.uleb128 0x13
+ 341 0029 00       		.byte	0
+ 342 002a 00       		.byte	0
+ 343 002b 04       		.uleb128 0x4
+ 344 002c 24       		.uleb128 0x24
+ 345 002d 00       		.byte	0
+ 346 002e 0B       		.uleb128 0xb
+ 347 002f 0B       		.uleb128 0xb
+ 348 0030 3E       		.uleb128 0x3e
+ 349 0031 0B       		.uleb128 0xb
+ 350 0032 03       		.uleb128 0x3
+ 351 0033 08       		.uleb128 0x8
+ 352 0034 00       		.byte	0
+ 353 0035 00       		.byte	0
+ 354 0036 05       		.uleb128 0x5
+ 355 0037 2E       		.uleb128 0x2e
+ 356 0038 01       		.byte	0x1
+ 357 0039 3F       		.uleb128 0x3f
+ 358 003a 19       		.uleb128 0x19
+ 359 003b 03       		.uleb128 0x3
+ 360 003c 0E       		.uleb128 0xe
+ 361 003d 3A       		.uleb128 0x3a
+ 362 003e 0B       		.uleb128 0xb
+ 363 003f 3B       		.uleb128 0x3b
+ 364 0040 0B       		.uleb128 0xb
+ 365 0041 49       		.uleb128 0x49
+ 366 0042 13       		.uleb128 0x13
+ 367 0043 11       		.uleb128 0x11
+ 368 0044 01       		.uleb128 0x1
+ 369 0045 12       		.uleb128 0x12
+ 370 0046 06       		.uleb128 0x6
+ 371 0047 40       		.uleb128 0x40
+ 372 0048 18       		.uleb128 0x18
+ 373 0049 9642     		.uleb128 0x2116
+ 374 004b 19       		.uleb128 0x19
+ 375 004c 01       		.uleb128 0x1
+ 376 004d 13       		.uleb128 0x13
+ 377 004e 00       		.byte	0
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccIbnncj.s 			page 9
+
+
+ 378 004f 00       		.byte	0
+ 379 0050 06       		.uleb128 0x6
+ 380 0051 34       		.uleb128 0x34
+ 381 0052 00       		.byte	0
+ 382 0053 03       		.uleb128 0x3
+ 383 0054 0E       		.uleb128 0xe
+ 384 0055 3A       		.uleb128 0x3a
+ 385 0056 0B       		.uleb128 0xb
+ 386 0057 3B       		.uleb128 0x3b
+ 387 0058 0B       		.uleb128 0xb
+ 388 0059 49       		.uleb128 0x49
+ 389 005a 13       		.uleb128 0x13
+ 390 005b 02       		.uleb128 0x2
+ 391 005c 18       		.uleb128 0x18
+ 392 005d 00       		.byte	0
+ 393 005e 00       		.byte	0
+ 394 005f 07       		.uleb128 0x7
+ 395 0060 34       		.uleb128 0x34
+ 396 0061 00       		.byte	0
+ 397 0062 03       		.uleb128 0x3
+ 398 0063 0E       		.uleb128 0xe
+ 399 0064 3A       		.uleb128 0x3a
+ 400 0065 0B       		.uleb128 0xb
+ 401 0066 3B       		.uleb128 0x3b
+ 402 0067 05       		.uleb128 0x5
+ 403 0068 49       		.uleb128 0x49
+ 404 0069 13       		.uleb128 0x13
+ 405 006a 3F       		.uleb128 0x3f
+ 406 006b 19       		.uleb128 0x19
+ 407 006c 3C       		.uleb128 0x3c
+ 408 006d 19       		.uleb128 0x19
+ 409 006e 00       		.byte	0
+ 410 006f 00       		.byte	0
+ 411 0070 08       		.uleb128 0x8
+ 412 0071 35       		.uleb128 0x35
+ 413 0072 00       		.byte	0
+ 414 0073 49       		.uleb128 0x49
+ 415 0074 13       		.uleb128 0x13
+ 416 0075 00       		.byte	0
+ 417 0076 00       		.byte	0
+ 418 0077 09       		.uleb128 0x9
+ 419 0078 01       		.uleb128 0x1
+ 420 0079 01       		.byte	0x1
+ 421 007a 49       		.uleb128 0x49
+ 422 007b 13       		.uleb128 0x13
+ 423 007c 01       		.uleb128 0x1
+ 424 007d 13       		.uleb128 0x13
+ 425 007e 00       		.byte	0
+ 426 007f 00       		.byte	0
+ 427 0080 0A       		.uleb128 0xa
+ 428 0081 21       		.uleb128 0x21
+ 429 0082 00       		.byte	0
+ 430 0083 49       		.uleb128 0x49
+ 431 0084 13       		.uleb128 0x13
+ 432 0085 2F       		.uleb128 0x2f
+ 433 0086 0B       		.uleb128 0xb
+ 434 0087 00       		.byte	0
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccIbnncj.s 			page 10
+
+
+ 435 0088 00       		.byte	0
+ 436 0089 0B       		.uleb128 0xb
+ 437 008a 34       		.uleb128 0x34
+ 438 008b 00       		.byte	0
+ 439 008c 03       		.uleb128 0x3
+ 440 008d 0E       		.uleb128 0xe
+ 441 008e 3A       		.uleb128 0x3a
+ 442 008f 0B       		.uleb128 0xb
+ 443 0090 3B       		.uleb128 0x3b
+ 444 0091 0B       		.uleb128 0xb
+ 445 0092 49       		.uleb128 0x49
+ 446 0093 13       		.uleb128 0x13
+ 447 0094 3F       		.uleb128 0x3f
+ 448 0095 19       		.uleb128 0x19
+ 449 0096 02       		.uleb128 0x2
+ 450 0097 18       		.uleb128 0x18
+ 451 0098 00       		.byte	0
+ 452 0099 00       		.byte	0
+ 453 009a 00       		.byte	0
+ 454              		.section	.debug_aranges,"",%progbits
+ 455 0000 1C000000 		.4byte	0x1c
+ 456 0004 0200     		.2byte	0x2
+ 457 0006 00000000 		.4byte	.Ldebug_info0
+ 458 000a 04       		.byte	0x4
+ 459 000b 00       		.byte	0
+ 460 000c 0000     		.2byte	0
+ 461 000e 0000     		.2byte	0
+ 462 0010 00000000 		.4byte	.LFB63
+ 463 0014 74000000 		.4byte	.LFE63-.LFB63
+ 464 0018 00000000 		.4byte	0
+ 465 001c 00000000 		.4byte	0
+ 466              		.section	.debug_ranges,"",%progbits
+ 467              	.Ldebug_ranges0:
+ 468 0000 00000000 		.4byte	.LFB63
+ 469 0004 74000000 		.4byte	.LFE63
+ 470 0008 00000000 		.4byte	0
+ 471 000c 00000000 		.4byte	0
+ 472              		.section	.debug_line,"",%progbits
+ 473              	.Ldebug_line0:
+ 474 0000 7D010000 		.section	.debug_str,"MS",%progbits,1
+ 474      02004901 
+ 474      00000201 
+ 474      FB0E0D00 
+ 474      01010101 
+ 475              	.LASF6:
+ 476 0000 6C6F6E67 		.ascii	"long long int\000"
+ 476      206C6F6E 
+ 476      6720696E 
+ 476      7400
+ 477              	.LASF3:
+ 478 000e 73686F72 		.ascii	"short unsigned int\000"
+ 478      7420756E 
+ 478      7369676E 
+ 478      65642069 
+ 478      6E7400
+ 479              	.LASF19:
+ 480 0021 62534E73 		.ascii	"bSNstring\000"
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccIbnncj.s 			page 11
+
+
+ 480      7472696E 
+ 480      6700
+ 481              	.LASF8:
+ 482 002b 756E7369 		.ascii	"unsigned int\000"
+ 482      676E6564 
+ 482      20696E74 
+ 482      00
+ 483              	.LASF22:
+ 484 0038 433A5C55 		.ascii	"C:\\Users\\JohnP\\OneDrive\\College\\2015-2016 Seni"
+ 484      73657273 
+ 484      5C4A6F68 
+ 484      6E505C4F 
+ 484      6E654472 
+ 485 0066 6F722059 		.ascii	"or Year\\0 Fall Quarter\\CE4920 011\\Lab\\project\\"
+ 485      6561725C 
+ 485      30204661 
+ 485      6C6C2051 
+ 485      75617274 
+ 486 0094 43453439 		.ascii	"CE4920Project1\\USBFS_HID01.cydsn\000"
+ 486      32305072 
+ 486      6F6A6563 
+ 486      74315C55 
+ 486      53424653 
+ 487              	.LASF12:
+ 488 00b5 696E7438 		.ascii	"int8\000"
+ 488      00
+ 489              	.LASF11:
+ 490 00ba 75696E74 		.ascii	"uint8\000"
+ 490      3800
+ 491              	.LASF5:
+ 492 00c0 6C6F6E67 		.ascii	"long unsigned int\000"
+ 492      20756E73 
+ 492      69676E65 
+ 492      6420696E 
+ 492      7400
+ 493              	.LASF7:
+ 494 00d2 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 494      206C6F6E 
+ 494      6720756E 
+ 494      7369676E 
+ 494      65642069 
+ 495              	.LASF18:
+ 496 00e9 6D6F7573 		.ascii	"mouseData\000"
+ 496      65446174 
+ 496      6100
+ 497              	.LASF1:
+ 498 00f3 756E7369 		.ascii	"unsigned char\000"
+ 498      676E6564 
+ 498      20636861 
+ 498      7200
+ 499              	.LASF15:
+ 500 0101 63686172 		.ascii	"char\000"
+ 500      00
+ 501              	.LASF4:
+ 502 0106 6C6F6E67 		.ascii	"long int\000"
+ 502      20696E74 
+ 502      00
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccIbnncj.s 			page 12
+
+
+ 503              	.LASF21:
+ 504 010f 2E5C6D61 		.ascii	".\\main.c\000"
+ 504      696E2E63 
+ 504      00
+ 505              	.LASF14:
+ 506 0118 646F7562 		.ascii	"double\000"
+ 506      6C6500
+ 507              	.LASF24:
+ 508 011f 636F756E 		.ascii	"counter\000"
+ 508      74657200 
+ 509              	.LASF17:
+ 510 0127 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 510      52784275 
+ 510      66666572 
+ 510      00
+ 511              	.LASF0:
+ 512 0134 7369676E 		.ascii	"signed char\000"
+ 512      65642063 
+ 512      68617200 
+ 513              	.LASF9:
+ 514 0140 5F5F696E 		.ascii	"__int32_t\000"
+ 514      7433325F 
+ 514      7400
+ 515              	.LASF23:
+ 516 014a 6D61696E 		.ascii	"main\000"
+ 516      00
+ 517              	.LASF13:
+ 518 014f 666C6F61 		.ascii	"float\000"
+ 518      7400
+ 519              	.LASF2:
+ 520 0155 73686F72 		.ascii	"short int\000"
+ 520      7420696E 
+ 520      7400
+ 521              	.LASF20:
+ 522 015f 474E5520 		.ascii	"GNU C 4.8.4 20140526 (release) [ARM/embedded-4_8-br"
+ 522      4320342E 
+ 522      382E3420 
+ 522      32303134 
+ 522      30353236 
+ 523 0192 616E6368 		.ascii	"anch revision 211358] -mcpu=cortex-m3 -mthumb -g -O"
+ 523      20726576 
+ 523      6973696F 
+ 523      6E203231 
+ 523      31333538 
+ 524 01c5 30202D66 		.ascii	"0 -ffunction-sections\000"
+ 524      66756E63 
+ 524      74696F6E 
+ 524      2D736563 
+ 524      74696F6E 
+ 525              	.LASF10:
+ 526 01db 696E7433 		.ascii	"int32_t\000"
+ 526      325F7400 
+ 527              	.LASF16:
+ 528 01e3 73697A65 		.ascii	"sizetype\000"
+ 528      74797065 
+ 528      00
+ 529              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.8.4 20140526 (release) [ARM/embedded-4_8-br
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccIbnncj.s 			page 13
+
+

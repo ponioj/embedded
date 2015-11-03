@@ -1,0 +1,7 @@
+--------------- Clean Started: 09/29/2015 20:14:45 Project: Design01, Configuration: ARM GCC 4.8.4 Debug ---------------
+Deleting file ".\CortexM3\ARM_GCC_484\Debug\main.o"
+Deleting file ".\Design01.cycdx"
+Deleting file ".\Design01.svd"
+Deleting file ".\Design01.rpt"
+Deleting file ".\Design01_timing.html"
+--------------- Clean Succeeded: 09/29/2015 20:14:46 ---------------

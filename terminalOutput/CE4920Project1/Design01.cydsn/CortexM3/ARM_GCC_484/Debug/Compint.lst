@@ -1,0 +1,2092 @@
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccHy6iik.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"Compint.c"
+  15              		.text
+  16              	.Ltext0:
+  17              		.cfi_sections	.debug_frame
+  18              		.section	.text.Compint_Interrupt,"ax",%progbits
+  19              		.align	2
+  20              		.global	Compint_Interrupt
+  21              		.thumb
+  22              		.thumb_func
+  23              		.type	Compint_Interrupt, %function
+  24              	Compint_Interrupt:
+  25              	.LFB3:
+  26              		.file 1 ".\\Generated_Source\\PSoC5\\Compint.c"
+   1:.\Generated_Source\PSoC5/Compint.c **** /*******************************************************************************
+   2:.\Generated_Source\PSoC5/Compint.c **** * File Name: Compint.c  
+   3:.\Generated_Source\PSoC5/Compint.c **** * Version 1.70
+   4:.\Generated_Source\PSoC5/Compint.c **** *
+   5:.\Generated_Source\PSoC5/Compint.c **** *  Description:
+   6:.\Generated_Source\PSoC5/Compint.c **** *   API for controlling the state of an interrupt.
+   7:.\Generated_Source\PSoC5/Compint.c **** *
+   8:.\Generated_Source\PSoC5/Compint.c **** *
+   9:.\Generated_Source\PSoC5/Compint.c **** *  Note:
+  10:.\Generated_Source\PSoC5/Compint.c **** *
+  11:.\Generated_Source\PSoC5/Compint.c **** ********************************************************************************
+  12:.\Generated_Source\PSoC5/Compint.c **** * Copyright 2008-2015, Cypress Semiconductor Corporation.  All rights reserved.
+  13:.\Generated_Source\PSoC5/Compint.c **** * You may use this file only in accordance with the license, terms, conditions, 
+  14:.\Generated_Source\PSoC5/Compint.c **** * disclaimers, and limitations in the end user license agreement accompanying 
+  15:.\Generated_Source\PSoC5/Compint.c **** * the software package with which this file was provided.
+  16:.\Generated_Source\PSoC5/Compint.c **** *******************************************************************************/
+  17:.\Generated_Source\PSoC5/Compint.c **** 
+  18:.\Generated_Source\PSoC5/Compint.c **** 
+  19:.\Generated_Source\PSoC5/Compint.c **** #include <cydevice_trm.h>
+  20:.\Generated_Source\PSoC5/Compint.c **** #include <CyLib.h>
+  21:.\Generated_Source\PSoC5/Compint.c **** #include <Compint.h>
+  22:.\Generated_Source\PSoC5/Compint.c **** 
+  23:.\Generated_Source\PSoC5/Compint.c **** #if !defined(Compint__REMOVED) /* Check for removal by optimization */
+  24:.\Generated_Source\PSoC5/Compint.c **** 
+  25:.\Generated_Source\PSoC5/Compint.c **** /*******************************************************************************
+  26:.\Generated_Source\PSoC5/Compint.c **** *  Place your includes, defines and code here 
+  27:.\Generated_Source\PSoC5/Compint.c **** ********************************************************************************/
+  28:.\Generated_Source\PSoC5/Compint.c **** /* `#START Compint_intc` */
+  29:.\Generated_Source\PSoC5/Compint.c **** #include "system.h"
+  30:.\Generated_Source\PSoC5/Compint.c **** extern float heartrate;
+  31:.\Generated_Source\PSoC5/Compint.c **** extern int timer_status;   /* 1 for on, 0 for off */
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccHy6iik.s 			page 2
+
+
+  32:.\Generated_Source\PSoC5/Compint.c **** extern int timer_value;
+  33:.\Generated_Source\PSoC5/Compint.c **** int startCounts = 0;
+  34:.\Generated_Source\PSoC5/Compint.c **** int endCounts = 0;
+  35:.\Generated_Source\PSoC5/Compint.c **** /* `#END` */
+  36:.\Generated_Source\PSoC5/Compint.c **** 
+  37:.\Generated_Source\PSoC5/Compint.c **** #ifndef CYINT_IRQ_BASE
+  38:.\Generated_Source\PSoC5/Compint.c **** #define CYINT_IRQ_BASE      16
+  39:.\Generated_Source\PSoC5/Compint.c **** #endif /* CYINT_IRQ_BASE */
+  40:.\Generated_Source\PSoC5/Compint.c **** #ifndef CYINT_VECT_TABLE
+  41:.\Generated_Source\PSoC5/Compint.c **** #define CYINT_VECT_TABLE    ((cyisraddress **) CYREG_NVIC_VECT_OFFSET)
+  42:.\Generated_Source\PSoC5/Compint.c **** #endif /* CYINT_VECT_TABLE */
+  43:.\Generated_Source\PSoC5/Compint.c **** 
+  44:.\Generated_Source\PSoC5/Compint.c **** /* Declared in startup, used to set unused interrupts to. */
+  45:.\Generated_Source\PSoC5/Compint.c **** CY_ISR_PROTO(IntDefaultHandler);
+  46:.\Generated_Source\PSoC5/Compint.c **** 
+  47:.\Generated_Source\PSoC5/Compint.c **** 
+  48:.\Generated_Source\PSoC5/Compint.c **** /*******************************************************************************
+  49:.\Generated_Source\PSoC5/Compint.c **** * Function Name: Compint_Start
+  50:.\Generated_Source\PSoC5/Compint.c **** ********************************************************************************
+  51:.\Generated_Source\PSoC5/Compint.c **** *
+  52:.\Generated_Source\PSoC5/Compint.c **** * Summary:
+  53:.\Generated_Source\PSoC5/Compint.c **** *  Set up the interrupt and enable it. This function disables the interrupt, 
+  54:.\Generated_Source\PSoC5/Compint.c **** *  sets the default interrupt vector, sets the priority from the value in the
+  55:.\Generated_Source\PSoC5/Compint.c **** *  Design Wide Resources Interrupt Editor, then enables the interrupt to the 
+  56:.\Generated_Source\PSoC5/Compint.c **** *  interrupt controller.
+  57:.\Generated_Source\PSoC5/Compint.c **** *
+  58:.\Generated_Source\PSoC5/Compint.c **** * Parameters:  
+  59:.\Generated_Source\PSoC5/Compint.c **** *   None
+  60:.\Generated_Source\PSoC5/Compint.c **** *
+  61:.\Generated_Source\PSoC5/Compint.c **** * Return:
+  62:.\Generated_Source\PSoC5/Compint.c **** *   None
+  63:.\Generated_Source\PSoC5/Compint.c **** *
+  64:.\Generated_Source\PSoC5/Compint.c **** *******************************************************************************/
+  65:.\Generated_Source\PSoC5/Compint.c **** void Compint_Start(void)
+  66:.\Generated_Source\PSoC5/Compint.c **** {
+  67:.\Generated_Source\PSoC5/Compint.c ****     /* For all we know the interrupt is active. */
+  68:.\Generated_Source\PSoC5/Compint.c ****     Compint_Disable();
+  69:.\Generated_Source\PSoC5/Compint.c **** 
+  70:.\Generated_Source\PSoC5/Compint.c ****     /* Set the ISR to point to the Compint Interrupt. */
+  71:.\Generated_Source\PSoC5/Compint.c ****     Compint_SetVector(&Compint_Interrupt);
+  72:.\Generated_Source\PSoC5/Compint.c **** 
+  73:.\Generated_Source\PSoC5/Compint.c ****     /* Set the priority. */
+  74:.\Generated_Source\PSoC5/Compint.c ****     Compint_SetPriority((uint8)Compint_INTC_PRIOR_NUMBER);
+  75:.\Generated_Source\PSoC5/Compint.c **** 
+  76:.\Generated_Source\PSoC5/Compint.c ****     /* Enable it. */
+  77:.\Generated_Source\PSoC5/Compint.c ****     Compint_Enable();
+  78:.\Generated_Source\PSoC5/Compint.c **** }
+  79:.\Generated_Source\PSoC5/Compint.c **** 
+  80:.\Generated_Source\PSoC5/Compint.c **** 
+  81:.\Generated_Source\PSoC5/Compint.c **** /*******************************************************************************
+  82:.\Generated_Source\PSoC5/Compint.c **** * Function Name: Compint_StartEx
+  83:.\Generated_Source\PSoC5/Compint.c **** ********************************************************************************
+  84:.\Generated_Source\PSoC5/Compint.c **** *
+  85:.\Generated_Source\PSoC5/Compint.c **** * Summary:
+  86:.\Generated_Source\PSoC5/Compint.c **** *  Sets up the interrupt and enables it. This function disables the interrupt,
+  87:.\Generated_Source\PSoC5/Compint.c **** *  sets the interrupt vector based on the address passed in, sets the priority 
+  88:.\Generated_Source\PSoC5/Compint.c **** *  from the value in the Design Wide Resources Interrupt Editor, then enables 
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccHy6iik.s 			page 3
+
+
+  89:.\Generated_Source\PSoC5/Compint.c **** *  the interrupt to the interrupt controller.
+  90:.\Generated_Source\PSoC5/Compint.c **** *  
+  91:.\Generated_Source\PSoC5/Compint.c **** *  When defining ISR functions, the CY_ISR and CY_ISR_PROTO macros should be 
+  92:.\Generated_Source\PSoC5/Compint.c **** *  used to provide consistent definition across compilers:
+  93:.\Generated_Source\PSoC5/Compint.c **** *  
+  94:.\Generated_Source\PSoC5/Compint.c **** *  Function definition example:
+  95:.\Generated_Source\PSoC5/Compint.c **** *   CY_ISR(MyISR)
+  96:.\Generated_Source\PSoC5/Compint.c **** *   {
+  97:.\Generated_Source\PSoC5/Compint.c **** *   }
+  98:.\Generated_Source\PSoC5/Compint.c **** *   Function prototype example:
+  99:.\Generated_Source\PSoC5/Compint.c **** *   CY_ISR_PROTO(MyISR);
+ 100:.\Generated_Source\PSoC5/Compint.c **** *
+ 101:.\Generated_Source\PSoC5/Compint.c **** * Parameters:  
+ 102:.\Generated_Source\PSoC5/Compint.c **** *   address: Address of the ISR to set in the interrupt vector table.
+ 103:.\Generated_Source\PSoC5/Compint.c **** *
+ 104:.\Generated_Source\PSoC5/Compint.c **** * Return:
+ 105:.\Generated_Source\PSoC5/Compint.c **** *   None
+ 106:.\Generated_Source\PSoC5/Compint.c **** *
+ 107:.\Generated_Source\PSoC5/Compint.c **** *******************************************************************************/
+ 108:.\Generated_Source\PSoC5/Compint.c **** void Compint_StartEx(cyisraddress address)
+ 109:.\Generated_Source\PSoC5/Compint.c **** {
+ 110:.\Generated_Source\PSoC5/Compint.c ****     /* For all we know the interrupt is active. */
+ 111:.\Generated_Source\PSoC5/Compint.c ****     Compint_Disable();
+ 112:.\Generated_Source\PSoC5/Compint.c **** 
+ 113:.\Generated_Source\PSoC5/Compint.c ****     /* Set the ISR to point to the Compint Interrupt. */
+ 114:.\Generated_Source\PSoC5/Compint.c ****     Compint_SetVector(address);
+ 115:.\Generated_Source\PSoC5/Compint.c **** 
+ 116:.\Generated_Source\PSoC5/Compint.c ****     /* Set the priority. */
+ 117:.\Generated_Source\PSoC5/Compint.c ****     Compint_SetPriority((uint8)Compint_INTC_PRIOR_NUMBER);
+ 118:.\Generated_Source\PSoC5/Compint.c **** 
+ 119:.\Generated_Source\PSoC5/Compint.c ****     /* Enable it. */
+ 120:.\Generated_Source\PSoC5/Compint.c ****     Compint_Enable();
+ 121:.\Generated_Source\PSoC5/Compint.c **** }
+ 122:.\Generated_Source\PSoC5/Compint.c **** 
+ 123:.\Generated_Source\PSoC5/Compint.c **** 
+ 124:.\Generated_Source\PSoC5/Compint.c **** /*******************************************************************************
+ 125:.\Generated_Source\PSoC5/Compint.c **** * Function Name: Compint_Stop
+ 126:.\Generated_Source\PSoC5/Compint.c **** ********************************************************************************
+ 127:.\Generated_Source\PSoC5/Compint.c **** *
+ 128:.\Generated_Source\PSoC5/Compint.c **** * Summary:
+ 129:.\Generated_Source\PSoC5/Compint.c **** *   Disables and removes the interrupt.
+ 130:.\Generated_Source\PSoC5/Compint.c **** *
+ 131:.\Generated_Source\PSoC5/Compint.c **** * Parameters:  
+ 132:.\Generated_Source\PSoC5/Compint.c **** *   None
+ 133:.\Generated_Source\PSoC5/Compint.c **** *
+ 134:.\Generated_Source\PSoC5/Compint.c **** * Return:
+ 135:.\Generated_Source\PSoC5/Compint.c **** *   None
+ 136:.\Generated_Source\PSoC5/Compint.c **** *
+ 137:.\Generated_Source\PSoC5/Compint.c **** *******************************************************************************/
+ 138:.\Generated_Source\PSoC5/Compint.c **** void Compint_Stop(void)
+ 139:.\Generated_Source\PSoC5/Compint.c **** {
+ 140:.\Generated_Source\PSoC5/Compint.c ****     /* Disable this interrupt. */
+ 141:.\Generated_Source\PSoC5/Compint.c ****     Compint_Disable();
+ 142:.\Generated_Source\PSoC5/Compint.c **** 
+ 143:.\Generated_Source\PSoC5/Compint.c ****     /* Set the ISR to point to the passive one. */
+ 144:.\Generated_Source\PSoC5/Compint.c ****     Compint_SetVector(&IntDefaultHandler);
+ 145:.\Generated_Source\PSoC5/Compint.c **** }
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccHy6iik.s 			page 4
+
+
+ 146:.\Generated_Source\PSoC5/Compint.c **** 
+ 147:.\Generated_Source\PSoC5/Compint.c **** 
+ 148:.\Generated_Source\PSoC5/Compint.c **** /*******************************************************************************
+ 149:.\Generated_Source\PSoC5/Compint.c **** * Function Name: Compint_Interrupt
+ 150:.\Generated_Source\PSoC5/Compint.c **** ********************************************************************************
+ 151:.\Generated_Source\PSoC5/Compint.c **** *
+ 152:.\Generated_Source\PSoC5/Compint.c **** * Summary:
+ 153:.\Generated_Source\PSoC5/Compint.c **** *   The default Interrupt Service Routine for Compint.
+ 154:.\Generated_Source\PSoC5/Compint.c **** *
+ 155:.\Generated_Source\PSoC5/Compint.c **** *   Add custom code between the coments to keep the next version of this file
+ 156:.\Generated_Source\PSoC5/Compint.c **** *   from over writting your code.
+ 157:.\Generated_Source\PSoC5/Compint.c **** *
+ 158:.\Generated_Source\PSoC5/Compint.c **** * Parameters:  
+ 159:.\Generated_Source\PSoC5/Compint.c **** *
+ 160:.\Generated_Source\PSoC5/Compint.c **** * Return:
+ 161:.\Generated_Source\PSoC5/Compint.c **** *   None
+ 162:.\Generated_Source\PSoC5/Compint.c **** *
+ 163:.\Generated_Source\PSoC5/Compint.c **** *******************************************************************************/
+ 164:.\Generated_Source\PSoC5/Compint.c **** CY_ISR(Compint_Interrupt)
+ 165:.\Generated_Source\PSoC5/Compint.c **** {
+  27              		.loc 1 165 0
+  28              		.cfi_startproc
+  29              		@ args = 0, pretend = 0, frame = 0
+  30              		@ frame_needed = 0, uses_anonymous_args = 0
+  31 0000 10B5     		push	{r4, lr}
+  32              		.cfi_def_cfa_offset 8
+  33              		.cfi_offset 4, -8
+  34              		.cfi_offset 14, -4
+ 166:.\Generated_Source\PSoC5/Compint.c ****     /*  Place your Interrupt code here. */
+ 167:.\Generated_Source\PSoC5/Compint.c ****     /* `#START Compint_Interrupt` */
+ 168:.\Generated_Source\PSoC5/Compint.c ****     endCounts = startCounts;
+  35              		.loc 1 168 0
+  36 0002 034C     		ldr	r4, .L2
+  37 0004 6368     		ldr	r3, [r4, #4]
+  38 0006 2360     		str	r3, [r4]
+ 169:.\Generated_Source\PSoC5/Compint.c ****     startCounts = HeartbeatCounter_ReadCounter();
+  39              		.loc 1 169 0
+  40 0008 FFF7FEFF 		bl	HeartbeatCounter_ReadCounter
+  41              	.LVL0:
+  42 000c 6060     		str	r0, [r4, #4]
+  43 000e 10BD     		pop	{r4, pc}
+  44              	.L3:
+  45              		.align	2
+  46              	.L2:
+  47 0010 00000000 		.word	.LANCHOR0
+  48              		.cfi_endproc
+  49              	.LFE3:
+  50              		.size	Compint_Interrupt, .-Compint_Interrupt
+  51              		.section	.text.Compint_SetVector,"ax",%progbits
+  52              		.align	2
+  53              		.global	Compint_SetVector
+  54              		.thumb
+  55              		.thumb_func
+  56              		.type	Compint_SetVector, %function
+  57              	Compint_SetVector:
+  58              	.LFB4:
+ 170:.\Generated_Source\PSoC5/Compint.c **** //    TERMINAL_WriteNumber(heartrate);
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccHy6iik.s 			page 5
+
+
+ 171:.\Generated_Source\PSoC5/Compint.c ****     /*
+ 172:.\Generated_Source\PSoC5/Compint.c ****     Compint_ClearPending();
+ 173:.\Generated_Source\PSoC5/Compint.c ****     if(timer_status == 0) { // timer is off
+ 174:.\Generated_Source\PSoC5/Compint.c ****         startCounts = HeartbeatCounter_ReadCounter();
+ 175:.\Generated_Source\PSoC5/Compint.c ****         timer_status = 1;
+ 176:.\Generated_Source\PSoC5/Compint.c ****     } else {                // timer is on at 24MHz
+ 177:.\Generated_Source\PSoC5/Compint.c ****         endCounts = HeartbeatCounter_ReadCounter();
+ 178:.\Generated_Source\PSoC5/Compint.c **** //        heartrate = startCounts-HeartbeatCounter_ReadCounter();
+ 179:.\Generated_Source\PSoC5/Compint.c ****         timer_status = 0;
+ 180:.\Generated_Source\PSoC5/Compint.c ****     }
+ 181:.\Generated_Source\PSoC5/Compint.c ****     */
+ 182:.\Generated_Source\PSoC5/Compint.c ****     /* `#END` */
+ 183:.\Generated_Source\PSoC5/Compint.c **** }
+ 184:.\Generated_Source\PSoC5/Compint.c **** 
+ 185:.\Generated_Source\PSoC5/Compint.c **** 
+ 186:.\Generated_Source\PSoC5/Compint.c **** /*******************************************************************************
+ 187:.\Generated_Source\PSoC5/Compint.c **** * Function Name: Compint_SetVector
+ 188:.\Generated_Source\PSoC5/Compint.c **** ********************************************************************************
+ 189:.\Generated_Source\PSoC5/Compint.c **** *
+ 190:.\Generated_Source\PSoC5/Compint.c **** * Summary:
+ 191:.\Generated_Source\PSoC5/Compint.c **** *   Change the ISR vector for the Interrupt. Note calling Compint_Start
+ 192:.\Generated_Source\PSoC5/Compint.c **** *   will override any effect this method would have had. To set the vector 
+ 193:.\Generated_Source\PSoC5/Compint.c **** *   before the component has been started use Compint_StartEx instead.
+ 194:.\Generated_Source\PSoC5/Compint.c **** * 
+ 195:.\Generated_Source\PSoC5/Compint.c **** *   When defining ISR functions, the CY_ISR and CY_ISR_PROTO macros should be 
+ 196:.\Generated_Source\PSoC5/Compint.c **** *   used to provide consistent definition across compilers:
+ 197:.\Generated_Source\PSoC5/Compint.c **** *
+ 198:.\Generated_Source\PSoC5/Compint.c **** *   Function definition example:
+ 199:.\Generated_Source\PSoC5/Compint.c **** *   CY_ISR(MyISR)
+ 200:.\Generated_Source\PSoC5/Compint.c **** *   {
+ 201:.\Generated_Source\PSoC5/Compint.c **** *   }
+ 202:.\Generated_Source\PSoC5/Compint.c **** *
+ 203:.\Generated_Source\PSoC5/Compint.c **** *   Function prototype example:
+ 204:.\Generated_Source\PSoC5/Compint.c **** *     CY_ISR_PROTO(MyISR);
+ 205:.\Generated_Source\PSoC5/Compint.c **** *
+ 206:.\Generated_Source\PSoC5/Compint.c **** * Parameters:
+ 207:.\Generated_Source\PSoC5/Compint.c **** *   address: Address of the ISR to set in the interrupt vector table.
+ 208:.\Generated_Source\PSoC5/Compint.c **** *
+ 209:.\Generated_Source\PSoC5/Compint.c **** * Return:
+ 210:.\Generated_Source\PSoC5/Compint.c **** *   None
+ 211:.\Generated_Source\PSoC5/Compint.c **** *
+ 212:.\Generated_Source\PSoC5/Compint.c **** *******************************************************************************/
+ 213:.\Generated_Source\PSoC5/Compint.c **** void Compint_SetVector(cyisraddress address)
+ 214:.\Generated_Source\PSoC5/Compint.c **** {
+  59              		.loc 1 214 0
+  60              		.cfi_startproc
+  61              		@ args = 0, pretend = 0, frame = 0
+  62              		@ frame_needed = 0, uses_anonymous_args = 0
+  63              		@ link register save eliminated.
+  64              	.LVL1:
+ 215:.\Generated_Source\PSoC5/Compint.c ****     cyisraddress * ramVectorTable;
+ 216:.\Generated_Source\PSoC5/Compint.c **** 
+ 217:.\Generated_Source\PSoC5/Compint.c ****     ramVectorTable = (cyisraddress *) *CYINT_VECT_TABLE;
+  65              		.loc 1 217 0
+  66 0000 014B     		ldr	r3, .L5
+  67 0002 1B68     		ldr	r3, [r3]
+  68              	.LVL2:
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccHy6iik.s 			page 6
+
+
+ 218:.\Generated_Source\PSoC5/Compint.c **** 
+ 219:.\Generated_Source\PSoC5/Compint.c ****     ramVectorTable[CYINT_IRQ_BASE + (uint32)Compint__INTC_NUMBER] = address;
+  69              		.loc 1 219 0
+  70 0004 1864     		str	r0, [r3, #64]
+  71 0006 7047     		bx	lr
+  72              	.L6:
+  73              		.align	2
+  74              	.L5:
+  75 0008 08ED00E0 		.word	-536810232
+  76              		.cfi_endproc
+  77              	.LFE4:
+  78              		.size	Compint_SetVector, .-Compint_SetVector
+  79              		.section	.text.Compint_GetVector,"ax",%progbits
+  80              		.align	2
+  81              		.global	Compint_GetVector
+  82              		.thumb
+  83              		.thumb_func
+  84              		.type	Compint_GetVector, %function
+  85              	Compint_GetVector:
+  86              	.LFB5:
+ 220:.\Generated_Source\PSoC5/Compint.c **** }
+ 221:.\Generated_Source\PSoC5/Compint.c **** 
+ 222:.\Generated_Source\PSoC5/Compint.c **** 
+ 223:.\Generated_Source\PSoC5/Compint.c **** /*******************************************************************************
+ 224:.\Generated_Source\PSoC5/Compint.c **** * Function Name: Compint_GetVector
+ 225:.\Generated_Source\PSoC5/Compint.c **** ********************************************************************************
+ 226:.\Generated_Source\PSoC5/Compint.c **** *
+ 227:.\Generated_Source\PSoC5/Compint.c **** * Summary:
+ 228:.\Generated_Source\PSoC5/Compint.c **** *   Gets the "address" of the current ISR vector for the Interrupt.
+ 229:.\Generated_Source\PSoC5/Compint.c **** *
+ 230:.\Generated_Source\PSoC5/Compint.c **** * Parameters:
+ 231:.\Generated_Source\PSoC5/Compint.c **** *   None
+ 232:.\Generated_Source\PSoC5/Compint.c **** *
+ 233:.\Generated_Source\PSoC5/Compint.c **** * Return:
+ 234:.\Generated_Source\PSoC5/Compint.c **** *   Address of the ISR in the interrupt vector table.
+ 235:.\Generated_Source\PSoC5/Compint.c **** *
+ 236:.\Generated_Source\PSoC5/Compint.c **** *******************************************************************************/
+ 237:.\Generated_Source\PSoC5/Compint.c **** cyisraddress Compint_GetVector(void)
+ 238:.\Generated_Source\PSoC5/Compint.c **** {
+  87              		.loc 1 238 0
+  88              		.cfi_startproc
+  89              		@ args = 0, pretend = 0, frame = 0
+  90              		@ frame_needed = 0, uses_anonymous_args = 0
+  91              		@ link register save eliminated.
+ 239:.\Generated_Source\PSoC5/Compint.c ****     cyisraddress * ramVectorTable;
+ 240:.\Generated_Source\PSoC5/Compint.c **** 
+ 241:.\Generated_Source\PSoC5/Compint.c ****     ramVectorTable = (cyisraddress *) *CYINT_VECT_TABLE;
+  92              		.loc 1 241 0
+  93 0000 014B     		ldr	r3, .L8
+  94 0002 1B68     		ldr	r3, [r3]
+  95              	.LVL3:
+ 242:.\Generated_Source\PSoC5/Compint.c **** 
+ 243:.\Generated_Source\PSoC5/Compint.c ****     return ramVectorTable[CYINT_IRQ_BASE + (uint32)Compint__INTC_NUMBER];
+ 244:.\Generated_Source\PSoC5/Compint.c **** }
+  96              		.loc 1 244 0
+  97 0004 186C     		ldr	r0, [r3, #64]
+  98 0006 7047     		bx	lr
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccHy6iik.s 			page 7
+
+
+  99              	.L9:
+ 100              		.align	2
+ 101              	.L8:
+ 102 0008 08ED00E0 		.word	-536810232
+ 103              		.cfi_endproc
+ 104              	.LFE5:
+ 105              		.size	Compint_GetVector, .-Compint_GetVector
+ 106              		.section	.text.Compint_SetPriority,"ax",%progbits
+ 107              		.align	2
+ 108              		.global	Compint_SetPriority
+ 109              		.thumb
+ 110              		.thumb_func
+ 111              		.type	Compint_SetPriority, %function
+ 112              	Compint_SetPriority:
+ 113              	.LFB6:
+ 245:.\Generated_Source\PSoC5/Compint.c **** 
+ 246:.\Generated_Source\PSoC5/Compint.c **** 
+ 247:.\Generated_Source\PSoC5/Compint.c **** /*******************************************************************************
+ 248:.\Generated_Source\PSoC5/Compint.c **** * Function Name: Compint_SetPriority
+ 249:.\Generated_Source\PSoC5/Compint.c **** ********************************************************************************
+ 250:.\Generated_Source\PSoC5/Compint.c **** *
+ 251:.\Generated_Source\PSoC5/Compint.c **** * Summary:
+ 252:.\Generated_Source\PSoC5/Compint.c **** *   Sets the Priority of the Interrupt. 
+ 253:.\Generated_Source\PSoC5/Compint.c **** *
+ 254:.\Generated_Source\PSoC5/Compint.c **** *   Note calling Compint_Start or Compint_StartEx will 
+ 255:.\Generated_Source\PSoC5/Compint.c **** *   override any effect this API would have had. This API should only be called
+ 256:.\Generated_Source\PSoC5/Compint.c **** *   after Compint_Start or Compint_StartEx has been called. 
+ 257:.\Generated_Source\PSoC5/Compint.c **** *   To set the initial priority for the component, use the Design-Wide Resources
+ 258:.\Generated_Source\PSoC5/Compint.c **** *   Interrupt Editor.
+ 259:.\Generated_Source\PSoC5/Compint.c **** *
+ 260:.\Generated_Source\PSoC5/Compint.c **** *   Note This API has no effect on Non-maskable interrupt NMI).
+ 261:.\Generated_Source\PSoC5/Compint.c **** *
+ 262:.\Generated_Source\PSoC5/Compint.c **** * Parameters:
+ 263:.\Generated_Source\PSoC5/Compint.c **** *   priority: Priority of the interrupt, 0 being the highest priority
+ 264:.\Generated_Source\PSoC5/Compint.c **** *             PSoC 3 and PSoC 5LP: Priority is from 0 to 7.
+ 265:.\Generated_Source\PSoC5/Compint.c **** *             PSoC 4: Priority is from 0 to 3.
+ 266:.\Generated_Source\PSoC5/Compint.c **** *
+ 267:.\Generated_Source\PSoC5/Compint.c **** * Return:
+ 268:.\Generated_Source\PSoC5/Compint.c **** *   None
+ 269:.\Generated_Source\PSoC5/Compint.c **** *
+ 270:.\Generated_Source\PSoC5/Compint.c **** *******************************************************************************/
+ 271:.\Generated_Source\PSoC5/Compint.c **** void Compint_SetPriority(uint8 priority)
+ 272:.\Generated_Source\PSoC5/Compint.c **** {
+ 114              		.loc 1 272 0
+ 115              		.cfi_startproc
+ 116              		@ args = 0, pretend = 0, frame = 0
+ 117              		@ frame_needed = 0, uses_anonymous_args = 0
+ 118              		@ link register save eliminated.
+ 119              	.LVL4:
+ 273:.\Generated_Source\PSoC5/Compint.c ****     *Compint_INTC_PRIOR = priority << 5;
+ 120              		.loc 1 273 0
+ 121 0000 4001     		lsls	r0, r0, #5
+ 122              	.LVL5:
+ 123 0002 C0B2     		uxtb	r0, r0
+ 124 0004 014B     		ldr	r3, .L11
+ 125 0006 1870     		strb	r0, [r3]
+ 126 0008 7047     		bx	lr
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccHy6iik.s 			page 8
+
+
+ 127              	.L12:
+ 128 000a 00BF     		.align	2
+ 129              	.L11:
+ 130 000c 00E400E0 		.word	-536812544
+ 131              		.cfi_endproc
+ 132              	.LFE6:
+ 133              		.size	Compint_SetPriority, .-Compint_SetPriority
+ 134              		.section	.text.Compint_GetPriority,"ax",%progbits
+ 135              		.align	2
+ 136              		.global	Compint_GetPriority
+ 137              		.thumb
+ 138              		.thumb_func
+ 139              		.type	Compint_GetPriority, %function
+ 140              	Compint_GetPriority:
+ 141              	.LFB7:
+ 274:.\Generated_Source\PSoC5/Compint.c **** }
+ 275:.\Generated_Source\PSoC5/Compint.c **** 
+ 276:.\Generated_Source\PSoC5/Compint.c **** 
+ 277:.\Generated_Source\PSoC5/Compint.c **** /*******************************************************************************
+ 278:.\Generated_Source\PSoC5/Compint.c **** * Function Name: Compint_GetPriority
+ 279:.\Generated_Source\PSoC5/Compint.c **** ********************************************************************************
+ 280:.\Generated_Source\PSoC5/Compint.c **** *
+ 281:.\Generated_Source\PSoC5/Compint.c **** * Summary:
+ 282:.\Generated_Source\PSoC5/Compint.c **** *   Gets the Priority of the Interrupt.
+ 283:.\Generated_Source\PSoC5/Compint.c **** *
+ 284:.\Generated_Source\PSoC5/Compint.c **** * Parameters:
+ 285:.\Generated_Source\PSoC5/Compint.c **** *   None
+ 286:.\Generated_Source\PSoC5/Compint.c **** *
+ 287:.\Generated_Source\PSoC5/Compint.c **** * Return:
+ 288:.\Generated_Source\PSoC5/Compint.c **** *   Priority of the interrupt, 0 being the highest priority
+ 289:.\Generated_Source\PSoC5/Compint.c **** *    PSoC 3 and PSoC 5LP: Priority is from 0 to 7.
+ 290:.\Generated_Source\PSoC5/Compint.c **** *    PSoC 4: Priority is from 0 to 3.
+ 291:.\Generated_Source\PSoC5/Compint.c **** *
+ 292:.\Generated_Source\PSoC5/Compint.c **** *******************************************************************************/
+ 293:.\Generated_Source\PSoC5/Compint.c **** uint8 Compint_GetPriority(void)
+ 294:.\Generated_Source\PSoC5/Compint.c **** {
+ 142              		.loc 1 294 0
+ 143              		.cfi_startproc
+ 144              		@ args = 0, pretend = 0, frame = 0
+ 145              		@ frame_needed = 0, uses_anonymous_args = 0
+ 146              		@ link register save eliminated.
+ 295:.\Generated_Source\PSoC5/Compint.c ****     uint8 priority;
+ 296:.\Generated_Source\PSoC5/Compint.c **** 
+ 297:.\Generated_Source\PSoC5/Compint.c **** 
+ 298:.\Generated_Source\PSoC5/Compint.c ****     priority = *Compint_INTC_PRIOR >> 5;
+ 147              		.loc 1 298 0
+ 148 0000 014B     		ldr	r3, .L14
+ 149 0002 1878     		ldrb	r0, [r3]	@ zero_extendqisi2
+ 150              	.LVL6:
+ 299:.\Generated_Source\PSoC5/Compint.c **** 
+ 300:.\Generated_Source\PSoC5/Compint.c ****     return priority;
+ 301:.\Generated_Source\PSoC5/Compint.c **** }
+ 151              		.loc 1 301 0
+ 152 0004 4009     		lsrs	r0, r0, #5
+ 153              	.LVL7:
+ 154 0006 7047     		bx	lr
+ 155              	.L15:
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccHy6iik.s 			page 9
+
+
+ 156              		.align	2
+ 157              	.L14:
+ 158 0008 00E400E0 		.word	-536812544
+ 159              		.cfi_endproc
+ 160              	.LFE7:
+ 161              		.size	Compint_GetPriority, .-Compint_GetPriority
+ 162              		.section	.text.Compint_Enable,"ax",%progbits
+ 163              		.align	2
+ 164              		.global	Compint_Enable
+ 165              		.thumb
+ 166              		.thumb_func
+ 167              		.type	Compint_Enable, %function
+ 168              	Compint_Enable:
+ 169              	.LFB8:
+ 302:.\Generated_Source\PSoC5/Compint.c **** 
+ 303:.\Generated_Source\PSoC5/Compint.c **** 
+ 304:.\Generated_Source\PSoC5/Compint.c **** /*******************************************************************************
+ 305:.\Generated_Source\PSoC5/Compint.c **** * Function Name: Compint_Enable
+ 306:.\Generated_Source\PSoC5/Compint.c **** ********************************************************************************
+ 307:.\Generated_Source\PSoC5/Compint.c **** *
+ 308:.\Generated_Source\PSoC5/Compint.c **** * Summary:
+ 309:.\Generated_Source\PSoC5/Compint.c **** *   Enables the interrupt to the interrupt controller. Do not call this function
+ 310:.\Generated_Source\PSoC5/Compint.c **** *   unless ISR_Start() has been called or the functionality of the ISR_Start() 
+ 311:.\Generated_Source\PSoC5/Compint.c **** *   function, which sets the vector and the priority, has been called.
+ 312:.\Generated_Source\PSoC5/Compint.c **** *
+ 313:.\Generated_Source\PSoC5/Compint.c **** * Parameters:
+ 314:.\Generated_Source\PSoC5/Compint.c **** *   None
+ 315:.\Generated_Source\PSoC5/Compint.c **** *
+ 316:.\Generated_Source\PSoC5/Compint.c **** * Return:
+ 317:.\Generated_Source\PSoC5/Compint.c **** *   None
+ 318:.\Generated_Source\PSoC5/Compint.c **** *
+ 319:.\Generated_Source\PSoC5/Compint.c **** *******************************************************************************/
+ 320:.\Generated_Source\PSoC5/Compint.c **** void Compint_Enable(void)
+ 321:.\Generated_Source\PSoC5/Compint.c **** {
+ 170              		.loc 1 321 0
+ 171              		.cfi_startproc
+ 172              		@ args = 0, pretend = 0, frame = 0
+ 173              		@ frame_needed = 0, uses_anonymous_args = 0
+ 174              		@ link register save eliminated.
+ 322:.\Generated_Source\PSoC5/Compint.c ****     /* Enable the general interrupt. */
+ 323:.\Generated_Source\PSoC5/Compint.c ****     *Compint_INTC_SET_EN = Compint__INTC_MASK;
+ 175              		.loc 1 323 0
+ 176 0000 0122     		movs	r2, #1
+ 177 0002 014B     		ldr	r3, .L17
+ 178 0004 1A60     		str	r2, [r3]
+ 179 0006 7047     		bx	lr
+ 180              	.L18:
+ 181              		.align	2
+ 182              	.L17:
+ 183 0008 00E100E0 		.word	-536813312
+ 184              		.cfi_endproc
+ 185              	.LFE8:
+ 186              		.size	Compint_Enable, .-Compint_Enable
+ 187              		.section	.text.Compint_GetState,"ax",%progbits
+ 188              		.align	2
+ 189              		.global	Compint_GetState
+ 190              		.thumb
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccHy6iik.s 			page 10
+
+
+ 191              		.thumb_func
+ 192              		.type	Compint_GetState, %function
+ 193              	Compint_GetState:
+ 194              	.LFB9:
+ 324:.\Generated_Source\PSoC5/Compint.c **** }
+ 325:.\Generated_Source\PSoC5/Compint.c **** 
+ 326:.\Generated_Source\PSoC5/Compint.c **** 
+ 327:.\Generated_Source\PSoC5/Compint.c **** /*******************************************************************************
+ 328:.\Generated_Source\PSoC5/Compint.c **** * Function Name: Compint_GetState
+ 329:.\Generated_Source\PSoC5/Compint.c **** ********************************************************************************
+ 330:.\Generated_Source\PSoC5/Compint.c **** *
+ 331:.\Generated_Source\PSoC5/Compint.c **** * Summary:
+ 332:.\Generated_Source\PSoC5/Compint.c **** *   Gets the state (enabled, disabled) of the Interrupt.
+ 333:.\Generated_Source\PSoC5/Compint.c **** *
+ 334:.\Generated_Source\PSoC5/Compint.c **** * Parameters:
+ 335:.\Generated_Source\PSoC5/Compint.c **** *   None
+ 336:.\Generated_Source\PSoC5/Compint.c **** *
+ 337:.\Generated_Source\PSoC5/Compint.c **** * Return:
+ 338:.\Generated_Source\PSoC5/Compint.c **** *   1 if enabled, 0 if disabled.
+ 339:.\Generated_Source\PSoC5/Compint.c **** *
+ 340:.\Generated_Source\PSoC5/Compint.c **** *******************************************************************************/
+ 341:.\Generated_Source\PSoC5/Compint.c **** uint8 Compint_GetState(void)
+ 342:.\Generated_Source\PSoC5/Compint.c **** {
+ 195              		.loc 1 342 0
+ 196              		.cfi_startproc
+ 197              		@ args = 0, pretend = 0, frame = 0
+ 198              		@ frame_needed = 0, uses_anonymous_args = 0
+ 199              		@ link register save eliminated.
+ 343:.\Generated_Source\PSoC5/Compint.c ****     /* Get the state of the general interrupt. */
+ 344:.\Generated_Source\PSoC5/Compint.c ****     return ((*Compint_INTC_SET_EN & (uint32)Compint__INTC_MASK) != 0u) ? 1u:0u;
+ 200              		.loc 1 344 0
+ 201 0000 024B     		ldr	r3, .L20
+ 202 0002 1868     		ldr	r0, [r3]
+ 345:.\Generated_Source\PSoC5/Compint.c **** }
+ 203              		.loc 1 345 0
+ 204 0004 00F00100 		and	r0, r0, #1
+ 205 0008 7047     		bx	lr
+ 206              	.L21:
+ 207 000a 00BF     		.align	2
+ 208              	.L20:
+ 209 000c 00E100E0 		.word	-536813312
+ 210              		.cfi_endproc
+ 211              	.LFE9:
+ 212              		.size	Compint_GetState, .-Compint_GetState
+ 213              		.section	.text.Compint_Disable,"ax",%progbits
+ 214              		.align	2
+ 215              		.global	Compint_Disable
+ 216              		.thumb
+ 217              		.thumb_func
+ 218              		.type	Compint_Disable, %function
+ 219              	Compint_Disable:
+ 220              	.LFB10:
+ 346:.\Generated_Source\PSoC5/Compint.c **** 
+ 347:.\Generated_Source\PSoC5/Compint.c **** 
+ 348:.\Generated_Source\PSoC5/Compint.c **** /*******************************************************************************
+ 349:.\Generated_Source\PSoC5/Compint.c **** * Function Name: Compint_Disable
+ 350:.\Generated_Source\PSoC5/Compint.c **** ********************************************************************************
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccHy6iik.s 			page 11
+
+
+ 351:.\Generated_Source\PSoC5/Compint.c **** *
+ 352:.\Generated_Source\PSoC5/Compint.c **** * Summary:
+ 353:.\Generated_Source\PSoC5/Compint.c **** *   Disables the Interrupt in the interrupt controller.
+ 354:.\Generated_Source\PSoC5/Compint.c **** *
+ 355:.\Generated_Source\PSoC5/Compint.c **** * Parameters:
+ 356:.\Generated_Source\PSoC5/Compint.c **** *   None
+ 357:.\Generated_Source\PSoC5/Compint.c **** *
+ 358:.\Generated_Source\PSoC5/Compint.c **** * Return:
+ 359:.\Generated_Source\PSoC5/Compint.c **** *   None
+ 360:.\Generated_Source\PSoC5/Compint.c **** *
+ 361:.\Generated_Source\PSoC5/Compint.c **** *******************************************************************************/
+ 362:.\Generated_Source\PSoC5/Compint.c **** void Compint_Disable(void)
+ 363:.\Generated_Source\PSoC5/Compint.c **** {
+ 221              		.loc 1 363 0
+ 222              		.cfi_startproc
+ 223              		@ args = 0, pretend = 0, frame = 0
+ 224              		@ frame_needed = 0, uses_anonymous_args = 0
+ 225              		@ link register save eliminated.
+ 364:.\Generated_Source\PSoC5/Compint.c ****     /* Disable the general interrupt. */
+ 365:.\Generated_Source\PSoC5/Compint.c ****     *Compint_INTC_CLR_EN = Compint__INTC_MASK;
+ 226              		.loc 1 365 0
+ 227 0000 0122     		movs	r2, #1
+ 228 0002 014B     		ldr	r3, .L23
+ 229 0004 1A60     		str	r2, [r3]
+ 230 0006 7047     		bx	lr
+ 231              	.L24:
+ 232              		.align	2
+ 233              	.L23:
+ 234 0008 80E100E0 		.word	-536813184
+ 235              		.cfi_endproc
+ 236              	.LFE10:
+ 237              		.size	Compint_Disable, .-Compint_Disable
+ 238              		.section	.text.Compint_Start,"ax",%progbits
+ 239              		.align	2
+ 240              		.global	Compint_Start
+ 241              		.thumb
+ 242              		.thumb_func
+ 243              		.type	Compint_Start, %function
+ 244              	Compint_Start:
+ 245              	.LFB0:
+  66:.\Generated_Source\PSoC5/Compint.c **** {
+ 246              		.loc 1 66 0
+ 247              		.cfi_startproc
+ 248              		@ args = 0, pretend = 0, frame = 0
+ 249              		@ frame_needed = 0, uses_anonymous_args = 0
+ 250 0000 08B5     		push	{r3, lr}
+ 251              		.cfi_def_cfa_offset 8
+ 252              		.cfi_offset 3, -8
+ 253              		.cfi_offset 14, -4
+  68:.\Generated_Source\PSoC5/Compint.c ****     Compint_Disable();
+ 254              		.loc 1 68 0
+ 255 0002 FFF7FEFF 		bl	Compint_Disable
+ 256              	.LVL8:
+  71:.\Generated_Source\PSoC5/Compint.c ****     Compint_SetVector(&Compint_Interrupt);
+ 257              		.loc 1 71 0
+ 258 0006 0448     		ldr	r0, .L26
+ 259 0008 FFF7FEFF 		bl	Compint_SetVector
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccHy6iik.s 			page 12
+
+
+ 260              	.LVL9:
+  74:.\Generated_Source\PSoC5/Compint.c ****     Compint_SetPriority((uint8)Compint_INTC_PRIOR_NUMBER);
+ 261              		.loc 1 74 0
+ 262 000c 0720     		movs	r0, #7
+ 263 000e FFF7FEFF 		bl	Compint_SetPriority
+ 264              	.LVL10:
+  77:.\Generated_Source\PSoC5/Compint.c ****     Compint_Enable();
+ 265              		.loc 1 77 0
+ 266 0012 FFF7FEFF 		bl	Compint_Enable
+ 267              	.LVL11:
+ 268 0016 08BD     		pop	{r3, pc}
+ 269              	.L27:
+ 270              		.align	2
+ 271              	.L26:
+ 272 0018 00000000 		.word	Compint_Interrupt
+ 273              		.cfi_endproc
+ 274              	.LFE0:
+ 275              		.size	Compint_Start, .-Compint_Start
+ 276              		.section	.text.Compint_StartEx,"ax",%progbits
+ 277              		.align	2
+ 278              		.global	Compint_StartEx
+ 279              		.thumb
+ 280              		.thumb_func
+ 281              		.type	Compint_StartEx, %function
+ 282              	Compint_StartEx:
+ 283              	.LFB1:
+ 109:.\Generated_Source\PSoC5/Compint.c **** {
+ 284              		.loc 1 109 0
+ 285              		.cfi_startproc
+ 286              		@ args = 0, pretend = 0, frame = 0
+ 287              		@ frame_needed = 0, uses_anonymous_args = 0
+ 288              	.LVL12:
+ 289 0000 10B5     		push	{r4, lr}
+ 290              		.cfi_def_cfa_offset 8
+ 291              		.cfi_offset 4, -8
+ 292              		.cfi_offset 14, -4
+ 293 0002 0446     		mov	r4, r0
+ 111:.\Generated_Source\PSoC5/Compint.c ****     Compint_Disable();
+ 294              		.loc 1 111 0
+ 295 0004 FFF7FEFF 		bl	Compint_Disable
+ 296              	.LVL13:
+ 114:.\Generated_Source\PSoC5/Compint.c ****     Compint_SetVector(address);
+ 297              		.loc 1 114 0
+ 298 0008 2046     		mov	r0, r4
+ 299 000a FFF7FEFF 		bl	Compint_SetVector
+ 300              	.LVL14:
+ 117:.\Generated_Source\PSoC5/Compint.c ****     Compint_SetPriority((uint8)Compint_INTC_PRIOR_NUMBER);
+ 301              		.loc 1 117 0
+ 302 000e 0720     		movs	r0, #7
+ 303 0010 FFF7FEFF 		bl	Compint_SetPriority
+ 304              	.LVL15:
+ 120:.\Generated_Source\PSoC5/Compint.c ****     Compint_Enable();
+ 305              		.loc 1 120 0
+ 306 0014 FFF7FEFF 		bl	Compint_Enable
+ 307              	.LVL16:
+ 308 0018 10BD     		pop	{r4, pc}
+ 309              		.cfi_endproc
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccHy6iik.s 			page 13
+
+
+ 310              	.LFE1:
+ 311              		.size	Compint_StartEx, .-Compint_StartEx
+ 312 001a 00BF     		.section	.text.Compint_Stop,"ax",%progbits
+ 313              		.align	2
+ 314              		.global	Compint_Stop
+ 315              		.thumb
+ 316              		.thumb_func
+ 317              		.type	Compint_Stop, %function
+ 318              	Compint_Stop:
+ 319              	.LFB2:
+ 139:.\Generated_Source\PSoC5/Compint.c **** {
+ 320              		.loc 1 139 0
+ 321              		.cfi_startproc
+ 322              		@ args = 0, pretend = 0, frame = 0
+ 323              		@ frame_needed = 0, uses_anonymous_args = 0
+ 324 0000 08B5     		push	{r3, lr}
+ 325              		.cfi_def_cfa_offset 8
+ 326              		.cfi_offset 3, -8
+ 327              		.cfi_offset 14, -4
+ 141:.\Generated_Source\PSoC5/Compint.c ****     Compint_Disable();
+ 328              		.loc 1 141 0
+ 329 0002 FFF7FEFF 		bl	Compint_Disable
+ 330              	.LVL17:
+ 144:.\Generated_Source\PSoC5/Compint.c ****     Compint_SetVector(&IntDefaultHandler);
+ 331              		.loc 1 144 0
+ 332 0006 0248     		ldr	r0, .L30
+ 333 0008 FFF7FEFF 		bl	Compint_SetVector
+ 334              	.LVL18:
+ 335 000c 08BD     		pop	{r3, pc}
+ 336              	.L31:
+ 337 000e 00BF     		.align	2
+ 338              	.L30:
+ 339 0010 00000000 		.word	IntDefaultHandler
+ 340              		.cfi_endproc
+ 341              	.LFE2:
+ 342              		.size	Compint_Stop, .-Compint_Stop
+ 343              		.section	.text.Compint_SetPending,"ax",%progbits
+ 344              		.align	2
+ 345              		.global	Compint_SetPending
+ 346              		.thumb
+ 347              		.thumb_func
+ 348              		.type	Compint_SetPending, %function
+ 349              	Compint_SetPending:
+ 350              	.LFB11:
+ 366:.\Generated_Source\PSoC5/Compint.c **** }
+ 367:.\Generated_Source\PSoC5/Compint.c **** 
+ 368:.\Generated_Source\PSoC5/Compint.c **** 
+ 369:.\Generated_Source\PSoC5/Compint.c **** /*******************************************************************************
+ 370:.\Generated_Source\PSoC5/Compint.c **** * Function Name: Compint_SetPending
+ 371:.\Generated_Source\PSoC5/Compint.c **** ********************************************************************************
+ 372:.\Generated_Source\PSoC5/Compint.c **** *
+ 373:.\Generated_Source\PSoC5/Compint.c **** * Summary:
+ 374:.\Generated_Source\PSoC5/Compint.c **** *   Causes the Interrupt to enter the pending state, a software method of
+ 375:.\Generated_Source\PSoC5/Compint.c **** *   generating the interrupt.
+ 376:.\Generated_Source\PSoC5/Compint.c **** *
+ 377:.\Generated_Source\PSoC5/Compint.c **** * Parameters:
+ 378:.\Generated_Source\PSoC5/Compint.c **** *   None
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccHy6iik.s 			page 14
+
+
+ 379:.\Generated_Source\PSoC5/Compint.c **** *
+ 380:.\Generated_Source\PSoC5/Compint.c **** * Return:
+ 381:.\Generated_Source\PSoC5/Compint.c **** *   None
+ 382:.\Generated_Source\PSoC5/Compint.c **** *
+ 383:.\Generated_Source\PSoC5/Compint.c **** * Side Effects:
+ 384:.\Generated_Source\PSoC5/Compint.c **** *   If interrupts are enabled and the interrupt is set up properly, the ISR is
+ 385:.\Generated_Source\PSoC5/Compint.c **** *   entered (depending on the priority of this interrupt and other pending 
+ 386:.\Generated_Source\PSoC5/Compint.c **** *   interrupts).
+ 387:.\Generated_Source\PSoC5/Compint.c **** *
+ 388:.\Generated_Source\PSoC5/Compint.c **** *******************************************************************************/
+ 389:.\Generated_Source\PSoC5/Compint.c **** void Compint_SetPending(void)
+ 390:.\Generated_Source\PSoC5/Compint.c **** {
+ 351              		.loc 1 390 0
+ 352              		.cfi_startproc
+ 353              		@ args = 0, pretend = 0, frame = 0
+ 354              		@ frame_needed = 0, uses_anonymous_args = 0
+ 355              		@ link register save eliminated.
+ 391:.\Generated_Source\PSoC5/Compint.c ****     *Compint_INTC_SET_PD = Compint__INTC_MASK;
+ 356              		.loc 1 391 0
+ 357 0000 0122     		movs	r2, #1
+ 358 0002 014B     		ldr	r3, .L33
+ 359 0004 1A60     		str	r2, [r3]
+ 360 0006 7047     		bx	lr
+ 361              	.L34:
+ 362              		.align	2
+ 363              	.L33:
+ 364 0008 00E200E0 		.word	-536813056
+ 365              		.cfi_endproc
+ 366              	.LFE11:
+ 367              		.size	Compint_SetPending, .-Compint_SetPending
+ 368              		.section	.text.Compint_ClearPending,"ax",%progbits
+ 369              		.align	2
+ 370              		.global	Compint_ClearPending
+ 371              		.thumb
+ 372              		.thumb_func
+ 373              		.type	Compint_ClearPending, %function
+ 374              	Compint_ClearPending:
+ 375              	.LFB12:
+ 392:.\Generated_Source\PSoC5/Compint.c **** }
+ 393:.\Generated_Source\PSoC5/Compint.c **** 
+ 394:.\Generated_Source\PSoC5/Compint.c **** 
+ 395:.\Generated_Source\PSoC5/Compint.c **** /*******************************************************************************
+ 396:.\Generated_Source\PSoC5/Compint.c **** * Function Name: Compint_ClearPending
+ 397:.\Generated_Source\PSoC5/Compint.c **** ********************************************************************************
+ 398:.\Generated_Source\PSoC5/Compint.c **** *
+ 399:.\Generated_Source\PSoC5/Compint.c **** * Summary:
+ 400:.\Generated_Source\PSoC5/Compint.c **** *   Clears a pending interrupt in the interrupt controller.
+ 401:.\Generated_Source\PSoC5/Compint.c **** *
+ 402:.\Generated_Source\PSoC5/Compint.c **** *   Note Some interrupt sources are clear-on-read and require the block 
+ 403:.\Generated_Source\PSoC5/Compint.c **** *   interrupt/status register to be read/cleared with the appropriate block API 
+ 404:.\Generated_Source\PSoC5/Compint.c **** *   (GPIO, UART, and so on). Otherwise the ISR will continue to remain in 
+ 405:.\Generated_Source\PSoC5/Compint.c **** *   pending state even though the interrupt itself is cleared using this API.
+ 406:.\Generated_Source\PSoC5/Compint.c **** *
+ 407:.\Generated_Source\PSoC5/Compint.c **** * Parameters:
+ 408:.\Generated_Source\PSoC5/Compint.c **** *   None
+ 409:.\Generated_Source\PSoC5/Compint.c **** *
+ 410:.\Generated_Source\PSoC5/Compint.c **** * Return:
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccHy6iik.s 			page 15
+
+
+ 411:.\Generated_Source\PSoC5/Compint.c **** *   None
+ 412:.\Generated_Source\PSoC5/Compint.c **** *
+ 413:.\Generated_Source\PSoC5/Compint.c **** *******************************************************************************/
+ 414:.\Generated_Source\PSoC5/Compint.c **** void Compint_ClearPending(void)
+ 415:.\Generated_Source\PSoC5/Compint.c **** {
+ 376              		.loc 1 415 0
+ 377              		.cfi_startproc
+ 378              		@ args = 0, pretend = 0, frame = 0
+ 379              		@ frame_needed = 0, uses_anonymous_args = 0
+ 380              		@ link register save eliminated.
+ 416:.\Generated_Source\PSoC5/Compint.c ****     *Compint_INTC_CLR_PD = Compint__INTC_MASK;
+ 381              		.loc 1 416 0
+ 382 0000 0122     		movs	r2, #1
+ 383 0002 014B     		ldr	r3, .L36
+ 384 0004 1A60     		str	r2, [r3]
+ 385 0006 7047     		bx	lr
+ 386              	.L37:
+ 387              		.align	2
+ 388              	.L36:
+ 389 0008 80E200E0 		.word	-536812928
+ 390              		.cfi_endproc
+ 391              	.LFE12:
+ 392              		.size	Compint_ClearPending, .-Compint_ClearPending
+ 393              		.global	endCounts
+ 394              		.global	startCounts
+ 395              		.comm	timer_value,4,4
+ 396              		.comm	timer_status,4,4
+ 397              		.comm	heartbeatCounter,4,4
+ 398              		.comm	heartrate,4,4
+ 399              		.comm	Prev_state,4,4
+ 400              		.comm	currentState,4,4
+ 401              		.bss
+ 402              		.align	2
+ 403              		.set	.LANCHOR0,. + 0
+ 404              		.type	endCounts, %object
+ 405              		.size	endCounts, 4
+ 406              	endCounts:
+ 407 0000 00000000 		.space	4
+ 408              		.type	startCounts, %object
+ 409              		.size	startCounts, 4
+ 410              	startCounts:
+ 411 0004 00000000 		.space	4
+ 412              		.text
+ 413              	.Letext0:
+ 414              		.file 2 "Generated_Source\\PSoC5/cytypes.h"
+ 415              		.file 3 "./states.h"
+ 416              		.file 4 "./heartrate.h"
+ 417              		.file 5 "Generated_Source\\PSoC5/HeartbeatCounter.h"
+ 418              		.section	.debug_info,"",%progbits
+ 419              	.Ldebug_info0:
+ 420 0000 71030000 		.4byte	0x371
+ 421 0004 0400     		.2byte	0x4
+ 422 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 423 000a 04       		.byte	0x4
+ 424 000b 01       		.uleb128 0x1
+ 425 000c 04020000 		.4byte	.LASF42
+ 426 0010 01       		.byte	0x1
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccHy6iik.s 			page 16
+
+
+ 427 0011 DF000000 		.4byte	.LASF43
+ 428 0015 1B010000 		.4byte	.LASF44
+ 429 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 430 001d 00000000 		.4byte	0
+ 431 0021 00000000 		.4byte	.Ldebug_line0
+ 432 0025 02       		.uleb128 0x2
+ 433 0026 04       		.byte	0x4
+ 434 0027 05       		.byte	0x5
+ 435 0028 696E7400 		.ascii	"int\000"
+ 436 002c 03       		.uleb128 0x3
+ 437 002d 04       		.byte	0x4
+ 438 002e 07       		.byte	0x7
+ 439 002f BF010000 		.4byte	.LASF0
+ 440 0033 03       		.uleb128 0x3
+ 441 0034 01       		.byte	0x1
+ 442 0035 06       		.byte	0x6
+ 443 0036 F8010000 		.4byte	.LASF1
+ 444 003a 03       		.uleb128 0x3
+ 445 003b 01       		.byte	0x1
+ 446 003c 08       		.byte	0x8
+ 447 003d 9C000000 		.4byte	.LASF2
+ 448 0041 03       		.uleb128 0x3
+ 449 0042 02       		.byte	0x2
+ 450 0043 05       		.byte	0x5
+ 451 0044 91010000 		.4byte	.LASF3
+ 452 0048 03       		.uleb128 0x3
+ 453 0049 02       		.byte	0x2
+ 454 004a 07       		.byte	0x7
+ 455 004b 08010000 		.4byte	.LASF4
+ 456 004f 03       		.uleb128 0x3
+ 457 0050 04       		.byte	0x4
+ 458 0051 05       		.byte	0x5
+ 459 0052 FD020000 		.4byte	.LASF5
+ 460 0056 03       		.uleb128 0x3
+ 461 0057 04       		.byte	0x4
+ 462 0058 07       		.byte	0x7
+ 463 0059 7F010000 		.4byte	.LASF6
+ 464 005d 03       		.uleb128 0x3
+ 465 005e 08       		.byte	0x8
+ 466 005f 05       		.byte	0x5
+ 467 0060 00000000 		.4byte	.LASF7
+ 468 0064 03       		.uleb128 0x3
+ 469 0065 08       		.byte	0x8
+ 470 0066 07       		.byte	0x7
+ 471 0067 D4010000 		.4byte	.LASF8
+ 472 006b 03       		.uleb128 0x3
+ 473 006c 04       		.byte	0x4
+ 474 006d 07       		.byte	0x7
+ 475 006e 80020000 		.4byte	.LASF9
+ 476 0072 04       		.uleb128 0x4
+ 477 0073 04       		.byte	0x4
+ 478 0074 78000000 		.4byte	0x78
+ 479 0078 05       		.uleb128 0x5
+ 480 0079 03       		.uleb128 0x3
+ 481 007a 01       		.byte	0x1
+ 482 007b 08       		.byte	0x8
+ 483 007c B0020000 		.4byte	.LASF10
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccHy6iik.s 			page 17
+
+
+ 484 0080 06       		.uleb128 0x6
+ 485 0081 D8020000 		.4byte	.LASF11
+ 486 0085 02       		.byte	0x2
+ 487 0086 B4       		.byte	0xb4
+ 488 0087 3A000000 		.4byte	0x3a
+ 489 008b 06       		.uleb128 0x6
+ 490 008c B8010000 		.4byte	.LASF12
+ 491 0090 02       		.byte	0x2
+ 492 0091 B6       		.byte	0xb6
+ 493 0092 56000000 		.4byte	0x56
+ 494 0096 03       		.uleb128 0x3
+ 495 0097 04       		.byte	0x4
+ 496 0098 04       		.byte	0x4
+ 497 0099 78000000 		.4byte	.LASF13
+ 498 009d 03       		.uleb128 0x3
+ 499 009e 08       		.byte	0x8
+ 500 009f 04       		.byte	0x4
+ 501 00a0 53000000 		.4byte	.LASF14
+ 502 00a4 07       		.uleb128 0x7
+ 503 00a5 BC000000 		.4byte	.LASF15
+ 504 00a9 02       		.byte	0x2
+ 505 00aa 5E01     		.2byte	0x15e
+ 506 00ac B0000000 		.4byte	0xb0
+ 507 00b0 08       		.uleb128 0x8
+ 508 00b1 80000000 		.4byte	0x80
+ 509 00b5 07       		.uleb128 0x7
+ 510 00b6 0E000000 		.4byte	.LASF16
+ 511 00ba 02       		.byte	0x2
+ 512 00bb 6001     		.2byte	0x160
+ 513 00bd C1000000 		.4byte	0xc1
+ 514 00c1 08       		.uleb128 0x8
+ 515 00c2 8B000000 		.4byte	0x8b
+ 516 00c6 07       		.uleb128 0x7
+ 517 00c7 EB010000 		.4byte	.LASF17
+ 518 00cb 02       		.byte	0x2
+ 519 00cc 7001     		.2byte	0x170
+ 520 00ce 72000000 		.4byte	0x72
+ 521 00d2 06       		.uleb128 0x6
+ 522 00d3 02010000 		.4byte	.LASF18
+ 523 00d7 03       		.byte	0x3
+ 524 00d8 11       		.byte	0x11
+ 525 00d9 25000000 		.4byte	0x25
+ 526 00dd 09       		.uleb128 0x9
+ 527 00de CD000000 		.4byte	.LASF19
+ 528 00e2 01       		.byte	0x1
+ 529 00e3 A4       		.byte	0xa4
+ 530 00e4 00000000 		.4byte	.LFB3
+ 531 00e8 14000000 		.4byte	.LFE3-.LFB3
+ 532 00ec 01       		.uleb128 0x1
+ 533 00ed 9C       		.byte	0x9c
+ 534 00ee FC000000 		.4byte	0xfc
+ 535 00f2 0A       		.uleb128 0xa
+ 536 00f3 0C000000 		.4byte	.LVL0
+ 537 00f7 69030000 		.4byte	0x369
+ 538 00fb 00       		.byte	0
+ 539 00fc 09       		.uleb128 0x9
+ 540 00fd 13030000 		.4byte	.LASF20
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccHy6iik.s 			page 18
+
+
+ 541 0101 01       		.byte	0x1
+ 542 0102 D5       		.byte	0xd5
+ 543 0103 00000000 		.4byte	.LFB4
+ 544 0107 0C000000 		.4byte	.LFE4-.LFB4
+ 545 010b 01       		.uleb128 0x1
+ 546 010c 9C       		.byte	0x9c
+ 547 010d 2C010000 		.4byte	0x12c
+ 548 0111 0B       		.uleb128 0xb
+ 549 0112 CC010000 		.4byte	.LASF23
+ 550 0116 01       		.byte	0x1
+ 551 0117 D5       		.byte	0xd5
+ 552 0118 C6000000 		.4byte	0xc6
+ 553 011c 01       		.uleb128 0x1
+ 554 011d 50       		.byte	0x50
+ 555 011e 0C       		.uleb128 0xc
+ 556 011f DE020000 		.4byte	.LASF21
+ 557 0123 01       		.byte	0x1
+ 558 0124 D7       		.byte	0xd7
+ 559 0125 2C010000 		.4byte	0x12c
+ 560 0129 01       		.uleb128 0x1
+ 561 012a 53       		.byte	0x53
+ 562 012b 00       		.byte	0
+ 563 012c 04       		.uleb128 0x4
+ 564 012d 04       		.byte	0x4
+ 565 012e C6000000 		.4byte	0xc6
+ 566 0132 0D       		.uleb128 0xd
+ 567 0133 AA000000 		.4byte	.LASF25
+ 568 0137 01       		.byte	0x1
+ 569 0138 ED       		.byte	0xed
+ 570 0139 C6000000 		.4byte	0xc6
+ 571 013d 00000000 		.4byte	.LFB5
+ 572 0141 0C000000 		.4byte	.LFE5-.LFB5
+ 573 0145 01       		.uleb128 0x1
+ 574 0146 9C       		.byte	0x9c
+ 575 0147 59010000 		.4byte	0x159
+ 576 014b 0C       		.uleb128 0xc
+ 577 014c DE020000 		.4byte	.LASF21
+ 578 0150 01       		.byte	0x1
+ 579 0151 EF       		.byte	0xef
+ 580 0152 2C010000 		.4byte	0x12c
+ 581 0156 01       		.uleb128 0x1
+ 582 0157 53       		.byte	0x53
+ 583 0158 00       		.byte	0
+ 584 0159 0E       		.uleb128 0xe
+ 585 015a 7E000000 		.4byte	.LASF22
+ 586 015e 01       		.byte	0x1
+ 587 015f 0F01     		.2byte	0x10f
+ 588 0161 00000000 		.4byte	.LFB6
+ 589 0165 10000000 		.4byte	.LFE6-.LFB6
+ 590 0169 01       		.uleb128 0x1
+ 591 016a 9C       		.byte	0x9c
+ 592 016b 80010000 		.4byte	0x180
+ 593 016f 0F       		.uleb128 0xf
+ 594 0170 76010000 		.4byte	.LASF24
+ 595 0174 01       		.byte	0x1
+ 596 0175 0F01     		.2byte	0x10f
+ 597 0177 80000000 		.4byte	0x80
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccHy6iik.s 			page 19
+
+
+ 598 017b 00000000 		.4byte	.LLST0
+ 599 017f 00       		.byte	0
+ 600 0180 10       		.uleb128 0x10
+ 601 0181 2C000000 		.4byte	.LASF26
+ 602 0185 01       		.byte	0x1
+ 603 0186 2501     		.2byte	0x125
+ 604 0188 80000000 		.4byte	0x80
+ 605 018c 00000000 		.4byte	.LFB7
+ 606 0190 0C000000 		.4byte	.LFE7-.LFB7
+ 607 0194 01       		.uleb128 0x1
+ 608 0195 9C       		.byte	0x9c
+ 609 0196 AB010000 		.4byte	0x1ab
+ 610 019a 11       		.uleb128 0x11
+ 611 019b 76010000 		.4byte	.LASF24
+ 612 019f 01       		.byte	0x1
+ 613 01a0 2701     		.2byte	0x127
+ 614 01a2 80000000 		.4byte	0x80
+ 615 01a6 21000000 		.4byte	.LLST1
+ 616 01aa 00       		.byte	0
+ 617 01ab 12       		.uleb128 0x12
+ 618 01ac 67010000 		.4byte	.LASF27
+ 619 01b0 01       		.byte	0x1
+ 620 01b1 4001     		.2byte	0x140
+ 621 01b3 00000000 		.4byte	.LFB8
+ 622 01b7 0C000000 		.4byte	.LFE8-.LFB8
+ 623 01bb 01       		.uleb128 0x1
+ 624 01bc 9C       		.byte	0x9c
+ 625 01bd 13       		.uleb128 0x13
+ 626 01be A7010000 		.4byte	.LASF45
+ 627 01c2 01       		.byte	0x1
+ 628 01c3 5501     		.2byte	0x155
+ 629 01c5 80000000 		.4byte	0x80
+ 630 01c9 00000000 		.4byte	.LFB9
+ 631 01cd 10000000 		.4byte	.LFE9-.LFB9
+ 632 01d1 01       		.uleb128 0x1
+ 633 01d2 9C       		.byte	0x9c
+ 634 01d3 12       		.uleb128 0x12
+ 635 01d4 ED020000 		.4byte	.LASF28
+ 636 01d8 01       		.byte	0x1
+ 637 01d9 6A01     		.2byte	0x16a
+ 638 01db 00000000 		.4byte	.LFB10
+ 639 01df 0C000000 		.4byte	.LFE10-.LFB10
+ 640 01e3 01       		.uleb128 0x1
+ 641 01e4 9C       		.byte	0x9c
+ 642 01e5 09       		.uleb128 0x9
+ 643 01e6 B5020000 		.4byte	.LASF29
+ 644 01ea 01       		.byte	0x1
+ 645 01eb 41       		.byte	0x41
+ 646 01ec 00000000 		.4byte	.LFB0
+ 647 01f0 1C000000 		.4byte	.LFE0-.LFB0
+ 648 01f4 01       		.uleb128 0x1
+ 649 01f5 9C       		.byte	0x9c
+ 650 01f6 37020000 		.4byte	0x237
+ 651 01fa 0A       		.uleb128 0xa
+ 652 01fb 06000000 		.4byte	.LVL8
+ 653 01ff D3010000 		.4byte	0x1d3
+ 654 0203 14       		.uleb128 0x14
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccHy6iik.s 			page 20
+
+
+ 655 0204 0C000000 		.4byte	.LVL9
+ 656 0208 FC000000 		.4byte	0xfc
+ 657 020c 1A020000 		.4byte	0x21a
+ 658 0210 15       		.uleb128 0x15
+ 659 0211 01       		.uleb128 0x1
+ 660 0212 50       		.byte	0x50
+ 661 0213 05       		.uleb128 0x5
+ 662 0214 03       		.byte	0x3
+ 663 0215 00000000 		.4byte	Compint_Interrupt
+ 664 0219 00       		.byte	0
+ 665 021a 14       		.uleb128 0x14
+ 666 021b 12000000 		.4byte	.LVL10
+ 667 021f 59010000 		.4byte	0x159
+ 668 0223 2D020000 		.4byte	0x22d
+ 669 0227 15       		.uleb128 0x15
+ 670 0228 01       		.uleb128 0x1
+ 671 0229 50       		.byte	0x50
+ 672 022a 01       		.uleb128 0x1
+ 673 022b 37       		.byte	0x37
+ 674 022c 00       		.byte	0
+ 675 022d 0A       		.uleb128 0xa
+ 676 022e 16000000 		.4byte	.LVL11
+ 677 0232 AB010000 		.4byte	0x1ab
+ 678 0236 00       		.byte	0
+ 679 0237 09       		.uleb128 0x9
+ 680 0238 25030000 		.4byte	.LASF30
+ 681 023c 01       		.byte	0x1
+ 682 023d 6C       		.byte	0x6c
+ 683 023e 00000000 		.4byte	.LFB1
+ 684 0242 1A000000 		.4byte	.LFE1-.LFB1
+ 685 0246 01       		.uleb128 0x1
+ 686 0247 9C       		.byte	0x9c
+ 687 0248 95020000 		.4byte	0x295
+ 688 024c 16       		.uleb128 0x16
+ 689 024d CC010000 		.4byte	.LASF23
+ 690 0251 01       		.byte	0x1
+ 691 0252 6C       		.byte	0x6c
+ 692 0253 C6000000 		.4byte	0xc6
+ 693 0257 38000000 		.4byte	.LLST2
+ 694 025b 0A       		.uleb128 0xa
+ 695 025c 08000000 		.4byte	.LVL13
+ 696 0260 D3010000 		.4byte	0x1d3
+ 697 0264 14       		.uleb128 0x14
+ 698 0265 0E000000 		.4byte	.LVL14
+ 699 0269 FC000000 		.4byte	0xfc
+ 700 026d 78020000 		.4byte	0x278
+ 701 0271 15       		.uleb128 0x15
+ 702 0272 01       		.uleb128 0x1
+ 703 0273 50       		.byte	0x50
+ 704 0274 02       		.uleb128 0x2
+ 705 0275 74       		.byte	0x74
+ 706 0276 00       		.sleb128 0
+ 707 0277 00       		.byte	0
+ 708 0278 14       		.uleb128 0x14
+ 709 0279 14000000 		.4byte	.LVL15
+ 710 027d 59010000 		.4byte	0x159
+ 711 0281 8B020000 		.4byte	0x28b
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccHy6iik.s 			page 21
+
+
+ 712 0285 15       		.uleb128 0x15
+ 713 0286 01       		.uleb128 0x1
+ 714 0287 50       		.byte	0x50
+ 715 0288 01       		.uleb128 0x1
+ 716 0289 37       		.byte	0x37
+ 717 028a 00       		.byte	0
+ 718 028b 0A       		.uleb128 0xa
+ 719 028c 18000000 		.4byte	.LVL16
+ 720 0290 AB010000 		.4byte	0x1ab
+ 721 0294 00       		.byte	0
+ 722 0295 09       		.uleb128 0x9
+ 723 0296 06030000 		.4byte	.LASF31
+ 724 029a 01       		.byte	0x1
+ 725 029b 8A       		.byte	0x8a
+ 726 029c 00000000 		.4byte	.LFB2
+ 727 02a0 14000000 		.4byte	.LFE2-.LFB2
+ 728 02a4 01       		.uleb128 0x1
+ 729 02a5 9C       		.byte	0x9c
+ 730 02a6 BD020000 		.4byte	0x2bd
+ 731 02aa 0A       		.uleb128 0xa
+ 732 02ab 06000000 		.4byte	.LVL17
+ 733 02af D3010000 		.4byte	0x1d3
+ 734 02b3 0A       		.uleb128 0xa
+ 735 02b4 0C000000 		.4byte	.LVL18
+ 736 02b8 FC000000 		.4byte	0xfc
+ 737 02bc 00       		.byte	0
+ 738 02bd 12       		.uleb128 0x12
+ 739 02be 40000000 		.4byte	.LASF32
+ 740 02c2 01       		.byte	0x1
+ 741 02c3 8501     		.2byte	0x185
+ 742 02c5 00000000 		.4byte	.LFB11
+ 743 02c9 0C000000 		.4byte	.LFE11-.LFB11
+ 744 02cd 01       		.uleb128 0x1
+ 745 02ce 9C       		.byte	0x9c
+ 746 02cf 12       		.uleb128 0x12
+ 747 02d0 C3020000 		.4byte	.LASF33
+ 748 02d4 01       		.byte	0x1
+ 749 02d5 9E01     		.2byte	0x19e
+ 750 02d7 00000000 		.4byte	.LFB12
+ 751 02db 0C000000 		.4byte	.LFE12-.LFB12
+ 752 02df 01       		.uleb128 0x1
+ 753 02e0 9C       		.byte	0x9c
+ 754 02e1 17       		.uleb128 0x17
+ 755 02e2 89020000 		.4byte	.LASF34
+ 756 02e6 01       		.byte	0x1
+ 757 02e7 1E       		.byte	0x1e
+ 758 02e8 96000000 		.4byte	0x96
+ 759 02ec 05       		.uleb128 0x5
+ 760 02ed 03       		.byte	0x3
+ 761 02ee 00000000 		.4byte	heartrate
+ 762 02f2 17       		.uleb128 0x17
+ 763 02f3 14000000 		.4byte	.LASF35
+ 764 02f7 03       		.byte	0x3
+ 765 02f8 2D       		.byte	0x2d
+ 766 02f9 D2000000 		.4byte	0xd2
+ 767 02fd 05       		.uleb128 0x5
+ 768 02fe 03       		.byte	0x3
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccHy6iik.s 			page 22
+
+
+ 769 02ff 00000000 		.4byte	currentState
+ 770 0303 17       		.uleb128 0x17
+ 771 0304 21000000 		.4byte	.LASF36
+ 772 0308 03       		.byte	0x3
+ 773 0309 2F       		.byte	0x2f
+ 774 030a D2000000 		.4byte	0xd2
+ 775 030e 05       		.uleb128 0x5
+ 776 030f 03       		.byte	0x3
+ 777 0310 00000000 		.4byte	Prev_state
+ 778 0314 17       		.uleb128 0x17
+ 779 0315 67000000 		.4byte	.LASF37
+ 780 0319 04       		.byte	0x4
+ 781 031a 14       		.byte	0x14
+ 782 031b 96000000 		.4byte	0x96
+ 783 031f 05       		.uleb128 0x5
+ 784 0320 03       		.byte	0x3
+ 785 0321 00000000 		.4byte	heartbeatCounter
+ 786 0325 17       		.uleb128 0x17
+ 787 0326 5A000000 		.4byte	.LASF38
+ 788 032a 01       		.byte	0x1
+ 789 032b 1F       		.byte	0x1f
+ 790 032c 25000000 		.4byte	0x25
+ 791 0330 05       		.uleb128 0x5
+ 792 0331 03       		.byte	0x3
+ 793 0332 00000000 		.4byte	timer_status
+ 794 0336 17       		.uleb128 0x17
+ 795 0337 9B010000 		.4byte	.LASF39
+ 796 033b 01       		.byte	0x1
+ 797 033c 20       		.byte	0x20
+ 798 033d 25000000 		.4byte	0x25
+ 799 0341 05       		.uleb128 0x5
+ 800 0342 03       		.byte	0x3
+ 801 0343 00000000 		.4byte	timer_value
+ 802 0347 17       		.uleb128 0x17
+ 803 0348 C1000000 		.4byte	.LASF40
+ 804 034c 01       		.byte	0x1
+ 805 034d 21       		.byte	0x21
+ 806 034e 25000000 		.4byte	0x25
+ 807 0352 05       		.uleb128 0x5
+ 808 0353 03       		.byte	0x3
+ 809 0354 00000000 		.4byte	startCounts
+ 810 0358 17       		.uleb128 0x17
+ 811 0359 92000000 		.4byte	.LASF41
+ 812 035d 01       		.byte	0x1
+ 813 035e 22       		.byte	0x22
+ 814 035f 25000000 		.4byte	0x25
+ 815 0363 05       		.uleb128 0x5
+ 816 0364 03       		.byte	0x3
+ 817 0365 00000000 		.4byte	endCounts
+ 818 0369 18       		.uleb128 0x18
+ 819 036a 93020000 		.4byte	.LASF46
+ 820 036e 05       		.byte	0x5
+ 821 036f 5D       		.byte	0x5d
+ 822 0370 8B000000 		.4byte	0x8b
+ 823 0374 00       		.byte	0
+ 824              		.section	.debug_abbrev,"",%progbits
+ 825              	.Ldebug_abbrev0:
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccHy6iik.s 			page 23
+
+
+ 826 0000 01       		.uleb128 0x1
+ 827 0001 11       		.uleb128 0x11
+ 828 0002 01       		.byte	0x1
+ 829 0003 25       		.uleb128 0x25
+ 830 0004 0E       		.uleb128 0xe
+ 831 0005 13       		.uleb128 0x13
+ 832 0006 0B       		.uleb128 0xb
+ 833 0007 03       		.uleb128 0x3
+ 834 0008 0E       		.uleb128 0xe
+ 835 0009 1B       		.uleb128 0x1b
+ 836 000a 0E       		.uleb128 0xe
+ 837 000b 55       		.uleb128 0x55
+ 838 000c 17       		.uleb128 0x17
+ 839 000d 11       		.uleb128 0x11
+ 840 000e 01       		.uleb128 0x1
+ 841 000f 10       		.uleb128 0x10
+ 842 0010 17       		.uleb128 0x17
+ 843 0011 00       		.byte	0
+ 844 0012 00       		.byte	0
+ 845 0013 02       		.uleb128 0x2
+ 846 0014 24       		.uleb128 0x24
+ 847 0015 00       		.byte	0
+ 848 0016 0B       		.uleb128 0xb
+ 849 0017 0B       		.uleb128 0xb
+ 850 0018 3E       		.uleb128 0x3e
+ 851 0019 0B       		.uleb128 0xb
+ 852 001a 03       		.uleb128 0x3
+ 853 001b 08       		.uleb128 0x8
+ 854 001c 00       		.byte	0
+ 855 001d 00       		.byte	0
+ 856 001e 03       		.uleb128 0x3
+ 857 001f 24       		.uleb128 0x24
+ 858 0020 00       		.byte	0
+ 859 0021 0B       		.uleb128 0xb
+ 860 0022 0B       		.uleb128 0xb
+ 861 0023 3E       		.uleb128 0x3e
+ 862 0024 0B       		.uleb128 0xb
+ 863 0025 03       		.uleb128 0x3
+ 864 0026 0E       		.uleb128 0xe
+ 865 0027 00       		.byte	0
+ 866 0028 00       		.byte	0
+ 867 0029 04       		.uleb128 0x4
+ 868 002a 0F       		.uleb128 0xf
+ 869 002b 00       		.byte	0
+ 870 002c 0B       		.uleb128 0xb
+ 871 002d 0B       		.uleb128 0xb
+ 872 002e 49       		.uleb128 0x49
+ 873 002f 13       		.uleb128 0x13
+ 874 0030 00       		.byte	0
+ 875 0031 00       		.byte	0
+ 876 0032 05       		.uleb128 0x5
+ 877 0033 15       		.uleb128 0x15
+ 878 0034 00       		.byte	0
+ 879 0035 27       		.uleb128 0x27
+ 880 0036 19       		.uleb128 0x19
+ 881 0037 00       		.byte	0
+ 882 0038 00       		.byte	0
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccHy6iik.s 			page 24
+
+
+ 883 0039 06       		.uleb128 0x6
+ 884 003a 16       		.uleb128 0x16
+ 885 003b 00       		.byte	0
+ 886 003c 03       		.uleb128 0x3
+ 887 003d 0E       		.uleb128 0xe
+ 888 003e 3A       		.uleb128 0x3a
+ 889 003f 0B       		.uleb128 0xb
+ 890 0040 3B       		.uleb128 0x3b
+ 891 0041 0B       		.uleb128 0xb
+ 892 0042 49       		.uleb128 0x49
+ 893 0043 13       		.uleb128 0x13
+ 894 0044 00       		.byte	0
+ 895 0045 00       		.byte	0
+ 896 0046 07       		.uleb128 0x7
+ 897 0047 16       		.uleb128 0x16
+ 898 0048 00       		.byte	0
+ 899 0049 03       		.uleb128 0x3
+ 900 004a 0E       		.uleb128 0xe
+ 901 004b 3A       		.uleb128 0x3a
+ 902 004c 0B       		.uleb128 0xb
+ 903 004d 3B       		.uleb128 0x3b
+ 904 004e 05       		.uleb128 0x5
+ 905 004f 49       		.uleb128 0x49
+ 906 0050 13       		.uleb128 0x13
+ 907 0051 00       		.byte	0
+ 908 0052 00       		.byte	0
+ 909 0053 08       		.uleb128 0x8
+ 910 0054 35       		.uleb128 0x35
+ 911 0055 00       		.byte	0
+ 912 0056 49       		.uleb128 0x49
+ 913 0057 13       		.uleb128 0x13
+ 914 0058 00       		.byte	0
+ 915 0059 00       		.byte	0
+ 916 005a 09       		.uleb128 0x9
+ 917 005b 2E       		.uleb128 0x2e
+ 918 005c 01       		.byte	0x1
+ 919 005d 3F       		.uleb128 0x3f
+ 920 005e 19       		.uleb128 0x19
+ 921 005f 03       		.uleb128 0x3
+ 922 0060 0E       		.uleb128 0xe
+ 923 0061 3A       		.uleb128 0x3a
+ 924 0062 0B       		.uleb128 0xb
+ 925 0063 3B       		.uleb128 0x3b
+ 926 0064 0B       		.uleb128 0xb
+ 927 0065 27       		.uleb128 0x27
+ 928 0066 19       		.uleb128 0x19
+ 929 0067 11       		.uleb128 0x11
+ 930 0068 01       		.uleb128 0x1
+ 931 0069 12       		.uleb128 0x12
+ 932 006a 06       		.uleb128 0x6
+ 933 006b 40       		.uleb128 0x40
+ 934 006c 18       		.uleb128 0x18
+ 935 006d 9742     		.uleb128 0x2117
+ 936 006f 19       		.uleb128 0x19
+ 937 0070 01       		.uleb128 0x1
+ 938 0071 13       		.uleb128 0x13
+ 939 0072 00       		.byte	0
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccHy6iik.s 			page 25
+
+
+ 940 0073 00       		.byte	0
+ 941 0074 0A       		.uleb128 0xa
+ 942 0075 898201   		.uleb128 0x4109
+ 943 0078 00       		.byte	0
+ 944 0079 11       		.uleb128 0x11
+ 945 007a 01       		.uleb128 0x1
+ 946 007b 31       		.uleb128 0x31
+ 947 007c 13       		.uleb128 0x13
+ 948 007d 00       		.byte	0
+ 949 007e 00       		.byte	0
+ 950 007f 0B       		.uleb128 0xb
+ 951 0080 05       		.uleb128 0x5
+ 952 0081 00       		.byte	0
+ 953 0082 03       		.uleb128 0x3
+ 954 0083 0E       		.uleb128 0xe
+ 955 0084 3A       		.uleb128 0x3a
+ 956 0085 0B       		.uleb128 0xb
+ 957 0086 3B       		.uleb128 0x3b
+ 958 0087 0B       		.uleb128 0xb
+ 959 0088 49       		.uleb128 0x49
+ 960 0089 13       		.uleb128 0x13
+ 961 008a 02       		.uleb128 0x2
+ 962 008b 18       		.uleb128 0x18
+ 963 008c 00       		.byte	0
+ 964 008d 00       		.byte	0
+ 965 008e 0C       		.uleb128 0xc
+ 966 008f 34       		.uleb128 0x34
+ 967 0090 00       		.byte	0
+ 968 0091 03       		.uleb128 0x3
+ 969 0092 0E       		.uleb128 0xe
+ 970 0093 3A       		.uleb128 0x3a
+ 971 0094 0B       		.uleb128 0xb
+ 972 0095 3B       		.uleb128 0x3b
+ 973 0096 0B       		.uleb128 0xb
+ 974 0097 49       		.uleb128 0x49
+ 975 0098 13       		.uleb128 0x13
+ 976 0099 02       		.uleb128 0x2
+ 977 009a 18       		.uleb128 0x18
+ 978 009b 00       		.byte	0
+ 979 009c 00       		.byte	0
+ 980 009d 0D       		.uleb128 0xd
+ 981 009e 2E       		.uleb128 0x2e
+ 982 009f 01       		.byte	0x1
+ 983 00a0 3F       		.uleb128 0x3f
+ 984 00a1 19       		.uleb128 0x19
+ 985 00a2 03       		.uleb128 0x3
+ 986 00a3 0E       		.uleb128 0xe
+ 987 00a4 3A       		.uleb128 0x3a
+ 988 00a5 0B       		.uleb128 0xb
+ 989 00a6 3B       		.uleb128 0x3b
+ 990 00a7 0B       		.uleb128 0xb
+ 991 00a8 27       		.uleb128 0x27
+ 992 00a9 19       		.uleb128 0x19
+ 993 00aa 49       		.uleb128 0x49
+ 994 00ab 13       		.uleb128 0x13
+ 995 00ac 11       		.uleb128 0x11
+ 996 00ad 01       		.uleb128 0x1
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccHy6iik.s 			page 26
+
+
+ 997 00ae 12       		.uleb128 0x12
+ 998 00af 06       		.uleb128 0x6
+ 999 00b0 40       		.uleb128 0x40
+ 1000 00b1 18       		.uleb128 0x18
+ 1001 00b2 9742     		.uleb128 0x2117
+ 1002 00b4 19       		.uleb128 0x19
+ 1003 00b5 01       		.uleb128 0x1
+ 1004 00b6 13       		.uleb128 0x13
+ 1005 00b7 00       		.byte	0
+ 1006 00b8 00       		.byte	0
+ 1007 00b9 0E       		.uleb128 0xe
+ 1008 00ba 2E       		.uleb128 0x2e
+ 1009 00bb 01       		.byte	0x1
+ 1010 00bc 3F       		.uleb128 0x3f
+ 1011 00bd 19       		.uleb128 0x19
+ 1012 00be 03       		.uleb128 0x3
+ 1013 00bf 0E       		.uleb128 0xe
+ 1014 00c0 3A       		.uleb128 0x3a
+ 1015 00c1 0B       		.uleb128 0xb
+ 1016 00c2 3B       		.uleb128 0x3b
+ 1017 00c3 05       		.uleb128 0x5
+ 1018 00c4 27       		.uleb128 0x27
+ 1019 00c5 19       		.uleb128 0x19
+ 1020 00c6 11       		.uleb128 0x11
+ 1021 00c7 01       		.uleb128 0x1
+ 1022 00c8 12       		.uleb128 0x12
+ 1023 00c9 06       		.uleb128 0x6
+ 1024 00ca 40       		.uleb128 0x40
+ 1025 00cb 18       		.uleb128 0x18
+ 1026 00cc 9742     		.uleb128 0x2117
+ 1027 00ce 19       		.uleb128 0x19
+ 1028 00cf 01       		.uleb128 0x1
+ 1029 00d0 13       		.uleb128 0x13
+ 1030 00d1 00       		.byte	0
+ 1031 00d2 00       		.byte	0
+ 1032 00d3 0F       		.uleb128 0xf
+ 1033 00d4 05       		.uleb128 0x5
+ 1034 00d5 00       		.byte	0
+ 1035 00d6 03       		.uleb128 0x3
+ 1036 00d7 0E       		.uleb128 0xe
+ 1037 00d8 3A       		.uleb128 0x3a
+ 1038 00d9 0B       		.uleb128 0xb
+ 1039 00da 3B       		.uleb128 0x3b
+ 1040 00db 05       		.uleb128 0x5
+ 1041 00dc 49       		.uleb128 0x49
+ 1042 00dd 13       		.uleb128 0x13
+ 1043 00de 02       		.uleb128 0x2
+ 1044 00df 17       		.uleb128 0x17
+ 1045 00e0 00       		.byte	0
+ 1046 00e1 00       		.byte	0
+ 1047 00e2 10       		.uleb128 0x10
+ 1048 00e3 2E       		.uleb128 0x2e
+ 1049 00e4 01       		.byte	0x1
+ 1050 00e5 3F       		.uleb128 0x3f
+ 1051 00e6 19       		.uleb128 0x19
+ 1052 00e7 03       		.uleb128 0x3
+ 1053 00e8 0E       		.uleb128 0xe
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccHy6iik.s 			page 27
+
+
+ 1054 00e9 3A       		.uleb128 0x3a
+ 1055 00ea 0B       		.uleb128 0xb
+ 1056 00eb 3B       		.uleb128 0x3b
+ 1057 00ec 05       		.uleb128 0x5
+ 1058 00ed 27       		.uleb128 0x27
+ 1059 00ee 19       		.uleb128 0x19
+ 1060 00ef 49       		.uleb128 0x49
+ 1061 00f0 13       		.uleb128 0x13
+ 1062 00f1 11       		.uleb128 0x11
+ 1063 00f2 01       		.uleb128 0x1
+ 1064 00f3 12       		.uleb128 0x12
+ 1065 00f4 06       		.uleb128 0x6
+ 1066 00f5 40       		.uleb128 0x40
+ 1067 00f6 18       		.uleb128 0x18
+ 1068 00f7 9742     		.uleb128 0x2117
+ 1069 00f9 19       		.uleb128 0x19
+ 1070 00fa 01       		.uleb128 0x1
+ 1071 00fb 13       		.uleb128 0x13
+ 1072 00fc 00       		.byte	0
+ 1073 00fd 00       		.byte	0
+ 1074 00fe 11       		.uleb128 0x11
+ 1075 00ff 34       		.uleb128 0x34
+ 1076 0100 00       		.byte	0
+ 1077 0101 03       		.uleb128 0x3
+ 1078 0102 0E       		.uleb128 0xe
+ 1079 0103 3A       		.uleb128 0x3a
+ 1080 0104 0B       		.uleb128 0xb
+ 1081 0105 3B       		.uleb128 0x3b
+ 1082 0106 05       		.uleb128 0x5
+ 1083 0107 49       		.uleb128 0x49
+ 1084 0108 13       		.uleb128 0x13
+ 1085 0109 02       		.uleb128 0x2
+ 1086 010a 17       		.uleb128 0x17
+ 1087 010b 00       		.byte	0
+ 1088 010c 00       		.byte	0
+ 1089 010d 12       		.uleb128 0x12
+ 1090 010e 2E       		.uleb128 0x2e
+ 1091 010f 00       		.byte	0
+ 1092 0110 3F       		.uleb128 0x3f
+ 1093 0111 19       		.uleb128 0x19
+ 1094 0112 03       		.uleb128 0x3
+ 1095 0113 0E       		.uleb128 0xe
+ 1096 0114 3A       		.uleb128 0x3a
+ 1097 0115 0B       		.uleb128 0xb
+ 1098 0116 3B       		.uleb128 0x3b
+ 1099 0117 05       		.uleb128 0x5
+ 1100 0118 27       		.uleb128 0x27
+ 1101 0119 19       		.uleb128 0x19
+ 1102 011a 11       		.uleb128 0x11
+ 1103 011b 01       		.uleb128 0x1
+ 1104 011c 12       		.uleb128 0x12
+ 1105 011d 06       		.uleb128 0x6
+ 1106 011e 40       		.uleb128 0x40
+ 1107 011f 18       		.uleb128 0x18
+ 1108 0120 9742     		.uleb128 0x2117
+ 1109 0122 19       		.uleb128 0x19
+ 1110 0123 00       		.byte	0
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccHy6iik.s 			page 28
+
+
+ 1111 0124 00       		.byte	0
+ 1112 0125 13       		.uleb128 0x13
+ 1113 0126 2E       		.uleb128 0x2e
+ 1114 0127 00       		.byte	0
+ 1115 0128 3F       		.uleb128 0x3f
+ 1116 0129 19       		.uleb128 0x19
+ 1117 012a 03       		.uleb128 0x3
+ 1118 012b 0E       		.uleb128 0xe
+ 1119 012c 3A       		.uleb128 0x3a
+ 1120 012d 0B       		.uleb128 0xb
+ 1121 012e 3B       		.uleb128 0x3b
+ 1122 012f 05       		.uleb128 0x5
+ 1123 0130 27       		.uleb128 0x27
+ 1124 0131 19       		.uleb128 0x19
+ 1125 0132 49       		.uleb128 0x49
+ 1126 0133 13       		.uleb128 0x13
+ 1127 0134 11       		.uleb128 0x11
+ 1128 0135 01       		.uleb128 0x1
+ 1129 0136 12       		.uleb128 0x12
+ 1130 0137 06       		.uleb128 0x6
+ 1131 0138 40       		.uleb128 0x40
+ 1132 0139 18       		.uleb128 0x18
+ 1133 013a 9742     		.uleb128 0x2117
+ 1134 013c 19       		.uleb128 0x19
+ 1135 013d 00       		.byte	0
+ 1136 013e 00       		.byte	0
+ 1137 013f 14       		.uleb128 0x14
+ 1138 0140 898201   		.uleb128 0x4109
+ 1139 0143 01       		.byte	0x1
+ 1140 0144 11       		.uleb128 0x11
+ 1141 0145 01       		.uleb128 0x1
+ 1142 0146 31       		.uleb128 0x31
+ 1143 0147 13       		.uleb128 0x13
+ 1144 0148 01       		.uleb128 0x1
+ 1145 0149 13       		.uleb128 0x13
+ 1146 014a 00       		.byte	0
+ 1147 014b 00       		.byte	0
+ 1148 014c 15       		.uleb128 0x15
+ 1149 014d 8A8201   		.uleb128 0x410a
+ 1150 0150 00       		.byte	0
+ 1151 0151 02       		.uleb128 0x2
+ 1152 0152 18       		.uleb128 0x18
+ 1153 0153 9142     		.uleb128 0x2111
+ 1154 0155 18       		.uleb128 0x18
+ 1155 0156 00       		.byte	0
+ 1156 0157 00       		.byte	0
+ 1157 0158 16       		.uleb128 0x16
+ 1158 0159 05       		.uleb128 0x5
+ 1159 015a 00       		.byte	0
+ 1160 015b 03       		.uleb128 0x3
+ 1161 015c 0E       		.uleb128 0xe
+ 1162 015d 3A       		.uleb128 0x3a
+ 1163 015e 0B       		.uleb128 0xb
+ 1164 015f 3B       		.uleb128 0x3b
+ 1165 0160 0B       		.uleb128 0xb
+ 1166 0161 49       		.uleb128 0x49
+ 1167 0162 13       		.uleb128 0x13
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccHy6iik.s 			page 29
+
+
+ 1168 0163 02       		.uleb128 0x2
+ 1169 0164 17       		.uleb128 0x17
+ 1170 0165 00       		.byte	0
+ 1171 0166 00       		.byte	0
+ 1172 0167 17       		.uleb128 0x17
+ 1173 0168 34       		.uleb128 0x34
+ 1174 0169 00       		.byte	0
+ 1175 016a 03       		.uleb128 0x3
+ 1176 016b 0E       		.uleb128 0xe
+ 1177 016c 3A       		.uleb128 0x3a
+ 1178 016d 0B       		.uleb128 0xb
+ 1179 016e 3B       		.uleb128 0x3b
+ 1180 016f 0B       		.uleb128 0xb
+ 1181 0170 49       		.uleb128 0x49
+ 1182 0171 13       		.uleb128 0x13
+ 1183 0172 3F       		.uleb128 0x3f
+ 1184 0173 19       		.uleb128 0x19
+ 1185 0174 02       		.uleb128 0x2
+ 1186 0175 18       		.uleb128 0x18
+ 1187 0176 00       		.byte	0
+ 1188 0177 00       		.byte	0
+ 1189 0178 18       		.uleb128 0x18
+ 1190 0179 2E       		.uleb128 0x2e
+ 1191 017a 00       		.byte	0
+ 1192 017b 3F       		.uleb128 0x3f
+ 1193 017c 19       		.uleb128 0x19
+ 1194 017d 03       		.uleb128 0x3
+ 1195 017e 0E       		.uleb128 0xe
+ 1196 017f 3A       		.uleb128 0x3a
+ 1197 0180 0B       		.uleb128 0xb
+ 1198 0181 3B       		.uleb128 0x3b
+ 1199 0182 0B       		.uleb128 0xb
+ 1200 0183 27       		.uleb128 0x27
+ 1201 0184 19       		.uleb128 0x19
+ 1202 0185 49       		.uleb128 0x49
+ 1203 0186 13       		.uleb128 0x13
+ 1204 0187 3C       		.uleb128 0x3c
+ 1205 0188 19       		.uleb128 0x19
+ 1206 0189 00       		.byte	0
+ 1207 018a 00       		.byte	0
+ 1208 018b 00       		.byte	0
+ 1209              		.section	.debug_loc,"",%progbits
+ 1210              	.Ldebug_loc0:
+ 1211              	.LLST0:
+ 1212 0000 00000000 		.4byte	.LVL4
+ 1213 0004 02000000 		.4byte	.LVL5
+ 1214 0008 0100     		.2byte	0x1
+ 1215 000a 50       		.byte	0x50
+ 1216 000b 02000000 		.4byte	.LVL5
+ 1217 000f 10000000 		.4byte	.LFE6
+ 1218 0013 0400     		.2byte	0x4
+ 1219 0015 F3       		.byte	0xf3
+ 1220 0016 01       		.uleb128 0x1
+ 1221 0017 50       		.byte	0x50
+ 1222 0018 9F       		.byte	0x9f
+ 1223 0019 00000000 		.4byte	0
+ 1224 001d 00000000 		.4byte	0
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccHy6iik.s 			page 30
+
+
+ 1225              	.LLST1:
+ 1226 0021 04000000 		.4byte	.LVL6
+ 1227 0025 06000000 		.4byte	.LVL7
+ 1228 0029 0500     		.2byte	0x5
+ 1229 002b 70       		.byte	0x70
+ 1230 002c 00       		.sleb128 0
+ 1231 002d 35       		.byte	0x35
+ 1232 002e 25       		.byte	0x25
+ 1233 002f 9F       		.byte	0x9f
+ 1234 0030 00000000 		.4byte	0
+ 1235 0034 00000000 		.4byte	0
+ 1236              	.LLST2:
+ 1237 0038 00000000 		.4byte	.LVL12
+ 1238 003c 07000000 		.4byte	.LVL13-1
+ 1239 0040 0100     		.2byte	0x1
+ 1240 0042 50       		.byte	0x50
+ 1241 0043 07000000 		.4byte	.LVL13-1
+ 1242 0047 1A000000 		.4byte	.LFE1
+ 1243 004b 0100     		.2byte	0x1
+ 1244 004d 54       		.byte	0x54
+ 1245 004e 00000000 		.4byte	0
+ 1246 0052 00000000 		.4byte	0
+ 1247              		.section	.debug_aranges,"",%progbits
+ 1248 0000 7C000000 		.4byte	0x7c
+ 1249 0004 0200     		.2byte	0x2
+ 1250 0006 00000000 		.4byte	.Ldebug_info0
+ 1251 000a 04       		.byte	0x4
+ 1252 000b 00       		.byte	0
+ 1253 000c 0000     		.2byte	0
+ 1254 000e 0000     		.2byte	0
+ 1255 0010 00000000 		.4byte	.LFB3
+ 1256 0014 14000000 		.4byte	.LFE3-.LFB3
+ 1257 0018 00000000 		.4byte	.LFB4
+ 1258 001c 0C000000 		.4byte	.LFE4-.LFB4
+ 1259 0020 00000000 		.4byte	.LFB5
+ 1260 0024 0C000000 		.4byte	.LFE5-.LFB5
+ 1261 0028 00000000 		.4byte	.LFB6
+ 1262 002c 10000000 		.4byte	.LFE6-.LFB6
+ 1263 0030 00000000 		.4byte	.LFB7
+ 1264 0034 0C000000 		.4byte	.LFE7-.LFB7
+ 1265 0038 00000000 		.4byte	.LFB8
+ 1266 003c 0C000000 		.4byte	.LFE8-.LFB8
+ 1267 0040 00000000 		.4byte	.LFB9
+ 1268 0044 10000000 		.4byte	.LFE9-.LFB9
+ 1269 0048 00000000 		.4byte	.LFB10
+ 1270 004c 0C000000 		.4byte	.LFE10-.LFB10
+ 1271 0050 00000000 		.4byte	.LFB0
+ 1272 0054 1C000000 		.4byte	.LFE0-.LFB0
+ 1273 0058 00000000 		.4byte	.LFB1
+ 1274 005c 1A000000 		.4byte	.LFE1-.LFB1
+ 1275 0060 00000000 		.4byte	.LFB2
+ 1276 0064 14000000 		.4byte	.LFE2-.LFB2
+ 1277 0068 00000000 		.4byte	.LFB11
+ 1278 006c 0C000000 		.4byte	.LFE11-.LFB11
+ 1279 0070 00000000 		.4byte	.LFB12
+ 1280 0074 0C000000 		.4byte	.LFE12-.LFB12
+ 1281 0078 00000000 		.4byte	0
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccHy6iik.s 			page 31
+
+
+ 1282 007c 00000000 		.4byte	0
+ 1283              		.section	.debug_ranges,"",%progbits
+ 1284              	.Ldebug_ranges0:
+ 1285 0000 00000000 		.4byte	.LFB3
+ 1286 0004 14000000 		.4byte	.LFE3
+ 1287 0008 00000000 		.4byte	.LFB4
+ 1288 000c 0C000000 		.4byte	.LFE4
+ 1289 0010 00000000 		.4byte	.LFB5
+ 1290 0014 0C000000 		.4byte	.LFE5
+ 1291 0018 00000000 		.4byte	.LFB6
+ 1292 001c 10000000 		.4byte	.LFE6
+ 1293 0020 00000000 		.4byte	.LFB7
+ 1294 0024 0C000000 		.4byte	.LFE7
+ 1295 0028 00000000 		.4byte	.LFB8
+ 1296 002c 0C000000 		.4byte	.LFE8
+ 1297 0030 00000000 		.4byte	.LFB9
+ 1298 0034 10000000 		.4byte	.LFE9
+ 1299 0038 00000000 		.4byte	.LFB10
+ 1300 003c 0C000000 		.4byte	.LFE10
+ 1301 0040 00000000 		.4byte	.LFB0
+ 1302 0044 1C000000 		.4byte	.LFE0
+ 1303 0048 00000000 		.4byte	.LFB1
+ 1304 004c 1A000000 		.4byte	.LFE1
+ 1305 0050 00000000 		.4byte	.LFB2
+ 1306 0054 14000000 		.4byte	.LFE2
+ 1307 0058 00000000 		.4byte	.LFB11
+ 1308 005c 0C000000 		.4byte	.LFE11
+ 1309 0060 00000000 		.4byte	.LFB12
+ 1310 0064 0C000000 		.4byte	.LFE12
+ 1311 0068 00000000 		.4byte	0
+ 1312 006c 00000000 		.4byte	0
+ 1313              		.section	.debug_line,"",%progbits
+ 1314              	.Ldebug_line0:
+ 1315 0000 81010000 		.section	.debug_str,"MS",%progbits,1
+ 1315      02009200 
+ 1315      00000201 
+ 1315      FB0E0D00 
+ 1315      01010101 
+ 1316              	.LASF7:
+ 1317 0000 6C6F6E67 		.ascii	"long long int\000"
+ 1317      206C6F6E 
+ 1317      6720696E 
+ 1317      7400
+ 1318              	.LASF16:
+ 1319 000e 72656733 		.ascii	"reg32\000"
+ 1319      3200
+ 1320              	.LASF35:
+ 1321 0014 63757272 		.ascii	"currentState\000"
+ 1321      656E7453 
+ 1321      74617465 
+ 1321      00
+ 1322              	.LASF36:
+ 1323 0021 50726576 		.ascii	"Prev_state\000"
+ 1323      5F737461 
+ 1323      746500
+ 1324              	.LASF26:
+ 1325 002c 436F6D70 		.ascii	"Compint_GetPriority\000"
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccHy6iik.s 			page 32
+
+
+ 1325      696E745F 
+ 1325      47657450 
+ 1325      72696F72 
+ 1325      69747900 
+ 1326              	.LASF32:
+ 1327 0040 436F6D70 		.ascii	"Compint_SetPending\000"
+ 1327      696E745F 
+ 1327      53657450 
+ 1327      656E6469 
+ 1327      6E6700
+ 1328              	.LASF14:
+ 1329 0053 646F7562 		.ascii	"double\000"
+ 1329      6C6500
+ 1330              	.LASF38:
+ 1331 005a 74696D65 		.ascii	"timer_status\000"
+ 1331      725F7374 
+ 1331      61747573 
+ 1331      00
+ 1332              	.LASF37:
+ 1333 0067 68656172 		.ascii	"heartbeatCounter\000"
+ 1333      74626561 
+ 1333      74436F75 
+ 1333      6E746572 
+ 1333      00
+ 1334              	.LASF13:
+ 1335 0078 666C6F61 		.ascii	"float\000"
+ 1335      7400
+ 1336              	.LASF22:
+ 1337 007e 436F6D70 		.ascii	"Compint_SetPriority\000"
+ 1337      696E745F 
+ 1337      53657450 
+ 1337      72696F72 
+ 1337      69747900 
+ 1338              	.LASF41:
+ 1339 0092 656E6443 		.ascii	"endCounts\000"
+ 1339      6F756E74 
+ 1339      7300
+ 1340              	.LASF2:
+ 1341 009c 756E7369 		.ascii	"unsigned char\000"
+ 1341      676E6564 
+ 1341      20636861 
+ 1341      7200
+ 1342              	.LASF25:
+ 1343 00aa 436F6D70 		.ascii	"Compint_GetVector\000"
+ 1343      696E745F 
+ 1343      47657456 
+ 1343      6563746F 
+ 1343      7200
+ 1344              	.LASF15:
+ 1345 00bc 72656738 		.ascii	"reg8\000"
+ 1345      00
+ 1346              	.LASF40:
+ 1347 00c1 73746172 		.ascii	"startCounts\000"
+ 1347      74436F75 
+ 1347      6E747300 
+ 1348              	.LASF19:
+ 1349 00cd 436F6D70 		.ascii	"Compint_Interrupt\000"
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccHy6iik.s 			page 33
+
+
+ 1349      696E745F 
+ 1349      496E7465 
+ 1349      72727570 
+ 1349      7400
+ 1350              	.LASF43:
+ 1351 00df 2E5C4765 		.ascii	".\\Generated_Source\\PSoC5\\Compint.c\000"
+ 1351      6E657261 
+ 1351      7465645F 
+ 1351      536F7572 
+ 1351      63655C50 
+ 1352              	.LASF18:
+ 1353 0102 53544154 		.ascii	"STATE\000"
+ 1353      4500
+ 1354              	.LASF4:
+ 1355 0108 73686F72 		.ascii	"short unsigned int\000"
+ 1355      7420756E 
+ 1355      7369676E 
+ 1355      65642069 
+ 1355      6E7400
+ 1356              	.LASF44:
+ 1357 011b 433A5C72 		.ascii	"C:\\repositories\\embedded\\trunk\\terminalOutput\\"
+ 1357      65706F73 
+ 1357      69746F72 
+ 1357      6965735C 
+ 1357      656D6265 
+ 1358 0149 43453439 		.ascii	"CE4920Project1\\Design01.cydsn\000"
+ 1358      32305072 
+ 1358      6F6A6563 
+ 1358      74315C44 
+ 1358      65736967 
+ 1359              	.LASF27:
+ 1360 0167 436F6D70 		.ascii	"Compint_Enable\000"
+ 1360      696E745F 
+ 1360      456E6162 
+ 1360      6C6500
+ 1361              	.LASF24:
+ 1362 0176 7072696F 		.ascii	"priority\000"
+ 1362      72697479 
+ 1362      00
+ 1363              	.LASF6:
+ 1364 017f 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1364      20756E73 
+ 1364      69676E65 
+ 1364      6420696E 
+ 1364      7400
+ 1365              	.LASF3:
+ 1366 0191 73686F72 		.ascii	"short int\000"
+ 1366      7420696E 
+ 1366      7400
+ 1367              	.LASF39:
+ 1368 019b 74696D65 		.ascii	"timer_value\000"
+ 1368      725F7661 
+ 1368      6C756500 
+ 1369              	.LASF45:
+ 1370 01a7 436F6D70 		.ascii	"Compint_GetState\000"
+ 1370      696E745F 
+ 1370      47657453 
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccHy6iik.s 			page 34
+
+
+ 1370      74617465 
+ 1370      00
+ 1371              	.LASF12:
+ 1372 01b8 75696E74 		.ascii	"uint32\000"
+ 1372      333200
+ 1373              	.LASF0:
+ 1374 01bf 756E7369 		.ascii	"unsigned int\000"
+ 1374      676E6564 
+ 1374      20696E74 
+ 1374      00
+ 1375              	.LASF23:
+ 1376 01cc 61646472 		.ascii	"address\000"
+ 1376      65737300 
+ 1377              	.LASF8:
+ 1378 01d4 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1378      206C6F6E 
+ 1378      6720756E 
+ 1378      7369676E 
+ 1378      65642069 
+ 1379              	.LASF17:
+ 1380 01eb 63796973 		.ascii	"cyisraddress\000"
+ 1380      72616464 
+ 1380      72657373 
+ 1380      00
+ 1381              	.LASF1:
+ 1382 01f8 7369676E 		.ascii	"signed char\000"
+ 1382      65642063 
+ 1382      68617200 
+ 1383              	.LASF42:
+ 1384 0204 474E5520 		.ascii	"GNU C 4.8.4 20140526 (release) [ARM/embedded-4_8-br"
+ 1384      4320342E 
+ 1384      382E3420 
+ 1384      32303134 
+ 1384      30353236 
+ 1385 0237 616E6368 		.ascii	"anch revision 211358] -mcpu=cortex-m3 -mthumb -g -O"
+ 1385      20726576 
+ 1385      6973696F 
+ 1385      6E203231 
+ 1385      31333538 
+ 1386 026a 67202D66 		.ascii	"g -ffunction-sections\000"
+ 1386      66756E63 
+ 1386      74696F6E 
+ 1386      2D736563 
+ 1386      74696F6E 
+ 1387              	.LASF9:
+ 1388 0280 73697A65 		.ascii	"sizetype\000"
+ 1388      74797065 
+ 1388      00
+ 1389              	.LASF34:
+ 1390 0289 68656172 		.ascii	"heartrate\000"
+ 1390      74726174 
+ 1390      6500
+ 1391              	.LASF46:
+ 1392 0293 48656172 		.ascii	"HeartbeatCounter_ReadCounter\000"
+ 1392      74626561 
+ 1392      74436F75 
+ 1392      6E746572 
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccHy6iik.s 			page 35
+
+
+ 1392      5F526561 
+ 1393              	.LASF10:
+ 1394 02b0 63686172 		.ascii	"char\000"
+ 1394      00
+ 1395              	.LASF29:
+ 1396 02b5 436F6D70 		.ascii	"Compint_Start\000"
+ 1396      696E745F 
+ 1396      53746172 
+ 1396      7400
+ 1397              	.LASF33:
+ 1398 02c3 436F6D70 		.ascii	"Compint_ClearPending\000"
+ 1398      696E745F 
+ 1398      436C6561 
+ 1398      7250656E 
+ 1398      64696E67 
+ 1399              	.LASF11:
+ 1400 02d8 75696E74 		.ascii	"uint8\000"
+ 1400      3800
+ 1401              	.LASF21:
+ 1402 02de 72616D56 		.ascii	"ramVectorTable\000"
+ 1402      6563746F 
+ 1402      72546162 
+ 1402      6C6500
+ 1403              	.LASF28:
+ 1404 02ed 436F6D70 		.ascii	"Compint_Disable\000"
+ 1404      696E745F 
+ 1404      44697361 
+ 1404      626C6500 
+ 1405              	.LASF5:
+ 1406 02fd 6C6F6E67 		.ascii	"long int\000"
+ 1406      20696E74 
+ 1406      00
+ 1407              	.LASF31:
+ 1408 0306 436F6D70 		.ascii	"Compint_Stop\000"
+ 1408      696E745F 
+ 1408      53746F70 
+ 1408      00
+ 1409              	.LASF20:
+ 1410 0313 436F6D70 		.ascii	"Compint_SetVector\000"
+ 1410      696E745F 
+ 1410      53657456 
+ 1410      6563746F 
+ 1410      7200
+ 1411              	.LASF30:
+ 1412 0325 436F6D70 		.ascii	"Compint_StartEx\000"
+ 1412      696E745F 
+ 1412      53746172 
+ 1412      74457800 
+ 1413              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.8.4 20140526 (release) [ARM/embedded-4_8-br

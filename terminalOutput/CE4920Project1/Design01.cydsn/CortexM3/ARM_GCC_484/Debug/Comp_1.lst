@@ -1,0 +1,2387 @@
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccCyoLsd.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"Comp_1.c"
+  15              		.text
+  16              	.Ltext0:
+  17              		.cfi_sections	.debug_frame
+  18              		.section	.text.Comp_1_trimAdjust,"ax",%progbits
+  19              		.align	2
+  20              		.thumb
+  21              		.thumb_func
+  22              		.type	Comp_1_trimAdjust, %function
+  23              	Comp_1_trimAdjust:
+  24              	.LFB6:
+  25              		.file 1 ".\\Generated_Source\\PSoC5\\Comp_1.c"
+   1:.\Generated_Source\PSoC5/Comp_1.c **** /*******************************************************************************
+   2:.\Generated_Source\PSoC5/Comp_1.c **** * File Name: Comp_1.c
+   3:.\Generated_Source\PSoC5/Comp_1.c **** * Version 2.0
+   4:.\Generated_Source\PSoC5/Comp_1.c **** *
+   5:.\Generated_Source\PSoC5/Comp_1.c **** * Description:
+   6:.\Generated_Source\PSoC5/Comp_1.c **** *  This file provides the source code to the API for the Comparator component
+   7:.\Generated_Source\PSoC5/Comp_1.c **** *
+   8:.\Generated_Source\PSoC5/Comp_1.c **** * Note:
+   9:.\Generated_Source\PSoC5/Comp_1.c **** *  None
+  10:.\Generated_Source\PSoC5/Comp_1.c **** *
+  11:.\Generated_Source\PSoC5/Comp_1.c **** ********************************************************************************
+  12:.\Generated_Source\PSoC5/Comp_1.c **** * Copyright 2008-2012, Cypress Semiconductor Corporation.  All rights reserved.
+  13:.\Generated_Source\PSoC5/Comp_1.c **** * You may use this file only in accordance with the license, terms, conditions, 
+  14:.\Generated_Source\PSoC5/Comp_1.c **** * disclaimers, and limitations in the end user license agreement accompanying 
+  15:.\Generated_Source\PSoC5/Comp_1.c **** * the software package with which this file was provided.
+  16:.\Generated_Source\PSoC5/Comp_1.c **** *******************************************************************************/
+  17:.\Generated_Source\PSoC5/Comp_1.c **** 
+  18:.\Generated_Source\PSoC5/Comp_1.c **** #include "Comp_1.h"
+  19:.\Generated_Source\PSoC5/Comp_1.c **** 
+  20:.\Generated_Source\PSoC5/Comp_1.c **** uint8 Comp_1_initVar = 0u;
+  21:.\Generated_Source\PSoC5/Comp_1.c **** 
+  22:.\Generated_Source\PSoC5/Comp_1.c **** /* Internal functions definitoin */
+  23:.\Generated_Source\PSoC5/Comp_1.c **** static void Comp_1_trimAdjust(uint8 nibble) ;
+  24:.\Generated_Source\PSoC5/Comp_1.c **** 
+  25:.\Generated_Source\PSoC5/Comp_1.c **** /* static Comp_1_backupStruct  Comp_1_backup; */
+  26:.\Generated_Source\PSoC5/Comp_1.c **** #if (CY_PSOC5A)
+  27:.\Generated_Source\PSoC5/Comp_1.c ****     static Comp_1_LOWPOWER_BACKUP_STRUCT  Comp_1_lowPowerBackup;
+  28:.\Generated_Source\PSoC5/Comp_1.c **** #endif /* CY_PSOC5A */
+  29:.\Generated_Source\PSoC5/Comp_1.c **** 
+  30:.\Generated_Source\PSoC5/Comp_1.c **** /* variable to decide whether or not to restore the control register in 
+  31:.\Generated_Source\PSoC5/Comp_1.c ****    Enable() API for PSoC5A only */
+  32:.\Generated_Source\PSoC5/Comp_1.c **** #if (CY_PSOC5A)
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccCyoLsd.s 			page 2
+
+
+  33:.\Generated_Source\PSoC5/Comp_1.c ****     static uint8 Comp_1_restoreReg = 0u;
+  34:.\Generated_Source\PSoC5/Comp_1.c **** #endif /* CY_PSOC5A */
+  35:.\Generated_Source\PSoC5/Comp_1.c **** 
+  36:.\Generated_Source\PSoC5/Comp_1.c **** 
+  37:.\Generated_Source\PSoC5/Comp_1.c **** /*******************************************************************************
+  38:.\Generated_Source\PSoC5/Comp_1.c **** * Function Name: Comp_1_Init
+  39:.\Generated_Source\PSoC5/Comp_1.c **** ********************************************************************************
+  40:.\Generated_Source\PSoC5/Comp_1.c **** *
+  41:.\Generated_Source\PSoC5/Comp_1.c **** * Summary:
+  42:.\Generated_Source\PSoC5/Comp_1.c **** *  Initialize to the schematic state
+  43:.\Generated_Source\PSoC5/Comp_1.c **** * 
+  44:.\Generated_Source\PSoC5/Comp_1.c **** * Parameters:
+  45:.\Generated_Source\PSoC5/Comp_1.c **** *  void
+  46:.\Generated_Source\PSoC5/Comp_1.c **** *
+  47:.\Generated_Source\PSoC5/Comp_1.c **** * Return:
+  48:.\Generated_Source\PSoC5/Comp_1.c **** *  void
+  49:.\Generated_Source\PSoC5/Comp_1.c **** *
+  50:.\Generated_Source\PSoC5/Comp_1.c **** *******************************************************************************/
+  51:.\Generated_Source\PSoC5/Comp_1.c **** void Comp_1_Init(void) 
+  52:.\Generated_Source\PSoC5/Comp_1.c **** {
+  53:.\Generated_Source\PSoC5/Comp_1.c ****     /* Set default speed/power */
+  54:.\Generated_Source\PSoC5/Comp_1.c ****     Comp_1_SetSpeed(Comp_1_DEFAULT_SPEED);
+  55:.\Generated_Source\PSoC5/Comp_1.c **** 
+  56:.\Generated_Source\PSoC5/Comp_1.c ****     /* Set default Hysteresis */
+  57:.\Generated_Source\PSoC5/Comp_1.c ****     #if ( Comp_1_DEFAULT_HYSTERESIS == 0u )
+  58:.\Generated_Source\PSoC5/Comp_1.c ****         Comp_1_CR |= Comp_1_HYST_OFF;
+  59:.\Generated_Source\PSoC5/Comp_1.c ****     #else
+  60:.\Generated_Source\PSoC5/Comp_1.c ****         Comp_1_CR &= (uint8)(~Comp_1_HYST_OFF);
+  61:.\Generated_Source\PSoC5/Comp_1.c ****     #endif /* Comp_1_DEFAULT_HYSTERESIS == 0u */
+  62:.\Generated_Source\PSoC5/Comp_1.c ****     /* Power down override feature is not supported for PSoC5A. */
+  63:.\Generated_Source\PSoC5/Comp_1.c ****     #if (CY_PSOC3 || CY_PSOC5LP)
+  64:.\Generated_Source\PSoC5/Comp_1.c ****         /* Set default Power Down Override */
+  65:.\Generated_Source\PSoC5/Comp_1.c ****         #if ( Comp_1_DEFAULT_PWRDWN_OVRD == 0u )
+  66:.\Generated_Source\PSoC5/Comp_1.c ****             Comp_1_CR &= (uint8)(~Comp_1_PWRDWN_OVRD);
+  67:.\Generated_Source\PSoC5/Comp_1.c ****         #else 
+  68:.\Generated_Source\PSoC5/Comp_1.c ****             Comp_1_CR |= Comp_1_PWRDWN_OVRD;
+  69:.\Generated_Source\PSoC5/Comp_1.c ****         #endif /* Comp_1_DEFAULT_PWRDWN_OVRD == 0u */
+  70:.\Generated_Source\PSoC5/Comp_1.c ****     #endif /* CY_PSOC3 || CY_PSOC5LP */
+  71:.\Generated_Source\PSoC5/Comp_1.c ****     
+  72:.\Generated_Source\PSoC5/Comp_1.c ****     /* Set mux always on logic */
+  73:.\Generated_Source\PSoC5/Comp_1.c ****     Comp_1_CR |= Comp_1_MX_AO;
+  74:.\Generated_Source\PSoC5/Comp_1.c **** 
+  75:.\Generated_Source\PSoC5/Comp_1.c ****     /* Set default sync */
+  76:.\Generated_Source\PSoC5/Comp_1.c ****     Comp_1_CLK &= (uint8)(~Comp_1_SYNCCLK_MASK);
+  77:.\Generated_Source\PSoC5/Comp_1.c ****     #if ( Comp_1_DEFAULT_BYPASS_SYNC == 0u )
+  78:.\Generated_Source\PSoC5/Comp_1.c ****         Comp_1_CLK |= Comp_1_SYNC_CLK_EN;
+  79:.\Generated_Source\PSoC5/Comp_1.c ****     #else
+  80:.\Generated_Source\PSoC5/Comp_1.c ****         Comp_1_CLK |= Comp_1_BYPASS_SYNC;
+  81:.\Generated_Source\PSoC5/Comp_1.c ****     #endif /* Comp_1_DEFAULT_BYPASS_SYNC == 0u */
+  82:.\Generated_Source\PSoC5/Comp_1.c **** }
+  83:.\Generated_Source\PSoC5/Comp_1.c **** 
+  84:.\Generated_Source\PSoC5/Comp_1.c **** 
+  85:.\Generated_Source\PSoC5/Comp_1.c **** /*******************************************************************************
+  86:.\Generated_Source\PSoC5/Comp_1.c **** * Function Name: Comp_1_Enable
+  87:.\Generated_Source\PSoC5/Comp_1.c **** ********************************************************************************
+  88:.\Generated_Source\PSoC5/Comp_1.c **** *
+  89:.\Generated_Source\PSoC5/Comp_1.c **** * Summary:
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccCyoLsd.s 			page 3
+
+
+  90:.\Generated_Source\PSoC5/Comp_1.c **** *  Enable the Comparator
+  91:.\Generated_Source\PSoC5/Comp_1.c **** * 
+  92:.\Generated_Source\PSoC5/Comp_1.c **** * Parameters:
+  93:.\Generated_Source\PSoC5/Comp_1.c **** *  void
+  94:.\Generated_Source\PSoC5/Comp_1.c **** *
+  95:.\Generated_Source\PSoC5/Comp_1.c **** * Return:
+  96:.\Generated_Source\PSoC5/Comp_1.c **** *  void
+  97:.\Generated_Source\PSoC5/Comp_1.c **** *
+  98:.\Generated_Source\PSoC5/Comp_1.c **** *******************************************************************************/
+  99:.\Generated_Source\PSoC5/Comp_1.c **** void Comp_1_Enable(void) 
+ 100:.\Generated_Source\PSoC5/Comp_1.c **** {
+ 101:.\Generated_Source\PSoC5/Comp_1.c ****     Comp_1_PWRMGR |= Comp_1_ACT_PWR_EN;
+ 102:.\Generated_Source\PSoC5/Comp_1.c ****     Comp_1_STBY_PWRMGR |= Comp_1_STBY_PWR_EN;
+ 103:.\Generated_Source\PSoC5/Comp_1.c ****      
+ 104:.\Generated_Source\PSoC5/Comp_1.c ****      /* This is to restore the value of register CR which is saved 
+ 105:.\Generated_Source\PSoC5/Comp_1.c ****     in prior to the modification in stop() API */
+ 106:.\Generated_Source\PSoC5/Comp_1.c ****     #if (CY_PSOC5A)
+ 107:.\Generated_Source\PSoC5/Comp_1.c ****         if(Comp_1_restoreReg == 1u)
+ 108:.\Generated_Source\PSoC5/Comp_1.c ****         {
+ 109:.\Generated_Source\PSoC5/Comp_1.c ****             Comp_1_CR = Comp_1_lowPowerBackup.compCRReg;
+ 110:.\Generated_Source\PSoC5/Comp_1.c **** 
+ 111:.\Generated_Source\PSoC5/Comp_1.c ****             /* Clear the flag */
+ 112:.\Generated_Source\PSoC5/Comp_1.c ****             Comp_1_restoreReg = 0u;
+ 113:.\Generated_Source\PSoC5/Comp_1.c ****         }
+ 114:.\Generated_Source\PSoC5/Comp_1.c ****     #endif /* CY_PSOC5A */
+ 115:.\Generated_Source\PSoC5/Comp_1.c **** }
+ 116:.\Generated_Source\PSoC5/Comp_1.c **** 
+ 117:.\Generated_Source\PSoC5/Comp_1.c **** 
+ 118:.\Generated_Source\PSoC5/Comp_1.c **** /*******************************************************************************
+ 119:.\Generated_Source\PSoC5/Comp_1.c **** * Function Name: Comp_1_Start
+ 120:.\Generated_Source\PSoC5/Comp_1.c **** ********************************************************************************
+ 121:.\Generated_Source\PSoC5/Comp_1.c **** *
+ 122:.\Generated_Source\PSoC5/Comp_1.c **** * Summary:
+ 123:.\Generated_Source\PSoC5/Comp_1.c **** *  The start function initializes the Analog Comparator with the default values.
+ 124:.\Generated_Source\PSoC5/Comp_1.c **** *
+ 125:.\Generated_Source\PSoC5/Comp_1.c **** * Parameters:
+ 126:.\Generated_Source\PSoC5/Comp_1.c **** *  void
+ 127:.\Generated_Source\PSoC5/Comp_1.c **** *
+ 128:.\Generated_Source\PSoC5/Comp_1.c **** * Return:
+ 129:.\Generated_Source\PSoC5/Comp_1.c **** *  void 
+ 130:.\Generated_Source\PSoC5/Comp_1.c **** *
+ 131:.\Generated_Source\PSoC5/Comp_1.c **** * Global variables:
+ 132:.\Generated_Source\PSoC5/Comp_1.c **** *  Comp_1_initVar: Is modified when this function is called for the 
+ 133:.\Generated_Source\PSoC5/Comp_1.c **** *   first time. Is used to ensure that initialization happens only once.
+ 134:.\Generated_Source\PSoC5/Comp_1.c **** *  
+ 135:.\Generated_Source\PSoC5/Comp_1.c **** *******************************************************************************/
+ 136:.\Generated_Source\PSoC5/Comp_1.c **** void Comp_1_Start(void) 
+ 137:.\Generated_Source\PSoC5/Comp_1.c **** {
+ 138:.\Generated_Source\PSoC5/Comp_1.c **** 
+ 139:.\Generated_Source\PSoC5/Comp_1.c ****     if ( Comp_1_initVar == 0u )
+ 140:.\Generated_Source\PSoC5/Comp_1.c ****     {
+ 141:.\Generated_Source\PSoC5/Comp_1.c ****         Comp_1_Init();
+ 142:.\Generated_Source\PSoC5/Comp_1.c ****         
+ 143:.\Generated_Source\PSoC5/Comp_1.c ****         Comp_1_initVar = 1u;
+ 144:.\Generated_Source\PSoC5/Comp_1.c ****     }   
+ 145:.\Generated_Source\PSoC5/Comp_1.c **** 
+ 146:.\Generated_Source\PSoC5/Comp_1.c ****     /* Enable power to comparator */
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccCyoLsd.s 			page 4
+
+
+ 147:.\Generated_Source\PSoC5/Comp_1.c ****     Comp_1_Enable();    
+ 148:.\Generated_Source\PSoC5/Comp_1.c **** }
+ 149:.\Generated_Source\PSoC5/Comp_1.c **** 
+ 150:.\Generated_Source\PSoC5/Comp_1.c **** 
+ 151:.\Generated_Source\PSoC5/Comp_1.c **** /*******************************************************************************
+ 152:.\Generated_Source\PSoC5/Comp_1.c **** * Function Name: Comp_1_Stop
+ 153:.\Generated_Source\PSoC5/Comp_1.c **** ********************************************************************************
+ 154:.\Generated_Source\PSoC5/Comp_1.c **** *
+ 155:.\Generated_Source\PSoC5/Comp_1.c **** * Summary:
+ 156:.\Generated_Source\PSoC5/Comp_1.c **** *  Powers down amplifier to lowest power state.
+ 157:.\Generated_Source\PSoC5/Comp_1.c **** *
+ 158:.\Generated_Source\PSoC5/Comp_1.c **** * Parameters:
+ 159:.\Generated_Source\PSoC5/Comp_1.c **** *  void
+ 160:.\Generated_Source\PSoC5/Comp_1.c **** *
+ 161:.\Generated_Source\PSoC5/Comp_1.c **** * Return:
+ 162:.\Generated_Source\PSoC5/Comp_1.c **** *  void
+ 163:.\Generated_Source\PSoC5/Comp_1.c **** *
+ 164:.\Generated_Source\PSoC5/Comp_1.c **** *******************************************************************************/
+ 165:.\Generated_Source\PSoC5/Comp_1.c **** void Comp_1_Stop(void) 
+ 166:.\Generated_Source\PSoC5/Comp_1.c **** {
+ 167:.\Generated_Source\PSoC5/Comp_1.c ****     /* Disable power to comparator */
+ 168:.\Generated_Source\PSoC5/Comp_1.c ****     Comp_1_PWRMGR &= (uint8)(~Comp_1_ACT_PWR_EN);
+ 169:.\Generated_Source\PSoC5/Comp_1.c ****     Comp_1_STBY_PWRMGR &= (uint8)(~Comp_1_STBY_PWR_EN);
+ 170:.\Generated_Source\PSoC5/Comp_1.c ****     
+ 171:.\Generated_Source\PSoC5/Comp_1.c ****     #if (CY_PSOC5A)
+ 172:.\Generated_Source\PSoC5/Comp_1.c ****         /* Enable the variable */
+ 173:.\Generated_Source\PSoC5/Comp_1.c ****         Comp_1_restoreReg = 1u;
+ 174:.\Generated_Source\PSoC5/Comp_1.c **** 
+ 175:.\Generated_Source\PSoC5/Comp_1.c ****         /* Save the control register before clearing it */
+ 176:.\Generated_Source\PSoC5/Comp_1.c ****         Comp_1_lowPowerBackup.compCRReg = Comp_1_CR;
+ 177:.\Generated_Source\PSoC5/Comp_1.c ****         Comp_1_CR = Comp_1_COMP_REG_CLR;
+ 178:.\Generated_Source\PSoC5/Comp_1.c ****     #endif /* CY_PSOC5A */
+ 179:.\Generated_Source\PSoC5/Comp_1.c **** }
+ 180:.\Generated_Source\PSoC5/Comp_1.c **** 
+ 181:.\Generated_Source\PSoC5/Comp_1.c **** 
+ 182:.\Generated_Source\PSoC5/Comp_1.c **** /*******************************************************************************
+ 183:.\Generated_Source\PSoC5/Comp_1.c **** * Function Name: Comp_1_SetSpeed
+ 184:.\Generated_Source\PSoC5/Comp_1.c **** ********************************************************************************
+ 185:.\Generated_Source\PSoC5/Comp_1.c **** *
+ 186:.\Generated_Source\PSoC5/Comp_1.c **** * Summary:
+ 187:.\Generated_Source\PSoC5/Comp_1.c **** *  This function sets the speed of the Analog Comparator. The faster the speed
+ 188:.\Generated_Source\PSoC5/Comp_1.c **** *  the more power that is used.
+ 189:.\Generated_Source\PSoC5/Comp_1.c **** *
+ 190:.\Generated_Source\PSoC5/Comp_1.c **** * Parameters:
+ 191:.\Generated_Source\PSoC5/Comp_1.c **** *  speed: (uint8) Sets operation mode of Comparator
+ 192:.\Generated_Source\PSoC5/Comp_1.c **** *
+ 193:.\Generated_Source\PSoC5/Comp_1.c **** * Return:
+ 194:.\Generated_Source\PSoC5/Comp_1.c **** *  void
+ 195:.\Generated_Source\PSoC5/Comp_1.c **** *
+ 196:.\Generated_Source\PSoC5/Comp_1.c **** *******************************************************************************/
+ 197:.\Generated_Source\PSoC5/Comp_1.c **** void Comp_1_SetSpeed(uint8 speed) 
+ 198:.\Generated_Source\PSoC5/Comp_1.c **** {
+ 199:.\Generated_Source\PSoC5/Comp_1.c ****     /* Clear and Set power level */    
+ 200:.\Generated_Source\PSoC5/Comp_1.c ****     Comp_1_CR = (Comp_1_CR & (uint8)(~Comp_1_PWR_MODE_MASK)) |
+ 201:.\Generated_Source\PSoC5/Comp_1.c ****                            (speed & Comp_1_PWR_MODE_MASK);
+ 202:.\Generated_Source\PSoC5/Comp_1.c **** 
+ 203:.\Generated_Source\PSoC5/Comp_1.c ****     /* Set trim value for high speed comparator */
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccCyoLsd.s 			page 5
+
+
+ 204:.\Generated_Source\PSoC5/Comp_1.c ****     if(speed == Comp_1_HIGHSPEED)
+ 205:.\Generated_Source\PSoC5/Comp_1.c ****     {
+ 206:.\Generated_Source\PSoC5/Comp_1.c ****         /* PSoC5A */
+ 207:.\Generated_Source\PSoC5/Comp_1.c ****         #if (CY_PSOC5A)
+ 208:.\Generated_Source\PSoC5/Comp_1.c ****             Comp_1_TR = Comp_1_HS_TRIM_TR0;
+ 209:.\Generated_Source\PSoC5/Comp_1.c ****         #endif /* CY_PSOC5A */
+ 210:.\Generated_Source\PSoC5/Comp_1.c ****         
+ 211:.\Generated_Source\PSoC5/Comp_1.c ****         /* PSoC3, PSoC5LP or later */
+ 212:.\Generated_Source\PSoC5/Comp_1.c ****         #if (CY_PSOC3 || CY_PSOC5LP) 
+ 213:.\Generated_Source\PSoC5/Comp_1.c ****             Comp_1_TR0 = Comp_1_HS_TRIM_TR0;
+ 214:.\Generated_Source\PSoC5/Comp_1.c ****             Comp_1_TR1 = Comp_1_HS_TRIM_TR1;
+ 215:.\Generated_Source\PSoC5/Comp_1.c ****         #endif /* CY_PSOC3 || CY_PSOC5LP */
+ 216:.\Generated_Source\PSoC5/Comp_1.c ****     }
+ 217:.\Generated_Source\PSoC5/Comp_1.c ****     else
+ 218:.\Generated_Source\PSoC5/Comp_1.c ****     {
+ 219:.\Generated_Source\PSoC5/Comp_1.c ****     /* PSoC5A */
+ 220:.\Generated_Source\PSoC5/Comp_1.c ****         #if (CY_PSOC5A)
+ 221:.\Generated_Source\PSoC5/Comp_1.c ****             Comp_1_TR = Comp_1_LS_TRIM_TR0;
+ 222:.\Generated_Source\PSoC5/Comp_1.c ****         #endif /* CY_PSOC5A */
+ 223:.\Generated_Source\PSoC5/Comp_1.c ****         
+ 224:.\Generated_Source\PSoC5/Comp_1.c ****         /* PSoC3, PSoC5LP or later */
+ 225:.\Generated_Source\PSoC5/Comp_1.c ****         #if (CY_PSOC3 || CY_PSOC5LP) 
+ 226:.\Generated_Source\PSoC5/Comp_1.c ****             Comp_1_TR0 = Comp_1_LS_TRIM_TR0;
+ 227:.\Generated_Source\PSoC5/Comp_1.c ****             Comp_1_TR1 = Comp_1_LS_TRIM_TR1;
+ 228:.\Generated_Source\PSoC5/Comp_1.c ****         #endif /* CY_PSOC3 || CY_PSOC5LP */
+ 229:.\Generated_Source\PSoC5/Comp_1.c ****     }
+ 230:.\Generated_Source\PSoC5/Comp_1.c **** 
+ 231:.\Generated_Source\PSoC5/Comp_1.c **** }
+ 232:.\Generated_Source\PSoC5/Comp_1.c **** 
+ 233:.\Generated_Source\PSoC5/Comp_1.c **** 
+ 234:.\Generated_Source\PSoC5/Comp_1.c **** /*******************************************************************************
+ 235:.\Generated_Source\PSoC5/Comp_1.c **** * Function Name: Comp_1_GetCompare
+ 236:.\Generated_Source\PSoC5/Comp_1.c **** ********************************************************************************
+ 237:.\Generated_Source\PSoC5/Comp_1.c **** *
+ 238:.\Generated_Source\PSoC5/Comp_1.c **** * Summary:
+ 239:.\Generated_Source\PSoC5/Comp_1.c **** *  This function returns the comparator output value.
+ 240:.\Generated_Source\PSoC5/Comp_1.c **** *  This value is not affected by the Polarity parameter.
+ 241:.\Generated_Source\PSoC5/Comp_1.c **** *  This valuea lways reflects a noninverted state.
+ 242:.\Generated_Source\PSoC5/Comp_1.c **** *
+ 243:.\Generated_Source\PSoC5/Comp_1.c **** * Parameters:
+ 244:.\Generated_Source\PSoC5/Comp_1.c **** *   None
+ 245:.\Generated_Source\PSoC5/Comp_1.c **** *
+ 246:.\Generated_Source\PSoC5/Comp_1.c **** * Return:
+ 247:.\Generated_Source\PSoC5/Comp_1.c **** *  (uint8)  0     - if Pos_Input less than Neg_input
+ 248:.\Generated_Source\PSoC5/Comp_1.c **** *           non 0 - if Pos_Input greater than Neg_input.
+ 249:.\Generated_Source\PSoC5/Comp_1.c **** *
+ 250:.\Generated_Source\PSoC5/Comp_1.c **** *******************************************************************************/
+ 251:.\Generated_Source\PSoC5/Comp_1.c **** uint8 Comp_1_GetCompare(void) 
+ 252:.\Generated_Source\PSoC5/Comp_1.c **** {
+ 253:.\Generated_Source\PSoC5/Comp_1.c ****     return( Comp_1_WRK & Comp_1_CMP_OUT_MASK);
+ 254:.\Generated_Source\PSoC5/Comp_1.c **** }
+ 255:.\Generated_Source\PSoC5/Comp_1.c **** 
+ 256:.\Generated_Source\PSoC5/Comp_1.c **** 
+ 257:.\Generated_Source\PSoC5/Comp_1.c **** /*******************************************************************************
+ 258:.\Generated_Source\PSoC5/Comp_1.c **** * Function Name: Comp_1_trimAdjust
+ 259:.\Generated_Source\PSoC5/Comp_1.c **** ********************************************************************************
+ 260:.\Generated_Source\PSoC5/Comp_1.c **** *
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccCyoLsd.s 			page 6
+
+
+ 261:.\Generated_Source\PSoC5/Comp_1.c **** * Summary:
+ 262:.\Generated_Source\PSoC5/Comp_1.c **** *  This function adjusts the value in the low nibble/high nibble of the Analog 
+ 263:.\Generated_Source\PSoC5/Comp_1.c **** *  Comparator trim register
+ 264:.\Generated_Source\PSoC5/Comp_1.c **** *
+ 265:.\Generated_Source\PSoC5/Comp_1.c **** * Parameters:  
+ 266:.\Generated_Source\PSoC5/Comp_1.c **** *  nibble:
+ 267:.\Generated_Source\PSoC5/Comp_1.c **** *      0 -- adjusts the value in the low nibble
+ 268:.\Generated_Source\PSoC5/Comp_1.c **** *      1 -- adjusts the value in the high nibble
+ 269:.\Generated_Source\PSoC5/Comp_1.c **** *
+ 270:.\Generated_Source\PSoC5/Comp_1.c **** * Return:
+ 271:.\Generated_Source\PSoC5/Comp_1.c **** *  None
+ 272:.\Generated_Source\PSoC5/Comp_1.c **** *
+ 273:.\Generated_Source\PSoC5/Comp_1.c **** * Theory: 
+ 274:.\Generated_Source\PSoC5/Comp_1.c **** *  Function assumes comparator block is setup for trim adjust.
+ 275:.\Generated_Source\PSoC5/Comp_1.c **** *  Intended to be called from Comp_ZeroCal()
+ 276:.\Generated_Source\PSoC5/Comp_1.c **** * 
+ 277:.\Generated_Source\PSoC5/Comp_1.c **** * Side Effects:
+ 278:.\Generated_Source\PSoC5/Comp_1.c **** *  Routine uses a course 1ms delay following each trim adjustment to allow 
+ 279:.\Generated_Source\PSoC5/Comp_1.c **** *  the comparator output to respond.
+ 280:.\Generated_Source\PSoC5/Comp_1.c **** *
+ 281:.\Generated_Source\PSoC5/Comp_1.c **** *******************************************************************************/
+ 282:.\Generated_Source\PSoC5/Comp_1.c **** static void Comp_1_trimAdjust(uint8 nibble) 
+ 283:.\Generated_Source\PSoC5/Comp_1.c **** {
+  26              		.loc 1 283 0
+  27              		.cfi_startproc
+  28              		@ args = 0, pretend = 0, frame = 0
+  29              		@ frame_needed = 0, uses_anonymous_args = 0
+  30              	.LVL0:
+  31 0000 2DE9F047 		push	{r4, r5, r6, r7, r8, r9, r10, lr}
+  32              		.cfi_def_cfa_offset 32
+  33              		.cfi_offset 4, -32
+  34              		.cfi_offset 5, -28
+  35              		.cfi_offset 6, -24
+  36              		.cfi_offset 7, -20
+  37              		.cfi_offset 8, -16
+  38              		.cfi_offset 9, -12
+  39              		.cfi_offset 10, -8
+  40              		.cfi_offset 14, -4
+ 284:.\Generated_Source\PSoC5/Comp_1.c ****     uint8 trimCnt, trimCntMax;
+ 285:.\Generated_Source\PSoC5/Comp_1.c ****     uint8 cmpState;   
+ 286:.\Generated_Source\PSoC5/Comp_1.c **** 
+ 287:.\Generated_Source\PSoC5/Comp_1.c ****     /* get current state of comparator output */
+ 288:.\Generated_Source\PSoC5/Comp_1.c ****     cmpState = Comp_1_WRK & Comp_1_CMP_OUT_MASK;
+  41              		.loc 1 288 0
+  42 0004 1E4B     		ldr	r3, .L11
+  43 0006 1D78     		ldrb	r5, [r3]	@ zero_extendqisi2
+  44 0008 05F00105 		and	r5, r5, #1
+  45              	.LVL1:
+ 289:.\Generated_Source\PSoC5/Comp_1.c ****     
+ 290:.\Generated_Source\PSoC5/Comp_1.c ****     if (nibble == 0u)
+  46              		.loc 1 290 0
+  47 000c 0646     		mov	r6, r0
+  48 000e 40B9     		cbnz	r0, .L2
+ 291:.\Generated_Source\PSoC5/Comp_1.c ****     {    
+ 292:.\Generated_Source\PSoC5/Comp_1.c ****         /* if comparator output is high, negative offset adjust is required */
+ 293:.\Generated_Source\PSoC5/Comp_1.c ****         if ( cmpState != 0u )
+  49              		.loc 1 293 0
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccCyoLsd.s 			page 7
+
+
+  50 0010 6DB1     		cbz	r5, .L3
+ 294:.\Generated_Source\PSoC5/Comp_1.c ****         {
+ 295:.\Generated_Source\PSoC5/Comp_1.c ****             /* PSoC5A */
+ 296:.\Generated_Source\PSoC5/Comp_1.c ****             #if (CY_PSOC5A)
+ 297:.\Generated_Source\PSoC5/Comp_1.c ****                 Comp_1_TR |= Comp_1_CMP_TRIM1_DIR;
+ 298:.\Generated_Source\PSoC5/Comp_1.c ****             #endif /* CY_PSOC5A */
+ 299:.\Generated_Source\PSoC5/Comp_1.c ****             
+ 300:.\Generated_Source\PSoC5/Comp_1.c ****             /* PSoC3, PSoC5LP or later */
+ 301:.\Generated_Source\PSoC5/Comp_1.c ****             #if (CY_PSOC3 || CY_PSOC5LP)
+ 302:.\Generated_Source\PSoC5/Comp_1.c ****                 Comp_1_TR0 |= Comp_1_CMP_TR0_DIR;
+  51              		.loc 1 302 0
+  52 0012 A3F5AB53 		sub	r3, r3, #5472
+  53 0016 063B     		subs	r3, r3, #6
+  54 0018 1A78     		ldrb	r2, [r3]	@ zero_extendqisi2
+  55 001a 42F01002 		orr	r2, r2, #16
+  56 001e 1A70     		strb	r2, [r3]
+  57 0020 05E0     		b	.L3
+  58              	.L2:
+ 303:.\Generated_Source\PSoC5/Comp_1.c ****             #endif /* CY_PSOC3 || CY_PSOC5LP */
+ 304:.\Generated_Source\PSoC5/Comp_1.c ****         }
+ 305:.\Generated_Source\PSoC5/Comp_1.c ****     }
+ 306:.\Generated_Source\PSoC5/Comp_1.c ****     else
+ 307:.\Generated_Source\PSoC5/Comp_1.c ****     {
+ 308:.\Generated_Source\PSoC5/Comp_1.c ****         /* if comparator output is low, positive offset adjust is required */
+ 309:.\Generated_Source\PSoC5/Comp_1.c ****         if ( cmpState == 0u )
+  59              		.loc 1 309 0
+  60 0022 25B9     		cbnz	r5, .L3
+ 310:.\Generated_Source\PSoC5/Comp_1.c ****         {
+ 311:.\Generated_Source\PSoC5/Comp_1.c ****             /* PSoC5A */
+ 312:.\Generated_Source\PSoC5/Comp_1.c ****             #if (CY_PSOC5A)
+ 313:.\Generated_Source\PSoC5/Comp_1.c ****                 Comp_1_TR |= Comp_1_CMP_TRIM2_DIR; 
+ 314:.\Generated_Source\PSoC5/Comp_1.c ****             #endif /* CY_PSOC5A */
+ 315:.\Generated_Source\PSoC5/Comp_1.c ****             
+ 316:.\Generated_Source\PSoC5/Comp_1.c ****             /* PSoC3, PSoC5LP or later */
+ 317:.\Generated_Source\PSoC5/Comp_1.c ****             #if (CY_PSOC3 || CY_PSOC5LP)
+ 318:.\Generated_Source\PSoC5/Comp_1.c ****                 Comp_1_TR1 |= Comp_1_CMP_TR1_DIR;
+  61              		.loc 1 318 0
+  62 0024 174B     		ldr	r3, .L11+4
+  63 0026 1A78     		ldrb	r2, [r3]	@ zero_extendqisi2
+  64 0028 42F01002 		orr	r2, r2, #16
+  65 002c 1A70     		strb	r2, [r3]
+  66              	.L3:
+ 319:.\Generated_Source\PSoC5/Comp_1.c ****             #endif /* CY_PSOC3 || CY_PSOC5LP */
+ 320:.\Generated_Source\PSoC5/Comp_1.c ****         }
+ 321:.\Generated_Source\PSoC5/Comp_1.c ****     }
+ 322:.\Generated_Source\PSoC5/Comp_1.c **** 
+ 323:.\Generated_Source\PSoC5/Comp_1.c ****     /* Increment trim value until compare output changes state */
+ 324:.\Generated_Source\PSoC5/Comp_1.c **** 	
+ 325:.\Generated_Source\PSoC5/Comp_1.c ****     /* PSoC5A */
+ 326:.\Generated_Source\PSoC5/Comp_1.c **** 	#if (CY_PSOC5A)
+ 327:.\Generated_Source\PSoC5/Comp_1.c **** 	    trimCntMax = 7u;
+ 328:.\Generated_Source\PSoC5/Comp_1.c ****     #endif
+ 329:.\Generated_Source\PSoC5/Comp_1.c **** 	
+ 330:.\Generated_Source\PSoC5/Comp_1.c **** 	/* PSoC3, PSoC5LP or later */
+ 331:.\Generated_Source\PSoC5/Comp_1.c **** 	#if (CY_PSOC3 || CY_PSOC5LP)
+ 332:.\Generated_Source\PSoC5/Comp_1.c ****     	if(nibble == 0u)
+  67              		.loc 1 332 0
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccCyoLsd.s 			page 8
+
+
+  68 002e 0EB9     		cbnz	r6, .L10
+ 333:.\Generated_Source\PSoC5/Comp_1.c ****     	{
+ 334:.\Generated_Source\PSoC5/Comp_1.c ****     		trimCntMax = 15u;
+  69              		.loc 1 334 0
+  70 0030 0F27     		movs	r7, #15
+  71 0032 00E0     		b	.L4
+  72              	.L10:
+ 335:.\Generated_Source\PSoC5/Comp_1.c ****     	}
+ 336:.\Generated_Source\PSoC5/Comp_1.c ****     	else
+ 337:.\Generated_Source\PSoC5/Comp_1.c ****     	{
+ 338:.\Generated_Source\PSoC5/Comp_1.c ****     		trimCntMax = 7u;
+  73              		.loc 1 338 0
+  74 0034 0727     		movs	r7, #7
+  75              	.L4:
+  76              	.LVL2:
+ 339:.\Generated_Source\PSoC5/Comp_1.c ****     	}
+ 340:.\Generated_Source\PSoC5/Comp_1.c **** 	#endif
+ 341:.\Generated_Source\PSoC5/Comp_1.c **** 	
+ 342:.\Generated_Source\PSoC5/Comp_1.c ****     for ( trimCnt = 0u; trimCnt < trimCntMax; trimCnt++ )
+  77              		.loc 1 342 0
+  78 0036 0024     		movs	r4, #0
+ 343:.\Generated_Source\PSoC5/Comp_1.c **** 	{
+ 344:.\Generated_Source\PSoC5/Comp_1.c ****         if (nibble == 0u)
+ 345:.\Generated_Source\PSoC5/Comp_1.c ****         {
+ 346:.\Generated_Source\PSoC5/Comp_1.c ****             /* PSoC5A */
+ 347:.\Generated_Source\PSoC5/Comp_1.c ****             #if (CY_PSOC5A)
+ 348:.\Generated_Source\PSoC5/Comp_1.c ****                 Comp_1_TR += 1u;
+ 349:.\Generated_Source\PSoC5/Comp_1.c ****             #endif /* CY_PSOC5A */
+ 350:.\Generated_Source\PSoC5/Comp_1.c ****             
+ 351:.\Generated_Source\PSoC5/Comp_1.c ****             /* PSoC3, PSoC5LP or later */
+ 352:.\Generated_Source\PSoC5/Comp_1.c ****             #if (CY_PSOC3 || CY_PSOC5LP)
+ 353:.\Generated_Source\PSoC5/Comp_1.c ****                 Comp_1_TR0 += 1u;
+ 354:.\Generated_Source\PSoC5/Comp_1.c ****             #endif /* CY_PSOC3 || CY_PSOC5LP */
+ 355:.\Generated_Source\PSoC5/Comp_1.c ****         }
+ 356:.\Generated_Source\PSoC5/Comp_1.c ****         else
+ 357:.\Generated_Source\PSoC5/Comp_1.c ****         {
+ 358:.\Generated_Source\PSoC5/Comp_1.c ****             /* PSoC5A */
+ 359:.\Generated_Source\PSoC5/Comp_1.c ****             #if (CY_PSOC5A)
+ 360:.\Generated_Source\PSoC5/Comp_1.c ****                 Comp_1_TR += 0x10u;
+ 361:.\Generated_Source\PSoC5/Comp_1.c ****             #endif /* CY_PSOC5A */
+ 362:.\Generated_Source\PSoC5/Comp_1.c ****             
+ 363:.\Generated_Source\PSoC5/Comp_1.c ****             /* PSoC3, PSoC5LP or later */
+ 364:.\Generated_Source\PSoC5/Comp_1.c ****             #if (CY_PSOC3 || CY_PSOC5LP)
+ 365:.\Generated_Source\PSoC5/Comp_1.c ****                 Comp_1_TR1 += 1u;
+  79              		.loc 1 365 0
+  80 0038 DFF848A0 		ldr	r10, .L11+4
+ 353:.\Generated_Source\PSoC5/Comp_1.c ****                 Comp_1_TR0 += 1u;
+  81              		.loc 1 353 0
+  82 003c DFF84890 		ldr	r9, .L11+8
+ 366:.\Generated_Source\PSoC5/Comp_1.c ****             #endif /* CY_PSOC3 || CY_PSOC5LP */
+ 367:.\Generated_Source\PSoC5/Comp_1.c ****         }
+ 368:.\Generated_Source\PSoC5/Comp_1.c ****         
+ 369:.\Generated_Source\PSoC5/Comp_1.c ****         CyDelayUs(10u);
+ 370:.\Generated_Source\PSoC5/Comp_1.c ****         
+ 371:.\Generated_Source\PSoC5/Comp_1.c ****         /* Check for change in comparator output */
+ 372:.\Generated_Source\PSoC5/Comp_1.c ****         if ((Comp_1_WRK & Comp_1_CMP_OUT_MASK) != cmpState)
+  83              		.loc 1 372 0
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccCyoLsd.s 			page 9
+
+
+  84 0040 DFF83C80 		ldr	r8, .L11
+ 342:.\Generated_Source\PSoC5/Comp_1.c ****     for ( trimCnt = 0u; trimCnt < trimCntMax; trimCnt++ )
+  85              		.loc 1 342 0
+  86 0044 18E0     		b	.L5
+  87              	.LVL3:
+  88              	.L9:
+ 344:.\Generated_Source\PSoC5/Comp_1.c ****         if (nibble == 0u)
+  89              		.loc 1 344 0
+  90 0046 36B9     		cbnz	r6, .L6
+ 353:.\Generated_Source\PSoC5/Comp_1.c ****                 Comp_1_TR0 += 1u;
+  91              		.loc 1 353 0
+  92 0048 99F80030 		ldrb	r3, [r9]	@ zero_extendqisi2
+  93 004c 0133     		adds	r3, r3, #1
+  94 004e DBB2     		uxtb	r3, r3
+  95 0050 89F80030 		strb	r3, [r9]
+  96 0054 05E0     		b	.L7
+  97              	.L6:
+ 365:.\Generated_Source\PSoC5/Comp_1.c ****                 Comp_1_TR1 += 1u;
+  98              		.loc 1 365 0
+  99 0056 9AF80030 		ldrb	r3, [r10]	@ zero_extendqisi2
+ 100 005a 0133     		adds	r3, r3, #1
+ 101 005c DBB2     		uxtb	r3, r3
+ 102 005e 8AF80030 		strb	r3, [r10]
+ 103              	.L7:
+ 369:.\Generated_Source\PSoC5/Comp_1.c ****         CyDelayUs(10u);
+ 104              		.loc 1 369 0
+ 105 0062 0A20     		movs	r0, #10
+ 106 0064 FFF7FEFF 		bl	CyDelayUs
+ 107              	.LVL4:
+ 108              		.loc 1 372 0
+ 109 0068 98F80030 		ldrb	r3, [r8]	@ zero_extendqisi2
+ 110 006c 03F00103 		and	r3, r3, #1
+ 111 0070 AB42     		cmp	r3, r5
+ 112 0072 03D1     		bne	.L1
+ 342:.\Generated_Source\PSoC5/Comp_1.c ****     for ( trimCnt = 0u; trimCnt < trimCntMax; trimCnt++ )
+ 113              		.loc 1 342 0
+ 114 0074 0134     		adds	r4, r4, #1
+ 115              	.LVL5:
+ 116 0076 E4B2     		uxtb	r4, r4
+ 117              	.LVL6:
+ 118              	.L5:
+ 342:.\Generated_Source\PSoC5/Comp_1.c ****     for ( trimCnt = 0u; trimCnt < trimCntMax; trimCnt++ )
+ 119              		.loc 1 342 0 is_stmt 0 discriminator 1
+ 120 0078 BC42     		cmp	r4, r7
+ 121 007a E4D3     		bcc	.L9
+ 122              	.L1:
+ 123 007c BDE8F087 		pop	{r4, r5, r6, r7, r8, r9, r10, pc}
+ 124              	.LVL7:
+ 125              	.L12:
+ 126              		.align	2
+ 127              	.L11:
+ 128 0080 965B0040 		.word	1073765270
+ 129 0084 31460040 		.word	1073759793
+ 130 0088 30460040 		.word	1073759792
+ 131              		.cfi_endproc
+ 132              	.LFE6:
+ 133              		.size	Comp_1_trimAdjust, .-Comp_1_trimAdjust
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccCyoLsd.s 			page 10
+
+
+ 134              		.section	.text.Comp_1_Enable,"ax",%progbits
+ 135              		.align	2
+ 136              		.global	Comp_1_Enable
+ 137              		.thumb
+ 138              		.thumb_func
+ 139              		.type	Comp_1_Enable, %function
+ 140              	Comp_1_Enable:
+ 141              	.LFB1:
+ 100:.\Generated_Source\PSoC5/Comp_1.c **** {
+ 142              		.loc 1 100 0 is_stmt 1
+ 143              		.cfi_startproc
+ 144              		@ args = 0, pretend = 0, frame = 0
+ 145              		@ frame_needed = 0, uses_anonymous_args = 0
+ 146              		@ link register save eliminated.
+ 101:.\Generated_Source\PSoC5/Comp_1.c ****     Comp_1_PWRMGR |= Comp_1_ACT_PWR_EN;
+ 147              		.loc 1 101 0
+ 148 0000 054B     		ldr	r3, .L14
+ 149 0002 1A78     		ldrb	r2, [r3]	@ zero_extendqisi2
+ 150 0004 42F00102 		orr	r2, r2, #1
+ 151 0008 1A70     		strb	r2, [r3]
+ 102:.\Generated_Source\PSoC5/Comp_1.c ****     Comp_1_STBY_PWRMGR |= Comp_1_STBY_PWR_EN;
+ 152              		.loc 1 102 0
+ 153 000a 1033     		adds	r3, r3, #16
+ 154 000c 1A78     		ldrb	r2, [r3]	@ zero_extendqisi2
+ 155 000e 42F00102 		orr	r2, r2, #1
+ 156 0012 1A70     		strb	r2, [r3]
+ 157 0014 7047     		bx	lr
+ 158              	.L15:
+ 159 0016 00BF     		.align	2
+ 160              	.L14:
+ 161 0018 A7430040 		.word	1073759143
+ 162              		.cfi_endproc
+ 163              	.LFE1:
+ 164              		.size	Comp_1_Enable, .-Comp_1_Enable
+ 165              		.section	.text.Comp_1_Stop,"ax",%progbits
+ 166              		.align	2
+ 167              		.global	Comp_1_Stop
+ 168              		.thumb
+ 169              		.thumb_func
+ 170              		.type	Comp_1_Stop, %function
+ 171              	Comp_1_Stop:
+ 172              	.LFB3:
+ 166:.\Generated_Source\PSoC5/Comp_1.c **** {
+ 173              		.loc 1 166 0
+ 174              		.cfi_startproc
+ 175              		@ args = 0, pretend = 0, frame = 0
+ 176              		@ frame_needed = 0, uses_anonymous_args = 0
+ 177              		@ link register save eliminated.
+ 168:.\Generated_Source\PSoC5/Comp_1.c ****     Comp_1_PWRMGR &= (uint8)(~Comp_1_ACT_PWR_EN);
+ 178              		.loc 1 168 0
+ 179 0000 054B     		ldr	r3, .L17
+ 180 0002 1A78     		ldrb	r2, [r3]	@ zero_extendqisi2
+ 181 0004 02F0FE02 		and	r2, r2, #254
+ 182 0008 1A70     		strb	r2, [r3]
+ 169:.\Generated_Source\PSoC5/Comp_1.c ****     Comp_1_STBY_PWRMGR &= (uint8)(~Comp_1_STBY_PWR_EN);
+ 183              		.loc 1 169 0
+ 184 000a 1033     		adds	r3, r3, #16
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccCyoLsd.s 			page 11
+
+
+ 185 000c 1A78     		ldrb	r2, [r3]	@ zero_extendqisi2
+ 186 000e 02F0FE02 		and	r2, r2, #254
+ 187 0012 1A70     		strb	r2, [r3]
+ 188 0014 7047     		bx	lr
+ 189              	.L18:
+ 190 0016 00BF     		.align	2
+ 191              	.L17:
+ 192 0018 A7430040 		.word	1073759143
+ 193              		.cfi_endproc
+ 194              	.LFE3:
+ 195              		.size	Comp_1_Stop, .-Comp_1_Stop
+ 196              		.section	.text.Comp_1_SetSpeed,"ax",%progbits
+ 197              		.align	2
+ 198              		.global	Comp_1_SetSpeed
+ 199              		.thumb
+ 200              		.thumb_func
+ 201              		.type	Comp_1_SetSpeed, %function
+ 202              	Comp_1_SetSpeed:
+ 203              	.LFB4:
+ 198:.\Generated_Source\PSoC5/Comp_1.c **** {
+ 204              		.loc 1 198 0
+ 205              		.cfi_startproc
+ 206              		@ args = 0, pretend = 0, frame = 0
+ 207              		@ frame_needed = 0, uses_anonymous_args = 0
+ 208              		@ link register save eliminated.
+ 209              	.LVL8:
+ 200:.\Generated_Source\PSoC5/Comp_1.c ****     Comp_1_CR = (Comp_1_CR & (uint8)(~Comp_1_PWR_MODE_MASK)) |
+ 210              		.loc 1 200 0
+ 211 0000 0F4B     		ldr	r3, .L22
+ 212 0002 1A78     		ldrb	r2, [r3]	@ zero_extendqisi2
+ 213 0004 02F0FC02 		and	r2, r2, #252
+ 214 0008 00F00301 		and	r1, r0, #3
+ 215 000c 0A43     		orrs	r2, r2, r1
+ 216 000e 1A70     		strb	r2, [r3]
+ 204:.\Generated_Source\PSoC5/Comp_1.c ****     if(speed == Comp_1_HIGHSPEED)
+ 217              		.loc 1 204 0
+ 218 0010 0128     		cmp	r0, #1
+ 219 0012 0AD1     		bne	.L20
+ 213:.\Generated_Source\PSoC5/Comp_1.c ****             Comp_1_TR0 = Comp_1_HS_TRIM_TR0;
+ 220              		.loc 1 213 0
+ 221 0014 0B4B     		ldr	r3, .L22+4
+ 222 0016 1A78     		ldrb	r2, [r3]	@ zero_extendqisi2
+ 223 0018 D2B2     		uxtb	r2, r2
+ 224 001a 0B4B     		ldr	r3, .L22+8
+ 225 001c 1A70     		strb	r2, [r3]
+ 214:.\Generated_Source\PSoC5/Comp_1.c ****             Comp_1_TR1 = Comp_1_HS_TRIM_TR1;
+ 226              		.loc 1 214 0
+ 227 001e 0B4B     		ldr	r3, .L22+12
+ 228 0020 1A78     		ldrb	r2, [r3]	@ zero_extendqisi2
+ 229 0022 D2B2     		uxtb	r2, r2
+ 230 0024 0A4B     		ldr	r3, .L22+16
+ 231 0026 1A70     		strb	r2, [r3]
+ 232 0028 7047     		bx	lr
+ 233              	.L20:
+ 226:.\Generated_Source\PSoC5/Comp_1.c ****             Comp_1_TR0 = Comp_1_LS_TRIM_TR0;
+ 234              		.loc 1 226 0
+ 235 002a 0A4B     		ldr	r3, .L22+20
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccCyoLsd.s 			page 12
+
+
+ 236 002c 1A78     		ldrb	r2, [r3]	@ zero_extendqisi2
+ 237 002e D2B2     		uxtb	r2, r2
+ 238 0030 054B     		ldr	r3, .L22+8
+ 239 0032 1A70     		strb	r2, [r3]
+ 227:.\Generated_Source\PSoC5/Comp_1.c ****             Comp_1_TR1 = Comp_1_LS_TRIM_TR1;
+ 240              		.loc 1 227 0
+ 241 0034 084B     		ldr	r3, .L22+24
+ 242 0036 1A78     		ldrb	r2, [r3]	@ zero_extendqisi2
+ 243 0038 D2B2     		uxtb	r2, r2
+ 244 003a 054B     		ldr	r3, .L22+16
+ 245 003c 1A70     		strb	r2, [r3]
+ 246 003e 7047     		bx	lr
+ 247              	.L23:
+ 248              		.align	2
+ 249              	.L22:
+ 250 0040 40580040 		.word	1073764416
+ 251 0044 10010049 		.word	1224737040
+ 252 0048 30460040 		.word	1073759792
+ 253 004c 14010049 		.word	1224737044
+ 254 0050 31460040 		.word	1073759793
+ 255 0054 AD010049 		.word	1224737197
+ 256 0058 B5010049 		.word	1224737205
+ 257              		.cfi_endproc
+ 258              	.LFE4:
+ 259              		.size	Comp_1_SetSpeed, .-Comp_1_SetSpeed
+ 260              		.section	.text.Comp_1_Init,"ax",%progbits
+ 261              		.align	2
+ 262              		.global	Comp_1_Init
+ 263              		.thumb
+ 264              		.thumb_func
+ 265              		.type	Comp_1_Init, %function
+ 266              	Comp_1_Init:
+ 267              	.LFB0:
+  52:.\Generated_Source\PSoC5/Comp_1.c **** {
+ 268              		.loc 1 52 0
+ 269              		.cfi_startproc
+ 270              		@ args = 0, pretend = 0, frame = 0
+ 271              		@ frame_needed = 0, uses_anonymous_args = 0
+ 272 0000 08B5     		push	{r3, lr}
+ 273              		.cfi_def_cfa_offset 8
+ 274              		.cfi_offset 3, -8
+ 275              		.cfi_offset 14, -4
+  54:.\Generated_Source\PSoC5/Comp_1.c ****     Comp_1_SetSpeed(Comp_1_DEFAULT_SPEED);
+ 276              		.loc 1 54 0
+ 277 0002 0020     		movs	r0, #0
+ 278 0004 FFF7FEFF 		bl	Comp_1_SetSpeed
+ 279              	.LVL9:
+  58:.\Generated_Source\PSoC5/Comp_1.c ****         Comp_1_CR |= Comp_1_HYST_OFF;
+ 280              		.loc 1 58 0
+ 281 0008 0B4B     		ldr	r3, .L25
+ 282 000a 1A78     		ldrb	r2, [r3]	@ zero_extendqisi2
+ 283 000c 42F02002 		orr	r2, r2, #32
+ 284 0010 1A70     		strb	r2, [r3]
+  66:.\Generated_Source\PSoC5/Comp_1.c ****             Comp_1_CR &= (uint8)(~Comp_1_PWRDWN_OVRD);
+ 285              		.loc 1 66 0
+ 286 0012 1A78     		ldrb	r2, [r3]	@ zero_extendqisi2
+ 287 0014 02F0FB02 		and	r2, r2, #251
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccCyoLsd.s 			page 13
+
+
+ 288 0018 1A70     		strb	r2, [r3]
+  73:.\Generated_Source\PSoC5/Comp_1.c ****     Comp_1_CR |= Comp_1_MX_AO;
+ 289              		.loc 1 73 0
+ 290 001a 1A78     		ldrb	r2, [r3]	@ zero_extendqisi2
+ 291 001c 42F00802 		orr	r2, r2, #8
+ 292 0020 1A70     		strb	r2, [r3]
+  76:.\Generated_Source\PSoC5/Comp_1.c ****     Comp_1_CLK &= (uint8)(~Comp_1_SYNCCLK_MASK);
+ 293              		.loc 1 76 0
+ 294 0022 03F28723 		addw	r3, r3, #647
+ 295 0026 1A78     		ldrb	r2, [r3]	@ zero_extendqisi2
+ 296 0028 02F0E702 		and	r2, r2, #231
+ 297 002c 1A70     		strb	r2, [r3]
+  80:.\Generated_Source\PSoC5/Comp_1.c ****         Comp_1_CLK |= Comp_1_BYPASS_SYNC;
+ 298              		.loc 1 80 0
+ 299 002e 1A78     		ldrb	r2, [r3]	@ zero_extendqisi2
+ 300 0030 42F01002 		orr	r2, r2, #16
+ 301 0034 1A70     		strb	r2, [r3]
+ 302 0036 08BD     		pop	{r3, pc}
+ 303              	.L26:
+ 304              		.align	2
+ 305              	.L25:
+ 306 0038 40580040 		.word	1073764416
+ 307              		.cfi_endproc
+ 308              	.LFE0:
+ 309              		.size	Comp_1_Init, .-Comp_1_Init
+ 310              		.section	.text.Comp_1_Start,"ax",%progbits
+ 311              		.align	2
+ 312              		.global	Comp_1_Start
+ 313              		.thumb
+ 314              		.thumb_func
+ 315              		.type	Comp_1_Start, %function
+ 316              	Comp_1_Start:
+ 317              	.LFB2:
+ 137:.\Generated_Source\PSoC5/Comp_1.c **** {
+ 318              		.loc 1 137 0
+ 319              		.cfi_startproc
+ 320              		@ args = 0, pretend = 0, frame = 0
+ 321              		@ frame_needed = 0, uses_anonymous_args = 0
+ 322 0000 08B5     		push	{r3, lr}
+ 323              		.cfi_def_cfa_offset 8
+ 324              		.cfi_offset 3, -8
+ 325              		.cfi_offset 14, -4
+ 139:.\Generated_Source\PSoC5/Comp_1.c ****     if ( Comp_1_initVar == 0u )
+ 326              		.loc 1 139 0
+ 327 0002 054B     		ldr	r3, .L29
+ 328 0004 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 329 0006 23B9     		cbnz	r3, .L28
+ 141:.\Generated_Source\PSoC5/Comp_1.c ****         Comp_1_Init();
+ 330              		.loc 1 141 0
+ 331 0008 FFF7FEFF 		bl	Comp_1_Init
+ 332              	.LVL10:
+ 143:.\Generated_Source\PSoC5/Comp_1.c ****         Comp_1_initVar = 1u;
+ 333              		.loc 1 143 0
+ 334 000c 0122     		movs	r2, #1
+ 335 000e 024B     		ldr	r3, .L29
+ 336 0010 1A70     		strb	r2, [r3]
+ 337              	.L28:
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccCyoLsd.s 			page 14
+
+
+ 147:.\Generated_Source\PSoC5/Comp_1.c ****     Comp_1_Enable();    
+ 338              		.loc 1 147 0
+ 339 0012 FFF7FEFF 		bl	Comp_1_Enable
+ 340              	.LVL11:
+ 341 0016 08BD     		pop	{r3, pc}
+ 342              	.L30:
+ 343              		.align	2
+ 344              	.L29:
+ 345 0018 00000000 		.word	.LANCHOR0
+ 346              		.cfi_endproc
+ 347              	.LFE2:
+ 348              		.size	Comp_1_Start, .-Comp_1_Start
+ 349              		.section	.text.Comp_1_GetCompare,"ax",%progbits
+ 350              		.align	2
+ 351              		.global	Comp_1_GetCompare
+ 352              		.thumb
+ 353              		.thumb_func
+ 354              		.type	Comp_1_GetCompare, %function
+ 355              	Comp_1_GetCompare:
+ 356              	.LFB5:
+ 252:.\Generated_Source\PSoC5/Comp_1.c **** {
+ 357              		.loc 1 252 0
+ 358              		.cfi_startproc
+ 359              		@ args = 0, pretend = 0, frame = 0
+ 360              		@ frame_needed = 0, uses_anonymous_args = 0
+ 361              		@ link register save eliminated.
+ 253:.\Generated_Source\PSoC5/Comp_1.c ****     return( Comp_1_WRK & Comp_1_CMP_OUT_MASK);
+ 362              		.loc 1 253 0
+ 363 0000 024B     		ldr	r3, .L32
+ 364 0002 1878     		ldrb	r0, [r3]	@ zero_extendqisi2
+ 254:.\Generated_Source\PSoC5/Comp_1.c **** }
+ 365              		.loc 1 254 0
+ 366 0004 00F00100 		and	r0, r0, #1
+ 367 0008 7047     		bx	lr
+ 368              	.L33:
+ 369 000a 00BF     		.align	2
+ 370              	.L32:
+ 371 000c 965B0040 		.word	1073765270
+ 372              		.cfi_endproc
+ 373              	.LFE5:
+ 374              		.size	Comp_1_GetCompare, .-Comp_1_GetCompare
+ 375              		.section	.text.Comp_1_ZeroCal,"ax",%progbits
+ 376              		.align	2
+ 377              		.global	Comp_1_ZeroCal
+ 378              		.thumb
+ 379              		.thumb_func
+ 380              		.type	Comp_1_ZeroCal, %function
+ 381              	Comp_1_ZeroCal:
+ 382              	.LFB7:
+ 373:.\Generated_Source\PSoC5/Comp_1.c ****         {
+ 374:.\Generated_Source\PSoC5/Comp_1.c ****             break;      /* output changed state, trim phase is complete */
+ 375:.\Generated_Source\PSoC5/Comp_1.c ****         }        
+ 376:.\Generated_Source\PSoC5/Comp_1.c ****     }    
+ 377:.\Generated_Source\PSoC5/Comp_1.c **** }
+ 378:.\Generated_Source\PSoC5/Comp_1.c **** 
+ 379:.\Generated_Source\PSoC5/Comp_1.c **** 
+ 380:.\Generated_Source\PSoC5/Comp_1.c **** /*******************************************************************************
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccCyoLsd.s 			page 15
+
+
+ 381:.\Generated_Source\PSoC5/Comp_1.c **** * Function Name: Comp_1_ZeroCal
+ 382:.\Generated_Source\PSoC5/Comp_1.c **** ********************************************************************************
+ 383:.\Generated_Source\PSoC5/Comp_1.c **** *
+ 384:.\Generated_Source\PSoC5/Comp_1.c **** * Summary:
+ 385:.\Generated_Source\PSoC5/Comp_1.c **** *  This function calibrates the offset of the Analog Comparator.
+ 386:.\Generated_Source\PSoC5/Comp_1.c **** *
+ 387:.\Generated_Source\PSoC5/Comp_1.c **** * Parameters:
+ 388:.\Generated_Source\PSoC5/Comp_1.c **** *  None
+ 389:.\Generated_Source\PSoC5/Comp_1.c **** *
+ 390:.\Generated_Source\PSoC5/Comp_1.c **** * Return:
+ 391:.\Generated_Source\PSoC5/Comp_1.c **** *  (uint16)  value written in trim register when calibration complete.
+ 392:.\Generated_Source\PSoC5/Comp_1.c **** *
+ 393:.\Generated_Source\PSoC5/Comp_1.c **** * Theory: 
+ 394:.\Generated_Source\PSoC5/Comp_1.c **** *  This function is used to optimize the calibration for user specific voltage
+ 395:.\Generated_Source\PSoC5/Comp_1.c **** *  range.  The comparator trim is adjusted to counter transistor offsets
+ 396:.\Generated_Source\PSoC5/Comp_1.c **** *   - offset is defined as positive if the output transitions to high before inP
+ 397:.\Generated_Source\PSoC5/Comp_1.c **** *     is greater than inN
+ 398:.\Generated_Source\PSoC5/Comp_1.c **** *   - offset is defined as negative if the output transitions to high after inP
+ 399:.\Generated_Source\PSoC5/Comp_1.c **** *     is greater than inP
+ 400:.\Generated_Source\PSoC5/Comp_1.c **** *
+ 401:.\Generated_Source\PSoC5/Comp_1.c **** *  PSoC5A
+ 402:.\Generated_Source\PSoC5/Comp_1.c **** *  The Analog Comparator provides 1 byte for offset trim.  The byte contains two
+ 403:.\Generated_Source\PSoC5/Comp_1.c **** *  4 bit trim fields - one is a course trim and the other allows smaller
+ 404:.\Generated_Source\PSoC5/Comp_1.c **** *  offset adjustments only for slow modes.
+ 405:.\Generated_Source\PSoC5/Comp_1.c **** *  - low nibble - fine trim
+ 406:.\Generated_Source\PSoC5/Comp_1.c **** *  - high nibble - course trim
+ 407:.\Generated_Source\PSoC5/Comp_1.c **** *  PSoC3, PSoC5LP or later
+ 408:.\Generated_Source\PSoC5/Comp_1.c **** *  The Analog Comparator provides 2 bytes for offset trim.  The bytes contain two
+ 409:.\Generated_Source\PSoC5/Comp_1.c **** *  5 bit trim fields - one is a course trim and the other allows smaller
+ 410:.\Generated_Source\PSoC5/Comp_1.c **** *  offset adjustments only for slow modes.
+ 411:.\Generated_Source\PSoC5/Comp_1.c **** *  - TR0 - fine trim
+ 412:.\Generated_Source\PSoC5/Comp_1.c **** *  - TR1 - course trim
+ 413:.\Generated_Source\PSoC5/Comp_1.c **** *
+ 414:.\Generated_Source\PSoC5/Comp_1.c **** *  Trim algorithm is a two phase process
+ 415:.\Generated_Source\PSoC5/Comp_1.c **** *  The first phase performs course offset adjustment
+ 416:.\Generated_Source\PSoC5/Comp_1.c **** *  The second phase serves one of two purposes depending on the outcome of the
+ 417:.\Generated_Source\PSoC5/Comp_1.c **** *  first phase
+ 418:.\Generated_Source\PSoC5/Comp_1.c **** *  - if the first trim value was maxed out without a comparator output 
+ 419:.\Generated_Source\PSoC5/Comp_1.c **** *    transition, more offset will be added by adjusting the second trim value.
+ 420:.\Generated_Source\PSoC5/Comp_1.c **** *  - if the first trim phase resulted in a comparator output transition, the
+ 421:.\Generated_Source\PSoC5/Comp_1.c **** *    second trim value will serve as fine trim (in the opposite direction)to
+ 422:.\Generated_Source\PSoC5/Comp_1.c **** *    ensure the offset is < 1 mV.
+ 423:.\Generated_Source\PSoC5/Comp_1.c **** *
+ 424:.\Generated_Source\PSoC5/Comp_1.c **** * Trim Process:   
+ 425:.\Generated_Source\PSoC5/Comp_1.c **** *  1) User applies a voltage to the negative input.  Voltage should be in the
+ 426:.\Generated_Source\PSoC5/Comp_1.c **** *     comparator operating range or an average of the operating voltage range.
+ 427:.\Generated_Source\PSoC5/Comp_1.c **** *  2) Clear registers associated with analog routing to the positive input.
+ 428:.\Generated_Source\PSoC5/Comp_1.c **** *  3) Disable Hysteresis
+ 429:.\Generated_Source\PSoC5/Comp_1.c **** *  4) Set the calibration bit to short the negative and positive inputs to
+ 430:.\Generated_Source\PSoC5/Comp_1.c **** *     the users calibration voltage.
+ 431:.\Generated_Source\PSoC5/Comp_1.c **** *  5) Clear the TR register  ( TR = 0x00 )
+ 432:.\Generated_Source\PSoC5/Comp_1.c **** *  ** LOW MODES
+ 433:.\Generated_Source\PSoC5/Comp_1.c **** *  6) Check if compare output is high, if so, set the MSb of course trim field 
+ 434:.\Generated_Source\PSoC5/Comp_1.c **** *     to a 1.
+ 435:.\Generated_Source\PSoC5/Comp_1.c **** *  7) Increment the course trim field until the compare output changes
+ 436:.\Generated_Source\PSoC5/Comp_1.c **** *  8) Check if compare output is low, if so, set the MSb of fine trim field
+ 437:.\Generated_Source\PSoC5/Comp_1.c **** *     to a 1.
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccCyoLsd.s 			page 16
+
+
+ 438:.\Generated_Source\PSoC5/Comp_1.c **** *  9) Increment the fine trim field until the compare output changes
+ 439:.\Generated_Source\PSoC5/Comp_1.c **** *  ** FAST MODE - skip the steps 8,9
+ 440:.\Generated_Source\PSoC5/Comp_1.c **** *
+ 441:.\Generated_Source\PSoC5/Comp_1.c **** * Side Effects:
+ 442:.\Generated_Source\PSoC5/Comp_1.c **** *  Routine clears analog routing associated with the comparator positive input.  
+ 443:.\Generated_Source\PSoC5/Comp_1.c **** *  This may affect routing of signals from other components that are connected
+ 444:.\Generated_Source\PSoC5/Comp_1.c **** *  to the positive input of the comparator.
+ 445:.\Generated_Source\PSoC5/Comp_1.c **** *
+ 446:.\Generated_Source\PSoC5/Comp_1.c **** *******************************************************************************/
+ 447:.\Generated_Source\PSoC5/Comp_1.c **** uint16 Comp_1_ZeroCal(void) 
+ 448:.\Generated_Source\PSoC5/Comp_1.c **** {
+ 383              		.loc 1 448 0
+ 384              		.cfi_startproc
+ 385              		@ args = 0, pretend = 0, frame = 0
+ 386              		@ frame_needed = 0, uses_anonymous_args = 0
+ 387 0000 F8B5     		push	{r3, r4, r5, r6, r7, lr}
+ 388              		.cfi_def_cfa_offset 24
+ 389              		.cfi_offset 3, -24
+ 390              		.cfi_offset 4, -20
+ 391              		.cfi_offset 5, -16
+ 392              		.cfi_offset 6, -12
+ 393              		.cfi_offset 7, -8
+ 394              		.cfi_offset 14, -4
+ 449:.\Generated_Source\PSoC5/Comp_1.c ****     uint8 tmpSW0;
+ 450:.\Generated_Source\PSoC5/Comp_1.c ****     uint8 tmpSW2;
+ 451:.\Generated_Source\PSoC5/Comp_1.c ****     uint8 tmpSW3;
+ 452:.\Generated_Source\PSoC5/Comp_1.c ****     uint8 tmpCR;
+ 453:.\Generated_Source\PSoC5/Comp_1.c **** 
+ 454:.\Generated_Source\PSoC5/Comp_1.c ****     /* Save a copy of routing registers associated with inP */
+ 455:.\Generated_Source\PSoC5/Comp_1.c ****     tmpSW0 = Comp_1_SW0;
+ 395              		.loc 1 455 0
+ 396 0002 1E48     		ldr	r0, .L37
+ 397 0004 0678     		ldrb	r6, [r0]	@ zero_extendqisi2
+ 398 0006 F6B2     		uxtb	r6, r6
+ 399              	.LVL12:
+ 456:.\Generated_Source\PSoC5/Comp_1.c ****     tmpSW2 = Comp_1_SW2;
+ 400              		.loc 1 456 0
+ 401 0008 1D49     		ldr	r1, .L37+4
+ 402 000a 0D78     		ldrb	r5, [r1]	@ zero_extendqisi2
+ 403 000c EDB2     		uxtb	r5, r5
+ 404              	.LVL13:
+ 457:.\Generated_Source\PSoC5/Comp_1.c ****     tmpSW3 = Comp_1_SW3;
+ 405              		.loc 1 457 0
+ 406 000e 1D4B     		ldr	r3, .L37+8
+ 407 0010 1C78     		ldrb	r4, [r3]	@ zero_extendqisi2
+ 408 0012 E4B2     		uxtb	r4, r4
+ 409              	.LVL14:
+ 458:.\Generated_Source\PSoC5/Comp_1.c **** 
+ 459:.\Generated_Source\PSoC5/Comp_1.c ****      /* Clear routing for inP, retain routing for inN */
+ 460:.\Generated_Source\PSoC5/Comp_1.c ****     Comp_1_SW0 = 0x00u;
+ 410              		.loc 1 460 0
+ 411 0014 0022     		movs	r2, #0
+ 412 0016 0270     		strb	r2, [r0]
+ 461:.\Generated_Source\PSoC5/Comp_1.c ****     Comp_1_SW2 = 0x00u;
+ 413              		.loc 1 461 0
+ 414 0018 0A70     		strb	r2, [r1]
+ 462:.\Generated_Source\PSoC5/Comp_1.c ****     Comp_1_SW3 = tmpSW3 & (uint8)(~Comp_1_CMP_SW3_INPCTL_MASK);
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccCyoLsd.s 			page 17
+
+
+ 415              		.loc 1 462 0
+ 416 001a 04F0F601 		and	r1, r4, #246
+ 417 001e 1970     		strb	r1, [r3]
+ 463:.\Generated_Source\PSoC5/Comp_1.c **** 
+ 464:.\Generated_Source\PSoC5/Comp_1.c ****     /* Preserve original configuration
+ 465:.\Generated_Source\PSoC5/Comp_1.c ****      * - turn off Hysteresis
+ 466:.\Generated_Source\PSoC5/Comp_1.c ****      * - set calibration bit - shorts inN to inP
+ 467:.\Generated_Source\PSoC5/Comp_1.c ****     */
+ 468:.\Generated_Source\PSoC5/Comp_1.c ****     tmpCR = Comp_1_CR;
+ 418              		.loc 1 468 0
+ 419 0020 A3F28323 		subw	r3, r3, #643
+ 420 0024 1F78     		ldrb	r7, [r3]	@ zero_extendqisi2
+ 421 0026 FFB2     		uxtb	r7, r7
+ 422              	.LVL15:
+ 469:.\Generated_Source\PSoC5/Comp_1.c ****     Comp_1_CR |= (Comp_1_CAL_ON | Comp_1_HYST_OFF);
+ 423              		.loc 1 469 0
+ 424 0028 1978     		ldrb	r1, [r3]	@ zero_extendqisi2
+ 425 002a 41F03001 		orr	r1, r1, #48
+ 426 002e 1970     		strb	r1, [r3]
+ 470:.\Generated_Source\PSoC5/Comp_1.c ****     
+ 471:.\Generated_Source\PSoC5/Comp_1.c ****     /* Write default low values to trim register - no offset adjust */
+ 472:.\Generated_Source\PSoC5/Comp_1.c ****     /* PSoC5A */
+ 473:.\Generated_Source\PSoC5/Comp_1.c ****     #if (CY_PSOC5A)
+ 474:.\Generated_Source\PSoC5/Comp_1.c ****         Comp_1_TR = Comp_1_DEFAULT_CMP_TRIM;
+ 475:.\Generated_Source\PSoC5/Comp_1.c ****     #endif /* CY_PSOC5A */
+ 476:.\Generated_Source\PSoC5/Comp_1.c ****     
+ 477:.\Generated_Source\PSoC5/Comp_1.c ****     /* PSoC3, PSoC5LP or later */
+ 478:.\Generated_Source\PSoC5/Comp_1.c ****     #if (CY_PSOC3 || CY_PSOC5LP)
+ 479:.\Generated_Source\PSoC5/Comp_1.c ****         Comp_1_TR0 = Comp_1_DEFAULT_CMP_TRIM;
+ 427              		.loc 1 479 0
+ 428 0030 1549     		ldr	r1, .L37+12
+ 429 0032 0A70     		strb	r2, [r1]
+ 480:.\Generated_Source\PSoC5/Comp_1.c ****         Comp_1_TR1 = Comp_1_DEFAULT_CMP_TRIM;
+ 430              		.loc 1 480 0
+ 431 0034 0131     		adds	r1, r1, #1
+ 432 0036 0A70     		strb	r2, [r1]
+ 481:.\Generated_Source\PSoC5/Comp_1.c ****     #endif /* CY_PSOC3 || CY_PSOC5LP */
+ 482:.\Generated_Source\PSoC5/Comp_1.c **** 	
+ 483:.\Generated_Source\PSoC5/Comp_1.c **** 	/* Two phase trim - slow modes, one phase trim - for fast */ 
+ 484:.\Generated_Source\PSoC5/Comp_1.c ****     if ( (Comp_1_CR & Comp_1_PWR_MODE_MASK) == Comp_1_PWR_MODE_FAST)
+ 433              		.loc 1 484 0
+ 434 0038 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 435 003a 03F00303 		and	r3, r3, #3
+ 436 003e 012B     		cmp	r3, #1
+ 437 0040 03D1     		bne	.L35
+ 485:.\Generated_Source\PSoC5/Comp_1.c ****     {
+ 486:.\Generated_Source\PSoC5/Comp_1.c ****         Comp_1_trimAdjust(0u);
+ 438              		.loc 1 486 0
+ 439 0042 1046     		mov	r0, r2
+ 440 0044 FFF7FEFF 		bl	Comp_1_trimAdjust
+ 441              	.LVL16:
+ 442 0048 05E0     		b	.L36
+ 443              	.L35:
+ 487:.\Generated_Source\PSoC5/Comp_1.c ****     }
+ 488:.\Generated_Source\PSoC5/Comp_1.c ****     else /* default to trim for fast modes */
+ 489:.\Generated_Source\PSoC5/Comp_1.c ****     {
+ 490:.\Generated_Source\PSoC5/Comp_1.c ****         Comp_1_trimAdjust(1u);
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccCyoLsd.s 			page 18
+
+
+ 444              		.loc 1 490 0
+ 445 004a 0120     		movs	r0, #1
+ 446 004c FFF7FEFF 		bl	Comp_1_trimAdjust
+ 447              	.LVL17:
+ 491:.\Generated_Source\PSoC5/Comp_1.c **** 		Comp_1_trimAdjust(0u);
+ 448              		.loc 1 491 0
+ 449 0050 0020     		movs	r0, #0
+ 450 0052 FFF7FEFF 		bl	Comp_1_trimAdjust
+ 451              	.LVL18:
+ 452              	.L36:
+ 492:.\Generated_Source\PSoC5/Comp_1.c ****     }
+ 493:.\Generated_Source\PSoC5/Comp_1.c ****    
+ 494:.\Generated_Source\PSoC5/Comp_1.c ****     /* Restore Config Register */
+ 495:.\Generated_Source\PSoC5/Comp_1.c ****     Comp_1_CR = tmpCR;
+ 453              		.loc 1 495 0
+ 454 0056 0D4B     		ldr	r3, .L37+16
+ 455 0058 1F70     		strb	r7, [r3]
+ 496:.\Generated_Source\PSoC5/Comp_1.c ****     
+ 497:.\Generated_Source\PSoC5/Comp_1.c ****     /* Restore routing registers for inP */
+ 498:.\Generated_Source\PSoC5/Comp_1.c ****     Comp_1_SW0 = tmpSW0;
+ 456              		.loc 1 498 0
+ 457 005a 03F52073 		add	r3, r3, #640
+ 458 005e 1E70     		strb	r6, [r3]
+ 499:.\Generated_Source\PSoC5/Comp_1.c ****     Comp_1_SW2 = tmpSW2;
+ 459              		.loc 1 499 0
+ 460 0060 0233     		adds	r3, r3, #2
+ 461 0062 1D70     		strb	r5, [r3]
+ 500:.\Generated_Source\PSoC5/Comp_1.c ****     Comp_1_SW3 = tmpSW3;
+ 462              		.loc 1 500 0
+ 463 0064 0133     		adds	r3, r3, #1
+ 464 0066 1C70     		strb	r4, [r3]
+ 501:.\Generated_Source\PSoC5/Comp_1.c ****     
+ 502:.\Generated_Source\PSoC5/Comp_1.c ****     /* PSoC5A */
+ 503:.\Generated_Source\PSoC5/Comp_1.c ****     #if (CY_PSOC5A)
+ 504:.\Generated_Source\PSoC5/Comp_1.c ****         return (uint16) Comp_1_TR;
+ 505:.\Generated_Source\PSoC5/Comp_1.c ****     #endif /* CY_PSOC5A */
+ 506:.\Generated_Source\PSoC5/Comp_1.c ****     
+ 507:.\Generated_Source\PSoC5/Comp_1.c ****     /* PSoC3, PSoC5LP or later */
+ 508:.\Generated_Source\PSoC5/Comp_1.c ****     #if (CY_PSOC3 || CY_PSOC5LP)
+ 509:.\Generated_Source\PSoC5/Comp_1.c ****         return ((uint16)((uint16)Comp_1_TR1 << 8u) | (Comp_1_TR0));        
+ 465              		.loc 1 509 0
+ 466 0068 A3F5A453 		sub	r3, r3, #5248
+ 467 006c 123B     		subs	r3, r3, #18
+ 468 006e 1878     		ldrb	r0, [r3]	@ zero_extendqisi2
+ 469 0070 013B     		subs	r3, r3, #1
+ 470 0072 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 510:.\Generated_Source\PSoC5/Comp_1.c ****     #endif /* CY_PSOC3 || CY_PSOC5LP */
+ 511:.\Generated_Source\PSoC5/Comp_1.c **** }
+ 471              		.loc 1 511 0
+ 472 0074 43EA0020 		orr	r0, r3, r0, lsl #8
+ 473 0078 F8BD     		pop	{r3, r4, r5, r6, r7, pc}
+ 474              	.LVL19:
+ 475              	.L38:
+ 476 007a 00BF     		.align	2
+ 477              	.L37:
+ 478 007c C05A0040 		.word	1073765056
+ 479 0080 C25A0040 		.word	1073765058
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccCyoLsd.s 			page 19
+
+
+ 480 0084 C35A0040 		.word	1073765059
+ 481 0088 30460040 		.word	1073759792
+ 482 008c 40580040 		.word	1073764416
+ 483              		.cfi_endproc
+ 484              	.LFE7:
+ 485              		.size	Comp_1_ZeroCal, .-Comp_1_ZeroCal
+ 486              		.section	.text.Comp_1_LoadTrim,"ax",%progbits
+ 487              		.align	2
+ 488              		.global	Comp_1_LoadTrim
+ 489              		.thumb
+ 490              		.thumb_func
+ 491              		.type	Comp_1_LoadTrim, %function
+ 492              	Comp_1_LoadTrim:
+ 493              	.LFB8:
+ 512:.\Generated_Source\PSoC5/Comp_1.c **** 
+ 513:.\Generated_Source\PSoC5/Comp_1.c **** 
+ 514:.\Generated_Source\PSoC5/Comp_1.c **** /*******************************************************************************
+ 515:.\Generated_Source\PSoC5/Comp_1.c **** * Function Name: Comp_1_LoadTrim
+ 516:.\Generated_Source\PSoC5/Comp_1.c **** ********************************************************************************
+ 517:.\Generated_Source\PSoC5/Comp_1.c **** *
+ 518:.\Generated_Source\PSoC5/Comp_1.c **** * Summary:
+ 519:.\Generated_Source\PSoC5/Comp_1.c **** *  This function stores a value in the Analog Comparator trim register.
+ 520:.\Generated_Source\PSoC5/Comp_1.c **** *
+ 521:.\Generated_Source\PSoC5/Comp_1.c **** * Parameters:  
+ 522:.\Generated_Source\PSoC5/Comp_1.c **** *  uint8 trimVal - trim value.  This value is the same format as the value 
+ 523:.\Generated_Source\PSoC5/Comp_1.c **** *  returned by the _ZeroCal routine.
+ 524:.\Generated_Source\PSoC5/Comp_1.c **** *
+ 525:.\Generated_Source\PSoC5/Comp_1.c **** * Return:
+ 526:.\Generated_Source\PSoC5/Comp_1.c **** *  None
+ 527:.\Generated_Source\PSoC5/Comp_1.c **** *
+ 528:.\Generated_Source\PSoC5/Comp_1.c **** *******************************************************************************/
+ 529:.\Generated_Source\PSoC5/Comp_1.c **** void Comp_1_LoadTrim(uint16 trimVal) 
+ 530:.\Generated_Source\PSoC5/Comp_1.c **** {
+ 494              		.loc 1 530 0
+ 495              		.cfi_startproc
+ 496              		@ args = 0, pretend = 0, frame = 0
+ 497              		@ frame_needed = 0, uses_anonymous_args = 0
+ 498              		@ link register save eliminated.
+ 499              	.LVL20:
+ 531:.\Generated_Source\PSoC5/Comp_1.c ****     /* Stores value in the Analog Comparator trim register */
+ 532:.\Generated_Source\PSoC5/Comp_1.c ****     /* PSoC5A */
+ 533:.\Generated_Source\PSoC5/Comp_1.c ****     #if (CY_PSOC5A)
+ 534:.\Generated_Source\PSoC5/Comp_1.c ****         Comp_1_TR = (uint8) trimVal;
+ 535:.\Generated_Source\PSoC5/Comp_1.c ****     #endif /* CY_PSOC5A */
+ 536:.\Generated_Source\PSoC5/Comp_1.c ****     
+ 537:.\Generated_Source\PSoC5/Comp_1.c ****     /* PSoC3, PSoC5LP or later */
+ 538:.\Generated_Source\PSoC5/Comp_1.c ****     #if (CY_PSOC3 || CY_PSOC5LP)
+ 539:.\Generated_Source\PSoC5/Comp_1.c ****         /* Stores value in the Analog Comparator trim register for P-type load */
+ 540:.\Generated_Source\PSoC5/Comp_1.c ****         Comp_1_TR0 = (uint8) trimVal;
+ 500              		.loc 1 540 0
+ 501 0000 C2B2     		uxtb	r2, r0
+ 502 0002 034B     		ldr	r3, .L40
+ 503 0004 1A70     		strb	r2, [r3]
+ 541:.\Generated_Source\PSoC5/Comp_1.c ****         
+ 542:.\Generated_Source\PSoC5/Comp_1.c ****         /* Stores value in the Analog Comparator trim register for N-type load */
+ 543:.\Generated_Source\PSoC5/Comp_1.c ****         Comp_1_TR1 = (uint8) (trimVal >> 8); 
+ 504              		.loc 1 543 0
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccCyoLsd.s 			page 20
+
+
+ 505 0006 000A     		lsrs	r0, r0, #8
+ 506              	.LVL21:
+ 507 0008 0133     		adds	r3, r3, #1
+ 508 000a 1870     		strb	r0, [r3]
+ 509 000c 7047     		bx	lr
+ 510              	.L41:
+ 511 000e 00BF     		.align	2
+ 512              	.L40:
+ 513 0010 30460040 		.word	1073759792
+ 514              		.cfi_endproc
+ 515              	.LFE8:
+ 516              		.size	Comp_1_LoadTrim, .-Comp_1_LoadTrim
+ 517              		.section	.text.Comp_1_PwrDwnOverrideEnable,"ax",%progbits
+ 518              		.align	2
+ 519              		.global	Comp_1_PwrDwnOverrideEnable
+ 520              		.thumb
+ 521              		.thumb_func
+ 522              		.type	Comp_1_PwrDwnOverrideEnable, %function
+ 523              	Comp_1_PwrDwnOverrideEnable:
+ 524              	.LFB9:
+ 544:.\Generated_Source\PSoC5/Comp_1.c ****     #endif /* CY_PSOC3 || CY_PSOC5LP */
+ 545:.\Generated_Source\PSoC5/Comp_1.c **** }
+ 546:.\Generated_Source\PSoC5/Comp_1.c **** 
+ 547:.\Generated_Source\PSoC5/Comp_1.c **** 
+ 548:.\Generated_Source\PSoC5/Comp_1.c **** #if (CY_PSOC3 || CY_PSOC5LP)
+ 549:.\Generated_Source\PSoC5/Comp_1.c **** 
+ 550:.\Generated_Source\PSoC5/Comp_1.c ****     /*******************************************************************************
+ 551:.\Generated_Source\PSoC5/Comp_1.c ****     * Function Name: Comp_1_PwrDwnOverrideEnable
+ 552:.\Generated_Source\PSoC5/Comp_1.c ****     ********************************************************************************
+ 553:.\Generated_Source\PSoC5/Comp_1.c ****     *
+ 554:.\Generated_Source\PSoC5/Comp_1.c ****     * Summary:
+ 555:.\Generated_Source\PSoC5/Comp_1.c ****     *  This is the power down over-ride feature. This function ignores sleep 
+ 556:.\Generated_Source\PSoC5/Comp_1.c ****     *  parameter and allows the component to stay active during sleep mode.
+ 557:.\Generated_Source\PSoC5/Comp_1.c ****     *
+ 558:.\Generated_Source\PSoC5/Comp_1.c ****     * Parameters:
+ 559:.\Generated_Source\PSoC5/Comp_1.c ****     *  None
+ 560:.\Generated_Source\PSoC5/Comp_1.c ****     *
+ 561:.\Generated_Source\PSoC5/Comp_1.c ****     * Return:
+ 562:.\Generated_Source\PSoC5/Comp_1.c ****     *  None
+ 563:.\Generated_Source\PSoC5/Comp_1.c ****     *
+ 564:.\Generated_Source\PSoC5/Comp_1.c ****     *******************************************************************************/
+ 565:.\Generated_Source\PSoC5/Comp_1.c ****     void Comp_1_PwrDwnOverrideEnable(void) 
+ 566:.\Generated_Source\PSoC5/Comp_1.c ****     {
+ 525              		.loc 1 566 0
+ 526              		.cfi_startproc
+ 527              		@ args = 0, pretend = 0, frame = 0
+ 528              		@ frame_needed = 0, uses_anonymous_args = 0
+ 529              		@ link register save eliminated.
+ 567:.\Generated_Source\PSoC5/Comp_1.c ****         /* Set the pd_override bit in CMP_CR register */
+ 568:.\Generated_Source\PSoC5/Comp_1.c ****         Comp_1_CR |= Comp_1_PWRDWN_OVRD;
+ 530              		.loc 1 568 0
+ 531 0000 024B     		ldr	r3, .L43
+ 532 0002 1A78     		ldrb	r2, [r3]	@ zero_extendqisi2
+ 533 0004 42F00402 		orr	r2, r2, #4
+ 534 0008 1A70     		strb	r2, [r3]
+ 535 000a 7047     		bx	lr
+ 536              	.L44:
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccCyoLsd.s 			page 21
+
+
+ 537              		.align	2
+ 538              	.L43:
+ 539 000c 40580040 		.word	1073764416
+ 540              		.cfi_endproc
+ 541              	.LFE9:
+ 542              		.size	Comp_1_PwrDwnOverrideEnable, .-Comp_1_PwrDwnOverrideEnable
+ 543              		.section	.text.Comp_1_PwrDwnOverrideDisable,"ax",%progbits
+ 544              		.align	2
+ 545              		.global	Comp_1_PwrDwnOverrideDisable
+ 546              		.thumb
+ 547              		.thumb_func
+ 548              		.type	Comp_1_PwrDwnOverrideDisable, %function
+ 549              	Comp_1_PwrDwnOverrideDisable:
+ 550              	.LFB10:
+ 569:.\Generated_Source\PSoC5/Comp_1.c ****     }
+ 570:.\Generated_Source\PSoC5/Comp_1.c **** 
+ 571:.\Generated_Source\PSoC5/Comp_1.c **** 
+ 572:.\Generated_Source\PSoC5/Comp_1.c ****     /*******************************************************************************
+ 573:.\Generated_Source\PSoC5/Comp_1.c ****     * Function Name: Comp_1_PwrDwnOverrideDisable
+ 574:.\Generated_Source\PSoC5/Comp_1.c ****     ********************************************************************************
+ 575:.\Generated_Source\PSoC5/Comp_1.c ****     *
+ 576:.\Generated_Source\PSoC5/Comp_1.c ****     * Summary:
+ 577:.\Generated_Source\PSoC5/Comp_1.c ****     *  This is the power down over-ride feature. This allows the component to stay
+ 578:.\Generated_Source\PSoC5/Comp_1.c ****     *  inactive during sleep.
+ 579:.\Generated_Source\PSoC5/Comp_1.c ****     *
+ 580:.\Generated_Source\PSoC5/Comp_1.c ****     * Parameters:
+ 581:.\Generated_Source\PSoC5/Comp_1.c ****     *  None
+ 582:.\Generated_Source\PSoC5/Comp_1.c ****     *
+ 583:.\Generated_Source\PSoC5/Comp_1.c ****     * Return:
+ 584:.\Generated_Source\PSoC5/Comp_1.c ****     *  None
+ 585:.\Generated_Source\PSoC5/Comp_1.c ****     *
+ 586:.\Generated_Source\PSoC5/Comp_1.c ****     *******************************************************************************/
+ 587:.\Generated_Source\PSoC5/Comp_1.c ****     void Comp_1_PwrDwnOverrideDisable(void) 
+ 588:.\Generated_Source\PSoC5/Comp_1.c ****     {
+ 551              		.loc 1 588 0
+ 552              		.cfi_startproc
+ 553              		@ args = 0, pretend = 0, frame = 0
+ 554              		@ frame_needed = 0, uses_anonymous_args = 0
+ 555              		@ link register save eliminated.
+ 589:.\Generated_Source\PSoC5/Comp_1.c ****         /* Reset the pd_override bit in CMP_CR register */
+ 590:.\Generated_Source\PSoC5/Comp_1.c ****         Comp_1_CR &= (uint8)(~Comp_1_PWRDWN_OVRD);
+ 556              		.loc 1 590 0
+ 557 0000 024B     		ldr	r3, .L46
+ 558 0002 1A78     		ldrb	r2, [r3]	@ zero_extendqisi2
+ 559 0004 02F0FB02 		and	r2, r2, #251
+ 560 0008 1A70     		strb	r2, [r3]
+ 561 000a 7047     		bx	lr
+ 562              	.L47:
+ 563              		.align	2
+ 564              	.L46:
+ 565 000c 40580040 		.word	1073764416
+ 566              		.cfi_endproc
+ 567              	.LFE10:
+ 568              		.size	Comp_1_PwrDwnOverrideDisable, .-Comp_1_PwrDwnOverrideDisable
+ 569              		.global	Comp_1_initVar
+ 570              		.bss
+ 571              		.set	.LANCHOR0,. + 0
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccCyoLsd.s 			page 22
+
+
+ 572              		.type	Comp_1_initVar, %object
+ 573              		.size	Comp_1_initVar, 1
+ 574              	Comp_1_initVar:
+ 575 0000 00       		.space	1
+ 576              		.text
+ 577              	.Letext0:
+ 578              		.file 2 ".\\Generated_Source\\PSoC5\\cytypes.h"
+ 579              		.file 3 ".\\Generated_Source\\PSoC5\\CyLib.h"
+ 580              		.section	.debug_info,"",%progbits
+ 581              	.Ldebug_info0:
+ 582 0000 BC020000 		.4byte	0x2bc
+ 583 0004 0400     		.2byte	0x4
+ 584 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 585 000a 04       		.byte	0x4
+ 586 000b 01       		.uleb128 0x1
+ 587 000c ED010000 		.4byte	.LASF35
+ 588 0010 01       		.byte	0x1
+ 589 0011 AC000000 		.4byte	.LASF36
+ 590 0015 E0000000 		.4byte	.LASF37
+ 591 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 592 001d 00000000 		.4byte	0
+ 593 0021 00000000 		.4byte	.Ldebug_line0
+ 594 0025 02       		.uleb128 0x2
+ 595 0026 01       		.byte	0x1
+ 596 0027 06       		.byte	0x6
+ 597 0028 C1020000 		.4byte	.LASF0
+ 598 002c 02       		.uleb128 0x2
+ 599 002d 01       		.byte	0x1
+ 600 002e 08       		.byte	0x8
+ 601 002f 70000000 		.4byte	.LASF1
+ 602 0033 02       		.uleb128 0x2
+ 603 0034 02       		.byte	0x2
+ 604 0035 05       		.byte	0x5
+ 605 0036 9A020000 		.4byte	.LASF2
+ 606 003a 02       		.uleb128 0x2
+ 607 003b 02       		.byte	0x2
+ 608 003c 07       		.byte	0x7
+ 609 003d 3D000000 		.4byte	.LASF3
+ 610 0041 02       		.uleb128 0x2
+ 611 0042 04       		.byte	0x4
+ 612 0043 05       		.byte	0x5
+ 613 0044 AA020000 		.4byte	.LASF4
+ 614 0048 02       		.uleb128 0x2
+ 615 0049 04       		.byte	0x4
+ 616 004a 07       		.byte	0x7
+ 617 004b 9A000000 		.4byte	.LASF5
+ 618 004f 02       		.uleb128 0x2
+ 619 0050 08       		.byte	0x8
+ 620 0051 05       		.byte	0x5
+ 621 0052 7D020000 		.4byte	.LASF6
+ 622 0056 02       		.uleb128 0x2
+ 623 0057 08       		.byte	0x8
+ 624 0058 07       		.byte	0x7
+ 625 0059 81010000 		.4byte	.LASF7
+ 626 005d 03       		.uleb128 0x3
+ 627 005e 04       		.byte	0x4
+ 628 005f 05       		.byte	0x5
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccCyoLsd.s 			page 23
+
+
+ 629 0060 696E7400 		.ascii	"int\000"
+ 630 0064 02       		.uleb128 0x2
+ 631 0065 04       		.byte	0x4
+ 632 0066 07       		.byte	0x7
+ 633 0067 6B010000 		.4byte	.LASF8
+ 634 006b 04       		.uleb128 0x4
+ 635 006c A4020000 		.4byte	.LASF9
+ 636 0070 02       		.byte	0x2
+ 637 0071 B4       		.byte	0xb4
+ 638 0072 2C000000 		.4byte	0x2c
+ 639 0076 04       		.uleb128 0x4
+ 640 0077 5D010000 		.4byte	.LASF10
+ 641 007b 02       		.byte	0x2
+ 642 007c B5       		.byte	0xb5
+ 643 007d 3A000000 		.4byte	0x3a
+ 644 0081 04       		.uleb128 0x4
+ 645 0082 64010000 		.4byte	.LASF11
+ 646 0086 02       		.byte	0x2
+ 647 0087 B6       		.byte	0xb6
+ 648 0088 48000000 		.4byte	0x48
+ 649 008c 02       		.uleb128 0x2
+ 650 008d 04       		.byte	0x4
+ 651 008e 04       		.byte	0x4
+ 652 008f 37000000 		.4byte	.LASF12
+ 653 0093 02       		.uleb128 0x2
+ 654 0094 08       		.byte	0x8
+ 655 0095 04       		.byte	0x4
+ 656 0096 56010000 		.4byte	.LASF13
+ 657 009a 02       		.uleb128 0x2
+ 658 009b 01       		.byte	0x1
+ 659 009c 08       		.byte	0x8
+ 660 009d 95020000 		.4byte	.LASF14
+ 661 00a1 05       		.uleb128 0x5
+ 662 00a2 8D000000 		.4byte	.LASF15
+ 663 00a6 02       		.byte	0x2
+ 664 00a7 5E01     		.2byte	0x15e
+ 665 00a9 AD000000 		.4byte	0xad
+ 666 00ad 06       		.uleb128 0x6
+ 667 00ae 6B000000 		.4byte	0x6b
+ 668 00b2 02       		.uleb128 0x2
+ 669 00b3 04       		.byte	0x4
+ 670 00b4 07       		.byte	0x7
+ 671 00b5 69020000 		.4byte	.LASF16
+ 672 00b9 07       		.uleb128 0x7
+ 673 00ba CE000000 		.4byte	.LASF38
+ 674 00be 01       		.byte	0x1
+ 675 00bf 1A01     		.2byte	0x11a
+ 676 00c1 00000000 		.4byte	.LFB6
+ 677 00c5 8C000000 		.4byte	.LFE6-.LFB6
+ 678 00c9 01       		.uleb128 0x1
+ 679 00ca 9C       		.byte	0x9c
+ 680 00cb 1F010000 		.4byte	0x11f
+ 681 00cf 08       		.uleb128 0x8
+ 682 00d0 E9020000 		.4byte	.LASF22
+ 683 00d4 01       		.byte	0x1
+ 684 00d5 1A01     		.2byte	0x11a
+ 685 00d7 6B000000 		.4byte	0x6b
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccCyoLsd.s 			page 24
+
+
+ 686 00db 00000000 		.4byte	.LLST0
+ 687 00df 09       		.uleb128 0x9
+ 688 00e0 92000000 		.4byte	.LASF17
+ 689 00e4 01       		.byte	0x1
+ 690 00e5 1C01     		.2byte	0x11c
+ 691 00e7 6B000000 		.4byte	0x6b
+ 692 00eb 21000000 		.4byte	.LLST1
+ 693 00ef 09       		.uleb128 0x9
+ 694 00f0 72020000 		.4byte	.LASF18
+ 695 00f4 01       		.byte	0x1
+ 696 00f5 1C01     		.2byte	0x11c
+ 697 00f7 6B000000 		.4byte	0x6b
+ 698 00fb 58000000 		.4byte	.LLST2
+ 699 00ff 09       		.uleb128 0x9
+ 700 0100 78010000 		.4byte	.LASF19
+ 701 0104 01       		.byte	0x1
+ 702 0105 1D01     		.2byte	0x11d
+ 703 0107 6B000000 		.4byte	0x6b
+ 704 010b 6B000000 		.4byte	.LLST3
+ 705 010f 0A       		.uleb128 0xa
+ 706 0110 68000000 		.4byte	.LVL4
+ 707 0114 B2020000 		.4byte	0x2b2
+ 708 0118 0B       		.uleb128 0xb
+ 709 0119 01       		.uleb128 0x1
+ 710 011a 50       		.byte	0x50
+ 711 011b 01       		.uleb128 0x1
+ 712 011c 3A       		.byte	0x3a
+ 713 011d 00       		.byte	0
+ 714 011e 00       		.byte	0
+ 715 011f 0C       		.uleb128 0xc
+ 716 0120 B3020000 		.4byte	.LASF20
+ 717 0124 01       		.byte	0x1
+ 718 0125 63       		.byte	0x63
+ 719 0126 00000000 		.4byte	.LFB1
+ 720 012a 1C000000 		.4byte	.LFE1-.LFB1
+ 721 012e 01       		.uleb128 0x1
+ 722 012f 9C       		.byte	0x9c
+ 723 0130 0C       		.uleb128 0xc
+ 724 0131 98010000 		.4byte	.LASF21
+ 725 0135 01       		.byte	0x1
+ 726 0136 A5       		.byte	0xa5
+ 727 0137 00000000 		.4byte	.LFB3
+ 728 013b 1C000000 		.4byte	.LFE3-.LFB3
+ 729 013f 01       		.uleb128 0x1
+ 730 0140 9C       		.byte	0x9c
+ 731 0141 0D       		.uleb128 0xd
+ 732 0142 08000000 		.4byte	.LASF24
+ 733 0146 01       		.byte	0x1
+ 734 0147 C5       		.byte	0xc5
+ 735 0148 00000000 		.4byte	.LFB4
+ 736 014c 5C000000 		.4byte	.LFE4-.LFB4
+ 737 0150 01       		.uleb128 0x1
+ 738 0151 9C       		.byte	0x9c
+ 739 0152 64010000 		.4byte	0x164
+ 740 0156 0E       		.uleb128 0xe
+ 741 0157 2A000000 		.4byte	.LASF23
+ 742 015b 01       		.byte	0x1
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccCyoLsd.s 			page 25
+
+
+ 743 015c C5       		.byte	0xc5
+ 744 015d 6B000000 		.4byte	0x6b
+ 745 0161 01       		.uleb128 0x1
+ 746 0162 50       		.byte	0x50
+ 747 0163 00       		.byte	0
+ 748 0164 0D       		.uleb128 0xd
+ 749 0165 1E000000 		.4byte	.LASF25
+ 750 0169 01       		.byte	0x1
+ 751 016a 33       		.byte	0x33
+ 752 016b 00000000 		.4byte	.LFB0
+ 753 016f 3C000000 		.4byte	.LFE0-.LFB0
+ 754 0173 01       		.uleb128 0x1
+ 755 0174 9C       		.byte	0x9c
+ 756 0175 89010000 		.4byte	0x189
+ 757 0179 0A       		.uleb128 0xa
+ 758 017a 08000000 		.4byte	.LVL9
+ 759 017e 41010000 		.4byte	0x141
+ 760 0182 0B       		.uleb128 0xb
+ 761 0183 01       		.uleb128 0x1
+ 762 0184 50       		.byte	0x50
+ 763 0185 01       		.uleb128 0x1
+ 764 0186 30       		.byte	0x30
+ 765 0187 00       		.byte	0
+ 766 0188 00       		.byte	0
+ 767 0189 0D       		.uleb128 0xd
+ 768 018a DC020000 		.4byte	.LASF26
+ 769 018e 01       		.byte	0x1
+ 770 018f 88       		.byte	0x88
+ 771 0190 00000000 		.4byte	.LFB2
+ 772 0194 1C000000 		.4byte	.LFE2-.LFB2
+ 773 0198 01       		.uleb128 0x1
+ 774 0199 9C       		.byte	0x9c
+ 775 019a B1010000 		.4byte	0x1b1
+ 776 019e 0F       		.uleb128 0xf
+ 777 019f 0C000000 		.4byte	.LVL10
+ 778 01a3 64010000 		.4byte	0x164
+ 779 01a7 0F       		.uleb128 0xf
+ 780 01a8 16000000 		.4byte	.LVL11
+ 781 01ac 1F010000 		.4byte	0x11f
+ 782 01b0 00       		.byte	0
+ 783 01b1 10       		.uleb128 0x10
+ 784 01b2 57000000 		.4byte	.LASF39
+ 785 01b6 01       		.byte	0x1
+ 786 01b7 FB       		.byte	0xfb
+ 787 01b8 6B000000 		.4byte	0x6b
+ 788 01bc 00000000 		.4byte	.LFB5
+ 789 01c0 10000000 		.4byte	.LFE5-.LFB5
+ 790 01c4 01       		.uleb128 0x1
+ 791 01c5 9C       		.byte	0x9c
+ 792 01c6 11       		.uleb128 0x11
+ 793 01c7 7E000000 		.4byte	.LASF40
+ 794 01cb 01       		.byte	0x1
+ 795 01cc BF01     		.2byte	0x1bf
+ 796 01ce 76000000 		.4byte	0x76
+ 797 01d2 00000000 		.4byte	.LFB7
+ 798 01d6 90000000 		.4byte	.LFE7-.LFB7
+ 799 01da 01       		.uleb128 0x1
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccCyoLsd.s 			page 26
+
+
+ 800 01db 9C       		.byte	0x9c
+ 801 01dc 56020000 		.4byte	0x256
+ 802 01e0 09       		.uleb128 0x9
+ 803 01e1 50000000 		.4byte	.LASF27
+ 804 01e5 01       		.byte	0x1
+ 805 01e6 C101     		.2byte	0x1c1
+ 806 01e8 6B000000 		.4byte	0x6b
+ 807 01ec 7E000000 		.4byte	.LLST4
+ 808 01f0 09       		.uleb128 0x9
+ 809 01f1 30000000 		.4byte	.LASF28
+ 810 01f5 01       		.byte	0x1
+ 811 01f6 C201     		.2byte	0x1c2
+ 812 01f8 6B000000 		.4byte	0x6b
+ 813 01fc 91000000 		.4byte	.LLST5
+ 814 0200 09       		.uleb128 0x9
+ 815 0201 69000000 		.4byte	.LASF29
+ 816 0205 01       		.byte	0x1
+ 817 0206 C301     		.2byte	0x1c3
+ 818 0208 6B000000 		.4byte	0x6b
+ 819 020c A4000000 		.4byte	.LLST6
+ 820 0210 09       		.uleb128 0x9
+ 821 0211 18000000 		.4byte	.LASF30
+ 822 0215 01       		.byte	0x1
+ 823 0216 C401     		.2byte	0x1c4
+ 824 0218 6B000000 		.4byte	0x6b
+ 825 021c B7000000 		.4byte	.LLST7
+ 826 0220 12       		.uleb128 0x12
+ 827 0221 48000000 		.4byte	.LVL16
+ 828 0225 B9000000 		.4byte	0xb9
+ 829 0229 33020000 		.4byte	0x233
+ 830 022d 0B       		.uleb128 0xb
+ 831 022e 01       		.uleb128 0x1
+ 832 022f 50       		.byte	0x50
+ 833 0230 01       		.uleb128 0x1
+ 834 0231 30       		.byte	0x30
+ 835 0232 00       		.byte	0
+ 836 0233 12       		.uleb128 0x12
+ 837 0234 50000000 		.4byte	.LVL17
+ 838 0238 B9000000 		.4byte	0xb9
+ 839 023c 46020000 		.4byte	0x246
+ 840 0240 0B       		.uleb128 0xb
+ 841 0241 01       		.uleb128 0x1
+ 842 0242 50       		.byte	0x50
+ 843 0243 01       		.uleb128 0x1
+ 844 0244 31       		.byte	0x31
+ 845 0245 00       		.byte	0
+ 846 0246 0A       		.uleb128 0xa
+ 847 0247 56000000 		.4byte	.LVL18
+ 848 024b B9000000 		.4byte	0xb9
+ 849 024f 0B       		.uleb128 0xb
+ 850 0250 01       		.uleb128 0x1
+ 851 0251 50       		.byte	0x50
+ 852 0252 01       		.uleb128 0x1
+ 853 0253 30       		.byte	0x30
+ 854 0254 00       		.byte	0
+ 855 0255 00       		.byte	0
+ 856 0256 13       		.uleb128 0x13
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccCyoLsd.s 			page 27
+
+
+ 857 0257 C1010000 		.4byte	.LASF31
+ 858 025b 01       		.byte	0x1
+ 859 025c 1102     		.2byte	0x211
+ 860 025e 00000000 		.4byte	.LFB8
+ 861 0262 14000000 		.4byte	.LFE8-.LFB8
+ 862 0266 01       		.uleb128 0x1
+ 863 0267 9C       		.byte	0x9c
+ 864 0268 7D020000 		.4byte	0x27d
+ 865 026c 08       		.uleb128 0x8
+ 866 026d 00000000 		.4byte	.LASF32
+ 867 0271 01       		.byte	0x1
+ 868 0272 1102     		.2byte	0x211
+ 869 0274 76000000 		.4byte	0x76
+ 870 0278 CA000000 		.4byte	.LLST8
+ 871 027c 00       		.byte	0
+ 872 027d 14       		.uleb128 0x14
+ 873 027e D1010000 		.4byte	.LASF33
+ 874 0282 01       		.byte	0x1
+ 875 0283 3502     		.2byte	0x235
+ 876 0285 00000000 		.4byte	.LFB9
+ 877 0289 10000000 		.4byte	.LFE9-.LFB9
+ 878 028d 01       		.uleb128 0x1
+ 879 028e 9C       		.byte	0x9c
+ 880 028f 14       		.uleb128 0x14
+ 881 0290 A4010000 		.4byte	.LASF34
+ 882 0294 01       		.byte	0x1
+ 883 0295 4B02     		.2byte	0x24b
+ 884 0297 00000000 		.4byte	.LFB10
+ 885 029b 10000000 		.4byte	.LFE10-.LFB10
+ 886 029f 01       		.uleb128 0x1
+ 887 02a0 9C       		.byte	0x9c
+ 888 02a1 15       		.uleb128 0x15
+ 889 02a2 CD020000 		.4byte	.LASF41
+ 890 02a6 01       		.byte	0x1
+ 891 02a7 14       		.byte	0x14
+ 892 02a8 6B000000 		.4byte	0x6b
+ 893 02ac 05       		.uleb128 0x5
+ 894 02ad 03       		.byte	0x3
+ 895 02ae 00000000 		.4byte	Comp_1_initVar
+ 896 02b2 16       		.uleb128 0x16
+ 897 02b3 8B020000 		.4byte	.LASF42
+ 898 02b7 03       		.byte	0x3
+ 899 02b8 78       		.byte	0x78
+ 900 02b9 17       		.uleb128 0x17
+ 901 02ba 76000000 		.4byte	0x76
+ 902 02be 00       		.byte	0
+ 903 02bf 00       		.byte	0
+ 904              		.section	.debug_abbrev,"",%progbits
+ 905              	.Ldebug_abbrev0:
+ 906 0000 01       		.uleb128 0x1
+ 907 0001 11       		.uleb128 0x11
+ 908 0002 01       		.byte	0x1
+ 909 0003 25       		.uleb128 0x25
+ 910 0004 0E       		.uleb128 0xe
+ 911 0005 13       		.uleb128 0x13
+ 912 0006 0B       		.uleb128 0xb
+ 913 0007 03       		.uleb128 0x3
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccCyoLsd.s 			page 28
+
+
+ 914 0008 0E       		.uleb128 0xe
+ 915 0009 1B       		.uleb128 0x1b
+ 916 000a 0E       		.uleb128 0xe
+ 917 000b 55       		.uleb128 0x55
+ 918 000c 17       		.uleb128 0x17
+ 919 000d 11       		.uleb128 0x11
+ 920 000e 01       		.uleb128 0x1
+ 921 000f 10       		.uleb128 0x10
+ 922 0010 17       		.uleb128 0x17
+ 923 0011 00       		.byte	0
+ 924 0012 00       		.byte	0
+ 925 0013 02       		.uleb128 0x2
+ 926 0014 24       		.uleb128 0x24
+ 927 0015 00       		.byte	0
+ 928 0016 0B       		.uleb128 0xb
+ 929 0017 0B       		.uleb128 0xb
+ 930 0018 3E       		.uleb128 0x3e
+ 931 0019 0B       		.uleb128 0xb
+ 932 001a 03       		.uleb128 0x3
+ 933 001b 0E       		.uleb128 0xe
+ 934 001c 00       		.byte	0
+ 935 001d 00       		.byte	0
+ 936 001e 03       		.uleb128 0x3
+ 937 001f 24       		.uleb128 0x24
+ 938 0020 00       		.byte	0
+ 939 0021 0B       		.uleb128 0xb
+ 940 0022 0B       		.uleb128 0xb
+ 941 0023 3E       		.uleb128 0x3e
+ 942 0024 0B       		.uleb128 0xb
+ 943 0025 03       		.uleb128 0x3
+ 944 0026 08       		.uleb128 0x8
+ 945 0027 00       		.byte	0
+ 946 0028 00       		.byte	0
+ 947 0029 04       		.uleb128 0x4
+ 948 002a 16       		.uleb128 0x16
+ 949 002b 00       		.byte	0
+ 950 002c 03       		.uleb128 0x3
+ 951 002d 0E       		.uleb128 0xe
+ 952 002e 3A       		.uleb128 0x3a
+ 953 002f 0B       		.uleb128 0xb
+ 954 0030 3B       		.uleb128 0x3b
+ 955 0031 0B       		.uleb128 0xb
+ 956 0032 49       		.uleb128 0x49
+ 957 0033 13       		.uleb128 0x13
+ 958 0034 00       		.byte	0
+ 959 0035 00       		.byte	0
+ 960 0036 05       		.uleb128 0x5
+ 961 0037 16       		.uleb128 0x16
+ 962 0038 00       		.byte	0
+ 963 0039 03       		.uleb128 0x3
+ 964 003a 0E       		.uleb128 0xe
+ 965 003b 3A       		.uleb128 0x3a
+ 966 003c 0B       		.uleb128 0xb
+ 967 003d 3B       		.uleb128 0x3b
+ 968 003e 05       		.uleb128 0x5
+ 969 003f 49       		.uleb128 0x49
+ 970 0040 13       		.uleb128 0x13
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccCyoLsd.s 			page 29
+
+
+ 971 0041 00       		.byte	0
+ 972 0042 00       		.byte	0
+ 973 0043 06       		.uleb128 0x6
+ 974 0044 35       		.uleb128 0x35
+ 975 0045 00       		.byte	0
+ 976 0046 49       		.uleb128 0x49
+ 977 0047 13       		.uleb128 0x13
+ 978 0048 00       		.byte	0
+ 979 0049 00       		.byte	0
+ 980 004a 07       		.uleb128 0x7
+ 981 004b 2E       		.uleb128 0x2e
+ 982 004c 01       		.byte	0x1
+ 983 004d 03       		.uleb128 0x3
+ 984 004e 0E       		.uleb128 0xe
+ 985 004f 3A       		.uleb128 0x3a
+ 986 0050 0B       		.uleb128 0xb
+ 987 0051 3B       		.uleb128 0x3b
+ 988 0052 05       		.uleb128 0x5
+ 989 0053 27       		.uleb128 0x27
+ 990 0054 19       		.uleb128 0x19
+ 991 0055 11       		.uleb128 0x11
+ 992 0056 01       		.uleb128 0x1
+ 993 0057 12       		.uleb128 0x12
+ 994 0058 06       		.uleb128 0x6
+ 995 0059 40       		.uleb128 0x40
+ 996 005a 18       		.uleb128 0x18
+ 997 005b 9742     		.uleb128 0x2117
+ 998 005d 19       		.uleb128 0x19
+ 999 005e 01       		.uleb128 0x1
+ 1000 005f 13       		.uleb128 0x13
+ 1001 0060 00       		.byte	0
+ 1002 0061 00       		.byte	0
+ 1003 0062 08       		.uleb128 0x8
+ 1004 0063 05       		.uleb128 0x5
+ 1005 0064 00       		.byte	0
+ 1006 0065 03       		.uleb128 0x3
+ 1007 0066 0E       		.uleb128 0xe
+ 1008 0067 3A       		.uleb128 0x3a
+ 1009 0068 0B       		.uleb128 0xb
+ 1010 0069 3B       		.uleb128 0x3b
+ 1011 006a 05       		.uleb128 0x5
+ 1012 006b 49       		.uleb128 0x49
+ 1013 006c 13       		.uleb128 0x13
+ 1014 006d 02       		.uleb128 0x2
+ 1015 006e 17       		.uleb128 0x17
+ 1016 006f 00       		.byte	0
+ 1017 0070 00       		.byte	0
+ 1018 0071 09       		.uleb128 0x9
+ 1019 0072 34       		.uleb128 0x34
+ 1020 0073 00       		.byte	0
+ 1021 0074 03       		.uleb128 0x3
+ 1022 0075 0E       		.uleb128 0xe
+ 1023 0076 3A       		.uleb128 0x3a
+ 1024 0077 0B       		.uleb128 0xb
+ 1025 0078 3B       		.uleb128 0x3b
+ 1026 0079 05       		.uleb128 0x5
+ 1027 007a 49       		.uleb128 0x49
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccCyoLsd.s 			page 30
+
+
+ 1028 007b 13       		.uleb128 0x13
+ 1029 007c 02       		.uleb128 0x2
+ 1030 007d 17       		.uleb128 0x17
+ 1031 007e 00       		.byte	0
+ 1032 007f 00       		.byte	0
+ 1033 0080 0A       		.uleb128 0xa
+ 1034 0081 898201   		.uleb128 0x4109
+ 1035 0084 01       		.byte	0x1
+ 1036 0085 11       		.uleb128 0x11
+ 1037 0086 01       		.uleb128 0x1
+ 1038 0087 31       		.uleb128 0x31
+ 1039 0088 13       		.uleb128 0x13
+ 1040 0089 00       		.byte	0
+ 1041 008a 00       		.byte	0
+ 1042 008b 0B       		.uleb128 0xb
+ 1043 008c 8A8201   		.uleb128 0x410a
+ 1044 008f 00       		.byte	0
+ 1045 0090 02       		.uleb128 0x2
+ 1046 0091 18       		.uleb128 0x18
+ 1047 0092 9142     		.uleb128 0x2111
+ 1048 0094 18       		.uleb128 0x18
+ 1049 0095 00       		.byte	0
+ 1050 0096 00       		.byte	0
+ 1051 0097 0C       		.uleb128 0xc
+ 1052 0098 2E       		.uleb128 0x2e
+ 1053 0099 00       		.byte	0
+ 1054 009a 3F       		.uleb128 0x3f
+ 1055 009b 19       		.uleb128 0x19
+ 1056 009c 03       		.uleb128 0x3
+ 1057 009d 0E       		.uleb128 0xe
+ 1058 009e 3A       		.uleb128 0x3a
+ 1059 009f 0B       		.uleb128 0xb
+ 1060 00a0 3B       		.uleb128 0x3b
+ 1061 00a1 0B       		.uleb128 0xb
+ 1062 00a2 27       		.uleb128 0x27
+ 1063 00a3 19       		.uleb128 0x19
+ 1064 00a4 11       		.uleb128 0x11
+ 1065 00a5 01       		.uleb128 0x1
+ 1066 00a6 12       		.uleb128 0x12
+ 1067 00a7 06       		.uleb128 0x6
+ 1068 00a8 40       		.uleb128 0x40
+ 1069 00a9 18       		.uleb128 0x18
+ 1070 00aa 9742     		.uleb128 0x2117
+ 1071 00ac 19       		.uleb128 0x19
+ 1072 00ad 00       		.byte	0
+ 1073 00ae 00       		.byte	0
+ 1074 00af 0D       		.uleb128 0xd
+ 1075 00b0 2E       		.uleb128 0x2e
+ 1076 00b1 01       		.byte	0x1
+ 1077 00b2 3F       		.uleb128 0x3f
+ 1078 00b3 19       		.uleb128 0x19
+ 1079 00b4 03       		.uleb128 0x3
+ 1080 00b5 0E       		.uleb128 0xe
+ 1081 00b6 3A       		.uleb128 0x3a
+ 1082 00b7 0B       		.uleb128 0xb
+ 1083 00b8 3B       		.uleb128 0x3b
+ 1084 00b9 0B       		.uleb128 0xb
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccCyoLsd.s 			page 31
+
+
+ 1085 00ba 27       		.uleb128 0x27
+ 1086 00bb 19       		.uleb128 0x19
+ 1087 00bc 11       		.uleb128 0x11
+ 1088 00bd 01       		.uleb128 0x1
+ 1089 00be 12       		.uleb128 0x12
+ 1090 00bf 06       		.uleb128 0x6
+ 1091 00c0 40       		.uleb128 0x40
+ 1092 00c1 18       		.uleb128 0x18
+ 1093 00c2 9742     		.uleb128 0x2117
+ 1094 00c4 19       		.uleb128 0x19
+ 1095 00c5 01       		.uleb128 0x1
+ 1096 00c6 13       		.uleb128 0x13
+ 1097 00c7 00       		.byte	0
+ 1098 00c8 00       		.byte	0
+ 1099 00c9 0E       		.uleb128 0xe
+ 1100 00ca 05       		.uleb128 0x5
+ 1101 00cb 00       		.byte	0
+ 1102 00cc 03       		.uleb128 0x3
+ 1103 00cd 0E       		.uleb128 0xe
+ 1104 00ce 3A       		.uleb128 0x3a
+ 1105 00cf 0B       		.uleb128 0xb
+ 1106 00d0 3B       		.uleb128 0x3b
+ 1107 00d1 0B       		.uleb128 0xb
+ 1108 00d2 49       		.uleb128 0x49
+ 1109 00d3 13       		.uleb128 0x13
+ 1110 00d4 02       		.uleb128 0x2
+ 1111 00d5 18       		.uleb128 0x18
+ 1112 00d6 00       		.byte	0
+ 1113 00d7 00       		.byte	0
+ 1114 00d8 0F       		.uleb128 0xf
+ 1115 00d9 898201   		.uleb128 0x4109
+ 1116 00dc 00       		.byte	0
+ 1117 00dd 11       		.uleb128 0x11
+ 1118 00de 01       		.uleb128 0x1
+ 1119 00df 31       		.uleb128 0x31
+ 1120 00e0 13       		.uleb128 0x13
+ 1121 00e1 00       		.byte	0
+ 1122 00e2 00       		.byte	0
+ 1123 00e3 10       		.uleb128 0x10
+ 1124 00e4 2E       		.uleb128 0x2e
+ 1125 00e5 00       		.byte	0
+ 1126 00e6 3F       		.uleb128 0x3f
+ 1127 00e7 19       		.uleb128 0x19
+ 1128 00e8 03       		.uleb128 0x3
+ 1129 00e9 0E       		.uleb128 0xe
+ 1130 00ea 3A       		.uleb128 0x3a
+ 1131 00eb 0B       		.uleb128 0xb
+ 1132 00ec 3B       		.uleb128 0x3b
+ 1133 00ed 0B       		.uleb128 0xb
+ 1134 00ee 27       		.uleb128 0x27
+ 1135 00ef 19       		.uleb128 0x19
+ 1136 00f0 49       		.uleb128 0x49
+ 1137 00f1 13       		.uleb128 0x13
+ 1138 00f2 11       		.uleb128 0x11
+ 1139 00f3 01       		.uleb128 0x1
+ 1140 00f4 12       		.uleb128 0x12
+ 1141 00f5 06       		.uleb128 0x6
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccCyoLsd.s 			page 32
+
+
+ 1142 00f6 40       		.uleb128 0x40
+ 1143 00f7 18       		.uleb128 0x18
+ 1144 00f8 9742     		.uleb128 0x2117
+ 1145 00fa 19       		.uleb128 0x19
+ 1146 00fb 00       		.byte	0
+ 1147 00fc 00       		.byte	0
+ 1148 00fd 11       		.uleb128 0x11
+ 1149 00fe 2E       		.uleb128 0x2e
+ 1150 00ff 01       		.byte	0x1
+ 1151 0100 3F       		.uleb128 0x3f
+ 1152 0101 19       		.uleb128 0x19
+ 1153 0102 03       		.uleb128 0x3
+ 1154 0103 0E       		.uleb128 0xe
+ 1155 0104 3A       		.uleb128 0x3a
+ 1156 0105 0B       		.uleb128 0xb
+ 1157 0106 3B       		.uleb128 0x3b
+ 1158 0107 05       		.uleb128 0x5
+ 1159 0108 27       		.uleb128 0x27
+ 1160 0109 19       		.uleb128 0x19
+ 1161 010a 49       		.uleb128 0x49
+ 1162 010b 13       		.uleb128 0x13
+ 1163 010c 11       		.uleb128 0x11
+ 1164 010d 01       		.uleb128 0x1
+ 1165 010e 12       		.uleb128 0x12
+ 1166 010f 06       		.uleb128 0x6
+ 1167 0110 40       		.uleb128 0x40
+ 1168 0111 18       		.uleb128 0x18
+ 1169 0112 9742     		.uleb128 0x2117
+ 1170 0114 19       		.uleb128 0x19
+ 1171 0115 01       		.uleb128 0x1
+ 1172 0116 13       		.uleb128 0x13
+ 1173 0117 00       		.byte	0
+ 1174 0118 00       		.byte	0
+ 1175 0119 12       		.uleb128 0x12
+ 1176 011a 898201   		.uleb128 0x4109
+ 1177 011d 01       		.byte	0x1
+ 1178 011e 11       		.uleb128 0x11
+ 1179 011f 01       		.uleb128 0x1
+ 1180 0120 31       		.uleb128 0x31
+ 1181 0121 13       		.uleb128 0x13
+ 1182 0122 01       		.uleb128 0x1
+ 1183 0123 13       		.uleb128 0x13
+ 1184 0124 00       		.byte	0
+ 1185 0125 00       		.byte	0
+ 1186 0126 13       		.uleb128 0x13
+ 1187 0127 2E       		.uleb128 0x2e
+ 1188 0128 01       		.byte	0x1
+ 1189 0129 3F       		.uleb128 0x3f
+ 1190 012a 19       		.uleb128 0x19
+ 1191 012b 03       		.uleb128 0x3
+ 1192 012c 0E       		.uleb128 0xe
+ 1193 012d 3A       		.uleb128 0x3a
+ 1194 012e 0B       		.uleb128 0xb
+ 1195 012f 3B       		.uleb128 0x3b
+ 1196 0130 05       		.uleb128 0x5
+ 1197 0131 27       		.uleb128 0x27
+ 1198 0132 19       		.uleb128 0x19
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccCyoLsd.s 			page 33
+
+
+ 1199 0133 11       		.uleb128 0x11
+ 1200 0134 01       		.uleb128 0x1
+ 1201 0135 12       		.uleb128 0x12
+ 1202 0136 06       		.uleb128 0x6
+ 1203 0137 40       		.uleb128 0x40
+ 1204 0138 18       		.uleb128 0x18
+ 1205 0139 9742     		.uleb128 0x2117
+ 1206 013b 19       		.uleb128 0x19
+ 1207 013c 01       		.uleb128 0x1
+ 1208 013d 13       		.uleb128 0x13
+ 1209 013e 00       		.byte	0
+ 1210 013f 00       		.byte	0
+ 1211 0140 14       		.uleb128 0x14
+ 1212 0141 2E       		.uleb128 0x2e
+ 1213 0142 00       		.byte	0
+ 1214 0143 3F       		.uleb128 0x3f
+ 1215 0144 19       		.uleb128 0x19
+ 1216 0145 03       		.uleb128 0x3
+ 1217 0146 0E       		.uleb128 0xe
+ 1218 0147 3A       		.uleb128 0x3a
+ 1219 0148 0B       		.uleb128 0xb
+ 1220 0149 3B       		.uleb128 0x3b
+ 1221 014a 05       		.uleb128 0x5
+ 1222 014b 27       		.uleb128 0x27
+ 1223 014c 19       		.uleb128 0x19
+ 1224 014d 11       		.uleb128 0x11
+ 1225 014e 01       		.uleb128 0x1
+ 1226 014f 12       		.uleb128 0x12
+ 1227 0150 06       		.uleb128 0x6
+ 1228 0151 40       		.uleb128 0x40
+ 1229 0152 18       		.uleb128 0x18
+ 1230 0153 9742     		.uleb128 0x2117
+ 1231 0155 19       		.uleb128 0x19
+ 1232 0156 00       		.byte	0
+ 1233 0157 00       		.byte	0
+ 1234 0158 15       		.uleb128 0x15
+ 1235 0159 34       		.uleb128 0x34
+ 1236 015a 00       		.byte	0
+ 1237 015b 03       		.uleb128 0x3
+ 1238 015c 0E       		.uleb128 0xe
+ 1239 015d 3A       		.uleb128 0x3a
+ 1240 015e 0B       		.uleb128 0xb
+ 1241 015f 3B       		.uleb128 0x3b
+ 1242 0160 0B       		.uleb128 0xb
+ 1243 0161 49       		.uleb128 0x49
+ 1244 0162 13       		.uleb128 0x13
+ 1245 0163 3F       		.uleb128 0x3f
+ 1246 0164 19       		.uleb128 0x19
+ 1247 0165 02       		.uleb128 0x2
+ 1248 0166 18       		.uleb128 0x18
+ 1249 0167 00       		.byte	0
+ 1250 0168 00       		.byte	0
+ 1251 0169 16       		.uleb128 0x16
+ 1252 016a 2E       		.uleb128 0x2e
+ 1253 016b 01       		.byte	0x1
+ 1254 016c 3F       		.uleb128 0x3f
+ 1255 016d 19       		.uleb128 0x19
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccCyoLsd.s 			page 34
+
+
+ 1256 016e 03       		.uleb128 0x3
+ 1257 016f 0E       		.uleb128 0xe
+ 1258 0170 3A       		.uleb128 0x3a
+ 1259 0171 0B       		.uleb128 0xb
+ 1260 0172 3B       		.uleb128 0x3b
+ 1261 0173 0B       		.uleb128 0xb
+ 1262 0174 27       		.uleb128 0x27
+ 1263 0175 19       		.uleb128 0x19
+ 1264 0176 3C       		.uleb128 0x3c
+ 1265 0177 19       		.uleb128 0x19
+ 1266 0178 00       		.byte	0
+ 1267 0179 00       		.byte	0
+ 1268 017a 17       		.uleb128 0x17
+ 1269 017b 05       		.uleb128 0x5
+ 1270 017c 00       		.byte	0
+ 1271 017d 49       		.uleb128 0x49
+ 1272 017e 13       		.uleb128 0x13
+ 1273 017f 00       		.byte	0
+ 1274 0180 00       		.byte	0
+ 1275 0181 00       		.byte	0
+ 1276              		.section	.debug_loc,"",%progbits
+ 1277              	.Ldebug_loc0:
+ 1278              	.LLST0:
+ 1279 0000 00000000 		.4byte	.LVL0
+ 1280 0004 46000000 		.4byte	.LVL3
+ 1281 0008 0100     		.2byte	0x1
+ 1282 000a 50       		.byte	0x50
+ 1283 000b 46000000 		.4byte	.LVL3
+ 1284 000f 8C000000 		.4byte	.LFE6
+ 1285 0013 0400     		.2byte	0x4
+ 1286 0015 F3       		.byte	0xf3
+ 1287 0016 01       		.uleb128 0x1
+ 1288 0017 50       		.byte	0x50
+ 1289 0018 9F       		.byte	0x9f
+ 1290 0019 00000000 		.4byte	0
+ 1291 001d 00000000 		.4byte	0
+ 1292              	.LLST1:
+ 1293 0021 36000000 		.4byte	.LVL2
+ 1294 0025 46000000 		.4byte	.LVL3
+ 1295 0029 0200     		.2byte	0x2
+ 1296 002b 30       		.byte	0x30
+ 1297 002c 9F       		.byte	0x9f
+ 1298 002d 46000000 		.4byte	.LVL3
+ 1299 0031 76000000 		.4byte	.LVL5
+ 1300 0035 0100     		.2byte	0x1
+ 1301 0037 54       		.byte	0x54
+ 1302 0038 76000000 		.4byte	.LVL5
+ 1303 003c 78000000 		.4byte	.LVL6
+ 1304 0040 0300     		.2byte	0x3
+ 1305 0042 74       		.byte	0x74
+ 1306 0043 7F       		.sleb128 -1
+ 1307 0044 9F       		.byte	0x9f
+ 1308 0045 78000000 		.4byte	.LVL6
+ 1309 0049 80000000 		.4byte	.LVL7
+ 1310 004d 0100     		.2byte	0x1
+ 1311 004f 54       		.byte	0x54
+ 1312 0050 00000000 		.4byte	0
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccCyoLsd.s 			page 35
+
+
+ 1313 0054 00000000 		.4byte	0
+ 1314              	.LLST2:
+ 1315 0058 36000000 		.4byte	.LVL2
+ 1316 005c 80000000 		.4byte	.LVL7
+ 1317 0060 0100     		.2byte	0x1
+ 1318 0062 57       		.byte	0x57
+ 1319 0063 00000000 		.4byte	0
+ 1320 0067 00000000 		.4byte	0
+ 1321              	.LLST3:
+ 1322 006b 0C000000 		.4byte	.LVL1
+ 1323 006f 80000000 		.4byte	.LVL7
+ 1324 0073 0100     		.2byte	0x1
+ 1325 0075 55       		.byte	0x55
+ 1326 0076 00000000 		.4byte	0
+ 1327 007a 00000000 		.4byte	0
+ 1328              	.LLST4:
+ 1329 007e 08000000 		.4byte	.LVL12
+ 1330 0082 7A000000 		.4byte	.LVL19
+ 1331 0086 0100     		.2byte	0x1
+ 1332 0088 56       		.byte	0x56
+ 1333 0089 00000000 		.4byte	0
+ 1334 008d 00000000 		.4byte	0
+ 1335              	.LLST5:
+ 1336 0091 0E000000 		.4byte	.LVL13
+ 1337 0095 7A000000 		.4byte	.LVL19
+ 1338 0099 0100     		.2byte	0x1
+ 1339 009b 55       		.byte	0x55
+ 1340 009c 00000000 		.4byte	0
+ 1341 00a0 00000000 		.4byte	0
+ 1342              	.LLST6:
+ 1343 00a4 14000000 		.4byte	.LVL14
+ 1344 00a8 7A000000 		.4byte	.LVL19
+ 1345 00ac 0100     		.2byte	0x1
+ 1346 00ae 54       		.byte	0x54
+ 1347 00af 00000000 		.4byte	0
+ 1348 00b3 00000000 		.4byte	0
+ 1349              	.LLST7:
+ 1350 00b7 28000000 		.4byte	.LVL15
+ 1351 00bb 7A000000 		.4byte	.LVL19
+ 1352 00bf 0100     		.2byte	0x1
+ 1353 00c1 57       		.byte	0x57
+ 1354 00c2 00000000 		.4byte	0
+ 1355 00c6 00000000 		.4byte	0
+ 1356              	.LLST8:
+ 1357 00ca 00000000 		.4byte	.LVL20
+ 1358 00ce 08000000 		.4byte	.LVL21
+ 1359 00d2 0100     		.2byte	0x1
+ 1360 00d4 50       		.byte	0x50
+ 1361 00d5 08000000 		.4byte	.LVL21
+ 1362 00d9 14000000 		.4byte	.LFE8
+ 1363 00dd 0400     		.2byte	0x4
+ 1364 00df F3       		.byte	0xf3
+ 1365 00e0 01       		.uleb128 0x1
+ 1366 00e1 50       		.byte	0x50
+ 1367 00e2 9F       		.byte	0x9f
+ 1368 00e3 00000000 		.4byte	0
+ 1369 00e7 00000000 		.4byte	0
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccCyoLsd.s 			page 36
+
+
+ 1370              		.section	.debug_aranges,"",%progbits
+ 1371 0000 6C000000 		.4byte	0x6c
+ 1372 0004 0200     		.2byte	0x2
+ 1373 0006 00000000 		.4byte	.Ldebug_info0
+ 1374 000a 04       		.byte	0x4
+ 1375 000b 00       		.byte	0
+ 1376 000c 0000     		.2byte	0
+ 1377 000e 0000     		.2byte	0
+ 1378 0010 00000000 		.4byte	.LFB6
+ 1379 0014 8C000000 		.4byte	.LFE6-.LFB6
+ 1380 0018 00000000 		.4byte	.LFB1
+ 1381 001c 1C000000 		.4byte	.LFE1-.LFB1
+ 1382 0020 00000000 		.4byte	.LFB3
+ 1383 0024 1C000000 		.4byte	.LFE3-.LFB3
+ 1384 0028 00000000 		.4byte	.LFB4
+ 1385 002c 5C000000 		.4byte	.LFE4-.LFB4
+ 1386 0030 00000000 		.4byte	.LFB0
+ 1387 0034 3C000000 		.4byte	.LFE0-.LFB0
+ 1388 0038 00000000 		.4byte	.LFB2
+ 1389 003c 1C000000 		.4byte	.LFE2-.LFB2
+ 1390 0040 00000000 		.4byte	.LFB5
+ 1391 0044 10000000 		.4byte	.LFE5-.LFB5
+ 1392 0048 00000000 		.4byte	.LFB7
+ 1393 004c 90000000 		.4byte	.LFE7-.LFB7
+ 1394 0050 00000000 		.4byte	.LFB8
+ 1395 0054 14000000 		.4byte	.LFE8-.LFB8
+ 1396 0058 00000000 		.4byte	.LFB9
+ 1397 005c 10000000 		.4byte	.LFE9-.LFB9
+ 1398 0060 00000000 		.4byte	.LFB10
+ 1399 0064 10000000 		.4byte	.LFE10-.LFB10
+ 1400 0068 00000000 		.4byte	0
+ 1401 006c 00000000 		.4byte	0
+ 1402              		.section	.debug_ranges,"",%progbits
+ 1403              	.Ldebug_ranges0:
+ 1404 0000 00000000 		.4byte	.LFB6
+ 1405 0004 8C000000 		.4byte	.LFE6
+ 1406 0008 00000000 		.4byte	.LFB1
+ 1407 000c 1C000000 		.4byte	.LFE1
+ 1408 0010 00000000 		.4byte	.LFB3
+ 1409 0014 1C000000 		.4byte	.LFE3
+ 1410 0018 00000000 		.4byte	.LFB4
+ 1411 001c 5C000000 		.4byte	.LFE4
+ 1412 0020 00000000 		.4byte	.LFB0
+ 1413 0024 3C000000 		.4byte	.LFE0
+ 1414 0028 00000000 		.4byte	.LFB2
+ 1415 002c 1C000000 		.4byte	.LFE2
+ 1416 0030 00000000 		.4byte	.LFB5
+ 1417 0034 10000000 		.4byte	.LFE5
+ 1418 0038 00000000 		.4byte	.LFB7
+ 1419 003c 90000000 		.4byte	.LFE7
+ 1420 0040 00000000 		.4byte	.LFB8
+ 1421 0044 14000000 		.4byte	.LFE8
+ 1422 0048 00000000 		.4byte	.LFB9
+ 1423 004c 10000000 		.4byte	.LFE9
+ 1424 0050 00000000 		.4byte	.LFB10
+ 1425 0054 10000000 		.4byte	.LFE10
+ 1426 0058 00000000 		.4byte	0
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccCyoLsd.s 			page 37
+
+
+ 1427 005c 00000000 		.4byte	0
+ 1428              		.section	.debug_line,"",%progbits
+ 1429              	.Ldebug_line0:
+ 1430 0000 6B010000 		.section	.debug_str,"MS",%progbits,1
+ 1430      02005000 
+ 1430      00000201 
+ 1430      FB0E0D00 
+ 1430      01010101 
+ 1431              	.LASF32:
+ 1432 0000 7472696D 		.ascii	"trimVal\000"
+ 1432      56616C00 
+ 1433              	.LASF24:
+ 1434 0008 436F6D70 		.ascii	"Comp_1_SetSpeed\000"
+ 1434      5F315F53 
+ 1434      65745370 
+ 1434      65656400 
+ 1435              	.LASF30:
+ 1436 0018 746D7043 		.ascii	"tmpCR\000"
+ 1436      5200
+ 1437              	.LASF25:
+ 1438 001e 436F6D70 		.ascii	"Comp_1_Init\000"
+ 1438      5F315F49 
+ 1438      6E697400 
+ 1439              	.LASF23:
+ 1440 002a 73706565 		.ascii	"speed\000"
+ 1440      6400
+ 1441              	.LASF28:
+ 1442 0030 746D7053 		.ascii	"tmpSW2\000"
+ 1442      573200
+ 1443              	.LASF12:
+ 1444 0037 666C6F61 		.ascii	"float\000"
+ 1444      7400
+ 1445              	.LASF3:
+ 1446 003d 73686F72 		.ascii	"short unsigned int\000"
+ 1446      7420756E 
+ 1446      7369676E 
+ 1446      65642069 
+ 1446      6E7400
+ 1447              	.LASF27:
+ 1448 0050 746D7053 		.ascii	"tmpSW0\000"
+ 1448      573000
+ 1449              	.LASF39:
+ 1450 0057 436F6D70 		.ascii	"Comp_1_GetCompare\000"
+ 1450      5F315F47 
+ 1450      6574436F 
+ 1450      6D706172 
+ 1450      6500
+ 1451              	.LASF29:
+ 1452 0069 746D7053 		.ascii	"tmpSW3\000"
+ 1452      573300
+ 1453              	.LASF1:
+ 1454 0070 756E7369 		.ascii	"unsigned char\000"
+ 1454      676E6564 
+ 1454      20636861 
+ 1454      7200
+ 1455              	.LASF40:
+ 1456 007e 436F6D70 		.ascii	"Comp_1_ZeroCal\000"
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccCyoLsd.s 			page 38
+
+
+ 1456      5F315F5A 
+ 1456      65726F43 
+ 1456      616C00
+ 1457              	.LASF15:
+ 1458 008d 72656738 		.ascii	"reg8\000"
+ 1458      00
+ 1459              	.LASF17:
+ 1460 0092 7472696D 		.ascii	"trimCnt\000"
+ 1460      436E7400 
+ 1461              	.LASF5:
+ 1462 009a 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1462      20756E73 
+ 1462      69676E65 
+ 1462      6420696E 
+ 1462      7400
+ 1463              	.LASF36:
+ 1464 00ac 2E5C4765 		.ascii	".\\Generated_Source\\PSoC5\\Comp_1.c\000"
+ 1464      6E657261 
+ 1464      7465645F 
+ 1464      536F7572 
+ 1464      63655C50 
+ 1465              	.LASF38:
+ 1466 00ce 436F6D70 		.ascii	"Comp_1_trimAdjust\000"
+ 1466      5F315F74 
+ 1466      72696D41 
+ 1466      646A7573 
+ 1466      7400
+ 1467              	.LASF37:
+ 1468 00e0 433A5C55 		.ascii	"C:\\Users\\JohnP\\OneDrive\\College\\2015-2016 Seni"
+ 1468      73657273 
+ 1468      5C4A6F68 
+ 1468      6E505C4F 
+ 1468      6E654472 
+ 1469 010e 6F722059 		.ascii	"or Year\\0 Fall Quarter\\CE4920\\Lab\\project\\CE49"
+ 1469      6561725C 
+ 1469      30204661 
+ 1469      6C6C2051 
+ 1469      75617274 
+ 1470 013c 32305072 		.ascii	"20Project1\\Design01.cydsn\000"
+ 1470      6F6A6563 
+ 1470      74315C44 
+ 1470      65736967 
+ 1470      6E30312E 
+ 1471              	.LASF13:
+ 1472 0156 646F7562 		.ascii	"double\000"
+ 1472      6C6500
+ 1473              	.LASF10:
+ 1474 015d 75696E74 		.ascii	"uint16\000"
+ 1474      313600
+ 1475              	.LASF11:
+ 1476 0164 75696E74 		.ascii	"uint32\000"
+ 1476      333200
+ 1477              	.LASF8:
+ 1478 016b 756E7369 		.ascii	"unsigned int\000"
+ 1478      676E6564 
+ 1478      20696E74 
+ 1478      00
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccCyoLsd.s 			page 39
+
+
+ 1479              	.LASF19:
+ 1480 0178 636D7053 		.ascii	"cmpState\000"
+ 1480      74617465 
+ 1480      00
+ 1481              	.LASF7:
+ 1482 0181 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1482      206C6F6E 
+ 1482      6720756E 
+ 1482      7369676E 
+ 1482      65642069 
+ 1483              	.LASF21:
+ 1484 0198 436F6D70 		.ascii	"Comp_1_Stop\000"
+ 1484      5F315F53 
+ 1484      746F7000 
+ 1485              	.LASF34:
+ 1486 01a4 436F6D70 		.ascii	"Comp_1_PwrDwnOverrideDisable\000"
+ 1486      5F315F50 
+ 1486      77724477 
+ 1486      6E4F7665 
+ 1486      72726964 
+ 1487              	.LASF31:
+ 1488 01c1 436F6D70 		.ascii	"Comp_1_LoadTrim\000"
+ 1488      5F315F4C 
+ 1488      6F616454 
+ 1488      72696D00 
+ 1489              	.LASF33:
+ 1490 01d1 436F6D70 		.ascii	"Comp_1_PwrDwnOverrideEnable\000"
+ 1490      5F315F50 
+ 1490      77724477 
+ 1490      6E4F7665 
+ 1490      72726964 
+ 1491              	.LASF35:
+ 1492 01ed 474E5520 		.ascii	"GNU C 4.8.4 20140526 (release) [ARM/embedded-4_8-br"
+ 1492      4320342E 
+ 1492      382E3420 
+ 1492      32303134 
+ 1492      30353236 
+ 1493 0220 616E6368 		.ascii	"anch revision 211358] -mcpu=cortex-m3 -mthumb -g -O"
+ 1493      20726576 
+ 1493      6973696F 
+ 1493      6E203231 
+ 1493      31333538 
+ 1494 0253 67202D66 		.ascii	"g -ffunction-sections\000"
+ 1494      66756E63 
+ 1494      74696F6E 
+ 1494      2D736563 
+ 1494      74696F6E 
+ 1495              	.LASF16:
+ 1496 0269 73697A65 		.ascii	"sizetype\000"
+ 1496      74797065 
+ 1496      00
+ 1497              	.LASF18:
+ 1498 0272 7472696D 		.ascii	"trimCntMax\000"
+ 1498      436E744D 
+ 1498      617800
+ 1499              	.LASF6:
+ 1500 027d 6C6F6E67 		.ascii	"long long int\000"
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccCyoLsd.s 			page 40
+
+
+ 1500      206C6F6E 
+ 1500      6720696E 
+ 1500      7400
+ 1501              	.LASF42:
+ 1502 028b 43794465 		.ascii	"CyDelayUs\000"
+ 1502      6C617955 
+ 1502      7300
+ 1503              	.LASF14:
+ 1504 0295 63686172 		.ascii	"char\000"
+ 1504      00
+ 1505              	.LASF2:
+ 1506 029a 73686F72 		.ascii	"short int\000"
+ 1506      7420696E 
+ 1506      7400
+ 1507              	.LASF9:
+ 1508 02a4 75696E74 		.ascii	"uint8\000"
+ 1508      3800
+ 1509              	.LASF4:
+ 1510 02aa 6C6F6E67 		.ascii	"long int\000"
+ 1510      20696E74 
+ 1510      00
+ 1511              	.LASF20:
+ 1512 02b3 436F6D70 		.ascii	"Comp_1_Enable\000"
+ 1512      5F315F45 
+ 1512      6E61626C 
+ 1512      6500
+ 1513              	.LASF0:
+ 1514 02c1 7369676E 		.ascii	"signed char\000"
+ 1514      65642063 
+ 1514      68617200 
+ 1515              	.LASF41:
+ 1516 02cd 436F6D70 		.ascii	"Comp_1_initVar\000"
+ 1516      5F315F69 
+ 1516      6E697456 
+ 1516      617200
+ 1517              	.LASF26:
+ 1518 02dc 436F6D70 		.ascii	"Comp_1_Start\000"
+ 1518      5F315F53 
+ 1518      74617274 
+ 1518      00
+ 1519              	.LASF22:
+ 1520 02e9 6E696262 		.ascii	"nibble\000"
+ 1520      6C6500
+ 1521              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.8.4 20140526 (release) [ARM/embedded-4_8-br
