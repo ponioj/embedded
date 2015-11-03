@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 1
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccDkWbNc.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 1
   29:.\Generated_Source\PSoC5/WaveDAC8_1.c **** /*******************************************************************************
   30:.\Generated_Source\PSoC5/WaveDAC8_1.c **** * Function Name: WaveDAC8_1_Init
   31:.\Generated_Source\PSoC5/WaveDAC8_1.c **** ********************************************************************************
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 2
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccDkWbNc.s 			page 2
 
 
   32:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 1
   86:.\Generated_Source\PSoC5/WaveDAC8_1.c **** void WaveDAC8_1_Enable(void) 
   87:.\Generated_Source\PSoC5/WaveDAC8_1.c **** {
   27              		.loc 1 87 0
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 3
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccDkWbNc.s 			page 3
 
 
   28              		.cfi_startproc
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 1
   64              		.section	.text.WaveDAC8_1_Stop,"ax",%progbits
   65              		.align	2
   66              		.global	WaveDAC8_1_Stop
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 4
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccDkWbNc.s 			page 4
 
 
   67              		.thumb
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 1
  155:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *
  156:.\Generated_Source\PSoC5/WaveDAC8_1.c **** * Return: 
  157:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *  None
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 5
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccDkWbNc.s 			page 5
 
 
  158:.\Generated_Source\PSoC5/WaveDAC8_1.c **** *
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 1
  196:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	(void)CyDmaChDisable(WaveDAC8_1_Wave2Chan);
   88              		.loc 1 196 0
   89 000e 6078     		ldrb	r0, [r4, #1]	@ zero_extendqisi2
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 6
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccDkWbNc.s 			page 6
 
 
   90 0010 FFF7FEFF 		bl	CyDmaChDisable
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 1
  120              		.cfi_offset 6, -8
  121              		.cfi_offset 14, -4
  122 0002 0546     		mov	r5, r0
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 7
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccDkWbNc.s 			page 7
 
 
  123 0004 0E46     		mov	r6, r1
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 1
  152              	.LVL15:
  153 0038 70BD     		pop	{r4, r5, r6, pc}
  154              	.LVL16:
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 8
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccDkWbNc.s 			page 8
 
 
  155              	.L9:
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 1
  272:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 		WaveDAC8_1_Wave2_DMA_BYTES_PER_BURST, WaveDAC8_1_Wave2_DMA_REQUEST_PER_BURST,
  273:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 		memoryType, HI16(CYDEV_PERIPH_BASE));
  274:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 	#else /* PSoC 5 */
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 9
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccDkWbNc.s 			page 9
 
 
  275:.\Generated_Source\PSoC5/WaveDAC8_1.c **** 		WaveDAC8_1_Wave2Chan = WaveDAC8_1_Wave2_DMA_DmaInitialize(
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 1
  220              		.size	WaveDAC8_1_Wave2Setup, .-WaveDAC8_1_Wave2Setup
  221              		.section	.text.WaveDAC8_1_Init,"ax",%progbits
  222              		.align	2
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 10
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccDkWbNc.s 			page 10
 
 
  223              		.global	WaveDAC8_1_Init
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 1
  269              	.L15:
  270              		.align	2
  271              	.L14:
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 11
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccDkWbNc.s 			page 11
 
 
  272 0038 00000000 		.word	.LANCHOR0
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 1
  321              		.type	WaveDAC8_1_StartEx, %function
  322              	WaveDAC8_1_StartEx:
  323              	.LFB3:
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 12
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccDkWbNc.s 			page 12
 
 
  165:.\Generated_Source\PSoC5/WaveDAC8_1.c **** {
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 1
  374 000d 06       		.byte	6
  375 000e 06       		.byte	6
  376 000f 06       		.byte	6
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 13
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccDkWbNc.s 			page 13
 
 
  377 0010 06       		.byte	6
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 1
  431 0046 07       		.byte	7
  432 0047 07       		.byte	7
  433 0048 07       		.byte	7
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 14
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccDkWbNc.s 			page 14
 
 
  434 0049 07       		.byte	7
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 1
  488 007f 07       		.byte	7
  489 0080 07       		.byte	7
  490 0081 08       		.byte	8
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 15
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccDkWbNc.s 			page 15
 
 
  491 0082 08       		.byte	8
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 1
  545 00b8 08       		.byte	8
  546 00b9 08       		.byte	8
  547 00ba 08       		.byte	8
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 16
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccDkWbNc.s 			page 16
 
 
  548 00bb 08       		.byte	8
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 1
  602 00f1 09       		.byte	9
  603 00f2 09       		.byte	9
  604 00f3 09       		.byte	9
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 17
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccDkWbNc.s 			page 17
 
 
  605 00f4 09       		.byte	9
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 1
  659 012a 09       		.byte	9
  660 012b 09       		.byte	9
  661 012c 09       		.byte	9
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 18
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccDkWbNc.s 			page 18
 
 
  662 012d 09       		.byte	9
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 1
  716 0163 0A       		.byte	10
  717 0164 0A       		.byte	10
  718 0165 0A       		.byte	10
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 19
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccDkWbNc.s 			page 19
 
 
  719 0166 0A       		.byte	10
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 1
  773 019c 0A       		.byte	10
  774 019d 0A       		.byte	10
  775 019e 0A       		.byte	10
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 20
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccDkWbNc.s 			page 20
 
 
  776 019f 0A       		.byte	10
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 1
  830 01d5 0A       		.byte	10
  831 01d6 0A       		.byte	10
  832 01d7 0A       		.byte	10
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 21
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccDkWbNc.s 			page 21
 
 
  833 01d8 0A       		.byte	10
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 1
  887 020e 0B       		.byte	11
  888 020f 0B       		.byte	11
  889 0210 0B       		.byte	11
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 22
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccDkWbNc.s 			page 22
 
 
  890 0211 0B       		.byte	11
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 1
  944 0247 0B       		.byte	11
  945 0248 0B       		.byte	11
  946 0249 0B       		.byte	11
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 23
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccDkWbNc.s 			page 23
 
 
  947 024a 0B       		.byte	11
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 1
  1001 0280 0C       		.byte	12
  1002 0281 0C       		.byte	12
  1003 0282 0C       		.byte	12
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 24
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccDkWbNc.s 			page 24
 
 
  1004 0283 0C       		.byte	12
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 1
  1058 02b9 0C       		.byte	12
  1059 02ba 0C       		.byte	12
  1060 02bb 0C       		.byte	12
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 25
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccDkWbNc.s 			page 25
 
 
  1061 02bc 0C       		.byte	12
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 1
  1115 02f2 0C       		.byte	12
  1116 02f3 0C       		.byte	12
  1117 02f4 0C       		.byte	12
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 26
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccDkWbNc.s 			page 26
 
 
  1118 02f5 0C       		.byte	12
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 1
  1172 032b 0C       		.byte	12
  1173 032c 0C       		.byte	12
  1174 032d 0C       		.byte	12
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 27
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccDkWbNc.s 			page 27
 
 
  1175 032e 0C       		.byte	12
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 1
  1229 0364 0C       		.byte	12
  1230 0365 0C       		.byte	12
  1231 0366 0C       		.byte	12
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 28
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccDkWbNc.s 			page 28
 
 
  1232 0367 0C       		.byte	12
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 1
  1286 039d 0C       		.byte	12
  1287 039e 0C       		.byte	12
  1288 039f 0C       		.byte	12
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 29
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccDkWbNc.s 			page 29
 
 
  1289 03a0 0C       		.byte	12
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 1
  1343 03d6 0C       		.byte	12
  1344 03d7 0C       		.byte	12
  1345 03d8 0C       		.byte	12
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 30
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccDkWbNc.s 			page 30
 
 
  1346 03d9 0C       		.byte	12
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 1
  1400 040f 0C       		.byte	12
  1401 0410 0C       		.byte	12
  1402 0411 0C       		.byte	12
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 31
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccDkWbNc.s 			page 31
 
 
  1403 0412 0C       		.byte	12
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 1
  1457 0448 0C       		.byte	12
  1458 0449 0C       		.byte	12
  1459 044a 0C       		.byte	12
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 32
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccDkWbNc.s 			page 32
 
 
  1460 044b 0C       		.byte	12
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 1
  1514 0481 0C       		.byte	12
  1515 0482 0C       		.byte	12
  1516 0483 0C       		.byte	12
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 33
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccDkWbNc.s 			page 33
 
 
  1517 0484 0C       		.byte	12
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 1
  1571 04ba 0C       		.byte	12
  1572 04bb 0C       		.byte	12
  1573 04bc 0C       		.byte	12
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 34
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccDkWbNc.s 			page 34
 
 
  1574 04bd 0C       		.byte	12
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 1
  1628 04f3 0C       		.byte	12
  1629 04f4 0C       		.byte	12
  1630 04f5 0C       		.byte	12
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 35
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccDkWbNc.s 			page 35
 
 
  1631 04f6 0C       		.byte	12
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 1
  1685 052c 0C       		.byte	12
  1686 052d 0C       		.byte	12
  1687 052e 0C       		.byte	12
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 36
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccDkWbNc.s 			page 36
 
 
  1688 052f 0C       		.byte	12
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 1
  1742 0565 0B       		.byte	11
  1743 0566 0B       		.byte	11
  1744 0567 0B       		.byte	11
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 37
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccDkWbNc.s 			page 37
 
 
  1745 0568 0B       		.byte	11
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 1
  1799 059e 0B       		.byte	11
  1800 059f 0B       		.byte	11
  1801 05a0 0B       		.byte	11
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 38
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccDkWbNc.s 			page 38
 
 
  1802 05a1 0B       		.byte	11
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 1
  1856 05d7 0B       		.byte	11
  1857 05d8 0B       		.byte	11
  1858 05d9 0B       		.byte	11
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 39
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccDkWbNc.s 			page 39
 
 
  1859 05da 0B       		.byte	11
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 1
  1913 0610 0A       		.byte	10
  1914 0611 0A       		.byte	10
  1915 0612 0A       		.byte	10
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 40
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccDkWbNc.s 			page 40
 
 
  1916 0613 0A       		.byte	10
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 1
  1970 0649 0A       		.byte	10
  1971 064a 0A       		.byte	10
  1972 064b 0A       		.byte	10
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 41
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccDkWbNc.s 			page 41
 
 
  1973 064c 0A       		.byte	10
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 1
  2027 0682 09       		.byte	9
  2028 0683 09       		.byte	9
  2029 0684 09       		.byte	9
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 42
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccDkWbNc.s 			page 42
 
 
  2030 0685 09       		.byte	9
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 1
  2084 06bb 09       		.byte	9
  2085 06bc 09       		.byte	9
  2086 06bd 09       		.byte	9
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 43
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccDkWbNc.s 			page 43
 
 
  2087 06be 09       		.byte	9
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 1
  2141 06f4 08       		.byte	8
  2142 06f5 08       		.byte	8
  2143 06f6 08       		.byte	8
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 44
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccDkWbNc.s 			page 44
 
 
  2144 06f7 08       		.byte	8
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 1
  2198 072d 08       		.byte	8
  2199 072e 08       		.byte	8
  2200 072f 08       		.byte	8
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 45
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccDkWbNc.s 			page 45
 
 
  2201 0730 08       		.byte	8
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 1
  2255 0766 07       		.byte	7
  2256 0767 07       		.byte	7
  2257 0768 07       		.byte	7
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 46
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccDkWbNc.s 			page 46
 
 
  2258 0769 07       		.byte	7
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 1
  2312 079f 07       		.byte	7
  2313 07a0 07       		.byte	7
  2314 07a1 07       		.byte	7
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 47
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccDkWbNc.s 			page 47
 
 
  2315 07a2 07       		.byte	7
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 1
  2369 07d8 06       		.byte	6
  2370 07d9 06       		.byte	6
  2371 07da 06       		.byte	6
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 48
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccDkWbNc.s 			page 48
 
 
  2372 07db 06       		.byte	6
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 1
  2426 0811 06       		.byte	6
  2427 0812 06       		.byte	6
  2428 0813 06       		.byte	6
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 49
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccDkWbNc.s 			page 49
 
 
  2429 0814 06       		.byte	6
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 1
  2483 084a 05       		.byte	5
  2484 084b 05       		.byte	5
  2485 084c 05       		.byte	5
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 50
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccDkWbNc.s 			page 50
 
 
  2486 084d 05       		.byte	5
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 1
  2540 0883 05       		.byte	5
  2541 0884 05       		.byte	5
  2542 0885 04       		.byte	4
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 51
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccDkWbNc.s 			page 51
 
 
  2543 0886 04       		.byte	4
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 1
  2597 08bc 04       		.byte	4
  2598 08bd 04       		.byte	4
  2599 08be 04       		.byte	4
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 52
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccDkWbNc.s 			page 52
 
 
  2600 08bf 04       		.byte	4
@@ -3118,7 +3118,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 1
  2654 08f5 03       		.byte	3
  2655 08f6 03       		.byte	3
  2656 08f7 03       		.byte	3
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 53
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccDkWbNc.s 			page 53
 
 
  2657 08f8 03       		.byte	3
@@ -3178,7 +3178,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 1
  2711 092e 03       		.byte	3
  2712 092f 03       		.byte	3
  2713 0930 03       		.byte	3
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 54
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccDkWbNc.s 			page 54
 
 
  2714 0931 03       		.byte	3
@@ -3238,7 +3238,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 1
  2768 0967 03       		.byte	3
  2769 0968 03       		.byte	3
  2770 0969 03       		.byte	3
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 55
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccDkWbNc.s 			page 55
 
 
  2771 096a 02       		.byte	2
@@ -3298,7 +3298,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 1
  2825 09a0 02       		.byte	2
  2826 09a1 02       		.byte	2
  2827 09a2 02       		.byte	2
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 56
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccDkWbNc.s 			page 56
 
 
  2828 09a3 02       		.byte	2
@@ -3358,7 +3358,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 1
  2882 09d9 02       		.byte	2
  2883 09da 02       		.byte	2
  2884 09db 02       		.byte	2
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 57
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccDkWbNc.s 			page 57
 
 
  2885 09dc 02       		.byte	2
@@ -3418,7 +3418,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 1
  2939 0a12 01       		.byte	1
  2940 0a13 01       		.byte	1
  2941 0a14 01       		.byte	1
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 58
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccDkWbNc.s 			page 58
 
 
  2942 0a15 01       		.byte	1
@@ -3478,7 +3478,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 1
  2996 0a4b 01       		.byte	1
  2997 0a4c 01       		.byte	1
  2998 0a4d 01       		.byte	1
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 59
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccDkWbNc.s 			page 59
 
 
  2999 0a4e 01       		.byte	1
@@ -3538,7 +3538,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 1
  3053 0a84 01       		.byte	1
  3054 0a85 01       		.byte	1
  3055 0a86 01       		.byte	1
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 60
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccDkWbNc.s 			page 60
 
 
  3056 0a87 01       		.byte	1
@@ -3598,7 +3598,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 1
  3110 0abd 00       		.byte	0
  3111 0abe 00       		.byte	0
  3112 0abf 00       		.byte	0
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 61
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccDkWbNc.s 			page 61
 
 
  3113 0ac0 00       		.byte	0
@@ -3658,7 +3658,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 1
  3167 0af6 00       		.byte	0
  3168 0af7 00       		.byte	0
  3169 0af8 00       		.byte	0
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 62
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccDkWbNc.s 			page 62
 
 
  3170 0af9 00       		.byte	0
@@ -3718,7 +3718,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 1
  3224 0b2f 00       		.byte	0
  3225 0b30 00       		.byte	0
  3226 0b31 00       		.byte	0
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 63
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccDkWbNc.s 			page 63
 
 
  3227 0b32 00       		.byte	0
@@ -3778,7 +3778,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 1
  3281 0b68 00       		.byte	0
  3282 0b69 00       		.byte	0
  3283 0b6a 00       		.byte	0
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 64
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccDkWbNc.s 			page 64
 
 
  3284 0b6b 00       		.byte	0
@@ -3838,7 +3838,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 1
  3338 0ba1 00       		.byte	0
  3339 0ba2 00       		.byte	0
  3340 0ba3 00       		.byte	0
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 65
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccDkWbNc.s 			page 65
 
 
  3341 0ba4 00       		.byte	0
@@ -3898,7 +3898,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 1
  3395 0bda 00       		.byte	0
  3396 0bdb 00       		.byte	0
  3397 0bdc 00       		.byte	0
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 66
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccDkWbNc.s 			page 66
 
 
  3398 0bdd 00       		.byte	0
@@ -3958,7 +3958,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 1
  3452 0c13 00       		.byte	0
  3453 0c14 00       		.byte	0
  3454 0c15 00       		.byte	0
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 67
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccDkWbNc.s 			page 67
 
 
  3455 0c16 00       		.byte	0
@@ -4018,7 +4018,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 1
  3509 0c4c 00       		.byte	0
  3510 0c4d 00       		.byte	0
  3511 0c4e 00       		.byte	0
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 68
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccDkWbNc.s 			page 68
 
 
  3512 0c4f 00       		.byte	0
@@ -4078,7 +4078,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 1
  3566 0c85 00       		.byte	0
  3567 0c86 00       		.byte	0
  3568 0c87 00       		.byte	0
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 69
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccDkWbNc.s 			page 69
 
 
  3569 0c88 00       		.byte	0
@@ -4138,7 +4138,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 1
  3623 0cbe 01       		.byte	1
  3624 0cbf 01       		.byte	1
  3625 0cc0 01       		.byte	1
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 70
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccDkWbNc.s 			page 70
 
 
  3626 0cc1 01       		.byte	1
@@ -4198,7 +4198,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 1
  3680 0cf7 01       		.byte	1
  3681 0cf8 01       		.byte	1
  3682 0cf9 01       		.byte	1
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 71
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccDkWbNc.s 			page 71
 
 
  3683 0cfa 01       		.byte	1
@@ -4258,7 +4258,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 1
  3737 0d30 01       		.byte	1
  3738 0d31 01       		.byte	1
  3739 0d32 01       		.byte	1
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 72
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccDkWbNc.s 			page 72
 
 
  3740 0d33 01       		.byte	1
@@ -4318,7 +4318,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 1
  3794 0d69 01       		.byte	1
  3795 0d6a 01       		.byte	1
  3796 0d6b 01       		.byte	1
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 73
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccDkWbNc.s 			page 73
 
 
  3797 0d6c 01       		.byte	1
@@ -4378,7 +4378,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 1
  3851 0da2 02       		.byte	2
  3852 0da3 02       		.byte	2
  3853 0da4 02       		.byte	2
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 74
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccDkWbNc.s 			page 74
 
 
  3854 0da5 02       		.byte	2
@@ -4438,7 +4438,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 1
  3908 0ddb 02       		.byte	2
  3909 0ddc 02       		.byte	2
  3910 0ddd 02       		.byte	2
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 75
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccDkWbNc.s 			page 75
 
 
  3911 0dde 02       		.byte	2
@@ -4498,7 +4498,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 1
  3965 0e14 03       		.byte	3
  3966 0e15 03       		.byte	3
  3967 0e16 03       		.byte	3
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 76
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccDkWbNc.s 			page 76
 
 
  3968 0e17 03       		.byte	3
@@ -4558,7 +4558,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 1
  4022 0e4d 03       		.byte	3
  4023 0e4e 03       		.byte	3
  4024 0e4f 03       		.byte	3
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 77
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccDkWbNc.s 			page 77
 
 
  4025 0e50 03       		.byte	3
@@ -4618,7 +4618,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 1
  4079 0e86 04       		.byte	4
  4080 0e87 04       		.byte	4
  4081 0e88 04       		.byte	4
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 78
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccDkWbNc.s 			page 78
 
 
  4082 0e89 04       		.byte	4
@@ -4678,7 +4678,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 1
  4136 0ebf 04       		.byte	4
  4137 0ec0 04       		.byte	4
  4138 0ec1 04       		.byte	4
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 79
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccDkWbNc.s 			page 79
 
 
  4139 0ec2 04       		.byte	4
@@ -4738,7 +4738,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 1
  4193 0ef8 05       		.byte	5
  4194 0ef9 05       		.byte	5
  4195 0efa 05       		.byte	5
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 80
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccDkWbNc.s 			page 80
 
 
  4196 0efb 05       		.byte	5
@@ -4798,7 +4798,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 1
  4250 0f31 05       		.byte	5
  4251 0f32 05       		.byte	5
  4252 0f33 05       		.byte	5
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 81
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccDkWbNc.s 			page 81
 
 
  4253 0f34 05       		.byte	5
@@ -4858,7 +4858,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 1
  4307 0f6a 06       		.byte	6
  4308 0f6b 06       		.byte	6
  4309 0f6c 06       		.byte	6
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 82
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccDkWbNc.s 			page 82
 
 
  4310 0f6d 06       		.byte	6
@@ -4918,7 +4918,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 1
  4364 0fa0 00000000 		.space	100
  4364      00000000 
  4364      00000000 
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 83
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccDkWbNc.s 			page 83
 
 
  4364      00000000 
@@ -4960,28 +4960,28 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 1
  4399 0006 00000000 		.4byte	.Ldebug_abbrev0
  4400 000a 04       		.byte	0x4
  4401 000b 01       		.uleb128 0x1
- 4402 000c D3020000 		.4byte	.LASF52
+ 4402 000c FD020000 		.4byte	.LASF52
  4403 0010 01       		.byte	0x1
- 4404 0011 6B030000 		.4byte	.LASF53
- 4405 0015 14040000 		.4byte	.LASF54
+ 4404 0011 AF030000 		.4byte	.LASF53
+ 4405 0015 76020000 		.4byte	.LASF54
  4406 0019 00000000 		.4byte	.Ldebug_ranges0+0
  4407 001d 00000000 		.4byte	0
  4408 0021 00000000 		.4byte	.Ldebug_line0
  4409 0025 02       		.uleb128 0x2
  4410 0026 01       		.byte	0x1
  4411 0027 06       		.byte	0x6
- 4412 0028 F9030000 		.4byte	.LASF0
+ 4412 0028 3D040000 		.4byte	.LASF0
  4413 002c 02       		.uleb128 0x2
  4414 002d 01       		.byte	0x1
  4415 002e 08       		.byte	0x8
- 4416 002f 5E020000 		.4byte	.LASF1
+ 4416 002f 44020000 		.4byte	.LASF1
  4417 0033 02       		.uleb128 0x2
  4418 0034 02       		.byte	0x2
  4419 0035 05       		.byte	0x5
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 84
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccDkWbNc.s 			page 84
 
 
- 4420 0036 15020000 		.4byte	.LASF2
+ 4420 0036 FB010000 		.4byte	.LASF2
  4421 003a 02       		.uleb128 0x2
  4422 003b 02       		.byte	0x2
  4423 003c 07       		.byte	0x7
@@ -4989,19 +4989,19 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 1
  4425 0041 02       		.uleb128 0x2
  4426 0042 04       		.byte	0x4
  4427 0043 05       		.byte	0x5
- 4428 0044 F0030000 		.4byte	.LASF4
+ 4428 0044 34040000 		.4byte	.LASF4
  4429 0048 02       		.uleb128 0x2
  4430 0049 04       		.byte	0x4
  4431 004a 07       		.byte	0x7
- 4432 004b 81010000 		.4byte	.LASF5
+ 4432 004b 7E010000 		.4byte	.LASF5
  4433 004f 02       		.uleb128 0x2
  4434 0050 08       		.byte	0x8
  4435 0051 05       		.byte	0x5
- 4436 0052 58030000 		.4byte	.LASF6
+ 4436 0052 82030000 		.4byte	.LASF6
  4437 0056 02       		.uleb128 0x2
  4438 0057 08       		.byte	0x8
  4439 0058 07       		.byte	0x7
- 4440 0059 79020000 		.4byte	.LASF7
+ 4440 0059 5F020000 		.4byte	.LASF7
  4441 005d 03       		.uleb128 0x3
  4442 005e 04       		.byte	0x4
  4443 005f 05       		.byte	0x5
@@ -5009,36 +5009,36 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 1
  4445 0064 02       		.uleb128 0x2
  4446 0065 04       		.byte	0x4
  4447 0066 07       		.byte	0x7
- 4448 0067 6C020000 		.4byte	.LASF8
+ 4448 0067 52020000 		.4byte	.LASF8
  4449 006b 04       		.uleb128 0x4
- 4450 006c 9B010000 		.4byte	.LASF9
+ 4450 006c 98010000 		.4byte	.LASF9
  4451 0070 02       		.byte	0x2
  4452 0071 B4       		.byte	0xb4
  4453 0072 2C000000 		.4byte	0x2c
  4454 0076 04       		.uleb128 0x4
- 4455 0077 2D020000 		.4byte	.LASF10
+ 4455 0077 13020000 		.4byte	.LASF10
  4456 007b 02       		.byte	0x2
  4457 007c B5       		.byte	0xb5
  4458 007d 3A000000 		.4byte	0x3a
  4459 0081 04       		.uleb128 0x4
- 4460 0082 57020000 		.4byte	.LASF11
+ 4460 0082 3D020000 		.4byte	.LASF11
  4461 0086 02       		.byte	0x2
  4462 0087 B6       		.byte	0xb6
  4463 0088 48000000 		.4byte	0x48
  4464 008c 02       		.uleb128 0x2
  4465 008d 04       		.byte	0x4
  4466 008e 04       		.byte	0x4
- 4467 008f 2F010000 		.4byte	.LASF12
+ 4467 008f 2C010000 		.4byte	.LASF12
  4468 0093 02       		.uleb128 0x2
  4469 0094 08       		.byte	0x8
  4470 0095 04       		.byte	0x4
- 4471 0096 FE010000 		.4byte	.LASF13
+ 4471 0096 E4010000 		.4byte	.LASF13
  4472 009a 02       		.uleb128 0x2
  4473 009b 01       		.byte	0x1
  4474 009c 08       		.byte	0x8
- 4475 009d 66030000 		.4byte	.LASF14
+ 4475 009d AA030000 		.4byte	.LASF14
  4476 00a1 05       		.uleb128 0x5
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 85
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccDkWbNc.s 			page 85
 
 
  4477 00a2 1A000000 		.4byte	.LASF15
@@ -5048,9 +5048,9 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 1
  4481 00ad 02       		.uleb128 0x2
  4482 00ae 04       		.byte	0x4
  4483 00af 07       		.byte	0x7
- 4484 00b0 4F030000 		.4byte	.LASF16
+ 4484 00b0 79030000 		.4byte	.LASF16
  4485 00b4 06       		.uleb128 0x6
- 4486 00b5 A7030000 		.4byte	.LASF17
+ 4486 00b5 EB030000 		.4byte	.LASF17
  4487 00b9 01       		.byte	0x1
  4488 00ba 56       		.byte	0x56
  4489 00bb 00000000 		.4byte	.LFB1
@@ -5096,9 +5096,9 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 1
  4529 0110 9C040000 		.4byte	0x49c
  4530 0114 00       		.byte	0
  4531 0115 06       		.uleb128 0x6
- 4532 0116 05020000 		.4byte	.LASF18
+ 4532 0116 EB010000 		.4byte	.LASF18
  4533 011a 01       		.byte	0x1
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 86
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccDkWbNc.s 			page 86
 
 
  4534 011b BB       		.byte	0xbb
@@ -5121,7 +5121,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 1
  4551 014a BF040000 		.4byte	0x4bf
  4552 014e 00       		.byte	0
  4553 014f 06       		.uleb128 0x6
- 4554 0150 D0010000 		.4byte	.LASF19
+ 4554 0150 B6010000 		.4byte	.LASF19
  4555 0154 01       		.byte	0x1
  4556 0155 DA       		.byte	0xda
  4557 0156 00000000 		.4byte	.LFB5
@@ -5130,13 +5130,13 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 1
  4560 015f 9C       		.byte	0x9c
  4561 0160 E7010000 		.4byte	0x1e7
  4562 0164 0A       		.uleb128 0xa
- 4563 0165 93010000 		.4byte	.LASF20
+ 4563 0165 90010000 		.4byte	.LASF20
  4564 0169 01       		.byte	0x1
  4565 016a DA       		.byte	0xda
  4566 016b E7010000 		.4byte	0x1e7
  4567 016f 00000000 		.4byte	.LLST0
  4568 0173 0A       		.uleb128 0xa
- 4569 0174 48010000 		.4byte	.LASF21
+ 4569 0174 45010000 		.4byte	.LASF21
  4570 0178 01       		.byte	0x1
  4571 0179 DA       		.byte	0xda
  4572 017a 76000000 		.4byte	0x76
@@ -5158,7 +5158,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 1
  4588 019a 75       		.byte	0x75
  4589 019b 00       		.sleb128 0
  4590 019c 40       		.byte	0x40
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 87
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccDkWbNc.s 			page 87
 
 
  4591 019d 25       		.byte	0x25
@@ -5216,9 +5216,9 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 1
  4643 01ed 0C       		.uleb128 0xc
  4644 01ee 6B000000 		.4byte	0x6b
  4645 01f2 0D       		.uleb128 0xd
- 4646 01f3 91030000 		.4byte	.LASF22
+ 4646 01f3 D5030000 		.4byte	.LASF22
  4647 01f7 01       		.byte	0x1
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 88
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccDkWbNc.s 			page 88
 
 
  4648 01f8 0801     		.2byte	0x108
@@ -5228,13 +5228,13 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 1
  4652 0203 9C       		.byte	0x9c
  4653 0204 8D020000 		.4byte	0x28d
  4654 0208 0E       		.uleb128 0xe
- 4655 0209 93010000 		.4byte	.LASF20
+ 4655 0209 90010000 		.4byte	.LASF20
  4656 020d 01       		.byte	0x1
  4657 020e 0801     		.2byte	0x108
  4658 0210 E7010000 		.4byte	0x1e7
  4659 0214 4D000000 		.4byte	.LLST2
  4660 0218 0E       		.uleb128 0xe
- 4661 0219 48010000 		.4byte	.LASF21
+ 4661 0219 45010000 		.4byte	.LASF21
  4662 021d 01       		.byte	0x1
  4663 021e 0801     		.2byte	0x108
  4664 0220 76000000 		.4byte	0x76
@@ -5278,7 +5278,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 1
  4702 025f 01       		.uleb128 0x1
  4703 0260 31       		.byte	0x31
  4704 0261 09       		.uleb128 0x9
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 89
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccDkWbNc.s 			page 89
 
 
  4705 0262 01       		.uleb128 0x1
@@ -5338,7 +5338,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 1
  4759 02cc 01       		.uleb128 0x1
  4760 02cd 50       		.byte	0x50
  4761 02ce 01       		.uleb128 0x1
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 90
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccDkWbNc.s 			page 90
 
 
  4762 02cf 30       		.byte	0x30
@@ -5398,7 +5398,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 1
  4816 0334 07       		.uleb128 0x7
  4817 0335 16000000 		.4byte	.LVL33
  4818 0339 B4000000 		.4byte	0xb4
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 91
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccDkWbNc.s 			page 91
 
 
  4819 033d 00       		.byte	0
@@ -5418,7 +5418,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 1
  4833 035a E7010000 		.4byte	0x1e7
  4834 035e 9A000000 		.4byte	.LLST4
  4835 0362 0A       		.uleb128 0xa
- 4836 0363 B8010000 		.4byte	.LASF27
+ 4836 0363 9E010000 		.4byte	.LASF27
  4837 0367 01       		.byte	0x1
  4838 0368 A3       		.byte	0xa3
  4839 0369 76000000 		.4byte	0x76
@@ -5430,7 +5430,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 1
  4845 0378 E7010000 		.4byte	0x1e7
  4846 037c DC000000 		.4byte	.LLST6
  4847 0380 0A       		.uleb128 0xa
- 4848 0381 C4010000 		.4byte	.LASF29
+ 4848 0381 AA010000 		.4byte	.LASF29
  4849 0385 01       		.byte	0x1
  4850 0386 A3       		.byte	0xa3
  4851 0387 76000000 		.4byte	0x76
@@ -5458,7 +5458,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 1
  4873 03b5 74       		.byte	0x74
  4874 03b6 00       		.sleb128 0
  4875 03b7 09       		.uleb128 0x9
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 92
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccDkWbNc.s 			page 92
 
 
  4876 03b8 01       		.uleb128 0x1
@@ -5472,7 +5472,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 1
  4884 03c3 16030000 		.4byte	0x316
  4885 03c7 00       		.byte	0
  4886 03c8 10       		.uleb128 0x10
- 4887 03c9 DB030000 		.4byte	.LASF30
+ 4887 03c9 1F040000 		.4byte	.LASF30
  4888 03cd 01       		.byte	0x1
  4889 03ce 17       		.byte	0x17
  4890 03cf 6B000000 		.4byte	0x6b
@@ -5488,7 +5488,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 1
  4900 03e5 03       		.byte	0x3
  4901 03e6 01000000 		.4byte	WaveDAC8_1_Wave2Chan
  4902 03ea 10       		.uleb128 0x10
- 4903 03eb 35010000 		.4byte	.LASF32
+ 4903 03eb 32010000 		.4byte	.LASF32
  4904 03ef 01       		.byte	0x1
  4905 03f0 19       		.byte	0x19
  4906 03f1 6B000000 		.4byte	0x6b
@@ -5496,7 +5496,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 1
  4908 03f6 03       		.byte	0x3
  4909 03f7 02000000 		.4byte	WaveDAC8_1_Wave1TD
  4910 03fb 10       		.uleb128 0x10
- 4911 03fc 90020000 		.4byte	.LASF33
+ 4911 03fc BA020000 		.4byte	.LASF33
  4912 0400 01       		.byte	0x1
  4913 0401 1A       		.byte	0x1a
  4914 0402 6B000000 		.4byte	0x6b
@@ -5518,11 +5518,11 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 1
  4930 0427 AD000000 		.4byte	0xad
  4931 042b 9F0F     		.2byte	0xf9f
  4932 042d 00       		.byte	0
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 93
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccDkWbNc.s 			page 93
 
 
  4933 042e 11       		.uleb128 0x11
- 4934 042f B9030000 		.4byte	.LASF35
+ 4934 042f FD030000 		.4byte	.LASF35
  4935 0433 01       		.byte	0x1
  4936 0434 14       		.byte	0x14
  4937 0435 3F040000 		.4byte	0x43f
@@ -5539,7 +5539,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 1
  4948 0452 63       		.byte	0x63
  4949 0453 00       		.byte	0
  4950 0454 11       		.uleb128 0x11
- 4951 0455 CA030000 		.4byte	.LASF36
+ 4951 0455 0E040000 		.4byte	.LASF36
  4952 0459 01       		.byte	0x1
  4953 045a 15       		.byte	0x15
  4954 045b 65040000 		.4byte	0x465
@@ -5553,7 +5553,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 1
  4962 046f 03       		.byte	0x3
  4963 0470 3A       		.byte	0x3a
  4964 0471 16       		.uleb128 0x16
- 4965 0472 1F020000 		.4byte	.LASF40
+ 4965 0472 05020000 		.4byte	.LASF40
  4966 0476 05       		.byte	0x5
  4967 0477 2A       		.byte	0x2a
  4968 0478 A1000000 		.4byte	0xa1
@@ -5564,7 +5564,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 1
  4973 0486 6B000000 		.4byte	0x6b
  4974 048a 00       		.byte	0
  4975 048b 18       		.uleb128 0x18
- 4976 048c B9020000 		.4byte	.LASF49
+ 4976 048c E3020000 		.4byte	.LASF49
  4977 0490 03       		.byte	0x3
  4978 0491 37       		.byte	0x37
  4979 0492 9C040000 		.4byte	0x49c
@@ -5572,18 +5572,18 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 1
  4981 0497 6B000000 		.4byte	0x6b
  4982 049b 00       		.byte	0
  4983 049c 15       		.uleb128 0x15
- 4984 049d E6010000 		.4byte	.LASF38
+ 4984 049d CC010000 		.4byte	.LASF38
  4985 04a1 04       		.byte	0x4
  4986 04a2 27       		.byte	0x27
  4987 04a3 15       		.uleb128 0x15
- 4988 04a4 A1010000 		.4byte	.LASF39
+ 4988 04a4 15010000 		.4byte	.LASF39
  4989 04a8 04       		.byte	0x4
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 94
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccDkWbNc.s 			page 94
 
 
  4990 04a9 28       		.byte	0x28
  4991 04aa 16       		.uleb128 0x16
- 4992 04ab 05040000 		.4byte	.LASF41
+ 4992 04ab 49040000 		.4byte	.LASF41
  4993 04af 05       		.byte	0x5
  4994 04b0 2B       		.byte	0x2b
  4995 04b1 A1000000 		.4byte	0xa1
@@ -5592,7 +5592,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 1
  4998 04ba 6B000000 		.4byte	0x6b
  4999 04be 00       		.byte	0
  5000 04bf 15       		.uleb128 0x15
- 5001 04c0 A3020000 		.4byte	.LASF42
+ 5001 04c0 CD020000 		.4byte	.LASF42
  5002 04c4 03       		.byte	0x3
  5003 04c5 34       		.byte	0x34
  5004 04c6 16       		.uleb128 0x16
@@ -5611,7 +5611,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 1
  5017 04e5 76000000 		.4byte	0x76
  5018 04e9 00       		.byte	0
  5019 04ea 16       		.uleb128 0x16
- 5020 04eb 69010000 		.4byte	.LASF44
+ 5020 04eb 66010000 		.4byte	.LASF44
  5021 04ef 05       		.byte	0x5
  5022 04f0 3C       		.byte	0x3c
  5023 04f1 A1000000 		.4byte	0xa1
@@ -5638,7 +5638,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 1
  5044 0527 17       		.uleb128 0x17
  5045 0528 76000000 		.4byte	0x76
  5046 052c 00       		.byte	0
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 95
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccDkWbNc.s 			page 95
 
 
  5047 052d 16       		.uleb128 0x16
@@ -5653,7 +5653,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 1
  5056 0542 6B000000 		.4byte	0x6b
  5057 0546 00       		.byte	0
  5058 0547 16       		.uleb128 0x16
- 5059 0548 34020000 		.4byte	.LASF47
+ 5059 0548 1A020000 		.4byte	.LASF47
  5060 054c 07       		.byte	0x7
  5061 054d 1E       		.byte	0x1e
  5062 054e 6B000000 		.4byte	0x6b
@@ -5668,11 +5668,11 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 1
  5071 0566 76000000 		.4byte	0x76
  5072 056a 00       		.byte	0
  5073 056b 15       		.uleb128 0x15
- 5074 056c 53010000 		.4byte	.LASF48
+ 5074 056c 50010000 		.4byte	.LASF48
  5075 0570 03       		.byte	0x3
  5076 0571 39       		.byte	0x39
  5077 0572 18       		.uleb128 0x18
- 5078 0573 15010000 		.4byte	.LASF50
+ 5078 0573 90030000 		.4byte	.LASF50
  5079 0577 03       		.byte	0x3
  5080 0578 35       		.byte	0x35
  5081 0579 83050000 		.4byte	0x583
@@ -5698,7 +5698,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 1
  5101 0000 01       		.uleb128 0x1
  5102 0001 11       		.uleb128 0x11
  5103 0002 01       		.byte	0x1
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 96
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccDkWbNc.s 			page 96
 
 
  5104 0003 25       		.uleb128 0x25
@@ -5758,7 +5758,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 1
  5158 0039 03       		.uleb128 0x3
  5159 003a 0E       		.uleb128 0xe
  5160 003b 3A       		.uleb128 0x3a
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 97
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccDkWbNc.s 			page 97
 
 
  5161 003c 0B       		.uleb128 0xb
@@ -5818,7 +5818,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 1
  5215 0079 00       		.byte	0
  5216 007a 02       		.uleb128 0x2
  5217 007b 18       		.uleb128 0x18
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 98
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccDkWbNc.s 			page 98
 
 
  5218 007c 9142     		.uleb128 0x2111
@@ -5878,7 +5878,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 1
  5272 00b3 9742     		.uleb128 0x2117
  5273 00b5 19       		.uleb128 0x19
  5274 00b6 01       		.uleb128 0x1
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 99
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccDkWbNc.s 			page 99
 
 
  5275 00b7 13       		.uleb128 0x13
@@ -5938,7 +5938,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 1
  5329 00ef 19       		.uleb128 0x19
  5330 00f0 02       		.uleb128 0x2
  5331 00f1 18       		.uleb128 0x18
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 100
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccDkWbNc.s 			page 100
 
 
  5332 00f2 00       		.byte	0
@@ -5998,7 +5998,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 1
  5386 0128 0B       		.uleb128 0xb
  5387 0129 3B       		.uleb128 0x3b
  5388 012a 0B       		.uleb128 0xb
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 101
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccDkWbNc.s 			page 101
 
 
  5389 012b 27       		.uleb128 0x27
@@ -6058,7 +6058,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 1
  5443 0161 00       		.byte	0
  5444 0162 00       		.byte	0
  5445              		.section	.debug_loc,"",%progbits
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 102
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccDkWbNc.s 			page 102
 
 
  5446              	.Ldebug_loc0:
@@ -6118,7 +6118,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 1
  5500 0081 0100     		.2byte	0x1
  5501 0083 51       		.byte	0x51
  5502 0084 0A000000 		.4byte	.LVL19
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 103
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccDkWbNc.s 			page 103
 
 
  5503 0088 40000000 		.4byte	.LFE6
@@ -6178,7 +6178,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 1
  5557 010d 0400     		.2byte	0x4
  5558 010f F3       		.byte	0xf3
  5559 0110 01       		.uleb128 0x1
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 104
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccDkWbNc.s 			page 104
 
 
  5560 0111 53       		.byte	0x53
@@ -6238,7 +6238,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 1
  5610 0000 57617665 		.ascii	"WaveDAC8_1_VDAC8_SetRange\000"
  5610      44414338 
  5610      5F315F56 
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 105
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccDkWbNc.s 			page 105
 
 
  5610      44414338 
@@ -6298,7 +6298,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 1
  5630 00bd 77617665 		.ascii	"wavePtr1\000"
  5630      50747231 
  5630      00
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 106
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccDkWbNc.s 			page 106
 
 
  5631              	.LASF28:
@@ -6322,235 +6322,236 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 1
  5638      61546441 
  5638      6C6C6F63 
  5638      61746500 
- 5639              	.LASF50:
- 5640 0115 57617665 		.ascii	"WaveDAC8_1_VDAC8_SetSpeed\000"
+ 5639              	.LASF39:
+ 5640 0115 57617665 		.ascii	"WaveDAC8_1_DacClk_Stop\000"
  5640      44414338 
- 5640      5F315F56 
- 5640      44414338 
- 5640      5F536574 
+ 5640      5F315F44 
+ 5640      6163436C 
+ 5640      6B5F5374 
  5641              	.LASF12:
- 5642 012f 666C6F61 		.ascii	"float\000"
+ 5642 012c 666C6F61 		.ascii	"float\000"
  5642      7400
  5643              	.LASF32:
- 5644 0135 57617665 		.ascii	"WaveDAC8_1_Wave1TD\000"
+ 5644 0132 57617665 		.ascii	"WaveDAC8_1_Wave1TD\000"
  5644      44414338 
  5644      5F315F57 
  5644      61766531 
  5644      544400
  5645              	.LASF21:
- 5646 0148 73616D70 		.ascii	"sampleSize\000"
+ 5646 0145 73616D70 		.ascii	"sampleSize\000"
  5646      6C655369 
  5646      7A6500
  5647              	.LASF48:
- 5648 0153 57617665 		.ascii	"WaveDAC8_1_VDAC8_Init\000"
+ 5648 0150 57617665 		.ascii	"WaveDAC8_1_VDAC8_Init\000"
  5648      44414338 
  5648      5F315F56 
  5648      44414338 
  5648      5F496E69 
  5649              	.LASF44:
- 5650 0169 4379446D 		.ascii	"CyDmaTdSetConfiguration\000"
+ 5650 0166 4379446D 		.ascii	"CyDmaTdSetConfiguration\000"
  5650      61546453 
  5650      6574436F 
  5650      6E666967 
  5650      75726174 
  5651              	.LASF5:
- 5652 0181 6C6F6E67 		.ascii	"long unsigned int\000"
+ 5652 017e 6C6F6E67 		.ascii	"long unsigned int\000"
  5652      20756E73 
  5652      69676E65 
  5652      6420696E 
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 107
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccDkWbNc.s 			page 107
 
 
  5652      7400
  5653              	.LASF20:
- 5654 0193 77617665 		.ascii	"wavePtr\000"
+ 5654 0190 77617665 		.ascii	"wavePtr\000"
  5654      50747200 
  5655              	.LASF9:
- 5656 019b 75696E74 		.ascii	"uint8\000"
+ 5656 0198 75696E74 		.ascii	"uint8\000"
  5656      3800
- 5657              	.LASF39:
- 5658 01a1 57617665 		.ascii	"WaveDAC8_1_DacClk_Stop\000"
- 5658      44414338 
- 5658      5F315F44 
- 5658      6163436C 
- 5658      6B5F5374 
- 5659              	.LASF27:
- 5660 01b8 73616D70 		.ascii	"sampleSize1\000"
+ 5657              	.LASF27:
+ 5658 019e 73616D70 		.ascii	"sampleSize1\000"
+ 5658      6C655369 
+ 5658      7A653100 
+ 5659              	.LASF29:
+ 5660 01aa 73616D70 		.ascii	"sampleSize2\000"
  5660      6C655369 
- 5660      7A653100 
- 5661              	.LASF29:
- 5662 01c4 73616D70 		.ascii	"sampleSize2\000"
- 5662      6C655369 
- 5662      7A653200 
- 5663              	.LASF19:
- 5664 01d0 57617665 		.ascii	"WaveDAC8_1_Wave1Setup\000"
+ 5660      7A653200 
+ 5661              	.LASF19:
+ 5662 01b6 57617665 		.ascii	"WaveDAC8_1_Wave1Setup\000"
+ 5662      44414338 
+ 5662      5F315F57 
+ 5662      61766531 
+ 5662      53657475 
+ 5663              	.LASF38:
+ 5664 01cc 57617665 		.ascii	"WaveDAC8_1_DacClk_Start\000"
  5664      44414338 
- 5664      5F315F57 
- 5664      61766531 
- 5664      53657475 
- 5665              	.LASF38:
- 5666 01e6 57617665 		.ascii	"WaveDAC8_1_DacClk_Start\000"
- 5666      44414338 
- 5666      5F315F44 
- 5666      6163436C 
- 5666      6B5F5374 
- 5667              	.LASF13:
- 5668 01fe 646F7562 		.ascii	"double\000"
- 5668      6C6500
- 5669              	.LASF18:
- 5670 0205 57617665 		.ascii	"WaveDAC8_1_Stop\000"
- 5670      44414338 
- 5670      5F315F53 
- 5670      746F7000 
- 5671              	.LASF2:
- 5672 0215 73686F72 		.ascii	"short int\000"
- 5672      7420696E 
- 5672      7400
- 5673              	.LASF40:
- 5674 021f 4379446D 		.ascii	"CyDmaChEnable\000"
- 5674      61436845 
- 5674      6E61626C 
- 5674      6500
- 5675              	.LASF10:
- 5676 022d 75696E74 		.ascii	"uint16\000"
- 5676      313600
- 5677              	.LASF47:
- 5678 0234 57617665 		.ascii	"WaveDAC8_1_Wave2_DMA_DmaInitialize\000"
- 5678      44414338 
- 5678      5F315F57 
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 108
+ 5664      5F315F44 
+ 5664      6163436C 
+ 5664      6B5F5374 
+ 5665              	.LASF13:
+ 5666 01e4 646F7562 		.ascii	"double\000"
+ 5666      6C6500
+ 5667              	.LASF18:
+ 5668 01eb 57617665 		.ascii	"WaveDAC8_1_Stop\000"
+ 5668      44414338 
+ 5668      5F315F53 
+ 5668      746F7000 
+ 5669              	.LASF2:
+ 5670 01fb 73686F72 		.ascii	"short int\000"
+ 5670      7420696E 
+ 5670      7400
+ 5671              	.LASF40:
+ 5672 0205 4379446D 		.ascii	"CyDmaChEnable\000"
+ 5672      61436845 
+ 5672      6E61626C 
+ 5672      6500
+ 5673              	.LASF10:
+ 5674 0213 75696E74 		.ascii	"uint16\000"
+ 5674      313600
+ 5675              	.LASF47:
+ 5676 021a 57617665 		.ascii	"WaveDAC8_1_Wave2_DMA_DmaInitialize\000"
+ 5676      44414338 
+ 5676      5F315F57 
+ 5676      61766532 
+ 5676      5F444D41 
+ 5677              	.LASF11:
+ 5678 023d 75696E74 		.ascii	"uint32\000"
+ 5678      333200
+ 5679              	.LASF1:
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccDkWbNc.s 			page 108
 
 
- 5678      61766532 
- 5678      5F444D41 
- 5679              	.LASF11:
- 5680 0257 75696E74 		.ascii	"uint32\000"
- 5680      333200
- 5681              	.LASF1:
- 5682 025e 756E7369 		.ascii	"unsigned char\000"
+ 5680 0244 756E7369 		.ascii	"unsigned char\000"
+ 5680      676E6564 
+ 5680      20636861 
+ 5680      7200
+ 5681              	.LASF8:
+ 5682 0252 756E7369 		.ascii	"unsigned int\000"
  5682      676E6564 
- 5682      20636861 
- 5682      7200
- 5683              	.LASF8:
- 5684 026c 756E7369 		.ascii	"unsigned int\000"
- 5684      676E6564 
- 5684      20696E74 
- 5684      00
- 5685              	.LASF7:
- 5686 0279 6C6F6E67 		.ascii	"long long unsigned int\000"
- 5686      206C6F6E 
- 5686      6720756E 
- 5686      7369676E 
- 5686      65642069 
- 5687              	.LASF33:
- 5688 0290 57617665 		.ascii	"WaveDAC8_1_Wave2TD\000"
- 5688      44414338 
- 5688      5F315F57 
- 5688      61766532 
- 5688      544400
- 5689              	.LASF42:
- 5690 02a3 57617665 		.ascii	"WaveDAC8_1_VDAC8_Stop\000"
- 5690      44414338 
- 5690      5F315F56 
- 5690      44414338 
- 5690      5F53746F 
- 5691              	.LASF49:
- 5692 02b9 57617665 		.ascii	"WaveDAC8_1_VDAC8_SetValue\000"
- 5692      44414338 
- 5692      5F315F56 
- 5692      44414338 
- 5692      5F536574 
- 5693              	.LASF52:
- 5694 02d3 474E5520 		.ascii	"GNU C 4.8.4 20140526 (release) [ARM/embedded-4_8-br"
- 5694      4320342E 
- 5694      382E3420 
- 5694      32303134 
- 5694      30353236 
- 5695 0306 616E6368 		.ascii	"anch revision 211358] -mcpu=cortex-m3 -mthumb -g -O"
- 5695      20726576 
- 5695      6973696F 
- 5695      6E203231 
- 5695      31333538 
- 5696 0339 67202D66 		.ascii	"g -ffunction-sections\000"
- 5696      66756E63 
- 5696      74696F6E 
- 5696      2D736563 
- 5696      74696F6E 
- 5697              	.LASF16:
- 5698 034f 73697A65 		.ascii	"sizetype\000"
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 109
+ 5682      20696E74 
+ 5682      00
+ 5683              	.LASF7:
+ 5684 025f 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 5684      206C6F6E 
+ 5684      6720756E 
+ 5684      7369676E 
+ 5684      65642069 
+ 5685              	.LASF54:
+ 5686 0276 433A5C55 		.ascii	"C:\\Users\\JohnP\\Desktop\\embedded\\trunk\\CE4920P"
+ 5686      73657273 
+ 5686      5C4A6F68 
+ 5686      6E505C44 
+ 5686      65736B74 
+ 5687 02a3 726F6A65 		.ascii	"roject1\\Design01.cydsn\000"
+ 5687      6374315C 
+ 5687      44657369 
+ 5687      676E3031 
+ 5687      2E637964 
+ 5688              	.LASF33:
+ 5689 02ba 57617665 		.ascii	"WaveDAC8_1_Wave2TD\000"
+ 5689      44414338 
+ 5689      5F315F57 
+ 5689      61766532 
+ 5689      544400
+ 5690              	.LASF42:
+ 5691 02cd 57617665 		.ascii	"WaveDAC8_1_VDAC8_Stop\000"
+ 5691      44414338 
+ 5691      5F315F56 
+ 5691      44414338 
+ 5691      5F53746F 
+ 5692              	.LASF49:
+ 5693 02e3 57617665 		.ascii	"WaveDAC8_1_VDAC8_SetValue\000"
+ 5693      44414338 
+ 5693      5F315F56 
+ 5693      44414338 
+ 5693      5F536574 
+ 5694              	.LASF52:
+ 5695 02fd 474E5520 		.ascii	"GNU C 4.8.4 20140526 (release) [ARM/embedded-4_8-br"
+ 5695      4320342E 
+ 5695      382E3420 
+ 5695      32303134 
+ 5695      30353236 
+ 5696 0330 616E6368 		.ascii	"anch revision 211358] -mcpu=cortex-m3 -mthumb -g -O"
+ 5696      20726576 
+ 5696      6973696F 
+ 5696      6E203231 
+ 5696      31333538 
+ 5697 0363 67202D66 		.ascii	"g -ffunction-sections\000"
+ 5697      66756E63 
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccDkWbNc.s 			page 109
 
 
- 5698      74797065 
- 5698      00
- 5699              	.LASF6:
- 5700 0358 6C6F6E67 		.ascii	"long long int\000"
- 5700      206C6F6E 
- 5700      6720696E 
- 5700      7400
- 5701              	.LASF14:
- 5702 0366 63686172 		.ascii	"char\000"
- 5702      00
- 5703              	.LASF53:
- 5704 036b 2E5C4765 		.ascii	".\\Generated_Source\\PSoC5\\WaveDAC8_1.c\000"
- 5704      6E657261 
- 5704      7465645F 
- 5704      536F7572 
- 5704      63655C50 
- 5705              	.LASF22:
- 5706 0391 57617665 		.ascii	"WaveDAC8_1_Wave2Setup\000"
- 5706      44414338 
- 5706      5F315F57 
- 5706      61766532 
- 5706      53657475 
- 5707              	.LASF17:
- 5708 03a7 57617665 		.ascii	"WaveDAC8_1_Enable\000"
- 5708      44414338 
- 5708      5F315F45 
- 5708      6E61626C 
- 5708      6500
- 5709              	.LASF35:
- 5710 03b9 57617665 		.ascii	"WaveDAC8_1_wave1\000"
- 5710      44414338 
- 5710      5F315F77 
- 5710      61766531 
- 5710      00
- 5711              	.LASF36:
- 5712 03ca 57617665 		.ascii	"WaveDAC8_1_wave2\000"
- 5712      44414338 
- 5712      5F315F77 
- 5712      61766532 
- 5712      00
- 5713              	.LASF30:
- 5714 03db 57617665 		.ascii	"WaveDAC8_1_Wave1Chan\000"
- 5714      44414338 
- 5714      5F315F57 
- 5714      61766531 
- 5714      4368616E 
- 5715              	.LASF4:
- 5716 03f0 6C6F6E67 		.ascii	"long int\000"
- 5716      20696E74 
- 5716      00
- 5717              	.LASF0:
- 5718 03f9 7369676E 		.ascii	"signed char\000"
- 5718      65642063 
- 5718      68617200 
- 5719              	.LASF41:
- 5720 0405 4379446D 		.ascii	"CyDmaChDisable\000"
- 5720      61436844 
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccg8HZci.s 			page 110
+ 5697      74696F6E 
+ 5697      2D736563 
+ 5697      74696F6E 
+ 5698              	.LASF16:
+ 5699 0379 73697A65 		.ascii	"sizetype\000"
+ 5699      74797065 
+ 5699      00
+ 5700              	.LASF6:
+ 5701 0382 6C6F6E67 		.ascii	"long long int\000"
+ 5701      206C6F6E 
+ 5701      6720696E 
+ 5701      7400
+ 5702              	.LASF50:
+ 5703 0390 57617665 		.ascii	"WaveDAC8_1_VDAC8_SetSpeed\000"
+ 5703      44414338 
+ 5703      5F315F56 
+ 5703      44414338 
+ 5703      5F536574 
+ 5704              	.LASF14:
+ 5705 03aa 63686172 		.ascii	"char\000"
+ 5705      00
+ 5706              	.LASF53:
+ 5707 03af 2E5C4765 		.ascii	".\\Generated_Source\\PSoC5\\WaveDAC8_1.c\000"
+ 5707      6E657261 
+ 5707      7465645F 
+ 5707      536F7572 
+ 5707      63655C50 
+ 5708              	.LASF22:
+ 5709 03d5 57617665 		.ascii	"WaveDAC8_1_Wave2Setup\000"
+ 5709      44414338 
+ 5709      5F315F57 
+ 5709      61766532 
+ 5709      53657475 
+ 5710              	.LASF17:
+ 5711 03eb 57617665 		.ascii	"WaveDAC8_1_Enable\000"
+ 5711      44414338 
+ 5711      5F315F45 
+ 5711      6E61626C 
+ 5711      6500
+ 5712              	.LASF35:
+ 5713 03fd 57617665 		.ascii	"WaveDAC8_1_wave1\000"
+ 5713      44414338 
+ 5713      5F315F77 
+ 5713      61766531 
+ 5713      00
+ 5714              	.LASF36:
+ 5715 040e 57617665 		.ascii	"WaveDAC8_1_wave2\000"
+ 5715      44414338 
+ 5715      5F315F77 
+ 5715      61766532 
+ 5715      00
+ 5716              	.LASF30:
+ 5717 041f 57617665 		.ascii	"WaveDAC8_1_Wave1Chan\000"
+ 5717      44414338 
+ 5717      5F315F57 
+ 5717      61766531 
+ 5717      4368616E 
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccDkWbNc.s 			page 110
 
 
- 5720      69736162 
- 5720      6C6500
- 5721              	.LASF54:
- 5722 0414 433A5C72 		.ascii	"C:\\repositories\\embedded\\trunk\\CE4920Project1\\"
- 5722      65706F73 
- 5722      69746F72 
- 5722      6965735C 
- 5722      656D6265 
- 5723 0442 44657369 		.ascii	"Design01.cydsn\000"
- 5723      676E3031 
- 5723      2E637964 
- 5723      736E00
+ 5718              	.LASF4:
+ 5719 0434 6C6F6E67 		.ascii	"long int\000"
+ 5719      20696E74 
+ 5719      00
+ 5720              	.LASF0:
+ 5721 043d 7369676E 		.ascii	"signed char\000"
+ 5721      65642063 
+ 5721      68617200 
+ 5722              	.LASF41:
+ 5723 0449 4379446D 		.ascii	"CyDmaChDisable\000"
+ 5723      61436844 
+ 5723      69736162 
+ 5723      6C6500
  5724              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.8.4 20140526 (release) [ARM/embedded-4_8-br

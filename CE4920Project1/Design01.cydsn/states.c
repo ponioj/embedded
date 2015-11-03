@@ -109,7 +109,6 @@ STATE State_profile_selection(){
 STATE State_moving(){
     Prev_state = STATE_MOVING;
     Detect_heartrate();
-    /*
     int i;
     for (i=0; i<9; i++){ 
         movingAverage[i]=movingAverage[i+1];
@@ -126,7 +125,7 @@ STATE State_moving(){
         }
         return STATE_HEARTRATE_CHANGE;
     }
-    */
+    
     return currentState;   
 }
 

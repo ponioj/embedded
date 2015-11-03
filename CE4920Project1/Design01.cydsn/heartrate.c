@@ -22,9 +22,9 @@ float Detect_heartrate(void) {
     heartrate = (600000/(endCounts-startCounts));
     LCD_Position(1,0);
     LCD_PrintU32Number(heartrate);
-    LCD_PrintString("   ");
+    LCD_PrintString("      ");
 //    TERMINAL_WriteNumber(heartrate);
-    Move_motor(heartrate);
+//    Move_motor(heartrate);
     return heartrate;
 }
 

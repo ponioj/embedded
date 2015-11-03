@@ -1,10 +1,9 @@
 -- Project:   Design01
--- Generated: 11/03/2015 09:57:08
+-- Generated: 11/03/2015 12:23:00
 -- PSoC Creator  3.2 SP1
 
 ENTITY Design01 IS
     PORT(
-        HEARTRATE_ANALOG_IN(0)_PAD : INOUT std_ulogic;
         PWM_Output(0)_PAD : OUT std_ulogic;
         Pin_1(0)_PAD : OUT std_ulogic;
         STOP_REQUEST(0)_PAD : IN std_ulogic;
@@ -28,6 +27,7 @@ END Design01;
 
 ARCHITECTURE __DEFAULT__ OF Design01 IS
     SIGNAL ClockBlock_100k : bit;
+    SIGNAL ClockBlock_100k__SYNC_OUT : bit;
     SIGNAL ClockBlock_1k : bit;
     SIGNAL ClockBlock_32k : bit;
     SIGNAL ClockBlock_BUS_CLK : bit;
@@ -283,13 +283,13 @@ ARCHITECTURE __DEFAULT__ OF Design01 IS
     ATTRIBUTE lib_model OF Net_1542 : LABEL IS "macrocell1";
     ATTRIBUTE lib_model OF Net_1668 : LABEL IS "macrocell2";
     ATTRIBUTE lib_model OF PWM_Output(0) : LABEL IS "iocell2";
-    ATTRIBUTE Location OF PWM_Output(0) : LABEL IS "P4[5]";
+    ATTRIBUTE Location OF PWM_Output(0) : LABEL IS "P6[6]";
     ATTRIBUTE lib_model OF Pin_1(0) : LABEL IS "iocell3";
     ATTRIBUTE Location OF Pin_1(0) : LABEL IS "P6[3]";
     ATTRIBUTE lib_model OF STOP_REQUEST(0) : LABEL IS "iocell4";
     ATTRIBUTE Location OF STOP_REQUEST(0) : LABEL IS "P15[5]";
     ATTRIBUTE lib_model OF Speaker_Output(0) : LABEL IS "iocell5";
-    ATTRIBUTE Location OF Speaker_Output(0) : LABEL IS "P6[6]";
+    ATTRIBUTE Location OF Speaker_Output(0) : LABEL IS "P6[0]";
     ATTRIBUTE Location OF \CapSense:BufCH0\ : LABEL IS "F(CsAbuf,0)";
     ATTRIBUTE lib_model OF \CapSense:ClockGen:SyncCtrl:CtrlReg\ : LABEL IS "controlcell1";
     ATTRIBUTE lib_model OF \CapSense:ClockGen:UDB:PrescalerDp:u0\ : LABEL IS "datapathcell1";
@@ -307,9 +307,9 @@ ARCHITECTURE __DEFAULT__ OF Design01 IS
     ATTRIBUTE lib_model OF \CapSense:ClockGen:tmp_ppulse_udb\ : LABEL IS "macrocell12";
     ATTRIBUTE lib_model OF \CapSense:CmodCH0(0)\ : LABEL IS "iocell6";
     ATTRIBUTE Location OF \CapSense:CmodCH0(0)\ : LABEL IS "P6[4]";
-    ATTRIBUTE Location OF \CapSense:CompCH0:ctComp\ : LABEL IS "F(Comparator,2)";
+    ATTRIBUTE Location OF \CapSense:CompCH0:ctComp\ : LABEL IS "F(Comparator,1)";
     ATTRIBUTE lib_model OF \CapSense:IdacCH0:Net_123\ : LABEL IS "macrocell13";
-    ATTRIBUTE Location OF \CapSense:IdacCH0:viDAC8\ : LABEL IS "F(VIDAC,0)";
+    ATTRIBUTE Location OF \CapSense:IdacCH0:viDAC8\ : LABEL IS "F(VIDAC,3)";
     ATTRIBUTE lib_model OF \CapSense:Ioff_CH0\ : LABEL IS "macrocell14";
     ATTRIBUTE lib_model OF \CapSense:MeasureCH0:UDB:Counter:u0\ : LABEL IS "datapathcell4";
     ATTRIBUTE lib_model OF \CapSense:MeasureCH0:UDB:Window:u0\ : LABEL IS "datapathcell5";
@@ -845,6 +845,16 @@ BEGIN
             dclk_glb_2 => \WaveDAC8_1:Net_279\,
             dclk_2 => \WaveDAC8_1:Net_279_local\);
 
+    ClockBlock_100k__SYNC:synccell
+        GENERIC MAP(
+            clk_inv => '0',
+            clken_mode => 1)
+        PORT MAP(
+            in => ClockBlock_100k,
+            out => ClockBlock_100k__SYNC_OUT,
+            clock => ClockBlock_BUS_CLK,
+            clk_en => open);
+
     Compint:interrupt
         GENERIC MAP(
             int_type => "00")
@@ -933,7 +943,6 @@ BEGIN
         PORT MAP(
             pa_out => HEARTRATE_ANALOG_IN(0)__PA,
             oe => open,
-            pad_in => HEARTRATE_ANALOG_IN(0)_PAD,
             in_clock => open,
             in_clock_en => '1',
             in_reset => '0',
@@ -955,9 +964,11 @@ BEGIN
         GENERIC MAP(
             eqn_main => "(main_0)",
             clk_inv => '0',
-            clken_mode => 1)
+            clken_inv => '0',
+            clken_mode => 2)
         PORT MAP(
             q => Net_1668,
+            clk_en => ClockBlock_100k__SYNC_OUT,
             clock_0 => ClockBlock_BUS_CLK,
             main_0 => \PWM:PWMUDB:pwm_i\);
 
@@ -2803,9 +2814,11 @@ BEGIN
         GENERIC MAP(
             eqn_main => "(main_0)",
             clk_inv => '0',
-            clken_mode => 1)
+            clken_inv => '0',
+            clken_mode => 2)
         PORT MAP(
             q => \PWM:PWMUDB:dith_count_0\,
+            clk_en => ClockBlock_100k__SYNC_OUT,
             clock_0 => ClockBlock_BUS_CLK,
             main_0 => \PWM:PWMUDB:dith_count_0\\D\);
 
@@ -2823,9 +2836,11 @@ BEGIN
         GENERIC MAP(
             eqn_main => "(main_0)",
             clk_inv => '0',
-            clken_mode => 1)
+            clken_inv => '0',
+            clken_mode => 2)
         PORT MAP(
             q => \PWM:PWMUDB:dith_count_1\,
+            clk_en => ClockBlock_100k__SYNC_OUT,
             clock_0 => ClockBlock_BUS_CLK,
             main_0 => \PWM:PWMUDB:dith_count_1\\D\);
 
@@ -2847,7 +2862,8 @@ BEGIN
             cy_force_order => 1,
             cy_init_value => "00000000",
             clk_inv => '0',
-            clken_mode => 1)
+            clken_inv => '0',
+            clken_mode => 2)
         PORT MAP(
             clock => ClockBlock_BUS_CLK,
             control_7 => \PWM:PWMUDB:control_7\,
@@ -2858,15 +2874,18 @@ BEGIN
             control_2 => \PWM:PWMUDB:control_2\,
             control_1 => \PWM:PWMUDB:control_1\,
             control_0 => \PWM:PWMUDB:control_0\,
+            clk_en => ClockBlock_100k__SYNC_OUT,
             busclk => ClockBlock_BUS_CLK);
 
     \PWM:PWMUDB:ltch_kill_reg\:macrocell
         GENERIC MAP(
             eqn_main => "(main_0)",
             clk_inv => '0',
-            clken_mode => 1)
+            clken_inv => '0',
+            clken_mode => 2)
         PORT MAP(
             q => \PWM:PWMUDB:ltch_kill_reg\,
+            clk_en => ClockBlock_100k__SYNC_OUT,
             clock_0 => ClockBlock_BUS_CLK,
             main_0 => \PWM:PWMUDB:ltch_kill_reg\\D\);
 
@@ -2898,9 +2917,11 @@ BEGIN
         GENERIC MAP(
             eqn_main => "(main_0)",
             clk_inv => '0',
-            clken_mode => 1)
+            clken_inv => '0',
+            clken_mode => 2)
         PORT MAP(
             q => \PWM:PWMUDB:runmode_enable\,
+            clk_en => ClockBlock_100k__SYNC_OUT,
             clock_0 => ClockBlock_BUS_CLK,
             main_0 => \PWM:PWMUDB:runmode_enable\\D\);
 
@@ -2938,11 +2959,13 @@ BEGIN
             uses_p_in => '0',
             uses_p_out => '0',
             clk_inv => '0',
-            clken_mode => 1)
+            clken_inv => '0',
+            clken_mode => 2)
         PORT MAP(
             clock => ClockBlock_BUS_CLK,
             cs_addr_2 => \PWM:PWMUDB:tc_i\,
             cs_addr_1 => \PWM:PWMUDB:runmode_enable\,
+            clk_en => ClockBlock_100k__SYNC_OUT,
             busclk => ClockBlock_BUS_CLK,
             ce0 => \PWM:PWMUDB:sP16:pwmdp:u0.ce0__sig\,
             cl0 => \PWM:PWMUDB:sP16:pwmdp:u0.cl0__sig\,
@@ -2984,7 +3007,8 @@ BEGIN
             uses_p_in => '0',
             uses_p_out => '0',
             clk_inv => '0',
-            clken_mode => 1)
+            clken_inv => '0',
+            clken_mode => 2)
         PORT MAP(
             clock => ClockBlock_BUS_CLK,
             cs_addr_2 => \PWM:PWMUDB:tc_i\,
@@ -2992,6 +3016,7 @@ BEGIN
             cl0_comb => \PWM:PWMUDB:cmp1_less\,
             z0_comb => \PWM:PWMUDB:tc_i\,
             busclk => ClockBlock_BUS_CLK,
+            clk_en => ClockBlock_100k__SYNC_OUT,
             ce0i => \PWM:PWMUDB:sP16:pwmdp:u0.ce0__sig\,
             cl0i => \PWM:PWMUDB:sP16:pwmdp:u0.cl0__sig\,
             z0i => \PWM:PWMUDB:sP16:pwmdp:u0.z0__sig\,
@@ -3010,9 +3035,11 @@ BEGIN
         GENERIC MAP(
             eqn_main => "(main_0)",
             clk_inv => '0',
-            clken_mode => 1)
+            clken_inv => '0',
+            clken_mode => 2)
         PORT MAP(
             q => \PWM:PWMUDB:sc_kill_tmp\,
+            clk_en => ClockBlock_100k__SYNC_OUT,
             clock_0 => ClockBlock_BUS_CLK,
             main_0 => \PWM:PWMUDB:sc_kill_tmp\\D\);
 
@@ -3028,9 +3055,11 @@ BEGIN
         GENERIC MAP(
             eqn_main => "(main_0)",
             clk_inv => '0',
-            clken_mode => 1)
+            clken_inv => '0',
+            clken_mode => 2)
         PORT MAP(
             q => \PWM:PWMUDB:tc_i_reg\,
+            clk_en => ClockBlock_100k__SYNC_OUT,
             clock_0 => ClockBlock_BUS_CLK,
             main_0 => \PWM:PWMUDB:tc_i_reg\\D\);
 

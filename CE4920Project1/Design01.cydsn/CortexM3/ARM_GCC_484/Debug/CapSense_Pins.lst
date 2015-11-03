@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cccRzJae.s 			page 1
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cceDXFeS.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cccRzJae.s 			page 1
   29:.\Generated_Source\PSoC5/CapSense_Pins.c **** *  mode: Desired drive mode.
   30:.\Generated_Source\PSoC5/CapSense_Pins.c **** *
   31:.\Generated_Source\PSoC5/CapSense_Pins.c **** * Return: 
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cccRzJae.s 			page 2
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cceDXFeS.s 			page 2
 
 
   32:.\Generated_Source\PSoC5/CapSense_Pins.c **** *  None
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cccRzJae.s 			page 1
   69 0048 0243     		orrs	r2, r2, r0
   70 004a 1A70     		strb	r2, [r3]
   44:.\Generated_Source\PSoC5/CapSense_Pins.c ****     CyPins_SetPinDriveMode(CapSense_PortCH0__LinearSlider0_e4__LS, mode);
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cccRzJae.s 			page 3
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cceDXFeS.s 			page 3
 
 
   71              		.loc 1 44 0
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cccRzJae.s 			page 1
  101 0002 1A78     		ldrb	r2, [r3]	@ zero_extendqisi2
  102 0004 02F0F102 		and	r2, r2, #241
  103 0008 00F00E00 		and	r0, r0, #14
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cccRzJae.s 			page 4
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cceDXFeS.s 			page 4
 
 
  104              	.LVL3:
@@ -205,14 +205,14 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cccRzJae.s 			page 1
  125 000c D1000000 		.4byte	.LASF16
  126 0010 01       		.byte	0x1
  127 0011 83000000 		.4byte	.LASF17
- 128 0015 62010000 		.4byte	.LASF18
+ 128 0015 52010000 		.4byte	.LASF18
  129 0019 00000000 		.4byte	.Ldebug_ranges0+0
  130 001d 00000000 		.4byte	0
  131 0021 00000000 		.4byte	.Ldebug_line0
  132 0025 02       		.uleb128 0x2
  133 0026 01       		.byte	0x1
  134 0027 06       		.byte	0x6
- 135 0028 A5010000 		.4byte	.LASF0
+ 135 0028 AC010000 		.4byte	.LASF0
  136 002c 02       		.uleb128 0x2
  137 002d 01       		.byte	0x1
  138 002e 08       		.byte	0x8
@@ -220,7 +220,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cccRzJae.s 			page 1
  140 0033 02       		.uleb128 0x2
  141 0034 02       		.byte	0x2
  142 0035 05       		.byte	0x5
- 143 0036 B7010000 		.4byte	.LASF2
+ 143 0036 BE010000 		.4byte	.LASF2
  144 003a 02       		.uleb128 0x2
  145 003b 02       		.byte	0x2
  146 003c 07       		.byte	0x7
@@ -228,7 +228,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cccRzJae.s 			page 1
  148 0041 02       		.uleb128 0x2
  149 0042 04       		.byte	0x4
  150 0043 05       		.byte	0x5
- 151 0044 52010000 		.4byte	.LASF4
+ 151 0044 96010000 		.4byte	.LASF4
  152 0048 02       		.uleb128 0x2
  153 0049 04       		.byte	0x4
  154 004a 07       		.byte	0x7
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cccRzJae.s 			page 1
  158 0051 05       		.byte	0x5
  159 0052 00000000 		.4byte	.LASF6
  160 0056 02       		.uleb128 0x2
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cccRzJae.s 			page 5
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cceDXFeS.s 			page 5
 
 
  161 0057 08       		.byte	0x8
@@ -253,24 +253,24 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cccRzJae.s 			page 1
  170 0066 07       		.byte	0x7
  171 0067 21000000 		.4byte	.LASF8
  172 006b 04       		.uleb128 0x4
- 173 006c 9F010000 		.4byte	.LASF12
+ 173 006c A6010000 		.4byte	.LASF12
  174 0070 02       		.byte	0x2
  175 0071 B4       		.byte	0xb4
  176 0072 2C000000 		.4byte	0x2c
  177 0076 02       		.uleb128 0x2
  178 0077 04       		.byte	0x4
  179 0078 04       		.byte	0x4
- 180 0079 B1010000 		.4byte	.LASF9
+ 180 0079 B8010000 		.4byte	.LASF9
  181 007d 02       		.uleb128 0x2
  182 007e 08       		.byte	0x8
  183 007f 04       		.byte	0x4
- 184 0080 5B010000 		.4byte	.LASF10
+ 184 0080 9F010000 		.4byte	.LASF10
  185 0084 02       		.uleb128 0x2
  186 0085 01       		.byte	0x1
  187 0086 08       		.byte	0x8
  188 0087 4D010000 		.4byte	.LASF11
  189 008b 05       		.uleb128 0x5
- 190 008c C1010000 		.4byte	.LASF13
+ 190 008c C8010000 		.4byte	.LASF13
  191 0090 02       		.byte	0x2
  192 0091 5E01     		.2byte	0x15e
  193 0093 97000000 		.4byte	0x97
@@ -279,7 +279,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cccRzJae.s 			page 1
  196 009c 02       		.uleb128 0x2
  197 009d 04       		.byte	0x4
  198 009e 07       		.byte	0x7
- 199 009f C6010000 		.4byte	.LASF14
+ 199 009f CD010000 		.4byte	.LASF14
  200 00a3 07       		.uleb128 0x7
  201 00a4 2E000000 		.4byte	.LASF19
  202 00a8 01       		.byte	0x1
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cccRzJae.s 			page 1
  215 00c7 00       		.byte	0
  216 00c8 09       		.uleb128 0x9
  217 00c9 53000000 		.4byte	.LASF20
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cccRzJae.s 			page 6
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cceDXFeS.s 			page 6
 
 
  218 00cd 01       		.byte	0x1
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cccRzJae.s 			page 1
  272 0026 08       		.uleb128 0x8
  273 0027 00       		.byte	0
  274 0028 00       		.byte	0
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cccRzJae.s 			page 7
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cceDXFeS.s 			page 7
 
 
  275 0029 04       		.uleb128 0x4
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cccRzJae.s 			page 1
  329 0060 01       		.uleb128 0x1
  330 0061 13       		.uleb128 0x13
  331 0062 00       		.byte	0
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cccRzJae.s 			page 8
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cceDXFeS.s 			page 8
 
 
  332 0063 00       		.byte	0
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cccRzJae.s 			page 1
  386 0019 00000000 		.4byte	0
  387 001d 00000000 		.4byte	0
  388              	.LLST1:
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cccRzJae.s 			page 9
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cceDXFeS.s 			page 9
 
 
  389 0021 00000000 		.4byte	.LVL2
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cccRzJae.s 			page 1
  432 0021 756E7369 		.ascii	"unsigned int\000"
  432      676E6564 
  432      20696E74 
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cccRzJae.s 			page 10
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cceDXFeS.s 			page 10
 
 
  432      00
@@ -598,46 +598,47 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cccRzJae.s 			page 1
  450      74696F6E 
  451              	.LASF11:
  452 014d 63686172 		.ascii	"char\000"
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cccRzJae.s 			page 11
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cceDXFeS.s 			page 11
 
 
  452      00
- 453              	.LASF4:
- 454 0152 6C6F6E67 		.ascii	"long int\000"
- 454      20696E74 
- 454      00
- 455              	.LASF10:
- 456 015b 646F7562 		.ascii	"double\000"
- 456      6C6500
- 457              	.LASF18:
- 458 0162 433A5C72 		.ascii	"C:\\repositories\\embedded\\trunk\\CE4920Project1\\"
- 458      65706F73 
- 458      69746F72 
- 458      6965735C 
- 458      656D6265 
- 459 0190 44657369 		.ascii	"Design01.cydsn\000"
- 459      676E3031 
- 459      2E637964 
- 459      736E00
+ 453              	.LASF18:
+ 454 0152 433A5C55 		.ascii	"C:\\Users\\JohnP\\Desktop\\embedded\\trunk\\CE4920P"
+ 454      73657273 
+ 454      5C4A6F68 
+ 454      6E505C44 
+ 454      65736B74 
+ 455 017f 726F6A65 		.ascii	"roject1\\Design01.cydsn\000"
+ 455      6374315C 
+ 455      44657369 
+ 455      676E3031 
+ 455      2E637964 
+ 456              	.LASF4:
+ 457 0196 6C6F6E67 		.ascii	"long int\000"
+ 457      20696E74 
+ 457      00
+ 458              	.LASF10:
+ 459 019f 646F7562 		.ascii	"double\000"
+ 459      6C6500
  460              	.LASF12:
- 461 019f 75696E74 		.ascii	"uint8\000"
+ 461 01a6 75696E74 		.ascii	"uint8\000"
  461      3800
  462              	.LASF0:
- 463 01a5 7369676E 		.ascii	"signed char\000"
+ 463 01ac 7369676E 		.ascii	"signed char\000"
  463      65642063 
  463      68617200 
  464              	.LASF9:
- 465 01b1 666C6F61 		.ascii	"float\000"
+ 465 01b8 666C6F61 		.ascii	"float\000"
  465      7400
  466              	.LASF2:
- 467 01b7 73686F72 		.ascii	"short int\000"
+ 467 01be 73686F72 		.ascii	"short int\000"
  467      7420696E 
  467      7400
  468              	.LASF13:
- 469 01c1 72656738 		.ascii	"reg8\000"
+ 469 01c8 72656738 		.ascii	"reg8\000"
  469      00
  470              	.LASF14:
- 471 01c6 73697A65 		.ascii	"sizetype\000"
+ 471 01cd 73697A65 		.ascii	"sizetype\000"
  471      74797065 
  471      00
  472              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.8.4 20140526 (release) [ARM/embedded-4_8-br

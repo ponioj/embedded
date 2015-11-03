@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccIQbr49.s 			page 1
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccmSbBhh.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccIQbr49.s 			page 1
   29:.\Generated_Source\PSoC5/WaveDAC8_1_VDAC8_PM.c **** *
   30:.\Generated_Source\PSoC5/WaveDAC8_1_VDAC8_PM.c **** * Parameters:  
   31:.\Generated_Source\PSoC5/WaveDAC8_1_VDAC8_PM.c **** *  void  
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccIQbr49.s 			page 2
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccmSbBhh.s 			page 2
 
 
   32:.\Generated_Source\PSoC5/WaveDAC8_1_VDAC8_PM.c **** *
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccIQbr49.s 			page 1
   52:.\Generated_Source\PSoC5/WaveDAC8_1_VDAC8_PM.c **** *
   53:.\Generated_Source\PSoC5/WaveDAC8_1_VDAC8_PM.c **** * Parameters:  
   54:.\Generated_Source\PSoC5/WaveDAC8_1_VDAC8_PM.c **** *  void
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccIQbr49.s 			page 3
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccmSbBhh.s 			page 3
 
 
   55:.\Generated_Source\PSoC5/WaveDAC8_1_VDAC8_PM.c **** *
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccIQbr49.s 			page 1
   97              	.L5:
   98 0038 7047     		bx	lr
   99              	.L9:
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccIQbr49.s 			page 4
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccmSbBhh.s 			page 4
 
 
  100 003a 00BF     		.align	2
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccIQbr49.s 			page 1
  128 0006 13F0040F 		tst	r3, #4
  129 000a 03D0     		beq	.L11
   99:.\Generated_Source\PSoC5/WaveDAC8_1_VDAC8_PM.c ****     {
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccIQbr49.s 			page 5
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccmSbBhh.s 			page 5
 
 
  100:.\Generated_Source\PSoC5/WaveDAC8_1_VDAC8_PM.c ****         /* VDAC8 is enabled */
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccIQbr49.s 			page 1
  120:.\Generated_Source\PSoC5/WaveDAC8_1_VDAC8_PM.c **** *  
  121:.\Generated_Source\PSoC5/WaveDAC8_1_VDAC8_PM.c **** * Parameters:  
  122:.\Generated_Source\PSoC5/WaveDAC8_1_VDAC8_PM.c **** *  void
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccIQbr49.s 			page 6
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccmSbBhh.s 			page 6
 
 
  123:.\Generated_Source\PSoC5/WaveDAC8_1_VDAC8_PM.c **** *
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccIQbr49.s 			page 1
  198              		.bss
  199              		.align	2
  200              		.set	.LANCHOR0,. + 0
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccIQbr49.s 			page 7
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccmSbBhh.s 			page 7
 
 
  201              		.type	WaveDAC8_1_VDAC8_backup, %object
@@ -376,75 +376,75 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccIQbr49.s 			page 1
  213 0006 00000000 		.4byte	.Ldebug_abbrev0
  214 000a 04       		.byte	0x4
  215 000b 01       		.uleb128 0x1
- 216 000c 21010000 		.4byte	.LASF23
+ 216 000c 65010000 		.4byte	.LASF23
  217 0010 01       		.byte	0x1
- 218 0011 F4010000 		.4byte	.LASF24
- 219 0015 2F020000 		.4byte	.LASF25
+ 218 0011 38020000 		.4byte	.LASF24
+ 219 0015 00000000 		.4byte	.LASF25
  220 0019 00000000 		.4byte	.Ldebug_ranges0+0
  221 001d 00000000 		.4byte	0
  222 0021 00000000 		.4byte	.Ldebug_line0
  223 0025 02       		.uleb128 0x2
  224 0026 01       		.byte	0x1
  225 0027 06       		.byte	0x6
- 226 0028 23020000 		.4byte	.LASF0
+ 226 0028 67020000 		.4byte	.LASF0
  227 002c 02       		.uleb128 0x2
  228 002d 01       		.byte	0x1
  229 002e 08       		.byte	0x8
- 230 002f 5E000000 		.4byte	.LASF1
+ 230 002f A2000000 		.4byte	.LASF1
  231 0033 02       		.uleb128 0x2
  232 0034 02       		.byte	0x2
  233 0035 05       		.byte	0x5
- 234 0036 CF010000 		.4byte	.LASF2
+ 234 0036 13020000 		.4byte	.LASF2
  235 003a 02       		.uleb128 0x2
  236 003b 02       		.byte	0x2
  237 003c 07       		.byte	0x7
- 238 003d 83000000 		.4byte	.LASF3
+ 238 003d C7000000 		.4byte	.LASF3
  239 0041 02       		.uleb128 0x2
  240 0042 04       		.byte	0x4
  241 0043 05       		.byte	0x5
- 242 0044 DF010000 		.4byte	.LASF4
+ 242 0044 23020000 		.4byte	.LASF4
  243 0048 02       		.uleb128 0x2
  244 0049 04       		.byte	0x4
  245 004a 07       		.byte	0x7
- 246 004b 71000000 		.4byte	.LASF5
+ 246 004b B5000000 		.4byte	.LASF5
  247 004f 02       		.uleb128 0x2
  248 0050 08       		.byte	0x8
  249 0051 05       		.byte	0x5
- 250 0052 BC010000 		.4byte	.LASF6
+ 250 0052 00020000 		.4byte	.LASF6
  251 0056 02       		.uleb128 0x2
  252 0057 08       		.byte	0x8
  253 0058 07       		.byte	0x7
- 254 0059 DA000000 		.4byte	.LASF7
+ 254 0059 1E010000 		.4byte	.LASF7
  255 005d 03       		.uleb128 0x3
  256 005e 04       		.byte	0x4
  257 005f 05       		.byte	0x5
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccIQbr49.s 			page 8
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccmSbBhh.s 			page 8
 
 
  258 0060 696E7400 		.ascii	"int\000"
  259 0064 02       		.uleb128 0x2
  260 0065 04       		.byte	0x4
  261 0066 07       		.byte	0x7
- 262 0067 CD000000 		.4byte	.LASF8
+ 262 0067 11010000 		.4byte	.LASF8
  263 006b 04       		.uleb128 0x4
- 264 006c D9010000 		.4byte	.LASF12
+ 264 006c 1D020000 		.4byte	.LASF12
  265 0070 02       		.byte	0x2
  266 0071 B4       		.byte	0xb4
  267 0072 2C000000 		.4byte	0x2c
  268 0076 02       		.uleb128 0x2
  269 0077 04       		.byte	0x4
  270 0078 04       		.byte	0x4
- 271 0079 23000000 		.4byte	.LASF9
+ 271 0079 67000000 		.4byte	.LASF9
  272 007d 02       		.uleb128 0x2
  273 007e 08       		.byte	0x8
  274 007f 04       		.byte	0x4
- 275 0080 AE000000 		.4byte	.LASF10
+ 275 0080 F2000000 		.4byte	.LASF10
  276 0084 02       		.uleb128 0x2
  277 0085 01       		.byte	0x1
  278 0086 08       		.byte	0x8
- 279 0087 CA010000 		.4byte	.LASF11
+ 279 0087 0E020000 		.4byte	.LASF11
  280 008b 05       		.uleb128 0x5
- 281 008c 6C000000 		.4byte	.LASF13
+ 281 008c B0000000 		.4byte	.LASF13
  282 0090 02       		.byte	0x2
  283 0091 5E01     		.2byte	0x15e
  284 0093 97000000 		.4byte	0x97
@@ -456,36 +456,36 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccIQbr49.s 			page 1
  290 009f 25       		.byte	0x25
  291 00a0 BD000000 		.4byte	0xbd
  292 00a4 08       		.uleb128 0x8
- 293 00a5 E8010000 		.4byte	.LASF14
+ 293 00a5 2C020000 		.4byte	.LASF14
  294 00a9 03       		.byte	0x3
  295 00aa 27       		.byte	0x27
  296 00ab 6B000000 		.4byte	0x6b
  297 00af 00       		.byte	0
  298 00b0 08       		.uleb128 0x8
- 299 00b1 18000000 		.4byte	.LASF15
+ 299 00b1 5C000000 		.4byte	.LASF15
  300 00b5 03       		.byte	0x3
  301 00b6 28       		.byte	0x28
  302 00b7 6B000000 		.4byte	0x6b
  303 00bb 01       		.byte	0x1
  304 00bc 00       		.byte	0
  305 00bd 04       		.uleb128 0x4
- 306 00be 40000000 		.4byte	.LASF16
+ 306 00be 84000000 		.4byte	.LASF16
  307 00c2 03       		.byte	0x3
  308 00c3 29       		.byte	0x29
  309 00c4 9C000000 		.4byte	0x9c
  310 00c8 09       		.uleb128 0x9
- 311 00c9 6C020000 		.4byte	.LASF17
+ 311 00c9 73020000 		.4byte	.LASF17
  312 00cd 01       		.byte	0x1
  313 00ce 25       		.byte	0x25
  314 00cf 00000000 		.4byte	.LFB0
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccIQbr49.s 			page 9
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccmSbBhh.s 			page 9
 
 
  315 00d3 20000000 		.4byte	.LFE0-.LFB0
  316 00d7 01       		.uleb128 0x1
  317 00d8 9C       		.byte	0x9c
  318 00d9 09       		.uleb128 0x9
- 319 00da 9D010000 		.4byte	.LASF18
+ 319 00da E1010000 		.4byte	.LASF18
  320 00de 01       		.byte	0x1
  321 00df 3C       		.byte	0x3c
  322 00e0 00000000 		.4byte	.LFB1
@@ -493,7 +493,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccIQbr49.s 			page 1
  324 00e8 01       		.uleb128 0x1
  325 00e9 9C       		.byte	0x9c
  326 00ea 0A       		.uleb128 0xa
- 327 00eb 29000000 		.4byte	.LASF19
+ 327 00eb 6D000000 		.4byte	.LASF19
  328 00ef 01       		.byte	0x1
  329 00f0 5F       		.byte	0x5f
  330 00f1 00000000 		.4byte	.LFB2
@@ -509,7 +509,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccIQbr49.s 			page 1
  340 010d C8000000 		.4byte	0xc8
  341 0111 00       		.byte	0
  342 0112 0A       		.uleb128 0xa
- 343 0113 B5000000 		.4byte	.LASF20
+ 343 0113 F9000000 		.4byte	.LASF20
  344 0117 01       		.byte	0x1
  345 0118 84       		.byte	0x84
  346 0119 00000000 		.4byte	.LFB3
@@ -528,7 +528,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccIQbr49.s 			page 1
  359 013e 62010000 		.4byte	0x162
  360 0142 00       		.byte	0
  361 0143 0C       		.uleb128 0xc
- 362 0144 96000000 		.4byte	.LASF26
+ 362 0144 DA000000 		.4byte	.LASF26
  363 0148 01       		.byte	0x1
  364 0149 15       		.byte	0x15
  365 014a BD000000 		.4byte	0xbd
@@ -536,18 +536,18 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccIQbr49.s 			page 1
  367 014f 03       		.byte	0x3
  368 0150 00000000 		.4byte	WaveDAC8_1_VDAC8_backup
  369 0154 0D       		.uleb128 0xd
- 370 0155 F1000000 		.4byte	.LASF21
+ 370 0155 35010000 		.4byte	.LASF21
  371 0159 03       		.byte	0x3
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccIQbr49.s 			page 10
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccmSbBhh.s 			page 10
 
 
  372 015a 34       		.byte	0x34
  373 015b 0D       		.uleb128 0xd
- 374 015c 00000000 		.4byte	.LASF22
+ 374 015c 44000000 		.4byte	.LASF22
  375 0160 03       		.byte	0x3
  376 0161 3A       		.byte	0x3a
  377 0162 0E       		.uleb128 0xe
- 378 0163 07010000 		.4byte	.LASF27
+ 378 0163 4B010000 		.4byte	.LASF27
  379 0167 03       		.byte	0x3
  380 0168 37       		.byte	0x37
  381 0169 0F       		.uleb128 0xf
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccIQbr49.s 			page 1
  426 0027 00       		.byte	0
  427 0028 00       		.byte	0
  428 0029 04       		.uleb128 0x4
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccIQbr49.s 			page 11
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccmSbBhh.s 			page 11
 
 
  429 002a 16       		.uleb128 0x16
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccIQbr49.s 			page 1
  483 0060 49       		.uleb128 0x49
  484 0061 13       		.uleb128 0x13
  485 0062 38       		.uleb128 0x38
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccIQbr49.s 			page 12
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccmSbBhh.s 			page 12
 
 
  486 0063 0B       		.uleb128 0xb
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccIQbr49.s 			page 1
  540 009d 11       		.uleb128 0x11
  541 009e 01       		.uleb128 0x1
  542 009f 31       		.uleb128 0x31
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccIQbr49.s 			page 13
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccmSbBhh.s 			page 13
 
 
  543 00a0 13       		.uleb128 0x13
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccIQbr49.s 			page 1
  597 00d6 00       		.byte	0
  598 00d7 49       		.uleb128 0x49
  599 00d8 13       		.uleb128 0x13
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccIQbr49.s 			page 14
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccmSbBhh.s 			page 14
 
 
  600 00d9 00       		.byte	0
@@ -821,165 +821,166 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccIQbr49.s 			page 1
  635      00000201 
  635      FB0E0D00 
  635      01010101 
- 636              	.LASF22:
- 637 0000 57617665 		.ascii	"WaveDAC8_1_VDAC8_Enable\000"
- 637      44414338 
- 637      5F315F56 
- 637      44414338 
- 637      5F456E61 
- 638              	.LASF15:
- 639 0018 64617461 		.ascii	"data_value\000"
- 639      5F76616C 
- 639      756500
- 640              	.LASF9:
- 641 0023 666C6F61 		.ascii	"float\000"
- 641      7400
- 642              	.LASF19:
- 643 0029 57617665 		.ascii	"WaveDAC8_1_VDAC8_Sleep\000"
- 643      44414338 
- 643      5F315F56 
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccIQbr49.s 			page 15
+ 636              	.LASF25:
+ 637 0000 433A5C55 		.ascii	"C:\\Users\\JohnP\\Desktop\\embedded\\trunk\\CE4920P"
+ 637      73657273 
+ 637      5C4A6F68 
+ 637      6E505C44 
+ 637      65736B74 
+ 638 002d 726F6A65 		.ascii	"roject1\\Design01.cydsn\000"
+ 638      6374315C 
+ 638      44657369 
+ 638      676E3031 
+ 638      2E637964 
+ 639              	.LASF22:
+ 640 0044 57617665 		.ascii	"WaveDAC8_1_VDAC8_Enable\000"
+ 640      44414338 
+ 640      5F315F56 
+ 640      44414338 
+ 640      5F456E61 
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccmSbBhh.s 			page 15
 
 
- 643      44414338 
- 643      5F536C65 
- 644              	.LASF16:
- 645 0040 57617665 		.ascii	"WaveDAC8_1_VDAC8_backupStruct\000"
- 645      44414338 
- 645      5F315F56 
- 645      44414338 
- 645      5F626163 
- 646              	.LASF1:
- 647 005e 756E7369 		.ascii	"unsigned char\000"
- 647      676E6564 
- 647      20636861 
- 647      7200
- 648              	.LASF13:
- 649 006c 72656738 		.ascii	"reg8\000"
- 649      00
- 650              	.LASF5:
- 651 0071 6C6F6E67 		.ascii	"long unsigned int\000"
- 651      20756E73 
- 651      69676E65 
- 651      6420696E 
- 651      7400
- 652              	.LASF3:
- 653 0083 73686F72 		.ascii	"short unsigned int\000"
- 653      7420756E 
- 653      7369676E 
- 653      65642069 
- 653      6E7400
- 654              	.LASF26:
- 655 0096 57617665 		.ascii	"WaveDAC8_1_VDAC8_backup\000"
- 655      44414338 
- 655      5F315F56 
- 655      44414338 
- 655      5F626163 
- 656              	.LASF10:
- 657 00ae 646F7562 		.ascii	"double\000"
- 657      6C6500
- 658              	.LASF20:
- 659 00b5 57617665 		.ascii	"WaveDAC8_1_VDAC8_Wakeup\000"
- 659      44414338 
- 659      5F315F56 
- 659      44414338 
- 659      5F57616B 
- 660              	.LASF8:
- 661 00cd 756E7369 		.ascii	"unsigned int\000"
- 661      676E6564 
- 661      20696E74 
- 661      00
- 662              	.LASF7:
- 663 00da 6C6F6E67 		.ascii	"long long unsigned int\000"
- 663      206C6F6E 
- 663      6720756E 
- 663      7369676E 
- 663      65642069 
- 664              	.LASF21:
- 665 00f1 57617665 		.ascii	"WaveDAC8_1_VDAC8_Stop\000"
- 665      44414338 
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccIQbr49.s 			page 16
+ 641              	.LASF15:
+ 642 005c 64617461 		.ascii	"data_value\000"
+ 642      5F76616C 
+ 642      756500
+ 643              	.LASF9:
+ 644 0067 666C6F61 		.ascii	"float\000"
+ 644      7400
+ 645              	.LASF19:
+ 646 006d 57617665 		.ascii	"WaveDAC8_1_VDAC8_Sleep\000"
+ 646      44414338 
+ 646      5F315F56 
+ 646      44414338 
+ 646      5F536C65 
+ 647              	.LASF16:
+ 648 0084 57617665 		.ascii	"WaveDAC8_1_VDAC8_backupStruct\000"
+ 648      44414338 
+ 648      5F315F56 
+ 648      44414338 
+ 648      5F626163 
+ 649              	.LASF1:
+ 650 00a2 756E7369 		.ascii	"unsigned char\000"
+ 650      676E6564 
+ 650      20636861 
+ 650      7200
+ 651              	.LASF13:
+ 652 00b0 72656738 		.ascii	"reg8\000"
+ 652      00
+ 653              	.LASF5:
+ 654 00b5 6C6F6E67 		.ascii	"long unsigned int\000"
+ 654      20756E73 
+ 654      69676E65 
+ 654      6420696E 
+ 654      7400
+ 655              	.LASF3:
+ 656 00c7 73686F72 		.ascii	"short unsigned int\000"
+ 656      7420756E 
+ 656      7369676E 
+ 656      65642069 
+ 656      6E7400
+ 657              	.LASF26:
+ 658 00da 57617665 		.ascii	"WaveDAC8_1_VDAC8_backup\000"
+ 658      44414338 
+ 658      5F315F56 
+ 658      44414338 
+ 658      5F626163 
+ 659              	.LASF10:
+ 660 00f2 646F7562 		.ascii	"double\000"
+ 660      6C6500
+ 661              	.LASF20:
+ 662 00f9 57617665 		.ascii	"WaveDAC8_1_VDAC8_Wakeup\000"
+ 662      44414338 
+ 662      5F315F56 
+ 662      44414338 
+ 662      5F57616B 
+ 663              	.LASF8:
+ 664 0111 756E7369 		.ascii	"unsigned int\000"
+ 664      676E6564 
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccmSbBhh.s 			page 16
 
 
- 665      5F315F56 
- 665      44414338 
- 665      5F53746F 
- 666              	.LASF27:
- 667 0107 57617665 		.ascii	"WaveDAC8_1_VDAC8_SetValue\000"
- 667      44414338 
- 667      5F315F56 
- 667      44414338 
- 667      5F536574 
- 668              	.LASF23:
- 669 0121 474E5520 		.ascii	"GNU C 4.8.4 20140526 (release) [ARM/embedded-4_8-br"
- 669      4320342E 
- 669      382E3420 
- 669      32303134 
- 669      30353236 
- 670 0154 616E6368 		.ascii	"anch revision 211358] -mcpu=cortex-m3 -mthumb -g -O"
- 670      20726576 
- 670      6973696F 
- 670      6E203231 
- 670      31333538 
- 671 0187 67202D66 		.ascii	"g -ffunction-sections\000"
- 671      66756E63 
- 671      74696F6E 
- 671      2D736563 
- 671      74696F6E 
- 672              	.LASF18:
- 673 019d 57617665 		.ascii	"WaveDAC8_1_VDAC8_RestoreConfig\000"
- 673      44414338 
- 673      5F315F56 
- 673      44414338 
- 673      5F526573 
- 674              	.LASF6:
- 675 01bc 6C6F6E67 		.ascii	"long long int\000"
- 675      206C6F6E 
- 675      6720696E 
- 675      7400
- 676              	.LASF11:
- 677 01ca 63686172 		.ascii	"char\000"
- 677      00
- 678              	.LASF2:
- 679 01cf 73686F72 		.ascii	"short int\000"
- 679      7420696E 
- 679      7400
- 680              	.LASF12:
- 681 01d9 75696E74 		.ascii	"uint8\000"
- 681      3800
- 682              	.LASF4:
- 683 01df 6C6F6E67 		.ascii	"long int\000"
- 683      20696E74 
- 683      00
- 684              	.LASF14:
- 685 01e8 656E6162 		.ascii	"enableState\000"
- 685      6C655374 
- 685      61746500 
- 686              	.LASF24:
- 687 01f4 2E5C4765 		.ascii	".\\Generated_Source\\PSoC5\\WaveDAC8_1_VDAC8_PM.c\000"
- 687      6E657261 
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccIQbr49.s 			page 17
+ 664      20696E74 
+ 664      00
+ 665              	.LASF7:
+ 666 011e 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 666      206C6F6E 
+ 666      6720756E 
+ 666      7369676E 
+ 666      65642069 
+ 667              	.LASF21:
+ 668 0135 57617665 		.ascii	"WaveDAC8_1_VDAC8_Stop\000"
+ 668      44414338 
+ 668      5F315F56 
+ 668      44414338 
+ 668      5F53746F 
+ 669              	.LASF27:
+ 670 014b 57617665 		.ascii	"WaveDAC8_1_VDAC8_SetValue\000"
+ 670      44414338 
+ 670      5F315F56 
+ 670      44414338 
+ 670      5F536574 
+ 671              	.LASF23:
+ 672 0165 474E5520 		.ascii	"GNU C 4.8.4 20140526 (release) [ARM/embedded-4_8-br"
+ 672      4320342E 
+ 672      382E3420 
+ 672      32303134 
+ 672      30353236 
+ 673 0198 616E6368 		.ascii	"anch revision 211358] -mcpu=cortex-m3 -mthumb -g -O"
+ 673      20726576 
+ 673      6973696F 
+ 673      6E203231 
+ 673      31333538 
+ 674 01cb 67202D66 		.ascii	"g -ffunction-sections\000"
+ 674      66756E63 
+ 674      74696F6E 
+ 674      2D736563 
+ 674      74696F6E 
+ 675              	.LASF18:
+ 676 01e1 57617665 		.ascii	"WaveDAC8_1_VDAC8_RestoreConfig\000"
+ 676      44414338 
+ 676      5F315F56 
+ 676      44414338 
+ 676      5F526573 
+ 677              	.LASF6:
+ 678 0200 6C6F6E67 		.ascii	"long long int\000"
+ 678      206C6F6E 
+ 678      6720696E 
+ 678      7400
+ 679              	.LASF11:
+ 680 020e 63686172 		.ascii	"char\000"
+ 680      00
+ 681              	.LASF2:
+ 682 0213 73686F72 		.ascii	"short int\000"
+ 682      7420696E 
+ 682      7400
+ 683              	.LASF12:
+ 684 021d 75696E74 		.ascii	"uint8\000"
+ 684      3800
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccmSbBhh.s 			page 17
 
 
- 687      7465645F 
- 687      536F7572 
- 687      63655C50 
- 688              	.LASF0:
- 689 0223 7369676E 		.ascii	"signed char\000"
- 689      65642063 
- 689      68617200 
- 690              	.LASF25:
- 691 022f 433A5C72 		.ascii	"C:\\repositories\\embedded\\trunk\\CE4920Project1\\"
- 691      65706F73 
- 691      69746F72 
- 691      6965735C 
- 691      656D6265 
- 692 025d 44657369 		.ascii	"Design01.cydsn\000"
- 692      676E3031 
- 692      2E637964 
- 692      736E00
+ 685              	.LASF4:
+ 686 0223 6C6F6E67 		.ascii	"long int\000"
+ 686      20696E74 
+ 686      00
+ 687              	.LASF14:
+ 688 022c 656E6162 		.ascii	"enableState\000"
+ 688      6C655374 
+ 688      61746500 
+ 689              	.LASF24:
+ 690 0238 2E5C4765 		.ascii	".\\Generated_Source\\PSoC5\\WaveDAC8_1_VDAC8_PM.c\000"
+ 690      6E657261 
+ 690      7465645F 
+ 690      536F7572 
+ 690      63655C50 
+ 691              	.LASF0:
+ 692 0267 7369676E 		.ascii	"signed char\000"
+ 692      65642063 
+ 692      68617200 
  693              	.LASF17:
- 694 026c 57617665 		.ascii	"WaveDAC8_1_VDAC8_SaveConfig\000"
+ 694 0273 57617665 		.ascii	"WaveDAC8_1_VDAC8_SaveConfig\000"
  694      44414338 
  694      5F315F56 
  694      44414338 

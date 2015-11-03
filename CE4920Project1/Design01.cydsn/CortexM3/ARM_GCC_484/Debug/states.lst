@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccQFj17y.s 			page 1
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccFU5GBT.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccQFj17y.s 			page 1
   32              		.cfi_def_cfa_offset 24
   33              		.cfi_offset 3, -24
   34              		.cfi_offset 4, -20
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccQFj17y.s 			page 2
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccFU5GBT.s 			page 2
 
 
   35              		.cfi_offset 5, -16
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccQFj17y.s 			page 1
   34:.\states.c    ****                 Prev_state = STATE_SLEEP;
   79              		.loc 1 34 0
   80 003e 0023     		movs	r3, #0
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccQFj17y.s 			page 3
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccFU5GBT.s 			page 3
 
 
   81 0040 3B60     		str	r3, [r7]
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccQFj17y.s 			page 1
  120 0064 024B     		ldr	r3, .L10+4
  121 0066 1868     		ldr	r0, [r3]
  122 0068 F8BD     		pop	{r3, r4, r5, r6, r7, pc}
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccQFj17y.s 			page 4
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccFU5GBT.s 			page 4
 
 
  123              	.L11:
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccQFj17y.s 			page 1
   53:.\states.c    ****     return STATE_START;
   54:.\states.c    **** }
  169              		.loc 1 54 0
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccQFj17y.s 			page 5
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccFU5GBT.s 			page 5
 
 
  170 0022 0220     		movs	r0, #2
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccQFj17y.s 			page 1
  218              		.thumb
  219              		.thumb_func
  220              		.type	State_profile_selection, %function
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccQFj17y.s 			page 6
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccFU5GBT.s 			page 6
 
 
  221              	State_profile_selection:
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccQFj17y.s 			page 1
  262 002e FFF7FEFF 		bl	CapSense_UpdateEnabledBaselines
  263              	.LVL25:
   74:.\states.c    ****     CapSense_ScanEnabledWidgets();
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccQFj17y.s 			page 7
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccFU5GBT.s 			page 7
 
 
  264              		.loc 1 74 0
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccQFj17y.s 			page 1
  305 006e 174B     		ldr	r3, .L32+8
  306 0070 1868     		ldr	r0, [r3]
  307 0072 FFF7FEFF 		bl	Display_profile_selection
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccQFj17y.s 			page 8
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccFU5GBT.s 			page 8
 
 
  308              	.LVL31:
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccQFj17y.s 			page 1
  340              		.loc 1 97 0
  341 00a2 0C48     		ldr	r0, .L32+16
  342 00a4 FFF7FEFF 		bl	LCD_PrintString
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccQFj17y.s 			page 9
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccFU5GBT.s 			page 9
 
 
  343              	.LVL35:
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccQFj17y.s 			page 1
  390              		@ frame_needed = 0, uses_anonymous_args = 0
  391 0000 08B5     		push	{r3, lr}
  392              		.cfi_def_cfa_offset 8
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccQFj17y.s 			page 10
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccFU5GBT.s 			page 10
 
 
  393              		.cfi_offset 3, -8
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccQFj17y.s 			page 1
  133:.\states.c    **** STATE State_heartrate_change(){
  424              		.loc 1 133 0
  425              		.cfi_startproc
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccQFj17y.s 			page 11
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccFU5GBT.s 			page 11
 
 
  426              		@ args = 0, pretend = 0, frame = 0
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccQFj17y.s 			page 1
  472 0044 2AE0     		b	.L38
  473              	.L40:
  142:.\states.c    ****             }
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccQFj17y.s 			page 12
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccFU5GBT.s 			page 12
 
 
  143:.\states.c    ****             break;
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccQFj17y.s 			page 1
  516              	.L59:
  155:.\states.c    ****             }
  156:.\states.c    ****             else if (heartrate<60){
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccQFj17y.s 			page 13
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccFU5GBT.s 			page 13
 
 
  517              		.loc 1 156 0
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccQFj17y.s 			page 1
  561              		.cfi_offset 3, -8
  562              		.cfi_offset 14, -4
  167:.\states.c    ****     Prev_state = STATE_STOP;
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccQFj17y.s 			page 14
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccFU5GBT.s 			page 14
 
 
  563              		.loc 1 167 0
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccQFj17y.s 			page 1
  613      5400
  614 0006 0000     		.space	2
  615              	.LC1:
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccQFj17y.s 			page 15
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccFU5GBT.s 			page 15
 
 
  616 0008 53544152 		.ascii	"START\000"
@@ -898,50 +898,50 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccQFj17y.s 			page 1
  655 0000 02060000 		.4byte	0x602
  656 0004 0400     		.2byte	0x4
  657 0006 00000000 		.4byte	.Ldebug_abbrev0
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccQFj17y.s 			page 16
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccFU5GBT.s 			page 16
 
 
  658 000a 04       		.byte	0x4
  659 000b 01       		.uleb128 0x1
- 660 000c 17010000 		.4byte	.LASF56
+ 660 000c 5B010000 		.4byte	.LASF56
  661 0010 01       		.byte	0x1
- 662 0011 F2010000 		.4byte	.LASF57
- 663 0015 A3030000 		.4byte	.LASF58
+ 662 0011 36020000 		.4byte	.LASF57
+ 663 0015 3A000000 		.4byte	.LASF58
  664 0019 18000000 		.4byte	.Ldebug_ranges0+0x18
  665 001d 00000000 		.4byte	0
  666 0021 00000000 		.4byte	.Ldebug_line0
  667 0025 02       		.uleb128 0x2
  668 0026 01       		.byte	0x1
  669 0027 06       		.byte	0x6
- 670 0028 97030000 		.4byte	.LASF0
+ 670 0028 DB030000 		.4byte	.LASF0
  671 002c 02       		.uleb128 0x2
  672 002d 01       		.byte	0x1
  673 002e 08       		.byte	0x8
- 674 002f E1000000 		.4byte	.LASF1
+ 674 002f 25010000 		.4byte	.LASF1
  675 0033 02       		.uleb128 0x2
  676 0034 02       		.byte	0x2
  677 0035 05       		.byte	0x5
- 678 0036 FD010000 		.4byte	.LASF2
+ 678 0036 41020000 		.4byte	.LASF2
  679 003a 02       		.uleb128 0x2
  680 003b 02       		.byte	0x2
  681 003c 07       		.byte	0x7
- 682 003d 93010000 		.4byte	.LASF3
+ 682 003d D7010000 		.4byte	.LASF3
  683 0041 02       		.uleb128 0x2
  684 0042 04       		.byte	0x4
  685 0043 05       		.byte	0x5
- 686 0044 66030000 		.4byte	.LASF4
+ 686 0044 AA030000 		.4byte	.LASF4
  687 0048 02       		.uleb128 0x2
  688 0049 04       		.byte	0x4
  689 004a 07       		.byte	0x7
- 690 004b 05010000 		.4byte	.LASF5
+ 690 004b 49010000 		.4byte	.LASF5
  691 004f 02       		.uleb128 0x2
  692 0050 08       		.byte	0x8
  693 0051 05       		.byte	0x5
- 694 0052 D3000000 		.4byte	.LASF6
+ 694 0052 17010000 		.4byte	.LASF6
  695 0056 02       		.uleb128 0x2
  696 0057 08       		.byte	0x8
  697 0058 07       		.byte	0x7
- 698 0059 55020000 		.4byte	.LASF7
+ 698 0059 99020000 		.4byte	.LASF7
  699 005d 03       		.uleb128 0x3
  700 005e 04       		.byte	0x4
  701 005f 05       		.byte	0x5
@@ -949,53 +949,53 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccQFj17y.s 			page 1
  703 0064 02       		.uleb128 0x2
  704 0065 04       		.byte	0x4
  705 0066 07       		.byte	0x7
- 706 0067 48020000 		.4byte	.LASF8
+ 706 0067 8C020000 		.4byte	.LASF8
  707 006b 04       		.uleb128 0x4
- 708 006c 4E000000 		.4byte	.LASF9
+ 708 006c 92000000 		.4byte	.LASF9
  709 0070 02       		.byte	0x2
  710 0071 B4       		.byte	0xb4
  711 0072 2C000000 		.4byte	0x2c
  712 0076 04       		.uleb128 0x4
- 713 0077 13020000 		.4byte	.LASF10
+ 713 0077 57020000 		.4byte	.LASF10
  714 007b 02       		.byte	0x2
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccQFj17y.s 			page 17
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccFU5GBT.s 			page 17
 
 
  715 007c B5       		.byte	0xb5
  716 007d 3A000000 		.4byte	0x3a
  717 0081 04       		.uleb128 0x4
- 718 0082 26020000 		.4byte	.LASF11
+ 718 0082 6A020000 		.4byte	.LASF11
  719 0086 02       		.byte	0x2
  720 0087 B6       		.byte	0xb6
  721 0088 48000000 		.4byte	0x48
  722 008c 02       		.uleb128 0x2
  723 008d 04       		.byte	0x4
  724 008e 04       		.byte	0x4
- 725 008f C7000000 		.4byte	.LASF12
+ 725 008f 0B010000 		.4byte	.LASF12
  726 0093 02       		.uleb128 0x2
  727 0094 08       		.byte	0x8
  728 0095 04       		.byte	0x4
- 729 0096 C3010000 		.4byte	.LASF13
+ 729 0096 07020000 		.4byte	.LASF13
  730 009a 04       		.uleb128 0x4
- 731 009b FF000000 		.4byte	.LASF14
+ 731 009b 43010000 		.4byte	.LASF14
  732 009f 02       		.byte	0x2
  733 00a0 C5       		.byte	0xc5
  734 00a1 A5000000 		.4byte	0xa5
  735 00a5 02       		.uleb128 0x2
  736 00a6 01       		.byte	0x1
  737 00a7 08       		.byte	0x8
- 738 00a8 04030000 		.4byte	.LASF15
+ 738 00a8 48030000 		.4byte	.LASF15
  739 00ac 02       		.uleb128 0x2
  740 00ad 04       		.byte	0x4
  741 00ae 07       		.byte	0x7
- 742 00af BD020000 		.4byte	.LASF16
+ 742 00af 01030000 		.4byte	.LASF16
  743 00b3 04       		.uleb128 0x4
- 744 00b4 CD000000 		.4byte	.LASF17
+ 744 00b4 11010000 		.4byte	.LASF17
  745 00b8 03       		.byte	0x3
  746 00b9 11       		.byte	0x11
  747 00ba 5D000000 		.4byte	0x5d
  748 00be 05       		.uleb128 0x5
- 749 00bf 81020000 		.4byte	.LASF18
+ 749 00bf C5020000 		.4byte	.LASF18
  750 00c3 01       		.byte	0x1
  751 00c4 17       		.byte	0x17
  752 00c5 B3000000 		.4byte	0xb3
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccQFj17y.s 			page 1
  769 00f4 04050000 		.4byte	0x504
  770 00f8 09       		.uleb128 0x9
  771 00f9 36000000 		.4byte	.LVL8
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccQFj17y.s 			page 18
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccFU5GBT.s 			page 18
 
 
  772 00fd 0B050000 		.4byte	0x50b
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccQFj17y.s 			page 1
  826 016f 0A       		.uleb128 0xa
  827 0170 01       		.uleb128 0x1
  828 0171 50       		.byte	0x50
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccQFj17y.s 			page 19
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccFU5GBT.s 			page 19
 
 
  829 0172 01       		.uleb128 0x1
@@ -1086,7 +1086,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccQFj17y.s 			page 1
  831 0174 00       		.byte	0
  832 0175 00       		.byte	0
  833 0176 05       		.uleb128 0x5
- 834 0177 E6010000 		.4byte	.LASF19
+ 834 0177 2A020000 		.4byte	.LASF19
  835 017b 01       		.byte	0x1
  836 017c 2E       		.byte	0x2e
  837 017d B3000000 		.4byte	0xb3
@@ -1131,14 +1131,14 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccQFj17y.s 			page 1
  876 01d4 00       		.byte	0
  877 01d5 00       		.byte	0
  878 01d6 05       		.uleb128 0x5
- 879 01d7 1A020000 		.4byte	.LASF20
+ 879 01d7 5E020000 		.4byte	.LASF20
  880 01db 01       		.byte	0x1
  881 01dc 38       		.byte	0x38
  882 01dd B3000000 		.4byte	0xb3
  883 01e1 00000000 		.4byte	.LFB2
  884 01e5 1C000000 		.4byte	.LFE2-.LFB2
  885 01e9 01       		.uleb128 0x1
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccQFj17y.s 			page 20
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccFU5GBT.s 			page 20
 
 
  886 01ea 9C       		.byte	0x9c
@@ -1155,7 +1155,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccQFj17y.s 			page 1
  897 0201 00       		.byte	0
  898 0202 00       		.byte	0
  899 0203 05       		.uleb128 0x5
- 900 0204 72000000 		.4byte	.LASF21
+ 900 0204 B6000000 		.4byte	.LASF21
  901 0208 01       		.byte	0x1
  902 0209 3E       		.byte	0x3e
  903 020a B3000000 		.4byte	0xb3
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccQFj17y.s 			page 1
  940 0256 50       		.byte	0x50
  941 0257 05       		.uleb128 0x5
  942 0258 03       		.byte	0x3
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccQFj17y.s 			page 21
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccFU5GBT.s 			page 21
 
 
  943 0259 10000000 		.4byte	.LC2
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccQFj17y.s 			page 1
  997 02c9 01       		.uleb128 0x1
  998 02ca 32       		.byte	0x32
  999 02cb 00       		.byte	0
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccQFj17y.s 			page 22
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccFU5GBT.s 			page 22
 
 
  1000 02cc 08       		.uleb128 0x8
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccQFj17y.s 			page 1
  1054 0332 00       		.byte	0
  1055 0333 09       		.uleb128 0x9
  1056 0334 B4000000 		.4byte	.LVL36
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccQFj17y.s 			page 23
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccFU5GBT.s 			page 23
 
 
  1057 0338 88050000 		.4byte	0x588
@@ -1346,7 +1346,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccQFj17y.s 			page 1
  1079 035d 00       		.byte	0
  1080 035e 00       		.byte	0
  1081 035f 05       		.uleb128 0x5
- 1082 0360 40030000 		.4byte	.LASF22
+ 1082 0360 84030000 		.4byte	.LASF22
  1083 0364 01       		.byte	0x1
  1084 0365 6D       		.byte	0x6d
  1085 0366 B3000000 		.4byte	0xb3
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccQFj17y.s 			page 1
  1111 03ad 08       		.uleb128 0x8
  1112 03ae 5C000000 		.4byte	.LVL44
  1113 03b2 EB050000 		.4byte	0x5eb
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccQFj17y.s 			page 24
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccFU5GBT.s 			page 24
 
 
  1114 03b6 08       		.uleb128 0x8
@@ -1392,7 +1392,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccQFj17y.s 			page 1
  1122 03cd EB050000 		.4byte	0x5eb
  1123 03d1 00       		.byte	0
  1124 03d2 05       		.uleb128 0x5
- 1125 03d3 E0030000 		.4byte	.LASF24
+ 1125 03d3 E7030000 		.4byte	.LASF24
  1126 03d7 01       		.byte	0x1
  1127 03d8 A6       		.byte	0xa6
  1128 03d9 B3000000 		.4byte	0xb3
@@ -1406,7 +1406,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccQFj17y.s 			page 1
  1136 03f0 FC050000 		.4byte	0x5fc
  1137 03f4 00       		.byte	0
  1138 03f5 0D       		.uleb128 0xd
- 1139 03f6 B7020000 		.4byte	.LASF25
+ 1139 03f6 FB020000 		.4byte	.LASF25
  1140 03fa 04       		.byte	0x4
  1141 03fb 12       		.byte	0x12
  1142 03fc 5D000000 		.4byte	0x5d
@@ -1414,7 +1414,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccQFj17y.s 			page 1
  1144 0401 03       		.byte	0x3
  1145 0402 00000000 		.4byte	speed
  1146 0406 0D       		.uleb128 0xd
- 1147 0407 E6020000 		.4byte	.LASF26
+ 1147 0407 2A030000 		.4byte	.LASF26
  1148 040b 03       		.byte	0x3
  1149 040c 14       		.byte	0x14
  1150 040d 8C000000 		.4byte	0x8c
@@ -1422,7 +1422,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccQFj17y.s 			page 1
  1152 0412 03       		.byte	0x3
  1153 0413 00000000 		.4byte	heartrate
  1154 0417 0D       		.uleb128 0xd
- 1155 0418 A1000000 		.4byte	.LASF27
+ 1155 0418 E5000000 		.4byte	.LASF27
  1156 041c 01       		.byte	0x1
  1157 041d 0F       		.byte	0xf
  1158 041e 8C000000 		.4byte	0x8c
@@ -1430,7 +1430,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccQFj17y.s 			page 1
  1160 0423 03       		.byte	0x3
  1161 0424 00000000 		.4byte	heartbeatCounter
  1162 0428 0D       		.uleb128 0xd
- 1163 0429 65000000 		.4byte	.LASF28
+ 1163 0429 A9000000 		.4byte	.LASF28
  1164 042d 05       		.byte	0x5
  1165 042e 15       		.byte	0x15
  1166 042f 5D000000 		.4byte	0x5d
@@ -1438,10 +1438,10 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccQFj17y.s 			page 1
  1168 0434 03       		.byte	0x3
  1169 0435 00000000 		.4byte	timer_status
  1170 0439 0D       		.uleb128 0xd
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccQFj17y.s 			page 25
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccFU5GBT.s 			page 25
 
 
- 1171 043a 07020000 		.4byte	.LASF29
+ 1171 043a 4B020000 		.4byte	.LASF29
  1172 043e 05       		.byte	0x5
  1173 043f 16       		.byte	0x16
  1174 0440 5D000000 		.4byte	0x5d
@@ -1449,7 +1449,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccQFj17y.s 			page 1
  1176 0445 03       		.byte	0x3
  1177 0446 00000000 		.4byte	timer_value
  1178 044a 0D       		.uleb128 0xd
- 1179 044b 79020000 		.4byte	.LASF30
+ 1179 044b BD020000 		.4byte	.LASF30
  1180 044f 03       		.byte	0x3
  1181 0450 15       		.byte	0x15
  1182 0451 8C000000 		.4byte	0x8c
@@ -1457,7 +1457,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccQFj17y.s 			page 1
  1184 0456 03       		.byte	0x3
  1185 0457 00000000 		.4byte	average
  1186 045b 0D       		.uleb128 0xd
- 1187 045c 2D020000 		.4byte	.LASF31
+ 1187 045c 71020000 		.4byte	.LASF31
  1188 0460 03       		.byte	0x3
  1189 0461 16       		.byte	0x16
  1190 0462 5D000000 		.4byte	0x5d
@@ -1465,7 +1465,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccQFj17y.s 			page 1
  1192 0467 03       		.byte	0x3
  1193 0468 00000000 		.4byte	increasingHr
  1194 046c 0D       		.uleb128 0xd
- 1195 046d B2000000 		.4byte	.LASF32
+ 1195 046d F6000000 		.4byte	.LASF32
  1196 0471 03       		.byte	0x3
  1197 0472 18       		.byte	0x18
  1198 0473 5D000000 		.4byte	0x5d
@@ -1473,7 +1473,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccQFj17y.s 			page 1
  1200 0478 03       		.byte	0x3
  1201 0479 00000000 		.4byte	PROFILE
  1202 047d 0D       		.uleb128 0xd
- 1203 047e 8A030000 		.4byte	.LASF33
+ 1203 047e CE030000 		.4byte	.LASF33
  1204 0482 03       		.byte	0x3
  1205 0483 35       		.byte	0x35
  1206 0484 B3000000 		.4byte	0xb3
@@ -1489,7 +1489,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccQFj17y.s 			page 1
  1216 049a 03       		.byte	0x3
  1217 049b 00000000 		.4byte	Prev_state
  1218 049f 0D       		.uleb128 0xd
- 1219 04a0 A7020000 		.4byte	.LASF35
+ 1219 04a0 EB020000 		.4byte	.LASF35
  1220 04a4 01       		.byte	0x1
  1221 04a5 0E       		.byte	0xe
  1222 04a6 5D000000 		.4byte	0x5d
@@ -1497,8 +1497,8 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccQFj17y.s 			page 1
  1224 04ab 03       		.byte	0x3
  1225 04ac 00000000 		.4byte	selectedProfile
  1226 04b0 0D       		.uleb128 0xd
- 1227 04b1 F0020000 		.4byte	.LASF36
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccQFj17y.s 			page 26
+ 1227 04b1 34030000 		.4byte	.LASF36
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccFU5GBT.s 			page 26
 
 
  1228 04b5 01       		.byte	0x1
@@ -1508,7 +1508,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccQFj17y.s 			page 1
  1232 04bc 03       		.byte	0x3
  1233 04bd 00000000 		.4byte	MOTOR_RUNNING_SPEED
  1234 04c1 0D       		.uleb128 0xd
- 1235 04c2 3A000000 		.4byte	.LASF37
+ 1235 04c2 7E000000 		.4byte	.LASF37
  1236 04c6 01       		.byte	0x1
  1237 04c7 12       		.byte	0x12
  1238 04c8 5D000000 		.4byte	0x5d
@@ -1516,7 +1516,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccQFj17y.s 			page 1
  1240 04cd 03       		.byte	0x3
  1241 04ce 00000000 		.4byte	MOTOR_WALKING_SPEED
  1242 04d2 0D       		.uleb128 0xd
- 1243 04d3 4D030000 		.4byte	.LASF38
+ 1243 04d3 91030000 		.4byte	.LASF38
  1244 04d7 01       		.byte	0x1
  1245 04d8 13       		.byte	0x13
  1246 04d9 5D000000 		.4byte	0x5d
@@ -1531,7 +1531,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccQFj17y.s 			page 1
  1255 04f1 09       		.byte	0x9
  1256 04f2 00       		.byte	0
  1257 04f3 0D       		.uleb128 0xd
- 1258 04f4 3A020000 		.4byte	.LASF39
+ 1258 04f4 7E020000 		.4byte	.LASF39
  1259 04f8 01       		.byte	0x1
  1260 04f9 14       		.byte	0x14
  1261 04fa E3040000 		.4byte	0x4e3
@@ -1539,11 +1539,11 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccQFj17y.s 			page 1
  1263 04ff 03       		.byte	0x3
  1264 0500 00000000 		.4byte	movingAverage
  1265 0504 10       		.uleb128 0x10
- 1266 0505 CA010000 		.4byte	.LASF42
+ 1266 0505 0E020000 		.4byte	.LASF42
  1267 0509 08       		.byte	0x8
  1268 050a 9B       		.byte	0x9b
  1269 050b 11       		.uleb128 0x11
- 1270 050c 8A000000 		.4byte	.LASF50
+ 1270 050c CE000000 		.4byte	.LASF50
  1271 0510 08       		.byte	0x8
  1272 0511 9D       		.byte	0x9d
  1273 0512 76000000 		.4byte	0x76
@@ -1552,18 +1552,18 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccQFj17y.s 			page 1
  1276 051b 6B000000 		.4byte	0x6b
  1277 051f 00       		.byte	0
  1278 0520 13       		.uleb128 0x13
- 1279 0521 54000000 		.4byte	.LASF40
+ 1279 0521 98000000 		.4byte	.LASF40
  1280 0525 06       		.byte	0x6
  1281 0526 3A       		.byte	0x3a
  1282 0527 31050000 		.4byte	0x531
  1283 052b 12       		.uleb128 0x12
  1284 052c 6B000000 		.4byte	0x6b
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccQFj17y.s 			page 27
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccFU5GBT.s 			page 27
 
 
  1285 0530 00       		.byte	0
  1286 0531 13       		.uleb128 0x13
- 1287 0532 EB030000 		.4byte	.LASF41
+ 1287 0532 F2030000 		.4byte	.LASF41
  1288 0536 07       		.byte	0x7
  1289 0537 77       		.byte	0x77
  1290 0538 42050000 		.4byte	0x542
@@ -1578,37 +1578,37 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccQFj17y.s 			page 1
  1299 054d 15       		.uleb128 0x15
  1300 054e 00       		.byte	0
  1301 054f 10       		.uleb128 0x10
- 1302 0550 C6020000 		.4byte	.LASF43
+ 1302 0550 0A030000 		.4byte	.LASF43
  1303 0554 09       		.byte	0x9
  1304 0555 9B       		.byte	0x9b
  1305 0556 16       		.uleb128 0x16
- 1306 0557 EF000000 		.4byte	.LASF53
+ 1306 0557 33010000 		.4byte	.LASF53
  1307 055b 08       		.byte	0x8
  1308 055c 99       		.byte	0x99
  1309 055d 6B000000 		.4byte	0x6b
  1310 0561 14       		.uleb128 0x14
- 1311 0562 09030000 		.4byte	.LASF45
+ 1311 0562 4D030000 		.4byte	.LASF45
  1312 0566 0B       		.byte	0xb
  1313 0567 2A       		.byte	0x2a
  1314 0568 6E050000 		.4byte	0x56e
  1315 056c 15       		.uleb128 0x15
  1316 056d 00       		.byte	0
  1317 056e 14       		.uleb128 0x14
- 1318 056f 15030000 		.4byte	.LASF46
+ 1318 056f 59030000 		.4byte	.LASF46
  1319 0573 0A       		.byte	0xa
  1320 0574 15       		.byte	0x15
  1321 0575 7B050000 		.4byte	0x57b
  1322 0579 15       		.uleb128 0x15
  1323 057a 00       		.byte	0
  1324 057b 14       		.uleb128 0x14
- 1325 057c 2D030000 		.4byte	.LASF47
+ 1325 057c 71030000 		.4byte	.LASF47
  1326 0580 0C       		.byte	0xc
  1327 0581 13       		.byte	0x13
  1328 0582 88050000 		.4byte	0x588
  1329 0586 15       		.uleb128 0x15
  1330 0587 00       		.byte	0
  1331 0588 13       		.uleb128 0x13
- 1332 0589 6C020000 		.4byte	.LASF48
+ 1332 0589 B0020000 		.4byte	.LASF48
  1333 058d 06       		.byte	0x6
  1334 058e 3D       		.byte	0x3d
  1335 058f 9E050000 		.4byte	0x59e
@@ -1618,10 +1618,10 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccQFj17y.s 			page 1
  1339 0599 6B000000 		.4byte	0x6b
  1340 059d 00       		.byte	0
  1341 059e 13       		.uleb128 0x13
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccQFj17y.s 			page 28
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccFU5GBT.s 			page 28
 
 
- 1342 059f 7A030000 		.4byte	.LASF49
+ 1342 059f BE030000 		.4byte	.LASF49
  1343 05a3 06       		.byte	0x6
  1344 05a4 3C       		.byte	0x3c
  1345 05a5 AF050000 		.4byte	0x5af
@@ -1634,7 +1634,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccQFj17y.s 			page 1
  1352 05b5 18       		.uleb128 0x18
  1353 05b6 9A000000 		.4byte	0x9a
  1354 05ba 11       		.uleb128 0x11
- 1355 05bb A6010000 		.4byte	.LASF51
+ 1355 05bb EA010000 		.4byte	.LASF51
  1356 05bf 09       		.byte	0x9
  1357 05c0 9D       		.byte	0x9d
  1358 05c1 6B000000 		.4byte	0x6b
@@ -1643,7 +1643,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccQFj17y.s 			page 1
  1361 05ca 6B000000 		.4byte	0x6b
  1362 05ce 00       		.byte	0
  1363 05cf 13       		.uleb128 0x13
- 1364 05d0 8D020000 		.4byte	.LASF52
+ 1364 05d0 D1020000 		.4byte	.LASF52
  1365 05d4 0A       		.byte	0xa
  1366 05d5 1B       		.byte	0x1b
  1367 05d6 E0050000 		.4byte	0x5e0
@@ -1651,12 +1651,12 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccQFj17y.s 			page 1
  1369 05db 5D000000 		.4byte	0x5d
  1370 05df 00       		.byte	0
  1371 05e0 16       		.uleb128 0x16
- 1372 05e1 F3030000 		.4byte	.LASF54
+ 1372 05e1 FA030000 		.4byte	.LASF54
  1373 05e5 05       		.byte	0x5
  1374 05e6 18       		.byte	0x18
  1375 05e7 8C000000 		.4byte	0x8c
  1376 05eb 13       		.uleb128 0x13
- 1377 05ec BA000000 		.4byte	.LASF55
+ 1377 05ec FE000000 		.4byte	.LASF55
  1378 05f0 04       		.byte	0x4
  1379 05f1 14       		.byte	0x14
  1380 05f2 FC050000 		.4byte	0x5fc
@@ -1664,7 +1664,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccQFj17y.s 			page 1
  1382 05f7 5D000000 		.4byte	0x5d
  1383 05fb 00       		.byte	0
  1384 05fc 19       		.uleb128 0x19
- 1385 05fd 6F030000 		.4byte	.LASF60
+ 1385 05fd B3030000 		.4byte	.LASF60
  1386 0601 04       		.byte	0x4
  1387 0602 16       		.byte	0x16
  1388 0603 15       		.uleb128 0x15
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccQFj17y.s 			page 1
  1396 0003 25       		.uleb128 0x25
  1397 0004 0E       		.uleb128 0xe
  1398 0005 13       		.uleb128 0x13
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccQFj17y.s 			page 29
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccFU5GBT.s 			page 29
 
 
  1399 0006 0B       		.uleb128 0xb
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccQFj17y.s 			page 1
  1453 003c 0E       		.uleb128 0xe
  1454 003d 3A       		.uleb128 0x3a
  1455 003e 0B       		.uleb128 0xb
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccQFj17y.s 			page 30
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccFU5GBT.s 			page 30
 
 
  1456 003f 3B       		.uleb128 0x3b
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccQFj17y.s 			page 1
  1510 007a 31       		.uleb128 0x31
  1511 007b 13       		.uleb128 0x13
  1512 007c 01       		.uleb128 0x1
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccQFj17y.s 			page 31
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccFU5GBT.s 			page 31
 
 
  1513 007d 13       		.uleb128 0x13
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccQFj17y.s 			page 1
  1567 00b9 0B       		.uleb128 0xb
  1568 00ba 49       		.uleb128 0x49
  1569 00bb 13       		.uleb128 0x13
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccQFj17y.s 			page 32
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccFU5GBT.s 			page 32
 
 
  1570 00bc 3F       		.uleb128 0x3f
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccQFj17y.s 			page 1
  1624 00f2 49       		.uleb128 0x49
  1625 00f3 13       		.uleb128 0x13
  1626 00f4 3C       		.uleb128 0x3c
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccQFj17y.s 			page 33
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccFU5GBT.s 			page 33
 
 
  1627 00f5 19       		.uleb128 0x19
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccQFj17y.s 			page 1
  1681 012b 2E       		.uleb128 0x2e
  1682 012c 00       		.byte	0
  1683 012d 3F       		.uleb128 0x3f
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccQFj17y.s 			page 34
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccFU5GBT.s 			page 34
 
 
  1684 012e 19       		.uleb128 0x19
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccQFj17y.s 			page 1
  1738 000b 60000000 		.4byte	.LVL13
  1739 000f 64000000 		.4byte	.LVL14
  1740 0013 0100     		.2byte	0x1
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccQFj17y.s 			page 35
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccFU5GBT.s 			page 35
 
 
  1741 0015 54       		.byte	0x54
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccQFj17y.s 			page 1
  1794      0200D200 
  1794      00000201 
  1794      FB0E0D00 
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccQFj17y.s 			page 36
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccFU5GBT.s 			page 36
 
 
  1794      01010101 
@@ -2121,298 +2121,299 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccQFj17y.s 			page 1
  1802 002f 50726576 		.ascii	"Prev_state\000"
  1802      5F737461 
  1802      746500
- 1803              	.LASF37:
- 1804 003a 4D4F544F 		.ascii	"MOTOR_WALKING_SPEED\000"
- 1804      525F5741 
- 1804      4C4B494E 
- 1804      475F5350 
- 1804      45454400 
- 1805              	.LASF9:
- 1806 004e 75696E74 		.ascii	"uint8\000"
- 1806      3800
- 1807              	.LASF40:
- 1808 0054 4C43445F 		.ascii	"LCD_WriteControl\000"
- 1808      57726974 
- 1808      65436F6E 
- 1808      74726F6C 
- 1808      00
- 1809              	.LASF28:
- 1810 0065 74696D65 		.ascii	"timer_status\000"
- 1810      725F7374 
- 1810      61747573 
- 1810      00
- 1811              	.LASF21:
- 1812 0072 53746174 		.ascii	"State_profile_selection\000"
- 1812      655F7072 
- 1812      6F66696C 
- 1812      655F7365 
- 1812      6C656374 
- 1813              	.LASF50:
- 1814 008a 43617053 		.ascii	"CapSense_ReadSensorRaw\000"
- 1814      656E7365 
- 1814      5F526561 
- 1814      6453656E 
- 1814      736F7252 
- 1815              	.LASF27:
- 1816 00a1 68656172 		.ascii	"heartbeatCounter\000"
- 1816      74626561 
- 1816      74436F75 
- 1816      6E746572 
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccQFj17y.s 			page 37
+ 1803              	.LASF58:
+ 1804 003a 433A5C55 		.ascii	"C:\\Users\\JohnP\\Desktop\\embedded\\trunk\\CE4920P"
+ 1804      73657273 
+ 1804      5C4A6F68 
+ 1804      6E505C44 
+ 1804      65736B74 
+ 1805 0067 726F6A65 		.ascii	"roject1\\Design01.cydsn\000"
+ 1805      6374315C 
+ 1805      44657369 
+ 1805      676E3031 
+ 1805      2E637964 
+ 1806              	.LASF37:
+ 1807 007e 4D4F544F 		.ascii	"MOTOR_WALKING_SPEED\000"
+ 1807      525F5741 
+ 1807      4C4B494E 
+ 1807      475F5350 
+ 1807      45454400 
+ 1808              	.LASF9:
+ 1809 0092 75696E74 		.ascii	"uint8\000"
+ 1809      3800
+ 1810              	.LASF40:
+ 1811 0098 4C43445F 		.ascii	"LCD_WriteControl\000"
+ 1811      57726974 
+ 1811      65436F6E 
+ 1811      74726F6C 
+ 1811      00
+ 1812              	.LASF28:
+ 1813 00a9 74696D65 		.ascii	"timer_status\000"
+ 1813      725F7374 
+ 1813      61747573 
+ 1813      00
+ 1814              	.LASF21:
+ 1815 00b6 53746174 		.ascii	"State_profile_selection\000"
+ 1815      655F7072 
+ 1815      6F66696C 
+ 1815      655F7365 
+ 1815      6C656374 
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccFU5GBT.s 			page 37
 
 
- 1816      00
- 1817              	.LASF32:
- 1818 00b2 50524F46 		.ascii	"PROFILE\000"
- 1818      494C4500 
- 1819              	.LASF55:
- 1820 00ba 4D6F746F 		.ascii	"Motor_rampUp\000"
- 1820      725F7261 
- 1820      6D705570 
- 1820      00
- 1821              	.LASF12:
- 1822 00c7 666C6F61 		.ascii	"float\000"
- 1822      7400
- 1823              	.LASF17:
- 1824 00cd 53544154 		.ascii	"STATE\000"
- 1824      4500
- 1825              	.LASF6:
- 1826 00d3 6C6F6E67 		.ascii	"long long int\000"
- 1826      206C6F6E 
- 1826      6720696E 
- 1826      7400
- 1827              	.LASF1:
- 1828 00e1 756E7369 		.ascii	"unsigned char\000"
- 1828      676E6564 
- 1828      20636861 
- 1828      7200
- 1829              	.LASF53:
- 1830 00ef 43617053 		.ascii	"CapSense_IsBusy\000"
- 1830      656E7365 
- 1830      5F497342 
- 1830      75737900 
- 1831              	.LASF14:
- 1832 00ff 63686172 		.ascii	"char8\000"
- 1832      3800
- 1833              	.LASF5:
- 1834 0105 6C6F6E67 		.ascii	"long unsigned int\000"
- 1834      20756E73 
- 1834      69676E65 
- 1834      6420696E 
- 1834      7400
- 1835              	.LASF56:
- 1836 0117 474E5520 		.ascii	"GNU C 4.8.4 20140526 (release) [ARM/embedded-4_8-br"
- 1836      4320342E 
- 1836      382E3420 
- 1836      32303134 
- 1836      30353236 
- 1837 014a 616E6368 		.ascii	"anch revision 211358] -mcpu=cortex-m3 -mthumb -g -O"
- 1837      20726576 
- 1837      6973696F 
- 1837      6E203231 
- 1837      31333538 
- 1838 017d 67202D66 		.ascii	"g -ffunction-sections\000"
- 1838      66756E63 
- 1838      74696F6E 
- 1838      2D736563 
- 1838      74696F6E 
- 1839              	.LASF3:
- 1840 0193 73686F72 		.ascii	"short unsigned int\000"
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccQFj17y.s 			page 38
+ 1816              	.LASF50:
+ 1817 00ce 43617053 		.ascii	"CapSense_ReadSensorRaw\000"
+ 1817      656E7365 
+ 1817      5F526561 
+ 1817      6453656E 
+ 1817      736F7252 
+ 1818              	.LASF27:
+ 1819 00e5 68656172 		.ascii	"heartbeatCounter\000"
+ 1819      74626561 
+ 1819      74436F75 
+ 1819      6E746572 
+ 1819      00
+ 1820              	.LASF32:
+ 1821 00f6 50524F46 		.ascii	"PROFILE\000"
+ 1821      494C4500 
+ 1822              	.LASF55:
+ 1823 00fe 4D6F746F 		.ascii	"Motor_rampUp\000"
+ 1823      725F7261 
+ 1823      6D705570 
+ 1823      00
+ 1824              	.LASF12:
+ 1825 010b 666C6F61 		.ascii	"float\000"
+ 1825      7400
+ 1826              	.LASF17:
+ 1827 0111 53544154 		.ascii	"STATE\000"
+ 1827      4500
+ 1828              	.LASF6:
+ 1829 0117 6C6F6E67 		.ascii	"long long int\000"
+ 1829      206C6F6E 
+ 1829      6720696E 
+ 1829      7400
+ 1830              	.LASF1:
+ 1831 0125 756E7369 		.ascii	"unsigned char\000"
+ 1831      676E6564 
+ 1831      20636861 
+ 1831      7200
+ 1832              	.LASF53:
+ 1833 0133 43617053 		.ascii	"CapSense_IsBusy\000"
+ 1833      656E7365 
+ 1833      5F497342 
+ 1833      75737900 
+ 1834              	.LASF14:
+ 1835 0143 63686172 		.ascii	"char8\000"
+ 1835      3800
+ 1836              	.LASF5:
+ 1837 0149 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1837      20756E73 
+ 1837      69676E65 
+ 1837      6420696E 
+ 1837      7400
+ 1838              	.LASF56:
+ 1839 015b 474E5520 		.ascii	"GNU C 4.8.4 20140526 (release) [ARM/embedded-4_8-br"
+ 1839      4320342E 
+ 1839      382E3420 
+ 1839      32303134 
+ 1839      30353236 
+ 1840 018e 616E6368 		.ascii	"anch revision 211358] -mcpu=cortex-m3 -mthumb -g -O"
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccFU5GBT.s 			page 38
 
 
- 1840      7420756E 
- 1840      7369676E 
- 1840      65642069 
- 1840      6E7400
- 1841              	.LASF51:
- 1842 01a6 43617053 		.ascii	"CapSense_CheckIsWidgetActive\000"
- 1842      656E7365 
- 1842      5F436865 
- 1842      636B4973 
- 1842      57696467 
- 1843              	.LASF13:
- 1844 01c3 646F7562 		.ascii	"double\000"
- 1844      6C6500
- 1845              	.LASF42:
- 1846 01ca 43617053 		.ascii	"CapSense_ScanEnabledWidgets\000"
- 1846      656E7365 
- 1846      5F536361 
- 1846      6E456E61 
- 1846      626C6564 
- 1847              	.LASF19:
- 1848 01e6 53746174 		.ascii	"State_reset\000"
- 1848      655F7265 
- 1848      73657400 
- 1849              	.LASF57:
- 1850 01f2 2E5C7374 		.ascii	".\\states.c\000"
- 1850      61746573 
- 1850      2E6300
- 1851              	.LASF2:
- 1852 01fd 73686F72 		.ascii	"short int\000"
- 1852      7420696E 
- 1852      7400
- 1853              	.LASF29:
- 1854 0207 74696D65 		.ascii	"timer_value\000"
- 1854      725F7661 
- 1854      6C756500 
- 1855              	.LASF10:
- 1856 0213 75696E74 		.ascii	"uint16\000"
- 1856      313600
- 1857              	.LASF20:
- 1858 021a 53746174 		.ascii	"State_start\000"
- 1858      655F7374 
- 1858      61727400 
- 1859              	.LASF11:
- 1860 0226 75696E74 		.ascii	"uint32\000"
- 1860      333200
- 1861              	.LASF31:
- 1862 022d 696E6372 		.ascii	"increasingHr\000"
- 1862      65617369 
- 1862      6E674872 
- 1862      00
- 1863              	.LASF39:
- 1864 023a 6D6F7669 		.ascii	"movingAverage\000"
- 1864      6E674176 
- 1864      65726167 
- 1864      6500
- 1865              	.LASF8:
- 1866 0248 756E7369 		.ascii	"unsigned int\000"
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccQFj17y.s 			page 39
+ 1840      20726576 
+ 1840      6973696F 
+ 1840      6E203231 
+ 1840      31333538 
+ 1841 01c1 67202D66 		.ascii	"g -ffunction-sections\000"
+ 1841      66756E63 
+ 1841      74696F6E 
+ 1841      2D736563 
+ 1841      74696F6E 
+ 1842              	.LASF3:
+ 1843 01d7 73686F72 		.ascii	"short unsigned int\000"
+ 1843      7420756E 
+ 1843      7369676E 
+ 1843      65642069 
+ 1843      6E7400
+ 1844              	.LASF51:
+ 1845 01ea 43617053 		.ascii	"CapSense_CheckIsWidgetActive\000"
+ 1845      656E7365 
+ 1845      5F436865 
+ 1845      636B4973 
+ 1845      57696467 
+ 1846              	.LASF13:
+ 1847 0207 646F7562 		.ascii	"double\000"
+ 1847      6C6500
+ 1848              	.LASF42:
+ 1849 020e 43617053 		.ascii	"CapSense_ScanEnabledWidgets\000"
+ 1849      656E7365 
+ 1849      5F536361 
+ 1849      6E456E61 
+ 1849      626C6564 
+ 1850              	.LASF19:
+ 1851 022a 53746174 		.ascii	"State_reset\000"
+ 1851      655F7265 
+ 1851      73657400 
+ 1852              	.LASF57:
+ 1853 0236 2E5C7374 		.ascii	".\\states.c\000"
+ 1853      61746573 
+ 1853      2E6300
+ 1854              	.LASF2:
+ 1855 0241 73686F72 		.ascii	"short int\000"
+ 1855      7420696E 
+ 1855      7400
+ 1856              	.LASF29:
+ 1857 024b 74696D65 		.ascii	"timer_value\000"
+ 1857      725F7661 
+ 1857      6C756500 
+ 1858              	.LASF10:
+ 1859 0257 75696E74 		.ascii	"uint16\000"
+ 1859      313600
+ 1860              	.LASF20:
+ 1861 025e 53746174 		.ascii	"State_start\000"
+ 1861      655F7374 
+ 1861      61727400 
+ 1862              	.LASF11:
+ 1863 026a 75696E74 		.ascii	"uint32\000"
+ 1863      333200
+ 1864              	.LASF31:
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccFU5GBT.s 			page 39
 
 
- 1866      676E6564 
- 1866      20696E74 
- 1866      00
- 1867              	.LASF7:
- 1868 0255 6C6F6E67 		.ascii	"long long unsigned int\000"
- 1868      206C6F6E 
- 1868      6720756E 
- 1868      7369676E 
- 1868      65642069 
- 1869              	.LASF48:
- 1870 026c 4C43445F 		.ascii	"LCD_Position\000"
- 1870      506F7369 
- 1870      74696F6E 
- 1870      00
- 1871              	.LASF30:
- 1872 0279 61766572 		.ascii	"average\000"
- 1872      61676500 
- 1873              	.LASF18:
- 1874 0281 53746174 		.ascii	"State_sleep\000"
- 1874      655F736C 
- 1874      65657000 
- 1875              	.LASF52:
- 1876 028d 44697370 		.ascii	"Display_profile_selection\000"
- 1876      6C61795F 
- 1876      70726F66 
- 1876      696C655F 
- 1876      73656C65 
- 1877              	.LASF35:
- 1878 02a7 73656C65 		.ascii	"selectedProfile\000"
- 1878      63746564 
- 1878      50726F66 
- 1878      696C6500 
- 1879              	.LASF25:
- 1880 02b7 73706565 		.ascii	"speed\000"
- 1880      6400
- 1881              	.LASF16:
- 1882 02bd 73697A65 		.ascii	"sizetype\000"
- 1882      74797065 
- 1882      00
- 1883              	.LASF43:
- 1884 02c6 43617053 		.ascii	"CapSense_UpdateEnabledBaselines\000"
- 1884      656E7365 
- 1884      5F557064 
- 1884      61746545 
- 1884      6E61626C 
- 1885              	.LASF26:
- 1886 02e6 68656172 		.ascii	"heartrate\000"
- 1886      74726174 
- 1886      6500
- 1887              	.LASF36:
- 1888 02f0 4D4F544F 		.ascii	"MOTOR_RUNNING_SPEED\000"
- 1888      525F5255 
- 1888      4E4E494E 
- 1888      475F5350 
- 1888      45454400 
- 1889              	.LASF15:
- 1890 0304 63686172 		.ascii	"char\000"
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccQFj17y.s 			page 40
+ 1865 0271 696E6372 		.ascii	"increasingHr\000"
+ 1865      65617369 
+ 1865      6E674872 
+ 1865      00
+ 1866              	.LASF39:
+ 1867 027e 6D6F7669 		.ascii	"movingAverage\000"
+ 1867      6E674176 
+ 1867      65726167 
+ 1867      6500
+ 1868              	.LASF8:
+ 1869 028c 756E7369 		.ascii	"unsigned int\000"
+ 1869      676E6564 
+ 1869      20696E74 
+ 1869      00
+ 1870              	.LASF7:
+ 1871 0299 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1871      206C6F6E 
+ 1871      6720756E 
+ 1871      7369676E 
+ 1871      65642069 
+ 1872              	.LASF48:
+ 1873 02b0 4C43445F 		.ascii	"LCD_Position\000"
+ 1873      506F7369 
+ 1873      74696F6E 
+ 1873      00
+ 1874              	.LASF30:
+ 1875 02bd 61766572 		.ascii	"average\000"
+ 1875      61676500 
+ 1876              	.LASF18:
+ 1877 02c5 53746174 		.ascii	"State_sleep\000"
+ 1877      655F736C 
+ 1877      65657000 
+ 1878              	.LASF52:
+ 1879 02d1 44697370 		.ascii	"Display_profile_selection\000"
+ 1879      6C61795F 
+ 1879      70726F66 
+ 1879      696C655F 
+ 1879      73656C65 
+ 1880              	.LASF35:
+ 1881 02eb 73656C65 		.ascii	"selectedProfile\000"
+ 1881      63746564 
+ 1881      50726F66 
+ 1881      696C6500 
+ 1882              	.LASF25:
+ 1883 02fb 73706565 		.ascii	"speed\000"
+ 1883      6400
+ 1884              	.LASF16:
+ 1885 0301 73697A65 		.ascii	"sizetype\000"
+ 1885      74797065 
+ 1885      00
+ 1886              	.LASF43:
+ 1887 030a 43617053 		.ascii	"CapSense_UpdateEnabledBaselines\000"
+ 1887      656E7365 
+ 1887      5F557064 
+ 1887      61746545 
+ 1887      6E61626C 
+ 1888              	.LASF26:
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccFU5GBT.s 			page 40
 
 
- 1890      00
- 1891              	.LASF45:
- 1892 0309 53797374 		.ascii	"System_init\000"
- 1892      656D5F69 
- 1892      6E697400 
- 1893              	.LASF46:
- 1894 0315 44697370 		.ascii	"Display_welcome_message\000"
- 1894      6C61795F 
- 1894      77656C63 
- 1894      6F6D655F 
- 1894      6D657373 
- 1895              	.LASF47:
- 1896 032d 506C6179 		.ascii	"Play_startup_music\000"
- 1896      5F737461 
- 1896      72747570 
- 1896      5F6D7573 
- 1896      696300
- 1897              	.LASF22:
- 1898 0340 53746174 		.ascii	"State_moving\000"
- 1898      655F6D6F 
- 1898      76696E67 
- 1898      00
- 1899              	.LASF38:
- 1900 034d 4D4F544F 		.ascii	"MOTOR_FAST_WALKING_SPEED\000"
- 1900      525F4641 
- 1900      53545F57 
- 1900      414C4B49 
- 1900      4E475F53 
- 1901              	.LASF4:
- 1902 0366 6C6F6E67 		.ascii	"long int\000"
- 1902      20696E74 
- 1902      00
- 1903              	.LASF60:
- 1904 036f 4D6F746F 		.ascii	"Motor_stop\000"
- 1904      725F7374 
- 1904      6F7000
- 1905              	.LASF49:
- 1906 037a 4C43445F 		.ascii	"LCD_PrintString\000"
- 1906      5072696E 
- 1906      74537472 
- 1906      696E6700 
- 1907              	.LASF33:
- 1908 038a 63757272 		.ascii	"currentState\000"
- 1908      656E7453 
- 1908      74617465 
- 1908      00
- 1909              	.LASF0:
- 1910 0397 7369676E 		.ascii	"signed char\000"
- 1910      65642063 
- 1910      68617200 
- 1911              	.LASF58:
- 1912 03a3 433A5C72 		.ascii	"C:\\repositories\\embedded\\trunk\\CE4920Project1\\"
- 1912      65706F73 
- 1912      69746F72 
- 1912      6965735C 
- 1912      656D6265 
- 1913 03d1 44657369 		.ascii	"Design01.cydsn\000"
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccQFj17y.s 			page 41
+ 1889 032a 68656172 		.ascii	"heartrate\000"
+ 1889      74726174 
+ 1889      6500
+ 1890              	.LASF36:
+ 1891 0334 4D4F544F 		.ascii	"MOTOR_RUNNING_SPEED\000"
+ 1891      525F5255 
+ 1891      4E4E494E 
+ 1891      475F5350 
+ 1891      45454400 
+ 1892              	.LASF15:
+ 1893 0348 63686172 		.ascii	"char\000"
+ 1893      00
+ 1894              	.LASF45:
+ 1895 034d 53797374 		.ascii	"System_init\000"
+ 1895      656D5F69 
+ 1895      6E697400 
+ 1896              	.LASF46:
+ 1897 0359 44697370 		.ascii	"Display_welcome_message\000"
+ 1897      6C61795F 
+ 1897      77656C63 
+ 1897      6F6D655F 
+ 1897      6D657373 
+ 1898              	.LASF47:
+ 1899 0371 506C6179 		.ascii	"Play_startup_music\000"
+ 1899      5F737461 
+ 1899      72747570 
+ 1899      5F6D7573 
+ 1899      696300
+ 1900              	.LASF22:
+ 1901 0384 53746174 		.ascii	"State_moving\000"
+ 1901      655F6D6F 
+ 1901      76696E67 
+ 1901      00
+ 1902              	.LASF38:
+ 1903 0391 4D4F544F 		.ascii	"MOTOR_FAST_WALKING_SPEED\000"
+ 1903      525F4641 
+ 1903      53545F57 
+ 1903      414C4B49 
+ 1903      4E475F53 
+ 1904              	.LASF4:
+ 1905 03aa 6C6F6E67 		.ascii	"long int\000"
+ 1905      20696E74 
+ 1905      00
+ 1906              	.LASF60:
+ 1907 03b3 4D6F746F 		.ascii	"Motor_stop\000"
+ 1907      725F7374 
+ 1907      6F7000
+ 1908              	.LASF49:
+ 1909 03be 4C43445F 		.ascii	"LCD_PrintString\000"
+ 1909      5072696E 
+ 1909      74537472 
+ 1909      696E6700 
+ 1910              	.LASF33:
+ 1911 03ce 63757272 		.ascii	"currentState\000"
+ 1911      656E7453 
+ 1911      74617465 
+ 1911      00
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccFU5GBT.s 			page 41
 
 
- 1913      676E3031 
- 1913      2E637964 
- 1913      736E00
+ 1912              	.LASF0:
+ 1913 03db 7369676E 		.ascii	"signed char\000"
+ 1913      65642063 
+ 1913      68617200 
  1914              	.LASF24:
- 1915 03e0 53746174 		.ascii	"State_stop\000"
+ 1915 03e7 53746174 		.ascii	"State_stop\000"
  1915      655F7374 
  1915      6F7000
  1916              	.LASF41:
- 1917 03eb 43794465 		.ascii	"CyDelay\000"
+ 1917 03f2 43794465 		.ascii	"CyDelay\000"
  1917      6C617900 
  1918              	.LASF54:
- 1919 03f3 44657465 		.ascii	"Detect_heartrate\000"
+ 1919 03fa 44657465 		.ascii	"Detect_heartrate\000"
  1919      63745F68 
  1919      65617274 
  1919      72617465 

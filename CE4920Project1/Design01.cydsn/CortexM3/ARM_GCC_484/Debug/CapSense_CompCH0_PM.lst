@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccPM4VEI.s 			page 1
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccf1EG8v.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccPM4VEI.s 			page 1
   29:.\Generated_Source\PSoC5/CapSense_CompCH0_PM.c **** *  Save the current user configuration
   30:.\Generated_Source\PSoC5/CapSense_CompCH0_PM.c **** *
   31:.\Generated_Source\PSoC5/CapSense_CompCH0_PM.c **** * Parameters:
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccPM4VEI.s 			page 2
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccf1EG8v.s 			page 2
 
 
   32:.\Generated_Source\PSoC5/CapSense_CompCH0_PM.c **** *  void:
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccPM4VEI.s 			page 1
   53 0002 00BF     		.section	.text.CapSense_CompCH0_Sleep,"ax",%progbits
   54              		.align	2
   55              		.global	CapSense_CompCH0_Sleep
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccPM4VEI.s 			page 3
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccf1EG8v.s 			page 3
 
 
   56              		.thumb
@@ -164,7 +164,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccPM4VEI.s 			page 1
   70              		.loc 1 85 0
   71 0002 074B     		ldr	r3, .L6
   72 0004 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
-  73 0006 13F0040F 		tst	r3, #4
+  73 0006 13F0020F 		tst	r3, #2
   74 000a 03D0     		beq	.L4
   86:.\Generated_Source\PSoC5/CapSense_CompCH0_PM.c ****     {
   87:.\Generated_Source\PSoC5/CapSense_CompCH0_PM.c ****         /* Comp is enabled */
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccPM4VEI.s 			page 1
   89:.\Generated_Source\PSoC5/CapSense_CompCH0_PM.c ****     }
   90:.\Generated_Source\PSoC5/CapSense_CompCH0_PM.c ****     else
   91:.\Generated_Source\PSoC5/CapSense_CompCH0_PM.c ****     {
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccPM4VEI.s 			page 4
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccf1EG8v.s 			page 4
 
 
   92:.\Generated_Source\PSoC5/CapSense_CompCH0_PM.c ****         /* Comp is disabled */
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccPM4VEI.s 			page 1
  106              		.loc 1 120 0
  107              		.cfi_startproc
  108              		@ args = 0, pretend = 0, frame = 0
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccPM4VEI.s 			page 5
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccf1EG8v.s 			page 5
 
 
  109              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -290,15 +290,15 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccPM4VEI.s 			page 1
  149 000c F4000000 		.4byte	.LASF22
  150 0010 01       		.byte	0x1
  151 0011 00000000 		.4byte	.LASF23
- 152 0015 AB010000 		.4byte	.LASF24
+ 152 0015 75010000 		.4byte	.LASF24
  153 0019 00000000 		.4byte	.Ldebug_ranges0+0
  154 001d 00000000 		.4byte	0
  155 0021 00000000 		.4byte	.Ldebug_line0
  156 0025 02       		.uleb128 0x2
  157 0026 01       		.byte	0x1
  158 0027 06       		.byte	0x6
- 159 0028 FB010000 		.4byte	.LASF0
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccPM4VEI.s 			page 6
+ 159 0028 02020000 		.4byte	.LASF0
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccf1EG8v.s 			page 6
 
 
  160 002c 02       		.uleb128 0x2
@@ -308,15 +308,15 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccPM4VEI.s 			page 1
  164 0033 02       		.uleb128 0x2
  165 0034 02       		.byte	0x2
  166 0035 05       		.byte	0x5
- 167 0036 19020000 		.4byte	.LASF2
+ 167 0036 20020000 		.4byte	.LASF2
  168 003a 02       		.uleb128 0x2
  169 003b 02       		.byte	0x2
  170 003c 07       		.byte	0x7
- 171 003d E8010000 		.4byte	.LASF3
+ 171 003d EF010000 		.4byte	.LASF3
  172 0041 02       		.uleb128 0x2
  173 0042 04       		.byte	0x4
  174 0043 05       		.byte	0x5
- 175 0044 75010000 		.4byte	.LASF4
+ 175 0044 B9010000 		.4byte	.LASF4
  176 0048 02       		.uleb128 0x2
  177 0049 04       		.byte	0x4
  178 004a 07       		.byte	0x7
@@ -324,7 +324,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccPM4VEI.s 			page 1
  180 004f 02       		.uleb128 0x2
  181 0050 08       		.byte	0x8
  182 0051 05       		.byte	0x5
- 183 0052 9D010000 		.4byte	.LASF6
+ 183 0052 E1010000 		.4byte	.LASF6
  184 0056 02       		.uleb128 0x2
  185 0057 08       		.byte	0x8
  186 0058 07       		.byte	0x7
@@ -345,20 +345,20 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccPM4VEI.s 			page 1
  201 0076 02       		.uleb128 0x2
  202 0077 04       		.byte	0x4
  203 0078 04       		.byte	0x4
- 204 0079 13020000 		.4byte	.LASF9
+ 204 0079 1A020000 		.4byte	.LASF9
  205 007d 02       		.uleb128 0x2
  206 007e 08       		.byte	0x8
  207 007f 04       		.byte	0x4
- 208 0080 96010000 		.4byte	.LASF10
+ 208 0080 DA010000 		.4byte	.LASF10
  209 0084 02       		.uleb128 0x2
  210 0085 01       		.byte	0x1
  211 0086 08       		.byte	0x8
  212 0087 70010000 		.4byte	.LASF11
  213 008b 05       		.uleb128 0x5
- 214 008c 23020000 		.4byte	.LASF13
+ 214 008c 2A020000 		.4byte	.LASF13
  215 0090 02       		.byte	0x2
  216 0091 5E01     		.2byte	0x15e
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccPM4VEI.s 			page 7
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccf1EG8v.s 			page 7
 
 
  217 0093 97000000 		.4byte	0x97
@@ -367,14 +367,14 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccPM4VEI.s 			page 1
  220 009c 02       		.uleb128 0x2
  221 009d 04       		.byte	0x4
  222 009e 07       		.byte	0x7
- 223 009f 28020000 		.4byte	.LASF14
+ 223 009f 2F020000 		.4byte	.LASF14
  224 00a3 07       		.uleb128 0x7
  225 00a4 01       		.byte	0x1
  226 00a5 03       		.byte	0x3
  227 00a6 29       		.byte	0x29
  228 00a7 B8000000 		.4byte	0xb8
  229 00ab 08       		.uleb128 0x8
- 230 00ac 07020000 		.4byte	.LASF25
+ 230 00ac 0E020000 		.4byte	.LASF25
  231 00b0 03       		.byte	0x3
  232 00b1 2B       		.byte	0x2b
  233 00b2 6B000000 		.4byte	0x6b
@@ -386,7 +386,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccPM4VEI.s 			page 1
  239 00be 2D       		.byte	0x2d
  240 00bf A3000000 		.4byte	0xa3
  241 00c3 09       		.uleb128 0x9
- 242 00c4 50020000 		.4byte	.LASF16
+ 242 00c4 57020000 		.4byte	.LASF16
  243 00c8 01       		.byte	0x1
  244 00c9 26       		.byte	0x26
  245 00ca 00000000 		.4byte	.LFB0
@@ -394,7 +394,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccPM4VEI.s 			page 1
  247 00d2 01       		.uleb128 0x1
  248 00d3 9C       		.byte	0x9c
  249 00d4 09       		.uleb128 0x9
- 250 00d5 31020000 		.4byte	.LASF17
+ 250 00d5 38020000 		.4byte	.LASF17
  251 00d9 01       		.byte	0x1
  252 00da 3A       		.byte	0x3a
  253 00db 00000000 		.4byte	.LFB1
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccPM4VEI.s 			page 1
  271 0105 2F000000 		.4byte	.LASF19
  272 0109 01       		.byte	0x1
  273 010a 77       		.byte	0x77
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccPM4VEI.s 			page 8
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccf1EG8v.s 			page 8
 
 
  274 010b 00000000 		.4byte	.LFB3
@@ -431,7 +431,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccPM4VEI.s 			page 1
  281 011e 3B010000 		.4byte	0x13b
  282 0122 00       		.byte	0
  283 0123 0C       		.uleb128 0xc
- 284 0124 7E010000 		.4byte	.LASF26
+ 284 0124 C2010000 		.4byte	.LASF26
  285 0128 01       		.byte	0x1
  286 0129 15       		.byte	0x15
  287 012a B8000000 		.4byte	0xb8
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccPM4VEI.s 			page 1
  328 001a 03       		.uleb128 0x3
  329 001b 0E       		.uleb128 0xe
  330 001c 00       		.byte	0
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccPM4VEI.s 			page 9
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccf1EG8v.s 			page 9
 
 
  331 001d 00       		.byte	0
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccPM4VEI.s 			page 1
  385 0053 01       		.uleb128 0x1
  386 0054 13       		.uleb128 0x13
  387 0055 00       		.byte	0
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccPM4VEI.s 			page 10
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccf1EG8v.s 			page 10
 
 
  388 0056 00       		.byte	0
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccPM4VEI.s 			page 1
  442 008d 12       		.uleb128 0x12
  443 008e 06       		.uleb128 0x6
  444 008f 40       		.uleb128 0x40
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccPM4VEI.s 			page 11
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccf1EG8v.s 			page 11
 
 
  445 0090 18       		.uleb128 0x18
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccPM4VEI.s 			page 1
  499 000b 00       		.byte	0
  500 000c 0000     		.2byte	0
  501 000e 0000     		.2byte	0
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccPM4VEI.s 			page 12
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccf1EG8v.s 			page 12
 
 
  502 0010 00000000 		.4byte	.LFB0
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccPM4VEI.s 			page 1
  536      656E7365 
  536      5F436F6D 
  536      70434830 
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccPM4VEI.s 			page 13
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccf1EG8v.s 			page 13
 
 
  536      5F53746F 
@@ -773,76 +773,77 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccPM4VEI.s 			page 1
  553              	.LASF11:
  554 0170 63686172 		.ascii	"char\000"
  554      00
- 555              	.LASF4:
- 556 0175 6C6F6E67 		.ascii	"long int\000"
- 556      20696E74 
- 556      00
- 557              	.LASF26:
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccPM4VEI.s 			page 14
+ 555              	.LASF24:
+ 556 0175 433A5C55 		.ascii	"C:\\Users\\JohnP\\Desktop\\embedded\\trunk\\CE4920P"
+ 556      73657273 
+ 556      5C4A6F68 
+ 556      6E505C44 
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccf1EG8v.s 			page 14
 
 
- 558 017e 43617053 		.ascii	"CapSense_CompCH0_backup\000"
- 558      656E7365 
- 558      5F436F6D 
- 558      70434830 
- 558      5F626163 
- 559              	.LASF10:
- 560 0196 646F7562 		.ascii	"double\000"
- 560      6C6500
- 561              	.LASF6:
- 562 019d 6C6F6E67 		.ascii	"long long int\000"
- 562      206C6F6E 
- 562      6720696E 
- 562      7400
- 563              	.LASF24:
- 564 01ab 433A5C72 		.ascii	"C:\\repositories\\embedded\\trunk\\CE4920Project1\\"
- 564      65706F73 
- 564      69746F72 
- 564      6965735C 
- 564      656D6265 
- 565 01d9 44657369 		.ascii	"Design01.cydsn\000"
- 565      676E3031 
- 565      2E637964 
- 565      736E00
+ 556      65736B74 
+ 557 01a2 726F6A65 		.ascii	"roject1\\Design01.cydsn\000"
+ 557      6374315C 
+ 557      44657369 
+ 557      676E3031 
+ 557      2E637964 
+ 558              	.LASF4:
+ 559 01b9 6C6F6E67 		.ascii	"long int\000"
+ 559      20696E74 
+ 559      00
+ 560              	.LASF26:
+ 561 01c2 43617053 		.ascii	"CapSense_CompCH0_backup\000"
+ 561      656E7365 
+ 561      5F436F6D 
+ 561      70434830 
+ 561      5F626163 
+ 562              	.LASF10:
+ 563 01da 646F7562 		.ascii	"double\000"
+ 563      6C6500
+ 564              	.LASF6:
+ 565 01e1 6C6F6E67 		.ascii	"long long int\000"
+ 565      206C6F6E 
+ 565      6720696E 
+ 565      7400
  566              	.LASF3:
- 567 01e8 73686F72 		.ascii	"short unsigned int\000"
+ 567 01ef 73686F72 		.ascii	"short unsigned int\000"
  567      7420756E 
  567      7369676E 
  567      65642069 
  567      6E7400
  568              	.LASF0:
- 569 01fb 7369676E 		.ascii	"signed char\000"
+ 569 0202 7369676E 		.ascii	"signed char\000"
  569      65642063 
  569      68617200 
  570              	.LASF25:
- 571 0207 656E6162 		.ascii	"enableState\000"
+ 571 020e 656E6162 		.ascii	"enableState\000"
  571      6C655374 
  571      61746500 
  572              	.LASF9:
- 573 0213 666C6F61 		.ascii	"float\000"
+ 573 021a 666C6F61 		.ascii	"float\000"
  573      7400
  574              	.LASF2:
- 575 0219 73686F72 		.ascii	"short int\000"
+ 575 0220 73686F72 		.ascii	"short int\000"
  575      7420696E 
  575      7400
  576              	.LASF13:
- 577 0223 72656738 		.ascii	"reg8\000"
+ 577 022a 72656738 		.ascii	"reg8\000"
  577      00
  578              	.LASF14:
- 579 0228 73697A65 		.ascii	"sizetype\000"
+ 579 022f 73697A65 		.ascii	"sizetype\000"
  579      74797065 
  579      00
  580              	.LASF17:
- 581 0231 43617053 		.ascii	"CapSense_CompCH0_RestoreConfig\000"
+ 581 0238 43617053 		.ascii	"CapSense_CompCH0_RestoreConfig\000"
  581      656E7365 
  581      5F436F6D 
  581      70434830 
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccf1EG8v.s 			page 15
+
+
  581      5F526573 
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccPM4VEI.s 			page 15
-
-
  582              	.LASF16:
- 583 0250 43617053 		.ascii	"CapSense_CompCH0_SaveConfig\000"
+ 583 0257 43617053 		.ascii	"CapSense_CompCH0_SaveConfig\000"
  583      656E7365 
  583      5F436F6D 
  583      70434830 

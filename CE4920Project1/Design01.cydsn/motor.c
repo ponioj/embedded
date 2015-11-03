@@ -14,7 +14,7 @@
 
 void Start_motor(){
     PWM_Start();
-//    Move_motor(500);
+    Move_motor(100);
 }
 
 void Motor_rampUp(int topSpeed){
@@ -50,7 +50,7 @@ void Motor_stop(){
 
 void Move_motor(int motorSpeed){
     speed = motorSpeed;
-    PWM_WritePeriod(motorSpeed);
+    PWM_WriteCompare(motorSpeed);
 }
 
 /* [] END OF FILE */

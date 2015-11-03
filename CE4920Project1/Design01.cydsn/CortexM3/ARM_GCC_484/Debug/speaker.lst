@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccqgiAgI.s 			page 1
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccCJaNMq.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccqgiAgI.s 			page 1
   25:.\speaker.c   **** #define C2 65.406
   26:.\speaker.c   **** #define C3 130.81
   27:.\speaker.c   **** #define C4 261.63
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccqgiAgI.s 			page 2
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccCJaNMq.s 			page 2
 
 
   28:.\speaker.c   **** #define C5 523.25
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccqgiAgI.s 			page 1
   82:.\speaker.c   ****     }while(toneFrequency > duration); 
   83:.\speaker.c   **** }
   84:.\speaker.c   **** 
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccqgiAgI.s 			page 3
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccCJaNMq.s 			page 3
 
 
   85:.\speaker.c   **** int calculatePeriodDelay(int frequency) {
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccqgiAgI.s 			page 1
   79              		@ args = 0, pretend = 0, frame = 0
   80              		@ frame_needed = 0, uses_anonymous_args = 0
   81              	.LVL5:
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccqgiAgI.s 			page 4
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccCJaNMq.s 			page 4
 
 
   82 0000 2DE9F843 		push	{r3, r4, r5, r6, r7, r8, r9, lr}
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccqgiAgI.s 			page 1
  127              		.loc 1 81 0 discriminator 1
  128 0034 2046     		mov	r0, r4
  129 0036 3146     		mov	r1, r6
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccqgiAgI.s 			page 5
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccCJaNMq.s 			page 5
 
 
  130 0038 FFF7FEFF 		bl	__aeabi_fsub
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccqgiAgI.s 			page 1
  178 0014 FFF7FEFF 		bl	Play_note
  179              	.LVL22:
   61:.\speaker.c   ****     CyDelay(64);
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccqgiAgI.s 			page 6
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccCJaNMq.s 			page 6
 
 
  180              		.loc 1 61 0
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccqgiAgI.s 			page 1
  224 0054 10BD     		pop	{r4, pc}
  225              	.LVL32:
  226              	.L11:
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccqgiAgI.s 			page 7
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccCJaNMq.s 			page 7
 
 
  227 0056 00BF     		.align	2
@@ -404,21 +404,21 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccqgiAgI.s 			page 1
  265 0006 00000000 		.4byte	.Ldebug_abbrev0
  266 000a 04       		.byte	0x4
  267 000b 01       		.uleb128 0x1
- 268 000c 02010000 		.4byte	.LASF10
+ 268 000c CC000000 		.4byte	.LASF10
  269 0010 01       		.byte	0x1
- 270 0011 ED000000 		.4byte	.LASF11
- 271 0015 5E000000 		.4byte	.LASF12
+ 270 0011 AF000000 		.4byte	.LASF11
+ 271 0015 6B000000 		.4byte	.LASF12
  272 0019 00000000 		.4byte	.Ldebug_ranges0+0
  273 001d 00000000 		.4byte	0
  274 0021 00000000 		.4byte	.Ldebug_line0
  275 0025 02       		.uleb128 0x2
- 276 0026 D8000000 		.4byte	.LASF13
+ 276 0026 24000000 		.4byte	.LASF13
  277 002a 01       		.byte	0x1
  278 002b 55       		.byte	0x55
  279 002c 4E000000 		.4byte	0x4e
  280 0030 00000000 		.4byte	.LFB3
  281 0034 30000000 		.4byte	.LFE3-.LFB3
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccqgiAgI.s 			page 8
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccCJaNMq.s 			page 8
 
 
  282 0038 01       		.uleb128 0x1
@@ -445,19 +445,19 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccqgiAgI.s 			page 1
  303 0065 9C       		.byte	0x9c
  304 0066 1D010000 		.4byte	0x11d
  305 006a 03       		.uleb128 0x3
- 306 006b 41000000 		.4byte	.LASF1
+ 306 006b 39000000 		.4byte	.LASF1
  307 006f 01       		.byte	0x1
  308 0070 48       		.byte	0x48
  309 0071 1D010000 		.4byte	0x11d
  310 0075 21000000 		.4byte	.LLST1
  311 0079 03       		.uleb128 0x3
- 312 007a F9000000 		.4byte	.LASF2
+ 312 007a BB000000 		.4byte	.LASF2
  313 007e 01       		.byte	0x1
  314 007f 48       		.byte	0x48
  315 0080 4E000000 		.4byte	0x4e
  316 0084 55000000 		.4byte	.LLST2
  317 0088 06       		.uleb128 0x6
- 318 0089 4F000000 		.4byte	.LASF7
+ 318 0089 47000000 		.4byte	.LASF7
  319 008d 01       		.byte	0x1
  320 008e 49       		.byte	0x49
  321 008f 4E000000 		.4byte	0x4e
@@ -467,7 +467,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccqgiAgI.s 			page 1
  325 009c 2C000000 		.4byte	.LBE2-.LBB2
  326 00a0 13010000 		.4byte	0x113
  327 00a4 08       		.uleb128 0x8
- 328 00a5 24000000 		.4byte	.LASF3
+ 328 00a5 56000000 		.4byte	.LASF3
  329 00a9 01       		.byte	0x1
  330 00aa 4D       		.byte	0x4d
  331 00ab 4E000000 		.4byte	0x4e
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccqgiAgI.s 			page 1
  336 00b6 10000000 		.4byte	.LASF4
  337 00ba 01       		.byte	0x1
  338 00bb 4E       		.byte	0x4e
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccqgiAgI.s 			page 9
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccCJaNMq.s 			page 9
 
 
  339 00bc 4E000000 		.4byte	0x4e
@@ -538,10 +538,10 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccqgiAgI.s 			page 1
  393 011f 04       		.byte	0x4
  394 0120 00000000 		.4byte	.LASF5
  395 0124 0F       		.uleb128 0xf
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccqgiAgI.s 			page 10
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccCJaNMq.s 			page 10
 
 
- 396 0125 7E010000 		.4byte	.LASF8
+ 396 0125 48010000 		.4byte	.LASF8
  397 0129 01       		.byte	0x1
  398 012a 37       		.byte	0x37
  399 012b 00000000 		.4byte	.LFB1
@@ -550,7 +550,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccqgiAgI.s 			page 1
  402 0134 9C       		.byte	0x9c
  403 0135 0F020000 		.4byte	0x20f
  404 0139 08       		.uleb128 0x8
- 405 013a 39000000 		.4byte	.LASF6
+ 405 013a C4000000 		.4byte	.LASF6
  406 013e 01       		.byte	0x1
  407 013f 3B       		.byte	0x3b
  408 0140 4E000000 		.4byte	0x4e
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccqgiAgI.s 			page 1
  450 0192 00       		.byte	0
  451 0193 0A       		.uleb128 0xa
  452 0194 1E000000 		.4byte	.LVL23
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccqgiAgI.s 			page 11
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccCJaNMq.s 			page 11
 
 
  453 0198 50020000 		.4byte	0x250
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccqgiAgI.s 			page 1
  507 01f8 4E000000 		.4byte	.LVL30
  508 01fc 55000000 		.4byte	0x55
  509 0200 0B       		.uleb128 0xb
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccqgiAgI.s 			page 12
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccCJaNMq.s 			page 12
 
 
  510 0201 01       		.uleb128 0x1
@@ -676,7 +676,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccqgiAgI.s 			page 1
  522 020d 00       		.byte	0
  523 020e 00       		.byte	0
  524 020f 11       		.uleb128 0x11
- 525 0210 8C010000 		.4byte	.LASF9
+ 525 0210 56010000 		.4byte	.LASF9
  526 0214 01       		.byte	0x1
  527 0215 33       		.byte	0x33
  528 0216 00000000 		.4byte	.LFB0
@@ -689,7 +689,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccqgiAgI.s 			page 1
  535 0229 24010000 		.4byte	0x124
  536 022d 00       		.byte	0
  537 022e 08       		.uleb128 0x8
- 538 022f 24000000 		.4byte	.LASF3
+ 538 022f 56000000 		.4byte	.LASF3
  539 0233 01       		.byte	0x1
  540 0234 4D       		.byte	0x4d
  541 0235 4E000000 		.4byte	0x4e
@@ -705,7 +705,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccqgiAgI.s 			page 1
  551 024e 09       		.uleb128 0x9
  552 024f 00       		.byte	0
  553 0250 12       		.uleb128 0x12
- 554 0251 39000000 		.4byte	.LASF6
+ 554 0251 C4000000 		.4byte	.LASF6
  555 0255 01       		.byte	0x1
  556 0256 3B       		.byte	0x3b
  557 0257 4E000000 		.4byte	0x4e
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccqgiAgI.s 			page 1
  564 0001 11       		.uleb128 0x11
  565 0002 01       		.byte	0x1
  566 0003 25       		.uleb128 0x25
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccqgiAgI.s 			page 13
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccCJaNMq.s 			page 13
 
 
  567 0004 0E       		.uleb128 0xe
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccqgiAgI.s 			page 1
  621 003b 17       		.uleb128 0x17
  622 003c 00       		.byte	0
  623 003d 00       		.byte	0
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccqgiAgI.s 			page 14
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccCJaNMq.s 			page 14
 
 
  624 003e 04       		.uleb128 0x4
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccqgiAgI.s 			page 1
  678 0075 11       		.uleb128 0x11
  679 0076 01       		.uleb128 0x1
  680 0077 12       		.uleb128 0x12
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccqgiAgI.s 			page 15
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccCJaNMq.s 			page 15
 
 
  681 0078 06       		.uleb128 0x6
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccqgiAgI.s 			page 1
  735 00b5 31       		.uleb128 0x31
  736 00b6 13       		.uleb128 0x13
  737 00b7 00       		.byte	0
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccqgiAgI.s 			page 16
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccCJaNMq.s 			page 16
 
 
  738 00b8 00       		.byte	0
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccqgiAgI.s 			page 1
  792 00f1 13       		.uleb128 0x13
  793 00f2 02       		.uleb128 0x2
  794 00f3 17       		.uleb128 0x17
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccqgiAgI.s 			page 17
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccCJaNMq.s 			page 17
 
 
  795 00f4 00       		.byte	0
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccqgiAgI.s 			page 1
  849 0016 01       		.uleb128 0x1
  850 0017 50       		.byte	0x50
  851 0018 9F       		.byte	0x9f
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccqgiAgI.s 			page 18
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccCJaNMq.s 			page 18
 
 
  852 0019 00000000 		.4byte	0
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccqgiAgI.s 			page 1
  906 00a9 9F       		.byte	0x9f
  907 00aa 3E000000 		.4byte	.LVL28
  908 00ae 56000000 		.4byte	.LVL32
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccqgiAgI.s 			page 19
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccCJaNMq.s 			page 19
 
 
  909 00b2 0100     		.2byte	0x1
@@ -1137,86 +1137,81 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccqgiAgI.s 			page 1
  953 001a 506C6179 		.ascii	"Play_note\000"
  953      5F6E6F74 
  953      6500
- 954              	.LASF3:
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccqgiAgI.s 			page 20
+ 954              	.LASF13:
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccCJaNMq.s 			page 20
 
 
- 955 0024 53706561 		.ascii	"Speaker_Output_Write\000"
- 955      6B65725F 
- 955      4F757470 
- 955      75745F57 
- 955      72697465 
- 956              	.LASF6:
- 957 0039 43794465 		.ascii	"CyDelay\000"
- 957      6C617900 
- 958              	.LASF1:
- 959 0041 746F6E65 		.ascii	"toneFrequency\000"
- 959      46726571 
- 959      75656E63 
- 959      7900
- 960              	.LASF7:
- 961 004f 746F6E65 		.ascii	"toneHalfPeriod\000"
- 961      48616C66 
- 961      50657269 
- 961      6F6400
+ 955 0024 63616C63 		.ascii	"calculatePeriodDelay\000"
+ 955      756C6174 
+ 955      65506572 
+ 955      696F6444 
+ 955      656C6179 
+ 956              	.LASF1:
+ 957 0039 746F6E65 		.ascii	"toneFrequency\000"
+ 957      46726571 
+ 957      75656E63 
+ 957      7900
+ 958              	.LASF7:
+ 959 0047 746F6E65 		.ascii	"toneHalfPeriod\000"
+ 959      48616C66 
+ 959      50657269 
+ 959      6F6400
+ 960              	.LASF3:
+ 961 0056 53706561 		.ascii	"Speaker_Output_Write\000"
+ 961      6B65725F 
+ 961      4F757470 
+ 961      75745F57 
+ 961      72697465 
  962              	.LASF12:
- 963 005e 433A5C55 		.ascii	"C:\\Users\\JohnP\\OneDrive\\College\\2015-2016 Seni"
+ 963 006b 433A5C55 		.ascii	"C:\\Users\\JohnP\\Desktop\\embedded\\trunk\\CE4920P"
  963      73657273 
  963      5C4A6F68 
- 963      6E505C4F 
- 963      6E654472 
- 964 008c 6F722059 		.ascii	"or Year\\0 Fall Quarter\\CE4920 011\\Lab\\project\\"
- 964      6561725C 
- 964      30204661 
- 964      6C6C2051 
- 964      75617274 
- 965 00ba 43453439 		.ascii	"CE4920Project1\\Design01.cydsn\000"
- 965      32305072 
- 965      6F6A6563 
- 965      74315C44 
- 965      65736967 
- 966              	.LASF13:
- 967 00d8 63616C63 		.ascii	"calculatePeriodDelay\000"
- 967      756C6174 
- 967      65506572 
- 967      696F6444 
- 967      656C6179 
- 968              	.LASF11:
- 969 00ed 2E5C7370 		.ascii	".\\speaker.c\000"
- 969      65616B65 
- 969      722E6300 
- 970              	.LASF2:
- 971 00f9 64757261 		.ascii	"duration\000"
- 971      74696F6E 
- 971      00
- 972              	.LASF10:
- 973 0102 474E5520 		.ascii	"GNU C 4.8.4 20140526 (release) [ARM/embedded-4_8-br"
- 973      4320342E 
- 973      382E3420 
- 973      32303134 
- 973      30353236 
- 974 0135 616E6368 		.ascii	"anch revision 211358] -mcpu=cortex-m3 -mthumb -g -O"
- 974      20726576 
- 974      6973696F 
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccqgiAgI.s 			page 21
+ 963      6E505C44 
+ 963      65736B74 
+ 964 0098 726F6A65 		.ascii	"roject1\\Design01.cydsn\000"
+ 964      6374315C 
+ 964      44657369 
+ 964      676E3031 
+ 964      2E637964 
+ 965              	.LASF11:
+ 966 00af 2E5C7370 		.ascii	".\\speaker.c\000"
+ 966      65616B65 
+ 966      722E6300 
+ 967              	.LASF2:
+ 968 00bb 64757261 		.ascii	"duration\000"
+ 968      74696F6E 
+ 968      00
+ 969              	.LASF6:
+ 970 00c4 43794465 		.ascii	"CyDelay\000"
+ 970      6C617900 
+ 971              	.LASF10:
+ 972 00cc 474E5520 		.ascii	"GNU C 4.8.4 20140526 (release) [ARM/embedded-4_8-br"
+ 972      4320342E 
+ 972      382E3420 
+ 972      32303134 
+ 972      30353236 
+ 973 00ff 616E6368 		.ascii	"anch revision 211358] -mcpu=cortex-m3 -mthumb -g -O"
+ 973      20726576 
+ 973      6973696F 
+ 973      6E203231 
+ 973      31333538 
+ 974 0132 67202D66 		.ascii	"g -ffunction-sections\000"
+ 974      66756E63 
+ 974      74696F6E 
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccCJaNMq.s 			page 21
 
 
- 974      6E203231 
- 974      31333538 
- 975 0168 67202D66 		.ascii	"g -ffunction-sections\000"
- 975      66756E63 
- 975      74696F6E 
- 975      2D736563 
- 975      74696F6E 
- 976              	.LASF8:
- 977 017e 506C6179 		.ascii	"Play_song_one\000"
- 977      5F736F6E 
- 977      675F6F6E 
- 977      6500
- 978              	.LASF9:
- 979 018c 506C6179 		.ascii	"Play_startup_music\000"
- 979      5F737461 
- 979      72747570 
- 979      5F6D7573 
- 979      696300
- 980              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.8.4 20140526 (release) [ARM/embedded-4_8-br
+ 974      2D736563 
+ 974      74696F6E 
+ 975              	.LASF8:
+ 976 0148 506C6179 		.ascii	"Play_song_one\000"
+ 976      5F736F6E 
+ 976      675F6F6E 
+ 976      6500
+ 977              	.LASF9:
+ 978 0156 506C6179 		.ascii	"Play_startup_music\000"
+ 978      5F737461 
+ 978      72747570 
+ 978      5F6D7573 
+ 978      696300
+ 979              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.8.4 20140526 (release) [ARM/embedded-4_8-br
