@@ -13,7 +13,7 @@
 <v>Output</v>
 </TreeKeys>
 <TreeStates>
-<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="CE4920Project1\Design01\Source Files\system.c">
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="CE4920Project1\Design01\Source Files\main.c">
 <ExpandedNodeIds>
 <v>CE4920Project1</v>
 <v>CE4920Project1\Design01</v>
@@ -481,42 +481,6 @@
 <VisibleNodeIds>
 <v>CE4920Project1</v>
 <v>CE4920Project1\Design01</v>
-<v>CE4920Project1\Design01\CortexM3</v>
-<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484</v>
-<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug</v>
-<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files</v>
-<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\amp.lst</v>
-<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\CapSense.lst</v>
-<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\CapSense_AMuxCH0.lst</v>
-<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\CapSense_CompCH0.lst</v>
-<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\CapSense_CompCH0_PM.lst</v>
-<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\CapSense_CSHL.lst</v>
-<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\CapSense_IdacCH0.lst</v>
-<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\CapSense_IdacCH0_PM.lst</v>
-<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\CapSense_INT.lst</v>
-<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\CapSense_IntClock.lst</v>
-<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\CapSense_Pins.lst</v>
-<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\CapSense_PM.lst</v>
-<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\CapSense_SMS_Wrapper.lst</v>
-<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\CapSense_TunerHelper.lst</v>
-<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\Cm3Start.lst</v>
-<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\Comp.lst</v>
-<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\Comp_PM.lst</v>
-<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\Compint.lst</v>
-<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\CyBootAsmGnu.lst</v>
-<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\CyDmac.lst</v>
-<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\cyfitter_cfg.lst</v>
-<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\CyFlash.lst</v>
-<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\CyLib.lst</v>
-<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\cymetadata.lst</v>
-<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\cyPm.lst</v>
-<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\CySpc.lst</v>
-<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\cyutils.lst</v>
-<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\display.lst</v>
-<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\HeartbeatCounter.lst</v>
-<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\HeartbeatCounter_PM.lst</v>
-<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\heartrate.lst</v>
-<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\HEARTRATE_ANALOG_IN.lst</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStates>
@@ -596,6 +560,9 @@
 <name v=".\Design01.cydsn\system.c" />
 <name v=".\Design01.cydsn\motor.c" />
 <name v=".\Design01.cydsn\Generated_Source\PSoC5\Compint.c" />
+<name v=".\Design01.cydsn\motor.h" />
+<name v=".\Design01.cydsn\states.h" />
+<name v=".\Design01.cydsn\main.c" />
 </OpenDocs>
 <config v="" />
 <AutoUpdate v="true" />

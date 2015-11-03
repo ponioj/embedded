@@ -80,7 +80,7 @@ STATE State_profile_selection(){
             CyDelay(500);
         }
         else {
-            selectedProfile = 5;   
+            selectedProfile = 2;   
         }
     }
     else if (CapSense_CheckIsWidgetActive(CapSense_BUTTON1__BTN)) {
@@ -116,6 +116,14 @@ STATE State_moving(){
     movingAverage[9]=heartrate;
     int difference = movingAverage[0]-heartrate;
     int change = (difference*difference);
+    LCD_Position(0,0);
+    int average=0;
+    for (i=0; i<10; i++){
+        average +=movingAverage[i];
+    }
+    average /= 10;
+    LCD_PrintNumber(difference);
+    LCD_PrintString("      ");
     if ((change)>=100){
         if(difference>0){
             increasingHr = 0;   
@@ -123,21 +131,29 @@ STATE State_moving(){
         else{
             increasingHr = 1;
         }
-        return STATE_HEARTRATE_CHANGE;
+        LCD_Position(1,5);
+        LCD_PrintNumber(increasingHr);
+        currentState = STATE_HEARTRATE_CHANGE;
     }
-    
+    CyDelay(100);
     return currentState;   
 }
 
 STATE State_heartrate_change(){
     Prev_state = STATE_HEARTRATE_CHANGE;
+    LCD_Position(0,9);
+    LCD_PrintNumber(selectedProfile);
     switch (selectedProfile){
         case PROFILE_REGULAR:
             if (heartrate>100){
                 Motor_rampUp(MOTOR_WALKING_SPEED);
+                LCD_Position(0,0);
+                LCD_PrintString("Walking");
             }
             else if (heartrate<80){
                 Motor_rampUp(MOTOR_RUNNING_SPEED);
+                LCD_Position(0,0);
+                LCD_PrintString("Running");
             }
             break;
         case PROFILE_CARDIO:

@@ -112,7 +112,7 @@
       <field name="CTRL_CAPMODE" from="4" to="3" access="RW" resetVal="" desc="Capture mode" />
       <field name="CTRL_CMPMODE" from="2" to="0" access="RW" resetVal="" desc="Compare mode" />
     </register>
-    <register name="HeartbeatCounter_STATUS_MASK" address="0x40006584" bitWidth="8" desc="UDB Status bits Interrupt Mask Enable Register">
+    <register name="HeartbeatCounter_STATUS_MASK" address="0x40006587" bitWidth="8" desc="UDB Status bits Interrupt Mask Enable Register">
       <field name="COUNTER_STS_CMP" from="0" to="0" access="RW" resetVal="" desc="Compare output status" />
       <field name="COUNTER_STS_A0ZERO" from="1" to="1" access="RW" resetVal="" desc="A0 Zero ouput status" />
       <field name="COUNTER_STS_OVERFLOW" from="2" to="2" access="RW" resetVal="" desc="Overflow status " />
@@ -121,7 +121,7 @@
       <field name="COUNTER_STS_FIFO_FULL" from="5" to="5" access="RW" resetVal="" desc="FIFO Full Status " />
       <field name="COUNTER_STS_FIFO_NEMPTY" from="6" to="6" access="RW" resetVal="" desc="FIFO Not Empty Status " />
     </register>
-    <register name="HeartbeatCounter_STATUS_AUX_CTRL" address="0x40006594" bitWidth="8" desc="UDB Auxilliary Control Register">
+    <register name="HeartbeatCounter_STATUS_AUX_CTRL" address="0x40006597" bitWidth="8" desc="UDB Auxilliary Control Register">
       <field name="FIFO0_CLR" from="0" to="0" access="RW" resetVal="" desc="FIFO0 clear">
         <value name="E_FIFO_CLR_0" value="0" desc="Normal FIFO operation" />
         <value name="E_FIFO_CLR_1" value="1" desc="Clear FIFO state" />
@@ -597,7 +597,7 @@
         <value name="Enabled" value="1" desc="Clocks are enabled" />
       </field>
     </register>
-    <register name="ScanSpeed_CTL_REG" address="0x40006493" bitWidth="8" desc="CapSense Clock Prescaler Control Register">
+    <register name="ScanSpeed_CTL_REG" address="0x40006491" bitWidth="8" desc="CapSense Clock Prescaler Control Register">
       <field name="Counter" from="3" to="3" access="R" resetVal="" desc="Clock Prescaler Enable">
         <value name="Disabled" value="0" desc="Prescaler counter is disabled" />
         <value name="Enabled" value="1" desc="Prescaler counter is enabled" />

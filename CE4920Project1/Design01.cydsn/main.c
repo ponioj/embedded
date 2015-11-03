@@ -45,6 +45,9 @@ int main()
             case STATE_STOP:
                 currentState = State_stop();
                 break;
+            case STATE_HEARTRATE_CHANGE:
+                currentState = State_heartrate_change();
+                break;
             default:
                 break;
         }

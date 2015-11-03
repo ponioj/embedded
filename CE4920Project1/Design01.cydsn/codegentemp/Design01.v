@@ -1,6 +1,6 @@
 // ======================================================================
 // Design01.v generated from TopDesign.cysch
-// 11/03/2015 at 12:22
+// 11/03/2015 at 15:41
 // This file is auto generated. ANY EDITS YOU MAKE MAY BE LOST WHEN THIS FILE IS REGENERATED!!!
 // ======================================================================
 
@@ -1666,7 +1666,7 @@ module top ;
           wire  Net_523;
           wire  Net_522;
           wire  Net_521;
-    electrical  Net_1678;
+    electrical  Net_1680;
     electrical  Net_167;
           wire  Net_1675;
           wire  Net_1668;
@@ -1687,7 +1687,7 @@ module top ;
         .Vout(Net_569));
 
     WaveDAC8_v2_0_3 WaveDAC8_1 (
-        .Wave(Net_1678),
+        .Wave(Net_1680),
         .ws(Net_353),
         .clock(1'b0),
         .wc1(Net_522),

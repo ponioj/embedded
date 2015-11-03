@@ -89,11 +89,11 @@ c:/program files/cypress/psoc creator/3.2/psoc creator/import/gnu/arm/4.8.4/bin/
 c:/program files/cypress/psoc creator/3.2/psoc creator/import/gnu/arm/4.8.4/bin/../lib/gcc/arm-none-eabi/4.8.4/armv7-m\libgcc.a(_arm_fixdfsi.o)
                               .\CortexM3\ARM_GCC_484\Debug\speaker.o (__aeabi_d2iz)
 c:/program files/cypress/psoc creator/3.2/psoc creator/import/gnu/arm/4.8.4/bin/../lib/gcc/arm-none-eabi/4.8.4/armv7-m\libgcc.a(_arm_addsubsf3.o)
-                              .\CortexM3\ARM_GCC_484\Debug\speaker.o (__aeabi_fsub)
+                              .\CortexM3\ARM_GCC_484\Debug\states.o (__aeabi_fsub)
 c:/program files/cypress/psoc creator/3.2/psoc creator/import/gnu/arm/4.8.4/bin/../lib/gcc/arm-none-eabi/4.8.4/armv7-m\libgcc.a(_arm_cmpsf2.o)
                               .\CortexM3\ARM_GCC_484\Debug\states.o (__aeabi_fcmplt)
 c:/program files/cypress/psoc creator/3.2/psoc creator/import/gnu/arm/4.8.4/bin/../lib/gcc/arm-none-eabi/4.8.4/armv7-m\libgcc.a(_arm_fixsfsi.o)
-                              .\CortexM3\ARM_GCC_484\Debug\speaker.o (__aeabi_f2iz)
+                              .\CortexM3\ARM_GCC_484\Debug\states.o (__aeabi_f2iz)
 c:/program files/cypress/psoc creator/3.2/psoc creator/import/gnu/arm/4.8.4/bin/../lib/gcc/arm-none-eabi/4.8.4/armv7-m\libgcc.a(_arm_fixunssfsi.o)
                               .\CortexM3\ARM_GCC_484\Debug\heartrate.o (__aeabi_f2uiz)
 c:/program files/cypress/psoc creator/3.2/psoc creator/import/gnu/arm/4.8.4/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m\libg_s.a(lib_a-errno.o)
@@ -225,14 +225,9 @@ Discarded input sections
  .ARM.extab     0x00000000        0x0 c:/program files/cypress/psoc creator/3.2/psoc creator/import/gnu/arm/4.8.4/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m/crt0.o
  .ARM.exidx     0x00000000        0x8 c:/program files/cypress/psoc creator/3.2/psoc creator/import/gnu/arm/4.8.4/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m/crt0.o
  .text          0x00000000        0x0 .\CortexM3\ARM_GCC_484\Debug\states.o
- .data          0x00000000        0xc .\CortexM3\ARM_GCC_484\Debug\states.o
- .text.State_heartrate_change
-                0x00000000       0xc4 .\CortexM3\ARM_GCC_484\Debug\states.o
  .text          0x00000000        0x0 .\CortexM3\ARM_GCC_484\Debug\motor.o
  .data          0x00000000        0x0 .\CortexM3\ARM_GCC_484\Debug\motor.o
  .bss           0x00000000        0x0 .\CortexM3\ARM_GCC_484\Debug\motor.o
- .text.Motor_rampUp
-                0x00000000       0x44 .\CortexM3\ARM_GCC_484\Debug\motor.o
  .text          0x00000000        0x0 .\CortexM3\ARM_GCC_484\Debug\speaker.o
  .data          0x00000000        0x0 .\CortexM3\ARM_GCC_484\Debug\speaker.o
  .bss           0x00000000        0x0 .\CortexM3\ARM_GCC_484\Debug\speaker.o
@@ -1171,7 +1166,7 @@ END GROUP
                 0x00000001                CY_APPL_NUM = 0x1
                 0x00000001                CY_APPL_MAX = 0x1
                 0x00000040                CY_METADATA_SIZE = 0x40
-                0x1fff82a8                PROVIDE (__cy_heap_start, _end)
+                0x1fff82b0                PROVIDE (__cy_heap_start, _end)
                 0x00000001                PROVIDE (__cy_region_num, ((__cy_regions_end - __cy_regions) / 0x10))
                 0x20008000                PROVIDE (__cy_stack, (ORIGIN (ram) + 0x10000))
                 0x20007800                PROVIDE (__cy_heap_end, (__cy_stack - 0x800))
@@ -1186,7 +1181,7 @@ END GROUP
                 0x00000800                ee_size = (CY_APPL_LOADABLE && ! (CY_EE_IN_BTLDR))?(CY_EE_SIZE / CY_APPL_MAX):CY_EE_SIZE
                 0x00000000                PROVIDE (CY_ECC_OFFSET, ecc_offset)
 
-.text           0x00000000     0x2e82
+.text           0x00000000     0x302a
  CREATE_OBJECT_SYMBOLS
                 0x00000000                PROVIDE (__cy_interrupt_vector, RomVectors)
  *(.romvectors)
@@ -1216,549 +1211,553 @@ END GROUP
                 0x0000013c       0xdc .\CortexM3\ARM_GCC_484\Debug\states.o
                 0x0000013c                State_profile_selection
  .text.State_moving
-                0x00000218       0x1c .\CortexM3\ARM_GCC_484\Debug\states.o
+                0x00000218       0xac .\CortexM3\ARM_GCC_484\Debug\states.o
                 0x00000218                State_moving
+ .text.State_heartrate_change
+                0x000002c4       0xf8 .\CortexM3\ARM_GCC_484\Debug\states.o
+                0x000002c4                State_heartrate_change
  .text.State_stop
-                0x00000234       0x14 .\CortexM3\ARM_GCC_484\Debug\states.o
-                0x00000234                State_stop
- .text.Move_motor
-                0x00000248       0x14 .\CortexM3\ARM_GCC_484\Debug\motor.o
-                0x00000248                Move_motor
+                0x000003bc       0x14 .\CortexM3\ARM_GCC_484\Debug\states.o
+                0x000003bc                State_stop
  .text.Start_motor
-                0x0000025c       0x10 .\CortexM3\ARM_GCC_484\Debug\motor.o
-                0x0000025c                Start_motor
+                0x000003d0        0x8 .\CortexM3\ARM_GCC_484\Debug\motor.o
+                0x000003d0                Start_motor
+ .text.Move_motor
+                0x000003d8       0x14 .\CortexM3\ARM_GCC_484\Debug\motor.o
+                0x000003d8                Move_motor
+ .text.Motor_rampUp
+                0x000003ec       0x44 .\CortexM3\ARM_GCC_484\Debug\motor.o
+                0x000003ec                Motor_rampUp
  .text.Motor_stop
-                0x0000026c       0x40 .\CortexM3\ARM_GCC_484\Debug\motor.o
-                0x0000026c                Motor_stop
- *fill*         0x000002ac        0x4 
+                0x00000430       0x40 .\CortexM3\ARM_GCC_484\Debug\motor.o
+                0x00000430                Motor_stop
  .text.calculatePeriodDelay
-                0x000002b0       0x30 .\CortexM3\ARM_GCC_484\Debug\speaker.o
-                0x000002b0                calculatePeriodDelay
+                0x00000470       0x30 .\CortexM3\ARM_GCC_484\Debug\speaker.o
+                0x00000470                calculatePeriodDelay
  .text.Play_note
-                0x000002e0       0x54 .\CortexM3\ARM_GCC_484\Debug\speaker.o
-                0x000002e0                Play_note
+                0x000004a0       0x54 .\CortexM3\ARM_GCC_484\Debug\speaker.o
+                0x000004a0                Play_note
  .text.Play_song_one
-                0x00000334       0x68 .\CortexM3\ARM_GCC_484\Debug\speaker.o
-                0x00000334                Play_song_one
+                0x000004f4       0x68 .\CortexM3\ARM_GCC_484\Debug\speaker.o
+                0x000004f4                Play_song_one
  .text.Play_startup_music
-                0x0000039c        0x8 .\CortexM3\ARM_GCC_484\Debug\speaker.o
-                0x0000039c                Play_startup_music
+                0x0000055c        0x8 .\CortexM3\ARM_GCC_484\Debug\speaker.o
+                0x0000055c                Play_startup_music
  .text.Display_welcome_message
-                0x000003a4       0x5c .\CortexM3\ARM_GCC_484\Debug\display.o
-                0x000003a4                Display_welcome_message
+                0x00000564       0x5c .\CortexM3\ARM_GCC_484\Debug\display.o
+                0x00000564                Display_welcome_message
  .text.Display_sleep
-                0x00000400       0x18 .\CortexM3\ARM_GCC_484\Debug\display.o
-                0x00000400                Display_sleep
+                0x000005c0       0x18 .\CortexM3\ARM_GCC_484\Debug\display.o
+                0x000005c0                Display_sleep
  .text.Display_profile_selection
-                0x00000418       0x74 .\CortexM3\ARM_GCC_484\Debug\display.o
-                0x00000418                Display_profile_selection
+                0x000005d8       0x74 .\CortexM3\ARM_GCC_484\Debug\display.o
+                0x000005d8                Display_profile_selection
  .text.System_init
-                0x0000048c       0x3c .\CortexM3\ARM_GCC_484\Debug\system.o
-                0x0000048c                System_init
+                0x0000064c       0x3c .\CortexM3\ARM_GCC_484\Debug\system.o
+                0x0000064c                System_init
  .text.Detect_heartrate
-                0x000004c8       0x5c .\CortexM3\ARM_GCC_484\Debug\heartrate.o
-                0x000004c8                Detect_heartrate
- .text.main     0x00000524       0x6c .\CortexM3\ARM_GCC_484\Debug\main.o
-                0x00000524                main
+                0x00000688       0x54 .\CortexM3\ARM_GCC_484\Debug\heartrate.o
+                0x00000688                Detect_heartrate
+ .text.main     0x000006dc       0x60 .\CortexM3\ARM_GCC_484\Debug\main.o
+                0x000006dc                main
  .text.IntDefaultHandler
-                0x00000590        0x4 .\CortexM3\ARM_GCC_484\Debug\Cm3Start.o
-                0x00000590                IntDefaultHandler
- .text.Start_c  0x00000594       0x4c .\CortexM3\ARM_GCC_484\Debug\Cm3Start.o
-                0x00000594                Start_c
+                0x0000073c        0x4 .\CortexM3\ARM_GCC_484\Debug\Cm3Start.o
+                0x0000073c                IntDefaultHandler
+ .text.Start_c  0x00000740       0x4c .\CortexM3\ARM_GCC_484\Debug\Cm3Start.o
+                0x00000740                Start_c
  .text.initialize_psoc
-                0x000005e0       0x74 .\CortexM3\ARM_GCC_484\Debug\Cm3Start.o
-                0x000005e0                initialize_psoc
+                0x0000078c       0x74 .\CortexM3\ARM_GCC_484\Debug\Cm3Start.o
+                0x0000078c                initialize_psoc
  .text.CyClockStartupError
-                0x00000654        0x4 .\CortexM3\ARM_GCC_484\Debug\Design01.a(cyfitter_cfg.o)
+                0x00000800        0x4 .\CortexM3\ARM_GCC_484\Debug\Design01.a(cyfitter_cfg.o)
  .text.cfg_write_bytes32
-                0x00000658       0x34 .\CortexM3\ARM_GCC_484\Debug\Design01.a(cyfitter_cfg.o)
+                0x00000804       0x34 .\CortexM3\ARM_GCC_484\Debug\Design01.a(cyfitter_cfg.o)
  .text.AnalogSetDefault
-                0x0000068c       0x70 .\CortexM3\ARM_GCC_484\Debug\Design01.a(cyfitter_cfg.o)
+                0x00000838       0x70 .\CortexM3\ARM_GCC_484\Debug\Design01.a(cyfitter_cfg.o)
  .text.CYMEMZERO
-                0x000006fc        0xc .\CortexM3\ARM_GCC_484\Debug\Design01.a(cyfitter_cfg.o)
+                0x000008a8        0xc .\CortexM3\ARM_GCC_484\Debug\Design01.a(cyfitter_cfg.o)
  .text.ClockSetup
-                0x00000708      0x100 .\CortexM3\ARM_GCC_484\Debug\Design01.a(cyfitter_cfg.o)
+                0x000008b4      0x100 .\CortexM3\ARM_GCC_484\Debug\Design01.a(cyfitter_cfg.o)
  .text.CYCONFIGCPY
-                0x00000808        0x8 .\CortexM3\ARM_GCC_484\Debug\Design01.a(cyfitter_cfg.o)
+                0x000009b4        0x8 .\CortexM3\ARM_GCC_484\Debug\Design01.a(cyfitter_cfg.o)
  .text.CapSense_AMuxCH0_Set
-                0x00000810       0x1c .\CortexM3\ARM_GCC_484\Debug\Design01.a(cyfitter_cfg.o)
-                0x00000810                CapSense_AMuxCH0_Set
+                0x000009bc       0x1c .\CortexM3\ARM_GCC_484\Debug\Design01.a(cyfitter_cfg.o)
+                0x000009bc                CapSense_AMuxCH0_Set
  .text.CapSense_AMuxCH0_Unset
-                0x0000082c       0x20 .\CortexM3\ARM_GCC_484\Debug\Design01.a(cyfitter_cfg.o)
-                0x0000082c                CapSense_AMuxCH0_Unset
+                0x000009d8       0x20 .\CortexM3\ARM_GCC_484\Debug\Design01.a(cyfitter_cfg.o)
+                0x000009d8                CapSense_AMuxCH0_Unset
  .text.cyfitter_cfg
-                0x0000084c      0x140 .\CortexM3\ARM_GCC_484\Debug\Design01.a(cyfitter_cfg.o)
-                0x0000084c                cyfitter_cfg
- *fill*         0x0000098c        0x4 
- .text          0x00000990       0x28 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CyBootAsmGnu.o)
-                0x00000990                CyDelayCycles
-                0x000009a4                CyEnterCriticalSection
-                0x000009ac                CyExitCriticalSection
+                0x000009f8      0x140 .\CortexM3\ARM_GCC_484\Debug\Design01.a(cyfitter_cfg.o)
+                0x000009f8                cyfitter_cfg
+ .text          0x00000b38       0x28 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CyBootAsmGnu.o)
+                0x00000b38                CyDelayCycles
+                0x00000b4c                CyEnterCriticalSection
+                0x00000b54                CyExitCriticalSection
  .text.CyDmacConfigure
-                0x000009b8       0x34 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CyDmac.o)
-                0x000009b8                CyDmacConfigure
+                0x00000b60       0x34 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CyDmac.o)
+                0x00000b60                CyDmacConfigure
  .text.CyDmaChEnable
-                0x000009ec       0x38 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CyDmac.o)
-                0x000009ec                CyDmaChEnable
+                0x00000b94       0x38 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CyDmac.o)
+                0x00000b94                CyDmaChEnable
  .text.CyDmaChPriority
-                0x00000a24       0x24 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CyDmac.o)
-                0x00000a24                CyDmaChPriority
+                0x00000bcc       0x24 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CyDmac.o)
+                0x00000bcc                CyDmaChPriority
  .text.CyDmaChSetExtendedAddress
-                0x00000a48       0x34 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CyDmac.o)
-                0x00000a48                CyDmaChSetExtendedAddress
+                0x00000bf0       0x34 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CyDmac.o)
+                0x00000bf0                CyDmaChSetExtendedAddress
  .text.CyDmaChSetInitialTd
-                0x00000a7c       0x18 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CyDmac.o)
-                0x00000a7c                CyDmaChSetInitialTd
+                0x00000c24       0x18 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CyDmac.o)
+                0x00000c24                CyDmaChSetInitialTd
  .text.CyDmaChSetConfiguration
-                0x00000a94       0x44 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CyDmac.o)
-                0x00000a94                CyDmaChSetConfiguration
+                0x00000c3c       0x44 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CyDmac.o)
+                0x00000c3c                CyDmaChSetConfiguration
  .text.CyDmaTdAllocate
-                0x00000ad8       0x34 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CyDmac.o)
-                0x00000ad8                CyDmaTdAllocate
+                0x00000c80       0x34 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CyDmac.o)
+                0x00000c80                CyDmaTdAllocate
  .text.CyDmaTdSetConfiguration
-                0x00000b0c       0x28 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CyDmac.o)
-                0x00000b0c                CyDmaTdSetConfiguration
+                0x00000cb4       0x28 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CyDmac.o)
+                0x00000cb4                CyDmaTdSetConfiguration
  .text.CyDmaTdSetAddress
-                0x00000b34       0x1c .\CortexM3\ARM_GCC_484\Debug\Design01.a(CyDmac.o)
-                0x00000b34                CyDmaTdSetAddress
- .text.CyHalt   0x00000b50        0x4 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CyLib.o)
-                0x00000b50                CyHalt
- .text.CyDelay  0x00000b54       0x2c .\CortexM3\ARM_GCC_484\Debug\Design01.a(CyLib.o)
-                0x00000b54                CyDelay
+                0x00000cdc       0x1c .\CortexM3\ARM_GCC_484\Debug\Design01.a(CyDmac.o)
+                0x00000cdc                CyDmaTdSetAddress
+ .text.CyHalt   0x00000cf8        0x4 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CyLib.o)
+                0x00000cf8                CyHalt
+ .text.CyDelay  0x00000cfc       0x2c .\CortexM3\ARM_GCC_484\Debug\Design01.a(CyLib.o)
+                0x00000cfc                CyDelay
  .text.CyDelayUs
-                0x00000b80       0x14 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CyLib.o)
-                0x00000b80                CyDelayUs
+                0x00000d28       0x14 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CyLib.o)
+                0x00000d28                CyDelayUs
  .text.CyIntSetVector
-                0x00000b94       0x28 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CyLib.o)
-                0x00000b94                CyIntSetVector
+                0x00000d3c       0x28 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CyLib.o)
+                0x00000d3c                CyIntSetVector
  .text.CyIntSetPriority
-                0x00000bbc       0x30 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CyLib.o)
-                0x00000bbc                CyIntSetPriority
+                0x00000d64       0x30 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CyLib.o)
+                0x00000d64                CyIntSetPriority
  .text.LCD_WrCntrlNib
-                0x00000bec       0x34 .\CortexM3\ARM_GCC_484\Debug\Design01.a(LCD.o)
+                0x00000d94       0x34 .\CortexM3\ARM_GCC_484\Debug\Design01.a(LCD.o)
  .text.LCD_WrDatNib
-                0x00000c20       0x44 .\CortexM3\ARM_GCC_484\Debug\Design01.a(LCD.o)
+                0x00000dc8       0x44 .\CortexM3\ARM_GCC_484\Debug\Design01.a(LCD.o)
  .text.LCD_IsReady
-                0x00000c64       0xec .\CortexM3\ARM_GCC_484\Debug\Design01.a(LCD.o)
-                0x00000c64                LCD_IsReady
+                0x00000e0c       0xec .\CortexM3\ARM_GCC_484\Debug\Design01.a(LCD.o)
+                0x00000e0c                LCD_IsReady
  .text.LCD_WriteData
-                0x00000d50       0x18 .\CortexM3\ARM_GCC_484\Debug\Design01.a(LCD.o)
-                0x00000d50                LCD_WriteData
+                0x00000ef8       0x18 .\CortexM3\ARM_GCC_484\Debug\Design01.a(LCD.o)
+                0x00000ef8                LCD_WriteData
  .text.LCD_PrintString
-                0x00000d68       0x1c .\CortexM3\ARM_GCC_484\Debug\Design01.a(LCD.o)
-                0x00000d68                LCD_PrintString
+                0x00000f10       0x1c .\CortexM3\ARM_GCC_484\Debug\Design01.a(LCD.o)
+                0x00000f10                LCD_PrintString
  .text.LCD_PutChar
-                0x00000d84        0x8 .\CortexM3\ARM_GCC_484\Debug\Design01.a(LCD.o)
-                0x00000d84                LCD_PutChar
+                0x00000f2c        0x8 .\CortexM3\ARM_GCC_484\Debug\Design01.a(LCD.o)
+                0x00000f2c                LCD_PutChar
  .text.LCD_WriteControl
-                0x00000d8c       0x18 .\CortexM3\ARM_GCC_484\Debug\Design01.a(LCD.o)
-                0x00000d8c                LCD_WriteControl
+                0x00000f34       0x18 .\CortexM3\ARM_GCC_484\Debug\Design01.a(LCD.o)
+                0x00000f34                LCD_WriteControl
  .text.LCD_Init
-                0x00000da4       0x74 .\CortexM3\ARM_GCC_484\Debug\Design01.a(LCD.o)
-                0x00000da4                LCD_Init
+                0x00000f4c       0x74 .\CortexM3\ARM_GCC_484\Debug\Design01.a(LCD.o)
+                0x00000f4c                LCD_Init
  .text.LCD_Enable
-                0x00000e18       0x14 .\CortexM3\ARM_GCC_484\Debug\Design01.a(LCD.o)
-                0x00000e18                LCD_Enable
+                0x00000fc0       0x14 .\CortexM3\ARM_GCC_484\Debug\Design01.a(LCD.o)
+                0x00000fc0                LCD_Enable
  .text.LCD_Start
-                0x00000e2c       0x1c .\CortexM3\ARM_GCC_484\Debug\Design01.a(LCD.o)
-                0x00000e2c                LCD_Start
+                0x00000fd4       0x1c .\CortexM3\ARM_GCC_484\Debug\Design01.a(LCD.o)
+                0x00000fd4                LCD_Start
  .text.LCD_Position
-                0x00000e48       0x3c .\CortexM3\ARM_GCC_484\Debug\Design01.a(LCD.o)
-                0x00000e48                LCD_Position
+                0x00000ff0       0x3c .\CortexM3\ARM_GCC_484\Debug\Design01.a(LCD.o)
+                0x00000ff0                LCD_Position
  .text.LCD_PrintU32Number
-                0x00000e84       0x60 .\CortexM3\ARM_GCC_484\Debug\Design01.a(LCD.o)
-                0x00000e84                LCD_PrintU32Number
+                0x0000102c       0x60 .\CortexM3\ARM_GCC_484\Debug\Design01.a(LCD.o)
+                0x0000102c                LCD_PrintU32Number
  .text.LCD_LoadCustomFonts
-                0x00000ee4       0x2c .\CortexM3\ARM_GCC_484\Debug\Design01.a(LCD_BarGraph.o)
-                0x00000ee4                LCD_LoadCustomFonts
+                0x0000108c       0x2c .\CortexM3\ARM_GCC_484\Debug\Design01.a(LCD_BarGraph.o)
+                0x0000108c                LCD_LoadCustomFonts
  .text.Speaker_Output_Write
-                0x00000f10       0x18 .\CortexM3\ARM_GCC_484\Debug\Design01.a(Speaker_Output.o)
-                0x00000f10                Speaker_Output_Write
+                0x000010b8       0x18 .\CortexM3\ARM_GCC_484\Debug\Design01.a(Speaker_Output.o)
+                0x000010b8                Speaker_Output_Write
  .text.CapSense_Enable
-                0x00000f28       0x68 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense.o)
-                0x00000f28                CapSense_Enable
+                0x000010d0       0x68 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense.o)
+                0x000010d0                CapSense_Enable
  .text.CapSense_FindNextSensor
-                0x00000f90       0x28 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense.o)
-                0x00000f90                CapSense_FindNextSensor
+                0x00001138       0x28 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense.o)
+                0x00001138                CapSense_FindNextSensor
  .text.CapSense_IsBusy
-                0x00000fb8       0x10 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense.o)
-                0x00000fb8                CapSense_IsBusy
+                0x00001160       0x10 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense.o)
+                0x00001160                CapSense_IsBusy
  .text.CapSense_ReadSensorRaw
-                0x00000fc8        0xc .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense.o)
-                0x00000fc8                CapSense_ReadSensorRaw
+                0x00001170        0xc .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense.o)
+                0x00001170                CapSense_ReadSensorRaw
  .text.CapSense_EnableSensor
-                0x00000fd4       0x34 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense.o)
-                0x00000fd4                CapSense_EnableSensor
+                0x0000117c       0x34 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense.o)
+                0x0000117c                CapSense_EnableSensor
  .text.CapSense_DisableSensor
-                0x00001008       0x38 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense.o)
-                0x00001008                CapSense_DisableSensor
+                0x000011b0       0x38 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense.o)
+                0x000011b0                CapSense_DisableSensor
  .text.CapSense_ClearSensors
-                0x00001040       0x18 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense.o)
-                0x00001040                CapSense_ClearSensors
+                0x000011e8       0x18 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense.o)
+                0x000011e8                CapSense_ClearSensors
  .text.CapSense_PostScan
-                0x00001058       0x4c .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense.o)
-                0x00001058                CapSense_PostScan
+                0x00001200       0x4c .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense.o)
+                0x00001200                CapSense_PostScan
  .text.CapSense_SetPrescaler
-                0x000010a4       0x10 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense.o)
-                0x000010a4                CapSense_SetPrescaler
+                0x0000124c       0x10 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense.o)
+                0x0000124c                CapSense_SetPrescaler
  .text.CapSense_SetScanSlotSettings
-                0x000010b4       0x38 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense.o)
-                0x000010b4                CapSense_SetScanSlotSettings
+                0x0000125c       0x38 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense.o)
+                0x0000125c                CapSense_SetScanSlotSettings
  .text.CapSense_PreScan
-                0x000010ec       0x34 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense.o)
-                0x000010ec                CapSense_PreScan
+                0x00001294       0x34 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense.o)
+                0x00001294                CapSense_PreScan
  .text.CapSense_ScanSensor
-                0x00001120       0x20 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense.o)
-                0x00001120                CapSense_ScanSensor
+                0x000012c8       0x20 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense.o)
+                0x000012c8                CapSense_ScanSensor
  .text.CapSense_ScanEnabledWidgets
-                0x00001140       0x38 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense.o)
-                0x00001140                CapSense_ScanEnabledWidgets
+                0x000012e8       0x38 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense.o)
+                0x000012e8                CapSense_ScanEnabledWidgets
  .text.CapSense_SetAnalogSwitchesSource
-                0x00001178       0x20 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense.o)
-                0x00001178                CapSense_SetAnalogSwitchesSource
+                0x00001320       0x20 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense.o)
+                0x00001320                CapSense_SetAnalogSwitchesSource
  .text.CapSense_Init
-                0x00001198       0xe0 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense.o)
-                0x00001198                CapSense_Init
+                0x00001340       0xe0 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense.o)
+                0x00001340                CapSense_Init
  .text.CapSense_Start
-                0x00001278       0x2c .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense.o)
-                0x00001278                CapSense_Start
+                0x00001420       0x2c .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense.o)
+                0x00001420                CapSense_Start
  .text.CapSense_BaseInit
-                0x000012a4       0x44 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_CSHL.o)
-                0x000012a4                CapSense_BaseInit
+                0x0000144c       0x44 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_CSHL.o)
+                0x0000144c                CapSense_BaseInit
  .text.CapSense_InitializeSensorBaseline
-                0x000012e8       0x18 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_CSHL.o)
-                0x000012e8                CapSense_InitializeSensorBaseline
+                0x00001490       0x18 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_CSHL.o)
+                0x00001490                CapSense_InitializeSensorBaseline
  .text.CapSense_InitializeAllBaselines
-                0x00001300       0x18 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_CSHL.o)
-                0x00001300                CapSense_InitializeAllBaselines
+                0x000014a8       0x18 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_CSHL.o)
+                0x000014a8                CapSense_InitializeAllBaselines
  .text.CapSense_UpdateSensorBaseline
-                0x00001318       0xd0 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_CSHL.o)
-                0x00001318                CapSense_UpdateSensorBaseline
+                0x000014c0       0xd0 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_CSHL.o)
+                0x000014c0                CapSense_UpdateSensorBaseline
  .text.CapSense_UpdateEnabledBaselines
-                0x000013e8       0x30 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_CSHL.o)
-                0x000013e8                CapSense_UpdateEnabledBaselines
+                0x00001590       0x30 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_CSHL.o)
+                0x00001590                CapSense_UpdateEnabledBaselines
  .text.CapSense_CheckIsSensorActive
-                0x00001418       0xa0 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_CSHL.o)
-                0x00001418                CapSense_CheckIsSensorActive
+                0x000015c0       0xa0 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_CSHL.o)
+                0x000015c0                CapSense_CheckIsSensorActive
  .text.CapSense_CheckIsWidgetActive
-                0x000014b8       0x2c .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_CSHL.o)
-                0x000014b8                CapSense_CheckIsWidgetActive
+                0x00001660       0x2c .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_CSHL.o)
+                0x00001660                CapSense_CheckIsWidgetActive
  .text.CapSense_IsrCH0_ISR
-                0x000014e4       0x50 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_INT.o)
-                0x000014e4                CapSense_IsrCH0_ISR
+                0x0000168c       0x50 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_INT.o)
+                0x0000168c                CapSense_IsrCH0_ISR
  .text.SMS_LIB_ScanSensor
-                0x00001534        0x8 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_SMS_Wrapper.o)
-                0x00001534                SMS_LIB_ScanSensor
+                0x000016dc        0x8 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_SMS_Wrapper.o)
+                0x000016dc                SMS_LIB_ScanSensor
  .text.SMS_LIB_IsBusy
-                0x0000153c        0x8 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_SMS_Wrapper.o)
-                0x0000153c                SMS_LIB_IsBusy
+                0x000016e4        0x8 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_SMS_Wrapper.o)
+                0x000016e4                SMS_LIB_IsBusy
  .text.CapSense_CalculateThresholds
-                0x00001544        0x8 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_SMS_Wrapper.o)
-                0x00001544                CapSense_CalculateThresholds
+                0x000016ec        0x8 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_SMS_Wrapper.o)
+                0x000016ec                CapSense_CalculateThresholds
  .text.CapSense_AutoTune
-                0x0000154c        0x8 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_SMS_Wrapper.o)
-                0x0000154c                CapSense_AutoTune
+                0x000016f4        0x8 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_SMS_Wrapper.o)
+                0x000016f4                CapSense_AutoTune
  .text.SMS_LIB_V3_50_SetAnalogSwitchesSrc_PRS
-                0x00001554        0xc .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_SMS_Wrapper.o)
-                0x00001554                SMS_LIB_V3_50_SetAnalogSwitchesSrc_PRS
+                0x000016fc        0xc .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_SMS_Wrapper.o)
+                0x000016fc                SMS_LIB_V3_50_SetAnalogSwitchesSrc_PRS
  .text.SMS_LIB_V3_50_SetAnalogSwitchesSrc_Prescaler
-                0x00001560        0xc .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_SMS_Wrapper.o)
-                0x00001560                SMS_LIB_V3_50_SetAnalogSwitchesSrc_Prescaler
+                0x00001708        0xc .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_SMS_Wrapper.o)
+                0x00001708                SMS_LIB_V3_50_SetAnalogSwitchesSrc_Prescaler
  .text.CapSense_CompCH0_Enable
-                0x0000156c       0x1c .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_CompCH0.o)
-                0x0000156c                CapSense_CompCH0_Enable
+                0x00001714       0x1c .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_CompCH0.o)
+                0x00001714                CapSense_CompCH0_Enable
  .text.CapSense_CompCH0_SetSpeed
-                0x00001588       0x5c .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_CompCH0.o)
-                0x00001588                CapSense_CompCH0_SetSpeed
+                0x00001730       0x5c .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_CompCH0.o)
+                0x00001730                CapSense_CompCH0_SetSpeed
  .text.CapSense_CompCH0_Init
-                0x000015e4       0x3c .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_CompCH0.o)
-                0x000015e4                CapSense_CompCH0_Init
+                0x0000178c       0x3c .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_CompCH0.o)
+                0x0000178c                CapSense_CompCH0_Init
  .text.CapSense_IdacCH0_Enable
-                0x00001620       0x1c .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_IdacCH0.o)
-                0x00001620                CapSense_IdacCH0_Enable
+                0x000017c8       0x1c .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_IdacCH0.o)
+                0x000017c8                CapSense_IdacCH0_Enable
  .text.CapSense_IdacCH0_SetSpeed
-                0x0000163c       0x1c .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_IdacCH0.o)
-                0x0000163c                CapSense_IdacCH0_SetSpeed
+                0x000017e4       0x1c .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_IdacCH0.o)
+                0x000017e4                CapSense_IdacCH0_SetSpeed
  .text.CapSense_IdacCH0_SetValue
-                0x00001658        0xc .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_IdacCH0.o)
-                0x00001658                CapSense_IdacCH0_SetValue
+                0x00001800        0xc .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_IdacCH0.o)
+                0x00001800                CapSense_IdacCH0_SetValue
  .text.CapSense_IdacCH0_DacTrim
-                0x00001664       0x34 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_IdacCH0.o)
-                0x00001664                CapSense_IdacCH0_DacTrim
+                0x0000180c       0x34 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_IdacCH0.o)
+                0x0000180c                CapSense_IdacCH0_DacTrim
  .text.CapSense_IdacCH0_Init
-                0x00001698       0x2c .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_IdacCH0.o)
-                0x00001698                CapSense_IdacCH0_Init
+                0x00001840       0x2c .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_IdacCH0.o)
+                0x00001840                CapSense_IdacCH0_Init
  .text.CapSense_IdacCH0_SetPolarity
-                0x000016c4       0x20 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_IdacCH0.o)
-                0x000016c4                CapSense_IdacCH0_SetPolarity
+                0x0000186c       0x20 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_IdacCH0.o)
+                0x0000186c                CapSense_IdacCH0_SetPolarity
  .text.CapSense_IdacCH0_SetRange
-                0x000016e4       0x20 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_IdacCH0.o)
-                0x000016e4                CapSense_IdacCH0_SetRange
+                0x0000188c       0x20 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_IdacCH0.o)
+                0x0000188c                CapSense_IdacCH0_SetRange
  .text.CapSense_AMuxCH0_DisconnectAll
-                0x00001704       0x18 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_AMuxCH0.o)
-                0x00001704                CapSense_AMuxCH0_DisconnectAll
+                0x000018ac       0x18 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_AMuxCH0.o)
+                0x000018ac                CapSense_AMuxCH0_DisconnectAll
  .text.CapSense_AMuxCH0_Init
-                0x0000171c        0x8 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_AMuxCH0.o)
-                0x0000171c                CapSense_AMuxCH0_Init
+                0x000018c4        0x8 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_AMuxCH0.o)
+                0x000018c4                CapSense_AMuxCH0_Init
  .text.CapSense_IntClock_Start
-                0x00001724       0x1c .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_IntClock.o)
-                0x00001724                CapSense_IntClock_Start
+                0x000018cc       0x1c .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_IntClock.o)
+                0x000018cc                CapSense_IntClock_Start
  .text.PGA_1_Enable
-                0x00001740       0x28 .\CortexM3\ARM_GCC_484\Debug\Design01.a(PGA_1.o)
-                0x00001740                PGA_1_Enable
+                0x000018e8       0x28 .\CortexM3\ARM_GCC_484\Debug\Design01.a(PGA_1.o)
+                0x000018e8                PGA_1_Enable
  .text.PGA_1_SetPower
-                0x00001768       0x18 .\CortexM3\ARM_GCC_484\Debug\Design01.a(PGA_1.o)
-                0x00001768                PGA_1_SetPower
+                0x00001910       0x18 .\CortexM3\ARM_GCC_484\Debug\Design01.a(PGA_1.o)
+                0x00001910                PGA_1_SetPower
  .text.PGA_1_SetGain
-                0x00001780       0x74 .\CortexM3\ARM_GCC_484\Debug\Design01.a(PGA_1.o)
-                0x00001780                PGA_1_SetGain
+                0x00001928       0x74 .\CortexM3\ARM_GCC_484\Debug\Design01.a(PGA_1.o)
+                0x00001928                PGA_1_SetGain
  .text.PGA_1_Init
-                0x000017f4       0x2c .\CortexM3\ARM_GCC_484\Debug\Design01.a(PGA_1.o)
-                0x000017f4                PGA_1_Init
+                0x0000199c       0x2c .\CortexM3\ARM_GCC_484\Debug\Design01.a(PGA_1.o)
+                0x0000199c                PGA_1_Init
  .text.PGA_1_Start
-                0x00001820       0x1c .\CortexM3\ARM_GCC_484\Debug\Design01.a(PGA_1.o)
-                0x00001820                PGA_1_Start
+                0x000019c8       0x1c .\CortexM3\ARM_GCC_484\Debug\Design01.a(PGA_1.o)
+                0x000019c8                PGA_1_Start
  .text.Comp_trimAdjust
-                0x0000183c       0x8c .\CortexM3\ARM_GCC_484\Debug\Design01.a(Comp.o)
+                0x000019e4       0x8c .\CortexM3\ARM_GCC_484\Debug\Design01.a(Comp.o)
  .text.Comp_Enable
-                0x000018c8       0x1c .\CortexM3\ARM_GCC_484\Debug\Design01.a(Comp.o)
-                0x000018c8                Comp_Enable
+                0x00001a70       0x1c .\CortexM3\ARM_GCC_484\Debug\Design01.a(Comp.o)
+                0x00001a70                Comp_Enable
  .text.Comp_SetSpeed
-                0x000018e4       0x5c .\CortexM3\ARM_GCC_484\Debug\Design01.a(Comp.o)
-                0x000018e4                Comp_SetSpeed
+                0x00001a8c       0x5c .\CortexM3\ARM_GCC_484\Debug\Design01.a(Comp.o)
+                0x00001a8c                Comp_SetSpeed
  .text.Comp_Init
-                0x00001940       0x3c .\CortexM3\ARM_GCC_484\Debug\Design01.a(Comp.o)
-                0x00001940                Comp_Init
+                0x00001ae8       0x3c .\CortexM3\ARM_GCC_484\Debug\Design01.a(Comp.o)
+                0x00001ae8                Comp_Init
  .text.Comp_Start
-                0x0000197c       0x1c .\CortexM3\ARM_GCC_484\Debug\Design01.a(Comp.o)
-                0x0000197c                Comp_Start
+                0x00001b24       0x1c .\CortexM3\ARM_GCC_484\Debug\Design01.a(Comp.o)
+                0x00001b24                Comp_Start
  .text.Comp_ZeroCal
-                0x00001998       0x90 .\CortexM3\ARM_GCC_484\Debug\Design01.a(Comp.o)
-                0x00001998                Comp_ZeroCal
+                0x00001b40       0x90 .\CortexM3\ARM_GCC_484\Debug\Design01.a(Comp.o)
+                0x00001b40                Comp_ZeroCal
  .text.WaveDAC8_1_Enable
-                0x00001a28       0x28 .\CortexM3\ARM_GCC_484\Debug\Design01.a(WaveDAC8_1.o)
-                0x00001a28                WaveDAC8_1_Enable
+                0x00001bd0       0x28 .\CortexM3\ARM_GCC_484\Debug\Design01.a(WaveDAC8_1.o)
+                0x00001bd0                WaveDAC8_1_Enable
  .text.WaveDAC8_1_Wave1Setup
-                0x00001a50       0x40 .\CortexM3\ARM_GCC_484\Debug\Design01.a(WaveDAC8_1.o)
-                0x00001a50                WaveDAC8_1_Wave1Setup
+                0x00001bf8       0x40 .\CortexM3\ARM_GCC_484\Debug\Design01.a(WaveDAC8_1.o)
+                0x00001bf8                WaveDAC8_1_Wave1Setup
  .text.WaveDAC8_1_Wave2Setup
-                0x00001a90       0x40 .\CortexM3\ARM_GCC_484\Debug\Design01.a(WaveDAC8_1.o)
-                0x00001a90                WaveDAC8_1_Wave2Setup
+                0x00001c38       0x40 .\CortexM3\ARM_GCC_484\Debug\Design01.a(WaveDAC8_1.o)
+                0x00001c38                WaveDAC8_1_Wave2Setup
  .text.WaveDAC8_1_Init
-                0x00001ad0       0x40 .\CortexM3\ARM_GCC_484\Debug\Design01.a(WaveDAC8_1.o)
-                0x00001ad0                WaveDAC8_1_Init
+                0x00001c78       0x40 .\CortexM3\ARM_GCC_484\Debug\Design01.a(WaveDAC8_1.o)
+                0x00001c78                WaveDAC8_1_Init
  .text.WaveDAC8_1_Start
-                0x00001b10       0x1c .\CortexM3\ARM_GCC_484\Debug\Design01.a(WaveDAC8_1.o)
-                0x00001b10                WaveDAC8_1_Start
+                0x00001cb8       0x1c .\CortexM3\ARM_GCC_484\Debug\Design01.a(WaveDAC8_1.o)
+                0x00001cb8                WaveDAC8_1_Start
  .text.Compint_Interrupt
-                0x00001b2c       0x14 .\CortexM3\ARM_GCC_484\Debug\Design01.a(Compint.o)
-                0x00001b2c                Compint_Interrupt
+                0x00001cd4       0x14 .\CortexM3\ARM_GCC_484\Debug\Design01.a(Compint.o)
+                0x00001cd4                Compint_Interrupt
  .text.Compint_SetVector
-                0x00001b40        0xc .\CortexM3\ARM_GCC_484\Debug\Design01.a(Compint.o)
-                0x00001b40                Compint_SetVector
+                0x00001ce8        0xc .\CortexM3\ARM_GCC_484\Debug\Design01.a(Compint.o)
+                0x00001ce8                Compint_SetVector
  .text.Compint_SetPriority
-                0x00001b4c       0x10 .\CortexM3\ARM_GCC_484\Debug\Design01.a(Compint.o)
-                0x00001b4c                Compint_SetPriority
+                0x00001cf4       0x10 .\CortexM3\ARM_GCC_484\Debug\Design01.a(Compint.o)
+                0x00001cf4                Compint_SetPriority
  .text.Compint_Enable
-                0x00001b5c        0xc .\CortexM3\ARM_GCC_484\Debug\Design01.a(Compint.o)
-                0x00001b5c                Compint_Enable
+                0x00001d04        0xc .\CortexM3\ARM_GCC_484\Debug\Design01.a(Compint.o)
+                0x00001d04                Compint_Enable
  .text.Compint_Disable
-                0x00001b68        0xc .\CortexM3\ARM_GCC_484\Debug\Design01.a(Compint.o)
-                0x00001b68                Compint_Disable
+                0x00001d10        0xc .\CortexM3\ARM_GCC_484\Debug\Design01.a(Compint.o)
+                0x00001d10                Compint_Disable
  .text.Compint_Start
-                0x00001b74       0x1c .\CortexM3\ARM_GCC_484\Debug\Design01.a(Compint.o)
-                0x00001b74                Compint_Start
+                0x00001d1c       0x1c .\CortexM3\ARM_GCC_484\Debug\Design01.a(Compint.o)
+                0x00001d1c                Compint_Start
  .text.HeartbeatCounter_Enable
-                0x00001b90       0x10 .\CortexM3\ARM_GCC_484\Debug\Design01.a(HeartbeatCounter.o)
-                0x00001b90                HeartbeatCounter_Enable
+                0x00001d38       0x10 .\CortexM3\ARM_GCC_484\Debug\Design01.a(HeartbeatCounter.o)
+                0x00001d38                HeartbeatCounter_Enable
  .text.HeartbeatCounter_SetInterruptMode
-                0x00001ba0        0xc .\CortexM3\ARM_GCC_484\Debug\Design01.a(HeartbeatCounter.o)
-                0x00001ba0                HeartbeatCounter_SetInterruptMode
+                0x00001d48        0xc .\CortexM3\ARM_GCC_484\Debug\Design01.a(HeartbeatCounter.o)
+                0x00001d48                HeartbeatCounter_SetInterruptMode
  .text.HeartbeatCounter_ReadStatusRegister
-                0x00001bac        0xc .\CortexM3\ARM_GCC_484\Debug\Design01.a(HeartbeatCounter.o)
-                0x00001bac                HeartbeatCounter_ReadStatusRegister
+                0x00001d54        0xc .\CortexM3\ARM_GCC_484\Debug\Design01.a(HeartbeatCounter.o)
+                0x00001d54                HeartbeatCounter_ReadStatusRegister
  .text.HeartbeatCounter_WriteCounter
-                0x00001bb8        0xc .\CortexM3\ARM_GCC_484\Debug\Design01.a(HeartbeatCounter.o)
-                0x00001bb8                HeartbeatCounter_WriteCounter
+                0x00001d60        0xc .\CortexM3\ARM_GCC_484\Debug\Design01.a(HeartbeatCounter.o)
+                0x00001d60                HeartbeatCounter_WriteCounter
  .text.HeartbeatCounter_ReadCounter
-                0x00001bc4       0x14 .\CortexM3\ARM_GCC_484\Debug\Design01.a(HeartbeatCounter.o)
-                0x00001bc4                HeartbeatCounter_ReadCounter
+                0x00001d6c       0x14 .\CortexM3\ARM_GCC_484\Debug\Design01.a(HeartbeatCounter.o)
+                0x00001d6c                HeartbeatCounter_ReadCounter
  .text.HeartbeatCounter_ReadCapture
-                0x00001bd8        0xc .\CortexM3\ARM_GCC_484\Debug\Design01.a(HeartbeatCounter.o)
-                0x00001bd8                HeartbeatCounter_ReadCapture
+                0x00001d80        0xc .\CortexM3\ARM_GCC_484\Debug\Design01.a(HeartbeatCounter.o)
+                0x00001d80                HeartbeatCounter_ReadCapture
  .text.HeartbeatCounter_WritePeriod
-                0x00001be4        0xc .\CortexM3\ARM_GCC_484\Debug\Design01.a(HeartbeatCounter.o)
-                0x00001be4                HeartbeatCounter_WritePeriod
+                0x00001d8c        0xc .\CortexM3\ARM_GCC_484\Debug\Design01.a(HeartbeatCounter.o)
+                0x00001d8c                HeartbeatCounter_WritePeriod
  .text.HeartbeatCounter_WriteCompare
-                0x00001bf0        0xc .\CortexM3\ARM_GCC_484\Debug\Design01.a(HeartbeatCounter.o)
-                0x00001bf0                HeartbeatCounter_WriteCompare
+                0x00001d98        0xc .\CortexM3\ARM_GCC_484\Debug\Design01.a(HeartbeatCounter.o)
+                0x00001d98                HeartbeatCounter_WriteCompare
  .text.HeartbeatCounter_ClearFIFO
-                0x00001bfc       0x14 .\CortexM3\ARM_GCC_484\Debug\Design01.a(HeartbeatCounter.o)
-                0x00001bfc                HeartbeatCounter_ClearFIFO
+                0x00001da4       0x14 .\CortexM3\ARM_GCC_484\Debug\Design01.a(HeartbeatCounter.o)
+                0x00001da4                HeartbeatCounter_ClearFIFO
  .text.HeartbeatCounter_Init
-                0x00001c10       0x58 .\CortexM3\ARM_GCC_484\Debug\Design01.a(HeartbeatCounter.o)
-                0x00001c10                HeartbeatCounter_Init
+                0x00001db8       0x58 .\CortexM3\ARM_GCC_484\Debug\Design01.a(HeartbeatCounter.o)
+                0x00001db8                HeartbeatCounter_Init
  .text.HeartbeatCounter_Start
-                0x00001c68       0x1c .\CortexM3\ARM_GCC_484\Debug\Design01.a(HeartbeatCounter.o)
-                0x00001c68                HeartbeatCounter_Start
+                0x00001e10       0x1c .\CortexM3\ARM_GCC_484\Debug\Design01.a(HeartbeatCounter.o)
+                0x00001e10                HeartbeatCounter_Start
  .text.timer_clock_1_Start
-                0x00001c84       0x1c .\CortexM3\ARM_GCC_484\Debug\Design01.a(timer_clock_1.o)
-                0x00001c84                timer_clock_1_Start
+                0x00001e2c       0x1c .\CortexM3\ARM_GCC_484\Debug\Design01.a(timer_clock_1.o)
+                0x00001e2c                timer_clock_1_Start
  .text.PWM_Enable
-                0x00001ca0       0x10 .\CortexM3\ARM_GCC_484\Debug\Design01.a(PWM.o)
-                0x00001ca0                PWM_Enable
+                0x00001e48       0x10 .\CortexM3\ARM_GCC_484\Debug\Design01.a(PWM.o)
+                0x00001e48                PWM_Enable
  .text.PWM_WriteCounter
-                0x00001cb0        0xc .\CortexM3\ARM_GCC_484\Debug\Design01.a(PWM.o)
-                0x00001cb0                PWM_WriteCounter
+                0x00001e58        0xc .\CortexM3\ARM_GCC_484\Debug\Design01.a(PWM.o)
+                0x00001e58                PWM_WriteCounter
  .text.PWM_WritePeriod
-                0x00001cbc        0xc .\CortexM3\ARM_GCC_484\Debug\Design01.a(PWM.o)
-                0x00001cbc                PWM_WritePeriod
+                0x00001e64        0xc .\CortexM3\ARM_GCC_484\Debug\Design01.a(PWM.o)
+                0x00001e64                PWM_WritePeriod
  .text.PWM_WriteCompare
-                0x00001cc8        0xc .\CortexM3\ARM_GCC_484\Debug\Design01.a(PWM.o)
-                0x00001cc8                PWM_WriteCompare
+                0x00001e70        0xc .\CortexM3\ARM_GCC_484\Debug\Design01.a(PWM.o)
+                0x00001e70                PWM_WriteCompare
  .text.PWM_Init
-                0x00001cd4       0x40 .\CortexM3\ARM_GCC_484\Debug\Design01.a(PWM.o)
-                0x00001cd4                PWM_Init
+                0x00001e7c       0x40 .\CortexM3\ARM_GCC_484\Debug\Design01.a(PWM.o)
+                0x00001e7c                PWM_Init
  .text.PWM_Start
-                0x00001d14       0x1c .\CortexM3\ARM_GCC_484\Debug\Design01.a(PWM.o)
-                0x00001d14                PWM_Start
+                0x00001ebc       0x1c .\CortexM3\ARM_GCC_484\Debug\Design01.a(PWM.o)
+                0x00001ebc                PWM_Start
  .text.STOP_Interrupt
-                0x00001d30        0xc .\CortexM3\ARM_GCC_484\Debug\Design01.a(STOP.o)
-                0x00001d30                STOP_Interrupt
+                0x00001ed8        0xc .\CortexM3\ARM_GCC_484\Debug\Design01.a(STOP.o)
+                0x00001ed8                STOP_Interrupt
  .text.STOP_SetVector
-                0x00001d3c        0xc .\CortexM3\ARM_GCC_484\Debug\Design01.a(STOP.o)
-                0x00001d3c                STOP_SetVector
+                0x00001ee4        0xc .\CortexM3\ARM_GCC_484\Debug\Design01.a(STOP.o)
+                0x00001ee4                STOP_SetVector
  .text.STOP_SetPriority
-                0x00001d48       0x10 .\CortexM3\ARM_GCC_484\Debug\Design01.a(STOP.o)
-                0x00001d48                STOP_SetPriority
+                0x00001ef0       0x10 .\CortexM3\ARM_GCC_484\Debug\Design01.a(STOP.o)
+                0x00001ef0                STOP_SetPriority
  .text.STOP_Enable
-                0x00001d58        0xc .\CortexM3\ARM_GCC_484\Debug\Design01.a(STOP.o)
-                0x00001d58                STOP_Enable
+                0x00001f00        0xc .\CortexM3\ARM_GCC_484\Debug\Design01.a(STOP.o)
+                0x00001f00                STOP_Enable
  .text.STOP_Disable
-                0x00001d64        0xc .\CortexM3\ARM_GCC_484\Debug\Design01.a(STOP.o)
-                0x00001d64                STOP_Disable
+                0x00001f0c        0xc .\CortexM3\ARM_GCC_484\Debug\Design01.a(STOP.o)
+                0x00001f0c                STOP_Disable
  .text.STOP_Start
-                0x00001d70       0x1c .\CortexM3\ARM_GCC_484\Debug\Design01.a(STOP.o)
-                0x00001d70                STOP_Start
+                0x00001f18       0x1c .\CortexM3\ARM_GCC_484\Debug\Design01.a(STOP.o)
+                0x00001f18                STOP_Start
  .text.WaveDAC8_1_DacClk_Start
-                0x00001d8c       0x1c .\CortexM3\ARM_GCC_484\Debug\Design01.a(WaveDAC8_1_DacClk.o)
-                0x00001d8c                WaveDAC8_1_DacClk_Start
+                0x00001f34       0x1c .\CortexM3\ARM_GCC_484\Debug\Design01.a(WaveDAC8_1_DacClk.o)
+                0x00001f34                WaveDAC8_1_DacClk_Start
  .text.WaveDAC8_1_Wave1_DMA_DmaInitialize
-                0x00001da8       0x3c .\CortexM3\ARM_GCC_484\Debug\Design01.a(WaveDAC8_1_Wave1_DMA_dma.o)
-                0x00001da8                WaveDAC8_1_Wave1_DMA_DmaInitialize
+                0x00001f50       0x3c .\CortexM3\ARM_GCC_484\Debug\Design01.a(WaveDAC8_1_Wave1_DMA_dma.o)
+                0x00001f50                WaveDAC8_1_Wave1_DMA_DmaInitialize
  .text.WaveDAC8_1_Wave2_DMA_DmaInitialize
-                0x00001de4       0x3c .\CortexM3\ARM_GCC_484\Debug\Design01.a(WaveDAC8_1_Wave2_DMA_dma.o)
-                0x00001de4                WaveDAC8_1_Wave2_DMA_DmaInitialize
+                0x00001f8c       0x3c .\CortexM3\ARM_GCC_484\Debug\Design01.a(WaveDAC8_1_Wave2_DMA_dma.o)
+                0x00001f8c                WaveDAC8_1_Wave2_DMA_DmaInitialize
  .text.WaveDAC8_1_VDAC8_Enable
-                0x00001e20       0x1c .\CortexM3\ARM_GCC_484\Debug\Design01.a(WaveDAC8_1_VDAC8.o)
-                0x00001e20                WaveDAC8_1_VDAC8_Enable
+                0x00001fc8       0x1c .\CortexM3\ARM_GCC_484\Debug\Design01.a(WaveDAC8_1_VDAC8.o)
+                0x00001fc8                WaveDAC8_1_VDAC8_Enable
  .text.WaveDAC8_1_VDAC8_SetSpeed
-                0x00001e3c       0x1c .\CortexM3\ARM_GCC_484\Debug\Design01.a(WaveDAC8_1_VDAC8.o)
-                0x00001e3c                WaveDAC8_1_VDAC8_SetSpeed
+                0x00001fe4       0x1c .\CortexM3\ARM_GCC_484\Debug\Design01.a(WaveDAC8_1_VDAC8.o)
+                0x00001fe4                WaveDAC8_1_VDAC8_SetSpeed
  .text.WaveDAC8_1_VDAC8_SetValue
-                0x00001e58        0xc .\CortexM3\ARM_GCC_484\Debug\Design01.a(WaveDAC8_1_VDAC8.o)
-                0x00001e58                WaveDAC8_1_VDAC8_SetValue
+                0x00002000        0xc .\CortexM3\ARM_GCC_484\Debug\Design01.a(WaveDAC8_1_VDAC8.o)
+                0x00002000                WaveDAC8_1_VDAC8_SetValue
  .text.WaveDAC8_1_VDAC8_DacTrim
-                0x00001e64       0x20 .\CortexM3\ARM_GCC_484\Debug\Design01.a(WaveDAC8_1_VDAC8.o)
-                0x00001e64                WaveDAC8_1_VDAC8_DacTrim
+                0x0000200c       0x20 .\CortexM3\ARM_GCC_484\Debug\Design01.a(WaveDAC8_1_VDAC8.o)
+                0x0000200c                WaveDAC8_1_VDAC8_DacTrim
  .text.WaveDAC8_1_VDAC8_SetRange
-                0x00001e84       0x20 .\CortexM3\ARM_GCC_484\Debug\Design01.a(WaveDAC8_1_VDAC8.o)
-                0x00001e84                WaveDAC8_1_VDAC8_SetRange
+                0x0000202c       0x20 .\CortexM3\ARM_GCC_484\Debug\Design01.a(WaveDAC8_1_VDAC8.o)
+                0x0000202c                WaveDAC8_1_VDAC8_SetRange
  .text.WaveDAC8_1_VDAC8_Init
-                0x00001ea4       0x28 .\CortexM3\ARM_GCC_484\Debug\Design01.a(WaveDAC8_1_VDAC8.o)
-                0x00001ea4                WaveDAC8_1_VDAC8_Init
+                0x0000204c       0x28 .\CortexM3\ARM_GCC_484\Debug\Design01.a(WaveDAC8_1_VDAC8.o)
+                0x0000204c                WaveDAC8_1_VDAC8_Init
  .text.SMS_LIB_V3_50_CallibrateSensor1Ch
-                0x00001ecc       0x84 C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CapSense_CSD_v3_50\Library\CapSenseLibrary_GCC.a(CapSense_CSD_SmartSense_v3_50.o)
-                0x00001ecc                SMS_LIB_V3_50_CallibrateSensor1Ch
+                0x00002074       0x84 C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CapSense_CSD_v3_50\Library\CapSenseLibrary_GCC.a(CapSense_CSD_SmartSense_v3_50.o)
+                0x00002074                SMS_LIB_V3_50_CallibrateSensor1Ch
  .text.SMS_LIB_V3_50_AutoTuneSensor1Ch
-                0x00001f50       0x9c C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CapSense_CSD_v3_50\Library\CapSenseLibrary_GCC.a(CapSense_CSD_SmartSense_v3_50.o)
-                0x00001f50                SMS_LIB_V3_50_AutoTuneSensor1Ch
+                0x000020f8       0x9c C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CapSense_CSD_v3_50\Library\CapSenseLibrary_GCC.a(CapSense_CSD_SmartSense_v3_50.o)
+                0x000020f8                SMS_LIB_V3_50_AutoTuneSensor1Ch
  .text.SMS_LIB_V3_50_MeasureNoiseEnvelope
-                0x00001fec       0x94 C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CapSense_CSD_v3_50\Library\CapSenseLibrary_GCC.a(CapSense_CSD_SmartSense_v3_50.o)
-                0x00001fec                SMS_LIB_V3_50_MeasureNoiseEnvelope
+                0x00002194       0x94 C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CapSense_CSD_v3_50\Library\CapSenseLibrary_GCC.a(CapSense_CSD_SmartSense_v3_50.o)
+                0x00002194                SMS_LIB_V3_50_MeasureNoiseEnvelope
  .text.SMS_LIB_V3_50_CalculateThresholds
-                0x00002080       0xc4 C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CapSense_CSD_v3_50\Library\CapSenseLibrary_GCC.a(CapSense_CSD_SmartSense_v3_50.o)
-                0x00002080                SMS_LIB_V3_50_CalculateThresholds
+                0x00002228       0xc4 C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CapSense_CSD_v3_50\Library\CapSenseLibrary_GCC.a(CapSense_CSD_SmartSense_v3_50.o)
+                0x00002228                SMS_LIB_V3_50_CalculateThresholds
  .text.SMS_LIB_V3_50_Sensors2WidgetResolutionTransform
-                0x00002144       0xa8 C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CapSense_CSD_v3_50\Library\CapSenseLibrary_GCC.a(CapSense_CSD_SmartSense_v3_50.o)
-                0x00002144                SMS_LIB_V3_50_Sensors2WidgetResolutionTransform
+                0x000022ec       0xa8 C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CapSense_CSD_v3_50\Library\CapSenseLibrary_GCC.a(CapSense_CSD_SmartSense_v3_50.o)
+                0x000022ec                SMS_LIB_V3_50_Sensors2WidgetResolutionTransform
  .text.SMS_LIB_V3_50_AutoTune1Ch
-                0x000021ec       0x88 C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CapSense_CSD_v3_50\Library\CapSenseLibrary_GCC.a(CapSense_CSD_SmartSense_v3_50.o)
-                0x000021ec                SMS_LIB_V3_50_AutoTune1Ch
- .text          0x00002274       0x24 c:/program files/cypress/psoc creator/3.2/psoc creator/import/gnu/arm/4.8.4/bin/../lib/gcc/arm-none-eabi/4.8.4/armv7-m\libgcc.a(_udivsi3.o)
-                0x00002274                __aeabi_uidiv
-                0x00002274                __udivsi3
-                0x00002288                __aeabi_uidivmod
- .text          0x00002298        0x4 c:/program files/cypress/psoc creator/3.2/psoc creator/import/gnu/arm/4.8.4/bin/../lib/gcc/arm-none-eabi/4.8.4/armv7-m\libgcc.a(_dvmd_tls.o)
-                0x00002298                __aeabi_idiv0
-                0x00002298                __aeabi_ldiv0
- .text          0x0000229c      0x370 c:/program files/cypress/psoc creator/3.2/psoc creator/import/gnu/arm/4.8.4/bin/../lib/gcc/arm-none-eabi/4.8.4/armv7-m\libgcc.a(_arm_addsubdf3.o)
-                0x0000229c                __aeabi_drsub
-                0x000022a4                __aeabi_dsub
-                0x000022a4                __subdf3
-                0x000022a8                __aeabi_dadd
-                0x000022a8                __adddf3
-                0x00002520                __floatunsidf
-                0x00002520                __aeabi_ui2d
-                0x00002540                __floatsidf
-                0x00002540                __aeabi_i2d
-                0x00002564                __aeabi_f2d
-                0x00002564                __extendsfdf2
-                0x000025a0                __floatundidf
-                0x000025a0                __aeabi_ul2d
-                0x000025b0                __floatdidf
-                0x000025b0                __aeabi_l2d
- .text          0x0000260c      0x424 c:/program files/cypress/psoc creator/3.2/psoc creator/import/gnu/arm/4.8.4/bin/../lib/gcc/arm-none-eabi/4.8.4/armv7-m\libgcc.a(_arm_muldivdf3.o)
-                0x0000260c                __aeabi_dmul
-                0x0000260c                __muldf3
-                0x00002860                __divdf3
-                0x00002860                __aeabi_ddiv
- .text          0x00002a30       0x50 c:/program files/cypress/psoc creator/3.2/psoc creator/import/gnu/arm/4.8.4/bin/../lib/gcc/arm-none-eabi/4.8.4/armv7-m\libgcc.a(_arm_fixdfsi.o)
-                0x00002a30                __aeabi_d2iz
-                0x00002a30                __fixdfsi
- .text          0x00002a80      0x21c c:/program files/cypress/psoc creator/3.2/psoc creator/import/gnu/arm/4.8.4/bin/../lib/gcc/arm-none-eabi/4.8.4/armv7-m\libgcc.a(_arm_addsubsf3.o)
-                0x00002a80                __aeabi_frsub
-                0x00002a88                __subsf3
-                0x00002a88                __aeabi_fsub
-                0x00002a8c                __aeabi_fadd
-                0x00002a8c                __addsf3
-                0x00002bec                __aeabi_ui2f
-                0x00002bec                __floatunsisf
-                0x00002bf4                __aeabi_i2f
-                0x00002bf4                __floatsisf
-                0x00002c10                __aeabi_ul2f
-                0x00002c10                __floatundisf
-                0x00002c20                __aeabi_l2f
-                0x00002c20                __floatdisf
- .text          0x00002c9c       0xec c:/program files/cypress/psoc creator/3.2/psoc creator/import/gnu/arm/4.8.4/bin/../lib/gcc/arm-none-eabi/4.8.4/armv7-m\libgcc.a(_arm_cmpsf2.o)
-                0x00002c9c                __gesf2
-                0x00002c9c                __gtsf2
-                0x00002ca4                __lesf2
-                0x00002ca4                __ltsf2
-                0x00002cac                __nesf2
-                0x00002cac                __eqsf2
-                0x00002cac                __cmpsf2
-                0x00002d0c                __aeabi_cfrcmple
-                0x00002d14                __aeabi_cfcmpeq
-                0x00002d14                __aeabi_cfcmple
-                0x00002d24                __aeabi_fcmpeq
-                0x00002d38                __aeabi_fcmplt
-                0x00002d4c                __aeabi_fcmple
-                0x00002d60                __aeabi_fcmpge
-                0x00002d74                __aeabi_fcmpgt
- .text          0x00002d88       0x4c c:/program files/cypress/psoc creator/3.2/psoc creator/import/gnu/arm/4.8.4/bin/../lib/gcc/arm-none-eabi/4.8.4/armv7-m\libgcc.a(_arm_fixsfsi.o)
-                0x00002d88                __aeabi_f2iz
-                0x00002d88                __fixsfsi
- .text          0x00002dd4       0x40 c:/program files/cypress/psoc creator/3.2/psoc creator/import/gnu/arm/4.8.4/bin/../lib/gcc/arm-none-eabi/4.8.4/armv7-m\libgcc.a(_arm_fixunssfsi.o)
-                0x00002dd4                __fixunssfsi
-                0x00002dd4                __aeabi_f2uiz
+                0x00002394       0x88 C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CapSense_CSD_v3_50\Library\CapSenseLibrary_GCC.a(CapSense_CSD_SmartSense_v3_50.o)
+                0x00002394                SMS_LIB_V3_50_AutoTune1Ch
+ .text          0x0000241c       0x24 c:/program files/cypress/psoc creator/3.2/psoc creator/import/gnu/arm/4.8.4/bin/../lib/gcc/arm-none-eabi/4.8.4/armv7-m\libgcc.a(_udivsi3.o)
+                0x0000241c                __aeabi_uidiv
+                0x0000241c                __udivsi3
+                0x00002430                __aeabi_uidivmod
+ .text          0x00002440        0x4 c:/program files/cypress/psoc creator/3.2/psoc creator/import/gnu/arm/4.8.4/bin/../lib/gcc/arm-none-eabi/4.8.4/armv7-m\libgcc.a(_dvmd_tls.o)
+                0x00002440                __aeabi_idiv0
+                0x00002440                __aeabi_ldiv0
+ .text          0x00002444      0x370 c:/program files/cypress/psoc creator/3.2/psoc creator/import/gnu/arm/4.8.4/bin/../lib/gcc/arm-none-eabi/4.8.4/armv7-m\libgcc.a(_arm_addsubdf3.o)
+                0x00002444                __aeabi_drsub
+                0x0000244c                __aeabi_dsub
+                0x0000244c                __subdf3
+                0x00002450                __aeabi_dadd
+                0x00002450                __adddf3
+                0x000026c8                __floatunsidf
+                0x000026c8                __aeabi_ui2d
+                0x000026e8                __floatsidf
+                0x000026e8                __aeabi_i2d
+                0x0000270c                __aeabi_f2d
+                0x0000270c                __extendsfdf2
+                0x00002748                __floatundidf
+                0x00002748                __aeabi_ul2d
+                0x00002758                __floatdidf
+                0x00002758                __aeabi_l2d
+ .text          0x000027b4      0x424 c:/program files/cypress/psoc creator/3.2/psoc creator/import/gnu/arm/4.8.4/bin/../lib/gcc/arm-none-eabi/4.8.4/armv7-m\libgcc.a(_arm_muldivdf3.o)
+                0x000027b4                __aeabi_dmul
+                0x000027b4                __muldf3
+                0x00002a08                __divdf3
+                0x00002a08                __aeabi_ddiv
+ .text          0x00002bd8       0x50 c:/program files/cypress/psoc creator/3.2/psoc creator/import/gnu/arm/4.8.4/bin/../lib/gcc/arm-none-eabi/4.8.4/armv7-m\libgcc.a(_arm_fixdfsi.o)
+                0x00002bd8                __aeabi_d2iz
+                0x00002bd8                __fixdfsi
+ .text          0x00002c28      0x21c c:/program files/cypress/psoc creator/3.2/psoc creator/import/gnu/arm/4.8.4/bin/../lib/gcc/arm-none-eabi/4.8.4/armv7-m\libgcc.a(_arm_addsubsf3.o)
+                0x00002c28                __aeabi_frsub
+                0x00002c30                __subsf3
+                0x00002c30                __aeabi_fsub
+                0x00002c34                __aeabi_fadd
+                0x00002c34                __addsf3
+                0x00002d94                __aeabi_ui2f
+                0x00002d94                __floatunsisf
+                0x00002d9c                __aeabi_i2f
+                0x00002d9c                __floatsisf
+                0x00002db8                __aeabi_ul2f
+                0x00002db8                __floatundisf
+                0x00002dc8                __aeabi_l2f
+                0x00002dc8                __floatdisf
+ .text          0x00002e44       0xec c:/program files/cypress/psoc creator/3.2/psoc creator/import/gnu/arm/4.8.4/bin/../lib/gcc/arm-none-eabi/4.8.4/armv7-m\libgcc.a(_arm_cmpsf2.o)
+                0x00002e44                __gesf2
+                0x00002e44                __gtsf2
+                0x00002e4c                __lesf2
+                0x00002e4c                __ltsf2
+                0x00002e54                __nesf2
+                0x00002e54                __eqsf2
+                0x00002e54                __cmpsf2
+                0x00002eb4                __aeabi_cfrcmple
+                0x00002ebc                __aeabi_cfcmpeq
+                0x00002ebc                __aeabi_cfcmple
+                0x00002ecc                __aeabi_fcmpeq
+                0x00002ee0                __aeabi_fcmplt
+                0x00002ef4                __aeabi_fcmple
+                0x00002f08                __aeabi_fcmpge
+                0x00002f1c                __aeabi_fcmpgt
+ .text          0x00002f30       0x4c c:/program files/cypress/psoc creator/3.2/psoc creator/import/gnu/arm/4.8.4/bin/../lib/gcc/arm-none-eabi/4.8.4/armv7-m\libgcc.a(_arm_fixsfsi.o)
+                0x00002f30                __aeabi_f2iz
+                0x00002f30                __fixsfsi
+ .text          0x00002f7c       0x40 c:/program files/cypress/psoc creator/3.2/psoc creator/import/gnu/arm/4.8.4/bin/../lib/gcc/arm-none-eabi/4.8.4/armv7-m\libgcc.a(_arm_fixunssfsi.o)
+                0x00002f7c                __fixunssfsi
+                0x00002f7c                __aeabi_f2uiz
  .text.__libc_init_array
-                0x00002e14       0x4c c:/program files/cypress/psoc creator/3.2/psoc creator/import/gnu/arm/4.8.4/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m\libg_s.a(lib_a-init.o)
-                0x00002e14                __libc_init_array
- .text.memcpy   0x00002e60       0x12 c:/program files/cypress/psoc creator/3.2/psoc creator/import/gnu/arm/4.8.4/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m\libg_s.a(lib_a-memcpy-stub.o)
-                0x00002e60                memcpy
- .text.memset   0x00002e72       0x10 c:/program files/cypress/psoc creator/3.2/psoc creator/import/gnu/arm/4.8.4/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m\libg_s.a(lib_a-memset.o)
-                0x00002e72                memset
+                0x00002fbc       0x4c c:/program files/cypress/psoc creator/3.2/psoc creator/import/gnu/arm/4.8.4/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m\libg_s.a(lib_a-init.o)
+                0x00002fbc                __libc_init_array
+ .text.memcpy   0x00003008       0x12 c:/program files/cypress/psoc creator/3.2/psoc creator/import/gnu/arm/4.8.4/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m\libg_s.a(lib_a-memcpy-stub.o)
+                0x00003008                memcpy
+ .text.memset   0x0000301a       0x10 c:/program files/cypress/psoc creator/3.2/psoc creator/import/gnu/arm/4.8.4/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m\libg_s.a(lib_a-memset.o)
+                0x0000301a                memset
  *(.plt)
  *(.gnu.warning)
  *(.glue_7t)
@@ -1771,106 +1770,103 @@ END GROUP
  *(.ARM.extab* .gnu.linkonce.armextab.*)
  *(.gcc_except_table)
 
-.v4_bx          0x00002e84        0x0
+.v4_bx          0x0000302c        0x0
  .v4_bx         0x00000000        0x0 linker stubs
 
-.iplt           0x00002e84        0x0
+.iplt           0x0000302c        0x0
  .iplt          0x00000000        0x0 c:/program files/cypress/psoc creator/3.2/psoc creator/import/gnu/arm/4.8.4/bin/../lib/gcc/arm-none-eabi/4.8.4/armv7-m/crtbegin.o
 
 .eh_frame_hdr
  *(.eh_frame_hdr)
 
-.eh_frame       0x00002e84        0x4
+.eh_frame       0x0000302c        0x4
  *(.eh_frame)
- .eh_frame      0x00002e84        0x0 c:/program files/cypress/psoc creator/3.2/psoc creator/import/gnu/arm/4.8.4/bin/../lib/gcc/arm-none-eabi/4.8.4/armv7-m/crtbegin.o
- .eh_frame      0x00002e84        0x4 c:/program files/cypress/psoc creator/3.2/psoc creator/import/gnu/arm/4.8.4/bin/../lib/gcc/arm-none-eabi/4.8.4/armv7-m/crtend.o
-                0x00002e88                PROVIDE (__exidx_start, .)
+ .eh_frame      0x0000302c        0x0 c:/program files/cypress/psoc creator/3.2/psoc creator/import/gnu/arm/4.8.4/bin/../lib/gcc/arm-none-eabi/4.8.4/armv7-m/crtbegin.o
+ .eh_frame      0x0000302c        0x4 c:/program files/cypress/psoc creator/3.2/psoc creator/import/gnu/arm/4.8.4/bin/../lib/gcc/arm-none-eabi/4.8.4/armv7-m/crtend.o
+                0x00003030                PROVIDE (__exidx_start, .)
 
 .ARM.exidx
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
-                0x00002e88                __exidx_end = .
+                0x00003030                __exidx_end = .
 
-.rodata         0x00002e88     0x1208
+.rodata         0x00003030     0x1208
  *(.rodata .rodata.* .gnu.linkonce.r.*)
  .rodata.str1.4
-                0x00002e88       0x47 .\CortexM3\ARM_GCC_484\Debug\states.o
-                                 0x48 (size before relaxing)
- *fill*         0x00002ecf        0x1 
+                0x00003030       0x60 .\CortexM3\ARM_GCC_484\Debug\states.o
  .rodata.str1.4
-                0x00002ed0       0x28 .\CortexM3\ARM_GCC_484\Debug\display.o
+                0x00003090       0x28 .\CortexM3\ARM_GCC_484\Debug\display.o
                                  0x4c (size before relaxing)
  .rodata.str1.4
-                0x00002ef8       0x14 .\CortexM3\ARM_GCC_484\Debug\heartrate.o
- .rodata        0x00002f0c       0x64 .\CortexM3\ARM_GCC_484\Debug\Design01.a(cyfitter_cfg.o)
-                0x00002f0c                CapSense_AMuxCH0__addrTable
-                0x00002f34                CapSense_AMuxCH0__maskTable
- .rodata        0x00002f70       0x40 .\CortexM3\ARM_GCC_484\Debug\Design01.a(LCD_BarGraph.o)
-                0x00002f70                LCD_customFonts
- .rodata        0x00002fb0       0x54 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense.o)
-                0x00002fb0                CapSense_portTable
-                0x00002fb8                CapSense_maskTable
-                0x00002fc0                CapSense_pcTable
-                0x00002fdc                CapSense_csTable
-                0x00002ffc                CapSense_widgetNumber
- .rodata        0x00003004       0x10 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_CSHL.o)
-                0x00003004                CapSense_rawDataIndex
-                0x00003008                CapSense_numberOfSensors
-                0x0000300c                CapSense_posFiltersMask
-                0x00003010                CapSense_centroidMult
- .rodata        0x00003014       0x28 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_SMS_Wrapper.o)
-                0x00003014                SMS_LIB_PrescalerTbl
-                0x00003034                SMS_LIB_SensorSensitivity
- .rodata        0x0000303c       0x18 .\CortexM3\ARM_GCC_484\Debug\Design01.a(PGA_1.o)
- .rodata        0x00003054     0x1004 .\CortexM3\ARM_GCC_484\Debug\Design01.a(WaveDAC8_1.o)
-                0x00003054                WaveDAC8_1_wave1
-                0x00003ff4                WaveDAC8_1_wave2
-                0x00004058                . = ALIGN (0x4)
+                0x00000000        0x8 .\CortexM3\ARM_GCC_484\Debug\heartrate.o
+ .rodata        0x000030b8       0x64 .\CortexM3\ARM_GCC_484\Debug\Design01.a(cyfitter_cfg.o)
+                0x000030b8                CapSense_AMuxCH0__addrTable
+                0x000030e0                CapSense_AMuxCH0__maskTable
+ .rodata        0x0000311c       0x40 .\CortexM3\ARM_GCC_484\Debug\Design01.a(LCD_BarGraph.o)
+                0x0000311c                LCD_customFonts
+ .rodata        0x0000315c       0x54 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense.o)
+                0x0000315c                CapSense_portTable
+                0x00003164                CapSense_maskTable
+                0x0000316c                CapSense_pcTable
+                0x00003188                CapSense_csTable
+                0x000031a8                CapSense_widgetNumber
+ .rodata        0x000031b0       0x10 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_CSHL.o)
+                0x000031b0                CapSense_rawDataIndex
+                0x000031b4                CapSense_numberOfSensors
+                0x000031b8                CapSense_posFiltersMask
+                0x000031bc                CapSense_centroidMult
+ .rodata        0x000031c0       0x28 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_SMS_Wrapper.o)
+                0x000031c0                SMS_LIB_PrescalerTbl
+                0x000031e0                SMS_LIB_SensorSensitivity
+ .rodata        0x000031e8       0x18 .\CortexM3\ARM_GCC_484\Debug\Design01.a(PGA_1.o)
+ .rodata        0x00003200     0x1004 .\CortexM3\ARM_GCC_484\Debug\Design01.a(WaveDAC8_1.o)
+                0x00003200                WaveDAC8_1_wave1
+                0x000041a0                WaveDAC8_1_wave2
+                0x00004204                . = ALIGN (0x4)
  *(.init)
- .init          0x00004058        0x4 c:/program files/cypress/psoc creator/3.2/psoc creator/import/gnu/arm/4.8.4/bin/../lib/gcc/arm-none-eabi/4.8.4/armv7-m/crti.o
-                0x00004058                _init
- .init          0x0000405c        0x8 c:/program files/cypress/psoc creator/3.2/psoc creator/import/gnu/arm/4.8.4/bin/../lib/gcc/arm-none-eabi/4.8.4/armv7-m/crtn.o
-                0x00004064                . = ALIGN (0x4)
-                0x00004064                __preinit_array_start = .
+ .init          0x00004204        0x4 c:/program files/cypress/psoc creator/3.2/psoc creator/import/gnu/arm/4.8.4/bin/../lib/gcc/arm-none-eabi/4.8.4/armv7-m/crti.o
+                0x00004204                _init
+ .init          0x00004208        0x8 c:/program files/cypress/psoc creator/3.2/psoc creator/import/gnu/arm/4.8.4/bin/../lib/gcc/arm-none-eabi/4.8.4/armv7-m/crtn.o
+                0x00004210                . = ALIGN (0x4)
+                0x00004210                __preinit_array_start = .
  *(.preinit_array)
-                0x00004064                __preinit_array_end = .
-                0x00004064                . = ALIGN (0x4)
-                0x00004064                __init_array_start = .
+                0x00004210                __preinit_array_end = .
+                0x00004210                . = ALIGN (0x4)
+                0x00004210                __init_array_start = .
  *(SORT(.init_array.*))
  *(.init_array)
- .init_array    0x00004064        0x4 c:/program files/cypress/psoc creator/3.2/psoc creator/import/gnu/arm/4.8.4/bin/../lib/gcc/arm-none-eabi/4.8.4/armv7-m/crtbegin.o
- .init_array    0x00004068        0x4 .\CortexM3\ARM_GCC_484\Debug\Cm3Start.o
-                0x0000406c                __init_array_end = .
-                0x0000406c                . = ALIGN (0x4)
+ .init_array    0x00004210        0x4 c:/program files/cypress/psoc creator/3.2/psoc creator/import/gnu/arm/4.8.4/bin/../lib/gcc/arm-none-eabi/4.8.4/armv7-m/crtbegin.o
+ .init_array    0x00004214        0x4 .\CortexM3\ARM_GCC_484\Debug\Cm3Start.o
+                0x00004218                __init_array_end = .
+                0x00004218                . = ALIGN (0x4)
  *(.fini)
- .fini          0x0000406c        0x4 c:/program files/cypress/psoc creator/3.2/psoc creator/import/gnu/arm/4.8.4/bin/../lib/gcc/arm-none-eabi/4.8.4/armv7-m/crti.o
-                0x0000406c                _fini
- .fini          0x00004070        0x8 c:/program files/cypress/psoc creator/3.2/psoc creator/import/gnu/arm/4.8.4/bin/../lib/gcc/arm-none-eabi/4.8.4/armv7-m/crtn.o
-                0x00004078                . = ALIGN (0x4)
-                0x00004078                __fini_array_start = .
+ .fini          0x00004218        0x4 c:/program files/cypress/psoc creator/3.2/psoc creator/import/gnu/arm/4.8.4/bin/../lib/gcc/arm-none-eabi/4.8.4/armv7-m/crti.o
+                0x00004218                _fini
+ .fini          0x0000421c        0x8 c:/program files/cypress/psoc creator/3.2/psoc creator/import/gnu/arm/4.8.4/bin/../lib/gcc/arm-none-eabi/4.8.4/armv7-m/crtn.o
+                0x00004224                . = ALIGN (0x4)
+                0x00004224                __fini_array_start = .
  *(.fini_array)
- .fini_array    0x00004078        0x4 c:/program files/cypress/psoc creator/3.2/psoc creator/import/gnu/arm/4.8.4/bin/../lib/gcc/arm-none-eabi/4.8.4/armv7-m/crtbegin.o
+ .fini_array    0x00004224        0x4 c:/program files/cypress/psoc creator/3.2/psoc creator/import/gnu/arm/4.8.4/bin/../lib/gcc/arm-none-eabi/4.8.4/armv7-m/crtbegin.o
  *(SORT(.fini_array.*))
-                0x0000407c                __fini_array_end = .
-                0x0000407c                . = ALIGN (0x4)
+                0x00004228                __fini_array_end = .
+                0x00004228                . = ALIGN (0x4)
  *crtbegin.o(.ctors)
  *(EXCLUDE_FILE(*crtend.o) .ctors)
  *(SORT(.ctors.*))
  *crtend.o(.ctors)
-                0x0000407c                . = ALIGN (0x4)
+                0x00004228                . = ALIGN (0x4)
  *crtbegin.o(.dtors)
  *(EXCLUDE_FILE(*crtend.o) .dtors)
  *(SORT(.dtors.*))
  *crtend.o(.dtors)
-                0x0000407c                . = ALIGN (0x4)
-                0x0000407c                __cy_regions = .
-                0x0000407c        0x4 LONG 0x4090 __cy_region_init_ram
-                0x00004080        0x4 LONG 0x1fff8108 __cy_region_start_data
-                0x00004084        0x4 LONG 0x80 __cy_region_init_size_ram
-                0x00004088        0x4 LONG 0x120 __cy_region_zero_size_ram
-                0x0000408c                __cy_regions_end = .
-                0x00004090                . = ALIGN (0x8)
- *fill*         0x0000408c        0x4 
-                0x00004090                _etext = .
+                0x00004228                . = ALIGN (0x4)
+                0x00004228                __cy_regions = .
+                0x00004228        0x4 LONG 0x4238 __cy_region_init_ram
+                0x0000422c        0x4 LONG 0x1fff8108 __cy_region_start_data
+                0x00004230        0x4 LONG 0x88 __cy_region_init_size_ram
+                0x00004234        0x4 LONG 0x120 __cy_region_zero_size_ram
+                0x00004238                __cy_regions_end = .
+                0x00004238                . = ALIGN (0x8)
+                0x00004238                _etext = .
 
 .ramvectors     0x1fff8000      0x100
                 0x1fff8000                __cy_region_start_ram = .
@@ -1884,7 +1880,7 @@ END GROUP
  .noinit        0x1fff8104        0x1 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CyLib.o)
                 0x1fff8104                CyResetStatus
 
-.data           0x1fff8108       0x80 load address 0x00004090
+.data           0x1fff8108       0x88 load address 0x00004238
                 0x1fff8108                __cy_region_start_data = .
  *(.jcr)
  .jcr           0x1fff8108        0x0 c:/program files/cypress/psoc creator/3.2/psoc creator/import/gnu/arm/4.8.4/bin/../lib/gcc/arm-none-eabi/4.8.4/armv7-m/crtbegin.o
@@ -1893,134 +1889,138 @@ END GROUP
  *(.got)
  *(.shdata)
  *(.data .data.* .gnu.linkonce.d.*)
- .data          0x1fff810c        0x4 .\CortexM3\ARM_GCC_484\Debug\display.o
-                0x1fff810c                loading_bar_speed_ms
- .data          0x1fff8110        0x8 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CyDmac.o)
- .data          0x1fff8118       0x10 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CyLib.o)
-                0x1fff8118                cydelay_32k_ms
-                0x1fff811c                cydelay_freq_khz
-                0x1fff8120                cydelay_freq_mhz
-                0x1fff8124                cydelay_freq_hz
- .data          0x1fff8128       0x10 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense.o)
-                0x1fff8128                CapSense_sensorEnableMask
-                0x1fff812c                CapSense_idacSettings
-                0x1fff8134                CapSense_widgetResolution
-                0x1fff8137                CapSense_lowLevelTuningDone
- .data          0x1fff8138       0x14 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_CSHL.o)
-                0x1fff8138                CapSense_debounce
-                0x1fff813c                CapSense_noiseThreshold
-                0x1fff8140                CapSense_fingerThreshold
-                0x1fff8144                CapSense_hysteresis
-                0x1fff8148                CapSense_posFiltersData
- .data          0x1fff814c       0x34 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_SMS_Wrapper.o)
-                0x1fff814c                SMS_LIB_EndOfWidgInd
-                0x1fff814d                SMS_LIB_TotalScanSlCnt
-                0x1fff814e                SMS_LIB_TotalSnsCnt
-                0x1fff8150                SMS_LIB_Var2
-                0x1fff8152                SMS_LIB_Var1
-                0x1fff8154                SMS_LIB_SensorBaseline
-                0x1fff8158                SMS_LIB_SensorRaw
-                0x1fff815c                SMS_LIB_prescaler
-                0x1fff8160                SMS_LIB_idacSettings
-                0x1fff8164                SMS_LIB_fingerThreshold
-                0x1fff8168                SMS_LIB_rawDataIndex
-                0x1fff816c                SMS_LIB_numberOfSensors
-                0x1fff8170                SMS_LIB_widgetNumber
-                0x1fff8174                SMS_LIB_widgetResolution
-                0x1fff8178                SMS_LIB_hysteresis
-                0x1fff817c                SMS_LIB_noiseThreshold
- .data          0x1fff8180        0x1 .\CortexM3\ARM_GCC_484\Debug\Design01.a(WaveDAC8_1_Wave1_DMA_dma.o)
-                0x1fff8180                WaveDAC8_1_Wave1_DMA_DmaHandle
- .data          0x1fff8181        0x1 .\CortexM3\ARM_GCC_484\Debug\Design01.a(WaveDAC8_1_Wave2_DMA_dma.o)
-                0x1fff8181                WaveDAC8_1_Wave2_DMA_DmaHandle
-                0x1fff8188                . = ALIGN (0x8)
- *fill*         0x1fff8182        0x6 
+ .data          0x1fff810c        0xc .\CortexM3\ARM_GCC_484\Debug\states.o
+                0x1fff810c                MOTOR_WALKING_SPEED
+                0x1fff8110                MOTOR_RUNNING_SPEED
+                0x1fff8114                MOTOR_FAST_WALKING_SPEED
+ .data          0x1fff8118        0x4 .\CortexM3\ARM_GCC_484\Debug\display.o
+                0x1fff8118                loading_bar_speed_ms
+ .data          0x1fff811c        0x8 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CyDmac.o)
+ .data          0x1fff8124       0x10 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CyLib.o)
+                0x1fff8124                cydelay_32k_ms
+                0x1fff8128                cydelay_freq_khz
+                0x1fff812c                cydelay_freq_mhz
+                0x1fff8130                cydelay_freq_hz
+ .data          0x1fff8134       0x10 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense.o)
+                0x1fff8134                CapSense_sensorEnableMask
+                0x1fff8138                CapSense_idacSettings
+                0x1fff8140                CapSense_widgetResolution
+                0x1fff8143                CapSense_lowLevelTuningDone
+ .data          0x1fff8144       0x14 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_CSHL.o)
+                0x1fff8144                CapSense_debounce
+                0x1fff8148                CapSense_noiseThreshold
+                0x1fff814c                CapSense_fingerThreshold
+                0x1fff8150                CapSense_hysteresis
+                0x1fff8154                CapSense_posFiltersData
+ .data          0x1fff8158       0x34 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_SMS_Wrapper.o)
+                0x1fff8158                SMS_LIB_EndOfWidgInd
+                0x1fff8159                SMS_LIB_TotalScanSlCnt
+                0x1fff815a                SMS_LIB_TotalSnsCnt
+                0x1fff815c                SMS_LIB_Var2
+                0x1fff815e                SMS_LIB_Var1
+                0x1fff8160                SMS_LIB_SensorBaseline
+                0x1fff8164                SMS_LIB_SensorRaw
+                0x1fff8168                SMS_LIB_prescaler
+                0x1fff816c                SMS_LIB_idacSettings
+                0x1fff8170                SMS_LIB_fingerThreshold
+                0x1fff8174                SMS_LIB_rawDataIndex
+                0x1fff8178                SMS_LIB_numberOfSensors
+                0x1fff817c                SMS_LIB_widgetNumber
+                0x1fff8180                SMS_LIB_widgetResolution
+                0x1fff8184                SMS_LIB_hysteresis
+                0x1fff8188                SMS_LIB_noiseThreshold
+ .data          0x1fff818c        0x1 .\CortexM3\ARM_GCC_484\Debug\Design01.a(WaveDAC8_1_Wave1_DMA_dma.o)
+                0x1fff818c                WaveDAC8_1_Wave1_DMA_DmaHandle
+ .data          0x1fff818d        0x1 .\CortexM3\ARM_GCC_484\Debug\Design01.a(WaveDAC8_1_Wave2_DMA_dma.o)
+                0x1fff818d                WaveDAC8_1_Wave2_DMA_DmaHandle
+                0x1fff8190                . = ALIGN (0x8)
+ *fill*         0x1fff818e        0x2 
  *(.ram)
-                0x1fff8188                _edata = .
+                0x1fff8190                _edata = .
 
-.igot.plt       0x1fff8188        0x0 load address 0x00004110
+.igot.plt       0x1fff8190        0x0 load address 0x000042c0
  .igot.plt      0x00000000        0x0 c:/program files/cypress/psoc creator/3.2/psoc creator/import/gnu/arm/4.8.4/bin/../lib/gcc/arm-none-eabi/4.8.4/armv7-m/crtbegin.o
 
-.bss            0x1fff8188      0x120 load address 0x00004110
-                0x1fff8188                PROVIDE (__bss_start__, .)
+.bss            0x1fff8190      0x120 load address 0x000042c0
+                0x1fff8190                PROVIDE (__bss_start__, .)
  *(.shbss)
  *(.bss .bss.* .gnu.linkonce.b.*)
- .bss           0x1fff8188       0x1c c:/program files/cypress/psoc creator/3.2/psoc creator/import/gnu/arm/4.8.4/bin/../lib/gcc/arm-none-eabi/4.8.4/armv7-m/crtbegin.o
- .bss           0x1fff81a4       0x2c .\CortexM3\ARM_GCC_484\Debug\states.o
-                0x1fff81a4                selectedProfile
-                0x1fff81a8                movingAverage
- .bss           0x1fff81d0        0x2 .\CortexM3\ARM_GCC_484\Debug\Design01.a(LCD.o)
-                0x1fff81d0                LCD_enableState
-                0x1fff81d1                LCD_initVar
- .bss           0x1fff81d2        0x1 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense.o)
- *fill*         0x1fff81d3        0x1 
- .bss           0x1fff81d4        0x8 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_CSHL.o)
-                0x1fff81d4                CapSense_debounceCounter
- .bss           0x1fff81dc        0x1 .\CortexM3\ARM_GCC_484\Debug\Design01.a(PGA_1.o)
-                0x1fff81dc                PGA_1_initVar
- .bss           0x1fff81dd        0x1 .\CortexM3\ARM_GCC_484\Debug\Design01.a(Comp.o)
-                0x1fff81dd                Comp_initVar
- .bss           0x1fff81de        0x5 .\CortexM3\ARM_GCC_484\Debug\Design01.a(WaveDAC8_1.o)
-                0x1fff81e2                WaveDAC8_1_initVar
- *fill*         0x1fff81e3        0x1 
- .bss           0x1fff81e4        0x8 .\CortexM3\ARM_GCC_484\Debug\Design01.a(Compint.o)
-                0x1fff81e4                endCounts
-                0x1fff81e8                startCounts
- .bss           0x1fff81ec        0x1 .\CortexM3\ARM_GCC_484\Debug\Design01.a(HeartbeatCounter.o)
-                0x1fff81ec                HeartbeatCounter_initVar
- .bss           0x1fff81ed        0x1 .\CortexM3\ARM_GCC_484\Debug\Design01.a(PWM.o)
-                0x1fff81ed                PWM_initVar
+ .bss           0x1fff8190       0x1c c:/program files/cypress/psoc creator/3.2/psoc creator/import/gnu/arm/4.8.4/bin/../lib/gcc/arm-none-eabi/4.8.4/armv7-m/crtbegin.o
+ .bss           0x1fff81ac       0x2c .\CortexM3\ARM_GCC_484\Debug\states.o
+                0x1fff81ac                selectedProfile
+                0x1fff81b0                movingAverage
+ .bss           0x1fff81d8        0x2 .\CortexM3\ARM_GCC_484\Debug\Design01.a(LCD.o)
+                0x1fff81d8                LCD_enableState
+                0x1fff81d9                LCD_initVar
+ .bss           0x1fff81da        0x1 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense.o)
+ *fill*         0x1fff81db        0x1 
+ .bss           0x1fff81dc        0x8 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_CSHL.o)
+                0x1fff81dc                CapSense_debounceCounter
+ .bss           0x1fff81e4        0x1 .\CortexM3\ARM_GCC_484\Debug\Design01.a(PGA_1.o)
+                0x1fff81e4                PGA_1_initVar
+ .bss           0x1fff81e5        0x1 .\CortexM3\ARM_GCC_484\Debug\Design01.a(Comp.o)
+                0x1fff81e5                Comp_initVar
+ .bss           0x1fff81e6        0x5 .\CortexM3\ARM_GCC_484\Debug\Design01.a(WaveDAC8_1.o)
+                0x1fff81ea                WaveDAC8_1_initVar
+ *fill*         0x1fff81eb        0x1 
+ .bss           0x1fff81ec        0x8 .\CortexM3\ARM_GCC_484\Debug\Design01.a(Compint.o)
+                0x1fff81ec                endCounts
+                0x1fff81f0                startCounts
+ .bss           0x1fff81f4        0x1 .\CortexM3\ARM_GCC_484\Debug\Design01.a(HeartbeatCounter.o)
+                0x1fff81f4                HeartbeatCounter_initVar
+ .bss           0x1fff81f5        0x1 .\CortexM3\ARM_GCC_484\Debug\Design01.a(PWM.o)
+                0x1fff81f5                PWM_initVar
  *(COMMON)
- *fill*         0x1fff81ee        0x2 
- COMMON         0x1fff81f0       0x28 .\CortexM3\ARM_GCC_484\Debug\states.o
-                0x1fff81f0                average
-                0x1fff81f4                currentState
-                0x1fff81f8                PROFILE
-                0x1fff81fc                timer_value
-                0x1fff8200                increasingHr
-                0x1fff8204                heartbeatCounter
-                0x1fff8208                Prev_state
-                0x1fff820c                speed
-                0x1fff8210                timer_status
-                0x1fff8214                heartrate
- COMMON         0x1fff8218       0x19 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense.o)
-                0x1fff8218                CapSense_sensorRaw
-                0x1fff8228                CapSense_analogSwitchDivider
-                0x1fff822f                CapSense_sensorIndex
-                0x1fff8230                CapSense_csv
- *fill*         0x1fff8231        0x3 
- COMMON         0x1fff8234       0x29 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_CSHL.o)
-                0x1fff8234                CapSense_lowBaselineResetCnt
-                0x1fff823c                CapSense_sensorBaselineLow
-                0x1fff8244                CapSense_sensorSignal
-                0x1fff824c                CapSense_sensorBaseline
-                0x1fff825c                CapSense_sensorOnMask
- *fill*         0x1fff825d        0x3 
- COMMON         0x1fff8260       0x47 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_SMS_Wrapper.o)
-                0x1fff8260                SMS_LIB_Table4
-                0x1fff8270                SMS_LIB_Table7
-                0x1fff8278                SMS_LIB_Table8
-                0x1fff827c                SMS_LIB_Table2
-                0x1fff8284                SMS_LIB_Table5
-                0x1fff8294                SMS_LIB_Table9
-                0x1fff8298                SMS_LIB_Table6
-                0x1fff82a0                SMS_LIB_Table3
-                0x1fff82a8                . = ALIGN (0x8)
- *fill*         0x1fff82a7        0x1 
+ *fill*         0x1fff81f6        0x2 
+ COMMON         0x1fff81f8       0x28 .\CortexM3\ARM_GCC_484\Debug\states.o
+                0x1fff81f8                average
+                0x1fff81fc                currentState
+                0x1fff8200                PROFILE
+                0x1fff8204                timer_value
+                0x1fff8208                increasingHr
+                0x1fff820c                heartbeatCounter
+                0x1fff8210                Prev_state
+                0x1fff8214                speed
+                0x1fff8218                timer_status
+                0x1fff821c                heartrate
+ COMMON         0x1fff8220       0x19 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense.o)
+                0x1fff8220                CapSense_sensorRaw
+                0x1fff8230                CapSense_analogSwitchDivider
+                0x1fff8237                CapSense_sensorIndex
+                0x1fff8238                CapSense_csv
+ *fill*         0x1fff8239        0x3 
+ COMMON         0x1fff823c       0x29 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_CSHL.o)
+                0x1fff823c                CapSense_lowBaselineResetCnt
+                0x1fff8244                CapSense_sensorBaselineLow
+                0x1fff824c                CapSense_sensorSignal
+                0x1fff8254                CapSense_sensorBaseline
+                0x1fff8264                CapSense_sensorOnMask
+ *fill*         0x1fff8265        0x3 
+ COMMON         0x1fff8268       0x47 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_SMS_Wrapper.o)
+                0x1fff8268                SMS_LIB_Table4
+                0x1fff8278                SMS_LIB_Table7
+                0x1fff8280                SMS_LIB_Table8
+                0x1fff8284                SMS_LIB_Table2
+                0x1fff828c                SMS_LIB_Table5
+                0x1fff829c                SMS_LIB_Table9
+                0x1fff82a0                SMS_LIB_Table6
+                0x1fff82a8                SMS_LIB_Table3
+                0x1fff82b0                . = ALIGN (0x8)
+ *fill*         0x1fff82af        0x1 
  *(.ram.b)
-                0x1fff82a8                _end = .
-                0x1fff82a8                __end = .
-                0x1fff82a8                PROVIDE (end, .)
-                0x1fff82a8                PROVIDE (__bss_end__, .)
-                0x00004090                __cy_region_init_ram = LOADADDR (.data)
-                0x00000080                __cy_region_init_size_ram = (_edata - ADDR (.data))
+                0x1fff82b0                _end = .
+                0x1fff82b0                __end = .
+                0x1fff82b0                PROVIDE (end, .)
+                0x1fff82b0                PROVIDE (__bss_end__, .)
+                0x00004238                __cy_region_init_ram = LOADADDR (.data)
+                0x00000088                __cy_region_init_size_ram = (_edata - ADDR (.data))
                 0x00000120                __cy_region_zero_size_ram = (_end - _edata)
 
-.heap           0x1fff82a8       0x80 load address 0x00004110
-                0x1fff82a8                . = _end
-                0x1fff8328                . = (. + 0x80)
- *fill*         0x1fff82a8       0x80 
-                0x1fff8328                __cy_heap_limit = .
+.heap           0x1fff82b0       0x80 load address 0x000042c0
+                0x1fff82b0                . = _end
+                0x1fff8330                . = (. + 0x80)
+ *fill*         0x1fff82b0       0x80 
+                0x1fff8330                __cy_heap_limit = .
 
 .stack          0x20007800      0x800
                 0x20007800                __cy_stack_limit = .
@@ -2034,9 +2034,9 @@ END GROUP
 .cyloadablemeta
  *(.cyloadablemeta)
 
-.cyconfigecc    0x80000000      0x7e8
+.cyconfigecc    0x80000000      0x808
  *(.cyconfigecc)
- .cyconfigecc   0x80000000      0x7e8 .\CortexM3\ARM_GCC_484\Debug\cymetadata.o
+ .cyconfigecc   0x80000000      0x808 .\CortexM3\ARM_GCC_484\Debug\cymetadata.o
                 0x80000000                cy_meta_configecc
 
 .cycustnvl      0x90000000        0x4
@@ -2065,7 +2065,7 @@ END GROUP
  .cymeta        0x90500000        0xc .\CortexM3\ARM_GCC_484\Debug\cymetadata.o
                 0x90500000                cy_metadata
 
-.rel.dyn        0x00004110        0x0 load address 0x9050000c
+.rel.dyn        0x000042c0        0x0 load address 0x9050000c
  .rel.iplt      0x00000000        0x0 c:/program files/cypress/psoc creator/3.2/psoc creator/import/gnu/arm/4.8.4/bin/../lib/gcc/arm-none-eabi/4.8.4/armv7-m/crtbegin.o
 
 .stab
@@ -2190,371 +2190,371 @@ END GROUP
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000     0xd1c2
+.debug_info     0x00000000     0xd2fb
  *(.debug_info .gnu.linkonce.wi.*)
- .debug_info    0x00000000      0x606 .\CortexM3\ARM_GCC_484\Debug\states.o
- .debug_info    0x00000606      0x316 .\CortexM3\ARM_GCC_484\Debug\motor.o
- .debug_info    0x0000091c      0x25e .\CortexM3\ARM_GCC_484\Debug\speaker.o
- .debug_info    0x00000b7a      0x3dd .\CortexM3\ARM_GCC_484\Debug\display.o
- .debug_info    0x00000f57      0x244 .\CortexM3\ARM_GCC_484\Debug\system.o
- .debug_info    0x0000119b      0x230 .\CortexM3\ARM_GCC_484\Debug\heartrate.o
- .debug_info    0x000013cb      0x245 .\CortexM3\ARM_GCC_484\Debug\main.o
- .debug_info    0x00001610      0x298 .\CortexM3\ARM_GCC_484\Debug\terminal.o
- .debug_info    0x000018a8      0x13e .\CortexM3\ARM_GCC_484\Debug\cymetadata.o
- .debug_info    0x000019e6      0x3af .\CortexM3\ARM_GCC_484\Debug\Cm3Start.o
- .debug_info    0x00001d95      0x616 .\CortexM3\ARM_GCC_484\Debug\Design01.a(cyfitter_cfg.o)
- .debug_info    0x000023ab       0x94 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CyBootAsmGnu.o)
- .debug_info    0x0000243f      0x93f .\CortexM3\ARM_GCC_484\Debug\Design01.a(CyDmac.o)
- .debug_info    0x00002d7e     0x1373 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CyLib.o)
- .debug_info    0x000040f1      0xa56 .\CortexM3\ARM_GCC_484\Debug\Design01.a(cyPm.o)
- .debug_info    0x00004b47      0x761 .\CortexM3\ARM_GCC_484\Debug\Design01.a(LCD.o)
- .debug_info    0x000052a8      0x232 .\CortexM3\ARM_GCC_484\Debug\Design01.a(LCD_BarGraph.o)
- .debug_info    0x000054da      0x120 .\CortexM3\ARM_GCC_484\Debug\Design01.a(Speaker_Output.o)
- .debug_info    0x000055fa      0x856 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense.o)
- .debug_info    0x00005e50      0x924 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_CSHL.o)
- .debug_info    0x00006774      0x1cc .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_INT.o)
- .debug_info    0x00006940      0x4b4 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_SMS_Wrapper.o)
- .debug_info    0x00006df4      0x2c0 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_CompCH0.o)
- .debug_info    0x000070b4      0x208 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_IdacCH0.o)
- .debug_info    0x000072bc      0x1da .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_AMuxCH0.o)
- .debug_info    0x00007496      0x283 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_IntClock.o)
- .debug_info    0x00007719      0x1c4 .\CortexM3\ARM_GCC_484\Debug\Design01.a(PGA_1.o)
- .debug_info    0x000078dd      0x2c0 .\CortexM3\ARM_GCC_484\Debug\Design01.a(Comp.o)
- .debug_info    0x00007b9d      0x5a0 .\CortexM3\ARM_GCC_484\Debug\Design01.a(WaveDAC8_1.o)
- .debug_info    0x0000813d      0x3b9 .\CortexM3\ARM_GCC_484\Debug\Design01.a(Compint.o)
- .debug_info    0x000084f6      0x33e .\CortexM3\ARM_GCC_484\Debug\Design01.a(HeartbeatCounter.o)
- .debug_info    0x00008834      0x70e .\CortexM3\ARM_GCC_484\Debug\Design01.a(USBUART_cdc.o)
- .debug_info    0x00008f42      0x612 .\CortexM3\ARM_GCC_484\Debug\Design01.a(USBUART_drv.o)
- .debug_info    0x00009554      0x948 .\CortexM3\ARM_GCC_484\Debug\Design01.a(USBUART_std.o)
- .debug_info    0x00009e9c      0x18c .\CortexM3\ARM_GCC_484\Debug\Design01.a(USBUART_vnd.o)
- .debug_info    0x0000a028      0x283 .\CortexM3\ARM_GCC_484\Debug\Design01.a(timer_clock_1.o)
- .debug_info    0x0000a2ab      0x28f .\CortexM3\ARM_GCC_484\Debug\Design01.a(PWM.o)
- .debug_info    0x0000a53a      0x37c .\CortexM3\ARM_GCC_484\Debug\Design01.a(STOP.o)
- .debug_info    0x0000a8b6      0x60a .\CortexM3\ARM_GCC_484\Debug\Design01.a(CyFlash.o)
- .debug_info    0x0000aec0      0x4ee .\CortexM3\ARM_GCC_484\Debug\Design01.a(CySpc.o)
- .debug_info    0x0000b3ae      0x283 .\CortexM3\ARM_GCC_484\Debug\Design01.a(WaveDAC8_1_DacClk.o)
- .debug_info    0x0000b631      0x1fb .\CortexM3\ARM_GCC_484\Debug\Design01.a(WaveDAC8_1_Wave1_DMA_dma.o)
- .debug_info    0x0000b82c      0x1fb .\CortexM3\ARM_GCC_484\Debug\Design01.a(WaveDAC8_1_Wave2_DMA_dma.o)
- .debug_info    0x0000ba27      0x1dd .\CortexM3\ARM_GCC_484\Debug\Design01.a(WaveDAC8_1_VDAC8.o)
- .debug_info    0x0000bc04      0x821 .\CortexM3\ARM_GCC_484\Debug\Design01.a(USBUART.o)
- .debug_info    0x0000c425      0x1b1 .\CortexM3\ARM_GCC_484\Debug\Design01.a(USBUART_cls.o)
- .debug_info    0x0000c5d6      0x2c9 .\CortexM3\ARM_GCC_484\Debug\Design01.a(USBUART_descr.o)
- .debug_info    0x0000c89f      0x1bb .\CortexM3\ARM_GCC_484\Debug\Design01.a(USBUART_episr.o)
- .debug_info    0x0000ca5a      0x768 C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CapSense_CSD_v3_50\Library\CapSenseLibrary_GCC.a(CapSense_CSD_SmartSense_v3_50.o)
+ .debug_info    0x00000000      0x748 .\CortexM3\ARM_GCC_484\Debug\states.o
+ .debug_info    0x00000748      0x306 .\CortexM3\ARM_GCC_484\Debug\motor.o
+ .debug_info    0x00000a4e      0x25e .\CortexM3\ARM_GCC_484\Debug\speaker.o
+ .debug_info    0x00000cac      0x3dd .\CortexM3\ARM_GCC_484\Debug\display.o
+ .debug_info    0x00001089      0x244 .\CortexM3\ARM_GCC_484\Debug\system.o
+ .debug_info    0x000012cd      0x21d .\CortexM3\ARM_GCC_484\Debug\heartrate.o
+ .debug_info    0x000014ea      0x25f .\CortexM3\ARM_GCC_484\Debug\main.o
+ .debug_info    0x00001749      0x298 .\CortexM3\ARM_GCC_484\Debug\terminal.o
+ .debug_info    0x000019e1      0x13e .\CortexM3\ARM_GCC_484\Debug\cymetadata.o
+ .debug_info    0x00001b1f      0x3af .\CortexM3\ARM_GCC_484\Debug\Cm3Start.o
+ .debug_info    0x00001ece      0x616 .\CortexM3\ARM_GCC_484\Debug\Design01.a(cyfitter_cfg.o)
+ .debug_info    0x000024e4       0x94 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CyBootAsmGnu.o)
+ .debug_info    0x00002578      0x93f .\CortexM3\ARM_GCC_484\Debug\Design01.a(CyDmac.o)
+ .debug_info    0x00002eb7     0x1373 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CyLib.o)
+ .debug_info    0x0000422a      0xa56 .\CortexM3\ARM_GCC_484\Debug\Design01.a(cyPm.o)
+ .debug_info    0x00004c80      0x761 .\CortexM3\ARM_GCC_484\Debug\Design01.a(LCD.o)
+ .debug_info    0x000053e1      0x232 .\CortexM3\ARM_GCC_484\Debug\Design01.a(LCD_BarGraph.o)
+ .debug_info    0x00005613      0x120 .\CortexM3\ARM_GCC_484\Debug\Design01.a(Speaker_Output.o)
+ .debug_info    0x00005733      0x856 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense.o)
+ .debug_info    0x00005f89      0x924 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_CSHL.o)
+ .debug_info    0x000068ad      0x1cc .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_INT.o)
+ .debug_info    0x00006a79      0x4b4 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_SMS_Wrapper.o)
+ .debug_info    0x00006f2d      0x2c0 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_CompCH0.o)
+ .debug_info    0x000071ed      0x208 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_IdacCH0.o)
+ .debug_info    0x000073f5      0x1da .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_AMuxCH0.o)
+ .debug_info    0x000075cf      0x283 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_IntClock.o)
+ .debug_info    0x00007852      0x1c4 .\CortexM3\ARM_GCC_484\Debug\Design01.a(PGA_1.o)
+ .debug_info    0x00007a16      0x2c0 .\CortexM3\ARM_GCC_484\Debug\Design01.a(Comp.o)
+ .debug_info    0x00007cd6      0x5a0 .\CortexM3\ARM_GCC_484\Debug\Design01.a(WaveDAC8_1.o)
+ .debug_info    0x00008276      0x3b9 .\CortexM3\ARM_GCC_484\Debug\Design01.a(Compint.o)
+ .debug_info    0x0000862f      0x33e .\CortexM3\ARM_GCC_484\Debug\Design01.a(HeartbeatCounter.o)
+ .debug_info    0x0000896d      0x70e .\CortexM3\ARM_GCC_484\Debug\Design01.a(USBUART_cdc.o)
+ .debug_info    0x0000907b      0x612 .\CortexM3\ARM_GCC_484\Debug\Design01.a(USBUART_drv.o)
+ .debug_info    0x0000968d      0x948 .\CortexM3\ARM_GCC_484\Debug\Design01.a(USBUART_std.o)
+ .debug_info    0x00009fd5      0x18c .\CortexM3\ARM_GCC_484\Debug\Design01.a(USBUART_vnd.o)
+ .debug_info    0x0000a161      0x283 .\CortexM3\ARM_GCC_484\Debug\Design01.a(timer_clock_1.o)
+ .debug_info    0x0000a3e4      0x28f .\CortexM3\ARM_GCC_484\Debug\Design01.a(PWM.o)
+ .debug_info    0x0000a673      0x37c .\CortexM3\ARM_GCC_484\Debug\Design01.a(STOP.o)
+ .debug_info    0x0000a9ef      0x60a .\CortexM3\ARM_GCC_484\Debug\Design01.a(CyFlash.o)
+ .debug_info    0x0000aff9      0x4ee .\CortexM3\ARM_GCC_484\Debug\Design01.a(CySpc.o)
+ .debug_info    0x0000b4e7      0x283 .\CortexM3\ARM_GCC_484\Debug\Design01.a(WaveDAC8_1_DacClk.o)
+ .debug_info    0x0000b76a      0x1fb .\CortexM3\ARM_GCC_484\Debug\Design01.a(WaveDAC8_1_Wave1_DMA_dma.o)
+ .debug_info    0x0000b965      0x1fb .\CortexM3\ARM_GCC_484\Debug\Design01.a(WaveDAC8_1_Wave2_DMA_dma.o)
+ .debug_info    0x0000bb60      0x1dd .\CortexM3\ARM_GCC_484\Debug\Design01.a(WaveDAC8_1_VDAC8.o)
+ .debug_info    0x0000bd3d      0x821 .\CortexM3\ARM_GCC_484\Debug\Design01.a(USBUART.o)
+ .debug_info    0x0000c55e      0x1b1 .\CortexM3\ARM_GCC_484\Debug\Design01.a(USBUART_cls.o)
+ .debug_info    0x0000c70f      0x2c9 .\CortexM3\ARM_GCC_484\Debug\Design01.a(USBUART_descr.o)
+ .debug_info    0x0000c9d8      0x1bb .\CortexM3\ARM_GCC_484\Debug\Design01.a(USBUART_episr.o)
+ .debug_info    0x0000cb93      0x768 C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CapSense_CSD_v3_50\Library\CapSenseLibrary_GCC.a(CapSense_CSD_SmartSense_v3_50.o)
 
-.debug_abbrev   0x00000000     0x407f
+.debug_abbrev   0x00000000     0x407d
  *(.debug_abbrev)
- .debug_abbrev  0x00000000      0x15d .\CortexM3\ARM_GCC_484\Debug\states.o
- .debug_abbrev  0x0000015d      0x130 .\CortexM3\ARM_GCC_484\Debug\motor.o
- .debug_abbrev  0x0000028d      0x120 .\CortexM3\ARM_GCC_484\Debug\speaker.o
- .debug_abbrev  0x000003ad       0xf1 .\CortexM3\ARM_GCC_484\Debug\display.o
- .debug_abbrev  0x0000049e       0xa3 .\CortexM3\ARM_GCC_484\Debug\system.o
- .debug_abbrev  0x00000541       0xdf .\CortexM3\ARM_GCC_484\Debug\heartrate.o
- .debug_abbrev  0x00000620       0xe1 .\CortexM3\ARM_GCC_484\Debug\main.o
- .debug_abbrev  0x00000701      0x11d .\CortexM3\ARM_GCC_484\Debug\terminal.o
- .debug_abbrev  0x0000081e       0x77 .\CortexM3\ARM_GCC_484\Debug\cymetadata.o
- .debug_abbrev  0x00000895      0x20d .\CortexM3\ARM_GCC_484\Debug\Cm3Start.o
- .debug_abbrev  0x00000aa2      0x22c .\CortexM3\ARM_GCC_484\Debug\Design01.a(cyfitter_cfg.o)
- .debug_abbrev  0x00000cce       0x14 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CyBootAsmGnu.o)
- .debug_abbrev  0x00000ce2      0x1cc .\CortexM3\ARM_GCC_484\Debug\Design01.a(CyDmac.o)
- .debug_abbrev  0x00000eae      0x296 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CyLib.o)
- .debug_abbrev  0x00001144      0x1fa .\CortexM3\ARM_GCC_484\Debug\Design01.a(cyPm.o)
- .debug_abbrev  0x0000133e      0x17e .\CortexM3\ARM_GCC_484\Debug\Design01.a(LCD.o)
- .debug_abbrev  0x000014bc      0x11c .\CortexM3\ARM_GCC_484\Debug\Design01.a(LCD_BarGraph.o)
- .debug_abbrev  0x000015d8       0x9d .\CortexM3\ARM_GCC_484\Debug\Design01.a(Speaker_Output.o)
- .debug_abbrev  0x00001675      0x1fa .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense.o)
- .debug_abbrev  0x0000186f      0x1fd .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_CSHL.o)
- .debug_abbrev  0x00001a6c       0xc5 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_INT.o)
- .debug_abbrev  0x00001b31      0x142 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_SMS_Wrapper.o)
- .debug_abbrev  0x00001c73      0x182 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_CompCH0.o)
- .debug_abbrev  0x00001df5      0x113 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_IdacCH0.o)
- .debug_abbrev  0x00001f08       0xcd .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_AMuxCH0.o)
- .debug_abbrev  0x00001fd5      0x137 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_IntClock.o)
- .debug_abbrev  0x0000210c       0xf4 .\CortexM3\ARM_GCC_484\Debug\Design01.a(PGA_1.o)
- .debug_abbrev  0x00002200      0x182 .\CortexM3\ARM_GCC_484\Debug\Design01.a(Comp.o)
- .debug_abbrev  0x00002382      0x163 .\CortexM3\ARM_GCC_484\Debug\Design01.a(WaveDAC8_1.o)
- .debug_abbrev  0x000024e5      0x18c .\CortexM3\ARM_GCC_484\Debug\Design01.a(Compint.o)
- .debug_abbrev  0x00002671      0x13e .\CortexM3\ARM_GCC_484\Debug\Design01.a(HeartbeatCounter.o)
- .debug_abbrev  0x000027af      0x23a .\CortexM3\ARM_GCC_484\Debug\Design01.a(USBUART_cdc.o)
- .debug_abbrev  0x000029e9      0x18b .\CortexM3\ARM_GCC_484\Debug\Design01.a(USBUART_drv.o)
- .debug_abbrev  0x00002b74      0x1cb .\CortexM3\ARM_GCC_484\Debug\Design01.a(USBUART_std.o)
- .debug_abbrev  0x00002d3f       0xe3 .\CortexM3\ARM_GCC_484\Debug\Design01.a(USBUART_vnd.o)
- .debug_abbrev  0x00002e22      0x137 .\CortexM3\ARM_GCC_484\Debug\Design01.a(timer_clock_1.o)
- .debug_abbrev  0x00002f59      0x13a .\CortexM3\ARM_GCC_484\Debug\Design01.a(PWM.o)
- .debug_abbrev  0x00003093      0x168 .\CortexM3\ARM_GCC_484\Debug\Design01.a(STOP.o)
- .debug_abbrev  0x000031fb      0x1de .\CortexM3\ARM_GCC_484\Debug\Design01.a(CyFlash.o)
- .debug_abbrev  0x000033d9      0x1ce .\CortexM3\ARM_GCC_484\Debug\Design01.a(CySpc.o)
- .debug_abbrev  0x000035a7      0x137 .\CortexM3\ARM_GCC_484\Debug\Design01.a(WaveDAC8_1_DacClk.o)
- .debug_abbrev  0x000036de       0xf8 .\CortexM3\ARM_GCC_484\Debug\Design01.a(WaveDAC8_1_Wave1_DMA_dma.o)
- .debug_abbrev  0x000037d6       0xf8 .\CortexM3\ARM_GCC_484\Debug\Design01.a(WaveDAC8_1_Wave2_DMA_dma.o)
- .debug_abbrev  0x000038ce      0x104 .\CortexM3\ARM_GCC_484\Debug\Design01.a(WaveDAC8_1_VDAC8.o)
- .debug_abbrev  0x000039d2      0x22e .\CortexM3\ARM_GCC_484\Debug\Design01.a(USBUART.o)
- .debug_abbrev  0x00003c00       0xe3 .\CortexM3\ARM_GCC_484\Debug\Design01.a(USBUART_cls.o)
- .debug_abbrev  0x00003ce3       0xa7 .\CortexM3\ARM_GCC_484\Debug\Design01.a(USBUART_descr.o)
- .debug_abbrev  0x00003d8a       0xf0 .\CortexM3\ARM_GCC_484\Debug\Design01.a(USBUART_episr.o)
- .debug_abbrev  0x00003e7a      0x205 C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CapSense_CSD_v3_50\Library\CapSenseLibrary_GCC.a(CapSense_CSD_SmartSense_v3_50.o)
+ .debug_abbrev  0x00000000      0x16c .\CortexM3\ARM_GCC_484\Debug\states.o
+ .debug_abbrev  0x0000016c      0x130 .\CortexM3\ARM_GCC_484\Debug\motor.o
+ .debug_abbrev  0x0000029c      0x120 .\CortexM3\ARM_GCC_484\Debug\speaker.o
+ .debug_abbrev  0x000003bc       0xf1 .\CortexM3\ARM_GCC_484\Debug\display.o
+ .debug_abbrev  0x000004ad       0xa3 .\CortexM3\ARM_GCC_484\Debug\system.o
+ .debug_abbrev  0x00000550       0xce .\CortexM3\ARM_GCC_484\Debug\heartrate.o
+ .debug_abbrev  0x0000061e       0xe1 .\CortexM3\ARM_GCC_484\Debug\main.o
+ .debug_abbrev  0x000006ff      0x11d .\CortexM3\ARM_GCC_484\Debug\terminal.o
+ .debug_abbrev  0x0000081c       0x77 .\CortexM3\ARM_GCC_484\Debug\cymetadata.o
+ .debug_abbrev  0x00000893      0x20d .\CortexM3\ARM_GCC_484\Debug\Cm3Start.o
+ .debug_abbrev  0x00000aa0      0x22c .\CortexM3\ARM_GCC_484\Debug\Design01.a(cyfitter_cfg.o)
+ .debug_abbrev  0x00000ccc       0x14 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CyBootAsmGnu.o)
+ .debug_abbrev  0x00000ce0      0x1cc .\CortexM3\ARM_GCC_484\Debug\Design01.a(CyDmac.o)
+ .debug_abbrev  0x00000eac      0x296 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CyLib.o)
+ .debug_abbrev  0x00001142      0x1fa .\CortexM3\ARM_GCC_484\Debug\Design01.a(cyPm.o)
+ .debug_abbrev  0x0000133c      0x17e .\CortexM3\ARM_GCC_484\Debug\Design01.a(LCD.o)
+ .debug_abbrev  0x000014ba      0x11c .\CortexM3\ARM_GCC_484\Debug\Design01.a(LCD_BarGraph.o)
+ .debug_abbrev  0x000015d6       0x9d .\CortexM3\ARM_GCC_484\Debug\Design01.a(Speaker_Output.o)
+ .debug_abbrev  0x00001673      0x1fa .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense.o)
+ .debug_abbrev  0x0000186d      0x1fd .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_CSHL.o)
+ .debug_abbrev  0x00001a6a       0xc5 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_INT.o)
+ .debug_abbrev  0x00001b2f      0x142 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_SMS_Wrapper.o)
+ .debug_abbrev  0x00001c71      0x182 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_CompCH0.o)
+ .debug_abbrev  0x00001df3      0x113 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_IdacCH0.o)
+ .debug_abbrev  0x00001f06       0xcd .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_AMuxCH0.o)
+ .debug_abbrev  0x00001fd3      0x137 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_IntClock.o)
+ .debug_abbrev  0x0000210a       0xf4 .\CortexM3\ARM_GCC_484\Debug\Design01.a(PGA_1.o)
+ .debug_abbrev  0x000021fe      0x182 .\CortexM3\ARM_GCC_484\Debug\Design01.a(Comp.o)
+ .debug_abbrev  0x00002380      0x163 .\CortexM3\ARM_GCC_484\Debug\Design01.a(WaveDAC8_1.o)
+ .debug_abbrev  0x000024e3      0x18c .\CortexM3\ARM_GCC_484\Debug\Design01.a(Compint.o)
+ .debug_abbrev  0x0000266f      0x13e .\CortexM3\ARM_GCC_484\Debug\Design01.a(HeartbeatCounter.o)
+ .debug_abbrev  0x000027ad      0x23a .\CortexM3\ARM_GCC_484\Debug\Design01.a(USBUART_cdc.o)
+ .debug_abbrev  0x000029e7      0x18b .\CortexM3\ARM_GCC_484\Debug\Design01.a(USBUART_drv.o)
+ .debug_abbrev  0x00002b72      0x1cb .\CortexM3\ARM_GCC_484\Debug\Design01.a(USBUART_std.o)
+ .debug_abbrev  0x00002d3d       0xe3 .\CortexM3\ARM_GCC_484\Debug\Design01.a(USBUART_vnd.o)
+ .debug_abbrev  0x00002e20      0x137 .\CortexM3\ARM_GCC_484\Debug\Design01.a(timer_clock_1.o)
+ .debug_abbrev  0x00002f57      0x13a .\CortexM3\ARM_GCC_484\Debug\Design01.a(PWM.o)
+ .debug_abbrev  0x00003091      0x168 .\CortexM3\ARM_GCC_484\Debug\Design01.a(STOP.o)
+ .debug_abbrev  0x000031f9      0x1de .\CortexM3\ARM_GCC_484\Debug\Design01.a(CyFlash.o)
+ .debug_abbrev  0x000033d7      0x1ce .\CortexM3\ARM_GCC_484\Debug\Design01.a(CySpc.o)
+ .debug_abbrev  0x000035a5      0x137 .\CortexM3\ARM_GCC_484\Debug\Design01.a(WaveDAC8_1_DacClk.o)
+ .debug_abbrev  0x000036dc       0xf8 .\CortexM3\ARM_GCC_484\Debug\Design01.a(WaveDAC8_1_Wave1_DMA_dma.o)
+ .debug_abbrev  0x000037d4       0xf8 .\CortexM3\ARM_GCC_484\Debug\Design01.a(WaveDAC8_1_Wave2_DMA_dma.o)
+ .debug_abbrev  0x000038cc      0x104 .\CortexM3\ARM_GCC_484\Debug\Design01.a(WaveDAC8_1_VDAC8.o)
+ .debug_abbrev  0x000039d0      0x22e .\CortexM3\ARM_GCC_484\Debug\Design01.a(USBUART.o)
+ .debug_abbrev  0x00003bfe       0xe3 .\CortexM3\ARM_GCC_484\Debug\Design01.a(USBUART_cls.o)
+ .debug_abbrev  0x00003ce1       0xa7 .\CortexM3\ARM_GCC_484\Debug\Design01.a(USBUART_descr.o)
+ .debug_abbrev  0x00003d88       0xf0 .\CortexM3\ARM_GCC_484\Debug\Design01.a(USBUART_episr.o)
+ .debug_abbrev  0x00003e78      0x205 C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CapSense_CSD_v3_50\Library\CapSenseLibrary_GCC.a(CapSense_CSD_SmartSense_v3_50.o)
 
-.debug_line     0x00000000     0x4f72
+.debug_line     0x00000000     0x4fa4
  *(.debug_line)
- .debug_line    0x00000000      0x1b3 .\CortexM3\ARM_GCC_484\Debug\states.o
- .debug_line    0x000001b3      0x125 .\CortexM3\ARM_GCC_484\Debug\motor.o
- .debug_line    0x000002d8       0xac .\CortexM3\ARM_GCC_484\Debug\speaker.o
- .debug_line    0x00000384      0x107 .\CortexM3\ARM_GCC_484\Debug\display.o
- .debug_line    0x0000048b      0x127 .\CortexM3\ARM_GCC_484\Debug\system.o
- .debug_line    0x000005b2       0x90 .\CortexM3\ARM_GCC_484\Debug\heartrate.o
- .debug_line    0x00000642      0x19c .\CortexM3\ARM_GCC_484\Debug\main.o
- .debug_line    0x000007de      0x116 .\CortexM3\ARM_GCC_484\Debug\terminal.o
- .debug_line    0x000008f4       0x53 .\CortexM3\ARM_GCC_484\Debug\cymetadata.o
- .debug_line    0x00000947      0x237 .\CortexM3\ARM_GCC_484\Debug\Cm3Start.o
- .debug_line    0x00000b7e      0x22a .\CortexM3\ARM_GCC_484\Debug\Design01.a(cyfitter_cfg.o)
- .debug_line    0x00000da8       0x68 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CyBootAsmGnu.o)
- .debug_line    0x00000e10      0x2de .\CortexM3\ARM_GCC_484\Debug\Design01.a(CyDmac.o)
- .debug_line    0x000010ee      0x818 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CyLib.o)
- .debug_line    0x00001906      0x366 .\CortexM3\ARM_GCC_484\Debug\Design01.a(cyPm.o)
- .debug_line    0x00001c6c      0x1fa .\CortexM3\ARM_GCC_484\Debug\Design01.a(LCD.o)
- .debug_line    0x00001e66       0xc3 .\CortexM3\ARM_GCC_484\Debug\Design01.a(LCD_BarGraph.o)
- .debug_line    0x00001f29       0x9d .\CortexM3\ARM_GCC_484\Debug\Design01.a(Speaker_Output.o)
- .debug_line    0x00001fc6      0x2c0 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense.o)
- .debug_line    0x00002286      0x2c4 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_CSHL.o)
- .debug_line    0x0000254a       0xa5 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_INT.o)
- .debug_line    0x000025ef       0xf6 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_SMS_Wrapper.o)
- .debug_line    0x000026e5      0x179 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_CompCH0.o)
- .debug_line    0x0000285e      0x106 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_IdacCH0.o)
- .debug_line    0x00002964       0xe9 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_AMuxCH0.o)
- .debug_line    0x00002a4d      0x1a1 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_IntClock.o)
- .debug_line    0x00002bee       0xce .\CortexM3\ARM_GCC_484\Debug\Design01.a(PGA_1.o)
- .debug_line    0x00002cbc      0x16d .\CortexM3\ARM_GCC_484\Debug\Design01.a(Comp.o)
- .debug_line    0x00002e29      0x179 .\CortexM3\ARM_GCC_484\Debug\Design01.a(WaveDAC8_1.o)
- .debug_line    0x00002fa2      0x192 .\CortexM3\ARM_GCC_484\Debug\Design01.a(Compint.o)
- .debug_line    0x00003134      0x196 .\CortexM3\ARM_GCC_484\Debug\Design01.a(HeartbeatCounter.o)
- .debug_line    0x000032ca      0x227 .\CortexM3\ARM_GCC_484\Debug\Design01.a(USBUART_cdc.o)
- .debug_line    0x000034f1      0x228 .\CortexM3\ARM_GCC_484\Debug\Design01.a(USBUART_drv.o)
- .debug_line    0x00003719      0x3c9 .\CortexM3\ARM_GCC_484\Debug\Design01.a(USBUART_std.o)
- .debug_line    0x00003ae2       0x8d .\CortexM3\ARM_GCC_484\Debug\Design01.a(USBUART_vnd.o)
- .debug_line    0x00003b6f      0x19d .\CortexM3\ARM_GCC_484\Debug\Design01.a(timer_clock_1.o)
- .debug_line    0x00003d0c      0x13d .\CortexM3\ARM_GCC_484\Debug\Design01.a(PWM.o)
- .debug_line    0x00003e49      0x177 .\CortexM3\ARM_GCC_484\Debug\Design01.a(STOP.o)
- .debug_line    0x00003fc0      0x233 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CyFlash.o)
- .debug_line    0x000041f3      0x248 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CySpc.o)
- .debug_line    0x0000443b      0x1a1 .\CortexM3\ARM_GCC_484\Debug\Design01.a(WaveDAC8_1_DacClk.o)
- .debug_line    0x000045dc       0xaa .\CortexM3\ARM_GCC_484\Debug\Design01.a(WaveDAC8_1_Wave1_DMA_dma.o)
- .debug_line    0x00004686       0xaa .\CortexM3\ARM_GCC_484\Debug\Design01.a(WaveDAC8_1_Wave2_DMA_dma.o)
- .debug_line    0x00004730       0xee .\CortexM3\ARM_GCC_484\Debug\Design01.a(WaveDAC8_1_VDAC8.o)
- .debug_line    0x0000481e      0x293 .\CortexM3\ARM_GCC_484\Debug\Design01.a(USBUART.o)
- .debug_line    0x00004ab1       0x96 .\CortexM3\ARM_GCC_484\Debug\Design01.a(USBUART_cls.o)
- .debug_line    0x00004b47       0x63 .\CortexM3\ARM_GCC_484\Debug\Design01.a(USBUART_descr.o)
- .debug_line    0x00004baa       0xda .\CortexM3\ARM_GCC_484\Debug\Design01.a(USBUART_episr.o)
- .debug_line    0x00004c84      0x2ee C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CapSense_CSD_v3_50\Library\CapSenseLibrary_GCC.a(CapSense_CSD_SmartSense_v3_50.o)
+ .debug_line    0x00000000      0x1e6 .\CortexM3\ARM_GCC_484\Debug\states.o
+ .debug_line    0x000001e6      0x124 .\CortexM3\ARM_GCC_484\Debug\motor.o
+ .debug_line    0x0000030a       0xac .\CortexM3\ARM_GCC_484\Debug\speaker.o
+ .debug_line    0x000003b6      0x107 .\CortexM3\ARM_GCC_484\Debug\display.o
+ .debug_line    0x000004bd      0x127 .\CortexM3\ARM_GCC_484\Debug\system.o
+ .debug_line    0x000005e4       0x8f .\CortexM3\ARM_GCC_484\Debug\heartrate.o
+ .debug_line    0x00000673      0x19d .\CortexM3\ARM_GCC_484\Debug\main.o
+ .debug_line    0x00000810      0x116 .\CortexM3\ARM_GCC_484\Debug\terminal.o
+ .debug_line    0x00000926       0x53 .\CortexM3\ARM_GCC_484\Debug\cymetadata.o
+ .debug_line    0x00000979      0x237 .\CortexM3\ARM_GCC_484\Debug\Cm3Start.o
+ .debug_line    0x00000bb0      0x22a .\CortexM3\ARM_GCC_484\Debug\Design01.a(cyfitter_cfg.o)
+ .debug_line    0x00000dda       0x68 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CyBootAsmGnu.o)
+ .debug_line    0x00000e42      0x2de .\CortexM3\ARM_GCC_484\Debug\Design01.a(CyDmac.o)
+ .debug_line    0x00001120      0x818 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CyLib.o)
+ .debug_line    0x00001938      0x366 .\CortexM3\ARM_GCC_484\Debug\Design01.a(cyPm.o)
+ .debug_line    0x00001c9e      0x1fa .\CortexM3\ARM_GCC_484\Debug\Design01.a(LCD.o)
+ .debug_line    0x00001e98       0xc3 .\CortexM3\ARM_GCC_484\Debug\Design01.a(LCD_BarGraph.o)
+ .debug_line    0x00001f5b       0x9d .\CortexM3\ARM_GCC_484\Debug\Design01.a(Speaker_Output.o)
+ .debug_line    0x00001ff8      0x2c0 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense.o)
+ .debug_line    0x000022b8      0x2c4 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_CSHL.o)
+ .debug_line    0x0000257c       0xa5 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_INT.o)
+ .debug_line    0x00002621       0xf6 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_SMS_Wrapper.o)
+ .debug_line    0x00002717      0x179 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_CompCH0.o)
+ .debug_line    0x00002890      0x106 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_IdacCH0.o)
+ .debug_line    0x00002996       0xe9 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_AMuxCH0.o)
+ .debug_line    0x00002a7f      0x1a1 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_IntClock.o)
+ .debug_line    0x00002c20       0xce .\CortexM3\ARM_GCC_484\Debug\Design01.a(PGA_1.o)
+ .debug_line    0x00002cee      0x16d .\CortexM3\ARM_GCC_484\Debug\Design01.a(Comp.o)
+ .debug_line    0x00002e5b      0x179 .\CortexM3\ARM_GCC_484\Debug\Design01.a(WaveDAC8_1.o)
+ .debug_line    0x00002fd4      0x192 .\CortexM3\ARM_GCC_484\Debug\Design01.a(Compint.o)
+ .debug_line    0x00003166      0x196 .\CortexM3\ARM_GCC_484\Debug\Design01.a(HeartbeatCounter.o)
+ .debug_line    0x000032fc      0x227 .\CortexM3\ARM_GCC_484\Debug\Design01.a(USBUART_cdc.o)
+ .debug_line    0x00003523      0x228 .\CortexM3\ARM_GCC_484\Debug\Design01.a(USBUART_drv.o)
+ .debug_line    0x0000374b      0x3c9 .\CortexM3\ARM_GCC_484\Debug\Design01.a(USBUART_std.o)
+ .debug_line    0x00003b14       0x8d .\CortexM3\ARM_GCC_484\Debug\Design01.a(USBUART_vnd.o)
+ .debug_line    0x00003ba1      0x19d .\CortexM3\ARM_GCC_484\Debug\Design01.a(timer_clock_1.o)
+ .debug_line    0x00003d3e      0x13d .\CortexM3\ARM_GCC_484\Debug\Design01.a(PWM.o)
+ .debug_line    0x00003e7b      0x177 .\CortexM3\ARM_GCC_484\Debug\Design01.a(STOP.o)
+ .debug_line    0x00003ff2      0x233 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CyFlash.o)
+ .debug_line    0x00004225      0x248 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CySpc.o)
+ .debug_line    0x0000446d      0x1a1 .\CortexM3\ARM_GCC_484\Debug\Design01.a(WaveDAC8_1_DacClk.o)
+ .debug_line    0x0000460e       0xaa .\CortexM3\ARM_GCC_484\Debug\Design01.a(WaveDAC8_1_Wave1_DMA_dma.o)
+ .debug_line    0x000046b8       0xaa .\CortexM3\ARM_GCC_484\Debug\Design01.a(WaveDAC8_1_Wave2_DMA_dma.o)
+ .debug_line    0x00004762       0xee .\CortexM3\ARM_GCC_484\Debug\Design01.a(WaveDAC8_1_VDAC8.o)
+ .debug_line    0x00004850      0x293 .\CortexM3\ARM_GCC_484\Debug\Design01.a(USBUART.o)
+ .debug_line    0x00004ae3       0x96 .\CortexM3\ARM_GCC_484\Debug\Design01.a(USBUART_cls.o)
+ .debug_line    0x00004b79       0x63 .\CortexM3\ARM_GCC_484\Debug\Design01.a(USBUART_descr.o)
+ .debug_line    0x00004bdc       0xda .\CortexM3\ARM_GCC_484\Debug\Design01.a(USBUART_episr.o)
+ .debug_line    0x00004cb6      0x2ee C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CapSense_CSD_v3_50\Library\CapSenseLibrary_GCC.a(CapSense_CSD_SmartSense_v3_50.o)
 
-.debug_frame    0x00000000     0x33ac
+.debug_frame    0x00000000     0x33b0
  *(.debug_frame)
- .debug_frame   0x00000000       0xe0 .\CortexM3\ARM_GCC_484\Debug\states.o
- .debug_frame   0x000000e0       0x88 .\CortexM3\ARM_GCC_484\Debug\motor.o
- .debug_frame   0x00000168       0x90 .\CortexM3\ARM_GCC_484\Debug\speaker.o
- .debug_frame   0x000001f8       0x7c .\CortexM3\ARM_GCC_484\Debug\display.o
- .debug_frame   0x00000274       0x2c .\CortexM3\ARM_GCC_484\Debug\system.o
- .debug_frame   0x000002a0       0x2c .\CortexM3\ARM_GCC_484\Debug\heartrate.o
- .debug_frame   0x000002cc       0x2c .\CortexM3\ARM_GCC_484\Debug\main.o
- .debug_frame   0x000002f8       0x48 .\CortexM3\ARM_GCC_484\Debug\terminal.o
- .debug_frame   0x00000340       0xac .\CortexM3\ARM_GCC_484\Debug\Cm3Start.o
- .debug_frame   0x000003ec      0x100 .\CortexM3\ARM_GCC_484\Debug\Design01.a(cyfitter_cfg.o)
- .debug_frame   0x000004ec      0x1d0 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CyDmac.o)
- .debug_frame   0x000006bc      0x730 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CyLib.o)
- .debug_frame   0x00000dec      0x1fc .\CortexM3\ARM_GCC_484\Debug\Design01.a(cyPm.o)
- .debug_frame   0x00000fe8      0x1ec .\CortexM3\ARM_GCC_484\Debug\Design01.a(LCD.o)
- .debug_frame   0x000011d4       0x58 .\CortexM3\ARM_GCC_484\Debug\Design01.a(LCD_BarGraph.o)
- .debug_frame   0x0000122c       0x50 .\CortexM3\ARM_GCC_484\Debug\Design01.a(Speaker_Output.o)
- .debug_frame   0x0000127c      0x1e8 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense.o)
- .debug_frame   0x00001464      0x1dc .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_CSHL.o)
- .debug_frame   0x00001640       0x2c .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_INT.o)
- .debug_frame   0x0000166c       0xc8 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_SMS_Wrapper.o)
- .debug_frame   0x00001734      0x10c .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_CompCH0.o)
- .debug_frame   0x00001840       0xd0 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_IdacCH0.o)
- .debug_frame   0x00001910       0xb8 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_AMuxCH0.o)
- .debug_frame   0x000019c8       0xe0 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_IntClock.o)
- .debug_frame   0x00001aa8       0x94 .\CortexM3\ARM_GCC_484\Debug\Design01.a(PGA_1.o)
- .debug_frame   0x00001b3c      0x10c .\CortexM3\ARM_GCC_484\Debug\Design01.a(Comp.o)
- .debug_frame   0x00001c48       0xe0 .\CortexM3\ARM_GCC_484\Debug\Design01.a(WaveDAC8_1.o)
- .debug_frame   0x00001d28      0x110 .\CortexM3\ARM_GCC_484\Debug\Design01.a(Compint.o)
- .debug_frame   0x00001e38      0x134 .\CortexM3\ARM_GCC_484\Debug\Design01.a(HeartbeatCounter.o)
- .debug_frame   0x00001f6c      0x1cc .\CortexM3\ARM_GCC_484\Debug\Design01.a(USBUART_cdc.o)
- .debug_frame   0x00002138      0x190 .\CortexM3\ARM_GCC_484\Debug\Design01.a(USBUART_drv.o)
- .debug_frame   0x000022c8      0x18c .\CortexM3\ARM_GCC_484\Debug\Design01.a(USBUART_std.o)
- .debug_frame   0x00002454       0x2c .\CortexM3\ARM_GCC_484\Debug\Design01.a(USBUART_vnd.o)
- .debug_frame   0x00002480       0xe0 .\CortexM3\ARM_GCC_484\Debug\Design01.a(timer_clock_1.o)
- .debug_frame   0x00002560       0xf8 .\CortexM3\ARM_GCC_484\Debug\Design01.a(PWM.o)
- .debug_frame   0x00002658      0x104 .\CortexM3\ARM_GCC_484\Debug\Design01.a(STOP.o)
- .debug_frame   0x0000275c      0x17c .\CortexM3\ARM_GCC_484\Debug\Design01.a(CyFlash.o)
- .debug_frame   0x000028d8      0x148 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CySpc.o)
- .debug_frame   0x00002a20       0xe0 .\CortexM3\ARM_GCC_484\Debug\Design01.a(WaveDAC8_1_DacClk.o)
- .debug_frame   0x00002b00       0x54 .\CortexM3\ARM_GCC_484\Debug\Design01.a(WaveDAC8_1_Wave1_DMA_dma.o)
- .debug_frame   0x00002b54       0x54 .\CortexM3\ARM_GCC_484\Debug\Design01.a(WaveDAC8_1_Wave2_DMA_dma.o)
- .debug_frame   0x00002ba8       0xb4 .\CortexM3\ARM_GCC_484\Debug\Design01.a(WaveDAC8_1_VDAC8.o)
- .debug_frame   0x00002c5c      0x1a4 .\CortexM3\ARM_GCC_484\Debug\Design01.a(USBUART.o)
- .debug_frame   0x00002e00       0x2c .\CortexM3\ARM_GCC_484\Debug\Design01.a(USBUART_cls.o)
- .debug_frame   0x00002e2c       0x6c .\CortexM3\ARM_GCC_484\Debug\Design01.a(USBUART_episr.o)
- .debug_frame   0x00002e98      0x168 C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CapSense_CSD_v3_50\Library\CapSenseLibrary_GCC.a(CapSense_CSD_SmartSense_v3_50.o)
- .debug_frame   0x00003000       0x20 c:/program files/cypress/psoc creator/3.2/psoc creator/import/gnu/arm/4.8.4/bin/../lib/gcc/arm-none-eabi/4.8.4/armv7-m\libgcc.a(_udivsi3.o)
- .debug_frame   0x00003020       0x20 c:/program files/cypress/psoc creator/3.2/psoc creator/import/gnu/arm/4.8.4/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m\libg_s.a(lib_a-errno.o)
- .debug_frame   0x00003040       0x28 c:/program files/cypress/psoc creator/3.2/psoc creator/import/gnu/arm/4.8.4/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m\libg_s.a(lib_a-exit.o)
- .debug_frame   0x00003068       0x2c c:/program files/cypress/psoc creator/3.2/psoc creator/import/gnu/arm/4.8.4/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m\libg_s.a(lib_a-init.o)
- .debug_frame   0x00003094       0x28 c:/program files/cypress/psoc creator/3.2/psoc creator/import/gnu/arm/4.8.4/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m\libg_s.a(lib_a-memcpy-stub.o)
- .debug_frame   0x000030bc       0x20 c:/program files/cypress/psoc creator/3.2/psoc creator/import/gnu/arm/4.8.4/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m\libg_s.a(lib_a-memset.o)
- .debug_frame   0x000030dc       0x58 c:/program files/cypress/psoc creator/3.2/psoc creator/import/gnu/arm/4.8.4/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m\libg_s.a(lib_a-sprintf.o)
- .debug_frame   0x00003134       0x88 c:/program files/cypress/psoc creator/3.2/psoc creator/import/gnu/arm/4.8.4/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m\libg_s.a(lib_a-svfprintf.o)
- .debug_frame   0x000031bc       0x60 c:/program files/cypress/psoc creator/3.2/psoc creator/import/gnu/arm/4.8.4/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m\libg_s.a(lib_a-vfprintf_i.o)
- .debug_frame   0x0000321c       0x28 c:/program files/cypress/psoc creator/3.2/psoc creator/import/gnu/arm/4.8.4/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m\libg_s.a(lib_a-memchr-stub.o)
- .debug_frame   0x00003244       0x2c c:/program files/cypress/psoc creator/3.2/psoc creator/import/gnu/arm/4.8.4/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m\libg_s.a(lib_a-memmove.o)
- .debug_frame   0x00003270       0x2c c:/program files/cypress/psoc creator/3.2/psoc creator/import/gnu/arm/4.8.4/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m\libg_s.a(lib_a-nano-freer.o)
- .debug_frame   0x0000329c       0x2c c:/program files/cypress/psoc creator/3.2/psoc creator/import/gnu/arm/4.8.4/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m\libg_s.a(lib_a-nano-mallocr.o)
- .debug_frame   0x000032c8       0x30 c:/program files/cypress/psoc creator/3.2/psoc creator/import/gnu/arm/4.8.4/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m\libg_s.a(lib_a-nano-reallocr.o)
- .debug_frame   0x000032f8       0x2c c:/program files/cypress/psoc creator/3.2/psoc creator/import/gnu/arm/4.8.4/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m\libg_s.a(lib_a-sbrkr.o)
- .debug_frame   0x00003324       0x20 c:/program files/cypress/psoc creator/3.2/psoc creator/import/gnu/arm/4.8.4/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m\libg_s.a(lib_a-strlen.o)
- .debug_frame   0x00003344       0x20 c:/program files/cypress/psoc creator/3.2/psoc creator/import/gnu/arm/4.8.4/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m\libg_s.a(lib_a-nano-msizer.o)
- .debug_frame   0x00003364       0x48 c:/program files/cypress/psoc creator/3.2/psoc creator/import/gnu/arm/4.8.4/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m\libg_s.a(lib_a-reent.o)
+ .debug_frame   0x00000000       0xe4 .\CortexM3\ARM_GCC_484\Debug\states.o
+ .debug_frame   0x000000e4       0x88 .\CortexM3\ARM_GCC_484\Debug\motor.o
+ .debug_frame   0x0000016c       0x90 .\CortexM3\ARM_GCC_484\Debug\speaker.o
+ .debug_frame   0x000001fc       0x7c .\CortexM3\ARM_GCC_484\Debug\display.o
+ .debug_frame   0x00000278       0x2c .\CortexM3\ARM_GCC_484\Debug\system.o
+ .debug_frame   0x000002a4       0x2c .\CortexM3\ARM_GCC_484\Debug\heartrate.o
+ .debug_frame   0x000002d0       0x2c .\CortexM3\ARM_GCC_484\Debug\main.o
+ .debug_frame   0x000002fc       0x48 .\CortexM3\ARM_GCC_484\Debug\terminal.o
+ .debug_frame   0x00000344       0xac .\CortexM3\ARM_GCC_484\Debug\Cm3Start.o
+ .debug_frame   0x000003f0      0x100 .\CortexM3\ARM_GCC_484\Debug\Design01.a(cyfitter_cfg.o)
+ .debug_frame   0x000004f0      0x1d0 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CyDmac.o)
+ .debug_frame   0x000006c0      0x730 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CyLib.o)
+ .debug_frame   0x00000df0      0x1fc .\CortexM3\ARM_GCC_484\Debug\Design01.a(cyPm.o)
+ .debug_frame   0x00000fec      0x1ec .\CortexM3\ARM_GCC_484\Debug\Design01.a(LCD.o)
+ .debug_frame   0x000011d8       0x58 .\CortexM3\ARM_GCC_484\Debug\Design01.a(LCD_BarGraph.o)
+ .debug_frame   0x00001230       0x50 .\CortexM3\ARM_GCC_484\Debug\Design01.a(Speaker_Output.o)
+ .debug_frame   0x00001280      0x1e8 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense.o)
+ .debug_frame   0x00001468      0x1dc .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_CSHL.o)
+ .debug_frame   0x00001644       0x2c .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_INT.o)
+ .debug_frame   0x00001670       0xc8 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_SMS_Wrapper.o)
+ .debug_frame   0x00001738      0x10c .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_CompCH0.o)
+ .debug_frame   0x00001844       0xd0 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_IdacCH0.o)
+ .debug_frame   0x00001914       0xb8 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_AMuxCH0.o)
+ .debug_frame   0x000019cc       0xe0 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_IntClock.o)
+ .debug_frame   0x00001aac       0x94 .\CortexM3\ARM_GCC_484\Debug\Design01.a(PGA_1.o)
+ .debug_frame   0x00001b40      0x10c .\CortexM3\ARM_GCC_484\Debug\Design01.a(Comp.o)
+ .debug_frame   0x00001c4c       0xe0 .\CortexM3\ARM_GCC_484\Debug\Design01.a(WaveDAC8_1.o)
+ .debug_frame   0x00001d2c      0x110 .\CortexM3\ARM_GCC_484\Debug\Design01.a(Compint.o)
+ .debug_frame   0x00001e3c      0x134 .\CortexM3\ARM_GCC_484\Debug\Design01.a(HeartbeatCounter.o)
+ .debug_frame   0x00001f70      0x1cc .\CortexM3\ARM_GCC_484\Debug\Design01.a(USBUART_cdc.o)
+ .debug_frame   0x0000213c      0x190 .\CortexM3\ARM_GCC_484\Debug\Design01.a(USBUART_drv.o)
+ .debug_frame   0x000022cc      0x18c .\CortexM3\ARM_GCC_484\Debug\Design01.a(USBUART_std.o)
+ .debug_frame   0x00002458       0x2c .\CortexM3\ARM_GCC_484\Debug\Design01.a(USBUART_vnd.o)
+ .debug_frame   0x00002484       0xe0 .\CortexM3\ARM_GCC_484\Debug\Design01.a(timer_clock_1.o)
+ .debug_frame   0x00002564       0xf8 .\CortexM3\ARM_GCC_484\Debug\Design01.a(PWM.o)
+ .debug_frame   0x0000265c      0x104 .\CortexM3\ARM_GCC_484\Debug\Design01.a(STOP.o)
+ .debug_frame   0x00002760      0x17c .\CortexM3\ARM_GCC_484\Debug\Design01.a(CyFlash.o)
+ .debug_frame   0x000028dc      0x148 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CySpc.o)
+ .debug_frame   0x00002a24       0xe0 .\CortexM3\ARM_GCC_484\Debug\Design01.a(WaveDAC8_1_DacClk.o)
+ .debug_frame   0x00002b04       0x54 .\CortexM3\ARM_GCC_484\Debug\Design01.a(WaveDAC8_1_Wave1_DMA_dma.o)
+ .debug_frame   0x00002b58       0x54 .\CortexM3\ARM_GCC_484\Debug\Design01.a(WaveDAC8_1_Wave2_DMA_dma.o)
+ .debug_frame   0x00002bac       0xb4 .\CortexM3\ARM_GCC_484\Debug\Design01.a(WaveDAC8_1_VDAC8.o)
+ .debug_frame   0x00002c60      0x1a4 .\CortexM3\ARM_GCC_484\Debug\Design01.a(USBUART.o)
+ .debug_frame   0x00002e04       0x2c .\CortexM3\ARM_GCC_484\Debug\Design01.a(USBUART_cls.o)
+ .debug_frame   0x00002e30       0x6c .\CortexM3\ARM_GCC_484\Debug\Design01.a(USBUART_episr.o)
+ .debug_frame   0x00002e9c      0x168 C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CapSense_CSD_v3_50\Library\CapSenseLibrary_GCC.a(CapSense_CSD_SmartSense_v3_50.o)
+ .debug_frame   0x00003004       0x20 c:/program files/cypress/psoc creator/3.2/psoc creator/import/gnu/arm/4.8.4/bin/../lib/gcc/arm-none-eabi/4.8.4/armv7-m\libgcc.a(_udivsi3.o)
+ .debug_frame   0x00003024       0x20 c:/program files/cypress/psoc creator/3.2/psoc creator/import/gnu/arm/4.8.4/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m\libg_s.a(lib_a-errno.o)
+ .debug_frame   0x00003044       0x28 c:/program files/cypress/psoc creator/3.2/psoc creator/import/gnu/arm/4.8.4/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m\libg_s.a(lib_a-exit.o)
+ .debug_frame   0x0000306c       0x2c c:/program files/cypress/psoc creator/3.2/psoc creator/import/gnu/arm/4.8.4/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m\libg_s.a(lib_a-init.o)
+ .debug_frame   0x00003098       0x28 c:/program files/cypress/psoc creator/3.2/psoc creator/import/gnu/arm/4.8.4/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m\libg_s.a(lib_a-memcpy-stub.o)
+ .debug_frame   0x000030c0       0x20 c:/program files/cypress/psoc creator/3.2/psoc creator/import/gnu/arm/4.8.4/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m\libg_s.a(lib_a-memset.o)
+ .debug_frame   0x000030e0       0x58 c:/program files/cypress/psoc creator/3.2/psoc creator/import/gnu/arm/4.8.4/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m\libg_s.a(lib_a-sprintf.o)
+ .debug_frame   0x00003138       0x88 c:/program files/cypress/psoc creator/3.2/psoc creator/import/gnu/arm/4.8.4/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m\libg_s.a(lib_a-svfprintf.o)
+ .debug_frame   0x000031c0       0x60 c:/program files/cypress/psoc creator/3.2/psoc creator/import/gnu/arm/4.8.4/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m\libg_s.a(lib_a-vfprintf_i.o)
+ .debug_frame   0x00003220       0x28 c:/program files/cypress/psoc creator/3.2/psoc creator/import/gnu/arm/4.8.4/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m\libg_s.a(lib_a-memchr-stub.o)
+ .debug_frame   0x00003248       0x2c c:/program files/cypress/psoc creator/3.2/psoc creator/import/gnu/arm/4.8.4/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m\libg_s.a(lib_a-memmove.o)
+ .debug_frame   0x00003274       0x2c c:/program files/cypress/psoc creator/3.2/psoc creator/import/gnu/arm/4.8.4/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m\libg_s.a(lib_a-nano-freer.o)
+ .debug_frame   0x000032a0       0x2c c:/program files/cypress/psoc creator/3.2/psoc creator/import/gnu/arm/4.8.4/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m\libg_s.a(lib_a-nano-mallocr.o)
+ .debug_frame   0x000032cc       0x30 c:/program files/cypress/psoc creator/3.2/psoc creator/import/gnu/arm/4.8.4/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m\libg_s.a(lib_a-nano-reallocr.o)
+ .debug_frame   0x000032fc       0x2c c:/program files/cypress/psoc creator/3.2/psoc creator/import/gnu/arm/4.8.4/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m\libg_s.a(lib_a-sbrkr.o)
+ .debug_frame   0x00003328       0x20 c:/program files/cypress/psoc creator/3.2/psoc creator/import/gnu/arm/4.8.4/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m\libg_s.a(lib_a-strlen.o)
+ .debug_frame   0x00003348       0x20 c:/program files/cypress/psoc creator/3.2/psoc creator/import/gnu/arm/4.8.4/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m\libg_s.a(lib_a-nano-msizer.o)
+ .debug_frame   0x00003368       0x48 c:/program files/cypress/psoc creator/3.2/psoc creator/import/gnu/arm/4.8.4/bin/../lib/gcc/arm-none-eabi/4.8.4/../../../../arm-none-eabi/lib/armv7-m\libg_s.a(lib_a-reent.o)
 
 .debug_str      0x00000000     0x494c
  *(.debug_str)
- .debug_str     0x00000000      0x3c8 .\CortexM3\ARM_GCC_484\Debug\states.o
-                                0x40b (size before relaxing)
- .debug_str     0x000003c8       0x67 .\CortexM3\ARM_GCC_484\Debug\motor.o
+ .debug_str     0x00000000      0x3e6 .\CortexM3\ARM_GCC_484\Debug\states.o
+                                0x430 (size before relaxing)
+ .debug_str     0x000003e6       0x67 .\CortexM3\ARM_GCC_484\Debug\motor.o
                                 0x27c (size before relaxing)
- .debug_str     0x0000042f       0x88 .\CortexM3\ARM_GCC_484\Debug\speaker.o
+ .debug_str     0x0000044d       0x88 .\CortexM3\ARM_GCC_484\Debug\speaker.o
                                 0x169 (size before relaxing)
- .debug_str     0x000004b7       0x35 .\CortexM3\ARM_GCC_484\Debug\display.o
+ .debug_str     0x000004d5       0x35 .\CortexM3\ARM_GCC_484\Debug\display.o
                                 0x292 (size before relaxing)
- .debug_str     0x000004ec       0xcd .\CortexM3\ARM_GCC_484\Debug\system.o
+ .debug_str     0x0000050a       0xcd .\CortexM3\ARM_GCC_484\Debug\system.o
                                 0x2dc (size before relaxing)
- .debug_str     0x000005b9       0x37 .\CortexM3\ARM_GCC_484\Debug\heartrate.o
+ .debug_str     0x000005d7       0x24 .\CortexM3\ARM_GCC_484\Debug\heartrate.o
                                 0x24c (size before relaxing)
- .debug_str     0x000005f0       0x25 .\CortexM3\ARM_GCC_484\Debug\main.o
-                                0x26c (size before relaxing)
- .debug_str     0x00000615       0x77 .\CortexM3\ARM_GCC_484\Debug\terminal.o
+ .debug_str     0x000005fb       0x25 .\CortexM3\ARM_GCC_484\Debug\main.o
+                                0x283 (size before relaxing)
+ .debug_str     0x00000620       0x77 .\CortexM3\ARM_GCC_484\Debug\terminal.o
                                 0x251 (size before relaxing)
- .debug_str     0x0000068c       0x77 .\CortexM3\ARM_GCC_484\Debug\cymetadata.o
+ .debug_str     0x00000697       0x77 .\CortexM3\ARM_GCC_484\Debug\cymetadata.o
                                 0x1dc (size before relaxing)
- .debug_str     0x00000703      0x170 .\CortexM3\ARM_GCC_484\Debug\Cm3Start.o
+ .debug_str     0x0000070e      0x170 .\CortexM3\ARM_GCC_484\Debug\Cm3Start.o
                                 0x300 (size before relaxing)
- .debug_str     0x00000873      0x1bc .\CortexM3\ARM_GCC_484\Debug\Design01.a(cyfitter_cfg.o)
+ .debug_str     0x0000087e      0x1bc .\CortexM3\ARM_GCC_484\Debug\Design01.a(cyfitter_cfg.o)
                                 0x361 (size before relaxing)
- .debug_str     0x00000a2f      0x369 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CyDmac.o)
+ .debug_str     0x00000a3a      0x369 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CyDmac.o)
                                 0x530 (size before relaxing)
- .debug_str     0x00000d98      0x7c4 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CyLib.o)
+ .debug_str     0x00000da3      0x7c4 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CyLib.o)
                                 0xa15 (size before relaxing)
- .debug_str     0x0000155c      0x35b .\CortexM3\ARM_GCC_484\Debug\Design01.a(cyPm.o)
+ .debug_str     0x00001567      0x35b .\CortexM3\ARM_GCC_484\Debug\Design01.a(cyPm.o)
                                 0x70d (size before relaxing)
- .debug_str     0x000018b7      0x12a .\CortexM3\ARM_GCC_484\Debug\Design01.a(LCD.o)
+ .debug_str     0x000018c2      0x12a .\CortexM3\ARM_GCC_484\Debug\Design01.a(LCD.o)
                                 0x335 (size before relaxing)
- .debug_str     0x000019e1       0x77 .\CortexM3\ARM_GCC_484\Debug\Design01.a(LCD_BarGraph.o)
+ .debug_str     0x000019ec       0x77 .\CortexM3\ARM_GCC_484\Debug\Design01.a(LCD_BarGraph.o)
                                 0x24d (size before relaxing)
- .debug_str     0x00001a58       0x80 .\CortexM3\ARM_GCC_484\Debug\Design01.a(Speaker_Output.o)
+ .debug_str     0x00001a63       0x80 .\CortexM3\ARM_GCC_484\Debug\Design01.a(Speaker_Output.o)
                                 0x201 (size before relaxing)
- .debug_str     0x00001ad8      0x3ec .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense.o)
+ .debug_str     0x00001ae3      0x3ec .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense.o)
                                 0x667 (size before relaxing)
- .debug_str     0x00001ec4      0x398 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_CSHL.o)
+ .debug_str     0x00001ecf      0x398 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_CSHL.o)
                                 0x671 (size before relaxing)
- .debug_str     0x0000225c       0x3c .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_INT.o)
+ .debug_str     0x00002267       0x3c .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_INT.o)
                                 0x273 (size before relaxing)
- .debug_str     0x00002298      0x322 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_SMS_Wrapper.o)
+ .debug_str     0x000022a3      0x322 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_SMS_Wrapper.o)
                                 0x60e (size before relaxing)
- .debug_str     0x000025ba      0x16d .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_CompCH0.o)
+ .debug_str     0x000025c5      0x16d .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_CompCH0.o)
                                 0x340 (size before relaxing)
- .debug_str     0x00002727       0x9e .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_IdacCH0.o)
+ .debug_str     0x00002732       0x9e .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_IdacCH0.o)
                                 0x2a5 (size before relaxing)
- .debug_str     0x000027c5       0xe7 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_AMuxCH0.o)
+ .debug_str     0x000027d0       0xe7 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_AMuxCH0.o)
                                 0x28d (size before relaxing)
- .debug_str     0x000028ac      0x1ad .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_IntClock.o)
+ .debug_str     0x000028b7      0x1ad .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_IntClock.o)
                                 0x358 (size before relaxing)
- .debug_str     0x00002a59       0x99 .\CortexM3\ARM_GCC_484\Debug\Design01.a(PGA_1.o)
+ .debug_str     0x00002a64       0x99 .\CortexM3\ARM_GCC_484\Debug\Design01.a(PGA_1.o)
                                 0x215 (size before relaxing)
- .debug_str     0x00002af2       0xbe .\CortexM3\ARM_GCC_484\Debug\Design01.a(Comp.o)
+ .debug_str     0x00002afd       0xbe .\CortexM3\ARM_GCC_484\Debug\Design01.a(Comp.o)
                                 0x2a4 (size before relaxing)
- .debug_str     0x00002bb0      0x260 .\CortexM3\ARM_GCC_484\Debug\Design01.a(WaveDAC8_1.o)
+ .debug_str     0x00002bbb      0x260 .\CortexM3\ARM_GCC_484\Debug\Design01.a(WaveDAC8_1.o)
                                 0x458 (size before relaxing)
- .debug_str     0x00002e10      0x113 .\CortexM3\ARM_GCC_484\Debug\Design01.a(Compint.o)
+ .debug_str     0x00002e1b      0x113 .\CortexM3\ARM_GCC_484\Debug\Design01.a(Compint.o)
                                 0x350 (size before relaxing)
- .debug_str     0x00002f23      0x237 .\CortexM3\ARM_GCC_484\Debug\Design01.a(HeartbeatCounter.o)
+ .debug_str     0x00002f2e      0x237 .\CortexM3\ARM_GCC_484\Debug\Design01.a(HeartbeatCounter.o)
                                 0x40f (size before relaxing)
- .debug_str     0x0000315a      0x3ad .\CortexM3\ARM_GCC_484\Debug\Design01.a(USBUART_cdc.o)
+ .debug_str     0x00003165      0x3ad .\CortexM3\ARM_GCC_484\Debug\Design01.a(USBUART_cdc.o)
                                 0x576 (size before relaxing)
- .debug_str     0x00003507      0x34a .\CortexM3\ARM_GCC_484\Debug\Design01.a(USBUART_drv.o)
+ .debug_str     0x00003512      0x34a .\CortexM3\ARM_GCC_484\Debug\Design01.a(USBUART_drv.o)
                                 0x611 (size before relaxing)
- .debug_str     0x00003851      0x2a6 .\CortexM3\ARM_GCC_484\Debug\Design01.a(USBUART_std.o)
+ .debug_str     0x0000385c      0x2a6 .\CortexM3\ARM_GCC_484\Debug\Design01.a(USBUART_std.o)
                                 0x6a0 (size before relaxing)
- .debug_str     0x00003af7       0x48 .\CortexM3\ARM_GCC_484\Debug\Design01.a(USBUART_vnd.o)
+ .debug_str     0x00003b02       0x48 .\CortexM3\ARM_GCC_484\Debug\Design01.a(USBUART_vnd.o)
                                 0x25b (size before relaxing)
- .debug_str     0x00003b3f      0x14d .\CortexM3\ARM_GCC_484\Debug\Design01.a(timer_clock_1.o)
+ .debug_str     0x00003b4a      0x14d .\CortexM3\ARM_GCC_484\Debug\Design01.a(timer_clock_1.o)
                                 0x328 (size before relaxing)
- .debug_str     0x00003c8c       0xe0 .\CortexM3\ARM_GCC_484\Debug\Design01.a(PWM.o)
+ .debug_str     0x00003c97       0xe0 .\CortexM3\ARM_GCC_484\Debug\Design01.a(PWM.o)
                                 0x296 (size before relaxing)
- .debug_str     0x00003d6c       0xcf .\CortexM3\ARM_GCC_484\Debug\Design01.a(STOP.o)
+ .debug_str     0x00003d77       0xcf .\CortexM3\ARM_GCC_484\Debug\Design01.a(STOP.o)
                                 0x2f3 (size before relaxing)
- .debug_str     0x00003e3b      0x19e .\CortexM3\ARM_GCC_484\Debug\Design01.a(CyFlash.o)
+ .debug_str     0x00003e46      0x19e .\CortexM3\ARM_GCC_484\Debug\Design01.a(CyFlash.o)
                                 0x387 (size before relaxing)
- .debug_str     0x00003fd9       0xae .\CortexM3\ARM_GCC_484\Debug\Design01.a(CySpc.o)
+ .debug_str     0x00003fe4       0xae .\CortexM3\ARM_GCC_484\Debug\Design01.a(CySpc.o)
                                 0x310 (size before relaxing)
- .debug_str     0x00004087      0x162 .\CortexM3\ARM_GCC_484\Debug\Design01.a(WaveDAC8_1_DacClk.o)
+ .debug_str     0x00004092      0x162 .\CortexM3\ARM_GCC_484\Debug\Design01.a(WaveDAC8_1_DacClk.o)
                                 0x358 (size before relaxing)
- .debug_str     0x000041e9       0xae .\CortexM3\ARM_GCC_484\Debug\Design01.a(WaveDAC8_1_Wave1_DMA_dma.o)
+ .debug_str     0x000041f4       0xae .\CortexM3\ARM_GCC_484\Debug\Design01.a(WaveDAC8_1_Wave1_DMA_dma.o)
                                 0x297 (size before relaxing)
- .debug_str     0x00004297       0x73 .\CortexM3\ARM_GCC_484\Debug\Design01.a(WaveDAC8_1_Wave2_DMA_dma.o)
+ .debug_str     0x000042a2       0x73 .\CortexM3\ARM_GCC_484\Debug\Design01.a(WaveDAC8_1_Wave2_DMA_dma.o)
                                 0x297 (size before relaxing)
- .debug_str     0x0000430a       0x75 .\CortexM3\ARM_GCC_484\Debug\Design01.a(WaveDAC8_1_VDAC8.o)
+ .debug_str     0x00004315       0x75 .\CortexM3\ARM_GCC_484\Debug\Design01.a(WaveDAC8_1_VDAC8.o)
                                 0x27f (size before relaxing)
- .debug_str     0x0000437f      0x185 .\CortexM3\ARM_GCC_484\Debug\Design01.a(USBUART.o)
+ .debug_str     0x0000438a      0x185 .\CortexM3\ARM_GCC_484\Debug\Design01.a(USBUART.o)
                                 0x548 (size before relaxing)
- .debug_str     0x00004504       0x27 .\CortexM3\ARM_GCC_484\Debug\Design01.a(USBUART_cls.o)
+ .debug_str     0x0000450f       0x27 .\CortexM3\ARM_GCC_484\Debug\Design01.a(USBUART_cls.o)
                                 0x278 (size before relaxing)
- .debug_str     0x0000452b      0x106 .\CortexM3\ARM_GCC_484\Debug\Design01.a(USBUART_descr.o)
+ .debug_str     0x00004536      0x106 .\CortexM3\ARM_GCC_484\Debug\Design01.a(USBUART_descr.o)
                                 0x378 (size before relaxing)
- .debug_str     0x00004631       0x82 .\CortexM3\ARM_GCC_484\Debug\Design01.a(USBUART_episr.o)
+ .debug_str     0x0000463c       0x82 .\CortexM3\ARM_GCC_484\Debug\Design01.a(USBUART_episr.o)
                                 0x27e (size before relaxing)
- .debug_str     0x000046b3      0x299 C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CapSense_CSD_v3_50\Library\CapSenseLibrary_GCC.a(CapSense_CSD_SmartSense_v3_50.o)
+ .debug_str     0x000046be      0x28e C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CapSense_CSD_v3_50\Library\CapSenseLibrary_GCC.a(CapSense_CSD_SmartSense_v3_50.o)
                                 0x63b (size before relaxing)
 
-.debug_loc      0x00000000     0x61d6
+.debug_loc      0x00000000     0x6274
  *(.debug_loc)
- .debug_loc     0x00000000       0x1e .\CortexM3\ARM_GCC_484\Debug\states.o
- .debug_loc     0x0000001e       0xd7 .\CortexM3\ARM_GCC_484\Debug\motor.o
- .debug_loc     0x000000f5       0xbd .\CortexM3\ARM_GCC_484\Debug\speaker.o
- .debug_loc     0x000001b2       0x6a .\CortexM3\ARM_GCC_484\Debug\display.o
- .debug_loc     0x0000021c       0x41 .\CortexM3\ARM_GCC_484\Debug\terminal.o
- .debug_loc     0x0000025d      0x14f .\CortexM3\ARM_GCC_484\Debug\Cm3Start.o
- .debug_loc     0x000003ac      0x263 .\CortexM3\ARM_GCC_484\Debug\Design01.a(cyfitter_cfg.o)
- .debug_loc     0x0000060f      0xb6b .\CortexM3\ARM_GCC_484\Debug\Design01.a(CyDmac.o)
- .debug_loc     0x0000117a      0xa53 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CyLib.o)
- .debug_loc     0x00001bcd      0x22a .\CortexM3\ARM_GCC_484\Debug\Design01.a(cyPm.o)
- .debug_loc     0x00001df7      0x3f5 .\CortexM3\ARM_GCC_484\Debug\Design01.a(LCD.o)
- .debug_loc     0x000021ec      0x17a .\CortexM3\ARM_GCC_484\Debug\Design01.a(LCD_BarGraph.o)
- .debug_loc     0x00002366       0x55 .\CortexM3\ARM_GCC_484\Debug\Design01.a(Speaker_Output.o)
- .debug_loc     0x000023bb      0x34b .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense.o)
- .debug_loc     0x00002706      0xb4b .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_CSHL.o)
- .debug_loc     0x00003251       0x63 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_SMS_Wrapper.o)
- .debug_loc     0x000032b4       0xeb .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_CompCH0.o)
- .debug_loc     0x0000339f       0x87 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_IdacCH0.o)
- .debug_loc     0x00003426       0x79 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_AMuxCH0.o)
- .debug_loc     0x0000349f      0x125 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_IntClock.o)
- .debug_loc     0x000035c4       0x42 .\CortexM3\ARM_GCC_484\Debug\Design01.a(PGA_1.o)
- .debug_loc     0x00003606       0xeb .\CortexM3\ARM_GCC_484\Debug\Design01.a(Comp.o)
- .debug_loc     0x000036f1      0x11b .\CortexM3\ARM_GCC_484\Debug\Design01.a(WaveDAC8_1.o)
- .debug_loc     0x0000380c       0x56 .\CortexM3\ARM_GCC_484\Debug\Design01.a(Compint.o)
- .debug_loc     0x00003862       0x31 .\CortexM3\ARM_GCC_484\Debug\Design01.a(HeartbeatCounter.o)
- .debug_loc     0x00003893      0x2cf .\CortexM3\ARM_GCC_484\Debug\Design01.a(USBUART_cdc.o)
- .debug_loc     0x00003b62      0x198 .\CortexM3\ARM_GCC_484\Debug\Design01.a(USBUART_drv.o)
- .debug_loc     0x00003cfa      0x973 .\CortexM3\ARM_GCC_484\Debug\Design01.a(USBUART_std.o)
- .debug_loc     0x0000466d       0x36 .\CortexM3\ARM_GCC_484\Debug\Design01.a(USBUART_vnd.o)
- .debug_loc     0x000046a3      0x15c .\CortexM3\ARM_GCC_484\Debug\Design01.a(timer_clock_1.o)
- .debug_loc     0x000047ff       0x13 .\CortexM3\ARM_GCC_484\Debug\Design01.a(PWM.o)
- .debug_loc     0x00004812       0x56 .\CortexM3\ARM_GCC_484\Debug\Design01.a(STOP.o)
- .debug_loc     0x00004868      0x321 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CyFlash.o)
- .debug_loc     0x00004b89      0x682 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CySpc.o)
- .debug_loc     0x0000520b      0x15c .\CortexM3\ARM_GCC_484\Debug\Design01.a(WaveDAC8_1_DacClk.o)
- .debug_loc     0x00005367       0x84 .\CortexM3\ARM_GCC_484\Debug\Design01.a(WaveDAC8_1_Wave1_DMA_dma.o)
- .debug_loc     0x000053eb       0x84 .\CortexM3\ARM_GCC_484\Debug\Design01.a(WaveDAC8_1_Wave2_DMA_dma.o)
- .debug_loc     0x0000546f       0x68 .\CortexM3\ARM_GCC_484\Debug\Design01.a(WaveDAC8_1_VDAC8.o)
- .debug_loc     0x000054d7      0x46d .\CortexM3\ARM_GCC_484\Debug\Design01.a(USBUART.o)
- .debug_loc     0x00005944       0x83 .\CortexM3\ARM_GCC_484\Debug\Design01.a(USBUART_cls.o)
- .debug_loc     0x000059c7      0x80f C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CapSense_CSD_v3_50\Library\CapSenseLibrary_GCC.a(CapSense_CSD_SmartSense_v3_50.o)
+ .debug_loc     0x00000000       0xbc .\CortexM3\ARM_GCC_484\Debug\states.o
+ .debug_loc     0x000000bc       0xd7 .\CortexM3\ARM_GCC_484\Debug\motor.o
+ .debug_loc     0x00000193       0xbd .\CortexM3\ARM_GCC_484\Debug\speaker.o
+ .debug_loc     0x00000250       0x6a .\CortexM3\ARM_GCC_484\Debug\display.o
+ .debug_loc     0x000002ba       0x41 .\CortexM3\ARM_GCC_484\Debug\terminal.o
+ .debug_loc     0x000002fb      0x14f .\CortexM3\ARM_GCC_484\Debug\Cm3Start.o
+ .debug_loc     0x0000044a      0x263 .\CortexM3\ARM_GCC_484\Debug\Design01.a(cyfitter_cfg.o)
+ .debug_loc     0x000006ad      0xb6b .\CortexM3\ARM_GCC_484\Debug\Design01.a(CyDmac.o)
+ .debug_loc     0x00001218      0xa53 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CyLib.o)
+ .debug_loc     0x00001c6b      0x22a .\CortexM3\ARM_GCC_484\Debug\Design01.a(cyPm.o)
+ .debug_loc     0x00001e95      0x3f5 .\CortexM3\ARM_GCC_484\Debug\Design01.a(LCD.o)
+ .debug_loc     0x0000228a      0x17a .\CortexM3\ARM_GCC_484\Debug\Design01.a(LCD_BarGraph.o)
+ .debug_loc     0x00002404       0x55 .\CortexM3\ARM_GCC_484\Debug\Design01.a(Speaker_Output.o)
+ .debug_loc     0x00002459      0x34b .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense.o)
+ .debug_loc     0x000027a4      0xb4b .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_CSHL.o)
+ .debug_loc     0x000032ef       0x63 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_SMS_Wrapper.o)
+ .debug_loc     0x00003352       0xeb .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_CompCH0.o)
+ .debug_loc     0x0000343d       0x87 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_IdacCH0.o)
+ .debug_loc     0x000034c4       0x79 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_AMuxCH0.o)
+ .debug_loc     0x0000353d      0x125 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CapSense_IntClock.o)
+ .debug_loc     0x00003662       0x42 .\CortexM3\ARM_GCC_484\Debug\Design01.a(PGA_1.o)
+ .debug_loc     0x000036a4       0xeb .\CortexM3\ARM_GCC_484\Debug\Design01.a(Comp.o)
+ .debug_loc     0x0000378f      0x11b .\CortexM3\ARM_GCC_484\Debug\Design01.a(WaveDAC8_1.o)
+ .debug_loc     0x000038aa       0x56 .\CortexM3\ARM_GCC_484\Debug\Design01.a(Compint.o)
+ .debug_loc     0x00003900       0x31 .\CortexM3\ARM_GCC_484\Debug\Design01.a(HeartbeatCounter.o)
+ .debug_loc     0x00003931      0x2cf .\CortexM3\ARM_GCC_484\Debug\Design01.a(USBUART_cdc.o)
+ .debug_loc     0x00003c00      0x198 .\CortexM3\ARM_GCC_484\Debug\Design01.a(USBUART_drv.o)
+ .debug_loc     0x00003d98      0x973 .\CortexM3\ARM_GCC_484\Debug\Design01.a(USBUART_std.o)
+ .debug_loc     0x0000470b       0x36 .\CortexM3\ARM_GCC_484\Debug\Design01.a(USBUART_vnd.o)
+ .debug_loc     0x00004741      0x15c .\CortexM3\ARM_GCC_484\Debug\Design01.a(timer_clock_1.o)
+ .debug_loc     0x0000489d       0x13 .\CortexM3\ARM_GCC_484\Debug\Design01.a(PWM.o)
+ .debug_loc     0x000048b0       0x56 .\CortexM3\ARM_GCC_484\Debug\Design01.a(STOP.o)
+ .debug_loc     0x00004906      0x321 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CyFlash.o)
+ .debug_loc     0x00004c27      0x682 .\CortexM3\ARM_GCC_484\Debug\Design01.a(CySpc.o)
+ .debug_loc     0x000052a9      0x15c .\CortexM3\ARM_GCC_484\Debug\Design01.a(WaveDAC8_1_DacClk.o)
+ .debug_loc     0x00005405       0x84 .\CortexM3\ARM_GCC_484\Debug\Design01.a(WaveDAC8_1_Wave1_DMA_dma.o)
+ .debug_loc     0x00005489       0x84 .\CortexM3\ARM_GCC_484\Debug\Design01.a(WaveDAC8_1_Wave2_DMA_dma.o)
+ .debug_loc     0x0000550d       0x68 .\CortexM3\ARM_GCC_484\Debug\Design01.a(WaveDAC8_1_VDAC8.o)
+ .debug_loc     0x00005575      0x46d .\CortexM3\ARM_GCC_484\Debug\Design01.a(USBUART.o)
+ .debug_loc     0x000059e2       0x83 .\CortexM3\ARM_GCC_484\Debug\Design01.a(USBUART_cls.o)
+ .debug_loc     0x00005a65      0x80f C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CapSense_CSD_v3_50\Library\CapSenseLibrary_GCC.a(CapSense_CSD_SmartSense_v3_50.o)
 
 .debug_macinfo
  *(.debug_macinfo)

@@ -2,7 +2,7 @@
 --	Conversion of Design01.v to vh2:
 --
 --	Cypress Semiconductor - WARP Version 6.3 IR 41
---	Tue Nov 03 12:22:49 2015
+--	Tue Nov 03 15:41:25 2015
 --
 
 USE cypress.cypress.all;
@@ -64,7 +64,7 @@ SIGNAL \WaveDAC8_1:VDAC8:Net_83\ : bit;
 SIGNAL \WaveDAC8_1:VDAC8:Net_81\ : bit;
 SIGNAL \WaveDAC8_1:VDAC8:Net_82\ : bit;
 TERMINAL \WaveDAC8_1:VDAC8:Net_77\ : bit;
-TERMINAL Net_1678 : bit;
+TERMINAL Net_1680 : bit;
 SIGNAL \WaveDAC8_1:Net_280\ : bit;
 SIGNAL \WaveDAC8_1:Net_80\ : bit;
 SIGNAL \WaveDAC8_1:cydff_1\ : bit;
@@ -1680,7 +1680,7 @@ one <=  ('1') ;
 \WaveDAC8_1:cy_analog_virtualmux_3_connect\:cy_connect_v1_0
 	GENERIC MAP(sig_width=>1,
 		is_net_join=>'0')
-	PORT MAP(signal1=>Net_1678,
+	PORT MAP(signal1=>Net_1680,
 		signal2=>\WaveDAC8_1:Net_256\);
 Speaker_Output:cy_psoc3_pins_v1_10
 	GENERIC MAP(id=>"6578865f-394e-4ed2-9257-0ddbe1184c39",

@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccl1PQ25.s 			page 1
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccMQk4Va.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccl1PQ25.s 			page 1
   29:.\Generated_Source\PSoC5/Compint.c **** #include "system.h"
   30:.\Generated_Source\PSoC5/Compint.c **** extern float heartrate;
   31:.\Generated_Source\PSoC5/Compint.c **** extern int timer_status;   /* 1 for on, 0 for off */
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccl1PQ25.s 			page 2
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccMQk4Va.s 			page 2
 
 
   32:.\Generated_Source\PSoC5/Compint.c **** extern int timer_value;
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccl1PQ25.s 			page 1
   86:.\Generated_Source\PSoC5/Compint.c **** *  Sets up the interrupt and enables it. This function disables the interrupt,
   87:.\Generated_Source\PSoC5/Compint.c **** *  sets the interrupt vector based on the address passed in, sets the priority 
   88:.\Generated_Source\PSoC5/Compint.c **** *  from the value in the Design Wide Resources Interrupt Editor, then enables 
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccl1PQ25.s 			page 3
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccMQk4Va.s 			page 3
 
 
   89:.\Generated_Source\PSoC5/Compint.c **** *  the interrupt to the interrupt controller.
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccl1PQ25.s 			page 1
  143:.\Generated_Source\PSoC5/Compint.c ****     /* Set the ISR to point to the passive one. */
  144:.\Generated_Source\PSoC5/Compint.c ****     Compint_SetVector(&IntDefaultHandler);
  145:.\Generated_Source\PSoC5/Compint.c **** }
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccl1PQ25.s 			page 4
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccMQk4Va.s 			page 4
 
 
  146:.\Generated_Source\PSoC5/Compint.c **** 
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccl1PQ25.s 			page 1
   57              	Compint_SetVector:
   58              	.LFB4:
  170:.\Generated_Source\PSoC5/Compint.c **** /*
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccl1PQ25.s 			page 5
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccMQk4Va.s 			page 5
 
 
  171:.\Generated_Source\PSoC5/Compint.c ****     LCD_Position(0,0);
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccl1PQ25.s 			page 1
  225:.\Generated_Source\PSoC5/Compint.c **** *******************************************************************************/
  226:.\Generated_Source\PSoC5/Compint.c **** void Compint_SetVector(cyisraddress address)
  227:.\Generated_Source\PSoC5/Compint.c **** {
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccl1PQ25.s 			page 6
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccMQk4Va.s 			page 6
 
 
   59              		.loc 1 227 0
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccl1PQ25.s 			page 1
   89              		@ args = 0, pretend = 0, frame = 0
   90              		@ frame_needed = 0, uses_anonymous_args = 0
   91              		@ link register save eliminated.
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccl1PQ25.s 			page 7
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccMQk4Va.s 			page 7
 
 
  252:.\Generated_Source\PSoC5/Compint.c ****     cyisraddress * ramVectorTable;
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccl1PQ25.s 			page 1
  284:.\Generated_Source\PSoC5/Compint.c **** void Compint_SetPriority(uint8 priority)
  285:.\Generated_Source\PSoC5/Compint.c **** {
  114              		.loc 1 285 0
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccl1PQ25.s 			page 8
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccMQk4Va.s 			page 8
 
 
  115              		.cfi_startproc
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccl1PQ25.s 			page 1
  308:.\Generated_Source\PSoC5/Compint.c ****     uint8 priority;
  309:.\Generated_Source\PSoC5/Compint.c **** 
  310:.\Generated_Source\PSoC5/Compint.c **** 
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccl1PQ25.s 			page 9
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccMQk4Va.s 			page 9
 
 
  311:.\Generated_Source\PSoC5/Compint.c ****     priority = *Compint_INTC_PRIOR >> 5;
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccl1PQ25.s 			page 1
  175              		.loc 1 336 0
  176 0000 0122     		movs	r2, #1
  177 0002 014B     		ldr	r3, .L17
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccl1PQ25.s 			page 10
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccMQk4Va.s 			page 10
 
 
  178 0004 1A60     		str	r2, [r3]
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccl1PQ25.s 			page 1
  210              		.cfi_endproc
  211              	.LFE9:
  212              		.size	Compint_GetState, .-Compint_GetState
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccl1PQ25.s 			page 11
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccMQk4Va.s 			page 11
 
 
  213              		.section	.text.Compint_Disable,"ax",%progbits
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccl1PQ25.s 			page 1
  246              		.loc 1 66 0
  247              		.cfi_startproc
  248              		@ args = 0, pretend = 0, frame = 0
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccl1PQ25.s 			page 12
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccMQk4Va.s 			page 12
 
 
  249              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccl1PQ25.s 			page 1
  114:.\Generated_Source\PSoC5/Compint.c ****     Compint_SetVector(address);
  297              		.loc 1 114 0
  298 0008 2046     		mov	r0, r4
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccl1PQ25.s 			page 13
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccMQk4Va.s 			page 13
 
 
  299 000a FFF7FEFF 		bl	Compint_SetVector
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccl1PQ25.s 			page 1
  348              		.type	Compint_SetPending, %function
  349              	Compint_SetPending:
  350              	.LFB11:
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccl1PQ25.s 			page 14
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccMQk4Va.s 			page 14
 
 
  379:.\Generated_Source\PSoC5/Compint.c **** }
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccl1PQ25.s 			page 1
  408:.\Generated_Source\PSoC5/Compint.c **** /*******************************************************************************
  409:.\Generated_Source\PSoC5/Compint.c **** * Function Name: Compint_ClearPending
  410:.\Generated_Source\PSoC5/Compint.c **** ********************************************************************************
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccl1PQ25.s 			page 15
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccMQk4Va.s 			page 15
 
 
  411:.\Generated_Source\PSoC5/Compint.c **** *
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccl1PQ25.s 			page 1
  411 0000 00000000 		.space	4
  412              		.type	startCounts, %object
  413              		.size	startCounts, 4
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccl1PQ25.s 			page 16
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccMQk4Va.s 			page 16
 
 
  414              	startCounts:
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccl1PQ25.s 			page 1
  468 0059 F5010000 		.4byte	.LASF6
  469 005d 03       		.uleb128 0x3
  470 005e 08       		.byte	0x8
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccl1PQ25.s 			page 17
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccMQk4Va.s 			page 17
 
 
  471 005f 05       		.byte	0x5
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccl1PQ25.s 			page 1
  525 00ce 72000000 		.4byte	0x72
  526 00d2 06       		.uleb128 0x6
  527 00d3 76020000 		.4byte	.LASF18
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccl1PQ25.s 			page 18
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccMQk4Va.s 			page 18
 
 
  528 00d7 03       		.byte	0x3
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccl1PQ25.s 			page 1
  582 014c F9020000 		.4byte	.LASF21
  583 0150 01       		.byte	0x1
  584 0151 FC       		.byte	0xfc
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccl1PQ25.s 			page 19
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccMQk4Va.s 			page 19
 
 
  585 0152 2C010000 		.4byte	0x12c
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccl1PQ25.s 			page 1
  639 01d3 12       		.uleb128 0x12
  640 01d4 08030000 		.4byte	.LASF28
  641 01d8 01       		.byte	0x1
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccl1PQ25.s 			page 20
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccMQk4Va.s 			page 20
 
 
  642 01d9 7701     		.2byte	0x177
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccl1PQ25.s 			page 1
  696 0252 6C       		.byte	0x6c
  697 0253 C6000000 		.4byte	0xc6
  698 0257 38000000 		.4byte	.LLST2
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccl1PQ25.s 			page 21
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccMQk4Va.s 			page 21
 
 
  699 025b 0A       		.uleb128 0xa
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccl1PQ25.s 			page 1
  753 02d4 01       		.byte	0x1
  754 02d5 AB01     		.2byte	0x1ab
  755 02d7 00000000 		.4byte	.LFB12
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccl1PQ25.s 			page 22
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccMQk4Va.s 			page 22
 
 
  756 02db 0C000000 		.4byte	.LFE12-.LFB12
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccl1PQ25.s 			page 1
  810 034d 12       		.byte	0x12
  811 034e 25000000 		.4byte	0x25
  812 0352 05       		.uleb128 0x5
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccl1PQ25.s 			page 23
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccMQk4Va.s 			page 23
 
 
  813 0353 03       		.byte	0x3
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccl1PQ25.s 			page 1
  867 0004 0E       		.uleb128 0xe
  868 0005 13       		.uleb128 0x13
  869 0006 0B       		.uleb128 0xb
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccl1PQ25.s 			page 24
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccMQk4Va.s 			page 24
 
 
  870 0007 03       		.uleb128 0x3
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccl1PQ25.s 			page 1
  924 003d 0E       		.uleb128 0xe
  925 003e 3A       		.uleb128 0x3a
  926 003f 0B       		.uleb128 0xb
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccl1PQ25.s 			page 25
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccMQk4Va.s 			page 25
 
 
  927 0040 3B       		.uleb128 0x3b
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccl1PQ25.s 			page 1
  981 0079 11       		.uleb128 0x11
  982 007a 01       		.uleb128 0x1
  983 007b 31       		.uleb128 0x31
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccl1PQ25.s 			page 26
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccMQk4Va.s 			page 26
 
 
  984 007c 13       		.uleb128 0x13
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccl1PQ25.s 			page 1
  1038 00b2 9742     		.uleb128 0x2117
  1039 00b4 19       		.uleb128 0x19
  1040 00b5 01       		.uleb128 0x1
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccl1PQ25.s 			page 27
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccMQk4Va.s 			page 27
 
 
  1041 00b6 13       		.uleb128 0x13
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccl1PQ25.s 			page 1
  1095 00ed 27       		.uleb128 0x27
  1096 00ee 19       		.uleb128 0x19
  1097 00ef 49       		.uleb128 0x49
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccl1PQ25.s 			page 28
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccMQk4Va.s 			page 28
 
 
  1098 00f0 13       		.uleb128 0x13
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccl1PQ25.s 			page 1
  1152 0128 3F       		.uleb128 0x3f
  1153 0129 19       		.uleb128 0x19
  1154 012a 03       		.uleb128 0x3
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccl1PQ25.s 			page 29
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccMQk4Va.s 			page 29
 
 
  1155 012b 0E       		.uleb128 0xe
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccl1PQ25.s 			page 1
  1209 0167 17       		.uleb128 0x17
  1210 0168 34       		.uleb128 0x34
  1211 0169 00       		.byte	0
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccl1PQ25.s 			page 30
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccMQk4Va.s 			page 30
 
 
  1212 016a 03       		.uleb128 0x3
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccl1PQ25.s 			page 1
  1266 002b 70       		.byte	0x70
  1267 002c 00       		.sleb128 0
  1268 002d 35       		.byte	0x35
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccl1PQ25.s 			page 31
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccMQk4Va.s 			page 31
 
 
  1269 002e 25       		.byte	0x25
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccl1PQ25.s 			page 1
  1323 0004 14000000 		.4byte	.LFE3
  1324 0008 00000000 		.4byte	.LFB4
  1325 000c 0C000000 		.4byte	.LFE4
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccl1PQ25.s 			page 32
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccMQk4Va.s 			page 32
 
 
  1326 0010 00000000 		.4byte	.LFB5
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccl1PQ25.s 			page 1
  1363 0059 726F6A65 		.ascii	"roject1\\Design01.cydsn\000"
  1363      6374315C 
  1363      44657369 
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccl1PQ25.s 			page 33
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccMQk4Va.s 			page 33
 
 
  1363      676E3031 
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccl1PQ25.s 			page 1
  1385      7200
  1386              	.LASF15:
  1387 0108 72656738 		.ascii	"reg8\000"
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccl1PQ25.s 			page 34
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccMQk4Va.s 			page 34
 
 
  1387      00
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccl1PQ25.s 			page 1
  1406              	.LASF3:
  1407 0207 73686F72 		.ascii	"short int\000"
  1407      7420696E 
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccl1PQ25.s 			page 35
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccMQk4Va.s 			page 35
 
 
  1407      7400
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccl1PQ25.s 			page 1
  1433      00
  1434              	.LASF34:
  1435 02a4 68656172 		.ascii	"heartrate\000"
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccl1PQ25.s 			page 36
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccMQk4Va.s 			page 36
 
 
  1435      74726174 

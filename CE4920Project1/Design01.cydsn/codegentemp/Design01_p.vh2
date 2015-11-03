@@ -1,5 +1,5 @@
 -- Project:   Design01
--- Generated: 11/03/2015 12:23:00
+-- Generated: 11/03/2015 15:41:35
 -- PSoC Creator  3.2 SP1
 
 ENTITY Design01 IS
@@ -283,7 +283,7 @@ ARCHITECTURE __DEFAULT__ OF Design01 IS
     ATTRIBUTE lib_model OF Net_1542 : LABEL IS "macrocell1";
     ATTRIBUTE lib_model OF Net_1668 : LABEL IS "macrocell2";
     ATTRIBUTE lib_model OF PWM_Output(0) : LABEL IS "iocell2";
-    ATTRIBUTE Location OF PWM_Output(0) : LABEL IS "P6[6]";
+    ATTRIBUTE Location OF PWM_Output(0) : LABEL IS "P4[5]";
     ATTRIBUTE lib_model OF Pin_1(0) : LABEL IS "iocell3";
     ATTRIBUTE Location OF Pin_1(0) : LABEL IS "P6[3]";
     ATTRIBUTE lib_model OF STOP_REQUEST(0) : LABEL IS "iocell4";

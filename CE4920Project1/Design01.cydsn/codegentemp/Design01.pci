@@ -1,5 +1,5 @@
 # Design01
-# 2015-11-03 18:23:00Z
+# 2015-11-03 21:41:35Z
 
 # IO_0@[IOP=(1)][IoId=(0)] is reserved: SWDDebugEnabled
 dont_use_io iocell 1 0
@@ -12,7 +12,7 @@ dont_use_io iocell 15 0
 # IO_1@[IOP=(15)][IoId=(1)] is reserved: MhzXtalEnabled
 dont_use_io iocell 15 1
 set_io "HEARTRATE_ANALOG_IN(0)" iocell 4 3
-set_io "PWM_Output(0)" iocell 6 6
+set_io "PWM_Output(0)" iocell 4 5
 set_io "Pin_1(0)" iocell 6 3
 set_io "STOP_REQUEST(0)" iocell 15 5
 set_io "Speaker_Output(0)" iocell 6 0

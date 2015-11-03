@@ -14,7 +14,7 @@
 
 void Start_motor(){
     PWM_Start();
-    Move_motor(100);
+//    Move_motor(100);
 }
 
 void Motor_rampUp(int topSpeed){

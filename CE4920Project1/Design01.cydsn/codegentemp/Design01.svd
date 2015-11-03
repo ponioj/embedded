@@ -562,7 +562,7 @@
         <register>
           <name>HeartbeatCounter_STATUS_MASK</name>
           <description>UDB Status bits Interrupt Mask Enable Register</description>
-          <addressOffset>0x40006584</addressOffset>
+          <addressOffset>0x40006587</addressOffset>
           <size>8</size>
           <access>read-write</access>
           <resetValue>0</resetValue>
@@ -622,7 +622,7 @@
         <register>
           <name>HeartbeatCounter_STATUS_AUX_CTRL</name>
           <description>UDB Auxilliary Control Register</description>
-          <addressOffset>0x40006594</addressOffset>
+          <addressOffset>0x40006597</addressOffset>
           <size>8</size>
           <access>read-write</access>
           <resetValue>0</resetValue>
@@ -1149,7 +1149,7 @@
         <register>
           <name>ScanSpeed_CTL_REG</name>
           <description>CapSense Clock Prescaler Control Register</description>
-          <addressOffset>0x40006493</addressOffset>
+          <addressOffset>0x40006491</addressOffset>
           <size>8</size>
           <access>read-write</access>
           <resetValue>0</resetValue>

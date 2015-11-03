@@ -1,7 +1,7 @@
-C:\Users\JohnP\Desktop\embedded\trunk\CE4920Project1\Design01.cydsn\Design01.cyprj|8f3fb368-a67f-45fb-a7cf-7d84822100b9
-C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|4f4c2fcf-e19f-4f8a-b452-183310f35872
-C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|60a95594-c74b-40c9-9cd7-9bfab8451e5d
-C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|b3196114-6035-4f82-8520-1da0ffe05bd4
-C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|6e564144-a209-4166-93e7-f5483274281f
-C:\Users\JohnP\Desktop\embedded\trunk\CE4920Project1\USBFS_HID01.cydsn\USBFS_HID01.cyprj|19207177-ca4b-44dd-a540-3fdf34f75932
-C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\default\CyReferenceLibrary\CyReferenceLibrary.cylib\CyReferenceLibrary.cyprj|4d3e2018-8b45-4a4d-a56c-1d1d8299690b
+C:\Users\JohnP\Desktop\embedded\trunk\CE4920Project1\Design01.cydsn\Design01.cyprj|d7d27774-0177-402e-8b0f-2e51a1871b59
+C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|52e4df21-e86b-4f6c-a482-8e78cdc245ab
+C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|9a293ad5-91d0-45dd-844c-d22fcd15a555
+C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|09a4fea0-030c-40ce-b15f-b08db8a11f5b
+C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|5b03364d-113c-44b8-b760-84c22972d6df
+C:\Users\JohnP\Desktop\embedded\trunk\CE4920Project1\USBFS_HID01.cydsn\USBFS_HID01.cyprj|269e987b-b984-4ec3-9ee4-9f8985dc2862
+C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\default\CyReferenceLibrary\CyReferenceLibrary.cylib\CyReferenceLibrary.cyprj|62e3208b-e9f3-4491-bb7a-2216ed8264f4
