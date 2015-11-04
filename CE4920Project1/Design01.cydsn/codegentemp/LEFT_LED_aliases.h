@@ -1,5 +1,5 @@
 /*******************************************************************************
-* File Name: Pin_1.h  
+* File Name: LEFT_LED.h  
 * Version 2.10
 *
 * Description:
@@ -14,8 +14,8 @@
 * the software package with which this file was provided.
 *******************************************************************************/
 
-#if !defined(CY_PINS_Pin_1_ALIASES_H) /* Pins Pin_1_ALIASES_H */
-#define CY_PINS_Pin_1_ALIASES_H
+#if !defined(CY_PINS_LEFT_LED_ALIASES_H) /* Pins LEFT_LED_ALIASES_H */
+#define CY_PINS_LEFT_LED_ALIASES_H
 
 #include "cytypes.h"
 #include "cyfitter.h"
@@ -25,8 +25,8 @@
 /***************************************
 *              Constants        
 ***************************************/
-#define Pin_1_0		(Pin_1__0__PC)
+#define LEFT_LED_0		(LEFT_LED__0__PC)
 
-#endif /* End Pins Pin_1_ALIASES_H */
+#endif /* End Pins LEFT_LED_ALIASES_H */
 
 /* [] END OF FILE */

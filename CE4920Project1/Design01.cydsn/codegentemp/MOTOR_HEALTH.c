@@ -1,5 +1,5 @@
 /*******************************************************************************
-* File Name: Pin_1.c  
+* File Name: MOTOR_HEALTH.c  
 * Version 2.10
 *
 * Description:
@@ -15,15 +15,15 @@
 *******************************************************************************/
 
 #include "cytypes.h"
-#include "Pin_1.h"
+#include "MOTOR_HEALTH.h"
 
 /* APIs are not generated for P15[7:6] on PSoC 5 */
 #if !(CY_PSOC5A &&\
-	 Pin_1__PORT == 15 && ((Pin_1__MASK & 0xC0) != 0))
+	 MOTOR_HEALTH__PORT == 15 && ((MOTOR_HEALTH__MASK & 0xC0) != 0))
 
 
 /*******************************************************************************
-* Function Name: Pin_1_Write
+* Function Name: MOTOR_HEALTH_Write
 ********************************************************************************
 *
 * Summary:
@@ -36,15 +36,15 @@
 *  None
 *  
 *******************************************************************************/
-void Pin_1_Write(uint8 value) 
+void MOTOR_HEALTH_Write(uint8 value) 
 {
-    uint8 staticBits = (Pin_1_DR & (uint8)(~Pin_1_MASK));
-    Pin_1_DR = staticBits | ((uint8)(value << Pin_1_SHIFT) & Pin_1_MASK);
+    uint8 staticBits = (MOTOR_HEALTH_DR & (uint8)(~MOTOR_HEALTH_MASK));
+    MOTOR_HEALTH_DR = staticBits | ((uint8)(value << MOTOR_HEALTH_SHIFT) & MOTOR_HEALTH_MASK);
 }
 
 
 /*******************************************************************************
-* Function Name: Pin_1_SetDriveMode
+* Function Name: MOTOR_HEALTH_SetDriveMode
 ********************************************************************************
 *
 * Summary:
@@ -53,27 +53,27 @@ void Pin_1_Write(uint8 value)
 * Parameters:  
 *  mode:  Change the pins to one of the following drive modes.
 *
-*  Pin_1_DM_STRONG     Strong Drive 
-*  Pin_1_DM_OD_HI      Open Drain, Drives High 
-*  Pin_1_DM_OD_LO      Open Drain, Drives Low 
-*  Pin_1_DM_RES_UP     Resistive Pull Up 
-*  Pin_1_DM_RES_DWN    Resistive Pull Down 
-*  Pin_1_DM_RES_UPDWN  Resistive Pull Up/Down 
-*  Pin_1_DM_DIG_HIZ    High Impedance Digital 
-*  Pin_1_DM_ALG_HIZ    High Impedance Analog 
+*  MOTOR_HEALTH_DM_STRONG     Strong Drive 
+*  MOTOR_HEALTH_DM_OD_HI      Open Drain, Drives High 
+*  MOTOR_HEALTH_DM_OD_LO      Open Drain, Drives Low 
+*  MOTOR_HEALTH_DM_RES_UP     Resistive Pull Up 
+*  MOTOR_HEALTH_DM_RES_DWN    Resistive Pull Down 
+*  MOTOR_HEALTH_DM_RES_UPDWN  Resistive Pull Up/Down 
+*  MOTOR_HEALTH_DM_DIG_HIZ    High Impedance Digital 
+*  MOTOR_HEALTH_DM_ALG_HIZ    High Impedance Analog 
 *
 * Return: 
 *  None
 *
 *******************************************************************************/
-void Pin_1_SetDriveMode(uint8 mode) 
+void MOTOR_HEALTH_SetDriveMode(uint8 mode) 
 {
-	CyPins_SetPinDriveMode(Pin_1_0, mode);
+	CyPins_SetPinDriveMode(MOTOR_HEALTH_0, mode);
 }
 
 
 /*******************************************************************************
-* Function Name: Pin_1_Read
+* Function Name: MOTOR_HEALTH_Read
 ********************************************************************************
 *
 * Summary:
@@ -87,17 +87,17 @@ void Pin_1_SetDriveMode(uint8 mode)
 *  Returns the current value of the Digital Port as a right justified number
 *  
 * Note:
-*  Macro Pin_1_ReadPS calls this function. 
+*  Macro MOTOR_HEALTH_ReadPS calls this function. 
 *  
 *******************************************************************************/
-uint8 Pin_1_Read(void) 
+uint8 MOTOR_HEALTH_Read(void) 
 {
-    return (Pin_1_PS & Pin_1_MASK) >> Pin_1_SHIFT;
+    return (MOTOR_HEALTH_PS & MOTOR_HEALTH_MASK) >> MOTOR_HEALTH_SHIFT;
 }
 
 
 /*******************************************************************************
-* Function Name: Pin_1_ReadDataReg
+* Function Name: MOTOR_HEALTH_ReadDataReg
 ********************************************************************************
 *
 * Summary:
@@ -110,17 +110,17 @@ uint8 Pin_1_Read(void)
 *  Returns the current value assigned to the Digital Port's data output register
 *  
 *******************************************************************************/
-uint8 Pin_1_ReadDataReg(void) 
+uint8 MOTOR_HEALTH_ReadDataReg(void) 
 {
-    return (Pin_1_DR & Pin_1_MASK) >> Pin_1_SHIFT;
+    return (MOTOR_HEALTH_DR & MOTOR_HEALTH_MASK) >> MOTOR_HEALTH_SHIFT;
 }
 
 
 /* If Interrupts Are Enabled for this Pins component */ 
-#if defined(Pin_1_INTSTAT) 
+#if defined(MOTOR_HEALTH_INTSTAT) 
 
     /*******************************************************************************
-    * Function Name: Pin_1_ClearInterrupt
+    * Function Name: MOTOR_HEALTH_ClearInterrupt
     ********************************************************************************
     * Summary:
     *  Clears any active interrupts attached to port and returns the value of the 
@@ -133,9 +133,9 @@ uint8 Pin_1_ReadDataReg(void)
     *  Returns the value of the interrupt status register
     *  
     *******************************************************************************/
-    uint8 Pin_1_ClearInterrupt(void) 
+    uint8 MOTOR_HEALTH_ClearInterrupt(void) 
     {
-        return (Pin_1_INTSTAT & Pin_1_MASK) >> Pin_1_SHIFT;
+        return (MOTOR_HEALTH_INTSTAT & MOTOR_HEALTH_MASK) >> MOTOR_HEALTH_SHIFT;
     }
 
 #endif /* If Interrupts Are Enabled for this Pins component */ 
