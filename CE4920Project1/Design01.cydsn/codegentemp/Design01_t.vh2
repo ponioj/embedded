@@ -1,13 +1,17 @@
--- Project:   C:\Users\JohnP\Desktop\embedded\trunk\CE4920Project1\Design01.cydsn\Design01.cyprj
--- Generated: 11/03/2015 15:41:40
+-- Project:   C:\repositories\embedded\trunk\CE4920Project1\Design01.cydsn\Design01.cyprj
+-- Generated: 11/03/2015 21:16:01
 -- PSoC Creator  3.2 SP1
 
 ENTITY Design01 IS
     PORT(
+        HEARTRATE_ANALOG_IN(0)_PAD : INOUT std_ulogic;
+        HEARTRATE_HEALTH(0)_PAD : IN std_ulogic;
+        LEFT_LED(0)_PAD : OUT std_ulogic;
+        MOTOR_HEALTH(0)_PAD : IN std_ulogic;
         PWM_Output(0)_PAD : OUT std_ulogic;
-        Pin_1(0)_PAD : OUT std_ulogic;
         STOP_REQUEST(0)_PAD : IN std_ulogic;
         Speaker_Output(0)_PAD : OUT std_ulogic;
+        UI_HEALTH(0)_PAD : IN std_ulogic;
         \LCD:LCDPort(0)_PAD\ : OUT std_ulogic;
         \LCD:LCDPort(1)_PAD\ : OUT std_ulogic;
         \LCD:LCDPort(2)_PAD\ : OUT std_ulogic;
@@ -28,6 +32,8 @@ END Design01;
 ARCHITECTURE __DEFAULT__ OF Design01 IS
     SIGNAL ClockBlock_100k : bit;
     SIGNAL ClockBlock_100k__SYNC_OUT : bit;
+    SIGNAL ClockBlock_100k__SYNC_OUT_1 : bit;
+    SIGNAL ClockBlock_100k__SYNC_OUT_2 : bit;
     SIGNAL ClockBlock_1k : bit;
     SIGNAL ClockBlock_32k : bit;
     SIGNAL ClockBlock_BUS_CLK : bit;
@@ -41,6 +47,9 @@ ARCHITECTURE __DEFAULT__ OF Design01 IS
     SIGNAL ClockBlock_XTAL : bit;
     SIGNAL ClockBlock_XTAL_32KHZ : bit;
     SIGNAL HEARTRATE_ANALOG_IN(0)__PA : bit;
+    SIGNAL HEARTRATE_HEALTH(0)__PA : bit;
+    SIGNAL LEFT_LED(0)__PA : bit;
+    SIGNAL MOTOR_HEALTH(0)__PA : bit;
     SIGNAL Net_1032 : bit;
     SIGNAL Net_1200 : bit;
     ATTRIBUTE global_signal OF Net_1200 : SIGNAL IS true;
@@ -49,18 +58,20 @@ ARCHITECTURE __DEFAULT__ OF Design01 IS
     SIGNAL Net_1542 : bit;
     ATTRIBUTE placement_force OF Net_1542 : SIGNAL IS "U(2,0,A)1";
     SIGNAL Net_1668 : bit;
-    ATTRIBUTE placement_force OF Net_1668 : SIGNAL IS "U(3,2,B)3";
+    ATTRIBUTE placement_force OF Net_1668 : SIGNAL IS "U(3,5,A)3";
     SIGNAL Net_1675 : bit;
+    SIGNAL Net_1804 : bit;
+    ATTRIBUTE placement_force OF Net_1804 : SIGNAL IS "U(3,2,B)3";
     SIGNAL Net_522 : bit;
     SIGNAL Net_523 : bit;
     SIGNAL PWM_Output(0)__PA : bit;
-    SIGNAL Pin_1(0)__PA : bit;
     SIGNAL STOP_REQUEST(0)__PA : bit;
     SIGNAL Speaker_Output(0)__PA : bit;
+    SIGNAL UI_HEALTH(0)__PA : bit;
     SIGNAL \CapSense:ClockGen:clock_detect\ : bit;
-    ATTRIBUTE placement_force OF \CapSense:ClockGen:clock_detect\ : SIGNAL IS "U(3,3,A)2";
+    ATTRIBUTE placement_force OF \CapSense:ClockGen:clock_detect\ : SIGNAL IS "U(0,5,A)2";
     SIGNAL \CapSense:ClockGen:clock_detect_reg\ : bit;
-    ATTRIBUTE placement_force OF \CapSense:ClockGen:clock_detect_reg\ : SIGNAL IS "U(3,3,A)0";
+    ATTRIBUTE placement_force OF \CapSense:ClockGen:clock_detect_reg\ : SIGNAL IS "U(0,5,B)2";
     SIGNAL \CapSense:ClockGen:cmsb_reg\ : bit;
     SIGNAL \CapSense:ClockGen:control_0\ : bit;
     SIGNAL \CapSense:ClockGen:control_1\ : bit;
@@ -72,72 +83,72 @@ ARCHITECTURE __DEFAULT__ OF Design01 IS
     SIGNAL \CapSense:ClockGen:control_7\ : bit;
     SIGNAL \CapSense:ClockGen:cs_addr_1\ : bit;
     SIGNAL \CapSense:ClockGen:cstate_0\\D\ : bit;
-    ATTRIBUTE placement_force OF \CapSense:ClockGen:cstate_0\\D\ : SIGNAL IS "U(3,4,A)2";
+    ATTRIBUTE placement_force OF \CapSense:ClockGen:cstate_0\\D\ : SIGNAL IS "U(0,5,A)0";
     SIGNAL \CapSense:ClockGen:cstate_1\\D\ : bit;
-    ATTRIBUTE placement_force OF \CapSense:ClockGen:cstate_1\\D\ : SIGNAL IS "U(3,3,B)0";
+    ATTRIBUTE placement_force OF \CapSense:ClockGen:cstate_1\\D\ : SIGNAL IS "U(0,4,B)0";
     SIGNAL \CapSense:ClockGen:cstate_2\ : bit;
-    ATTRIBUTE placement_force OF \CapSense:ClockGen:cstate_2\ : SIGNAL IS "U(3,3,B)2";
+    ATTRIBUTE placement_force OF \CapSense:ClockGen:cstate_2\ : SIGNAL IS "U(0,4,A)3";
     SIGNAL \CapSense:ClockGen:cstate_2\\D\ : bit;
-    ATTRIBUTE placement_force OF \CapSense:ClockGen:cstate_2\\D\ : SIGNAL IS "U(3,3,A)3";
+    ATTRIBUTE placement_force OF \CapSense:ClockGen:cstate_2\\D\ : SIGNAL IS "U(0,4,A)0";
     SIGNAL \CapSense:ClockGen:inter_reset\ : bit;
-    ATTRIBUTE placement_force OF \CapSense:ClockGen:inter_reset\ : SIGNAL IS "U(3,4,A)0";
+    ATTRIBUTE placement_force OF \CapSense:ClockGen:inter_reset\ : SIGNAL IS "U(0,5,B)3";
     SIGNAL \CapSense:ClockGen:ppulse_equal\ : bit;
     SIGNAL \CapSense:ClockGen:ppulse_less\ : bit;
     SIGNAL \HeartbeatCounter:CounterUDB:sC32:counterdp:u0.ce0__sig\ : bit;
     SIGNAL \CapSense:ClockGen:tmp_ppulse_dly\ : bit;
-    ATTRIBUTE placement_force OF \CapSense:ClockGen:tmp_ppulse_dly\ : SIGNAL IS "U(3,3,B)1";
+    ATTRIBUTE placement_force OF \CapSense:ClockGen:tmp_ppulse_dly\ : SIGNAL IS "U(0,5,A)1";
     SIGNAL \CapSense:ClockGen:tmp_ppulse_reg\ : bit;
-    ATTRIBUTE placement_force OF \CapSense:ClockGen:tmp_ppulse_reg\ : SIGNAL IS "U(3,4,A)3";
+    ATTRIBUTE placement_force OF \CapSense:ClockGen:tmp_ppulse_reg\ : SIGNAL IS "U(0,5,A)3";
     SIGNAL \CapSense:ClockGen:tmp_ppulse_udb\ : bit;
-    ATTRIBUTE placement_force OF \CapSense:ClockGen:tmp_ppulse_udb\ : SIGNAL IS "U(3,4,B)0";
+    ATTRIBUTE placement_force OF \CapSense:ClockGen:tmp_ppulse_udb\ : SIGNAL IS "U(0,5,B)0";
     SIGNAL \\\CapSense:CmodCH0(0)\\__PA\ : bit;
     SIGNAL \CapSense:Cmp_CH0\ : bit;
     SIGNAL \CapSense:DigitalClk\ : bit;
     SIGNAL \CapSense:IdacCH0:Net_123\ : bit;
-    ATTRIBUTE placement_force OF \CapSense:IdacCH0:Net_123\ : SIGNAL IS "U(2,2,A)3";
+    ATTRIBUTE placement_force OF \CapSense:IdacCH0:Net_123\ : SIGNAL IS "U(2,1,A)0";
     SIGNAL \CapSense:Ioff_CH0\ : bit;
-    ATTRIBUTE placement_force OF \CapSense:Ioff_CH0\ : SIGNAL IS "U(2,3,B)0";
+    ATTRIBUTE placement_force OF \CapSense:Ioff_CH0\ : SIGNAL IS "U(2,1,B)0";
     SIGNAL \CapSense:MeasureCH0:cmp_in_reg\ : bit;
     SIGNAL \CapSense:MeasureCH0:cnt_enable\ : bit;
-    ATTRIBUTE placement_force OF \CapSense:MeasureCH0:cnt_enable\ : SIGNAL IS "U(2,5,B)0";
+    ATTRIBUTE placement_force OF \CapSense:MeasureCH0:cnt_enable\ : SIGNAL IS "U(2,2,A)2";
     SIGNAL \CapSense:MeasureCH0:cs_addr_cnt_0\ : bit;
-    ATTRIBUTE placement_force OF \CapSense:MeasureCH0:cs_addr_cnt_0\ : SIGNAL IS "U(2,5,B)2";
+    ATTRIBUTE placement_force OF \CapSense:MeasureCH0:cs_addr_cnt_0\ : SIGNAL IS "U(2,2,B)2";
     SIGNAL \CapSense:MeasureCH0:cs_addr_cnt_1\ : bit;
-    ATTRIBUTE placement_force OF \CapSense:MeasureCH0:cs_addr_cnt_1\ : SIGNAL IS "U(2,5,B)3";
+    ATTRIBUTE placement_force OF \CapSense:MeasureCH0:cs_addr_cnt_1\ : SIGNAL IS "U(2,2,B)3";
     SIGNAL \CapSense:MeasureCH0:cs_addr_cnt_2\ : bit;
-    ATTRIBUTE placement_force OF \CapSense:MeasureCH0:cs_addr_cnt_2\ : SIGNAL IS "U(2,5,B)1";
+    ATTRIBUTE placement_force OF \CapSense:MeasureCH0:cs_addr_cnt_2\ : SIGNAL IS "U(2,2,B)0";
     SIGNAL \CapSense:MeasureCH0:cs_addr_win_0\ : bit;
-    ATTRIBUTE placement_force OF \CapSense:MeasureCH0:cs_addr_win_0\ : SIGNAL IS "U(2,4,B)3";
+    ATTRIBUTE placement_force OF \CapSense:MeasureCH0:cs_addr_win_0\ : SIGNAL IS "U(2,4,A)3";
     SIGNAL \CapSense:MeasureCH0:cs_addr_win_1\ : bit;
-    ATTRIBUTE placement_force OF \CapSense:MeasureCH0:cs_addr_win_1\ : SIGNAL IS "U(2,4,B)2";
+    ATTRIBUTE placement_force OF \CapSense:MeasureCH0:cs_addr_win_1\ : SIGNAL IS "U(2,4,A)2";
     SIGNAL \CapSense:MeasureCH0:cs_addr_win_2\ : bit;
-    ATTRIBUTE placement_force OF \CapSense:MeasureCH0:cs_addr_win_2\ : SIGNAL IS "U(2,4,B)0";
+    ATTRIBUTE placement_force OF \CapSense:MeasureCH0:cs_addr_win_2\ : SIGNAL IS "U(2,4,A)1";
     SIGNAL \CapSense:MeasureCH0:int\ : bit;
-    ATTRIBUTE placement_force OF \CapSense:MeasureCH0:int\ : SIGNAL IS "U(2,4,A)2";
+    ATTRIBUTE placement_force OF \CapSense:MeasureCH0:int\ : SIGNAL IS "U(2,4,A)0";
     SIGNAL \CapSense:MeasureCH0:win_enable\ : bit;
-    ATTRIBUTE placement_force OF \CapSense:MeasureCH0:win_enable\ : SIGNAL IS "U(2,4,A)3";
+    ATTRIBUTE placement_force OF \CapSense:MeasureCH0:win_enable\ : SIGNAL IS "U(2,3,A)3";
     SIGNAL \CapSense:MeasureCH0:wndState_0\ : bit;
-    ATTRIBUTE placement_force OF \CapSense:MeasureCH0:wndState_0\ : SIGNAL IS "U(2,3,B)2";
+    ATTRIBUTE placement_force OF \CapSense:MeasureCH0:wndState_0\ : SIGNAL IS "U(2,5,B)0";
     SIGNAL \CapSense:MeasureCH0:wndState_0\\D\ : bit;
-    ATTRIBUTE placement_force OF \CapSense:MeasureCH0:wndState_0\\D\ : SIGNAL IS "U(2,3,A)0";
+    ATTRIBUTE placement_force OF \CapSense:MeasureCH0:wndState_0\\D\ : SIGNAL IS "U(2,5,A)0";
     SIGNAL \CapSense:MeasureCH0:wndState_1\ : bit;
-    ATTRIBUTE placement_force OF \CapSense:MeasureCH0:wndState_1\ : SIGNAL IS "U(3,5,A)2";
+    ATTRIBUTE placement_force OF \CapSense:MeasureCH0:wndState_1\ : SIGNAL IS "U(2,5,A)1";
     SIGNAL \CapSense:MeasureCH0:wndState_1\\D\ : bit;
-    ATTRIBUTE placement_force OF \CapSense:MeasureCH0:wndState_1\\D\ : SIGNAL IS "U(3,5,B)3";
+    ATTRIBUTE placement_force OF \CapSense:MeasureCH0:wndState_1\\D\ : SIGNAL IS "U(2,3,A)2";
     SIGNAL \CapSense:MeasureCH0:wndState_2\ : bit;
-    ATTRIBUTE placement_force OF \CapSense:MeasureCH0:wndState_2\ : SIGNAL IS "U(2,5,A)3";
+    ATTRIBUTE placement_force OF \CapSense:MeasureCH0:wndState_2\ : SIGNAL IS "U(2,3,B)1";
     SIGNAL \CapSense:MeasureCH0:wndState_2\\D\ : bit;
-    ATTRIBUTE placement_force OF \CapSense:MeasureCH0:wndState_2\\D\ : SIGNAL IS "U(2,5,A)2";
+    ATTRIBUTE placement_force OF \CapSense:MeasureCH0:wndState_2\\D\ : SIGNAL IS "U(2,5,B)1";
     SIGNAL \CapSense:MeasureCH0:wndState_3\\D\ : bit;
-    ATTRIBUTE placement_force OF \CapSense:MeasureCH0:wndState_3\\D\ : SIGNAL IS "U(2,4,A)0";
+    ATTRIBUTE placement_force OF \CapSense:MeasureCH0:wndState_3\\D\ : SIGNAL IS "U(2,4,B)1";
     SIGNAL \CapSense:MeasureCH0:zc0\ : bit;
     SIGNAL \CapSense:MeasureCH0:zc1\ : bit;
     SIGNAL \CapSense:MeasureCH0:zw0\ : bit;
     SIGNAL \CapSense:MeasureCH0:zw1\ : bit;
     SIGNAL \CapSense:Net_1350\ : bit;
-    ATTRIBUTE placement_force OF \CapSense:Net_1350\ : SIGNAL IS "U(3,3,B)3";
+    ATTRIBUTE placement_force OF \CapSense:Net_1350\ : SIGNAL IS "U(1,4,A)0";
     SIGNAL \CapSense:Net_1603\ : bit;
-    ATTRIBUTE placement_force OF \CapSense:Net_1603\ : SIGNAL IS "U(2,4,A)1";
+    ATTRIBUTE placement_force OF \CapSense:Net_1603\ : SIGNAL IS "U(2,3,A)1";
     SIGNAL \\\CapSense:PortCH0(0)\\__PA\ : bit;
     SIGNAL \\\CapSense:PortCH0(1)\\__PA\ : bit;
     SIGNAL \\\CapSense:PortCH0(2)\\__PA\ : bit;
@@ -146,13 +157,13 @@ ARCHITECTURE __DEFAULT__ OF Design01 IS
     SIGNAL \\\CapSense:PortCH0(5)\\__PA\ : bit;
     SIGNAL \\\CapSense:PortCH0(6)\\__PA\ : bit;
     SIGNAL \CapSense:PreChargeClk\ : bit;
-    ATTRIBUTE placement_force OF \CapSense:PreChargeClk\ : SIGNAL IS "U(3,3,A)1";
+    ATTRIBUTE placement_force OF \CapSense:PreChargeClk\ : SIGNAL IS "U(0,4,A)2";
     SIGNAL \CapSense:clk\ : bit;
     ATTRIBUTE udbclken_assigned OF \CapSense:clk\ : SIGNAL IS "True";
     ATTRIBUTE global_signal OF \CapSense:clk\ : SIGNAL IS true;
     SIGNAL \CapSense:clk_local\ : bit;
     SIGNAL \CapSense:mrst\ : bit;
-    ATTRIBUTE placement_force OF \CapSense:mrst\ : SIGNAL IS "U(3,4,A)1";
+    ATTRIBUTE placement_force OF \CapSense:mrst\ : SIGNAL IS "U(0,4,B)1";
     SIGNAL \HeartbeatCounter:CounterUDB:cmp_out_i\ : bit;
     SIGNAL \HeartbeatCounter:CounterUDB:control_0\ : bit;
     SIGNAL \HeartbeatCounter:CounterUDB:control_1\ : bit;
@@ -169,25 +180,25 @@ ARCHITECTURE __DEFAULT__ OF Design01 IS
     SIGNAL \HeartbeatCounter:CounterUDB:final_enable\ : bit;
     ATTRIBUTE placement_force OF \HeartbeatCounter:CounterUDB:final_enable\ : SIGNAL IS "U(2,0,B)0";
     SIGNAL \HeartbeatCounter:CounterUDB:reload\ : bit;
-    ATTRIBUTE placement_force OF \HeartbeatCounter:CounterUDB:reload\ : SIGNAL IS "U(2,0,A)0";
+    ATTRIBUTE placement_force OF \HeartbeatCounter:CounterUDB:reload\ : SIGNAL IS "U(2,0,A)2";
     SIGNAL \HeartbeatCounter:CounterUDB:sC32:counterdp:u1.ce0__sig\ : bit;
     SIGNAL \HeartbeatCounter:CounterUDB:sC32:counterdp:u2.ce0__sig\ : bit;
     SIGNAL \PWM:PWMUDB:sP16:pwmdp:u0.ce0__sig\ : bit;
     SIGNAL \HeartbeatCounter:CounterUDB:status_0\ : bit;
-    ATTRIBUTE placement_force OF \HeartbeatCounter:CounterUDB:status_0\ : SIGNAL IS "U(2,1,B)3";
+    ATTRIBUTE placement_force OF \HeartbeatCounter:CounterUDB:status_0\ : SIGNAL IS "U(2,0,B)3";
     SIGNAL \HeartbeatCounter:CounterUDB:status_1\ : bit;
     SIGNAL \HeartbeatCounter:CounterUDB:status_3\ : bit;
     ATTRIBUTE placement_force OF \HeartbeatCounter:CounterUDB:status_3\ : SIGNAL IS "U(2,1,A)3";
     SIGNAL \HeartbeatCounter:CounterUDB:status_5\ : bit;
     SIGNAL \HeartbeatCounter:CounterUDB:status_6\ : bit;
     SIGNAL \HeartbeatCounter:CounterUDB:tc_i\ : bit;
-    ATTRIBUTE placement_force OF \HeartbeatCounter:CounterUDB:tc_i\ : SIGNAL IS "U(2,1,A)1";
+    ATTRIBUTE placement_force OF \HeartbeatCounter:CounterUDB:tc_i\ : SIGNAL IS "U(3,1,B)3";
     SIGNAL \HeartbeatCounter:CounterUDB:tc_reg_i\ : bit;
-    ATTRIBUTE placement_force OF \HeartbeatCounter:CounterUDB:tc_reg_i\ : SIGNAL IS "U(2,1,A)2";
+    ATTRIBUTE placement_force OF \HeartbeatCounter:CounterUDB:tc_reg_i\ : SIGNAL IS "U(3,1,B)0";
     SIGNAL \HeartbeatCounter:CounterUDB:underflow\ : bit;
-    ATTRIBUTE placement_force OF \HeartbeatCounter:CounterUDB:underflow\ : SIGNAL IS "U(2,1,A)0";
+    ATTRIBUTE placement_force OF \HeartbeatCounter:CounterUDB:underflow\ : SIGNAL IS "U(2,1,A)2";
     SIGNAL \HeartbeatCounter:CounterUDB:underflow_reg_i\ : bit;
-    ATTRIBUTE placement_force OF \HeartbeatCounter:CounterUDB:underflow_reg_i\ : SIGNAL IS "U(2,1,B)0";
+    ATTRIBUTE placement_force OF \HeartbeatCounter:CounterUDB:underflow_reg_i\ : SIGNAL IS "U(2,1,B)1";
     SIGNAL \\\LCD:LCDPort(0)\\__PA\ : bit;
     SIGNAL \\\LCD:LCDPort(1)\\__PA\ : bit;
     SIGNAL \\\LCD:LCDPort(2)\\__PA\ : bit;
@@ -197,13 +208,13 @@ ARCHITECTURE __DEFAULT__ OF Design01 IS
     SIGNAL \\\LCD:LCDPort(6)\\__PA\ : bit;
     SIGNAL \PGA_1:Net_41\ : bit;
     SIGNAL \PWM:PWMUDB:MODULE_1:g2:a0:g1:z1:s0:g1:u0:c_1\ : bit;
-    ATTRIBUTE placement_force OF \PWM:PWMUDB:MODULE_1:g2:a0:g1:z1:s0:g1:u0:c_1\ : SIGNAL IS "U(3,0,A)2";
+    ATTRIBUTE placement_force OF \PWM:PWMUDB:MODULE_1:g2:a0:g1:z1:s0:g1:u0:c_1\ : SIGNAL IS "U(3,4,A)2";
     SIGNAL \PWM:PWMUDB:MODULE_1:g2:a0:g1:z1:s0:g1:u0:c_2\ : bit;
-    ATTRIBUTE placement_force OF \PWM:PWMUDB:MODULE_1:g2:a0:g1:z1:s0:g1:u0:c_2\ : SIGNAL IS "U(3,0,B)3";
+    ATTRIBUTE placement_force OF \PWM:PWMUDB:MODULE_1:g2:a0:g1:z1:s0:g1:u0:c_2\ : SIGNAL IS "U(2,4,B)0";
     SIGNAL \PWM:PWMUDB:MODULE_1:g2:a0:s_0\ : bit;
-    ATTRIBUTE placement_force OF \PWM:PWMUDB:MODULE_1:g2:a0:s_0\ : SIGNAL IS "U(3,0,B)2";
+    ATTRIBUTE placement_force OF \PWM:PWMUDB:MODULE_1:g2:a0:s_0\ : SIGNAL IS "U(3,4,A)1";
     SIGNAL \PWM:PWMUDB:MODULE_1:g2:a0:s_1\ : bit;
-    ATTRIBUTE placement_force OF \PWM:PWMUDB:MODULE_1:g2:a0:s_1\ : SIGNAL IS "U(3,0,A)3";
+    ATTRIBUTE placement_force OF \PWM:PWMUDB:MODULE_1:g2:a0:s_1\ : SIGNAL IS "U(3,4,A)3";
     SIGNAL \PWM:PWMUDB:cmp1_less\ : bit;
     SIGNAL \PWM:PWMUDB:control_0\ : bit;
     SIGNAL \PWM:PWMUDB:control_1\ : bit;
@@ -214,34 +225,35 @@ ARCHITECTURE __DEFAULT__ OF Design01 IS
     SIGNAL \PWM:PWMUDB:control_6\ : bit;
     SIGNAL \PWM:PWMUDB:control_7\ : bit;
     SIGNAL \PWM:PWMUDB:dith_count_0\ : bit;
-    ATTRIBUTE placement_force OF \PWM:PWMUDB:dith_count_0\ : SIGNAL IS "U(3,0,A)1";
+    ATTRIBUTE placement_force OF \PWM:PWMUDB:dith_count_0\ : SIGNAL IS "U(3,4,B)3";
     SIGNAL \PWM:PWMUDB:dith_count_0\\D\ : bit;
-    ATTRIBUTE placement_force OF \PWM:PWMUDB:dith_count_0\\D\ : SIGNAL IS "U(3,0,A)0";
+    ATTRIBUTE placement_force OF \PWM:PWMUDB:dith_count_0\\D\ : SIGNAL IS "U(3,4,A)0";
     SIGNAL \PWM:PWMUDB:dith_count_1\ : bit;
-    ATTRIBUTE placement_force OF \PWM:PWMUDB:dith_count_1\ : SIGNAL IS "U(3,0,B)1";
+    ATTRIBUTE placement_force OF \PWM:PWMUDB:dith_count_1\ : SIGNAL IS "U(3,4,B)1";
     SIGNAL \PWM:PWMUDB:dith_count_1\\D\ : bit;
-    ATTRIBUTE placement_force OF \PWM:PWMUDB:dith_count_1\\D\ : SIGNAL IS "U(3,0,B)0";
+    ATTRIBUTE placement_force OF \PWM:PWMUDB:dith_count_1\\D\ : SIGNAL IS "U(3,4,B)0";
     SIGNAL \PWM:PWMUDB:ltch_kill_reg\ : bit;
-    ATTRIBUTE placement_force OF \PWM:PWMUDB:ltch_kill_reg\ : SIGNAL IS "U(2,2,A)2";
+    ATTRIBUTE placement_force OF \PWM:PWMUDB:ltch_kill_reg\ : SIGNAL IS "U(2,4,B)3";
     SIGNAL \PWM:PWMUDB:ltch_kill_reg\\D\ : bit;
-    ATTRIBUTE placement_force OF \PWM:PWMUDB:ltch_kill_reg\\D\ : SIGNAL IS "U(2,3,A)3";
+    ATTRIBUTE placement_force OF \PWM:PWMUDB:ltch_kill_reg\\D\ : SIGNAL IS "U(2,3,B)2";
     SIGNAL \PWM:PWMUDB:pwm_i\ : bit;
-    ATTRIBUTE placement_force OF \PWM:PWMUDB:pwm_i\ : SIGNAL IS "U(3,2,A)0";
+    ATTRIBUTE placement_force OF \PWM:PWMUDB:pwm_i\ : SIGNAL IS "U(3,5,A)2";
     SIGNAL \PWM:PWMUDB:pwm_temp\ : bit;
-    ATTRIBUTE placement_force OF \PWM:PWMUDB:pwm_temp\ : SIGNAL IS "U(2,2,B)0";
+    ATTRIBUTE placement_force OF \PWM:PWMUDB:pwm_temp\ : SIGNAL IS "U(3,5,B)0";
     SIGNAL \PWM:PWMUDB:runmode_enable\ : bit;
-    ATTRIBUTE placement_force OF \PWM:PWMUDB:runmode_enable\ : SIGNAL IS "U(2,2,A)0";
+    ATTRIBUTE placement_force OF \PWM:PWMUDB:runmode_enable\ : SIGNAL IS "U(3,5,A)0";
     SIGNAL \PWM:PWMUDB:runmode_enable\\D\ : bit;
-    ATTRIBUTE placement_force OF \PWM:PWMUDB:runmode_enable\\D\ : SIGNAL IS "U(2,2,A)1";
+    ATTRIBUTE placement_force OF \PWM:PWMUDB:runmode_enable\\D\ : SIGNAL IS "U(3,5,A)1";
+    SIGNAL \WDT_Timer:TimerUDB:sT24:timerdp:u0.ce0__sig\ : bit;
     SIGNAL \PWM:PWMUDB:sc_kill_tmp\ : bit;
-    ATTRIBUTE placement_force OF \PWM:PWMUDB:sc_kill_tmp\ : SIGNAL IS "U(3,1,B)0";
+    ATTRIBUTE placement_force OF \PWM:PWMUDB:sc_kill_tmp\ : SIGNAL IS "U(3,5,B)2";
     SIGNAL \PWM:PWMUDB:sc_kill_tmp\\D\ : bit;
-    ATTRIBUTE placement_force OF \PWM:PWMUDB:sc_kill_tmp\\D\ : SIGNAL IS "U(3,1,B)2";
+    ATTRIBUTE placement_force OF \PWM:PWMUDB:sc_kill_tmp\\D\ : SIGNAL IS "U(3,5,B)3";
     SIGNAL \PWM:PWMUDB:tc_i\ : bit;
     SIGNAL \PWM:PWMUDB:tc_i_reg\ : bit;
-    ATTRIBUTE placement_force OF \PWM:PWMUDB:tc_i_reg\ : SIGNAL IS "U(2,2,B)2";
+    ATTRIBUTE placement_force OF \PWM:PWMUDB:tc_i_reg\ : SIGNAL IS "U(3,3,B)3";
     SIGNAL \PWM:PWMUDB:tc_i_reg\\D\ : bit;
-    ATTRIBUTE placement_force OF \PWM:PWMUDB:tc_i_reg\\D\ : SIGNAL IS "U(2,2,B)1";
+    ATTRIBUTE placement_force OF \PWM:PWMUDB:tc_i_reg\\D\ : SIGNAL IS "U(3,3,B)2";
     SIGNAL \\\USBUART:Dm(0)\\__PA\ : bit;
     SIGNAL \\\USBUART:Dp(0)\\__PA\ : bit;
     SIGNAL \USBUART:Net_1010\ : bit;
@@ -266,15 +278,37 @@ ARCHITECTURE __DEFAULT__ OF Design01 IS
     SIGNAL \USBUART:ept_int_6\ : bit;
     SIGNAL \USBUART:ept_int_7\ : bit;
     SIGNAL \USBUART:ept_int_8\ : bit;
+    SIGNAL \WDT_Timer:TimerUDB:capture_out_reg_i\ : bit;
+    ATTRIBUTE placement_force OF \WDT_Timer:TimerUDB:capture_out_reg_i\ : SIGNAL IS "U(3,1,A)0";
+    SIGNAL \WDT_Timer:TimerUDB:control_0\ : bit;
+    SIGNAL \WDT_Timer:TimerUDB:control_1\ : bit;
+    SIGNAL \WDT_Timer:TimerUDB:control_2\ : bit;
+    SIGNAL \WDT_Timer:TimerUDB:control_3\ : bit;
+    SIGNAL \WDT_Timer:TimerUDB:control_4\ : bit;
+    SIGNAL \WDT_Timer:TimerUDB:control_5\ : bit;
+    SIGNAL \WDT_Timer:TimerUDB:control_6\ : bit;
+    SIGNAL \WDT_Timer:TimerUDB:control_7\ : bit;
+    SIGNAL \WDT_Timer:TimerUDB:hwEnable_reg\ : bit;
+    ATTRIBUTE placement_force OF \WDT_Timer:TimerUDB:hwEnable_reg\ : SIGNAL IS "U(3,2,A)3";
+    SIGNAL \WDT_Timer:TimerUDB:per_zero\ : bit;
+    SIGNAL \WDT_Timer:TimerUDB:sT24:timerdp:u1.ce0__sig\ : bit;
+    SIGNAL \WDT_Timer:TimerUDB:status_2\ : bit;
+    SIGNAL \WDT_Timer:TimerUDB:status_3\ : bit;
+    SIGNAL \WDT_Timer:TimerUDB:status_tc\ : bit;
+    ATTRIBUTE placement_force OF \WDT_Timer:TimerUDB:status_tc\ : SIGNAL IS "U(3,2,A)0";
+    SIGNAL \WDT_Timer:TimerUDB:timer_enable\ : bit;
+    ATTRIBUTE placement_force OF \WDT_Timer:TimerUDB:timer_enable\ : SIGNAL IS "U(3,3,A)1";
+    SIGNAL \WDT_Timer:TimerUDB:trig_reg\ : bit;
+    ATTRIBUTE placement_force OF \WDT_Timer:TimerUDB:trig_reg\ : SIGNAL IS "U(3,3,A)0";
     SIGNAL \WaveDAC8_1:Net_183\ : bit;
-    ATTRIBUTE placement_force OF \WaveDAC8_1:Net_183\ : SIGNAL IS "U(3,5,A)0";
+    ATTRIBUTE placement_force OF \WaveDAC8_1:Net_183\ : SIGNAL IS "U(1,5,A)0";
     SIGNAL \WaveDAC8_1:Net_279\ : bit;
     ATTRIBUTE global_signal OF \WaveDAC8_1:Net_279\ : SIGNAL IS true;
     SIGNAL \WaveDAC8_1:Net_279_local\ : bit;
     SIGNAL __ONE__ : bit;
     ATTRIBUTE POWER OF __ONE__ : SIGNAL IS true;
     SIGNAL __ZERO__ : bit;
-    ATTRIBUTE placement_force OF __ZERO__ : SIGNAL IS "U(0,5,B)1";
+    ATTRIBUTE placement_force OF __ZERO__ : SIGNAL IS "U(1,1,B)2";
     ATTRIBUTE GROUND OF __ZERO__ : SIGNAL IS true;
     SIGNAL amp(0)__PA : bit;
     SIGNAL one : bit;
@@ -342,131 +376,166 @@ ARCHITECTURE __DEFAULT__ OF Design01 IS
     SIGNAL \PWM:PWMUDB:sP16:pwmdp:u0.cfbo__sig\ : bit;
     SIGNAL \PWM:PWMUDB:sP16:pwmdp:u1.sor__sig\ : bit;
     SIGNAL \PWM:PWMUDB:sP16:pwmdp:u1.cmsbo__sig\ : bit;
+    SIGNAL \WDT_Timer:TimerUDB:sT24:timerdp:u0.cl0__sig\ : bit;
+    SIGNAL \WDT_Timer:TimerUDB:sT24:timerdp:u0.z0__sig\ : bit;
+    SIGNAL \WDT_Timer:TimerUDB:sT24:timerdp:u0.ff0__sig\ : bit;
+    SIGNAL \WDT_Timer:TimerUDB:sT24:timerdp:u0.ce1__sig\ : bit;
+    SIGNAL \WDT_Timer:TimerUDB:sT24:timerdp:u0.cl1__sig\ : bit;
+    SIGNAL \WDT_Timer:TimerUDB:sT24:timerdp:u0.z1__sig\ : bit;
+    SIGNAL \WDT_Timer:TimerUDB:sT24:timerdp:u0.ff1__sig\ : bit;
+    SIGNAL \WDT_Timer:TimerUDB:sT24:timerdp:u0.co_msb__sig\ : bit;
+    SIGNAL \WDT_Timer:TimerUDB:sT24:timerdp:u0.sol_msb__sig\ : bit;
+    SIGNAL \WDT_Timer:TimerUDB:sT24:timerdp:u0.cfbo__sig\ : bit;
+    SIGNAL \WDT_Timer:TimerUDB:sT24:timerdp:u1.sor__sig\ : bit;
+    SIGNAL \WDT_Timer:TimerUDB:sT24:timerdp:u1.cmsbo__sig\ : bit;
+    SIGNAL \WDT_Timer:TimerUDB:sT24:timerdp:u1.cl0__sig\ : bit;
+    SIGNAL \WDT_Timer:TimerUDB:sT24:timerdp:u1.z0__sig\ : bit;
+    SIGNAL \WDT_Timer:TimerUDB:sT24:timerdp:u1.ff0__sig\ : bit;
+    SIGNAL \WDT_Timer:TimerUDB:sT24:timerdp:u1.ce1__sig\ : bit;
+    SIGNAL \WDT_Timer:TimerUDB:sT24:timerdp:u1.cl1__sig\ : bit;
+    SIGNAL \WDT_Timer:TimerUDB:sT24:timerdp:u1.z1__sig\ : bit;
+    SIGNAL \WDT_Timer:TimerUDB:sT24:timerdp:u1.ff1__sig\ : bit;
+    SIGNAL \WDT_Timer:TimerUDB:sT24:timerdp:u1.co_msb__sig\ : bit;
+    SIGNAL \WDT_Timer:TimerUDB:sT24:timerdp:u1.sol_msb__sig\ : bit;
+    SIGNAL \WDT_Timer:TimerUDB:sT24:timerdp:u1.cfbo__sig\ : bit;
+    SIGNAL \WDT_Timer:TimerUDB:sT24:timerdp:u2.sor__sig\ : bit;
+    SIGNAL \WDT_Timer:TimerUDB:sT24:timerdp:u2.cmsbo__sig\ : bit;
     ATTRIBUTE Location OF CapSense : LABEL IS "F(CapSense,0)";
     ATTRIBUTE Location OF ClockBlock : LABEL IS "F(Clock,0)";
-    ATTRIBUTE Location OF ClockBlock_100k__SYNC : LABEL IS "U(3,1)";
+    ATTRIBUTE Location OF ClockBlock_100k__SYNC : LABEL IS "U(2,2)";
+    ATTRIBUTE Location OF ClockBlock_100k__SYNC_1 : LABEL IS "U(3,1)";
+    ATTRIBUTE Location OF ClockBlock_100k__SYNC_2 : LABEL IS "U(3,1)";
     ATTRIBUTE Location OF Compint : LABEL IS "[IntrHod=(0)][IntrId=(0)]";
     ATTRIBUTE lib_model OF HEARTRATE_ANALOG_IN(0) : LABEL IS "iocell1";
     ATTRIBUTE Location OF HEARTRATE_ANALOG_IN(0) : LABEL IS "P4[3]";
+    ATTRIBUTE lib_model OF HEARTRATE_HEALTH(0) : LABEL IS "iocell2";
+    ATTRIBUTE Location OF HEARTRATE_HEALTH(0) : LABEL IS "P12[7]";
+    ATTRIBUTE lib_model OF LEFT_LED(0) : LABEL IS "iocell3";
+    ATTRIBUTE Location OF LEFT_LED(0) : LABEL IS "P6[3]";
+    ATTRIBUTE lib_model OF MOTOR_HEALTH(0) : LABEL IS "iocell4";
+    ATTRIBUTE Location OF MOTOR_HEALTH(0) : LABEL IS "P12[6]";
     ATTRIBUTE lib_model OF Net_1542 : LABEL IS "macrocell1";
     ATTRIBUTE Location OF Net_1542 : LABEL IS "U(2,0)";
     ATTRIBUTE lib_model OF Net_1668 : LABEL IS "macrocell2";
-    ATTRIBUTE Location OF Net_1668 : LABEL IS "U(3,2)";
-    ATTRIBUTE lib_model OF PWM_Output(0) : LABEL IS "iocell2";
+    ATTRIBUTE Location OF Net_1668 : LABEL IS "U(3,5)";
+    ATTRIBUTE lib_model OF Net_1804 : LABEL IS "macrocell3";
+    ATTRIBUTE Location OF Net_1804 : LABEL IS "U(3,2)";
+    ATTRIBUTE lib_model OF PWM_Output(0) : LABEL IS "iocell5";
     ATTRIBUTE Location OF PWM_Output(0) : LABEL IS "P4[5]";
-    ATTRIBUTE lib_model OF Pin_1(0) : LABEL IS "iocell3";
-    ATTRIBUTE Location OF Pin_1(0) : LABEL IS "P6[3]";
     ATTRIBUTE Location OF STOP : LABEL IS "[IntrHod=(0)][IntrId=(1)]";
-    ATTRIBUTE lib_model OF STOP_REQUEST(0) : LABEL IS "iocell4";
+    ATTRIBUTE lib_model OF STOP_REQUEST(0) : LABEL IS "iocell6";
     ATTRIBUTE Location OF STOP_REQUEST(0) : LABEL IS "P15[5]";
-    ATTRIBUTE lib_model OF Speaker_Output(0) : LABEL IS "iocell5";
+    ATTRIBUTE lib_model OF Speaker_Output(0) : LABEL IS "iocell7";
     ATTRIBUTE Location OF Speaker_Output(0) : LABEL IS "P6[0]";
+    ATTRIBUTE lib_model OF UI_HEALTH(0) : LABEL IS "iocell8";
+    ATTRIBUTE Location OF UI_HEALTH(0) : LABEL IS "P6[6]";
+    ATTRIBUTE Location OF WDT : LABEL IS "[IntrHod=(0)][IntrId=(2)]";
     ATTRIBUTE Location OF \CapSense:BufCH0\ : LABEL IS "F(CsAbuf,0)";
-    ATTRIBUTE Location OF \CapSense:ClockGen:ScanSpeed\ : LABEL IS "U(3,5)";
+    ATTRIBUTE Location OF \CapSense:ClockGen:ScanSpeed\ : LABEL IS "U(1,5)";
     ATTRIBUTE lib_model OF \CapSense:ClockGen:SyncCtrl:CtrlReg\ : LABEL IS "controlcell1";
-    ATTRIBUTE Location OF \CapSense:ClockGen:SyncCtrl:CtrlReg\ : LABEL IS "U(3,3)";
+    ATTRIBUTE Location OF \CapSense:ClockGen:SyncCtrl:CtrlReg\ : LABEL IS "U(0,4)";
     ATTRIBUTE lib_model OF \CapSense:ClockGen:UDB:PrescalerDp:u0\ : LABEL IS "datapathcell1";
-    ATTRIBUTE Location OF \CapSense:ClockGen:UDB:PrescalerDp:u0\ : LABEL IS "U(3,4)";
-    ATTRIBUTE lib_model OF \CapSense:ClockGen:clock_detect\ : LABEL IS "macrocell3";
-    ATTRIBUTE Location OF \CapSense:ClockGen:clock_detect\ : LABEL IS "U(3,3)";
-    ATTRIBUTE lib_model OF \CapSense:ClockGen:clock_detect_reg\ : LABEL IS "macrocell4";
-    ATTRIBUTE Location OF \CapSense:ClockGen:clock_detect_reg\ : LABEL IS "U(3,3)";
-    ATTRIBUTE lib_model OF \CapSense:ClockGen:cstate_0\\D\ : LABEL IS "macrocell5";
-    ATTRIBUTE Location OF \CapSense:ClockGen:cstate_0\\D\ : LABEL IS "U(3,4)";
-    ATTRIBUTE lib_model OF \CapSense:ClockGen:cstate_1\\D\ : LABEL IS "macrocell6";
-    ATTRIBUTE Location OF \CapSense:ClockGen:cstate_1\\D\ : LABEL IS "U(3,3)";
-    ATTRIBUTE lib_model OF \CapSense:ClockGen:cstate_2\ : LABEL IS "macrocell7";
-    ATTRIBUTE Location OF \CapSense:ClockGen:cstate_2\ : LABEL IS "U(3,3)";
-    ATTRIBUTE lib_model OF \CapSense:ClockGen:cstate_2\\D\ : LABEL IS "macrocell8";
-    ATTRIBUTE Location OF \CapSense:ClockGen:cstate_2\\D\ : LABEL IS "U(3,3)";
-    ATTRIBUTE lib_model OF \CapSense:ClockGen:inter_reset\ : LABEL IS "macrocell9";
-    ATTRIBUTE Location OF \CapSense:ClockGen:inter_reset\ : LABEL IS "U(3,4)";
+    ATTRIBUTE Location OF \CapSense:ClockGen:UDB:PrescalerDp:u0\ : LABEL IS "U(0,5)";
+    ATTRIBUTE lib_model OF \CapSense:ClockGen:clock_detect\ : LABEL IS "macrocell4";
+    ATTRIBUTE Location OF \CapSense:ClockGen:clock_detect\ : LABEL IS "U(0,5)";
+    ATTRIBUTE lib_model OF \CapSense:ClockGen:clock_detect_reg\ : LABEL IS "macrocell5";
+    ATTRIBUTE Location OF \CapSense:ClockGen:clock_detect_reg\ : LABEL IS "U(0,5)";
+    ATTRIBUTE lib_model OF \CapSense:ClockGen:cstate_0\\D\ : LABEL IS "macrocell6";
+    ATTRIBUTE Location OF \CapSense:ClockGen:cstate_0\\D\ : LABEL IS "U(0,5)";
+    ATTRIBUTE lib_model OF \CapSense:ClockGen:cstate_1\\D\ : LABEL IS "macrocell7";
+    ATTRIBUTE Location OF \CapSense:ClockGen:cstate_1\\D\ : LABEL IS "U(0,4)";
+    ATTRIBUTE lib_model OF \CapSense:ClockGen:cstate_2\ : LABEL IS "macrocell8";
+    ATTRIBUTE Location OF \CapSense:ClockGen:cstate_2\ : LABEL IS "U(0,4)";
+    ATTRIBUTE lib_model OF \CapSense:ClockGen:cstate_2\\D\ : LABEL IS "macrocell9";
+    ATTRIBUTE Location OF \CapSense:ClockGen:cstate_2\\D\ : LABEL IS "U(0,4)";
+    ATTRIBUTE lib_model OF \CapSense:ClockGen:inter_reset\ : LABEL IS "macrocell10";
+    ATTRIBUTE Location OF \CapSense:ClockGen:inter_reset\ : LABEL IS "U(0,5)";
     ATTRIBUTE lib_model OF \CapSense:ClockGen:sC16:PRSdp:u0\ : LABEL IS "datapathcell2";
-    ATTRIBUTE Location OF \CapSense:ClockGen:sC16:PRSdp:u0\ : LABEL IS "U(2,3)";
+    ATTRIBUTE Location OF \CapSense:ClockGen:sC16:PRSdp:u0\ : LABEL IS "U(1,4)";
     ATTRIBUTE lib_model OF \CapSense:ClockGen:sC16:PRSdp:u1\ : LABEL IS "datapathcell3";
-    ATTRIBUTE Location OF \CapSense:ClockGen:sC16:PRSdp:u1\ : LABEL IS "U(3,3)";
-    ATTRIBUTE lib_model OF \CapSense:ClockGen:tmp_ppulse_dly\ : LABEL IS "macrocell10";
-    ATTRIBUTE Location OF \CapSense:ClockGen:tmp_ppulse_dly\ : LABEL IS "U(3,3)";
-    ATTRIBUTE lib_model OF \CapSense:ClockGen:tmp_ppulse_reg\ : LABEL IS "macrocell11";
-    ATTRIBUTE Location OF \CapSense:ClockGen:tmp_ppulse_reg\ : LABEL IS "U(3,4)";
-    ATTRIBUTE lib_model OF \CapSense:ClockGen:tmp_ppulse_udb\ : LABEL IS "macrocell12";
-    ATTRIBUTE Location OF \CapSense:ClockGen:tmp_ppulse_udb\ : LABEL IS "U(3,4)";
-    ATTRIBUTE lib_model OF \CapSense:CmodCH0(0)\ : LABEL IS "iocell6";
+    ATTRIBUTE Location OF \CapSense:ClockGen:sC16:PRSdp:u1\ : LABEL IS "U(0,4)";
+    ATTRIBUTE lib_model OF \CapSense:ClockGen:tmp_ppulse_dly\ : LABEL IS "macrocell11";
+    ATTRIBUTE Location OF \CapSense:ClockGen:tmp_ppulse_dly\ : LABEL IS "U(0,5)";
+    ATTRIBUTE lib_model OF \CapSense:ClockGen:tmp_ppulse_reg\ : LABEL IS "macrocell12";
+    ATTRIBUTE Location OF \CapSense:ClockGen:tmp_ppulse_reg\ : LABEL IS "U(0,5)";
+    ATTRIBUTE lib_model OF \CapSense:ClockGen:tmp_ppulse_udb\ : LABEL IS "macrocell13";
+    ATTRIBUTE Location OF \CapSense:ClockGen:tmp_ppulse_udb\ : LABEL IS "U(0,5)";
+    ATTRIBUTE lib_model OF \CapSense:CmodCH0(0)\ : LABEL IS "iocell9";
     ATTRIBUTE Location OF \CapSense:CmodCH0(0)\ : LABEL IS "P6[4]";
-    ATTRIBUTE Location OF \CapSense:CompCH0:ctComp\ : LABEL IS "F(Comparator,1)";
-    ATTRIBUTE lib_model OF \CapSense:IdacCH0:Net_123\ : LABEL IS "macrocell13";
-    ATTRIBUTE Location OF \CapSense:IdacCH0:Net_123\ : LABEL IS "U(2,2)";
-    ATTRIBUTE Location OF \CapSense:IdacCH0:viDAC8\ : LABEL IS "F(VIDAC,3)";
-    ATTRIBUTE lib_model OF \CapSense:Ioff_CH0\ : LABEL IS "macrocell14";
-    ATTRIBUTE Location OF \CapSense:Ioff_CH0\ : LABEL IS "U(2,3)";
-    ATTRIBUTE Location OF \CapSense:IsrCH0\ : LABEL IS "[IntrHod=(0)][IntrId=(2)]";
+    ATTRIBUTE Location OF \CapSense:CompCH0:ctComp\ : LABEL IS "F(Comparator,2)";
+    ATTRIBUTE lib_model OF \CapSense:IdacCH0:Net_123\ : LABEL IS "macrocell14";
+    ATTRIBUTE Location OF \CapSense:IdacCH0:Net_123\ : LABEL IS "U(2,1)";
+    ATTRIBUTE Location OF \CapSense:IdacCH0:viDAC8\ : LABEL IS "F(VIDAC,0)";
+    ATTRIBUTE lib_model OF \CapSense:Ioff_CH0\ : LABEL IS "macrocell15";
+    ATTRIBUTE Location OF \CapSense:Ioff_CH0\ : LABEL IS "U(2,1)";
+    ATTRIBUTE Location OF \CapSense:IsrCH0\ : LABEL IS "[IntrHod=(0)][IntrId=(3)]";
     ATTRIBUTE lib_model OF \CapSense:MeasureCH0:UDB:Counter:u0\ : LABEL IS "datapathcell4";
-    ATTRIBUTE Location OF \CapSense:MeasureCH0:UDB:Counter:u0\ : LABEL IS "U(2,5)";
+    ATTRIBUTE Location OF \CapSense:MeasureCH0:UDB:Counter:u0\ : LABEL IS "U(2,2)";
     ATTRIBUTE lib_model OF \CapSense:MeasureCH0:UDB:Window:u0\ : LABEL IS "datapathcell5";
     ATTRIBUTE Location OF \CapSense:MeasureCH0:UDB:Window:u0\ : LABEL IS "U(2,4)";
-    ATTRIBUTE lib_model OF \CapSense:MeasureCH0:cnt_enable\ : LABEL IS "macrocell15";
-    ATTRIBUTE Location OF \CapSense:MeasureCH0:cnt_enable\ : LABEL IS "U(2,5)";
-    ATTRIBUTE lib_model OF \CapSense:MeasureCH0:cs_addr_cnt_0\ : LABEL IS "macrocell16";
-    ATTRIBUTE Location OF \CapSense:MeasureCH0:cs_addr_cnt_0\ : LABEL IS "U(2,5)";
-    ATTRIBUTE lib_model OF \CapSense:MeasureCH0:cs_addr_cnt_1\ : LABEL IS "macrocell17";
-    ATTRIBUTE Location OF \CapSense:MeasureCH0:cs_addr_cnt_1\ : LABEL IS "U(2,5)";
-    ATTRIBUTE lib_model OF \CapSense:MeasureCH0:cs_addr_cnt_2\ : LABEL IS "macrocell18";
-    ATTRIBUTE Location OF \CapSense:MeasureCH0:cs_addr_cnt_2\ : LABEL IS "U(2,5)";
-    ATTRIBUTE lib_model OF \CapSense:MeasureCH0:cs_addr_win_0\ : LABEL IS "macrocell19";
+    ATTRIBUTE lib_model OF \CapSense:MeasureCH0:cnt_enable\ : LABEL IS "macrocell16";
+    ATTRIBUTE Location OF \CapSense:MeasureCH0:cnt_enable\ : LABEL IS "U(2,2)";
+    ATTRIBUTE lib_model OF \CapSense:MeasureCH0:cs_addr_cnt_0\ : LABEL IS "macrocell17";
+    ATTRIBUTE Location OF \CapSense:MeasureCH0:cs_addr_cnt_0\ : LABEL IS "U(2,2)";
+    ATTRIBUTE lib_model OF \CapSense:MeasureCH0:cs_addr_cnt_1\ : LABEL IS "macrocell18";
+    ATTRIBUTE Location OF \CapSense:MeasureCH0:cs_addr_cnt_1\ : LABEL IS "U(2,2)";
+    ATTRIBUTE lib_model OF \CapSense:MeasureCH0:cs_addr_cnt_2\ : LABEL IS "macrocell19";
+    ATTRIBUTE Location OF \CapSense:MeasureCH0:cs_addr_cnt_2\ : LABEL IS "U(2,2)";
+    ATTRIBUTE lib_model OF \CapSense:MeasureCH0:cs_addr_win_0\ : LABEL IS "macrocell20";
     ATTRIBUTE Location OF \CapSense:MeasureCH0:cs_addr_win_0\ : LABEL IS "U(2,4)";
-    ATTRIBUTE lib_model OF \CapSense:MeasureCH0:cs_addr_win_1\ : LABEL IS "macrocell20";
+    ATTRIBUTE lib_model OF \CapSense:MeasureCH0:cs_addr_win_1\ : LABEL IS "macrocell21";
     ATTRIBUTE Location OF \CapSense:MeasureCH0:cs_addr_win_1\ : LABEL IS "U(2,4)";
-    ATTRIBUTE lib_model OF \CapSense:MeasureCH0:cs_addr_win_2\ : LABEL IS "macrocell21";
+    ATTRIBUTE lib_model OF \CapSense:MeasureCH0:cs_addr_win_2\ : LABEL IS "macrocell22";
     ATTRIBUTE Location OF \CapSense:MeasureCH0:cs_addr_win_2\ : LABEL IS "U(2,4)";
-    ATTRIBUTE Location OF \CapSense:MeasureCH0:genblk1:SyncCMPR\ : LABEL IS "U(2,5)";
-    ATTRIBUTE lib_model OF \CapSense:MeasureCH0:int\ : LABEL IS "macrocell22";
+    ATTRIBUTE Location OF \CapSense:MeasureCH0:genblk1:SyncCMPR\ : LABEL IS "U(2,3)";
+    ATTRIBUTE lib_model OF \CapSense:MeasureCH0:int\ : LABEL IS "macrocell23";
     ATTRIBUTE Location OF \CapSense:MeasureCH0:int\ : LABEL IS "U(2,4)";
-    ATTRIBUTE lib_model OF \CapSense:MeasureCH0:win_enable\ : LABEL IS "macrocell23";
-    ATTRIBUTE Location OF \CapSense:MeasureCH0:win_enable\ : LABEL IS "U(2,4)";
-    ATTRIBUTE lib_model OF \CapSense:MeasureCH0:wndState_0\ : LABEL IS "macrocell24";
-    ATTRIBUTE Location OF \CapSense:MeasureCH0:wndState_0\ : LABEL IS "U(2,3)";
-    ATTRIBUTE lib_model OF \CapSense:MeasureCH0:wndState_0\\D\ : LABEL IS "macrocell25";
-    ATTRIBUTE Location OF \CapSense:MeasureCH0:wndState_0\\D\ : LABEL IS "U(2,3)";
-    ATTRIBUTE lib_model OF \CapSense:MeasureCH0:wndState_1\ : LABEL IS "macrocell26";
-    ATTRIBUTE Location OF \CapSense:MeasureCH0:wndState_1\ : LABEL IS "U(3,5)";
-    ATTRIBUTE lib_model OF \CapSense:MeasureCH0:wndState_1\\D\ : LABEL IS "macrocell27";
-    ATTRIBUTE Location OF \CapSense:MeasureCH0:wndState_1\\D\ : LABEL IS "U(3,5)";
-    ATTRIBUTE lib_model OF \CapSense:MeasureCH0:wndState_2\ : LABEL IS "macrocell28";
-    ATTRIBUTE Location OF \CapSense:MeasureCH0:wndState_2\ : LABEL IS "U(2,5)";
-    ATTRIBUTE lib_model OF \CapSense:MeasureCH0:wndState_2\\D\ : LABEL IS "macrocell29";
+    ATTRIBUTE lib_model OF \CapSense:MeasureCH0:win_enable\ : LABEL IS "macrocell24";
+    ATTRIBUTE Location OF \CapSense:MeasureCH0:win_enable\ : LABEL IS "U(2,3)";
+    ATTRIBUTE lib_model OF \CapSense:MeasureCH0:wndState_0\ : LABEL IS "macrocell25";
+    ATTRIBUTE Location OF \CapSense:MeasureCH0:wndState_0\ : LABEL IS "U(2,5)";
+    ATTRIBUTE lib_model OF \CapSense:MeasureCH0:wndState_0\\D\ : LABEL IS "macrocell26";
+    ATTRIBUTE Location OF \CapSense:MeasureCH0:wndState_0\\D\ : LABEL IS "U(2,5)";
+    ATTRIBUTE lib_model OF \CapSense:MeasureCH0:wndState_1\ : LABEL IS "macrocell27";
+    ATTRIBUTE Location OF \CapSense:MeasureCH0:wndState_1\ : LABEL IS "U(2,5)";
+    ATTRIBUTE lib_model OF \CapSense:MeasureCH0:wndState_1\\D\ : LABEL IS "macrocell28";
+    ATTRIBUTE Location OF \CapSense:MeasureCH0:wndState_1\\D\ : LABEL IS "U(2,3)";
+    ATTRIBUTE lib_model OF \CapSense:MeasureCH0:wndState_2\ : LABEL IS "macrocell29";
+    ATTRIBUTE Location OF \CapSense:MeasureCH0:wndState_2\ : LABEL IS "U(2,3)";
+    ATTRIBUTE lib_model OF \CapSense:MeasureCH0:wndState_2\\D\ : LABEL IS "macrocell30";
     ATTRIBUTE Location OF \CapSense:MeasureCH0:wndState_2\\D\ : LABEL IS "U(2,5)";
-    ATTRIBUTE lib_model OF \CapSense:MeasureCH0:wndState_3\\D\ : LABEL IS "macrocell30";
+    ATTRIBUTE lib_model OF \CapSense:MeasureCH0:wndState_3\\D\ : LABEL IS "macrocell31";
     ATTRIBUTE Location OF \CapSense:MeasureCH0:wndState_3\\D\ : LABEL IS "U(2,4)";
-    ATTRIBUTE lib_model OF \CapSense:Net_1350\ : LABEL IS "macrocell31";
-    ATTRIBUTE Location OF \CapSense:Net_1350\ : LABEL IS "U(3,3)";
-    ATTRIBUTE lib_model OF \CapSense:Net_1603\ : LABEL IS "macrocell32";
-    ATTRIBUTE Location OF \CapSense:Net_1603\ : LABEL IS "U(2,4)";
-    ATTRIBUTE lib_model OF \CapSense:PortCH0(0)\ : LABEL IS "iocell7";
+    ATTRIBUTE lib_model OF \CapSense:Net_1350\ : LABEL IS "macrocell32";
+    ATTRIBUTE Location OF \CapSense:Net_1350\ : LABEL IS "U(1,4)";
+    ATTRIBUTE lib_model OF \CapSense:Net_1603\ : LABEL IS "macrocell33";
+    ATTRIBUTE Location OF \CapSense:Net_1603\ : LABEL IS "U(2,3)";
+    ATTRIBUTE lib_model OF \CapSense:PortCH0(0)\ : LABEL IS "iocell10";
     ATTRIBUTE Location OF \CapSense:PortCH0(0)\ : LABEL IS "P5[5]";
-    ATTRIBUTE lib_model OF \CapSense:PortCH0(1)\ : LABEL IS "iocell8";
+    ATTRIBUTE lib_model OF \CapSense:PortCH0(1)\ : LABEL IS "iocell11";
     ATTRIBUTE Location OF \CapSense:PortCH0(1)\ : LABEL IS "P5[6]";
-    ATTRIBUTE lib_model OF \CapSense:PortCH0(2)\ : LABEL IS "iocell9";
+    ATTRIBUTE lib_model OF \CapSense:PortCH0(2)\ : LABEL IS "iocell12";
     ATTRIBUTE Location OF \CapSense:PortCH0(2)\ : LABEL IS "P5[0]";
-    ATTRIBUTE lib_model OF \CapSense:PortCH0(3)\ : LABEL IS "iocell10";
+    ATTRIBUTE lib_model OF \CapSense:PortCH0(3)\ : LABEL IS "iocell13";
     ATTRIBUTE Location OF \CapSense:PortCH0(3)\ : LABEL IS "P5[1]";
-    ATTRIBUTE lib_model OF \CapSense:PortCH0(4)\ : LABEL IS "iocell11";
+    ATTRIBUTE lib_model OF \CapSense:PortCH0(4)\ : LABEL IS "iocell14";
     ATTRIBUTE Location OF \CapSense:PortCH0(4)\ : LABEL IS "P5[2]";
-    ATTRIBUTE lib_model OF \CapSense:PortCH0(5)\ : LABEL IS "iocell12";
+    ATTRIBUTE lib_model OF \CapSense:PortCH0(5)\ : LABEL IS "iocell15";
     ATTRIBUTE Location OF \CapSense:PortCH0(5)\ : LABEL IS "P5[3]";
-    ATTRIBUTE lib_model OF \CapSense:PortCH0(6)\ : LABEL IS "iocell13";
+    ATTRIBUTE lib_model OF \CapSense:PortCH0(6)\ : LABEL IS "iocell16";
     ATTRIBUTE Location OF \CapSense:PortCH0(6)\ : LABEL IS "P5[4]";
-    ATTRIBUTE lib_model OF \CapSense:PreChargeClk\ : LABEL IS "macrocell33";
-    ATTRIBUTE Location OF \CapSense:PreChargeClk\ : LABEL IS "U(3,3)";
-    ATTRIBUTE lib_model OF \CapSense:mrst\ : LABEL IS "macrocell34";
-    ATTRIBUTE Location OF \CapSense:mrst\ : LABEL IS "U(3,4)";
+    ATTRIBUTE lib_model OF \CapSense:PreChargeClk\ : LABEL IS "macrocell34";
+    ATTRIBUTE Location OF \CapSense:PreChargeClk\ : LABEL IS "U(0,4)";
+    ATTRIBUTE lib_model OF \CapSense:mrst\ : LABEL IS "macrocell35";
+    ATTRIBUTE Location OF \CapSense:mrst\ : LABEL IS "U(0,4)";
     ATTRIBUTE Location OF \Comp:ctComp\ : LABEL IS "F(Comparator,0)";
-    ATTRIBUTE lib_model OF \HeartbeatCounter:CounterUDB:count_enable\ : LABEL IS "macrocell35";
+    ATTRIBUTE lib_model OF \HeartbeatCounter:CounterUDB:count_enable\ : LABEL IS "macrocell36";
     ATTRIBUTE Location OF \HeartbeatCounter:CounterUDB:count_enable\ : LABEL IS "U(2,0)";
-    ATTRIBUTE lib_model OF \HeartbeatCounter:CounterUDB:count_stored_i\ : LABEL IS "macrocell36";
+    ATTRIBUTE lib_model OF \HeartbeatCounter:CounterUDB:count_stored_i\ : LABEL IS "macrocell37";
     ATTRIBUTE Location OF \HeartbeatCounter:CounterUDB:count_stored_i\ : LABEL IS "U(2,0)";
-    ATTRIBUTE lib_model OF \HeartbeatCounter:CounterUDB:final_enable\ : LABEL IS "macrocell37";
+    ATTRIBUTE lib_model OF \HeartbeatCounter:CounterUDB:final_enable\ : LABEL IS "macrocell38";
     ATTRIBUTE Location OF \HeartbeatCounter:CounterUDB:final_enable\ : LABEL IS "U(2,0)";
-    ATTRIBUTE lib_model OF \HeartbeatCounter:CounterUDB:reload\ : LABEL IS "macrocell38";
+    ATTRIBUTE lib_model OF \HeartbeatCounter:CounterUDB:reload\ : LABEL IS "macrocell39";
     ATTRIBUTE Location OF \HeartbeatCounter:CounterUDB:reload\ : LABEL IS "U(2,0)";
     ATTRIBUTE lib_model OF \HeartbeatCounter:CounterUDB:sC32:counterdp:u0\ : LABEL IS "datapathcell6";
     ATTRIBUTE Location OF \HeartbeatCounter:CounterUDB:sC32:counterdp:u0\ : LABEL IS "U(2,0)";
@@ -480,78 +549,78 @@ ARCHITECTURE __DEFAULT__ OF Design01 IS
     ATTRIBUTE Location OF \HeartbeatCounter:CounterUDB:sCTRLReg:ctrlreg\ : LABEL IS "U(2,0)";
     ATTRIBUTE lib_model OF \HeartbeatCounter:CounterUDB:sSTSReg:stsreg\ : LABEL IS "statusicell1";
     ATTRIBUTE Location OF \HeartbeatCounter:CounterUDB:sSTSReg:stsreg\ : LABEL IS "U(2,1)";
-    ATTRIBUTE lib_model OF \HeartbeatCounter:CounterUDB:status_0\ : LABEL IS "macrocell39";
-    ATTRIBUTE Location OF \HeartbeatCounter:CounterUDB:status_0\ : LABEL IS "U(2,1)";
-    ATTRIBUTE lib_model OF \HeartbeatCounter:CounterUDB:status_3\ : LABEL IS "macrocell40";
+    ATTRIBUTE lib_model OF \HeartbeatCounter:CounterUDB:status_0\ : LABEL IS "macrocell40";
+    ATTRIBUTE Location OF \HeartbeatCounter:CounterUDB:status_0\ : LABEL IS "U(2,0)";
+    ATTRIBUTE lib_model OF \HeartbeatCounter:CounterUDB:status_3\ : LABEL IS "macrocell41";
     ATTRIBUTE Location OF \HeartbeatCounter:CounterUDB:status_3\ : LABEL IS "U(2,1)";
-    ATTRIBUTE lib_model OF \HeartbeatCounter:CounterUDB:tc_i\ : LABEL IS "macrocell41";
-    ATTRIBUTE Location OF \HeartbeatCounter:CounterUDB:tc_i\ : LABEL IS "U(2,1)";
-    ATTRIBUTE lib_model OF \HeartbeatCounter:CounterUDB:tc_reg_i\ : LABEL IS "macrocell42";
-    ATTRIBUTE Location OF \HeartbeatCounter:CounterUDB:tc_reg_i\ : LABEL IS "U(2,1)";
-    ATTRIBUTE lib_model OF \HeartbeatCounter:CounterUDB:underflow\ : LABEL IS "macrocell43";
+    ATTRIBUTE lib_model OF \HeartbeatCounter:CounterUDB:tc_i\ : LABEL IS "macrocell42";
+    ATTRIBUTE Location OF \HeartbeatCounter:CounterUDB:tc_i\ : LABEL IS "U(3,1)";
+    ATTRIBUTE lib_model OF \HeartbeatCounter:CounterUDB:tc_reg_i\ : LABEL IS "macrocell43";
+    ATTRIBUTE Location OF \HeartbeatCounter:CounterUDB:tc_reg_i\ : LABEL IS "U(3,1)";
+    ATTRIBUTE lib_model OF \HeartbeatCounter:CounterUDB:underflow\ : LABEL IS "macrocell44";
     ATTRIBUTE Location OF \HeartbeatCounter:CounterUDB:underflow\ : LABEL IS "U(2,1)";
-    ATTRIBUTE lib_model OF \HeartbeatCounter:CounterUDB:underflow_reg_i\ : LABEL IS "macrocell44";
+    ATTRIBUTE lib_model OF \HeartbeatCounter:CounterUDB:underflow_reg_i\ : LABEL IS "macrocell45";
     ATTRIBUTE Location OF \HeartbeatCounter:CounterUDB:underflow_reg_i\ : LABEL IS "U(2,1)";
-    ATTRIBUTE lib_model OF \LCD:LCDPort(0)\ : LABEL IS "iocell14";
+    ATTRIBUTE lib_model OF \LCD:LCDPort(0)\ : LABEL IS "iocell17";
     ATTRIBUTE Location OF \LCD:LCDPort(0)\ : LABEL IS "P2[0]";
-    ATTRIBUTE lib_model OF \LCD:LCDPort(1)\ : LABEL IS "iocell15";
+    ATTRIBUTE lib_model OF \LCD:LCDPort(1)\ : LABEL IS "iocell18";
     ATTRIBUTE Location OF \LCD:LCDPort(1)\ : LABEL IS "P2[1]";
-    ATTRIBUTE lib_model OF \LCD:LCDPort(2)\ : LABEL IS "iocell16";
+    ATTRIBUTE lib_model OF \LCD:LCDPort(2)\ : LABEL IS "iocell19";
     ATTRIBUTE Location OF \LCD:LCDPort(2)\ : LABEL IS "P2[2]";
-    ATTRIBUTE lib_model OF \LCD:LCDPort(3)\ : LABEL IS "iocell17";
+    ATTRIBUTE lib_model OF \LCD:LCDPort(3)\ : LABEL IS "iocell20";
     ATTRIBUTE Location OF \LCD:LCDPort(3)\ : LABEL IS "P2[3]";
-    ATTRIBUTE lib_model OF \LCD:LCDPort(4)\ : LABEL IS "iocell18";
+    ATTRIBUTE lib_model OF \LCD:LCDPort(4)\ : LABEL IS "iocell21";
     ATTRIBUTE Location OF \LCD:LCDPort(4)\ : LABEL IS "P2[4]";
-    ATTRIBUTE lib_model OF \LCD:LCDPort(5)\ : LABEL IS "iocell19";
+    ATTRIBUTE lib_model OF \LCD:LCDPort(5)\ : LABEL IS "iocell22";
     ATTRIBUTE Location OF \LCD:LCDPort(5)\ : LABEL IS "P2[5]";
-    ATTRIBUTE lib_model OF \LCD:LCDPort(6)\ : LABEL IS "iocell20";
+    ATTRIBUTE lib_model OF \LCD:LCDPort(6)\ : LABEL IS "iocell23";
     ATTRIBUTE Location OF \LCD:LCDPort(6)\ : LABEL IS "P2[6]";
     ATTRIBUTE Location OF \PGA_1:SC\ : LABEL IS "F(SC,0)";
-    ATTRIBUTE lib_model OF \PWM:PWMUDB:MODULE_1:g2:a0:g1:z1:s0:g1:u0:c_1\ : LABEL IS "macrocell45";
-    ATTRIBUTE Location OF \PWM:PWMUDB:MODULE_1:g2:a0:g1:z1:s0:g1:u0:c_1\ : LABEL IS "U(3,0)";
-    ATTRIBUTE lib_model OF \PWM:PWMUDB:MODULE_1:g2:a0:g1:z1:s0:g1:u0:c_2\ : LABEL IS "macrocell46";
-    ATTRIBUTE Location OF \PWM:PWMUDB:MODULE_1:g2:a0:g1:z1:s0:g1:u0:c_2\ : LABEL IS "U(3,0)";
-    ATTRIBUTE lib_model OF \PWM:PWMUDB:MODULE_1:g2:a0:s_0\ : LABEL IS "macrocell47";
-    ATTRIBUTE Location OF \PWM:PWMUDB:MODULE_1:g2:a0:s_0\ : LABEL IS "U(3,0)";
-    ATTRIBUTE lib_model OF \PWM:PWMUDB:MODULE_1:g2:a0:s_1\ : LABEL IS "macrocell48";
-    ATTRIBUTE Location OF \PWM:PWMUDB:MODULE_1:g2:a0:s_1\ : LABEL IS "U(3,0)";
-    ATTRIBUTE lib_model OF \PWM:PWMUDB:dith_count_0\ : LABEL IS "macrocell49";
-    ATTRIBUTE Location OF \PWM:PWMUDB:dith_count_0\ : LABEL IS "U(3,0)";
-    ATTRIBUTE lib_model OF \PWM:PWMUDB:dith_count_0\\D\ : LABEL IS "macrocell50";
-    ATTRIBUTE Location OF \PWM:PWMUDB:dith_count_0\\D\ : LABEL IS "U(3,0)";
-    ATTRIBUTE lib_model OF \PWM:PWMUDB:dith_count_1\ : LABEL IS "macrocell51";
-    ATTRIBUTE Location OF \PWM:PWMUDB:dith_count_1\ : LABEL IS "U(3,0)";
-    ATTRIBUTE lib_model OF \PWM:PWMUDB:dith_count_1\\D\ : LABEL IS "macrocell52";
-    ATTRIBUTE Location OF \PWM:PWMUDB:dith_count_1\\D\ : LABEL IS "U(3,0)";
+    ATTRIBUTE lib_model OF \PWM:PWMUDB:MODULE_1:g2:a0:g1:z1:s0:g1:u0:c_1\ : LABEL IS "macrocell46";
+    ATTRIBUTE Location OF \PWM:PWMUDB:MODULE_1:g2:a0:g1:z1:s0:g1:u0:c_1\ : LABEL IS "U(3,4)";
+    ATTRIBUTE lib_model OF \PWM:PWMUDB:MODULE_1:g2:a0:g1:z1:s0:g1:u0:c_2\ : LABEL IS "macrocell47";
+    ATTRIBUTE Location OF \PWM:PWMUDB:MODULE_1:g2:a0:g1:z1:s0:g1:u0:c_2\ : LABEL IS "U(2,4)";
+    ATTRIBUTE lib_model OF \PWM:PWMUDB:MODULE_1:g2:a0:s_0\ : LABEL IS "macrocell48";
+    ATTRIBUTE Location OF \PWM:PWMUDB:MODULE_1:g2:a0:s_0\ : LABEL IS "U(3,4)";
+    ATTRIBUTE lib_model OF \PWM:PWMUDB:MODULE_1:g2:a0:s_1\ : LABEL IS "macrocell49";
+    ATTRIBUTE Location OF \PWM:PWMUDB:MODULE_1:g2:a0:s_1\ : LABEL IS "U(3,4)";
+    ATTRIBUTE lib_model OF \PWM:PWMUDB:dith_count_0\ : LABEL IS "macrocell50";
+    ATTRIBUTE Location OF \PWM:PWMUDB:dith_count_0\ : LABEL IS "U(3,4)";
+    ATTRIBUTE lib_model OF \PWM:PWMUDB:dith_count_0\\D\ : LABEL IS "macrocell51";
+    ATTRIBUTE Location OF \PWM:PWMUDB:dith_count_0\\D\ : LABEL IS "U(3,4)";
+    ATTRIBUTE lib_model OF \PWM:PWMUDB:dith_count_1\ : LABEL IS "macrocell52";
+    ATTRIBUTE Location OF \PWM:PWMUDB:dith_count_1\ : LABEL IS "U(3,4)";
+    ATTRIBUTE lib_model OF \PWM:PWMUDB:dith_count_1\\D\ : LABEL IS "macrocell53";
+    ATTRIBUTE Location OF \PWM:PWMUDB:dith_count_1\\D\ : LABEL IS "U(3,4)";
     ATTRIBUTE lib_model OF \PWM:PWMUDB:genblk1:ctrlreg\ : LABEL IS "controlcell3";
-    ATTRIBUTE Location OF \PWM:PWMUDB:genblk1:ctrlreg\ : LABEL IS "U(2,2)";
-    ATTRIBUTE lib_model OF \PWM:PWMUDB:ltch_kill_reg\ : LABEL IS "macrocell53";
-    ATTRIBUTE Location OF \PWM:PWMUDB:ltch_kill_reg\ : LABEL IS "U(2,2)";
-    ATTRIBUTE lib_model OF \PWM:PWMUDB:ltch_kill_reg\\D\ : LABEL IS "macrocell54";
+    ATTRIBUTE Location OF \PWM:PWMUDB:genblk1:ctrlreg\ : LABEL IS "U(3,5)";
+    ATTRIBUTE lib_model OF \PWM:PWMUDB:ltch_kill_reg\ : LABEL IS "macrocell54";
+    ATTRIBUTE Location OF \PWM:PWMUDB:ltch_kill_reg\ : LABEL IS "U(2,4)";
+    ATTRIBUTE lib_model OF \PWM:PWMUDB:ltch_kill_reg\\D\ : LABEL IS "macrocell55";
     ATTRIBUTE Location OF \PWM:PWMUDB:ltch_kill_reg\\D\ : LABEL IS "U(2,3)";
-    ATTRIBUTE lib_model OF \PWM:PWMUDB:pwm_i\ : LABEL IS "macrocell55";
-    ATTRIBUTE Location OF \PWM:PWMUDB:pwm_i\ : LABEL IS "U(3,2)";
-    ATTRIBUTE lib_model OF \PWM:PWMUDB:pwm_temp\ : LABEL IS "macrocell56";
-    ATTRIBUTE Location OF \PWM:PWMUDB:pwm_temp\ : LABEL IS "U(2,2)";
-    ATTRIBUTE lib_model OF \PWM:PWMUDB:runmode_enable\ : LABEL IS "macrocell57";
-    ATTRIBUTE Location OF \PWM:PWMUDB:runmode_enable\ : LABEL IS "U(2,2)";
-    ATTRIBUTE lib_model OF \PWM:PWMUDB:runmode_enable\\D\ : LABEL IS "macrocell58";
-    ATTRIBUTE Location OF \PWM:PWMUDB:runmode_enable\\D\ : LABEL IS "U(2,2)";
+    ATTRIBUTE lib_model OF \PWM:PWMUDB:pwm_i\ : LABEL IS "macrocell56";
+    ATTRIBUTE Location OF \PWM:PWMUDB:pwm_i\ : LABEL IS "U(3,5)";
+    ATTRIBUTE lib_model OF \PWM:PWMUDB:pwm_temp\ : LABEL IS "macrocell57";
+    ATTRIBUTE Location OF \PWM:PWMUDB:pwm_temp\ : LABEL IS "U(3,5)";
+    ATTRIBUTE lib_model OF \PWM:PWMUDB:runmode_enable\ : LABEL IS "macrocell58";
+    ATTRIBUTE Location OF \PWM:PWMUDB:runmode_enable\ : LABEL IS "U(3,5)";
+    ATTRIBUTE lib_model OF \PWM:PWMUDB:runmode_enable\\D\ : LABEL IS "macrocell59";
+    ATTRIBUTE Location OF \PWM:PWMUDB:runmode_enable\\D\ : LABEL IS "U(3,5)";
     ATTRIBUTE lib_model OF \PWM:PWMUDB:sP16:pwmdp:u0\ : LABEL IS "datapathcell10";
-    ATTRIBUTE Location OF \PWM:PWMUDB:sP16:pwmdp:u0\ : LABEL IS "U(3,2)";
+    ATTRIBUTE Location OF \PWM:PWMUDB:sP16:pwmdp:u0\ : LABEL IS "U(2,5)";
     ATTRIBUTE lib_model OF \PWM:PWMUDB:sP16:pwmdp:u1\ : LABEL IS "datapathcell11";
-    ATTRIBUTE Location OF \PWM:PWMUDB:sP16:pwmdp:u1\ : LABEL IS "U(2,2)";
-    ATTRIBUTE lib_model OF \PWM:PWMUDB:sc_kill_tmp\ : LABEL IS "macrocell59";
-    ATTRIBUTE Location OF \PWM:PWMUDB:sc_kill_tmp\ : LABEL IS "U(3,1)";
-    ATTRIBUTE lib_model OF \PWM:PWMUDB:sc_kill_tmp\\D\ : LABEL IS "macrocell60";
-    ATTRIBUTE Location OF \PWM:PWMUDB:sc_kill_tmp\\D\ : LABEL IS "U(3,1)";
-    ATTRIBUTE lib_model OF \PWM:PWMUDB:tc_i_reg\ : LABEL IS "macrocell61";
-    ATTRIBUTE Location OF \PWM:PWMUDB:tc_i_reg\ : LABEL IS "U(2,2)";
-    ATTRIBUTE lib_model OF \PWM:PWMUDB:tc_i_reg\\D\ : LABEL IS "macrocell62";
-    ATTRIBUTE Location OF \PWM:PWMUDB:tc_i_reg\\D\ : LABEL IS "U(2,2)";
-    ATTRIBUTE lib_model OF \USBUART:Dm(0)\ : LABEL IS "iocell21";
+    ATTRIBUTE Location OF \PWM:PWMUDB:sP16:pwmdp:u1\ : LABEL IS "U(3,5)";
+    ATTRIBUTE lib_model OF \PWM:PWMUDB:sc_kill_tmp\ : LABEL IS "macrocell60";
+    ATTRIBUTE Location OF \PWM:PWMUDB:sc_kill_tmp\ : LABEL IS "U(3,5)";
+    ATTRIBUTE lib_model OF \PWM:PWMUDB:sc_kill_tmp\\D\ : LABEL IS "macrocell61";
+    ATTRIBUTE Location OF \PWM:PWMUDB:sc_kill_tmp\\D\ : LABEL IS "U(3,5)";
+    ATTRIBUTE lib_model OF \PWM:PWMUDB:tc_i_reg\ : LABEL IS "macrocell62";
+    ATTRIBUTE Location OF \PWM:PWMUDB:tc_i_reg\ : LABEL IS "U(3,3)";
+    ATTRIBUTE lib_model OF \PWM:PWMUDB:tc_i_reg\\D\ : LABEL IS "macrocell63";
+    ATTRIBUTE Location OF \PWM:PWMUDB:tc_i_reg\\D\ : LABEL IS "U(3,3)";
+    ATTRIBUTE lib_model OF \USBUART:Dm(0)\ : LABEL IS "iocell24";
     ATTRIBUTE Location OF \USBUART:Dm(0)\ : LABEL IS "P15[7]";
-    ATTRIBUTE lib_model OF \USBUART:Dp(0)\ : LABEL IS "iocell22";
+    ATTRIBUTE lib_model OF \USBUART:Dp(0)\ : LABEL IS "iocell25";
     ATTRIBUTE Location OF \USBUART:Dp(0)\ : LABEL IS "P15[6]";
     ATTRIBUTE Location OF \USBUART:Dp\ : LABEL IS "F(PICU,8)";
     ATTRIBUTE Location OF \USBUART:USB\ : LABEL IS "F(USB,0)";
@@ -559,20 +628,40 @@ ARCHITECTURE __DEFAULT__ OF Design01 IS
     ATTRIBUTE Location OF \USBUART:bus_reset\ : LABEL IS "[IntrHod=(0)][IntrId=(23)]";
     ATTRIBUTE Location OF \USBUART:dp_int\ : LABEL IS "[IntrHod=(0)][IntrId=(12)]";
     ATTRIBUTE Location OF \USBUART:ep_0\ : LABEL IS "[IntrHod=(0)][IntrId=(24)]";
-    ATTRIBUTE Location OF \USBUART:ep_1\ : LABEL IS "[IntrHod=(0)][IntrId=(3)]";
-    ATTRIBUTE Location OF \USBUART:ep_2\ : LABEL IS "[IntrHod=(0)][IntrId=(4)]";
-    ATTRIBUTE Location OF \USBUART:ep_3\ : LABEL IS "[IntrHod=(0)][IntrId=(5)]";
+    ATTRIBUTE Location OF \USBUART:ep_1\ : LABEL IS "[IntrHod=(0)][IntrId=(4)]";
+    ATTRIBUTE Location OF \USBUART:ep_2\ : LABEL IS "[IntrHod=(0)][IntrId=(5)]";
+    ATTRIBUTE Location OF \USBUART:ep_3\ : LABEL IS "[IntrHod=(0)][IntrId=(6)]";
     ATTRIBUTE Location OF \USBUART:sof_int\ : LABEL IS "[IntrHod=(0)][IntrId=(21)]";
-    ATTRIBUTE lib_model OF \WaveDAC8_1:Net_183\ : LABEL IS "macrocell63";
-    ATTRIBUTE Location OF \WaveDAC8_1:Net_183\ : LABEL IS "U(3,5)";
+    ATTRIBUTE lib_model OF \WDT_Timer:TimerUDB:capture_out_reg_i\ : LABEL IS "macrocell64";
+    ATTRIBUTE Location OF \WDT_Timer:TimerUDB:capture_out_reg_i\ : LABEL IS "U(3,1)";
+    ATTRIBUTE lib_model OF \WDT_Timer:TimerUDB:hwEnable_reg\ : LABEL IS "macrocell65";
+    ATTRIBUTE Location OF \WDT_Timer:TimerUDB:hwEnable_reg\ : LABEL IS "U(3,2)";
+    ATTRIBUTE lib_model OF \WDT_Timer:TimerUDB:rstSts:stsreg\ : LABEL IS "statusicell2";
+    ATTRIBUTE Location OF \WDT_Timer:TimerUDB:rstSts:stsreg\ : LABEL IS "U(3,2)";
+    ATTRIBUTE lib_model OF \WDT_Timer:TimerUDB:sCTRLReg:SyncCtl:ctrlreg\ : LABEL IS "controlcell4";
+    ATTRIBUTE Location OF \WDT_Timer:TimerUDB:sCTRLReg:SyncCtl:ctrlreg\ : LABEL IS "U(3,3)";
+    ATTRIBUTE lib_model OF \WDT_Timer:TimerUDB:sT24:timerdp:u0\ : LABEL IS "datapathcell12";
+    ATTRIBUTE Location OF \WDT_Timer:TimerUDB:sT24:timerdp:u0\ : LABEL IS "U(2,3)";
+    ATTRIBUTE lib_model OF \WDT_Timer:TimerUDB:sT24:timerdp:u1\ : LABEL IS "datapathcell13";
+    ATTRIBUTE Location OF \WDT_Timer:TimerUDB:sT24:timerdp:u1\ : LABEL IS "U(3,3)";
+    ATTRIBUTE lib_model OF \WDT_Timer:TimerUDB:sT24:timerdp:u2\ : LABEL IS "datapathcell14";
+    ATTRIBUTE Location OF \WDT_Timer:TimerUDB:sT24:timerdp:u2\ : LABEL IS "U(3,2)";
+    ATTRIBUTE lib_model OF \WDT_Timer:TimerUDB:status_tc\ : LABEL IS "macrocell66";
+    ATTRIBUTE Location OF \WDT_Timer:TimerUDB:status_tc\ : LABEL IS "U(3,2)";
+    ATTRIBUTE lib_model OF \WDT_Timer:TimerUDB:timer_enable\ : LABEL IS "macrocell67";
+    ATTRIBUTE Location OF \WDT_Timer:TimerUDB:timer_enable\ : LABEL IS "U(3,3)";
+    ATTRIBUTE lib_model OF \WDT_Timer:TimerUDB:trig_reg\ : LABEL IS "macrocell68";
+    ATTRIBUTE Location OF \WDT_Timer:TimerUDB:trig_reg\ : LABEL IS "U(3,3)";
+    ATTRIBUTE lib_model OF \WaveDAC8_1:Net_183\ : LABEL IS "macrocell69";
+    ATTRIBUTE Location OF \WaveDAC8_1:Net_183\ : LABEL IS "U(1,5)";
     ATTRIBUTE Location OF \WaveDAC8_1:VDAC8:viDAC8\ : LABEL IS "F(VIDAC,2)";
     ATTRIBUTE lib_model OF \WaveDAC8_1:Wave1_DMA\ : LABEL IS "drqcell1";
     ATTRIBUTE Location OF \WaveDAC8_1:Wave1_DMA\ : LABEL IS "[DrqHod=(0)][DrqId=(0)]";
     ATTRIBUTE lib_model OF \WaveDAC8_1:Wave2_DMA\ : LABEL IS "drqcell2";
     ATTRIBUTE Location OF \WaveDAC8_1:Wave2_DMA\ : LABEL IS "[DrqHod=(0)][DrqId=(1)]";
-    ATTRIBUTE lib_model OF __ZERO__ : LABEL IS "macrocell64";
-    ATTRIBUTE Location OF __ZERO__ : LABEL IS "U(0,5)";
-    ATTRIBUTE lib_model OF amp(0) : LABEL IS "iocell23";
+    ATTRIBUTE lib_model OF __ZERO__ : LABEL IS "macrocell70";
+    ATTRIBUTE Location OF __ZERO__ : LABEL IS "U(1,1)";
+    ATTRIBUTE lib_model OF amp(0) : LABEL IS "iocell26";
     ATTRIBUTE Location OF amp(0) : LABEL IS "P4[1]";
     COMPONENT capsensecell
         PORT (
@@ -995,6 +1084,26 @@ BEGIN
             clock => ClockBlock_BUS_CLK,
             clk_en => open);
 
+    ClockBlock_100k__SYNC_1:synccell
+        GENERIC MAP(
+            clk_inv => '0',
+            clken_mode => 1)
+        PORT MAP(
+            in => ClockBlock_100k,
+            out => ClockBlock_100k__SYNC_OUT_1,
+            clock => ClockBlock_BUS_CLK,
+            clk_en => open);
+
+    ClockBlock_100k__SYNC_2:synccell
+        GENERIC MAP(
+            clk_inv => '0',
+            clken_mode => 1)
+        PORT MAP(
+            in => ClockBlock_100k,
+            out => ClockBlock_100k__SYNC_OUT_2,
+            clock => ClockBlock_BUS_CLK,
+            clk_en => open);
+
     Compint:interrupt
         GENERIC MAP(
             int_type => "00")
@@ -1083,7 +1192,279 @@ BEGIN
         PORT MAP(
             pa_out => HEARTRATE_ANALOG_IN(0)__PA,
             oe => open,
+            pad_in => HEARTRATE_ANALOG_IN(0)_PAD,
             in_clock => open,
+            in_clock_en => '1',
+            in_reset => '0',
+            out_clock => open,
+            out_clock_en => '1',
+            out_reset => '0');
+
+    HEARTRATE_HEALTH:logicalport
+        GENERIC MAP(
+            drive_mode => "011",
+            ibuf_enabled => "1",
+            id => "98bd4c63-10ce-4b0d-a0fd-344b11b8b5c1",
+            init_dr_st => "0",
+            input_buffer_sel => "00",
+            input_clk_en => 0,
+            input_sync => "1",
+            input_sync_mode => "0",
+            intr_mode => "00",
+            invert_in_clock => 0,
+            invert_in_clock_en => 0,
+            invert_in_reset => 0,
+            invert_out_clock => 0,
+            invert_out_clock_en => 0,
+            invert_out_reset => 0,
+            io_voltage => "",
+            layout_mode => "CONTIGUOUS",
+            oe_conn => "0",
+            oe_reset => 0,
+            oe_sync => "0",
+            output_clk_en => 0,
+            output_clock_mode => "0",
+            output_conn => "0",
+            output_mode => "0",
+            output_reset => 0,
+            output_sync => "0",
+            ovt_hyst_trim => "0",
+            ovt_needed => "0",
+            ovt_slew_control => "00",
+            pa_in_clock => -1,
+            pa_in_clock_en => -1,
+            pa_in_reset => -1,
+            pa_out_clock => -1,
+            pa_out_clock_en => -1,
+            pa_out_reset => -1,
+            pin_aliases => "",
+            pin_mode => "I",
+            por_state => 4,
+            port_alias_group => "",
+            port_alias_required => 0,
+            sio_group_cnt => 0,
+            sio_hifreq => "",
+            sio_hyst => "1",
+            sio_ibuf => "00000000",
+            sio_info => "00",
+            sio_obuf => "00000000",
+            sio_refsel => "00000000",
+            sio_vtrip => "00000000",
+            slew_rate => "0",
+            spanning => 0,
+            sw_only => 0,
+            use_annotation => "0",
+            vtrip => "00",
+            width => 1,
+            in_clk_inv => 0,
+            in_clken_inv => 0,
+            in_clken_mode => 1,
+            in_rst_inv => 0,
+            out_clk_inv => 0,
+            out_clken_inv => 0,
+            out_clken_mode => 1,
+            out_rst_inv => 0)
+        PORT MAP(
+            in_clock_en => open,
+            in_reset => open,
+            out_clock_en => open,
+            out_reset => open,
+            in_clock => open);
+
+    HEARTRATE_HEALTH(0):iocell
+        GENERIC MAP(
+            in_sync_mode => 2,
+            out_sync_mode => 0,
+            oe_sync_mode => 0,
+            logicalport => "HEARTRATE_HEALTH",
+            logicalport_pin_id => 0,
+            io_capabilities => "0000000000000000000000000000000000000000000000000000000000000101")
+        PORT MAP(
+            pa_out => HEARTRATE_HEALTH(0)__PA,
+            oe => open,
+            pad_in => HEARTRATE_HEALTH(0)_PAD,
+            in_clock => ClockBlock_BUS_CLK,
+            in_clock_en => '1',
+            in_reset => '0',
+            out_clock => open,
+            out_clock_en => '1',
+            out_reset => '0');
+
+    LEFT_LED:logicalport
+        GENERIC MAP(
+            drive_mode => "011",
+            ibuf_enabled => "1",
+            id => "e851a3b9-efb8-48be-bbb8-b303b216c393",
+            init_dr_st => "0",
+            input_buffer_sel => "00",
+            input_clk_en => 0,
+            input_sync => "1",
+            input_sync_mode => "0",
+            intr_mode => "00",
+            invert_in_clock => 0,
+            invert_in_clock_en => 0,
+            invert_in_reset => 0,
+            invert_out_clock => 0,
+            invert_out_clock_en => 0,
+            invert_out_reset => 0,
+            io_voltage => "",
+            layout_mode => "CONTIGUOUS",
+            oe_conn => "0",
+            oe_reset => 0,
+            oe_sync => "0",
+            output_clk_en => 0,
+            output_clock_mode => "0",
+            output_conn => "1",
+            output_mode => "0",
+            output_reset => 0,
+            output_sync => "0",
+            ovt_hyst_trim => "0",
+            ovt_needed => "0",
+            ovt_slew_control => "00",
+            pa_in_clock => -1,
+            pa_in_clock_en => -1,
+            pa_in_reset => -1,
+            pa_out_clock => -1,
+            pa_out_clock_en => -1,
+            pa_out_reset => -1,
+            pin_aliases => "",
+            pin_mode => "O",
+            por_state => 4,
+            port_alias_group => "",
+            port_alias_required => 0,
+            sio_group_cnt => 0,
+            sio_hifreq => "",
+            sio_hyst => "1",
+            sio_ibuf => "00000000",
+            sio_info => "00",
+            sio_obuf => "00000000",
+            sio_refsel => "00000000",
+            sio_vtrip => "00000000",
+            slew_rate => "0",
+            spanning => 0,
+            sw_only => 0,
+            use_annotation => "0",
+            vtrip => "10",
+            width => 1,
+            in_clk_inv => 0,
+            in_clken_inv => 0,
+            in_clken_mode => 1,
+            in_rst_inv => 0,
+            out_clk_inv => 0,
+            out_clken_inv => 0,
+            out_clken_mode => 1,
+            out_rst_inv => 0)
+        PORT MAP(
+            in_clock_en => open,
+            in_reset => open,
+            out_clock_en => open,
+            out_reset => open);
+
+    LEFT_LED(0):iocell
+        GENERIC MAP(
+            in_sync_mode => 0,
+            out_sync_mode => 0,
+            oe_sync_mode => 0,
+            logicalport => "LEFT_LED",
+            logicalport_pin_id => 0,
+            io_capabilities => "0000000000000000000000000000000000000000000000000000000000000101")
+        PORT MAP(
+            pa_out => LEFT_LED(0)__PA,
+            oe => open,
+            pin_input => Net_1032,
+            pad_out => LEFT_LED(0)_PAD,
+            pad_in => LEFT_LED(0)_PAD,
+            in_clock => open,
+            in_clock_en => '1',
+            in_reset => '0',
+            out_clock => open,
+            out_clock_en => '1',
+            out_reset => '0');
+
+    MOTOR_HEALTH:logicalport
+        GENERIC MAP(
+            drive_mode => "011",
+            ibuf_enabled => "1",
+            id => "c254bbdb-4f19-433f-94fd-71b5537f2273",
+            init_dr_st => "0",
+            input_buffer_sel => "00",
+            input_clk_en => 0,
+            input_sync => "1",
+            input_sync_mode => "0",
+            intr_mode => "00",
+            invert_in_clock => 0,
+            invert_in_clock_en => 0,
+            invert_in_reset => 0,
+            invert_out_clock => 0,
+            invert_out_clock_en => 0,
+            invert_out_reset => 0,
+            io_voltage => "",
+            layout_mode => "CONTIGUOUS",
+            oe_conn => "0",
+            oe_reset => 0,
+            oe_sync => "0",
+            output_clk_en => 0,
+            output_clock_mode => "0",
+            output_conn => "0",
+            output_mode => "0",
+            output_reset => 0,
+            output_sync => "0",
+            ovt_hyst_trim => "0",
+            ovt_needed => "0",
+            ovt_slew_control => "00",
+            pa_in_clock => -1,
+            pa_in_clock_en => -1,
+            pa_in_reset => -1,
+            pa_out_clock => -1,
+            pa_out_clock_en => -1,
+            pa_out_reset => -1,
+            pin_aliases => "",
+            pin_mode => "I",
+            por_state => 4,
+            port_alias_group => "",
+            port_alias_required => 0,
+            sio_group_cnt => 0,
+            sio_hifreq => "",
+            sio_hyst => "1",
+            sio_ibuf => "00000000",
+            sio_info => "00",
+            sio_obuf => "00000000",
+            sio_refsel => "00000000",
+            sio_vtrip => "00000000",
+            slew_rate => "0",
+            spanning => 0,
+            sw_only => 0,
+            use_annotation => "0",
+            vtrip => "00",
+            width => 1,
+            in_clk_inv => 0,
+            in_clken_inv => 0,
+            in_clken_mode => 1,
+            in_rst_inv => 0,
+            out_clk_inv => 0,
+            out_clken_inv => 0,
+            out_clken_mode => 1,
+            out_rst_inv => 0)
+        PORT MAP(
+            in_clock_en => open,
+            in_reset => open,
+            out_clock_en => open,
+            out_reset => open,
+            in_clock => open);
+
+    MOTOR_HEALTH(0):iocell
+        GENERIC MAP(
+            in_sync_mode => 2,
+            out_sync_mode => 0,
+            oe_sync_mode => 0,
+            logicalport => "MOTOR_HEALTH",
+            logicalport_pin_id => 0,
+            io_capabilities => "0000000000000000000000000000000000000000000000000000000000000101")
+        PORT MAP(
+            pa_out => MOTOR_HEALTH(0)__PA,
+            oe => open,
+            pad_in => MOTOR_HEALTH(0)_PAD,
+            in_clock => ClockBlock_BUS_CLK,
             in_clock_en => '1',
             in_reset => '0',
             out_clock => open,
@@ -1111,6 +1492,18 @@ BEGIN
             clk_en => ClockBlock_100k__SYNC_OUT,
             clock_0 => ClockBlock_BUS_CLK,
             main_0 => \PWM:PWMUDB:pwm_i\);
+
+    Net_1804:macrocell
+        GENERIC MAP(
+            eqn_main => "(main_0)",
+            clk_inv => '0',
+            clken_inv => '0',
+            clken_mode => 2)
+        PORT MAP(
+            q => Net_1804,
+            clk_en => ClockBlock_100k__SYNC_OUT_1,
+            clock_0 => ClockBlock_BUS_CLK,
+            main_0 => \WDT_Timer:TimerUDB:status_tc\);
 
     PWM_Output:logicalport
         GENERIC MAP(
@@ -1196,97 +1589,6 @@ BEGIN
             pin_input => Net_1668,
             pad_out => PWM_Output(0)_PAD,
             pad_in => PWM_Output(0)_PAD,
-            in_clock => open,
-            in_clock_en => '1',
-            in_reset => '0',
-            out_clock => open,
-            out_clock_en => '1',
-            out_reset => '0');
-
-    Pin_1:logicalport
-        GENERIC MAP(
-            drive_mode => "011",
-            ibuf_enabled => "1",
-            id => "e851a3b9-efb8-48be-bbb8-b303b216c393",
-            init_dr_st => "0",
-            input_buffer_sel => "00",
-            input_clk_en => 0,
-            input_sync => "1",
-            input_sync_mode => "0",
-            intr_mode => "00",
-            invert_in_clock => 0,
-            invert_in_clock_en => 0,
-            invert_in_reset => 0,
-            invert_out_clock => 0,
-            invert_out_clock_en => 0,
-            invert_out_reset => 0,
-            io_voltage => "",
-            layout_mode => "CONTIGUOUS",
-            oe_conn => "0",
-            oe_reset => 0,
-            oe_sync => "0",
-            output_clk_en => 0,
-            output_clock_mode => "0",
-            output_conn => "1",
-            output_mode => "0",
-            output_reset => 0,
-            output_sync => "0",
-            ovt_hyst_trim => "0",
-            ovt_needed => "0",
-            ovt_slew_control => "00",
-            pa_in_clock => -1,
-            pa_in_clock_en => -1,
-            pa_in_reset => -1,
-            pa_out_clock => -1,
-            pa_out_clock_en => -1,
-            pa_out_reset => -1,
-            pin_aliases => "",
-            pin_mode => "O",
-            por_state => 4,
-            port_alias_group => "",
-            port_alias_required => 0,
-            sio_group_cnt => 0,
-            sio_hifreq => "",
-            sio_hyst => "1",
-            sio_ibuf => "00000000",
-            sio_info => "00",
-            sio_obuf => "00000000",
-            sio_refsel => "00000000",
-            sio_vtrip => "00000000",
-            slew_rate => "0",
-            spanning => 0,
-            sw_only => 0,
-            use_annotation => "0",
-            vtrip => "10",
-            width => 1,
-            in_clk_inv => 0,
-            in_clken_inv => 0,
-            in_clken_mode => 1,
-            in_rst_inv => 0,
-            out_clk_inv => 0,
-            out_clken_inv => 0,
-            out_clken_mode => 1,
-            out_rst_inv => 0)
-        PORT MAP(
-            in_clock_en => open,
-            in_reset => open,
-            out_clock_en => open,
-            out_reset => open);
-
-    Pin_1(0):iocell
-        GENERIC MAP(
-            in_sync_mode => 0,
-            out_sync_mode => 0,
-            oe_sync_mode => 0,
-            logicalport => "Pin_1",
-            logicalport_pin_id => 0,
-            io_capabilities => "0000000000000000000000000000000000000000000000000000000000000101")
-        PORT MAP(
-            pa_out => Pin_1(0)__PA,
-            oe => open,
-            pin_input => Net_1032,
-            pad_out => Pin_1(0)_PAD,
-            pad_in => Pin_1(0)_PAD,
             in_clock => open,
             in_clock_en => '1',
             in_reset => '0',
@@ -1480,6 +1782,103 @@ BEGIN
             out_clock => open,
             out_clock_en => '1',
             out_reset => '0');
+
+    UI_HEALTH:logicalport
+        GENERIC MAP(
+            drive_mode => "011",
+            ibuf_enabled => "1",
+            id => "cd1ed3cf-f5e4-46b5-ae9b-4d17417f8d66",
+            init_dr_st => "0",
+            input_buffer_sel => "00",
+            input_clk_en => 0,
+            input_sync => "1",
+            input_sync_mode => "0",
+            intr_mode => "00",
+            invert_in_clock => 0,
+            invert_in_clock_en => 0,
+            invert_in_reset => 0,
+            invert_out_clock => 0,
+            invert_out_clock_en => 0,
+            invert_out_reset => 0,
+            io_voltage => "",
+            layout_mode => "CONTIGUOUS",
+            oe_conn => "0",
+            oe_reset => 0,
+            oe_sync => "0",
+            output_clk_en => 0,
+            output_clock_mode => "0",
+            output_conn => "0",
+            output_mode => "0",
+            output_reset => 0,
+            output_sync => "0",
+            ovt_hyst_trim => "0",
+            ovt_needed => "0",
+            ovt_slew_control => "00",
+            pa_in_clock => -1,
+            pa_in_clock_en => -1,
+            pa_in_reset => -1,
+            pa_out_clock => -1,
+            pa_out_clock_en => -1,
+            pa_out_reset => -1,
+            pin_aliases => "",
+            pin_mode => "I",
+            por_state => 4,
+            port_alias_group => "",
+            port_alias_required => 0,
+            sio_group_cnt => 0,
+            sio_hifreq => "",
+            sio_hyst => "1",
+            sio_ibuf => "00000000",
+            sio_info => "00",
+            sio_obuf => "00000000",
+            sio_refsel => "00000000",
+            sio_vtrip => "00000000",
+            slew_rate => "0",
+            spanning => 0,
+            sw_only => 0,
+            use_annotation => "0",
+            vtrip => "00",
+            width => 1,
+            in_clk_inv => 0,
+            in_clken_inv => 0,
+            in_clken_mode => 1,
+            in_rst_inv => 0,
+            out_clk_inv => 0,
+            out_clken_inv => 0,
+            out_clken_mode => 1,
+            out_rst_inv => 0)
+        PORT MAP(
+            in_clock_en => open,
+            in_reset => open,
+            out_clock_en => open,
+            out_reset => open,
+            in_clock => open);
+
+    UI_HEALTH(0):iocell
+        GENERIC MAP(
+            in_sync_mode => 2,
+            out_sync_mode => 0,
+            oe_sync_mode => 0,
+            logicalport => "UI_HEALTH",
+            logicalport_pin_id => 0,
+            io_capabilities => "0000000000000000000000000000000000000000000000000000000000000101")
+        PORT MAP(
+            pa_out => UI_HEALTH(0)__PA,
+            oe => open,
+            pad_in => UI_HEALTH(0)_PAD,
+            in_clock => ClockBlock_BUS_CLK,
+            in_clock_en => '1',
+            in_reset => '0',
+            out_clock => open,
+            out_clock_en => '1',
+            out_reset => '0');
+
+    WDT:interrupt
+        GENERIC MAP(
+            int_type => "00")
+        PORT MAP(
+            interrupt => Net_1804,
+            clock => ClockBlock_BUS_CLK);
 
     \CapSense:BufCH0\:csabufcell
         GENERIC MAP(
@@ -3472,6 +3871,259 @@ BEGIN
         PORT MAP(
             interrupt => Net_1398,
             clock => ClockBlock_BUS_CLK);
+
+    \WDT_Timer:TimerUDB:capture_out_reg_i\:macrocell
+        GENERIC MAP(
+            eqn_main => "1'b0",
+            clk_inv => '0',
+            clken_inv => '0',
+            clken_mode => 2)
+        PORT MAP(
+            q => \WDT_Timer:TimerUDB:capture_out_reg_i\,
+            clk_en => ClockBlock_100k__SYNC_OUT_1,
+            clock_0 => ClockBlock_BUS_CLK);
+
+    \WDT_Timer:TimerUDB:hwEnable_reg\:macrocell
+        GENERIC MAP(
+            eqn_main => "(main_0)",
+            clk_inv => '0',
+            clken_inv => '0',
+            clken_mode => 2)
+        PORT MAP(
+            q => \WDT_Timer:TimerUDB:hwEnable_reg\,
+            clk_en => ClockBlock_100k__SYNC_OUT_1,
+            clock_0 => ClockBlock_BUS_CLK,
+            main_0 => \WDT_Timer:TimerUDB:control_7\);
+
+    \WDT_Timer:TimerUDB:rstSts:stsreg\:statusicell
+        GENERIC MAP(
+            cy_force_order => 1,
+            cy_int_mask => "1111111",
+            cy_md_select => "0000011",
+            clk_inv => '0',
+            clken_inv => '0',
+            clken_mode => 2)
+        PORT MAP(
+            clock => ClockBlock_BUS_CLK,
+            status_6 => __ZERO__,
+            status_5 => __ZERO__,
+            status_4 => __ZERO__,
+            status_3 => \WDT_Timer:TimerUDB:status_3\,
+            status_2 => \WDT_Timer:TimerUDB:status_2\,
+            status_1 => __ZERO__,
+            status_0 => \WDT_Timer:TimerUDB:status_tc\,
+            clk_en => ClockBlock_100k__SYNC_OUT_1);
+
+    \WDT_Timer:TimerUDB:sCTRLReg:SyncCtl:ctrlreg\:controlcell
+        GENERIC MAP(
+            cy_ctrl_mode_0 => "11111111",
+            cy_ctrl_mode_1 => "00000000",
+            cy_ext_reset => 0,
+            cy_force_order => 1,
+            cy_init_value => "00000000",
+            clk_inv => '0',
+            clken_inv => '0',
+            clken_mode => 2)
+        PORT MAP(
+            clock => ClockBlock_BUS_CLK,
+            control_7 => \WDT_Timer:TimerUDB:control_7\,
+            control_6 => \WDT_Timer:TimerUDB:control_6\,
+            control_5 => \WDT_Timer:TimerUDB:control_5\,
+            control_4 => \WDT_Timer:TimerUDB:control_4\,
+            control_3 => \WDT_Timer:TimerUDB:control_3\,
+            control_2 => \WDT_Timer:TimerUDB:control_2\,
+            control_1 => \WDT_Timer:TimerUDB:control_1\,
+            control_0 => \WDT_Timer:TimerUDB:control_0\,
+            clk_en => ClockBlock_100k__SYNC_OUT_2,
+            busclk => ClockBlock_BUS_CLK);
+
+    \WDT_Timer:TimerUDB:sT24:timerdp:u0\:datapathcell
+        GENERIC MAP(
+            a0_init => "00000000",
+            a1_init => "00000000",
+            ce0_sync => 1,
+            ce1_sync => 1,
+            cl0_sync => 1,
+            cl1_sync => 1,
+            cmsb_sync => 1,
+            co_msb_sync => 1,
+            cy_dpconfig => "0000000001000000000000000100000001000000010000000000000010000000000000001000000000000000100000000000000010000000000000001000000011111111000000001111111111111111000000000000000000000001000000000000000000011000",
+            d0_init => "00000000",
+            d1_init => "00000000",
+            f0_blk_sync => 1,
+            f0_bus_sync => 1,
+            f1_blk_sync => 1,
+            f1_bus_sync => 1,
+            ff0_sync => 1,
+            ff1_sync => 1,
+            ov_msb_sync => 1,
+            so_sync => 1,
+            z0_sync => 1,
+            z1_sync => 1,
+            uses_p_in => '0',
+            uses_p_out => '0',
+            clk_inv => '0',
+            clken_inv => '0',
+            clken_mode => 2)
+        PORT MAP(
+            clock => ClockBlock_BUS_CLK,
+            cs_addr_1 => \WDT_Timer:TimerUDB:trig_reg\,
+            cs_addr_0 => \WDT_Timer:TimerUDB:per_zero\,
+            f0_load => __ZERO__,
+            clk_en => ClockBlock_100k__SYNC_OUT_1,
+            busclk => ClockBlock_BUS_CLK,
+            ce0 => \WDT_Timer:TimerUDB:sT24:timerdp:u0.ce0__sig\,
+            cl0 => \WDT_Timer:TimerUDB:sT24:timerdp:u0.cl0__sig\,
+            z0 => \WDT_Timer:TimerUDB:sT24:timerdp:u0.z0__sig\,
+            ff0 => \WDT_Timer:TimerUDB:sT24:timerdp:u0.ff0__sig\,
+            ce1 => \WDT_Timer:TimerUDB:sT24:timerdp:u0.ce1__sig\,
+            cl1 => \WDT_Timer:TimerUDB:sT24:timerdp:u0.cl1__sig\,
+            z1 => \WDT_Timer:TimerUDB:sT24:timerdp:u0.z1__sig\,
+            ff1 => \WDT_Timer:TimerUDB:sT24:timerdp:u0.ff1__sig\,
+            co_msb => \WDT_Timer:TimerUDB:sT24:timerdp:u0.co_msb__sig\,
+            sol_msb => \WDT_Timer:TimerUDB:sT24:timerdp:u0.sol_msb__sig\,
+            cfbo => \WDT_Timer:TimerUDB:sT24:timerdp:u0.cfbo__sig\,
+            sil => \WDT_Timer:TimerUDB:sT24:timerdp:u1.sor__sig\,
+            cmsbi => \WDT_Timer:TimerUDB:sT24:timerdp:u1.cmsbo__sig\);
+
+    \WDT_Timer:TimerUDB:sT24:timerdp:u1\:datapathcell
+        GENERIC MAP(
+            a0_init => "00000000",
+            a1_init => "00000000",
+            ce0_sync => 1,
+            ce1_sync => 1,
+            cl0_sync => 1,
+            cl1_sync => 1,
+            cmsb_sync => 1,
+            co_msb_sync => 1,
+            cy_dpconfig => "0000000001000000000000000100000001000000010000000000000010000000000000001000000000000000100000000000000010000000000000001000000011111111000000001111111111111111100000110000000000000001000000110000000000011000",
+            d0_init => "00000000",
+            d1_init => "00000000",
+            f0_blk_sync => 1,
+            f0_bus_sync => 1,
+            f1_blk_sync => 1,
+            f1_bus_sync => 1,
+            ff0_sync => 1,
+            ff1_sync => 1,
+            ov_msb_sync => 1,
+            so_sync => 1,
+            z0_sync => 1,
+            z1_sync => 1,
+            uses_p_in => '0',
+            uses_p_out => '0',
+            clk_inv => '0',
+            clken_inv => '0',
+            clken_mode => 2)
+        PORT MAP(
+            clock => ClockBlock_BUS_CLK,
+            cs_addr_1 => \WDT_Timer:TimerUDB:trig_reg\,
+            cs_addr_0 => \WDT_Timer:TimerUDB:per_zero\,
+            f0_load => __ZERO__,
+            busclk => ClockBlock_BUS_CLK,
+            clk_en => ClockBlock_100k__SYNC_OUT_1,
+            ce0i => \WDT_Timer:TimerUDB:sT24:timerdp:u0.ce0__sig\,
+            cl0i => \WDT_Timer:TimerUDB:sT24:timerdp:u0.cl0__sig\,
+            z0i => \WDT_Timer:TimerUDB:sT24:timerdp:u0.z0__sig\,
+            ff0i => \WDT_Timer:TimerUDB:sT24:timerdp:u0.ff0__sig\,
+            ce1i => \WDT_Timer:TimerUDB:sT24:timerdp:u0.ce1__sig\,
+            cl1i => \WDT_Timer:TimerUDB:sT24:timerdp:u0.cl1__sig\,
+            z1i => \WDT_Timer:TimerUDB:sT24:timerdp:u0.z1__sig\,
+            ff1i => \WDT_Timer:TimerUDB:sT24:timerdp:u0.ff1__sig\,
+            ci => \WDT_Timer:TimerUDB:sT24:timerdp:u0.co_msb__sig\,
+            sir => \WDT_Timer:TimerUDB:sT24:timerdp:u0.sol_msb__sig\,
+            cfbi => \WDT_Timer:TimerUDB:sT24:timerdp:u0.cfbo__sig\,
+            sor => \WDT_Timer:TimerUDB:sT24:timerdp:u1.sor__sig\,
+            cmsbo => \WDT_Timer:TimerUDB:sT24:timerdp:u1.cmsbo__sig\,
+            ce0 => \WDT_Timer:TimerUDB:sT24:timerdp:u1.ce0__sig\,
+            cl0 => \WDT_Timer:TimerUDB:sT24:timerdp:u1.cl0__sig\,
+            z0 => \WDT_Timer:TimerUDB:sT24:timerdp:u1.z0__sig\,
+            ff0 => \WDT_Timer:TimerUDB:sT24:timerdp:u1.ff0__sig\,
+            ce1 => \WDT_Timer:TimerUDB:sT24:timerdp:u1.ce1__sig\,
+            cl1 => \WDT_Timer:TimerUDB:sT24:timerdp:u1.cl1__sig\,
+            z1 => \WDT_Timer:TimerUDB:sT24:timerdp:u1.z1__sig\,
+            ff1 => \WDT_Timer:TimerUDB:sT24:timerdp:u1.ff1__sig\,
+            co_msb => \WDT_Timer:TimerUDB:sT24:timerdp:u1.co_msb__sig\,
+            sol_msb => \WDT_Timer:TimerUDB:sT24:timerdp:u1.sol_msb__sig\,
+            cfbo => \WDT_Timer:TimerUDB:sT24:timerdp:u1.cfbo__sig\,
+            sil => \WDT_Timer:TimerUDB:sT24:timerdp:u2.sor__sig\,
+            cmsbi => \WDT_Timer:TimerUDB:sT24:timerdp:u2.cmsbo__sig\);
+
+    \WDT_Timer:TimerUDB:sT24:timerdp:u2\:datapathcell
+        GENERIC MAP(
+            a0_init => "00000000",
+            a1_init => "00000000",
+            ce0_sync => 1,
+            ce1_sync => 1,
+            cl0_sync => 1,
+            cl1_sync => 1,
+            cmsb_sync => 1,
+            co_msb_sync => 1,
+            cy_dpconfig => "0000000001000000000000000100000001000000010000000000000010000000000000001000000000000000100000000000000010000000000000001000000011111111000000001111111111111111100000110000000000000001000000110000000000011000",
+            d0_init => "00000000",
+            d1_init => "00000000",
+            f0_blk_sync => 1,
+            f0_bus_sync => 1,
+            f1_blk_sync => 1,
+            f1_bus_sync => 1,
+            ff0_sync => 1,
+            ff1_sync => 1,
+            ov_msb_sync => 1,
+            so_sync => 1,
+            z0_sync => 1,
+            z1_sync => 1,
+            uses_p_in => '0',
+            uses_p_out => '0',
+            clk_inv => '0',
+            clken_inv => '0',
+            clken_mode => 2)
+        PORT MAP(
+            clock => ClockBlock_BUS_CLK,
+            cs_addr_1 => \WDT_Timer:TimerUDB:trig_reg\,
+            cs_addr_0 => \WDT_Timer:TimerUDB:per_zero\,
+            f0_load => __ZERO__,
+            z0_comb => \WDT_Timer:TimerUDB:per_zero\,
+            f0_bus_stat_comb => \WDT_Timer:TimerUDB:status_3\,
+            f0_blk_stat_comb => \WDT_Timer:TimerUDB:status_2\,
+            busclk => ClockBlock_BUS_CLK,
+            clk_en => ClockBlock_100k__SYNC_OUT_1,
+            ce0i => \WDT_Timer:TimerUDB:sT24:timerdp:u1.ce0__sig\,
+            cl0i => \WDT_Timer:TimerUDB:sT24:timerdp:u1.cl0__sig\,
+            z0i => \WDT_Timer:TimerUDB:sT24:timerdp:u1.z0__sig\,
+            ff0i => \WDT_Timer:TimerUDB:sT24:timerdp:u1.ff0__sig\,
+            ce1i => \WDT_Timer:TimerUDB:sT24:timerdp:u1.ce1__sig\,
+            cl1i => \WDT_Timer:TimerUDB:sT24:timerdp:u1.cl1__sig\,
+            z1i => \WDT_Timer:TimerUDB:sT24:timerdp:u1.z1__sig\,
+            ff1i => \WDT_Timer:TimerUDB:sT24:timerdp:u1.ff1__sig\,
+            ci => \WDT_Timer:TimerUDB:sT24:timerdp:u1.co_msb__sig\,
+            sir => \WDT_Timer:TimerUDB:sT24:timerdp:u1.sol_msb__sig\,
+            cfbi => \WDT_Timer:TimerUDB:sT24:timerdp:u1.cfbo__sig\,
+            sor => \WDT_Timer:TimerUDB:sT24:timerdp:u2.sor__sig\,
+            cmsbo => \WDT_Timer:TimerUDB:sT24:timerdp:u2.cmsbo__sig\);
+
+    \WDT_Timer:TimerUDB:status_tc\:macrocell
+        GENERIC MAP(
+            eqn_main => "(main_0 * main_1)",
+            clken_mode => 1)
+        PORT MAP(
+            q => \WDT_Timer:TimerUDB:status_tc\,
+            main_0 => \WDT_Timer:TimerUDB:control_7\,
+            main_1 => \WDT_Timer:TimerUDB:per_zero\);
+
+    \WDT_Timer:TimerUDB:timer_enable\:macrocell
+        GENERIC MAP(
+            eqn_main => "(main_0)",
+            clken_mode => 1)
+        PORT MAP(
+            q => \WDT_Timer:TimerUDB:timer_enable\,
+            main_0 => \WDT_Timer:TimerUDB:control_7\);
+
+    \WDT_Timer:TimerUDB:trig_reg\:macrocell
+        GENERIC MAP(
+            eqn_main => "(main_0)",
+            clken_mode => 1)
+        PORT MAP(
+            q => \WDT_Timer:TimerUDB:trig_reg\,
+            main_0 => \WDT_Timer:TimerUDB:timer_enable\);
 
     \WaveDAC8_1:Net_183\:macrocell
         GENERIC MAP(

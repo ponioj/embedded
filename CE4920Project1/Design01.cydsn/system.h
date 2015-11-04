@@ -38,6 +38,11 @@
 #include <stdio.h>
 #include "timer_clock_1.h"
 #include "terminal.h"
+#include "WDT.h"
+#include "WDT_Timer.h"
+#include "HEARTRATE_HEALTH.h"
+#include "MOTOR_HEALTH.h"
+#include "UI_HEALTH.h"
     
 void System_init();
 

@@ -28,6 +28,9 @@ void System_init(){
     HeartbeatCounter_Start(); 
     timer_clock_1_Start();
     Start_motor();
+    WDT_Timer_Start();
+    WDT_Start();
+    CyWdtStart(CYWDT_1024_TICKS, CYWDT_LPMODE_NOCHANGE);
 //    USBUART_Start(0, USBUART_3V_OPERATION);
 //    TERMINAL_WriteString("Welcome to my treadmill!\n\r");
 }

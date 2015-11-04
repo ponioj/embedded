@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cchwgjoG.s 			page 1
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccWPIHIG.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cchwgjoG.s 			page 1
   32              		.cfi_def_cfa_offset 24
   33              		.cfi_offset 3, -24
   34              		.cfi_offset 4, -20
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cchwgjoG.s 			page 2
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccWPIHIG.s 			page 2
 
 
   35              		.cfi_offset 5, -16
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cchwgjoG.s 			page 1
   34:.\states.c    ****                 Prev_state = STATE_SLEEP;
   79              		.loc 1 34 0
   80 003e 0023     		movs	r3, #0
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cchwgjoG.s 			page 3
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccWPIHIG.s 			page 3
 
 
   81 0040 3B60     		str	r3, [r7]
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cchwgjoG.s 			page 1
  120 0064 024B     		ldr	r3, .L10+4
  121 0066 1868     		ldr	r0, [r3]
  122 0068 F8BD     		pop	{r3, r4, r5, r6, r7, pc}
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cchwgjoG.s 			page 4
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccWPIHIG.s 			page 4
 
 
  123              	.L11:
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cchwgjoG.s 			page 1
   53:.\states.c    ****     return STATE_START;
   54:.\states.c    **** }
  169              		.loc 1 54 0
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cchwgjoG.s 			page 5
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccWPIHIG.s 			page 5
 
 
  170 0022 0220     		movs	r0, #2
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cchwgjoG.s 			page 1
  218              		.thumb
  219              		.thumb_func
  220              		.type	State_profile_selection, %function
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cchwgjoG.s 			page 6
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccWPIHIG.s 			page 6
 
 
  221              	State_profile_selection:
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cchwgjoG.s 			page 1
  262 002e FFF7FEFF 		bl	CapSense_UpdateEnabledBaselines
  263              	.LVL25:
   74:.\states.c    ****     CapSense_ScanEnabledWidgets();
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cchwgjoG.s 			page 7
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccWPIHIG.s 			page 7
 
 
  264              		.loc 1 74 0
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cchwgjoG.s 			page 1
  305 006e 174B     		ldr	r3, .L32+8
  306 0070 1868     		ldr	r0, [r3]
  307 0072 FFF7FEFF 		bl	Display_profile_selection
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cchwgjoG.s 			page 8
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccWPIHIG.s 			page 8
 
 
  308              	.LVL31:
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cchwgjoG.s 			page 1
  340              		.loc 1 97 0
  341 00a2 0C48     		ldr	r0, .L32+16
  342 00a4 FFF7FEFF 		bl	LCD_PrintString
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cchwgjoG.s 			page 9
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccWPIHIG.s 			page 9
 
 
  343              	.LVL35:
@@ -538,2333 +538,2126 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cchwgjoG.s 			page 1
  390              		.cfi_startproc
  391              		@ args = 0, pretend = 0, frame = 0
  392              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cchwgjoG.s 			page 10
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccWPIHIG.s 			page 10
 
 
- 393 0000 38B5     		push	{r3, r4, r5, lr}
- 394              		.cfi_def_cfa_offset 16
- 395              		.cfi_offset 3, -16
- 396              		.cfi_offset 4, -12
- 397              		.cfi_offset 5, -8
- 398              		.cfi_offset 14, -4
+ 393 0000 08B5     		push	{r3, lr}
+ 394              		.cfi_def_cfa_offset 8
+ 395              		.cfi_offset 3, -8
+ 396              		.cfi_offset 14, -4
  110:.\states.c    ****     Prev_state = STATE_MOVING;
- 399              		.loc 1 110 0
- 400 0002 0422     		movs	r2, #4
- 401 0004 234B     		ldr	r3, .L42
- 402 0006 1A60     		str	r2, [r3]
+ 397              		.loc 1 110 0
+ 398 0002 0422     		movs	r2, #4
+ 399 0004 1B4B     		ldr	r3, .L40
+ 400 0006 1A60     		str	r2, [r3]
  111:.\states.c    ****     Detect_heartrate();
- 403              		.loc 1 111 0
- 404 0008 FFF7FEFF 		bl	Detect_heartrate
- 405              	.LVL38:
+ 401              		.loc 1 111 0
+ 402 0008 FFF7FEFF 		bl	Detect_heartrate
+ 403              	.LVL38:
  112:.\states.c    ****     int i;
  113:.\states.c    ****     for (i=0; i<9; i++){ 
- 406              		.loc 1 113 0
- 407 000c 0023     		movs	r3, #0
+ 404              		.loc 1 113 0
+ 405 000c 0023     		movs	r3, #0
  114:.\states.c    ****         movingAverage[i]=movingAverage[i+1];
- 408              		.loc 1 114 0
- 409 000e 2249     		ldr	r1, .L42+4
+ 406              		.loc 1 114 0
+ 407 000e 1A49     		ldr	r1, .L40+4
  113:.\states.c    ****     for (i=0; i<9; i++){ 
- 410              		.loc 1 113 0
- 411 0010 07E0     		b	.L35
- 412              	.LVL39:
- 413              	.L36:
- 414              		.loc 1 114 0 discriminator 2
- 415 0012 5A1C     		adds	r2, r3, #1
- 416 0014 01EB8200 		add	r0, r1, r2, lsl #2
- 417 0018 4068     		ldr	r0, [r0, #4]	@ float
- 418 001a 01EB8303 		add	r3, r1, r3, lsl #2
- 419              	.LVL40:
- 420 001e 5860     		str	r0, [r3, #4]	@ float
- 421              	.LVL41:
+ 408              		.loc 1 113 0
+ 409 0010 07E0     		b	.L35
+ 410              	.LVL39:
+ 411              	.L36:
+ 412              		.loc 1 114 0 discriminator 2
+ 413 0012 5A1C     		adds	r2, r3, #1
+ 414 0014 01EB8200 		add	r0, r1, r2, lsl #2
+ 415 0018 4068     		ldr	r0, [r0, #4]	@ float
+ 416 001a 01EB8303 		add	r3, r1, r3, lsl #2
+ 417              	.LVL40:
+ 418 001e 5860     		str	r0, [r3, #4]	@ float
+ 419              	.LVL41:
  113:.\states.c    ****     for (i=0; i<9; i++){ 
- 422              		.loc 1 113 0 discriminator 2
- 423 0020 1346     		mov	r3, r2
- 424              	.LVL42:
- 425              	.L35:
+ 420              		.loc 1 113 0 discriminator 2
+ 421 0020 1346     		mov	r3, r2
+ 422              	.LVL42:
+ 423              	.L35:
  113:.\states.c    ****     for (i=0; i<9; i++){ 
- 426              		.loc 1 113 0 is_stmt 0 discriminator 1
- 427 0022 082B     		cmp	r3, #8
- 428 0024 F5DD     		ble	.L36
+ 424              		.loc 1 113 0 is_stmt 0 discriminator 1
+ 425 0022 082B     		cmp	r3, #8
+ 426 0024 F5DD     		ble	.L36
  115:.\states.c    ****     }
  116:.\states.c    ****     movingAverage[9]=heartrate;
- 429              		.loc 1 116 0 is_stmt 1
- 430 0026 1D4B     		ldr	r3, .L42+8
- 431              	.LVL43:
- 432 0028 1968     		ldr	r1, [r3]	@ float
- 433 002a 1B4B     		ldr	r3, .L42+4
- 434 002c 9962     		str	r1, [r3, #40]	@ float
+ 427              		.loc 1 116 0 is_stmt 1
+ 428 0026 154B     		ldr	r3, .L40+8
+ 429              	.LVL43:
+ 430 0028 1968     		ldr	r1, [r3]	@ float
+ 431 002a 134B     		ldr	r3, .L40+4
+ 432 002c 9962     		str	r1, [r3, #40]	@ float
  117:.\states.c    ****     int difference = movingAverage[0]-heartrate;
- 435              		.loc 1 117 0
- 436 002e 5868     		ldr	r0, [r3, #4]	@ float
- 437 0030 FFF7FEFF 		bl	__aeabi_fsub
- 438              	.LVL44:
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cchwgjoG.s 			page 11
+ 433              		.loc 1 117 0
+ 434 002e 5868     		ldr	r0, [r3, #4]	@ float
+ 435 0030 FFF7FEFF 		bl	__aeabi_fsub
+ 436              	.LVL44:
+ 437 0034 FFF7FEFF 		bl	__aeabi_f2iz
+ 438              	.LVL45:
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccWPIHIG.s 			page 11
 
 
- 439 0034 FFF7FEFF 		bl	__aeabi_f2iz
- 440              	.LVL45:
- 441 0038 0446     		mov	r4, r0
- 442              	.LVL46:
  118:.\states.c    ****     int change = (difference*difference);
- 443              		.loc 1 118 0
- 444 003a 00FB00F5 		mul	r5, r0, r0
- 445              	.LVL47:
- 119:.\states.c    ****     LCD_Position(0,0);
- 446              		.loc 1 119 0
- 447 003e 0020     		movs	r0, #0
- 448              	.LVL48:
- 449 0040 0146     		mov	r1, r0
- 450 0042 FFF7FEFF 		bl	LCD_Position
- 451              	.LVL49:
- 120:.\states.c    ****     int average=0;
- 121:.\states.c    ****     for (i=0; i<10; i++){
- 452              		.loc 1 121 0
- 453 0046 0023     		movs	r3, #0
- 454 0048 00E0     		b	.L37
- 455              	.LVL50:
- 456              	.L38:
- 457              		.loc 1 121 0 is_stmt 0 discriminator 2
- 458 004a 0133     		adds	r3, r3, #1
- 459              	.LVL51:
- 460              	.L37:
- 461              		.loc 1 121 0 discriminator 1
- 462 004c 092B     		cmp	r3, #9
- 463 004e FCDD     		ble	.L38
- 122:.\states.c    ****         average +=movingAverage[i];
- 123:.\states.c    ****     }
- 124:.\states.c    ****     average /= 10;
- 125:.\states.c    ****     LCD_PrintNumber(difference);
- 464              		.loc 1 125 0 is_stmt 1
- 465 0050 A0B2     		uxth	r0, r4
- 466 0052 FFF7FEFF 		bl	LCD_PrintU32Number
- 467              	.LVL52:
- 126:.\states.c    ****     LCD_PrintString("      ");
- 468              		.loc 1 126 0
- 469 0056 1248     		ldr	r0, .L42+12
- 470 0058 FFF7FEFF 		bl	LCD_PrintString
- 471              	.LVL53:
- 127:.\states.c    ****     if ((change)>=100){
- 472              		.loc 1 127 0
- 473 005c 632D     		cmp	r5, #99
- 474 005e 13DD     		ble	.L39
- 128:.\states.c    ****         if(difference>0){
- 475              		.loc 1 128 0
- 476 0060 002C     		cmp	r4, #0
- 477 0062 03DD     		ble	.L40
- 129:.\states.c    ****             increasingHr = 0;   
- 478              		.loc 1 129 0
- 479 0064 0022     		movs	r2, #0
- 480 0066 0F4B     		ldr	r3, .L42+16
- 481 0068 1A60     		str	r2, [r3]
- 482 006a 02E0     		b	.L41
- 483              	.L40:
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cchwgjoG.s 			page 12
+ 439              		.loc 1 118 0
+ 440 0038 00FB00F3 		mul	r3, r0, r0
+ 441              	.LVL46:
+ 119:.\states.c    ****     if ((change)>=100){
+ 442              		.loc 1 119 0
+ 443 003c 632B     		cmp	r3, #99
+ 444 003e 13DD     		ble	.L37
+ 120:.\states.c    ****         if(difference>0){
+ 445              		.loc 1 120 0
+ 446 0040 0028     		cmp	r0, #0
+ 447 0042 03DD     		ble	.L38
+ 121:.\states.c    ****             increasingHr = 0;   
+ 448              		.loc 1 121 0
+ 449 0044 0022     		movs	r2, #0
+ 450 0046 0E4B     		ldr	r3, .L40+12
+ 451              	.LVL47:
+ 452 0048 1A60     		str	r2, [r3]
+ 453 004a 02E0     		b	.L39
+ 454              	.LVL48:
+ 455              	.L38:
+ 122:.\states.c    ****         }
+ 123:.\states.c    ****         else{
+ 124:.\states.c    ****             increasingHr = 1;
+ 456              		.loc 1 124 0
+ 457 004c 0122     		movs	r2, #1
+ 458 004e 0C4B     		ldr	r3, .L40+12
+ 459              	.LVL49:
+ 460 0050 1A60     		str	r2, [r3]
+ 461              	.L39:
+ 125:.\states.c    ****         }
+ 126:.\states.c    ****         LCD_Position(1,5);
+ 462              		.loc 1 126 0
+ 463 0052 0120     		movs	r0, #1
+ 464              	.LVL50:
+ 465 0054 0521     		movs	r1, #5
+ 466 0056 FFF7FEFF 		bl	LCD_Position
+ 467              	.LVL51:
+ 127:.\states.c    ****         LCD_PrintNumber(increasingHr);
+ 468              		.loc 1 127 0
+ 469 005a 094B     		ldr	r3, .L40+12
+ 470 005c 1888     		ldrh	r0, [r3]
+ 471 005e FFF7FEFF 		bl	LCD_PrintU32Number
+ 472              	.LVL52:
+ 128:.\states.c    ****         currentState = STATE_HEARTRATE_CHANGE;
+ 473              		.loc 1 128 0
+ 474 0062 0522     		movs	r2, #5
+ 475 0064 074B     		ldr	r3, .L40+16
+ 476 0066 1A60     		str	r2, [r3]
+ 477              	.L37:
+ 129:.\states.c    ****     }
+ 130:.\states.c    ****     CyDelay(100);
+ 478              		.loc 1 130 0
+ 479 0068 6420     		movs	r0, #100
+ 480 006a FFF7FEFF 		bl	CyDelay
+ 481              	.LVL53:
+ 131:.\states.c    ****     return currentState;   
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccWPIHIG.s 			page 12
 
 
- 130:.\states.c    ****         }
- 131:.\states.c    ****         else{
- 132:.\states.c    ****             increasingHr = 1;
- 484              		.loc 1 132 0
- 485 006c 0122     		movs	r2, #1
- 486 006e 0D4B     		ldr	r3, .L42+16
- 487 0070 1A60     		str	r2, [r3]
- 488              	.L41:
- 133:.\states.c    ****         }
- 134:.\states.c    ****         LCD_Position(1,5);
- 489              		.loc 1 134 0
- 490 0072 0120     		movs	r0, #1
- 491 0074 0521     		movs	r1, #5
- 492 0076 FFF7FEFF 		bl	LCD_Position
- 493              	.LVL54:
- 135:.\states.c    ****         LCD_PrintNumber(increasingHr);
- 494              		.loc 1 135 0
- 495 007a 0A4B     		ldr	r3, .L42+16
- 496 007c 1888     		ldrh	r0, [r3]
- 497 007e FFF7FEFF 		bl	LCD_PrintU32Number
- 498              	.LVL55:
- 136:.\states.c    ****         currentState = STATE_HEARTRATE_CHANGE;
- 499              		.loc 1 136 0
- 500 0082 0522     		movs	r2, #5
- 501 0084 084B     		ldr	r3, .L42+20
- 502 0086 1A60     		str	r2, [r3]
- 503              	.L39:
- 137:.\states.c    ****     }
- 138:.\states.c    ****     CyDelay(100);
- 504              		.loc 1 138 0
- 505 0088 6420     		movs	r0, #100
- 506 008a FFF7FEFF 		bl	CyDelay
- 507              	.LVL56:
- 139:.\states.c    ****     return currentState;   
- 140:.\states.c    **** }
- 508              		.loc 1 140 0
- 509 008e 064B     		ldr	r3, .L42+20
- 510 0090 1868     		ldr	r0, [r3]
- 511 0092 38BD     		pop	{r3, r4, r5, pc}
- 512              	.LVL57:
- 513              	.L43:
- 514              		.align	2
- 515              	.L42:
- 516 0094 00000000 		.word	Prev_state
- 517 0098 00000000 		.word	.LANCHOR0
- 518 009c 00000000 		.word	heartrate
- 519 00a0 48000000 		.word	.LC6
- 520 00a4 00000000 		.word	increasingHr
- 521 00a8 00000000 		.word	currentState
- 522              		.cfi_endproc
- 523              	.LFE4:
- 524              		.size	State_moving, .-State_moving
- 525              		.global	__aeabi_fcmpgt
- 526              		.global	__aeabi_fcmplt
- 527              		.section	.text.State_heartrate_change,"ax",%progbits
- 528              		.align	2
- 529              		.global	State_heartrate_change
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cchwgjoG.s 			page 13
+ 132:.\states.c    **** }
+ 482              		.loc 1 132 0
+ 483 006e 054B     		ldr	r3, .L40+16
+ 484 0070 1868     		ldr	r0, [r3]
+ 485 0072 08BD     		pop	{r3, pc}
+ 486              	.L41:
+ 487              		.align	2
+ 488              	.L40:
+ 489 0074 00000000 		.word	Prev_state
+ 490 0078 00000000 		.word	.LANCHOR0
+ 491 007c 00000000 		.word	heartrate
+ 492 0080 00000000 		.word	increasingHr
+ 493 0084 00000000 		.word	currentState
+ 494              		.cfi_endproc
+ 495              	.LFE4:
+ 496              		.size	State_moving, .-State_moving
+ 497              		.global	__aeabi_fcmpgt
+ 498              		.global	__aeabi_fcmplt
+ 499              		.section	.text.State_heartrate_change,"ax",%progbits
+ 500              		.align	2
+ 501              		.global	State_heartrate_change
+ 502              		.thumb
+ 503              		.thumb_func
+ 504              		.type	State_heartrate_change, %function
+ 505              	State_heartrate_change:
+ 506              	.LFB5:
+ 133:.\states.c    **** 
+ 134:.\states.c    **** STATE State_heartrate_change(){
+ 507              		.loc 1 134 0
+ 508              		.cfi_startproc
+ 509              		@ args = 0, pretend = 0, frame = 0
+ 510              		@ frame_needed = 0, uses_anonymous_args = 0
+ 511 0000 10B5     		push	{r4, lr}
+ 512              		.cfi_def_cfa_offset 8
+ 513              		.cfi_offset 4, -8
+ 514              		.cfi_offset 14, -4
+ 135:.\states.c    ****     Prev_state = STATE_HEARTRATE_CHANGE;
+ 515              		.loc 1 135 0
+ 516 0002 0522     		movs	r2, #5
+ 517 0004 264B     		ldr	r3, .L65
+ 518 0006 1A60     		str	r2, [r3]
+ 136:.\states.c    ****     switch (selectedProfile){
+ 519              		.loc 1 136 0
+ 520 0008 264B     		ldr	r3, .L65+4
+ 521 000a 1B68     		ldr	r3, [r3]
+ 522 000c 012B     		cmp	r3, #1
+ 523 000e 30D0     		beq	.L44
+ 524 0010 022B     		cmp	r3, #2
+ 525 0012 18D0     		beq	.L45
+ 526 0014 002B     		cmp	r3, #0
+ 527 0016 41D1     		bne	.L43
+ 137:.\states.c    ****         case PROFILE_REGULAR:
+ 138:.\states.c    ****             if (heartrate>100){
+ 528              		.loc 1 138 0
+ 529 0018 234B     		ldr	r3, .L65+8
+ 530 001a 1C68     		ldr	r4, [r3]	@ float
+ 531 001c 2046     		mov	r0, r4
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccWPIHIG.s 			page 13
 
 
- 530              		.thumb
- 531              		.thumb_func
- 532              		.type	State_heartrate_change, %function
- 533              	State_heartrate_change:
- 534              	.LFB5:
- 141:.\states.c    **** 
- 142:.\states.c    **** STATE State_heartrate_change(){
- 535              		.loc 1 142 0
- 536              		.cfi_startproc
- 537              		@ args = 0, pretend = 0, frame = 0
- 538              		@ frame_needed = 0, uses_anonymous_args = 0
- 539 0000 10B5     		push	{r4, lr}
- 540              		.cfi_def_cfa_offset 8
- 541              		.cfi_offset 4, -8
- 542              		.cfi_offset 14, -4
- 143:.\states.c    ****     Prev_state = STATE_HEARTRATE_CHANGE;
- 543              		.loc 1 143 0
- 544 0002 0522     		movs	r2, #5
- 545 0004 314B     		ldr	r3, .L67
- 546 0006 1A60     		str	r2, [r3]
- 144:.\states.c    ****     LCD_Position(0,9);
- 547              		.loc 1 144 0
- 548 0008 0020     		movs	r0, #0
- 549 000a 0921     		movs	r1, #9
- 550 000c FFF7FEFF 		bl	LCD_Position
- 551              	.LVL58:
- 145:.\states.c    ****     LCD_PrintNumber(selectedProfile);
- 552              		.loc 1 145 0
- 553 0010 2F4C     		ldr	r4, .L67+4
- 554 0012 2088     		ldrh	r0, [r4]
- 555 0014 FFF7FEFF 		bl	LCD_PrintU32Number
- 556              	.LVL59:
- 146:.\states.c    ****     switch (selectedProfile){
+ 532 001e 2349     		ldr	r1, .L65+12
+ 533 0020 FFF7FEFF 		bl	__aeabi_fcmpgt
+ 534              	.LVL54:
+ 535 0024 20B1     		cbz	r0, .L62
+ 139:.\states.c    ****                 Motor_rampUp(MOTOR_WALKING_SPEED);
+ 536              		.loc 1 139 0
+ 537 0026 224B     		ldr	r3, .L65+16
+ 538 0028 1868     		ldr	r0, [r3]
+ 539 002a FFF7FEFF 		bl	Motor_rampUp
+ 540              	.LVL55:
+ 541 002e 35E0     		b	.L43
+ 542              	.L62:
+ 140:.\states.c    ****             }
+ 141:.\states.c    ****             else if (heartrate<80){
+ 543              		.loc 1 141 0
+ 544 0030 2046     		mov	r0, r4
+ 545 0032 2049     		ldr	r1, .L65+20
+ 546 0034 FFF7FEFF 		bl	__aeabi_fcmplt
+ 547              	.LVL56:
+ 548 0038 0028     		cmp	r0, #0
+ 549 003a 2FD0     		beq	.L43
+ 142:.\states.c    ****                 Motor_rampUp(MOTOR_RUNNING_SPEED);
+ 550              		.loc 1 142 0
+ 551 003c 1C4B     		ldr	r3, .L65+16
+ 552 003e 5868     		ldr	r0, [r3, #4]
+ 553 0040 FFF7FEFF 		bl	Motor_rampUp
+ 554              	.LVL57:
+ 555 0044 2AE0     		b	.L43
+ 556              	.L45:
+ 143:.\states.c    ****             }
+ 144:.\states.c    ****             break;
+ 145:.\states.c    ****         case PROFILE_CARDIO:
+ 146:.\states.c    ****             if (heartrate>180){
  557              		.loc 1 146 0
- 558 0018 2368     		ldr	r3, [r4]
- 559 001a 012B     		cmp	r3, #1
- 560 001c 3ED0     		beq	.L46
- 561 001e 022B     		cmp	r3, #2
- 562 0020 26D0     		beq	.L47
- 563 0022 002B     		cmp	r3, #0
- 564 0024 4FD1     		bne	.L45
- 147:.\states.c    ****         case PROFILE_REGULAR:
- 148:.\states.c    ****             if (heartrate>100){
- 565              		.loc 1 148 0
- 566 0026 2B4B     		ldr	r3, .L67+8
- 567 0028 1C68     		ldr	r4, [r3]	@ float
- 568 002a 2046     		mov	r0, r4
- 569 002c 2A49     		ldr	r1, .L67+12
- 570 002e FFF7FEFF 		bl	__aeabi_fcmpgt
- 571              	.LVL60:
- 572 0032 58B1     		cbz	r0, .L64
- 149:.\states.c    ****                 Motor_rampUp(MOTOR_WALKING_SPEED);
- 573              		.loc 1 149 0
- 574 0034 294B     		ldr	r3, .L67+16
- 575 0036 1868     		ldr	r0, [r3]
- 576 0038 FFF7FEFF 		bl	Motor_rampUp
- 577              	.LVL61:
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cchwgjoG.s 			page 14
+ 558 0046 184B     		ldr	r3, .L65+8
+ 559 0048 1C68     		ldr	r4, [r3]	@ float
+ 560 004a 2046     		mov	r0, r4
+ 561 004c 1A49     		ldr	r1, .L65+24
+ 562 004e FFF7FEFF 		bl	__aeabi_fcmpgt
+ 563              	.LVL58:
+ 564 0052 20B1     		cbz	r0, .L63
+ 147:.\states.c    ****                 Motor_rampUp(MOTOR_WALKING_SPEED);
+ 565              		.loc 1 147 0
+ 566 0054 164B     		ldr	r3, .L65+16
+ 567 0056 1868     		ldr	r0, [r3]
+ 568 0058 FFF7FEFF 		bl	Motor_rampUp
+ 569              	.LVL59:
+ 570 005c 1EE0     		b	.L43
+ 571              	.L63:
+ 148:.\states.c    ****             }
+ 149:.\states.c    ****             else if (heartrate<120){
+ 572              		.loc 1 149 0
+ 573 005e 2046     		mov	r0, r4
+ 574 0060 1649     		ldr	r1, .L65+28
+ 575 0062 FFF7FEFF 		bl	__aeabi_fcmplt
+ 576              	.LVL60:
+ 577 0066 C8B1     		cbz	r0, .L43
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccWPIHIG.s 			page 14
 
 
- 150:.\states.c    ****                 LCD_Position(0,0);
+ 150:.\states.c    ****                 Motor_rampUp(MOTOR_RUNNING_SPEED);
  578              		.loc 1 150 0
- 579 003c 0020     		movs	r0, #0
- 580 003e 0146     		mov	r1, r0
- 581 0040 FFF7FEFF 		bl	LCD_Position
- 582              	.LVL62:
- 151:.\states.c    ****                 LCD_PrintString("Walking");
- 583              		.loc 1 151 0
- 584 0044 2648     		ldr	r0, .L67+20
- 585 0046 FFF7FEFF 		bl	LCD_PrintString
- 586              	.LVL63:
- 587 004a 3CE0     		b	.L45
- 588              	.L64:
- 152:.\states.c    ****             }
- 153:.\states.c    ****             else if (heartrate<80){
- 589              		.loc 1 153 0
- 590 004c 2046     		mov	r0, r4
- 591 004e 2549     		ldr	r1, .L67+24
- 592 0050 FFF7FEFF 		bl	__aeabi_fcmplt
- 593              	.LVL64:
- 594 0054 0028     		cmp	r0, #0
- 595 0056 36D0     		beq	.L45
- 154:.\states.c    ****                 Motor_rampUp(MOTOR_RUNNING_SPEED);
- 596              		.loc 1 154 0
- 597 0058 204B     		ldr	r3, .L67+16
- 598 005a 5868     		ldr	r0, [r3, #4]
- 599 005c FFF7FEFF 		bl	Motor_rampUp
- 600              	.LVL65:
- 155:.\states.c    ****                 LCD_Position(0,0);
- 601              		.loc 1 155 0
- 602 0060 0020     		movs	r0, #0
- 603 0062 0146     		mov	r1, r0
- 604 0064 FFF7FEFF 		bl	LCD_Position
- 605              	.LVL66:
- 156:.\states.c    ****                 LCD_PrintString("Running");
- 606              		.loc 1 156 0
- 607 0068 1F48     		ldr	r0, .L67+28
- 608 006a FFF7FEFF 		bl	LCD_PrintString
- 609              	.LVL67:
- 610 006e 2AE0     		b	.L45
- 611              	.L47:
- 157:.\states.c    ****             }
- 158:.\states.c    ****             break;
- 159:.\states.c    ****         case PROFILE_CARDIO:
- 160:.\states.c    ****             if (heartrate>180){
- 612              		.loc 1 160 0
- 613 0070 184B     		ldr	r3, .L67+8
- 614 0072 1C68     		ldr	r4, [r3]	@ float
- 615 0074 2046     		mov	r0, r4
- 616 0076 1D49     		ldr	r1, .L67+32
- 617 0078 FFF7FEFF 		bl	__aeabi_fcmpgt
- 618              	.LVL68:
- 619 007c 20B1     		cbz	r0, .L65
- 161:.\states.c    ****                 Motor_rampUp(MOTOR_WALKING_SPEED);
- 620              		.loc 1 161 0
- 621 007e 174B     		ldr	r3, .L67+16
- 622 0080 1868     		ldr	r0, [r3]
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cchwgjoG.s 			page 15
-
-
- 623 0082 FFF7FEFF 		bl	Motor_rampUp
- 624              	.LVL69:
- 625 0086 1EE0     		b	.L45
- 626              	.L65:
- 162:.\states.c    ****             }
- 163:.\states.c    ****             else if (heartrate<120){
- 627              		.loc 1 163 0
- 628 0088 2046     		mov	r0, r4
- 629 008a 1949     		ldr	r1, .L67+36
- 630 008c FFF7FEFF 		bl	__aeabi_fcmplt
- 631              	.LVL70:
- 632 0090 C8B1     		cbz	r0, .L45
- 164:.\states.c    ****                 Motor_rampUp(MOTOR_RUNNING_SPEED);
- 633              		.loc 1 164 0
- 634 0092 124B     		ldr	r3, .L67+16
- 635 0094 5868     		ldr	r0, [r3, #4]
- 636 0096 FFF7FEFF 		bl	Motor_rampUp
- 637              	.LVL71:
- 638 009a 14E0     		b	.L45
- 639              	.L46:
- 165:.\states.c    ****             }
- 166:.\states.c    ****             break;
- 167:.\states.c    ****         case PROFILE_FATBURN:
- 168:.\states.c    ****             if (heartrate>100){
- 640              		.loc 1 168 0
- 641 009c 0D4B     		ldr	r3, .L67+8
- 642 009e 1C68     		ldr	r4, [r3]	@ float
- 643 00a0 2046     		mov	r0, r4
- 644 00a2 0D49     		ldr	r1, .L67+12
- 645 00a4 FFF7FEFF 		bl	__aeabi_fcmpgt
- 646              	.LVL72:
- 647 00a8 20B1     		cbz	r0, .L66
- 169:.\states.c    ****                 Motor_rampUp(MOTOR_FAST_WALKING_SPEED);
- 648              		.loc 1 169 0
- 649 00aa 0C4B     		ldr	r3, .L67+16
- 650 00ac 9868     		ldr	r0, [r3, #8]
- 651 00ae FFF7FEFF 		bl	Motor_rampUp
- 652              	.LVL73:
- 653 00b2 08E0     		b	.L45
- 654              	.L66:
- 170:.\states.c    ****             }
- 171:.\states.c    ****             else if (heartrate<60){
- 655              		.loc 1 171 0
- 656 00b4 2046     		mov	r0, r4
- 657 00b6 0F49     		ldr	r1, .L67+40
- 658 00b8 FFF7FEFF 		bl	__aeabi_fcmplt
- 659              	.LVL74:
- 660 00bc 18B1     		cbz	r0, .L45
- 172:.\states.c    ****                 Motor_rampUp(MOTOR_RUNNING_SPEED);
- 661              		.loc 1 172 0
- 662 00be 074B     		ldr	r3, .L67+16
- 663 00c0 5868     		ldr	r0, [r3, #4]
- 664 00c2 FFF7FEFF 		bl	Motor_rampUp
- 665              	.LVL75:
- 666              	.L45:
- 173:.\states.c    ****             }
- 174:.\states.c    ****             break;
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cchwgjoG.s 			page 16
-
-
- 175:.\states.c    ****         default:
- 176:.\states.c    ****             break;
- 177:.\states.c    ****     }
- 178:.\states.c    ****     return STATE_MOVING;   
- 179:.\states.c    **** }
- 667              		.loc 1 179 0
- 668 00c6 0420     		movs	r0, #4
- 669 00c8 10BD     		pop	{r4, pc}
- 670              	.L68:
- 671 00ca 00BF     		.align	2
- 672              	.L67:
- 673 00cc 00000000 		.word	Prev_state
- 674 00d0 00000000 		.word	.LANCHOR0
- 675 00d4 00000000 		.word	heartrate
- 676 00d8 0000C842 		.word	1120403456
- 677 00dc 00000000 		.word	.LANCHOR1
- 678 00e0 50000000 		.word	.LC7
- 679 00e4 0000A042 		.word	1117782016
- 680 00e8 58000000 		.word	.LC8
- 681 00ec 00003443 		.word	1127481344
- 682 00f0 0000F042 		.word	1123024896
- 683 00f4 00007042 		.word	1114636288
- 684              		.cfi_endproc
- 685              	.LFE5:
- 686              		.size	State_heartrate_change, .-State_heartrate_change
- 687              		.section	.text.State_stop,"ax",%progbits
- 688              		.align	2
- 689              		.global	State_stop
- 690              		.thumb
- 691              		.thumb_func
- 692              		.type	State_stop, %function
- 693              	State_stop:
- 694              	.LFB6:
- 180:.\states.c    **** 
- 181:.\states.c    **** STATE State_stop(){
- 695              		.loc 1 181 0
- 696              		.cfi_startproc
- 697              		@ args = 0, pretend = 0, frame = 0
- 698              		@ frame_needed = 0, uses_anonymous_args = 0
- 699 0000 08B5     		push	{r3, lr}
- 700              		.cfi_def_cfa_offset 8
- 701              		.cfi_offset 3, -8
- 702              		.cfi_offset 14, -4
- 182:.\states.c    ****     Prev_state = STATE_STOP;
- 703              		.loc 1 182 0
- 704 0002 0622     		movs	r2, #6
- 705 0004 024B     		ldr	r3, .L70
- 706 0006 1A60     		str	r2, [r3]
- 183:.\states.c    ****     Motor_stop();
- 707              		.loc 1 183 0
- 708 0008 FFF7FEFF 		bl	Motor_stop
- 709              	.LVL76:
- 184:.\states.c    ****     return STATE_SLEEP; 
- 185:.\states.c    **** }
- 710              		.loc 1 185 0
- 711 000c 0020     		movs	r0, #0
- 712 000e 08BD     		pop	{r3, pc}
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cchwgjoG.s 			page 17
-
-
- 713              	.L71:
- 714              		.align	2
- 715              	.L70:
- 716 0010 00000000 		.word	Prev_state
- 717              		.cfi_endproc
- 718              	.LFE6:
- 719              		.size	State_stop, .-State_stop
- 720              		.global	movingAverage
- 721              		.global	MOTOR_FAST_WALKING_SPEED
- 722              		.global	MOTOR_WALKING_SPEED
- 723              		.global	MOTOR_RUNNING_SPEED
- 724              		.global	selectedProfile
- 725              		.comm	Prev_state,4,4
- 726              		.comm	currentState,4,4
- 727              		.comm	PROFILE,4,4
- 728              		.comm	increasingHr,4,4
- 729              		.comm	average,4,4
- 730              		.comm	timer_value,4,4
- 731              		.comm	timer_status,4,4
- 732              		.comm	heartbeatCounter,4,4
- 733              		.comm	heartrate,4,4
- 734              		.comm	speed,4,4
- 735              		.data
- 736              		.align	2
- 737              		.set	.LANCHOR1,. + 0
- 738              		.type	MOTOR_WALKING_SPEED, %object
- 739              		.size	MOTOR_WALKING_SPEED, 4
- 740              	MOTOR_WALKING_SPEED:
- 741 0000 2C010000 		.word	300
- 742              		.type	MOTOR_RUNNING_SPEED, %object
- 743              		.size	MOTOR_RUNNING_SPEED, 4
- 744              	MOTOR_RUNNING_SPEED:
- 745 0004 32000000 		.word	50
- 746              		.type	MOTOR_FAST_WALKING_SPEED, %object
- 747              		.size	MOTOR_FAST_WALKING_SPEED, 4
- 748              	MOTOR_FAST_WALKING_SPEED:
- 749 0008 C8000000 		.word	200
- 750              		.section	.rodata.str1.4,"aMS",%progbits,1
- 751              		.align	2
- 752              	.LC0:
- 753 0000 52455345 		.ascii	"RESET\000"
- 753      5400
- 754 0006 0000     		.space	2
- 755              	.LC1:
- 756 0008 53544152 		.ascii	"START\000"
- 756      5400
- 757 000e 0000     		.space	2
- 758              	.LC2:
- 759 0010 53656C65 		.ascii	"Select a profile..\000"
- 759      63742061 
- 759      2070726F 
- 759      66696C65 
- 759      2E2E00
- 760 0023 00       		.space	1
- 761              	.LC3:
- 762 0024 52656775 		.ascii	"Regular   \000"
- 762      6C617220 
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cchwgjoG.s 			page 18
-
-
- 762      202000
- 763 002f 00       		.space	1
- 764              	.LC4:
- 765 0030 43617264 		.ascii	"Cardio    \000"
- 765      696F2020 
- 765      202000
- 766 003b 00       		.space	1
- 767              	.LC5:
- 768 003c 46617420 		.ascii	"Fat Burn  \000"
- 768      4275726E 
- 768      202000
- 769 0047 00       		.space	1
- 770              	.LC6:
- 771 0048 20202020 		.ascii	"      \000"
- 771      202000
- 772 004f 00       		.space	1
- 773              	.LC7:
- 774 0050 57616C6B 		.ascii	"Walking\000"
- 774      696E6700 
- 775              	.LC8:
- 776 0058 52756E6E 		.ascii	"Running\000"
- 776      696E6700 
- 777              		.bss
- 778              		.align	2
- 779              		.set	.LANCHOR0,. + 0
- 780              		.type	selectedProfile, %object
- 781              		.size	selectedProfile, 4
- 782              	selectedProfile:
- 783 0000 00000000 		.space	4
- 784              		.type	movingAverage, %object
- 785              		.size	movingAverage, 40
- 786              	movingAverage:
- 787 0004 00000000 		.space	40
- 787      00000000 
- 787      00000000 
- 787      00000000 
- 787      00000000 
- 788              		.text
- 789              	.Letext0:
- 790              		.file 2 "Generated_Source\\PSoC5/cytypes.h"
- 791              		.file 3 ".\\states.h"
- 792              		.file 4 ".\\motor.h"
- 793              		.file 5 ".\\heartrate.h"
- 794              		.file 6 "Generated_Source\\PSoC5/LCD.h"
- 795              		.file 7 "Generated_Source\\PSoC5/CyLib.h"
- 796              		.file 8 "Generated_Source\\PSoC5/CapSense.h"
- 797              		.file 9 "Generated_Source\\PSoC5/CapSense_CSHL.h"
- 798              		.file 10 ".\\display.h"
- 799              		.file 11 ".\\system.h"
- 800              		.file 12 ".\\speaker.h"
- 801              		.section	.debug_info,"",%progbits
- 802              	.Ldebug_info0:
- 803 0000 44070000 		.4byte	0x744
- 804 0004 0400     		.2byte	0x4
- 805 0006 00000000 		.4byte	.Ldebug_abbrev0
- 806 000a 04       		.byte	0x4
- 807 000b 01       		.uleb128 0x1
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cchwgjoG.s 			page 19
-
-
- 808 000c 2E010000 		.4byte	.LASF60
- 809 0010 01       		.byte	0x1
- 810 0011 2C000000 		.4byte	.LASF61
- 811 0015 AA010000 		.4byte	.LASF62
- 812 0019 18000000 		.4byte	.Ldebug_ranges0+0x18
- 813 001d 00000000 		.4byte	0
- 814 0021 00000000 		.4byte	.Ldebug_line0
- 815 0025 02       		.uleb128 0x2
- 816 0026 01       		.byte	0x1
- 817 0027 06       		.byte	0x6
- 818 0028 3A020000 		.4byte	.LASF0
- 819 002c 02       		.uleb128 0x2
- 820 002d 01       		.byte	0x1
- 821 002e 08       		.byte	0x8
- 822 002f 19020000 		.4byte	.LASF1
- 823 0033 02       		.uleb128 0x2
- 824 0034 02       		.byte	0x2
- 825 0035 05       		.byte	0x5
- 826 0036 BA000000 		.4byte	.LASF2
- 827 003a 02       		.uleb128 0x2
- 828 003b 02       		.byte	0x2
- 829 003c 07       		.byte	0x7
- 830 003d B7020000 		.4byte	.LASF3
- 831 0041 02       		.uleb128 0x2
- 832 0042 04       		.byte	0x4
- 833 0043 05       		.byte	0x5
- 834 0044 F3010000 		.4byte	.LASF4
- 835 0048 02       		.uleb128 0x2
- 836 0049 04       		.byte	0x4
- 837 004a 07       		.byte	0x7
- 838 004b 76020000 		.4byte	.LASF5
- 839 004f 02       		.uleb128 0x2
- 840 0050 08       		.byte	0x8
- 841 0051 05       		.byte	0x5
- 842 0052 20010000 		.4byte	.LASF6
- 843 0056 02       		.uleb128 0x2
- 844 0057 08       		.byte	0x8
- 845 0058 07       		.byte	0x7
- 846 0059 46020000 		.4byte	.LASF7
- 847 005d 03       		.uleb128 0x3
- 848 005e 04       		.byte	0x4
- 849 005f 05       		.byte	0x5
- 850 0060 696E7400 		.ascii	"int\000"
- 851 0064 02       		.uleb128 0x2
- 852 0065 04       		.byte	0x4
- 853 0066 07       		.byte	0x7
- 854 0067 5D020000 		.4byte	.LASF8
- 855 006b 04       		.uleb128 0x4
- 856 006c F0000000 		.4byte	.LASF9
- 857 0070 02       		.byte	0x2
- 858 0071 B4       		.byte	0xb4
- 859 0072 2C000000 		.4byte	0x2c
- 860 0076 04       		.uleb128 0x4
- 861 0077 CE000000 		.4byte	.LASF10
- 862 007b 02       		.byte	0x2
- 863 007c B5       		.byte	0xb5
- 864 007d 3A000000 		.4byte	0x3a
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cchwgjoG.s 			page 20
-
-
- 865 0081 04       		.uleb128 0x4
- 866 0082 54030000 		.4byte	.LASF11
- 867 0086 02       		.byte	0x2
- 868 0087 B6       		.byte	0xb6
- 869 0088 48000000 		.4byte	0x48
- 870 008c 02       		.uleb128 0x2
- 871 008d 04       		.byte	0x4
- 872 008e 04       		.byte	0x4
- 873 008f 12010000 		.4byte	.LASF12
- 874 0093 02       		.uleb128 0x2
- 875 0094 08       		.byte	0x8
- 876 0095 04       		.byte	0x4
- 877 0096 77030000 		.4byte	.LASF13
- 878 009a 04       		.uleb128 0x4
- 879 009b 87000000 		.4byte	.LASF14
- 880 009f 02       		.byte	0x2
- 881 00a0 C5       		.byte	0xc5
- 882 00a1 A5000000 		.4byte	0xa5
- 883 00a5 02       		.uleb128 0x2
- 884 00a6 01       		.byte	0x1
- 885 00a7 08       		.byte	0x8
- 886 00a8 EE010000 		.4byte	.LASF15
- 887 00ac 02       		.uleb128 0x2
- 888 00ad 04       		.byte	0x4
- 889 00ae 07       		.byte	0x7
- 890 00af 73000000 		.4byte	.LASF16
- 891 00b3 04       		.uleb128 0x4
- 892 00b4 61000000 		.4byte	.LASF17
- 893 00b8 03       		.byte	0x3
- 894 00b9 11       		.byte	0x11
- 895 00ba 5D000000 		.4byte	0x5d
- 896 00be 05       		.uleb128 0x5
- 897 00bf 5B030000 		.4byte	.LASF18
- 898 00c3 01       		.byte	0x1
- 899 00c4 17       		.byte	0x17
- 900 00c5 B3000000 		.4byte	0xb3
- 901 00c9 00000000 		.4byte	.LFB0
- 902 00cd 74000000 		.4byte	.LFE0-.LFB0
- 903 00d1 01       		.uleb128 0x1
- 904 00d2 9C       		.byte	0x9c
- 905 00d3 76010000 		.4byte	0x176
- 906 00d7 06       		.uleb128 0x6
- 907 00d8 00000000 		.4byte	.Ldebug_ranges0+0
- 908 00dc 2F010000 		.4byte	0x12f
- 909 00e0 07       		.uleb128 0x7
- 910 00e1 C4000000 		.4byte	.LASF23
- 911 00e5 01       		.byte	0x1
- 912 00e6 1E       		.byte	0x1e
- 913 00e7 5D000000 		.4byte	0x5d
- 914 00eb 00000000 		.4byte	.LLST0
- 915 00ef 08       		.uleb128 0x8
- 916 00f0 30000000 		.4byte	.LVL7
- 917 00f4 35060000 		.4byte	0x635
- 918 00f8 09       		.uleb128 0x9
- 919 00f9 36000000 		.4byte	.LVL8
- 920 00fd 3C060000 		.4byte	0x63c
- 921 0101 0C010000 		.4byte	0x10c
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cchwgjoG.s 			page 21
-
-
- 922 0105 0A       		.uleb128 0xa
- 923 0106 01       		.uleb128 0x1
- 924 0107 50       		.byte	0x50
- 925 0108 02       		.uleb128 0x2
- 926 0109 75       		.byte	0x75
- 927 010a 00       		.sleb128 0
- 928 010b 00       		.byte	0
- 929 010c 09       		.uleb128 0x9
- 930 010d 48000000 		.4byte	.LVL9
- 931 0111 51060000 		.4byte	0x651
- 932 0115 1F010000 		.4byte	0x11f
- 933 0119 0A       		.uleb128 0xa
- 934 011a 01       		.uleb128 0x1
- 935 011b 50       		.byte	0x50
- 936 011c 01       		.uleb128 0x1
- 937 011d 31       		.byte	0x31
- 938 011e 00       		.byte	0
- 939 011f 0B       		.uleb128 0xb
- 940 0120 54000000 		.4byte	.LVL10
- 941 0124 62060000 		.4byte	0x662
- 942 0128 0A       		.uleb128 0xa
- 943 0129 01       		.uleb128 0x1
- 944 012a 50       		.byte	0x50
- 945 012b 01       		.uleb128 0x1
- 946 012c 3A       		.byte	0x3a
- 947 012d 00       		.byte	0
- 948 012e 00       		.byte	0
- 949 012f 09       		.uleb128 0x9
- 950 0130 08000000 		.4byte	.LVL0
- 951 0134 51060000 		.4byte	0x651
- 952 0138 42010000 		.4byte	0x142
- 953 013c 0A       		.uleb128 0xa
- 954 013d 01       		.uleb128 0x1
- 955 013e 50       		.byte	0x50
- 956 013f 01       		.uleb128 0x1
- 957 0140 31       		.byte	0x31
- 958 0141 00       		.byte	0
- 959 0142 08       		.uleb128 0x8
- 960 0143 0C000000 		.4byte	.LVL1
- 961 0147 73060000 		.4byte	0x673
- 962 014b 08       		.uleb128 0x8
- 963 014c 10000000 		.4byte	.LVL2
- 964 0150 80060000 		.4byte	0x680
- 965 0154 08       		.uleb128 0x8
- 966 0155 14000000 		.4byte	.LVL3
- 967 0159 35060000 		.4byte	0x635
- 968 015d 08       		.uleb128 0x8
- 969 015e 18000000 		.4byte	.LVL4
- 970 0162 87060000 		.4byte	0x687
- 971 0166 0B       		.uleb128 0xb
- 972 0167 22000000 		.4byte	.LVL5
- 973 016b 3C060000 		.4byte	0x63c
- 974 016f 0A       		.uleb128 0xa
- 975 0170 01       		.uleb128 0x1
- 976 0171 50       		.byte	0x50
- 977 0172 01       		.uleb128 0x1
- 978 0173 32       		.byte	0x32
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cchwgjoG.s 			page 22
-
-
- 979 0174 00       		.byte	0
- 980 0175 00       		.byte	0
- 981 0176 05       		.uleb128 0x5
- 982 0177 0C040000 		.4byte	.LASF19
- 983 017b 01       		.byte	0x1
- 984 017c 2E       		.byte	0x2e
- 985 017d B3000000 		.4byte	0xb3
- 986 0181 00000000 		.4byte	.LFB1
- 987 0185 30000000 		.4byte	.LFE1-.LFB1
- 988 0189 01       		.uleb128 0x1
- 989 018a 9C       		.byte	0x9c
- 990 018b D6010000 		.4byte	0x1d6
- 991 018f 08       		.uleb128 0x8
- 992 0190 06000000 		.4byte	.LVL15
- 993 0194 92060000 		.4byte	0x692
- 994 0198 08       		.uleb128 0x8
- 995 0199 0A000000 		.4byte	.LVL16
- 996 019d 9F060000 		.4byte	0x69f
- 997 01a1 08       		.uleb128 0x8
- 998 01a2 0E000000 		.4byte	.LVL17
- 999 01a6 AC060000 		.4byte	0x6ac
- 1000 01aa 09       		.uleb128 0x9
- 1001 01ab 1C000000 		.4byte	.LVL18
- 1002 01af B9060000 		.4byte	0x6b9
- 1003 01b3 C2010000 		.4byte	0x1c2
- 1004 01b7 0A       		.uleb128 0xa
- 1005 01b8 01       		.uleb128 0x1
- 1006 01b9 51       		.byte	0x51
- 1007 01ba 01       		.uleb128 0x1
- 1008 01bb 30       		.byte	0x30
- 1009 01bc 0A       		.uleb128 0xa
- 1010 01bd 01       		.uleb128 0x1
- 1011 01be 50       		.byte	0x50
- 1012 01bf 01       		.uleb128 0x1
- 1013 01c0 30       		.byte	0x30
- 1014 01c1 00       		.byte	0
- 1015 01c2 0B       		.uleb128 0xb
- 1016 01c3 22000000 		.4byte	.LVL19
- 1017 01c7 CF060000 		.4byte	0x6cf
- 1018 01cb 0A       		.uleb128 0xa
- 1019 01cc 01       		.uleb128 0x1
- 1020 01cd 50       		.byte	0x50
- 1021 01ce 05       		.uleb128 0x5
- 1022 01cf 03       		.byte	0x3
- 1023 01d0 00000000 		.4byte	.LC0
- 1024 01d4 00       		.byte	0
- 1025 01d5 00       		.byte	0
- 1026 01d6 05       		.uleb128 0x5
- 1027 01d7 88030000 		.4byte	.LASF20
- 1028 01db 01       		.byte	0x1
- 1029 01dc 38       		.byte	0x38
- 1030 01dd B3000000 		.4byte	0xb3
- 1031 01e1 00000000 		.4byte	.LFB2
- 1032 01e5 1C000000 		.4byte	.LFE2-.LFB2
- 1033 01e9 01       		.uleb128 0x1
- 1034 01ea 9C       		.byte	0x9c
- 1035 01eb 03020000 		.4byte	0x203
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cchwgjoG.s 			page 23
-
-
- 1036 01ef 0B       		.uleb128 0xb
- 1037 01f0 08000000 		.4byte	.LVL20
- 1038 01f4 CF060000 		.4byte	0x6cf
- 1039 01f8 0A       		.uleb128 0xa
- 1040 01f9 01       		.uleb128 0x1
- 1041 01fa 50       		.byte	0x50
- 1042 01fb 05       		.uleb128 0x5
- 1043 01fc 03       		.byte	0x3
- 1044 01fd 08000000 		.4byte	.LC1
- 1045 0201 00       		.byte	0
- 1046 0202 00       		.byte	0
- 1047 0203 05       		.uleb128 0x5
- 1048 0204 DD030000 		.4byte	.LASF21
- 1049 0208 01       		.byte	0x1
- 1050 0209 3E       		.byte	0x3e
- 1051 020a B3000000 		.4byte	0xb3
- 1052 020e 00000000 		.4byte	.LFB3
- 1053 0212 DC000000 		.4byte	.LFE3-.LFB3
- 1054 0216 01       		.uleb128 0x1
- 1055 0217 9C       		.byte	0x9c
- 1056 0218 5F030000 		.4byte	0x35f
- 1057 021c 09       		.uleb128 0x9
- 1058 021d 12000000 		.4byte	.LVL21
- 1059 0221 B9060000 		.4byte	0x6b9
- 1060 0225 34020000 		.4byte	0x234
- 1061 0229 0A       		.uleb128 0xa
- 1062 022a 01       		.uleb128 0x1
- 1063 022b 51       		.byte	0x51
- 1064 022c 01       		.uleb128 0x1
- 1065 022d 30       		.byte	0x30
- 1066 022e 0A       		.uleb128 0xa
- 1067 022f 01       		.uleb128 0x1
- 1068 0230 50       		.byte	0x50
- 1069 0231 01       		.uleb128 0x1
- 1070 0232 30       		.byte	0x30
- 1071 0233 00       		.byte	0
- 1072 0234 09       		.uleb128 0x9
- 1073 0235 1A000000 		.4byte	.LVL22
- 1074 0239 51060000 		.4byte	0x651
- 1075 023d 47020000 		.4byte	0x247
- 1076 0241 0A       		.uleb128 0xa
- 1077 0242 01       		.uleb128 0x1
- 1078 0243 50       		.byte	0x50
- 1079 0244 01       		.uleb128 0x1
- 1080 0245 31       		.byte	0x31
- 1081 0246 00       		.byte	0
- 1082 0247 09       		.uleb128 0x9
- 1083 0248 20000000 		.4byte	.LVL23
- 1084 024c CF060000 		.4byte	0x6cf
- 1085 0250 5E020000 		.4byte	0x25e
- 1086 0254 0A       		.uleb128 0xa
- 1087 0255 01       		.uleb128 0x1
- 1088 0256 50       		.byte	0x50
- 1089 0257 05       		.uleb128 0x5
- 1090 0258 03       		.byte	0x3
- 1091 0259 10000000 		.4byte	.LC2
- 1092 025d 00       		.byte	0
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cchwgjoG.s 			page 24
-
-
- 1093 025e 09       		.uleb128 0x9
- 1094 025f 2E000000 		.4byte	.LVL24
- 1095 0263 B9060000 		.4byte	0x6b9
- 1096 0267 76020000 		.4byte	0x276
- 1097 026b 0A       		.uleb128 0xa
- 1098 026c 01       		.uleb128 0x1
- 1099 026d 51       		.byte	0x51
- 1100 026e 01       		.uleb128 0x1
- 1101 026f 30       		.byte	0x30
- 1102 0270 0A       		.uleb128 0xa
- 1103 0271 01       		.uleb128 0x1
- 1104 0272 50       		.byte	0x50
- 1105 0273 01       		.uleb128 0x1
- 1106 0274 31       		.byte	0x31
- 1107 0275 00       		.byte	0
- 1108 0276 08       		.uleb128 0x8
- 1109 0277 32000000 		.4byte	.LVL25
- 1110 027b 80060000 		.4byte	0x680
- 1111 027f 08       		.uleb128 0x8
- 1112 0280 36000000 		.4byte	.LVL26
- 1113 0284 35060000 		.4byte	0x635
- 1114 0288 08       		.uleb128 0x8
- 1115 0289 3A000000 		.4byte	.LVL27
- 1116 028d 87060000 		.4byte	0x687
- 1117 0291 09       		.uleb128 0x9
- 1118 0292 44000000 		.4byte	.LVL28
- 1119 0296 EB060000 		.4byte	0x6eb
- 1120 029a A4020000 		.4byte	0x2a4
- 1121 029e 0A       		.uleb128 0xa
- 1122 029f 01       		.uleb128 0x1
- 1123 02a0 50       		.byte	0x50
- 1124 02a1 01       		.uleb128 0x1
- 1125 02a2 31       		.byte	0x31
- 1126 02a3 00       		.byte	0
- 1127 02a4 09       		.uleb128 0x9
- 1128 02a5 5C000000 		.4byte	.LVL29
- 1129 02a9 62060000 		.4byte	0x662
- 1130 02ad B9020000 		.4byte	0x2b9
- 1131 02b1 0A       		.uleb128 0xa
- 1132 02b2 01       		.uleb128 0x1
- 1133 02b3 50       		.byte	0x50
- 1134 02b4 03       		.uleb128 0x3
- 1135 02b5 0A       		.byte	0xa
- 1136 02b6 F401     		.2byte	0x1f4
- 1137 02b8 00       		.byte	0
- 1138 02b9 09       		.uleb128 0x9
- 1139 02ba 6C000000 		.4byte	.LVL30
- 1140 02be EB060000 		.4byte	0x6eb
- 1141 02c2 CC020000 		.4byte	0x2cc
- 1142 02c6 0A       		.uleb128 0xa
- 1143 02c7 01       		.uleb128 0x1
- 1144 02c8 50       		.byte	0x50
- 1145 02c9 01       		.uleb128 0x1
- 1146 02ca 32       		.byte	0x32
- 1147 02cb 00       		.byte	0
- 1148 02cc 08       		.uleb128 0x8
- 1149 02cd 76000000 		.4byte	.LVL31
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cchwgjoG.s 			page 25
-
-
- 1150 02d1 00070000 		.4byte	0x700
- 1151 02d5 09       		.uleb128 0x9
- 1152 02d6 90000000 		.4byte	.LVL32
- 1153 02da B9060000 		.4byte	0x6b9
- 1154 02de ED020000 		.4byte	0x2ed
- 1155 02e2 0A       		.uleb128 0xa
- 1156 02e3 01       		.uleb128 0x1
- 1157 02e4 51       		.byte	0x51
- 1158 02e5 01       		.uleb128 0x1
- 1159 02e6 30       		.byte	0x30
- 1160 02e7 0A       		.uleb128 0xa
- 1161 02e8 01       		.uleb128 0x1
- 1162 02e9 50       		.byte	0x50
- 1163 02ea 01       		.uleb128 0x1
- 1164 02eb 31       		.byte	0x31
- 1165 02ec 00       		.byte	0
- 1166 02ed 09       		.uleb128 0x9
- 1167 02ee 96000000 		.4byte	.LVL33
- 1168 02f2 CF060000 		.4byte	0x6cf
- 1169 02f6 04030000 		.4byte	0x304
- 1170 02fa 0A       		.uleb128 0xa
- 1171 02fb 01       		.uleb128 0x1
- 1172 02fc 50       		.byte	0x50
- 1173 02fd 05       		.uleb128 0x5
- 1174 02fe 03       		.byte	0x3
- 1175 02ff 24000000 		.4byte	.LC3
- 1176 0303 00       		.byte	0
- 1177 0304 09       		.uleb128 0x9
- 1178 0305 A2000000 		.4byte	.LVL34
- 1179 0309 B9060000 		.4byte	0x6b9
- 1180 030d 1C030000 		.4byte	0x31c
- 1181 0311 0A       		.uleb128 0xa
- 1182 0312 01       		.uleb128 0x1
- 1183 0313 51       		.byte	0x51
- 1184 0314 01       		.uleb128 0x1
- 1185 0315 30       		.byte	0x30
- 1186 0316 0A       		.uleb128 0xa
- 1187 0317 01       		.uleb128 0x1
- 1188 0318 50       		.byte	0x50
- 1189 0319 01       		.uleb128 0x1
- 1190 031a 31       		.byte	0x31
- 1191 031b 00       		.byte	0
- 1192 031c 09       		.uleb128 0x9
- 1193 031d A8000000 		.4byte	.LVL35
- 1194 0321 CF060000 		.4byte	0x6cf
- 1195 0325 33030000 		.4byte	0x333
- 1196 0329 0A       		.uleb128 0xa
- 1197 032a 01       		.uleb128 0x1
- 1198 032b 50       		.byte	0x50
- 1199 032c 05       		.uleb128 0x5
- 1200 032d 03       		.byte	0x3
- 1201 032e 30000000 		.4byte	.LC4
- 1202 0332 00       		.byte	0
- 1203 0333 09       		.uleb128 0x9
- 1204 0334 B4000000 		.4byte	.LVL36
- 1205 0338 B9060000 		.4byte	0x6b9
- 1206 033c 4B030000 		.4byte	0x34b
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cchwgjoG.s 			page 26
-
-
- 1207 0340 0A       		.uleb128 0xa
- 1208 0341 01       		.uleb128 0x1
- 1209 0342 51       		.byte	0x51
- 1210 0343 01       		.uleb128 0x1
- 1211 0344 30       		.byte	0x30
- 1212 0345 0A       		.uleb128 0xa
- 1213 0346 01       		.uleb128 0x1
- 1214 0347 50       		.byte	0x50
- 1215 0348 01       		.uleb128 0x1
- 1216 0349 31       		.byte	0x31
- 1217 034a 00       		.byte	0
- 1218 034b 0B       		.uleb128 0xb
- 1219 034c BA000000 		.4byte	.LVL37
- 1220 0350 CF060000 		.4byte	0x6cf
- 1221 0354 0A       		.uleb128 0xa
- 1222 0355 01       		.uleb128 0x1
- 1223 0356 50       		.byte	0x50
- 1224 0357 05       		.uleb128 0x5
- 1225 0358 03       		.byte	0x3
- 1226 0359 3C000000 		.4byte	.LC5
- 1227 035d 00       		.byte	0
- 1228 035e 00       		.byte	0
- 1229 035f 0C       		.uleb128 0xc
- 1230 0360 AD000000 		.4byte	.LASF22
- 1231 0364 01       		.byte	0x1
- 1232 0365 6D       		.byte	0x6d
- 1233 0366 B3000000 		.4byte	0xb3
- 1234 036a 00000000 		.4byte	.LFB4
- 1235 036e AC000000 		.4byte	.LFE4-.LFB4
- 1236 0372 01       		.uleb128 0x1
- 1237 0373 9C       		.byte	0x9c
- 1238 0374 34040000 		.4byte	0x434
- 1239 0378 0D       		.uleb128 0xd
- 1240 0379 6900     		.ascii	"i\000"
- 1241 037b 01       		.byte	0x1
- 1242 037c 70       		.byte	0x70
- 1243 037d 5D000000 		.4byte	0x5d
- 1244 0381 1E000000 		.4byte	.LLST1
- 1245 0385 07       		.uleb128 0x7
- 1246 0386 7C000000 		.4byte	.LASF24
- 1247 038a 01       		.byte	0x1
- 1248 038b 75       		.byte	0x75
- 1249 038c 5D000000 		.4byte	0x5d
- 1250 0390 77000000 		.4byte	.LLST2
- 1251 0394 07       		.uleb128 0x7
- 1252 0395 CE030000 		.4byte	.LASF25
- 1253 0399 01       		.byte	0x1
- 1254 039a 76       		.byte	0x76
- 1255 039b 5D000000 		.4byte	0x5d
- 1256 039f 95000000 		.4byte	.LLST3
- 1257 03a3 07       		.uleb128 0x7
- 1258 03a4 59000000 		.4byte	.LASF26
- 1259 03a8 01       		.byte	0x1
- 1260 03a9 78       		.byte	0x78
- 1261 03aa 5D000000 		.4byte	0x5d
- 1262 03ae A8000000 		.4byte	.LLST4
- 1263 03b2 08       		.uleb128 0x8
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cchwgjoG.s 			page 27
-
-
- 1264 03b3 0C000000 		.4byte	.LVL38
- 1265 03b7 11070000 		.4byte	0x711
- 1266 03bb 09       		.uleb128 0x9
- 1267 03bc 46000000 		.4byte	.LVL49
- 1268 03c0 B9060000 		.4byte	0x6b9
- 1269 03c4 D3030000 		.4byte	0x3d3
- 1270 03c8 0A       		.uleb128 0xa
- 1271 03c9 01       		.uleb128 0x1
- 1272 03ca 51       		.byte	0x51
- 1273 03cb 01       		.uleb128 0x1
- 1274 03cc 30       		.byte	0x30
- 1275 03cd 0A       		.uleb128 0xa
- 1276 03ce 01       		.uleb128 0x1
- 1277 03cf 50       		.byte	0x50
- 1278 03d0 01       		.uleb128 0x1
- 1279 03d1 30       		.byte	0x30
- 1280 03d2 00       		.byte	0
- 1281 03d3 09       		.uleb128 0x9
- 1282 03d4 56000000 		.4byte	.LVL52
- 1283 03d8 1C070000 		.4byte	0x71c
- 1284 03dc EB030000 		.4byte	0x3eb
- 1285 03e0 0A       		.uleb128 0xa
- 1286 03e1 01       		.uleb128 0x1
- 1287 03e2 50       		.byte	0x50
- 1288 03e3 06       		.uleb128 0x6
- 1289 03e4 74       		.byte	0x74
- 1290 03e5 00       		.sleb128 0
- 1291 03e6 0A       		.byte	0xa
- 1292 03e7 FFFF     		.2byte	0xffff
- 1293 03e9 1A       		.byte	0x1a
- 1294 03ea 00       		.byte	0
- 1295 03eb 09       		.uleb128 0x9
- 1296 03ec 5C000000 		.4byte	.LVL53
- 1297 03f0 CF060000 		.4byte	0x6cf
- 1298 03f4 02040000 		.4byte	0x402
- 1299 03f8 0A       		.uleb128 0xa
- 1300 03f9 01       		.uleb128 0x1
- 1301 03fa 50       		.byte	0x50
- 1302 03fb 05       		.uleb128 0x5
- 1303 03fc 03       		.byte	0x3
- 1304 03fd 48000000 		.4byte	.LC6
- 1305 0401 00       		.byte	0
- 1306 0402 09       		.uleb128 0x9
- 1307 0403 7A000000 		.4byte	.LVL54
- 1308 0407 B9060000 		.4byte	0x6b9
- 1309 040b 1A040000 		.4byte	0x41a
- 1310 040f 0A       		.uleb128 0xa
- 1311 0410 01       		.uleb128 0x1
- 1312 0411 51       		.byte	0x51
- 1313 0412 01       		.uleb128 0x1
- 1314 0413 35       		.byte	0x35
- 1315 0414 0A       		.uleb128 0xa
- 1316 0415 01       		.uleb128 0x1
- 1317 0416 50       		.byte	0x50
- 1318 0417 01       		.uleb128 0x1
- 1319 0418 31       		.byte	0x31
- 1320 0419 00       		.byte	0
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cchwgjoG.s 			page 28
-
-
- 1321 041a 08       		.uleb128 0x8
- 1322 041b 82000000 		.4byte	.LVL55
- 1323 041f 1C070000 		.4byte	0x71c
- 1324 0423 0B       		.uleb128 0xb
- 1325 0424 8E000000 		.4byte	.LVL56
- 1326 0428 62060000 		.4byte	0x662
- 1327 042c 0A       		.uleb128 0xa
- 1328 042d 01       		.uleb128 0x1
- 1329 042e 50       		.byte	0x50
- 1330 042f 02       		.uleb128 0x2
- 1331 0430 08       		.byte	0x8
- 1332 0431 64       		.byte	0x64
- 1333 0432 00       		.byte	0
- 1334 0433 00       		.byte	0
- 1335 0434 0C       		.uleb128 0xc
- 1336 0435 F5030000 		.4byte	.LASF27
- 1337 0439 01       		.byte	0x1
- 1338 043a 8E       		.byte	0x8e
- 1339 043b B3000000 		.4byte	0xb3
- 1340 043f 00000000 		.4byte	.LFB5
- 1341 0443 F8000000 		.4byte	.LFE5-.LFB5
- 1342 0447 01       		.uleb128 0x1
- 1343 0448 9C       		.byte	0x9c
- 1344 0449 03050000 		.4byte	0x503
- 1345 044d 09       		.uleb128 0x9
- 1346 044e 10000000 		.4byte	.LVL58
- 1347 0452 B9060000 		.4byte	0x6b9
- 1348 0456 65040000 		.4byte	0x465
- 1349 045a 0A       		.uleb128 0xa
- 1350 045b 01       		.uleb128 0x1
- 1351 045c 51       		.byte	0x51
- 1352 045d 01       		.uleb128 0x1
- 1353 045e 39       		.byte	0x39
- 1354 045f 0A       		.uleb128 0xa
- 1355 0460 01       		.uleb128 0x1
- 1356 0461 50       		.byte	0x50
- 1357 0462 01       		.uleb128 0x1
- 1358 0463 30       		.byte	0x30
- 1359 0464 00       		.byte	0
- 1360 0465 08       		.uleb128 0x8
- 1361 0466 18000000 		.4byte	.LVL59
- 1362 046a 1C070000 		.4byte	0x71c
- 1363 046e 08       		.uleb128 0x8
- 1364 046f 3C000000 		.4byte	.LVL61
- 1365 0473 2D070000 		.4byte	0x72d
- 1366 0477 09       		.uleb128 0x9
- 1367 0478 44000000 		.4byte	.LVL62
- 1368 047c B9060000 		.4byte	0x6b9
- 1369 0480 8F040000 		.4byte	0x48f
- 1370 0484 0A       		.uleb128 0xa
- 1371 0485 01       		.uleb128 0x1
- 1372 0486 51       		.byte	0x51
- 1373 0487 01       		.uleb128 0x1
- 1374 0488 30       		.byte	0x30
- 1375 0489 0A       		.uleb128 0xa
- 1376 048a 01       		.uleb128 0x1
- 1377 048b 50       		.byte	0x50
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cchwgjoG.s 			page 29
-
-
- 1378 048c 01       		.uleb128 0x1
- 1379 048d 30       		.byte	0x30
- 1380 048e 00       		.byte	0
- 1381 048f 09       		.uleb128 0x9
- 1382 0490 4A000000 		.4byte	.LVL63
- 1383 0494 CF060000 		.4byte	0x6cf
- 1384 0498 A6040000 		.4byte	0x4a6
- 1385 049c 0A       		.uleb128 0xa
- 1386 049d 01       		.uleb128 0x1
- 1387 049e 50       		.byte	0x50
- 1388 049f 05       		.uleb128 0x5
- 1389 04a0 03       		.byte	0x3
- 1390 04a1 50000000 		.4byte	.LC7
- 1391 04a5 00       		.byte	0
- 1392 04a6 08       		.uleb128 0x8
- 1393 04a7 60000000 		.4byte	.LVL65
- 1394 04ab 2D070000 		.4byte	0x72d
- 1395 04af 09       		.uleb128 0x9
- 1396 04b0 68000000 		.4byte	.LVL66
- 1397 04b4 B9060000 		.4byte	0x6b9
- 1398 04b8 C7040000 		.4byte	0x4c7
- 1399 04bc 0A       		.uleb128 0xa
- 1400 04bd 01       		.uleb128 0x1
- 1401 04be 51       		.byte	0x51
- 1402 04bf 01       		.uleb128 0x1
- 1403 04c0 30       		.byte	0x30
- 1404 04c1 0A       		.uleb128 0xa
- 1405 04c2 01       		.uleb128 0x1
- 1406 04c3 50       		.byte	0x50
- 1407 04c4 01       		.uleb128 0x1
- 1408 04c5 30       		.byte	0x30
- 1409 04c6 00       		.byte	0
- 1410 04c7 09       		.uleb128 0x9
- 1411 04c8 6E000000 		.4byte	.LVL67
- 1412 04cc CF060000 		.4byte	0x6cf
- 1413 04d0 DE040000 		.4byte	0x4de
- 1414 04d4 0A       		.uleb128 0xa
- 1415 04d5 01       		.uleb128 0x1
- 1416 04d6 50       		.byte	0x50
- 1417 04d7 05       		.uleb128 0x5
- 1418 04d8 03       		.byte	0x3
- 1419 04d9 58000000 		.4byte	.LC8
- 1420 04dd 00       		.byte	0
- 1421 04de 08       		.uleb128 0x8
- 1422 04df 86000000 		.4byte	.LVL69
- 1423 04e3 2D070000 		.4byte	0x72d
- 1424 04e7 08       		.uleb128 0x8
- 1425 04e8 9A000000 		.4byte	.LVL71
- 1426 04ec 2D070000 		.4byte	0x72d
- 1427 04f0 08       		.uleb128 0x8
- 1428 04f1 B2000000 		.4byte	.LVL73
- 1429 04f5 2D070000 		.4byte	0x72d
- 1430 04f9 08       		.uleb128 0x8
- 1431 04fa C6000000 		.4byte	.LVL75
- 1432 04fe 2D070000 		.4byte	0x72d
- 1433 0502 00       		.byte	0
- 1434 0503 05       		.uleb128 0x5
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cchwgjoG.s 			page 30
-
-
- 1435 0504 93020000 		.4byte	.LASF28
- 1436 0508 01       		.byte	0x1
- 1437 0509 B5       		.byte	0xb5
- 1438 050a B3000000 		.4byte	0xb3
- 1439 050e 00000000 		.4byte	.LFB6
- 1440 0512 14000000 		.4byte	.LFE6-.LFB6
- 1441 0516 01       		.uleb128 0x1
- 1442 0517 9C       		.byte	0x9c
- 1443 0518 26050000 		.4byte	0x526
- 1444 051c 08       		.uleb128 0x8
- 1445 051d 0C000000 		.4byte	.LVL76
- 1446 0521 3E070000 		.4byte	0x73e
- 1447 0525 00       		.byte	0
- 1448 0526 0E       		.uleb128 0xe
- 1449 0527 FC010000 		.4byte	.LASF29
- 1450 052b 04       		.byte	0x4
- 1451 052c 12       		.byte	0x12
- 1452 052d 5D000000 		.4byte	0x5d
- 1453 0531 05       		.uleb128 0x5
- 1454 0532 03       		.byte	0x3
- 1455 0533 00000000 		.4byte	speed
- 1456 0537 0E       		.uleb128 0xe
- 1457 0538 7E030000 		.4byte	.LASF30
- 1458 053c 03       		.byte	0x3
- 1459 053d 14       		.byte	0x14
- 1460 053e 8C000000 		.4byte	0x8c
- 1461 0542 05       		.uleb128 0x5
- 1462 0543 03       		.byte	0x3
- 1463 0544 00000000 		.4byte	heartrate
- 1464 0548 0E       		.uleb128 0xe
- 1465 0549 37000000 		.4byte	.LASF31
- 1466 054d 01       		.byte	0x1
- 1467 054e 0F       		.byte	0xf
- 1468 054f 8C000000 		.4byte	0x8c
- 1469 0553 05       		.uleb128 0x5
- 1470 0554 03       		.byte	0x3
- 1471 0555 00000000 		.4byte	heartbeatCounter
- 1472 0559 0E       		.uleb128 0xe
- 1473 055a 1F000000 		.4byte	.LASF32
- 1474 055e 05       		.byte	0x5
- 1475 055f 15       		.byte	0x15
- 1476 0560 5D000000 		.4byte	0x5d
- 1477 0564 05       		.uleb128 0x5
- 1478 0565 03       		.byte	0x3
- 1479 0566 00000000 		.4byte	timer_status
- 1480 056a 0E       		.uleb128 0xe
- 1481 056b 67000000 		.4byte	.LASF33
- 1482 056f 05       		.byte	0x5
- 1483 0570 16       		.byte	0x16
- 1484 0571 5D000000 		.4byte	0x5d
- 1485 0575 05       		.uleb128 0x5
- 1486 0576 03       		.byte	0x3
- 1487 0577 00000000 		.4byte	timer_value
- 1488 057b 0E       		.uleb128 0xe
- 1489 057c 59000000 		.4byte	.LASF26
- 1490 0580 03       		.byte	0x3
- 1491 0581 15       		.byte	0x15
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cchwgjoG.s 			page 31
-
-
- 1492 0582 8C000000 		.4byte	0x8c
- 1493 0586 05       		.uleb128 0x5
- 1494 0587 03       		.byte	0x3
- 1495 0588 00000000 		.4byte	average
- 1496 058c 0E       		.uleb128 0xe
- 1497 058d E3000000 		.4byte	.LASF34
- 1498 0591 03       		.byte	0x3
- 1499 0592 16       		.byte	0x16
- 1500 0593 5D000000 		.4byte	0x5d
- 1501 0597 05       		.uleb128 0x5
- 1502 0598 03       		.byte	0x3
- 1503 0599 00000000 		.4byte	increasingHr
- 1504 059d 0E       		.uleb128 0xe
- 1505 059e 18010000 		.4byte	.LASF35
- 1506 05a2 03       		.byte	0x3
- 1507 05a3 18       		.byte	0x18
- 1508 05a4 5D000000 		.4byte	0x5d
- 1509 05a8 05       		.uleb128 0x5
- 1510 05a9 03       		.byte	0x3
- 1511 05aa 00000000 		.4byte	PROFILE
- 1512 05ae 0E       		.uleb128 0xe
- 1513 05af 01030000 		.4byte	.LASF36
- 1514 05b3 03       		.byte	0x3
- 1515 05b4 35       		.byte	0x35
- 1516 05b5 B3000000 		.4byte	0xb3
- 1517 05b9 05       		.uleb128 0x5
- 1518 05ba 03       		.byte	0x3
- 1519 05bb 00000000 		.4byte	currentState
- 1520 05bf 0E       		.uleb128 0xe
- 1521 05c0 88020000 		.4byte	.LASF37
- 1522 05c4 03       		.byte	0x3
- 1523 05c5 37       		.byte	0x37
- 1524 05c6 B3000000 		.4byte	0xb3
- 1525 05ca 05       		.uleb128 0x5
- 1526 05cb 03       		.byte	0x3
- 1527 05cc 00000000 		.4byte	Prev_state
- 1528 05d0 0E       		.uleb128 0xe
- 1529 05d1 67030000 		.4byte	.LASF38
- 1530 05d5 01       		.byte	0x1
- 1531 05d6 0E       		.byte	0xe
- 1532 05d7 5D000000 		.4byte	0x5d
- 1533 05db 05       		.uleb128 0x5
- 1534 05dc 03       		.byte	0x3
- 1535 05dd 00000000 		.4byte	selectedProfile
- 1536 05e1 0E       		.uleb128 0xe
- 1537 05e2 1B030000 		.4byte	.LASF39
- 1538 05e6 01       		.byte	0x1
- 1539 05e7 11       		.byte	0x11
- 1540 05e8 5D000000 		.4byte	0x5d
- 1541 05ec 05       		.uleb128 0x5
- 1542 05ed 03       		.byte	0x3
- 1543 05ee 00000000 		.4byte	MOTOR_RUNNING_SPEED
- 1544 05f2 0E       		.uleb128 0xe
- 1545 05f3 ED020000 		.4byte	.LASF40
- 1546 05f7 01       		.byte	0x1
- 1547 05f8 12       		.byte	0x12
- 1548 05f9 5D000000 		.4byte	0x5d
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cchwgjoG.s 			page 32
-
-
- 1549 05fd 05       		.uleb128 0x5
- 1550 05fe 03       		.byte	0x3
- 1551 05ff 00000000 		.4byte	MOTOR_WALKING_SPEED
- 1552 0603 0E       		.uleb128 0xe
- 1553 0604 9E020000 		.4byte	.LASF41
- 1554 0608 01       		.byte	0x1
- 1555 0609 13       		.byte	0x13
- 1556 060a 5D000000 		.4byte	0x5d
- 1557 060e 05       		.uleb128 0x5
- 1558 060f 03       		.byte	0x3
- 1559 0610 00000000 		.4byte	MOTOR_FAST_WALKING_SPEED
- 1560 0614 0F       		.uleb128 0xf
- 1561 0615 8C000000 		.4byte	0x8c
- 1562 0619 24060000 		.4byte	0x624
- 1563 061d 10       		.uleb128 0x10
- 1564 061e AC000000 		.4byte	0xac
- 1565 0622 09       		.byte	0x9
- 1566 0623 00       		.byte	0
- 1567 0624 0E       		.uleb128 0xe
- 1568 0625 D5000000 		.4byte	.LASF42
- 1569 0629 01       		.byte	0x1
- 1570 062a 14       		.byte	0x14
- 1571 062b 14060000 		.4byte	0x614
- 1572 062f 05       		.uleb128 0x5
- 1573 0630 03       		.byte	0x3
- 1574 0631 00000000 		.4byte	movingAverage
- 1575 0635 11       		.uleb128 0x11
- 1576 0636 F6000000 		.4byte	.LASF45
- 1577 063a 08       		.byte	0x8
- 1578 063b 9B       		.byte	0x9b
- 1579 063c 12       		.uleb128 0x12
- 1580 063d 02020000 		.4byte	.LASF53
- 1581 0641 08       		.byte	0x8
- 1582 0642 9D       		.byte	0x9d
- 1583 0643 76000000 		.4byte	0x76
- 1584 0647 51060000 		.4byte	0x651
- 1585 064b 13       		.uleb128 0x13
- 1586 064c 6B000000 		.4byte	0x6b
- 1587 0650 00       		.byte	0
- 1588 0651 14       		.uleb128 0x14
- 1589 0652 48000000 		.4byte	.LASF43
- 1590 0656 06       		.byte	0x6
- 1591 0657 3A       		.byte	0x3a
- 1592 0658 62060000 		.4byte	0x662
- 1593 065c 13       		.uleb128 0x13
- 1594 065d 6B000000 		.4byte	0x6b
- 1595 0661 00       		.byte	0
- 1596 0662 14       		.uleb128 0x14
- 1597 0663 D5030000 		.4byte	.LASF44
- 1598 0667 07       		.byte	0x7
- 1599 0668 77       		.byte	0x77
- 1600 0669 73060000 		.4byte	0x673
- 1601 066d 13       		.uleb128 0x13
- 1602 066e 81000000 		.4byte	0x81
- 1603 0672 00       		.byte	0
- 1604 0673 15       		.uleb128 0x15
- 1605 0674 00000000 		.4byte	.LASF47
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cchwgjoG.s 			page 33
-
-
- 1606 0678 0A       		.byte	0xa
- 1607 0679 17       		.byte	0x17
- 1608 067a 80060000 		.4byte	0x680
- 1609 067e 16       		.uleb128 0x16
- 1610 067f 00       		.byte	0
- 1611 0680 11       		.uleb128 0x11
- 1612 0681 8D000000 		.4byte	.LASF46
- 1613 0685 09       		.byte	0x9
- 1614 0686 9B       		.byte	0x9b
- 1615 0687 17       		.uleb128 0x17
- 1616 0688 B1030000 		.4byte	.LASF56
- 1617 068c 08       		.byte	0x8
- 1618 068d 99       		.byte	0x99
- 1619 068e 6B000000 		.4byte	0x6b
- 1620 0692 15       		.uleb128 0x15
- 1621 0693 6A020000 		.4byte	.LASF48
- 1622 0697 0B       		.byte	0xb
- 1623 0698 2A       		.byte	0x2a
- 1624 0699 9F060000 		.4byte	0x69f
- 1625 069d 16       		.uleb128 0x16
- 1626 069e 00       		.byte	0
- 1627 069f 15       		.uleb128 0x15
- 1628 06a0 18040000 		.4byte	.LASF49
- 1629 06a4 0A       		.byte	0xa
- 1630 06a5 15       		.byte	0x15
- 1631 06a6 AC060000 		.4byte	0x6ac
- 1632 06aa 16       		.uleb128 0x16
- 1633 06ab 00       		.byte	0
- 1634 06ac 15       		.uleb128 0x15
- 1635 06ad 27020000 		.4byte	.LASF50
- 1636 06b1 0C       		.byte	0xc
- 1637 06b2 13       		.byte	0x13
- 1638 06b3 B9060000 		.4byte	0x6b9
- 1639 06b7 16       		.uleb128 0x16
- 1640 06b8 00       		.byte	0
- 1641 06b9 14       		.uleb128 0x14
- 1642 06ba C1030000 		.4byte	.LASF51
- 1643 06be 06       		.byte	0x6
- 1644 06bf 3D       		.byte	0x3d
- 1645 06c0 CF060000 		.4byte	0x6cf
- 1646 06c4 13       		.uleb128 0x13
- 1647 06c5 6B000000 		.4byte	0x6b
- 1648 06c9 13       		.uleb128 0x13
- 1649 06ca 6B000000 		.4byte	0x6b
- 1650 06ce 00       		.byte	0
- 1651 06cf 14       		.uleb128 0x14
- 1652 06d0 DD020000 		.4byte	.LASF52
- 1653 06d4 06       		.byte	0x6
- 1654 06d5 3C       		.byte	0x3c
- 1655 06d6 E0060000 		.4byte	0x6e0
- 1656 06da 13       		.uleb128 0x13
- 1657 06db E0060000 		.4byte	0x6e0
- 1658 06df 00       		.byte	0
- 1659 06e0 18       		.uleb128 0x18
- 1660 06e1 04       		.byte	0x4
- 1661 06e2 E6060000 		.4byte	0x6e6
- 1662 06e6 19       		.uleb128 0x19
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cchwgjoG.s 			page 34
-
-
- 1663 06e7 9A000000 		.4byte	0x9a
- 1664 06eb 12       		.uleb128 0x12
- 1665 06ec 94030000 		.4byte	.LASF54
- 1666 06f0 09       		.byte	0x9
- 1667 06f1 9D       		.byte	0x9d
- 1668 06f2 6B000000 		.4byte	0x6b
- 1669 06f6 00070000 		.4byte	0x700
- 1670 06fa 13       		.uleb128 0x13
- 1671 06fb 6B000000 		.4byte	0x6b
- 1672 06ff 00       		.byte	0
- 1673 0700 14       		.uleb128 0x14
- 1674 0701 3A030000 		.4byte	.LASF55
- 1675 0705 0A       		.byte	0xa
- 1676 0706 1B       		.byte	0x1b
- 1677 0707 11070000 		.4byte	0x711
- 1678 070b 13       		.uleb128 0x13
- 1679 070c 5D000000 		.4byte	0x5d
- 1680 0710 00       		.byte	0
- 1681 0711 17       		.uleb128 0x17
- 1682 0712 0E000000 		.4byte	.LASF57
- 1683 0716 05       		.byte	0x5
- 1684 0717 18       		.byte	0x18
- 1685 0718 8C000000 		.4byte	0x8c
- 1686 071c 14       		.uleb128 0x14
- 1687 071d CA020000 		.4byte	.LASF58
- 1688 0721 06       		.byte	0x6
- 1689 0722 61       		.byte	0x61
- 1690 0723 2D070000 		.4byte	0x72d
- 1691 0727 13       		.uleb128 0x13
- 1692 0728 81000000 		.4byte	0x81
- 1693 072c 00       		.byte	0
- 1694 072d 14       		.uleb128 0x14
- 1695 072e 0E030000 		.4byte	.LASF59
- 1696 0732 04       		.byte	0x4
- 1697 0733 14       		.byte	0x14
- 1698 0734 3E070000 		.4byte	0x73e
- 1699 0738 13       		.uleb128 0x13
- 1700 0739 5D000000 		.4byte	0x5d
- 1701 073d 00       		.byte	0
- 1702 073e 1A       		.uleb128 0x1a
- 1703 073f 2F030000 		.4byte	.LASF63
- 1704 0743 04       		.byte	0x4
- 1705 0744 16       		.byte	0x16
- 1706 0745 16       		.uleb128 0x16
- 1707 0746 00       		.byte	0
- 1708 0747 00       		.byte	0
- 1709              		.section	.debug_abbrev,"",%progbits
- 1710              	.Ldebug_abbrev0:
- 1711 0000 01       		.uleb128 0x1
- 1712 0001 11       		.uleb128 0x11
- 1713 0002 01       		.byte	0x1
- 1714 0003 25       		.uleb128 0x25
- 1715 0004 0E       		.uleb128 0xe
- 1716 0005 13       		.uleb128 0x13
- 1717 0006 0B       		.uleb128 0xb
- 1718 0007 03       		.uleb128 0x3
- 1719 0008 0E       		.uleb128 0xe
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cchwgjoG.s 			page 35
-
-
- 1720 0009 1B       		.uleb128 0x1b
- 1721 000a 0E       		.uleb128 0xe
- 1722 000b 55       		.uleb128 0x55
- 1723 000c 17       		.uleb128 0x17
- 1724 000d 11       		.uleb128 0x11
- 1725 000e 01       		.uleb128 0x1
- 1726 000f 10       		.uleb128 0x10
- 1727 0010 17       		.uleb128 0x17
- 1728 0011 00       		.byte	0
- 1729 0012 00       		.byte	0
- 1730 0013 02       		.uleb128 0x2
- 1731 0014 24       		.uleb128 0x24
- 1732 0015 00       		.byte	0
- 1733 0016 0B       		.uleb128 0xb
- 1734 0017 0B       		.uleb128 0xb
- 1735 0018 3E       		.uleb128 0x3e
- 1736 0019 0B       		.uleb128 0xb
- 1737 001a 03       		.uleb128 0x3
- 1738 001b 0E       		.uleb128 0xe
- 1739 001c 00       		.byte	0
- 1740 001d 00       		.byte	0
- 1741 001e 03       		.uleb128 0x3
- 1742 001f 24       		.uleb128 0x24
- 1743 0020 00       		.byte	0
- 1744 0021 0B       		.uleb128 0xb
- 1745 0022 0B       		.uleb128 0xb
- 1746 0023 3E       		.uleb128 0x3e
- 1747 0024 0B       		.uleb128 0xb
- 1748 0025 03       		.uleb128 0x3
- 1749 0026 08       		.uleb128 0x8
- 1750 0027 00       		.byte	0
- 1751 0028 00       		.byte	0
- 1752 0029 04       		.uleb128 0x4
- 1753 002a 16       		.uleb128 0x16
- 1754 002b 00       		.byte	0
- 1755 002c 03       		.uleb128 0x3
- 1756 002d 0E       		.uleb128 0xe
- 1757 002e 3A       		.uleb128 0x3a
- 1758 002f 0B       		.uleb128 0xb
- 1759 0030 3B       		.uleb128 0x3b
- 1760 0031 0B       		.uleb128 0xb
- 1761 0032 49       		.uleb128 0x49
- 1762 0033 13       		.uleb128 0x13
- 1763 0034 00       		.byte	0
- 1764 0035 00       		.byte	0
- 1765 0036 05       		.uleb128 0x5
- 1766 0037 2E       		.uleb128 0x2e
- 1767 0038 01       		.byte	0x1
- 1768 0039 3F       		.uleb128 0x3f
- 1769 003a 19       		.uleb128 0x19
- 1770 003b 03       		.uleb128 0x3
- 1771 003c 0E       		.uleb128 0xe
- 1772 003d 3A       		.uleb128 0x3a
- 1773 003e 0B       		.uleb128 0xb
- 1774 003f 3B       		.uleb128 0x3b
- 1775 0040 0B       		.uleb128 0xb
- 1776 0041 49       		.uleb128 0x49
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cchwgjoG.s 			page 36
-
-
- 1777 0042 13       		.uleb128 0x13
- 1778 0043 11       		.uleb128 0x11
- 1779 0044 01       		.uleb128 0x1
- 1780 0045 12       		.uleb128 0x12
- 1781 0046 06       		.uleb128 0x6
- 1782 0047 40       		.uleb128 0x40
- 1783 0048 18       		.uleb128 0x18
- 1784 0049 9742     		.uleb128 0x2117
- 1785 004b 19       		.uleb128 0x19
- 1786 004c 01       		.uleb128 0x1
- 1787 004d 13       		.uleb128 0x13
- 1788 004e 00       		.byte	0
- 1789 004f 00       		.byte	0
- 1790 0050 06       		.uleb128 0x6
- 1791 0051 0B       		.uleb128 0xb
- 1792 0052 01       		.byte	0x1
- 1793 0053 55       		.uleb128 0x55
- 1794 0054 17       		.uleb128 0x17
- 1795 0055 01       		.uleb128 0x1
- 1796 0056 13       		.uleb128 0x13
- 1797 0057 00       		.byte	0
- 1798 0058 00       		.byte	0
- 1799 0059 07       		.uleb128 0x7
- 1800 005a 34       		.uleb128 0x34
- 1801 005b 00       		.byte	0
- 1802 005c 03       		.uleb128 0x3
- 1803 005d 0E       		.uleb128 0xe
- 1804 005e 3A       		.uleb128 0x3a
- 1805 005f 0B       		.uleb128 0xb
- 1806 0060 3B       		.uleb128 0x3b
- 1807 0061 0B       		.uleb128 0xb
- 1808 0062 49       		.uleb128 0x49
- 1809 0063 13       		.uleb128 0x13
- 1810 0064 02       		.uleb128 0x2
- 1811 0065 17       		.uleb128 0x17
- 1812 0066 00       		.byte	0
- 1813 0067 00       		.byte	0
- 1814 0068 08       		.uleb128 0x8
- 1815 0069 898201   		.uleb128 0x4109
- 1816 006c 00       		.byte	0
- 1817 006d 11       		.uleb128 0x11
- 1818 006e 01       		.uleb128 0x1
- 1819 006f 31       		.uleb128 0x31
- 1820 0070 13       		.uleb128 0x13
- 1821 0071 00       		.byte	0
- 1822 0072 00       		.byte	0
- 1823 0073 09       		.uleb128 0x9
- 1824 0074 898201   		.uleb128 0x4109
- 1825 0077 01       		.byte	0x1
- 1826 0078 11       		.uleb128 0x11
- 1827 0079 01       		.uleb128 0x1
- 1828 007a 31       		.uleb128 0x31
- 1829 007b 13       		.uleb128 0x13
- 1830 007c 01       		.uleb128 0x1
- 1831 007d 13       		.uleb128 0x13
- 1832 007e 00       		.byte	0
- 1833 007f 00       		.byte	0
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cchwgjoG.s 			page 37
-
-
- 1834 0080 0A       		.uleb128 0xa
- 1835 0081 8A8201   		.uleb128 0x410a
- 1836 0084 00       		.byte	0
- 1837 0085 02       		.uleb128 0x2
- 1838 0086 18       		.uleb128 0x18
- 1839 0087 9142     		.uleb128 0x2111
- 1840 0089 18       		.uleb128 0x18
- 1841 008a 00       		.byte	0
- 1842 008b 00       		.byte	0
- 1843 008c 0B       		.uleb128 0xb
- 1844 008d 898201   		.uleb128 0x4109
- 1845 0090 01       		.byte	0x1
- 1846 0091 11       		.uleb128 0x11
- 1847 0092 01       		.uleb128 0x1
- 1848 0093 31       		.uleb128 0x31
- 1849 0094 13       		.uleb128 0x13
- 1850 0095 00       		.byte	0
- 1851 0096 00       		.byte	0
- 1852 0097 0C       		.uleb128 0xc
- 1853 0098 2E       		.uleb128 0x2e
- 1854 0099 01       		.byte	0x1
- 1855 009a 3F       		.uleb128 0x3f
- 1856 009b 19       		.uleb128 0x19
- 1857 009c 03       		.uleb128 0x3
- 1858 009d 0E       		.uleb128 0xe
- 1859 009e 3A       		.uleb128 0x3a
- 1860 009f 0B       		.uleb128 0xb
- 1861 00a0 3B       		.uleb128 0x3b
- 1862 00a1 0B       		.uleb128 0xb
- 1863 00a2 49       		.uleb128 0x49
- 1864 00a3 13       		.uleb128 0x13
- 1865 00a4 11       		.uleb128 0x11
- 1866 00a5 01       		.uleb128 0x1
- 1867 00a6 12       		.uleb128 0x12
- 1868 00a7 06       		.uleb128 0x6
- 1869 00a8 40       		.uleb128 0x40
- 1870 00a9 18       		.uleb128 0x18
- 1871 00aa 9642     		.uleb128 0x2116
- 1872 00ac 19       		.uleb128 0x19
- 1873 00ad 01       		.uleb128 0x1
- 1874 00ae 13       		.uleb128 0x13
- 1875 00af 00       		.byte	0
- 1876 00b0 00       		.byte	0
- 1877 00b1 0D       		.uleb128 0xd
- 1878 00b2 34       		.uleb128 0x34
- 1879 00b3 00       		.byte	0
- 1880 00b4 03       		.uleb128 0x3
- 1881 00b5 08       		.uleb128 0x8
- 1882 00b6 3A       		.uleb128 0x3a
- 1883 00b7 0B       		.uleb128 0xb
- 1884 00b8 3B       		.uleb128 0x3b
- 1885 00b9 0B       		.uleb128 0xb
- 1886 00ba 49       		.uleb128 0x49
- 1887 00bb 13       		.uleb128 0x13
- 1888 00bc 02       		.uleb128 0x2
- 1889 00bd 17       		.uleb128 0x17
- 1890 00be 00       		.byte	0
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cchwgjoG.s 			page 38
-
-
- 1891 00bf 00       		.byte	0
- 1892 00c0 0E       		.uleb128 0xe
- 1893 00c1 34       		.uleb128 0x34
- 1894 00c2 00       		.byte	0
- 1895 00c3 03       		.uleb128 0x3
- 1896 00c4 0E       		.uleb128 0xe
- 1897 00c5 3A       		.uleb128 0x3a
- 1898 00c6 0B       		.uleb128 0xb
- 1899 00c7 3B       		.uleb128 0x3b
- 1900 00c8 0B       		.uleb128 0xb
- 1901 00c9 49       		.uleb128 0x49
- 1902 00ca 13       		.uleb128 0x13
- 1903 00cb 3F       		.uleb128 0x3f
- 1904 00cc 19       		.uleb128 0x19
- 1905 00cd 02       		.uleb128 0x2
- 1906 00ce 18       		.uleb128 0x18
- 1907 00cf 00       		.byte	0
- 1908 00d0 00       		.byte	0
- 1909 00d1 0F       		.uleb128 0xf
- 1910 00d2 01       		.uleb128 0x1
- 1911 00d3 01       		.byte	0x1
- 1912 00d4 49       		.uleb128 0x49
- 1913 00d5 13       		.uleb128 0x13
- 1914 00d6 01       		.uleb128 0x1
- 1915 00d7 13       		.uleb128 0x13
- 1916 00d8 00       		.byte	0
- 1917 00d9 00       		.byte	0
- 1918 00da 10       		.uleb128 0x10
- 1919 00db 21       		.uleb128 0x21
- 1920 00dc 00       		.byte	0
- 1921 00dd 49       		.uleb128 0x49
- 1922 00de 13       		.uleb128 0x13
- 1923 00df 2F       		.uleb128 0x2f
- 1924 00e0 0B       		.uleb128 0xb
- 1925 00e1 00       		.byte	0
- 1926 00e2 00       		.byte	0
- 1927 00e3 11       		.uleb128 0x11
- 1928 00e4 2E       		.uleb128 0x2e
- 1929 00e5 00       		.byte	0
- 1930 00e6 3F       		.uleb128 0x3f
- 1931 00e7 19       		.uleb128 0x19
- 1932 00e8 03       		.uleb128 0x3
- 1933 00e9 0E       		.uleb128 0xe
- 1934 00ea 3A       		.uleb128 0x3a
- 1935 00eb 0B       		.uleb128 0xb
- 1936 00ec 3B       		.uleb128 0x3b
- 1937 00ed 0B       		.uleb128 0xb
- 1938 00ee 27       		.uleb128 0x27
- 1939 00ef 19       		.uleb128 0x19
- 1940 00f0 3C       		.uleb128 0x3c
- 1941 00f1 19       		.uleb128 0x19
- 1942 00f2 00       		.byte	0
- 1943 00f3 00       		.byte	0
- 1944 00f4 12       		.uleb128 0x12
- 1945 00f5 2E       		.uleb128 0x2e
- 1946 00f6 01       		.byte	0x1
- 1947 00f7 3F       		.uleb128 0x3f
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cchwgjoG.s 			page 39
-
-
- 1948 00f8 19       		.uleb128 0x19
- 1949 00f9 03       		.uleb128 0x3
- 1950 00fa 0E       		.uleb128 0xe
- 1951 00fb 3A       		.uleb128 0x3a
- 1952 00fc 0B       		.uleb128 0xb
- 1953 00fd 3B       		.uleb128 0x3b
- 1954 00fe 0B       		.uleb128 0xb
- 1955 00ff 27       		.uleb128 0x27
- 1956 0100 19       		.uleb128 0x19
- 1957 0101 49       		.uleb128 0x49
- 1958 0102 13       		.uleb128 0x13
- 1959 0103 3C       		.uleb128 0x3c
- 1960 0104 19       		.uleb128 0x19
- 1961 0105 01       		.uleb128 0x1
- 1962 0106 13       		.uleb128 0x13
- 1963 0107 00       		.byte	0
- 1964 0108 00       		.byte	0
- 1965 0109 13       		.uleb128 0x13
- 1966 010a 05       		.uleb128 0x5
- 1967 010b 00       		.byte	0
- 1968 010c 49       		.uleb128 0x49
- 1969 010d 13       		.uleb128 0x13
- 1970 010e 00       		.byte	0
- 1971 010f 00       		.byte	0
- 1972 0110 14       		.uleb128 0x14
- 1973 0111 2E       		.uleb128 0x2e
- 1974 0112 01       		.byte	0x1
- 1975 0113 3F       		.uleb128 0x3f
- 1976 0114 19       		.uleb128 0x19
- 1977 0115 03       		.uleb128 0x3
- 1978 0116 0E       		.uleb128 0xe
- 1979 0117 3A       		.uleb128 0x3a
- 1980 0118 0B       		.uleb128 0xb
- 1981 0119 3B       		.uleb128 0x3b
- 1982 011a 0B       		.uleb128 0xb
- 1983 011b 27       		.uleb128 0x27
- 1984 011c 19       		.uleb128 0x19
- 1985 011d 3C       		.uleb128 0x3c
- 1986 011e 19       		.uleb128 0x19
- 1987 011f 01       		.uleb128 0x1
- 1988 0120 13       		.uleb128 0x13
- 1989 0121 00       		.byte	0
- 1990 0122 00       		.byte	0
- 1991 0123 15       		.uleb128 0x15
- 1992 0124 2E       		.uleb128 0x2e
- 1993 0125 01       		.byte	0x1
- 1994 0126 3F       		.uleb128 0x3f
- 1995 0127 19       		.uleb128 0x19
- 1996 0128 03       		.uleb128 0x3
- 1997 0129 0E       		.uleb128 0xe
- 1998 012a 3A       		.uleb128 0x3a
- 1999 012b 0B       		.uleb128 0xb
- 2000 012c 3B       		.uleb128 0x3b
- 2001 012d 0B       		.uleb128 0xb
- 2002 012e 3C       		.uleb128 0x3c
- 2003 012f 19       		.uleb128 0x19
- 2004 0130 01       		.uleb128 0x1
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cchwgjoG.s 			page 40
-
-
- 2005 0131 13       		.uleb128 0x13
- 2006 0132 00       		.byte	0
- 2007 0133 00       		.byte	0
- 2008 0134 16       		.uleb128 0x16
- 2009 0135 18       		.uleb128 0x18
- 2010 0136 00       		.byte	0
- 2011 0137 00       		.byte	0
- 2012 0138 00       		.byte	0
- 2013 0139 17       		.uleb128 0x17
- 2014 013a 2E       		.uleb128 0x2e
- 2015 013b 00       		.byte	0
- 2016 013c 3F       		.uleb128 0x3f
- 2017 013d 19       		.uleb128 0x19
- 2018 013e 03       		.uleb128 0x3
- 2019 013f 0E       		.uleb128 0xe
- 2020 0140 3A       		.uleb128 0x3a
- 2021 0141 0B       		.uleb128 0xb
- 2022 0142 3B       		.uleb128 0x3b
- 2023 0143 0B       		.uleb128 0xb
- 2024 0144 27       		.uleb128 0x27
- 2025 0145 19       		.uleb128 0x19
- 2026 0146 49       		.uleb128 0x49
- 2027 0147 13       		.uleb128 0x13
- 2028 0148 3C       		.uleb128 0x3c
- 2029 0149 19       		.uleb128 0x19
- 2030 014a 00       		.byte	0
- 2031 014b 00       		.byte	0
- 2032 014c 18       		.uleb128 0x18
- 2033 014d 0F       		.uleb128 0xf
- 2034 014e 00       		.byte	0
- 2035 014f 0B       		.uleb128 0xb
- 2036 0150 0B       		.uleb128 0xb
- 2037 0151 49       		.uleb128 0x49
- 2038 0152 13       		.uleb128 0x13
- 2039 0153 00       		.byte	0
- 2040 0154 00       		.byte	0
- 2041 0155 19       		.uleb128 0x19
- 2042 0156 26       		.uleb128 0x26
- 2043 0157 00       		.byte	0
- 2044 0158 49       		.uleb128 0x49
- 2045 0159 13       		.uleb128 0x13
- 2046 015a 00       		.byte	0
- 2047 015b 00       		.byte	0
- 2048 015c 1A       		.uleb128 0x1a
- 2049 015d 2E       		.uleb128 0x2e
- 2050 015e 01       		.byte	0x1
- 2051 015f 3F       		.uleb128 0x3f
- 2052 0160 19       		.uleb128 0x19
- 2053 0161 03       		.uleb128 0x3
- 2054 0162 0E       		.uleb128 0xe
- 2055 0163 3A       		.uleb128 0x3a
- 2056 0164 0B       		.uleb128 0xb
- 2057 0165 3B       		.uleb128 0x3b
- 2058 0166 0B       		.uleb128 0xb
- 2059 0167 3C       		.uleb128 0x3c
- 2060 0168 19       		.uleb128 0x19
- 2061 0169 00       		.byte	0
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cchwgjoG.s 			page 41
-
-
- 2062 016a 00       		.byte	0
- 2063 016b 00       		.byte	0
- 2064              		.section	.debug_loc,"",%progbits
- 2065              	.Ldebug_loc0:
- 2066              	.LLST0:
- 2067 0000 2C000000 		.4byte	.LVL6
- 2068 0004 58000000 		.4byte	.LVL12
- 2069 0008 0100     		.2byte	0x1
- 2070 000a 54       		.byte	0x54
- 2071 000b 60000000 		.4byte	.LVL13
- 2072 000f 64000000 		.4byte	.LVL14
- 2073 0013 0100     		.2byte	0x1
- 2074 0015 54       		.byte	0x54
- 2075 0016 00000000 		.4byte	0
- 2076 001a 00000000 		.4byte	0
- 2077              	.LLST1:
- 2078 001e 0C000000 		.4byte	.LVL38
- 2079 0022 12000000 		.4byte	.LVL39
- 2080 0026 0200     		.2byte	0x2
- 2081 0028 30       		.byte	0x30
- 2082 0029 9F       		.byte	0x9f
- 2083 002a 12000000 		.4byte	.LVL39
- 2084 002e 1E000000 		.4byte	.LVL40
- 2085 0032 0100     		.2byte	0x1
- 2086 0034 53       		.byte	0x53
- 2087 0035 1E000000 		.4byte	.LVL40
- 2088 0039 20000000 		.4byte	.LVL41
- 2089 003d 0300     		.2byte	0x3
- 2090 003f 72       		.byte	0x72
- 2091 0040 7F       		.sleb128 -1
- 2092 0041 9F       		.byte	0x9f
- 2093 0042 20000000 		.4byte	.LVL41
- 2094 0046 22000000 		.4byte	.LVL42
- 2095 004a 0100     		.2byte	0x1
- 2096 004c 52       		.byte	0x52
- 2097 004d 22000000 		.4byte	.LVL42
- 2098 0051 28000000 		.4byte	.LVL43
- 2099 0055 0100     		.2byte	0x1
- 2100 0057 53       		.byte	0x53
- 2101 0058 46000000 		.4byte	.LVL49
- 2102 005c 4A000000 		.4byte	.LVL50
- 2103 0060 0200     		.2byte	0x2
- 2104 0062 30       		.byte	0x30
- 2105 0063 9F       		.byte	0x9f
- 2106 0064 4A000000 		.4byte	.LVL50
- 2107 0068 55000000 		.4byte	.LVL52-1
- 2108 006c 0100     		.2byte	0x1
- 2109 006e 53       		.byte	0x53
- 2110 006f 00000000 		.4byte	0
- 2111 0073 00000000 		.4byte	0
- 2112              	.LLST2:
- 2113 0077 3A000000 		.4byte	.LVL46
- 2114 007b 40000000 		.4byte	.LVL48
- 2115 007f 0100     		.2byte	0x1
- 2116 0081 50       		.byte	0x50
- 2117 0082 40000000 		.4byte	.LVL48
- 2118 0086 94000000 		.4byte	.LVL57
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cchwgjoG.s 			page 42
-
-
- 2119 008a 0100     		.2byte	0x1
- 2120 008c 54       		.byte	0x54
- 2121 008d 00000000 		.4byte	0
- 2122 0091 00000000 		.4byte	0
- 2123              	.LLST3:
- 2124 0095 3E000000 		.4byte	.LVL47
- 2125 0099 94000000 		.4byte	.LVL57
- 2126 009d 0100     		.2byte	0x1
- 2127 009f 55       		.byte	0x55
- 2128 00a0 00000000 		.4byte	0
- 2129 00a4 00000000 		.4byte	0
- 2130              	.LLST4:
- 2131 00a8 46000000 		.4byte	.LVL49
- 2132 00ac 4A000000 		.4byte	.LVL50
- 2133 00b0 0200     		.2byte	0x2
- 2134 00b2 30       		.byte	0x30
- 2135 00b3 9F       		.byte	0x9f
- 2136 00b4 00000000 		.4byte	0
- 2137 00b8 00000000 		.4byte	0
- 2138              		.section	.debug_aranges,"",%progbits
- 2139 0000 4C000000 		.4byte	0x4c
- 2140 0004 0200     		.2byte	0x2
- 2141 0006 00000000 		.4byte	.Ldebug_info0
- 2142 000a 04       		.byte	0x4
- 2143 000b 00       		.byte	0
- 2144 000c 0000     		.2byte	0
- 2145 000e 0000     		.2byte	0
- 2146 0010 00000000 		.4byte	.LFB0
- 2147 0014 74000000 		.4byte	.LFE0-.LFB0
- 2148 0018 00000000 		.4byte	.LFB1
- 2149 001c 30000000 		.4byte	.LFE1-.LFB1
- 2150 0020 00000000 		.4byte	.LFB2
- 2151 0024 1C000000 		.4byte	.LFE2-.LFB2
- 2152 0028 00000000 		.4byte	.LFB3
- 2153 002c DC000000 		.4byte	.LFE3-.LFB3
- 2154 0030 00000000 		.4byte	.LFB4
- 2155 0034 AC000000 		.4byte	.LFE4-.LFB4
- 2156 0038 00000000 		.4byte	.LFB5
- 2157 003c F8000000 		.4byte	.LFE5-.LFB5
- 2158 0040 00000000 		.4byte	.LFB6
- 2159 0044 14000000 		.4byte	.LFE6-.LFB6
- 2160 0048 00000000 		.4byte	0
- 2161 004c 00000000 		.4byte	0
- 2162              		.section	.debug_ranges,"",%progbits
- 2163              	.Ldebug_ranges0:
- 2164 0000 2A000000 		.4byte	.LBB2
- 2165 0004 58000000 		.4byte	.LBE2
- 2166 0008 5A000000 		.4byte	.LBB3
- 2167 000c 64000000 		.4byte	.LBE3
- 2168 0010 00000000 		.4byte	0
- 2169 0014 00000000 		.4byte	0
- 2170 0018 00000000 		.4byte	.LFB0
- 2171 001c 74000000 		.4byte	.LFE0
- 2172 0020 00000000 		.4byte	.LFB1
- 2173 0024 30000000 		.4byte	.LFE1
- 2174 0028 00000000 		.4byte	.LFB2
- 2175 002c 1C000000 		.4byte	.LFE2
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cchwgjoG.s 			page 43
-
-
- 2176 0030 00000000 		.4byte	.LFB3
- 2177 0034 DC000000 		.4byte	.LFE3
- 2178 0038 00000000 		.4byte	.LFB4
- 2179 003c AC000000 		.4byte	.LFE4
- 2180 0040 00000000 		.4byte	.LFB5
- 2181 0044 F8000000 		.4byte	.LFE5
- 2182 0048 00000000 		.4byte	.LFB6
- 2183 004c 14000000 		.4byte	.LFE6
- 2184 0050 00000000 		.4byte	0
- 2185 0054 00000000 		.4byte	0
- 2186              		.section	.debug_line,"",%progbits
- 2187              	.Ldebug_line0:
- 2188 0000 E2010000 		.section	.debug_str,"MS",%progbits,1
- 2188      0200D200 
- 2188      00000201 
- 2188      FB0E0D00 
- 2188      01010101 
- 2189              	.LASF47:
- 2190 0000 44697370 		.ascii	"Display_sleep\000"
- 2190      6C61795F 
- 2190      736C6565 
- 2190      7000
- 2191              	.LASF57:
- 2192 000e 44657465 		.ascii	"Detect_heartrate\000"
- 2192      63745F68 
- 2192      65617274 
- 2192      72617465 
- 2192      00
- 2193              	.LASF32:
- 2194 001f 74696D65 		.ascii	"timer_status\000"
- 2194      725F7374 
- 2194      61747573 
- 2194      00
- 2195              	.LASF61:
- 2196 002c 2E5C7374 		.ascii	".\\states.c\000"
- 2196      61746573 
- 2196      2E6300
- 2197              	.LASF31:
- 2198 0037 68656172 		.ascii	"heartbeatCounter\000"
- 2198      74626561 
- 2198      74436F75 
- 2198      6E746572 
- 2198      00
- 2199              	.LASF43:
- 2200 0048 4C43445F 		.ascii	"LCD_WriteControl\000"
- 2200      57726974 
- 2200      65436F6E 
- 2200      74726F6C 
- 2200      00
- 2201              	.LASF26:
- 2202 0059 61766572 		.ascii	"average\000"
- 2202      61676500 
- 2203              	.LASF17:
- 2204 0061 53544154 		.ascii	"STATE\000"
- 2204      4500
- 2205              	.LASF33:
- 2206 0067 74696D65 		.ascii	"timer_value\000"
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cchwgjoG.s 			page 44
-
-
- 2206      725F7661 
- 2206      6C756500 
- 2207              	.LASF16:
- 2208 0073 73697A65 		.ascii	"sizetype\000"
- 2208      74797065 
- 2208      00
- 2209              	.LASF24:
- 2210 007c 64696666 		.ascii	"difference\000"
- 2210      6572656E 
- 2210      636500
- 2211              	.LASF14:
- 2212 0087 63686172 		.ascii	"char8\000"
- 2212      3800
- 2213              	.LASF46:
- 2214 008d 43617053 		.ascii	"CapSense_UpdateEnabledBaselines\000"
- 2214      656E7365 
- 2214      5F557064 
- 2214      61746545 
- 2214      6E61626C 
- 2215              	.LASF22:
- 2216 00ad 53746174 		.ascii	"State_moving\000"
- 2216      655F6D6F 
- 2216      76696E67 
- 2216      00
- 2217              	.LASF2:
- 2218 00ba 73686F72 		.ascii	"short int\000"
- 2218      7420696E 
- 2218      7400
- 2219              	.LASF23:
- 2220 00c4 636F756E 		.ascii	"countDown\000"
- 2220      74446F77 
- 2220      6E00
- 2221              	.LASF10:
- 2222 00ce 75696E74 		.ascii	"uint16\000"
- 2222      313600
- 2223              	.LASF42:
- 2224 00d5 6D6F7669 		.ascii	"movingAverage\000"
- 2224      6E674176 
- 2224      65726167 
- 2224      6500
- 2225              	.LASF34:
- 2226 00e3 696E6372 		.ascii	"increasingHr\000"
- 2226      65617369 
- 2226      6E674872 
- 2226      00
- 2227              	.LASF9:
- 2228 00f0 75696E74 		.ascii	"uint8\000"
- 2228      3800
- 2229              	.LASF45:
- 2230 00f6 43617053 		.ascii	"CapSense_ScanEnabledWidgets\000"
- 2230      656E7365 
- 2230      5F536361 
- 2230      6E456E61 
- 2230      626C6564 
- 2231              	.LASF12:
- 2232 0112 666C6F61 		.ascii	"float\000"
- 2232      7400
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cchwgjoG.s 			page 45
-
-
- 2233              	.LASF35:
- 2234 0118 50524F46 		.ascii	"PROFILE\000"
- 2234      494C4500 
- 2235              	.LASF6:
- 2236 0120 6C6F6E67 		.ascii	"long long int\000"
- 2236      206C6F6E 
- 2236      6720696E 
- 2236      7400
- 2237              	.LASF60:
- 2238 012e 474E5520 		.ascii	"GNU C 4.8.4 20140526 (release) [ARM/embedded-4_8-br"
- 2238      4320342E 
- 2238      382E3420 
- 2238      32303134 
- 2238      30353236 
- 2239 0161 616E6368 		.ascii	"anch revision 211358] -mcpu=cortex-m3 -mthumb -g -O"
- 2239      20726576 
- 2239      6973696F 
- 2239      6E203231 
- 2239      31333538 
- 2240 0194 67202D66 		.ascii	"g -ffunction-sections\000"
- 2240      66756E63 
- 2240      74696F6E 
- 2240      2D736563 
- 2240      74696F6E 
- 2241              	.LASF62:
- 2242 01aa 433A5C55 		.ascii	"C:\\Users\\JohnP\\Desktop\\embedded\\trunk\\CE4920P"
- 2242      73657273 
- 2242      5C4A6F68 
- 2242      6E505C44 
- 2242      65736B74 
- 2243 01d7 726F6A65 		.ascii	"roject1\\Design01.cydsn\000"
- 2243      6374315C 
- 2243      44657369 
- 2243      676E3031 
- 2243      2E637964 
- 2244              	.LASF15:
- 2245 01ee 63686172 		.ascii	"char\000"
- 2245      00
- 2246              	.LASF4:
- 2247 01f3 6C6F6E67 		.ascii	"long int\000"
- 2247      20696E74 
- 2247      00
- 2248              	.LASF29:
- 2249 01fc 73706565 		.ascii	"speed\000"
- 2249      6400
- 2250              	.LASF53:
- 2251 0202 43617053 		.ascii	"CapSense_ReadSensorRaw\000"
- 2251      656E7365 
- 2251      5F526561 
- 2251      6453656E 
- 2251      736F7252 
- 2252              	.LASF1:
- 2253 0219 756E7369 		.ascii	"unsigned char\000"
- 2253      676E6564 
- 2253      20636861 
- 2253      7200
- 2254              	.LASF50:
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cchwgjoG.s 			page 46
-
-
- 2255 0227 506C6179 		.ascii	"Play_startup_music\000"
- 2255      5F737461 
- 2255      72747570 
- 2255      5F6D7573 
- 2255      696300
- 2256              	.LASF0:
- 2257 023a 7369676E 		.ascii	"signed char\000"
- 2257      65642063 
- 2257      68617200 
- 2258              	.LASF7:
- 2259 0246 6C6F6E67 		.ascii	"long long unsigned int\000"
- 2259      206C6F6E 
- 2259      6720756E 
- 2259      7369676E 
- 2259      65642069 
- 2260              	.LASF8:
- 2261 025d 756E7369 		.ascii	"unsigned int\000"
- 2261      676E6564 
- 2261      20696E74 
- 2261      00
- 2262              	.LASF48:
- 2263 026a 53797374 		.ascii	"System_init\000"
- 2263      656D5F69 
- 2263      6E697400 
- 2264              	.LASF5:
- 2265 0276 6C6F6E67 		.ascii	"long unsigned int\000"
- 2265      20756E73 
- 2265      69676E65 
- 2265      6420696E 
- 2265      7400
- 2266              	.LASF37:
- 2267 0288 50726576 		.ascii	"Prev_state\000"
- 2267      5F737461 
- 2267      746500
- 2268              	.LASF28:
- 2269 0293 53746174 		.ascii	"State_stop\000"
- 2269      655F7374 
- 2269      6F7000
- 2270              	.LASF41:
- 2271 029e 4D4F544F 		.ascii	"MOTOR_FAST_WALKING_SPEED\000"
- 2271      525F4641 
- 2271      53545F57 
- 2271      414C4B49 
- 2271      4E475F53 
- 2272              	.LASF3:
- 2273 02b7 73686F72 		.ascii	"short unsigned int\000"
- 2273      7420756E 
- 2273      7369676E 
- 2273      65642069 
- 2273      6E7400
- 2274              	.LASF58:
- 2275 02ca 4C43445F 		.ascii	"LCD_PrintU32Number\000"
- 2275      5072696E 
- 2275      74553332 
- 2275      4E756D62 
- 2275      657200
- 2276              	.LASF52:
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cchwgjoG.s 			page 47
-
-
- 2277 02dd 4C43445F 		.ascii	"LCD_PrintString\000"
- 2277      5072696E 
- 2277      74537472 
- 2277      696E6700 
- 2278              	.LASF40:
- 2279 02ed 4D4F544F 		.ascii	"MOTOR_WALKING_SPEED\000"
- 2279      525F5741 
- 2279      4C4B494E 
- 2279      475F5350 
- 2279      45454400 
- 2280              	.LASF36:
- 2281 0301 63757272 		.ascii	"currentState\000"
- 2281      656E7453 
- 2281      74617465 
- 2281      00
- 2282              	.LASF59:
- 2283 030e 4D6F746F 		.ascii	"Motor_rampUp\000"
- 2283      725F7261 
- 2283      6D705570 
- 2283      00
- 2284              	.LASF39:
- 2285 031b 4D4F544F 		.ascii	"MOTOR_RUNNING_SPEED\000"
- 2285      525F5255 
- 2285      4E4E494E 
- 2285      475F5350 
- 2285      45454400 
- 2286              	.LASF63:
- 2287 032f 4D6F746F 		.ascii	"Motor_stop\000"
- 2287      725F7374 
- 2287      6F7000
- 2288              	.LASF55:
- 2289 033a 44697370 		.ascii	"Display_profile_selection\000"
- 2289      6C61795F 
- 2289      70726F66 
- 2289      696C655F 
- 2289      73656C65 
- 2290              	.LASF11:
- 2291 0354 75696E74 		.ascii	"uint32\000"
- 2291      333200
- 2292              	.LASF18:
- 2293 035b 53746174 		.ascii	"State_sleep\000"
- 2293      655F736C 
- 2293      65657000 
- 2294              	.LASF38:
- 2295 0367 73656C65 		.ascii	"selectedProfile\000"
- 2295      63746564 
- 2295      50726F66 
- 2295      696C6500 
- 2296              	.LASF13:
- 2297 0377 646F7562 		.ascii	"double\000"
- 2297      6C6500
- 2298              	.LASF30:
- 2299 037e 68656172 		.ascii	"heartrate\000"
- 2299      74726174 
- 2299      6500
- 2300              	.LASF20:
- 2301 0388 53746174 		.ascii	"State_start\000"
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cchwgjoG.s 			page 48
-
-
- 2301      655F7374 
- 2301      61727400 
- 2302              	.LASF54:
- 2303 0394 43617053 		.ascii	"CapSense_CheckIsWidgetActive\000"
- 2303      656E7365 
- 2303      5F436865 
- 2303      636B4973 
- 2303      57696467 
- 2304              	.LASF56:
- 2305 03b1 43617053 		.ascii	"CapSense_IsBusy\000"
- 2305      656E7365 
- 2305      5F497342 
- 2305      75737900 
- 2306              	.LASF51:
- 2307 03c1 4C43445F 		.ascii	"LCD_Position\000"
- 2307      506F7369 
- 2307      74696F6E 
- 2307      00
- 2308              	.LASF25:
- 2309 03ce 6368616E 		.ascii	"change\000"
- 2309      676500
- 2310              	.LASF44:
- 2311 03d5 43794465 		.ascii	"CyDelay\000"
- 2311      6C617900 
- 2312              	.LASF21:
- 2313 03dd 53746174 		.ascii	"State_profile_selection\000"
- 2313      655F7072 
- 2313      6F66696C 
- 2313      655F7365 
- 2313      6C656374 
- 2314              	.LASF27:
- 2315 03f5 53746174 		.ascii	"State_heartrate_change\000"
- 2315      655F6865 
- 2315      61727472 
- 2315      6174655F 
- 2315      6368616E 
- 2316              	.LASF19:
- 2317 040c 53746174 		.ascii	"State_reset\000"
- 2317      655F7265 
- 2317      73657400 
- 2318              	.LASF49:
- 2319 0418 44697370 		.ascii	"Display_welcome_message\000"
- 2319      6C61795F 
- 2319      77656C63 
- 2319      6F6D655F 
- 2319      6D657373 
- 2320              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.8.4 20140526 (release) [ARM/embedded-4_8-br
+ 579 0068 114B     		ldr	r3, .L65+16
+ 580 006a 5868     		ldr	r0, [r3, #4]
+ 581 006c FFF7FEFF 		bl	Motor_rampUp
+ 582              	.LVL61:
+ 583 0070 14E0     		b	.L43
+ 584              	.L44:
+ 151:.\states.c    ****             }
+ 152:.\states.c    ****             break;
+ 153:.\states.c    ****         case PROFILE_FATBURN:
+ 154:.\states.c    ****             if (heartrate>100){
+ 585              		.loc 1 154 0
+ 586 0072 0D4B     		ldr	r3, .L65+8
+ 587 0074 1C68     		ldr	r4, [r3]	@ float
+ 588 0076 2046     		mov	r0, r4
+ 589 0078 0C49     		ldr	r1, .L65+12
+ 590 007a FFF7FEFF 		bl	__aeabi_fcmpgt
+ 591              	.LVL62:
+ 592 007e 20B1     		cbz	r0, .L64
+ 155:.\states.c    ****                 Motor_rampUp(MOTOR_FAST_WALKING_SPEED);
+ 593              		.loc 1 155 0
+ 594 0080 0B4B     		ldr	r3, .L65+16
+ 595 0082 9868     		ldr	r0, [r3, #8]
+ 596 0084 FFF7FEFF 		bl	Motor_rampUp
+ 597              	.LVL63:
+ 598 0088 08E0     		b	.L43
+ 599              	.L64:
+ 156:.\states.c    ****             }
+ 157:.\states.c    ****             else if (heartrate<60){
+ 600              		.loc 1 157 0
+ 601 008a 2046     		mov	r0, r4
+ 602 008c 0C49     		ldr	r1, .L65+32
+ 603 008e FFF7FEFF 		bl	__aeabi_fcmplt
+ 604              	.LVL64:
+ 605 0092 18B1     		cbz	r0, .L43
+ 158:.\states.c    ****                 Motor_rampUp(MOTOR_RUNNING_SPEED);
+ 606              		.loc 1 158 0
+ 607 0094 064B     		ldr	r3, .L65+16
+ 608 0096 5868     		ldr	r0, [r3, #4]
+ 609 0098 FFF7FEFF 		bl	Motor_rampUp
+ 610              	.LVL65:
+ 611              	.L43:
+ 159:.\states.c    ****             }
+ 160:.\states.c    ****             break;
+ 161:.\states.c    ****         default:
+ 162:.\states.c    ****             break;
+ 163:.\states.c    ****     }
+ 164:.\states.c    ****     return STATE_MOVING;   
+ 165:.\states.c    **** }
+ 612              		.loc 1 165 0
+ 613 009c 0420     		movs	r0, #4
+ 614 009e 10BD     		pop	{r4, pc}
+ 615              	.L66:
+ 616              		.align	2
+ 617              	.L65:
+ 618 00a0 00000000 		.word	Prev_state
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccWPIHIG.s 			page 15
+
+
+ 619 00a4 00000000 		.word	.LANCHOR0
+ 620 00a8 00000000 		.word	heartrate
+ 621 00ac 0000C842 		.word	1120403456
+ 622 00b0 00000000 		.word	.LANCHOR1
+ 623 00b4 0000A042 		.word	1117782016
+ 624 00b8 00003443 		.word	1127481344
+ 625 00bc 0000F042 		.word	1123024896
+ 626 00c0 00007042 		.word	1114636288
+ 627              		.cfi_endproc
+ 628              	.LFE5:
+ 629              		.size	State_heartrate_change, .-State_heartrate_change
+ 630              		.section	.text.State_stop,"ax",%progbits
+ 631              		.align	2
+ 632              		.global	State_stop
+ 633              		.thumb
+ 634              		.thumb_func
+ 635              		.type	State_stop, %function
+ 636              	State_stop:
+ 637              	.LFB6:
+ 166:.\states.c    **** 
+ 167:.\states.c    **** STATE State_stop(){
+ 638              		.loc 1 167 0
+ 639              		.cfi_startproc
+ 640              		@ args = 0, pretend = 0, frame = 0
+ 641              		@ frame_needed = 0, uses_anonymous_args = 0
+ 642 0000 08B5     		push	{r3, lr}
+ 643              		.cfi_def_cfa_offset 8
+ 644              		.cfi_offset 3, -8
+ 645              		.cfi_offset 14, -4
+ 168:.\states.c    ****     Prev_state = STATE_STOP;
+ 646              		.loc 1 168 0
+ 647 0002 0622     		movs	r2, #6
+ 648 0004 024B     		ldr	r3, .L68
+ 649 0006 1A60     		str	r2, [r3]
+ 169:.\states.c    ****     Motor_stop();
+ 650              		.loc 1 169 0
+ 651 0008 FFF7FEFF 		bl	Motor_stop
+ 652              	.LVL66:
+ 170:.\states.c    ****     return STATE_SLEEP; 
+ 171:.\states.c    **** }
+ 653              		.loc 1 171 0
+ 654 000c 0020     		movs	r0, #0
+ 655 000e 08BD     		pop	{r3, pc}
+ 656              	.L69:
+ 657              		.align	2
+ 658              	.L68:
+ 659 0010 00000000 		.word	Prev_state
+ 660              		.cfi_endproc
+ 661              	.LFE6:
+ 662              		.size	State_stop, .-State_stop
+ 663              		.global	movingAverage
+ 664              		.global	MOTOR_FAST_WALKING_SPEED
+ 665              		.global	MOTOR_WALKING_SPEED
+ 666              		.global	MOTOR_RUNNING_SPEED
+ 667              		.global	selectedProfile
+ 668              		.comm	Prev_state,4,4
+ 669              		.comm	currentState,4,4
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccWPIHIG.s 			page 16
+
+
+ 670              		.comm	PROFILE,4,4
+ 671              		.comm	increasingHr,4,4
+ 672              		.comm	average,4,4
+ 673              		.comm	timer_value,4,4
+ 674              		.comm	timer_status,4,4
+ 675              		.comm	heartbeatCounter,4,4
+ 676              		.comm	heartrate,4,4
+ 677              		.comm	speed,4,4
+ 678              		.data
+ 679              		.align	2
+ 680              		.set	.LANCHOR1,. + 0
+ 681              		.type	MOTOR_WALKING_SPEED, %object
+ 682              		.size	MOTOR_WALKING_SPEED, 4
+ 683              	MOTOR_WALKING_SPEED:
+ 684 0000 2C010000 		.word	300
+ 685              		.type	MOTOR_RUNNING_SPEED, %object
+ 686              		.size	MOTOR_RUNNING_SPEED, 4
+ 687              	MOTOR_RUNNING_SPEED:
+ 688 0004 32000000 		.word	50
+ 689              		.type	MOTOR_FAST_WALKING_SPEED, %object
+ 690              		.size	MOTOR_FAST_WALKING_SPEED, 4
+ 691              	MOTOR_FAST_WALKING_SPEED:
+ 692 0008 C8000000 		.word	200
+ 693              		.section	.rodata.str1.4,"aMS",%progbits,1
+ 694              		.align	2
+ 695              	.LC0:
+ 696 0000 52455345 		.ascii	"RESET\000"
+ 696      5400
+ 697 0006 0000     		.space	2
+ 698              	.LC1:
+ 699 0008 53544152 		.ascii	"START\000"
+ 699      5400
+ 700 000e 0000     		.space	2
+ 701              	.LC2:
+ 702 0010 53656C65 		.ascii	"Select a profile..\000"
+ 702      63742061 
+ 702      2070726F 
+ 702      66696C65 
+ 702      2E2E00
+ 703 0023 00       		.space	1
+ 704              	.LC3:
+ 705 0024 52656775 		.ascii	"Regular   \000"
+ 705      6C617220 
+ 705      202000
+ 706 002f 00       		.space	1
+ 707              	.LC4:
+ 708 0030 43617264 		.ascii	"Cardio    \000"
+ 708      696F2020 
+ 708      202000
+ 709 003b 00       		.space	1
+ 710              	.LC5:
+ 711 003c 46617420 		.ascii	"Fat Burn  \000"
+ 711      4275726E 
+ 711      202000
+ 712 0047 00       		.bss
+ 713              		.align	2
+ 714              		.set	.LANCHOR0,. + 0
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccWPIHIG.s 			page 17
+
+
+ 715              		.type	selectedProfile, %object
+ 716              		.size	selectedProfile, 4
+ 717              	selectedProfile:
+ 718 0000 00000000 		.space	4
+ 719              		.type	movingAverage, %object
+ 720              		.size	movingAverage, 40
+ 721              	movingAverage:
+ 722 0004 00000000 		.space	40
+ 722      00000000 
+ 722      00000000 
+ 722      00000000 
+ 722      00000000 
+ 723              		.text
+ 724              	.Letext0:
+ 725              		.file 2 "Generated_Source\\PSoC5/cytypes.h"
+ 726              		.file 3 ".\\states.h"
+ 727              		.file 4 ".\\motor.h"
+ 728              		.file 5 ".\\heartrate.h"
+ 729              		.file 6 "Generated_Source\\PSoC5/LCD.h"
+ 730              		.file 7 "Generated_Source\\PSoC5/CyLib.h"
+ 731              		.file 8 "Generated_Source\\PSoC5/CapSense.h"
+ 732              		.file 9 "Generated_Source\\PSoC5/CapSense_CSHL.h"
+ 733              		.file 10 ".\\display.h"
+ 734              		.file 11 ".\\system.h"
+ 735              		.file 12 ".\\speaker.h"
+ 736              		.section	.debug_info,"",%progbits
+ 737              	.Ldebug_info0:
+ 738 0000 6F060000 		.4byte	0x66f
+ 739 0004 0400     		.2byte	0x4
+ 740 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 741 000a 04       		.byte	0x4
+ 742 000b 01       		.uleb128 0x1
+ 743 000c 2E010000 		.4byte	.LASF60
+ 744 0010 01       		.byte	0x1
+ 745 0011 2C000000 		.4byte	.LASF61
+ 746 0015 AA010000 		.4byte	.LASF62
+ 747 0019 18000000 		.4byte	.Ldebug_ranges0+0x18
+ 748 001d 00000000 		.4byte	0
+ 749 0021 00000000 		.4byte	.Ldebug_line0
+ 750 0025 02       		.uleb128 0x2
+ 751 0026 01       		.byte	0x1
+ 752 0027 06       		.byte	0x6
+ 753 0028 2D020000 		.4byte	.LASF0
+ 754 002c 02       		.uleb128 0x2
+ 755 002d 01       		.byte	0x1
+ 756 002e 08       		.byte	0x8
+ 757 002f 0C020000 		.4byte	.LASF1
+ 758 0033 02       		.uleb128 0x2
+ 759 0034 02       		.byte	0x2
+ 760 0035 05       		.byte	0x5
+ 761 0036 BA000000 		.4byte	.LASF2
+ 762 003a 02       		.uleb128 0x2
+ 763 003b 02       		.byte	0x2
+ 764 003c 07       		.byte	0x7
+ 765 003d A5020000 		.4byte	.LASF3
+ 766 0041 02       		.uleb128 0x2
+ 767 0042 04       		.byte	0x4
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccWPIHIG.s 			page 18
+
+
+ 768 0043 05       		.byte	0x5
+ 769 0044 EC010000 		.4byte	.LASF4
+ 770 0048 02       		.uleb128 0x2
+ 771 0049 04       		.byte	0x4
+ 772 004a 07       		.byte	0x7
+ 773 004b 69020000 		.4byte	.LASF5
+ 774 004f 02       		.uleb128 0x2
+ 775 0050 08       		.byte	0x8
+ 776 0051 05       		.byte	0x5
+ 777 0052 20010000 		.4byte	.LASF6
+ 778 0056 02       		.uleb128 0x2
+ 779 0057 08       		.byte	0x8
+ 780 0058 07       		.byte	0x7
+ 781 0059 39020000 		.4byte	.LASF7
+ 782 005d 03       		.uleb128 0x3
+ 783 005e 04       		.byte	0x4
+ 784 005f 05       		.byte	0x5
+ 785 0060 696E7400 		.ascii	"int\000"
+ 786 0064 02       		.uleb128 0x2
+ 787 0065 04       		.byte	0x4
+ 788 0066 07       		.byte	0x7
+ 789 0067 50020000 		.4byte	.LASF8
+ 790 006b 04       		.uleb128 0x4
+ 791 006c F0000000 		.4byte	.LASF9
+ 792 0070 02       		.byte	0x2
+ 793 0071 B4       		.byte	0xb4
+ 794 0072 2C000000 		.4byte	0x2c
+ 795 0076 04       		.uleb128 0x4
+ 796 0077 CE000000 		.4byte	.LASF10
+ 797 007b 02       		.byte	0x2
+ 798 007c B5       		.byte	0xb5
+ 799 007d 3A000000 		.4byte	0x3a
+ 800 0081 04       		.uleb128 0x4
+ 801 0082 42030000 		.4byte	.LASF11
+ 802 0086 02       		.byte	0x2
+ 803 0087 B6       		.byte	0xb6
+ 804 0088 48000000 		.4byte	0x48
+ 805 008c 02       		.uleb128 0x2
+ 806 008d 04       		.byte	0x4
+ 807 008e 04       		.byte	0x4
+ 808 008f 12010000 		.4byte	.LASF12
+ 809 0093 02       		.uleb128 0x2
+ 810 0094 08       		.byte	0x8
+ 811 0095 04       		.byte	0x4
+ 812 0096 65030000 		.4byte	.LASF13
+ 813 009a 04       		.uleb128 0x4
+ 814 009b 87000000 		.4byte	.LASF14
+ 815 009f 02       		.byte	0x2
+ 816 00a0 C5       		.byte	0xc5
+ 817 00a1 A5000000 		.4byte	0xa5
+ 818 00a5 02       		.uleb128 0x2
+ 819 00a6 01       		.byte	0x1
+ 820 00a7 08       		.byte	0x8
+ 821 00a8 E7010000 		.4byte	.LASF15
+ 822 00ac 02       		.uleb128 0x2
+ 823 00ad 04       		.byte	0x4
+ 824 00ae 07       		.byte	0x7
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccWPIHIG.s 			page 19
+
+
+ 825 00af 73000000 		.4byte	.LASF16
+ 826 00b3 04       		.uleb128 0x4
+ 827 00b4 61000000 		.4byte	.LASF17
+ 828 00b8 03       		.byte	0x3
+ 829 00b9 11       		.byte	0x11
+ 830 00ba 5D000000 		.4byte	0x5d
+ 831 00be 05       		.uleb128 0x5
+ 832 00bf 49030000 		.4byte	.LASF18
+ 833 00c3 01       		.byte	0x1
+ 834 00c4 17       		.byte	0x17
+ 835 00c5 B3000000 		.4byte	0xb3
+ 836 00c9 00000000 		.4byte	.LFB0
+ 837 00cd 74000000 		.4byte	.LFE0-.LFB0
+ 838 00d1 01       		.uleb128 0x1
+ 839 00d2 9C       		.byte	0x9c
+ 840 00d3 76010000 		.4byte	0x176
+ 841 00d7 06       		.uleb128 0x6
+ 842 00d8 00000000 		.4byte	.Ldebug_ranges0+0
+ 843 00dc 2F010000 		.4byte	0x12f
+ 844 00e0 07       		.uleb128 0x7
+ 845 00e1 C4000000 		.4byte	.LASF23
+ 846 00e5 01       		.byte	0x1
+ 847 00e6 1E       		.byte	0x1e
+ 848 00e7 5D000000 		.4byte	0x5d
+ 849 00eb 00000000 		.4byte	.LLST0
+ 850 00ef 08       		.uleb128 0x8
+ 851 00f0 30000000 		.4byte	.LVL7
+ 852 00f4 60050000 		.4byte	0x560
+ 853 00f8 09       		.uleb128 0x9
+ 854 00f9 36000000 		.4byte	.LVL8
+ 855 00fd 67050000 		.4byte	0x567
+ 856 0101 0C010000 		.4byte	0x10c
+ 857 0105 0A       		.uleb128 0xa
+ 858 0106 01       		.uleb128 0x1
+ 859 0107 50       		.byte	0x50
+ 860 0108 02       		.uleb128 0x2
+ 861 0109 75       		.byte	0x75
+ 862 010a 00       		.sleb128 0
+ 863 010b 00       		.byte	0
+ 864 010c 09       		.uleb128 0x9
+ 865 010d 48000000 		.4byte	.LVL9
+ 866 0111 7C050000 		.4byte	0x57c
+ 867 0115 1F010000 		.4byte	0x11f
+ 868 0119 0A       		.uleb128 0xa
+ 869 011a 01       		.uleb128 0x1
+ 870 011b 50       		.byte	0x50
+ 871 011c 01       		.uleb128 0x1
+ 872 011d 31       		.byte	0x31
+ 873 011e 00       		.byte	0
+ 874 011f 0B       		.uleb128 0xb
+ 875 0120 54000000 		.4byte	.LVL10
+ 876 0124 8D050000 		.4byte	0x58d
+ 877 0128 0A       		.uleb128 0xa
+ 878 0129 01       		.uleb128 0x1
+ 879 012a 50       		.byte	0x50
+ 880 012b 01       		.uleb128 0x1
+ 881 012c 3A       		.byte	0x3a
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccWPIHIG.s 			page 20
+
+
+ 882 012d 00       		.byte	0
+ 883 012e 00       		.byte	0
+ 884 012f 09       		.uleb128 0x9
+ 885 0130 08000000 		.4byte	.LVL0
+ 886 0134 7C050000 		.4byte	0x57c
+ 887 0138 42010000 		.4byte	0x142
+ 888 013c 0A       		.uleb128 0xa
+ 889 013d 01       		.uleb128 0x1
+ 890 013e 50       		.byte	0x50
+ 891 013f 01       		.uleb128 0x1
+ 892 0140 31       		.byte	0x31
+ 893 0141 00       		.byte	0
+ 894 0142 08       		.uleb128 0x8
+ 895 0143 0C000000 		.4byte	.LVL1
+ 896 0147 9E050000 		.4byte	0x59e
+ 897 014b 08       		.uleb128 0x8
+ 898 014c 10000000 		.4byte	.LVL2
+ 899 0150 AB050000 		.4byte	0x5ab
+ 900 0154 08       		.uleb128 0x8
+ 901 0155 14000000 		.4byte	.LVL3
+ 902 0159 60050000 		.4byte	0x560
+ 903 015d 08       		.uleb128 0x8
+ 904 015e 18000000 		.4byte	.LVL4
+ 905 0162 B2050000 		.4byte	0x5b2
+ 906 0166 0B       		.uleb128 0xb
+ 907 0167 22000000 		.4byte	.LVL5
+ 908 016b 67050000 		.4byte	0x567
+ 909 016f 0A       		.uleb128 0xa
+ 910 0170 01       		.uleb128 0x1
+ 911 0171 50       		.byte	0x50
+ 912 0172 01       		.uleb128 0x1
+ 913 0173 32       		.byte	0x32
+ 914 0174 00       		.byte	0
+ 915 0175 00       		.byte	0
+ 916 0176 05       		.uleb128 0x5
+ 917 0177 05040000 		.4byte	.LASF19
+ 918 017b 01       		.byte	0x1
+ 919 017c 2E       		.byte	0x2e
+ 920 017d B3000000 		.4byte	0xb3
+ 921 0181 00000000 		.4byte	.LFB1
+ 922 0185 30000000 		.4byte	.LFE1-.LFB1
+ 923 0189 01       		.uleb128 0x1
+ 924 018a 9C       		.byte	0x9c
+ 925 018b D6010000 		.4byte	0x1d6
+ 926 018f 08       		.uleb128 0x8
+ 927 0190 06000000 		.4byte	.LVL15
+ 928 0194 BD050000 		.4byte	0x5bd
+ 929 0198 08       		.uleb128 0x8
+ 930 0199 0A000000 		.4byte	.LVL16
+ 931 019d CA050000 		.4byte	0x5ca
+ 932 01a1 08       		.uleb128 0x8
+ 933 01a2 0E000000 		.4byte	.LVL17
+ 934 01a6 D7050000 		.4byte	0x5d7
+ 935 01aa 09       		.uleb128 0x9
+ 936 01ab 1C000000 		.4byte	.LVL18
+ 937 01af E4050000 		.4byte	0x5e4
+ 938 01b3 C2010000 		.4byte	0x1c2
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccWPIHIG.s 			page 21
+
+
+ 939 01b7 0A       		.uleb128 0xa
+ 940 01b8 01       		.uleb128 0x1
+ 941 01b9 51       		.byte	0x51
+ 942 01ba 01       		.uleb128 0x1
+ 943 01bb 30       		.byte	0x30
+ 944 01bc 0A       		.uleb128 0xa
+ 945 01bd 01       		.uleb128 0x1
+ 946 01be 50       		.byte	0x50
+ 947 01bf 01       		.uleb128 0x1
+ 948 01c0 30       		.byte	0x30
+ 949 01c1 00       		.byte	0
+ 950 01c2 0B       		.uleb128 0xb
+ 951 01c3 22000000 		.4byte	.LVL19
+ 952 01c7 FA050000 		.4byte	0x5fa
+ 953 01cb 0A       		.uleb128 0xa
+ 954 01cc 01       		.uleb128 0x1
+ 955 01cd 50       		.byte	0x50
+ 956 01ce 05       		.uleb128 0x5
+ 957 01cf 03       		.byte	0x3
+ 958 01d0 00000000 		.4byte	.LC0
+ 959 01d4 00       		.byte	0
+ 960 01d5 00       		.byte	0
+ 961 01d6 05       		.uleb128 0x5
+ 962 01d7 76030000 		.4byte	.LASF20
+ 963 01db 01       		.byte	0x1
+ 964 01dc 38       		.byte	0x38
+ 965 01dd B3000000 		.4byte	0xb3
+ 966 01e1 00000000 		.4byte	.LFB2
+ 967 01e5 1C000000 		.4byte	.LFE2-.LFB2
+ 968 01e9 01       		.uleb128 0x1
+ 969 01ea 9C       		.byte	0x9c
+ 970 01eb 03020000 		.4byte	0x203
+ 971 01ef 0B       		.uleb128 0xb
+ 972 01f0 08000000 		.4byte	.LVL20
+ 973 01f4 FA050000 		.4byte	0x5fa
+ 974 01f8 0A       		.uleb128 0xa
+ 975 01f9 01       		.uleb128 0x1
+ 976 01fa 50       		.byte	0x50
+ 977 01fb 05       		.uleb128 0x5
+ 978 01fc 03       		.byte	0x3
+ 979 01fd 08000000 		.4byte	.LC1
+ 980 0201 00       		.byte	0
+ 981 0202 00       		.byte	0
+ 982 0203 05       		.uleb128 0x5
+ 983 0204 CB030000 		.4byte	.LASF21
+ 984 0208 01       		.byte	0x1
+ 985 0209 3E       		.byte	0x3e
+ 986 020a B3000000 		.4byte	0xb3
+ 987 020e 00000000 		.4byte	.LFB3
+ 988 0212 DC000000 		.4byte	.LFE3-.LFB3
+ 989 0216 01       		.uleb128 0x1
+ 990 0217 9C       		.byte	0x9c
+ 991 0218 5F030000 		.4byte	0x35f
+ 992 021c 09       		.uleb128 0x9
+ 993 021d 12000000 		.4byte	.LVL21
+ 994 0221 E4050000 		.4byte	0x5e4
+ 995 0225 34020000 		.4byte	0x234
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccWPIHIG.s 			page 22
+
+
+ 996 0229 0A       		.uleb128 0xa
+ 997 022a 01       		.uleb128 0x1
+ 998 022b 51       		.byte	0x51
+ 999 022c 01       		.uleb128 0x1
+ 1000 022d 30       		.byte	0x30
+ 1001 022e 0A       		.uleb128 0xa
+ 1002 022f 01       		.uleb128 0x1
+ 1003 0230 50       		.byte	0x50
+ 1004 0231 01       		.uleb128 0x1
+ 1005 0232 30       		.byte	0x30
+ 1006 0233 00       		.byte	0
+ 1007 0234 09       		.uleb128 0x9
+ 1008 0235 1A000000 		.4byte	.LVL22
+ 1009 0239 7C050000 		.4byte	0x57c
+ 1010 023d 47020000 		.4byte	0x247
+ 1011 0241 0A       		.uleb128 0xa
+ 1012 0242 01       		.uleb128 0x1
+ 1013 0243 50       		.byte	0x50
+ 1014 0244 01       		.uleb128 0x1
+ 1015 0245 31       		.byte	0x31
+ 1016 0246 00       		.byte	0
+ 1017 0247 09       		.uleb128 0x9
+ 1018 0248 20000000 		.4byte	.LVL23
+ 1019 024c FA050000 		.4byte	0x5fa
+ 1020 0250 5E020000 		.4byte	0x25e
+ 1021 0254 0A       		.uleb128 0xa
+ 1022 0255 01       		.uleb128 0x1
+ 1023 0256 50       		.byte	0x50
+ 1024 0257 05       		.uleb128 0x5
+ 1025 0258 03       		.byte	0x3
+ 1026 0259 10000000 		.4byte	.LC2
+ 1027 025d 00       		.byte	0
+ 1028 025e 09       		.uleb128 0x9
+ 1029 025f 2E000000 		.4byte	.LVL24
+ 1030 0263 E4050000 		.4byte	0x5e4
+ 1031 0267 76020000 		.4byte	0x276
+ 1032 026b 0A       		.uleb128 0xa
+ 1033 026c 01       		.uleb128 0x1
+ 1034 026d 51       		.byte	0x51
+ 1035 026e 01       		.uleb128 0x1
+ 1036 026f 30       		.byte	0x30
+ 1037 0270 0A       		.uleb128 0xa
+ 1038 0271 01       		.uleb128 0x1
+ 1039 0272 50       		.byte	0x50
+ 1040 0273 01       		.uleb128 0x1
+ 1041 0274 31       		.byte	0x31
+ 1042 0275 00       		.byte	0
+ 1043 0276 08       		.uleb128 0x8
+ 1044 0277 32000000 		.4byte	.LVL25
+ 1045 027b AB050000 		.4byte	0x5ab
+ 1046 027f 08       		.uleb128 0x8
+ 1047 0280 36000000 		.4byte	.LVL26
+ 1048 0284 60050000 		.4byte	0x560
+ 1049 0288 08       		.uleb128 0x8
+ 1050 0289 3A000000 		.4byte	.LVL27
+ 1051 028d B2050000 		.4byte	0x5b2
+ 1052 0291 09       		.uleb128 0x9
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccWPIHIG.s 			page 23
+
+
+ 1053 0292 44000000 		.4byte	.LVL28
+ 1054 0296 16060000 		.4byte	0x616
+ 1055 029a A4020000 		.4byte	0x2a4
+ 1056 029e 0A       		.uleb128 0xa
+ 1057 029f 01       		.uleb128 0x1
+ 1058 02a0 50       		.byte	0x50
+ 1059 02a1 01       		.uleb128 0x1
+ 1060 02a2 31       		.byte	0x31
+ 1061 02a3 00       		.byte	0
+ 1062 02a4 09       		.uleb128 0x9
+ 1063 02a5 5C000000 		.4byte	.LVL29
+ 1064 02a9 8D050000 		.4byte	0x58d
+ 1065 02ad B9020000 		.4byte	0x2b9
+ 1066 02b1 0A       		.uleb128 0xa
+ 1067 02b2 01       		.uleb128 0x1
+ 1068 02b3 50       		.byte	0x50
+ 1069 02b4 03       		.uleb128 0x3
+ 1070 02b5 0A       		.byte	0xa
+ 1071 02b6 F401     		.2byte	0x1f4
+ 1072 02b8 00       		.byte	0
+ 1073 02b9 09       		.uleb128 0x9
+ 1074 02ba 6C000000 		.4byte	.LVL30
+ 1075 02be 16060000 		.4byte	0x616
+ 1076 02c2 CC020000 		.4byte	0x2cc
+ 1077 02c6 0A       		.uleb128 0xa
+ 1078 02c7 01       		.uleb128 0x1
+ 1079 02c8 50       		.byte	0x50
+ 1080 02c9 01       		.uleb128 0x1
+ 1081 02ca 32       		.byte	0x32
+ 1082 02cb 00       		.byte	0
+ 1083 02cc 08       		.uleb128 0x8
+ 1084 02cd 76000000 		.4byte	.LVL31
+ 1085 02d1 2B060000 		.4byte	0x62b
+ 1086 02d5 09       		.uleb128 0x9
+ 1087 02d6 90000000 		.4byte	.LVL32
+ 1088 02da E4050000 		.4byte	0x5e4
+ 1089 02de ED020000 		.4byte	0x2ed
+ 1090 02e2 0A       		.uleb128 0xa
+ 1091 02e3 01       		.uleb128 0x1
+ 1092 02e4 51       		.byte	0x51
+ 1093 02e5 01       		.uleb128 0x1
+ 1094 02e6 30       		.byte	0x30
+ 1095 02e7 0A       		.uleb128 0xa
+ 1096 02e8 01       		.uleb128 0x1
+ 1097 02e9 50       		.byte	0x50
+ 1098 02ea 01       		.uleb128 0x1
+ 1099 02eb 31       		.byte	0x31
+ 1100 02ec 00       		.byte	0
+ 1101 02ed 09       		.uleb128 0x9
+ 1102 02ee 96000000 		.4byte	.LVL33
+ 1103 02f2 FA050000 		.4byte	0x5fa
+ 1104 02f6 04030000 		.4byte	0x304
+ 1105 02fa 0A       		.uleb128 0xa
+ 1106 02fb 01       		.uleb128 0x1
+ 1107 02fc 50       		.byte	0x50
+ 1108 02fd 05       		.uleb128 0x5
+ 1109 02fe 03       		.byte	0x3
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccWPIHIG.s 			page 24
+
+
+ 1110 02ff 24000000 		.4byte	.LC3
+ 1111 0303 00       		.byte	0
+ 1112 0304 09       		.uleb128 0x9
+ 1113 0305 A2000000 		.4byte	.LVL34
+ 1114 0309 E4050000 		.4byte	0x5e4
+ 1115 030d 1C030000 		.4byte	0x31c
+ 1116 0311 0A       		.uleb128 0xa
+ 1117 0312 01       		.uleb128 0x1
+ 1118 0313 51       		.byte	0x51
+ 1119 0314 01       		.uleb128 0x1
+ 1120 0315 30       		.byte	0x30
+ 1121 0316 0A       		.uleb128 0xa
+ 1122 0317 01       		.uleb128 0x1
+ 1123 0318 50       		.byte	0x50
+ 1124 0319 01       		.uleb128 0x1
+ 1125 031a 31       		.byte	0x31
+ 1126 031b 00       		.byte	0
+ 1127 031c 09       		.uleb128 0x9
+ 1128 031d A8000000 		.4byte	.LVL35
+ 1129 0321 FA050000 		.4byte	0x5fa
+ 1130 0325 33030000 		.4byte	0x333
+ 1131 0329 0A       		.uleb128 0xa
+ 1132 032a 01       		.uleb128 0x1
+ 1133 032b 50       		.byte	0x50
+ 1134 032c 05       		.uleb128 0x5
+ 1135 032d 03       		.byte	0x3
+ 1136 032e 30000000 		.4byte	.LC4
+ 1137 0332 00       		.byte	0
+ 1138 0333 09       		.uleb128 0x9
+ 1139 0334 B4000000 		.4byte	.LVL36
+ 1140 0338 E4050000 		.4byte	0x5e4
+ 1141 033c 4B030000 		.4byte	0x34b
+ 1142 0340 0A       		.uleb128 0xa
+ 1143 0341 01       		.uleb128 0x1
+ 1144 0342 51       		.byte	0x51
+ 1145 0343 01       		.uleb128 0x1
+ 1146 0344 30       		.byte	0x30
+ 1147 0345 0A       		.uleb128 0xa
+ 1148 0346 01       		.uleb128 0x1
+ 1149 0347 50       		.byte	0x50
+ 1150 0348 01       		.uleb128 0x1
+ 1151 0349 31       		.byte	0x31
+ 1152 034a 00       		.byte	0
+ 1153 034b 0B       		.uleb128 0xb
+ 1154 034c BA000000 		.4byte	.LVL37
+ 1155 0350 FA050000 		.4byte	0x5fa
+ 1156 0354 0A       		.uleb128 0xa
+ 1157 0355 01       		.uleb128 0x1
+ 1158 0356 50       		.byte	0x50
+ 1159 0357 05       		.uleb128 0x5
+ 1160 0358 03       		.byte	0x3
+ 1161 0359 3C000000 		.4byte	.LC5
+ 1162 035d 00       		.byte	0
+ 1163 035e 00       		.byte	0
+ 1164 035f 0C       		.uleb128 0xc
+ 1165 0360 AD000000 		.4byte	.LASF22
+ 1166 0364 01       		.byte	0x1
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccWPIHIG.s 			page 25
+
+
+ 1167 0365 6D       		.byte	0x6d
+ 1168 0366 B3000000 		.4byte	0xb3
+ 1169 036a 00000000 		.4byte	.LFB4
+ 1170 036e 88000000 		.4byte	.LFE4-.LFB4
+ 1171 0372 01       		.uleb128 0x1
+ 1172 0373 9C       		.byte	0x9c
+ 1173 0374 DE030000 		.4byte	0x3de
+ 1174 0378 0D       		.uleb128 0xd
+ 1175 0379 6900     		.ascii	"i\000"
+ 1176 037b 01       		.byte	0x1
+ 1177 037c 70       		.byte	0x70
+ 1178 037d 5D000000 		.4byte	0x5d
+ 1179 0381 1E000000 		.4byte	.LLST1
+ 1180 0385 07       		.uleb128 0x7
+ 1181 0386 7C000000 		.4byte	.LASF24
+ 1182 038a 01       		.byte	0x1
+ 1183 038b 75       		.byte	0x75
+ 1184 038c 5D000000 		.4byte	0x5d
+ 1185 0390 60000000 		.4byte	.LLST2
+ 1186 0394 07       		.uleb128 0x7
+ 1187 0395 BC030000 		.4byte	.LASF25
+ 1188 0399 01       		.byte	0x1
+ 1189 039a 76       		.byte	0x76
+ 1190 039b 5D000000 		.4byte	0x5d
+ 1191 039f 73000000 		.4byte	.LLST3
+ 1192 03a3 08       		.uleb128 0x8
+ 1193 03a4 0C000000 		.4byte	.LVL38
+ 1194 03a8 3C060000 		.4byte	0x63c
+ 1195 03ac 09       		.uleb128 0x9
+ 1196 03ad 5A000000 		.4byte	.LVL51
+ 1197 03b1 E4050000 		.4byte	0x5e4
+ 1198 03b5 C4030000 		.4byte	0x3c4
+ 1199 03b9 0A       		.uleb128 0xa
+ 1200 03ba 01       		.uleb128 0x1
+ 1201 03bb 51       		.byte	0x51
+ 1202 03bc 01       		.uleb128 0x1
+ 1203 03bd 35       		.byte	0x35
+ 1204 03be 0A       		.uleb128 0xa
+ 1205 03bf 01       		.uleb128 0x1
+ 1206 03c0 50       		.byte	0x50
+ 1207 03c1 01       		.uleb128 0x1
+ 1208 03c2 31       		.byte	0x31
+ 1209 03c3 00       		.byte	0
+ 1210 03c4 08       		.uleb128 0x8
+ 1211 03c5 62000000 		.4byte	.LVL52
+ 1212 03c9 47060000 		.4byte	0x647
+ 1213 03cd 0B       		.uleb128 0xb
+ 1214 03ce 6E000000 		.4byte	.LVL53
+ 1215 03d2 8D050000 		.4byte	0x58d
+ 1216 03d6 0A       		.uleb128 0xa
+ 1217 03d7 01       		.uleb128 0x1
+ 1218 03d8 50       		.byte	0x50
+ 1219 03d9 02       		.uleb128 0x2
+ 1220 03da 08       		.byte	0x8
+ 1221 03db 64       		.byte	0x64
+ 1222 03dc 00       		.byte	0
+ 1223 03dd 00       		.byte	0
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccWPIHIG.s 			page 26
+
+
+ 1224 03de 0C       		.uleb128 0xc
+ 1225 03df EE030000 		.4byte	.LASF26
+ 1226 03e3 01       		.byte	0x1
+ 1227 03e4 86       		.byte	0x86
+ 1228 03e5 B3000000 		.4byte	0xb3
+ 1229 03e9 00000000 		.4byte	.LFB5
+ 1230 03ed C4000000 		.4byte	.LFE5-.LFB5
+ 1231 03f1 01       		.uleb128 0x1
+ 1232 03f2 9C       		.byte	0x9c
+ 1233 03f3 2E040000 		.4byte	0x42e
+ 1234 03f7 08       		.uleb128 0x8
+ 1235 03f8 2E000000 		.4byte	.LVL55
+ 1236 03fc 58060000 		.4byte	0x658
+ 1237 0400 08       		.uleb128 0x8
+ 1238 0401 44000000 		.4byte	.LVL57
+ 1239 0405 58060000 		.4byte	0x658
+ 1240 0409 08       		.uleb128 0x8
+ 1241 040a 5C000000 		.4byte	.LVL59
+ 1242 040e 58060000 		.4byte	0x658
+ 1243 0412 08       		.uleb128 0x8
+ 1244 0413 70000000 		.4byte	.LVL61
+ 1245 0417 58060000 		.4byte	0x658
+ 1246 041b 08       		.uleb128 0x8
+ 1247 041c 88000000 		.4byte	.LVL63
+ 1248 0420 58060000 		.4byte	0x658
+ 1249 0424 08       		.uleb128 0x8
+ 1250 0425 9C000000 		.4byte	.LVL65
+ 1251 0429 58060000 		.4byte	0x658
+ 1252 042d 00       		.byte	0
+ 1253 042e 05       		.uleb128 0x5
+ 1254 042f 81020000 		.4byte	.LASF27
+ 1255 0433 01       		.byte	0x1
+ 1256 0434 A7       		.byte	0xa7
+ 1257 0435 B3000000 		.4byte	0xb3
+ 1258 0439 00000000 		.4byte	.LFB6
+ 1259 043d 14000000 		.4byte	.LFE6-.LFB6
+ 1260 0441 01       		.uleb128 0x1
+ 1261 0442 9C       		.byte	0x9c
+ 1262 0443 51040000 		.4byte	0x451
+ 1263 0447 08       		.uleb128 0x8
+ 1264 0448 0C000000 		.4byte	.LVL66
+ 1265 044c 69060000 		.4byte	0x669
+ 1266 0450 00       		.byte	0
+ 1267 0451 0E       		.uleb128 0xe
+ 1268 0452 7B020000 		.4byte	.LASF28
+ 1269 0456 04       		.byte	0x4
+ 1270 0457 12       		.byte	0x12
+ 1271 0458 5D000000 		.4byte	0x5d
+ 1272 045c 05       		.uleb128 0x5
+ 1273 045d 03       		.byte	0x3
+ 1274 045e 00000000 		.4byte	speed
+ 1275 0462 0E       		.uleb128 0xe
+ 1276 0463 6C030000 		.4byte	.LASF29
+ 1277 0467 03       		.byte	0x3
+ 1278 0468 14       		.byte	0x14
+ 1279 0469 8C000000 		.4byte	0x8c
+ 1280 046d 05       		.uleb128 0x5
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccWPIHIG.s 			page 27
+
+
+ 1281 046e 03       		.byte	0x3
+ 1282 046f 00000000 		.4byte	heartrate
+ 1283 0473 0E       		.uleb128 0xe
+ 1284 0474 37000000 		.4byte	.LASF30
+ 1285 0478 01       		.byte	0x1
+ 1286 0479 0F       		.byte	0xf
+ 1287 047a 8C000000 		.4byte	0x8c
+ 1288 047e 05       		.uleb128 0x5
+ 1289 047f 03       		.byte	0x3
+ 1290 0480 00000000 		.4byte	heartbeatCounter
+ 1291 0484 0E       		.uleb128 0xe
+ 1292 0485 1F000000 		.4byte	.LASF31
+ 1293 0489 05       		.byte	0x5
+ 1294 048a 15       		.byte	0x15
+ 1295 048b 5D000000 		.4byte	0x5d
+ 1296 048f 05       		.uleb128 0x5
+ 1297 0490 03       		.byte	0x3
+ 1298 0491 00000000 		.4byte	timer_status
+ 1299 0495 0E       		.uleb128 0xe
+ 1300 0496 67000000 		.4byte	.LASF32
+ 1301 049a 05       		.byte	0x5
+ 1302 049b 16       		.byte	0x16
+ 1303 049c 5D000000 		.4byte	0x5d
+ 1304 04a0 05       		.uleb128 0x5
+ 1305 04a1 03       		.byte	0x3
+ 1306 04a2 00000000 		.4byte	timer_value
+ 1307 04a6 0E       		.uleb128 0xe
+ 1308 04a7 59000000 		.4byte	.LASF33
+ 1309 04ab 03       		.byte	0x3
+ 1310 04ac 15       		.byte	0x15
+ 1311 04ad 8C000000 		.4byte	0x8c
+ 1312 04b1 05       		.uleb128 0x5
+ 1313 04b2 03       		.byte	0x3
+ 1314 04b3 00000000 		.4byte	average
+ 1315 04b7 0E       		.uleb128 0xe
+ 1316 04b8 E3000000 		.4byte	.LASF34
+ 1317 04bc 03       		.byte	0x3
+ 1318 04bd 16       		.byte	0x16
+ 1319 04be 5D000000 		.4byte	0x5d
+ 1320 04c2 05       		.uleb128 0x5
+ 1321 04c3 03       		.byte	0x3
+ 1322 04c4 00000000 		.4byte	increasingHr
+ 1323 04c8 0E       		.uleb128 0xe
+ 1324 04c9 18010000 		.4byte	.LASF35
+ 1325 04cd 03       		.byte	0x3
+ 1326 04ce 18       		.byte	0x18
+ 1327 04cf 5D000000 		.4byte	0x5d
+ 1328 04d3 05       		.uleb128 0x5
+ 1329 04d4 03       		.byte	0x3
+ 1330 04d5 00000000 		.4byte	PROFILE
+ 1331 04d9 0E       		.uleb128 0xe
+ 1332 04da EF020000 		.4byte	.LASF36
+ 1333 04de 03       		.byte	0x3
+ 1334 04df 35       		.byte	0x35
+ 1335 04e0 B3000000 		.4byte	0xb3
+ 1336 04e4 05       		.uleb128 0x5
+ 1337 04e5 03       		.byte	0x3
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccWPIHIG.s 			page 28
+
+
+ 1338 04e6 00000000 		.4byte	currentState
+ 1339 04ea 0E       		.uleb128 0xe
+ 1340 04eb E3030000 		.4byte	.LASF37
+ 1341 04ef 03       		.byte	0x3
+ 1342 04f0 37       		.byte	0x37
+ 1343 04f1 B3000000 		.4byte	0xb3
+ 1344 04f5 05       		.uleb128 0x5
+ 1345 04f6 03       		.byte	0x3
+ 1346 04f7 00000000 		.4byte	Prev_state
+ 1347 04fb 0E       		.uleb128 0xe
+ 1348 04fc 55030000 		.4byte	.LASF38
+ 1349 0500 01       		.byte	0x1
+ 1350 0501 0E       		.byte	0xe
+ 1351 0502 5D000000 		.4byte	0x5d
+ 1352 0506 05       		.uleb128 0x5
+ 1353 0507 03       		.byte	0x3
+ 1354 0508 00000000 		.4byte	selectedProfile
+ 1355 050c 0E       		.uleb128 0xe
+ 1356 050d 09030000 		.4byte	.LASF39
+ 1357 0511 01       		.byte	0x1
+ 1358 0512 11       		.byte	0x11
+ 1359 0513 5D000000 		.4byte	0x5d
+ 1360 0517 05       		.uleb128 0x5
+ 1361 0518 03       		.byte	0x3
+ 1362 0519 00000000 		.4byte	MOTOR_RUNNING_SPEED
+ 1363 051d 0E       		.uleb128 0xe
+ 1364 051e DB020000 		.4byte	.LASF40
+ 1365 0522 01       		.byte	0x1
+ 1366 0523 12       		.byte	0x12
+ 1367 0524 5D000000 		.4byte	0x5d
+ 1368 0528 05       		.uleb128 0x5
+ 1369 0529 03       		.byte	0x3
+ 1370 052a 00000000 		.4byte	MOTOR_WALKING_SPEED
+ 1371 052e 0E       		.uleb128 0xe
+ 1372 052f 8C020000 		.4byte	.LASF41
+ 1373 0533 01       		.byte	0x1
+ 1374 0534 13       		.byte	0x13
+ 1375 0535 5D000000 		.4byte	0x5d
+ 1376 0539 05       		.uleb128 0x5
+ 1377 053a 03       		.byte	0x3
+ 1378 053b 00000000 		.4byte	MOTOR_FAST_WALKING_SPEED
+ 1379 053f 0F       		.uleb128 0xf
+ 1380 0540 8C000000 		.4byte	0x8c
+ 1381 0544 4F050000 		.4byte	0x54f
+ 1382 0548 10       		.uleb128 0x10
+ 1383 0549 AC000000 		.4byte	0xac
+ 1384 054d 09       		.byte	0x9
+ 1385 054e 00       		.byte	0
+ 1386 054f 0E       		.uleb128 0xe
+ 1387 0550 D5000000 		.4byte	.LASF42
+ 1388 0554 01       		.byte	0x1
+ 1389 0555 14       		.byte	0x14
+ 1390 0556 3F050000 		.4byte	0x53f
+ 1391 055a 05       		.uleb128 0x5
+ 1392 055b 03       		.byte	0x3
+ 1393 055c 00000000 		.4byte	movingAverage
+ 1394 0560 11       		.uleb128 0x11
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccWPIHIG.s 			page 29
+
+
+ 1395 0561 F6000000 		.4byte	.LASF45
+ 1396 0565 08       		.byte	0x8
+ 1397 0566 9B       		.byte	0x9b
+ 1398 0567 12       		.uleb128 0x12
+ 1399 0568 F5010000 		.4byte	.LASF53
+ 1400 056c 08       		.byte	0x8
+ 1401 056d 9D       		.byte	0x9d
+ 1402 056e 76000000 		.4byte	0x76
+ 1403 0572 7C050000 		.4byte	0x57c
+ 1404 0576 13       		.uleb128 0x13
+ 1405 0577 6B000000 		.4byte	0x6b
+ 1406 057b 00       		.byte	0
+ 1407 057c 14       		.uleb128 0x14
+ 1408 057d 48000000 		.4byte	.LASF43
+ 1409 0581 06       		.byte	0x6
+ 1410 0582 3A       		.byte	0x3a
+ 1411 0583 8D050000 		.4byte	0x58d
+ 1412 0587 13       		.uleb128 0x13
+ 1413 0588 6B000000 		.4byte	0x6b
+ 1414 058c 00       		.byte	0
+ 1415 058d 14       		.uleb128 0x14
+ 1416 058e C3030000 		.4byte	.LASF44
+ 1417 0592 07       		.byte	0x7
+ 1418 0593 77       		.byte	0x77
+ 1419 0594 9E050000 		.4byte	0x59e
+ 1420 0598 13       		.uleb128 0x13
+ 1421 0599 81000000 		.4byte	0x81
+ 1422 059d 00       		.byte	0
+ 1423 059e 15       		.uleb128 0x15
+ 1424 059f 00000000 		.4byte	.LASF47
+ 1425 05a3 0A       		.byte	0xa
+ 1426 05a4 17       		.byte	0x17
+ 1427 05a5 AB050000 		.4byte	0x5ab
+ 1428 05a9 16       		.uleb128 0x16
+ 1429 05aa 00       		.byte	0
+ 1430 05ab 11       		.uleb128 0x11
+ 1431 05ac 8D000000 		.4byte	.LASF46
+ 1432 05b0 09       		.byte	0x9
+ 1433 05b1 9B       		.byte	0x9b
+ 1434 05b2 17       		.uleb128 0x17
+ 1435 05b3 9F030000 		.4byte	.LASF56
+ 1436 05b7 08       		.byte	0x8
+ 1437 05b8 99       		.byte	0x99
+ 1438 05b9 6B000000 		.4byte	0x6b
+ 1439 05bd 15       		.uleb128 0x15
+ 1440 05be 5D020000 		.4byte	.LASF48
+ 1441 05c2 0B       		.byte	0xb
+ 1442 05c3 2F       		.byte	0x2f
+ 1443 05c4 CA050000 		.4byte	0x5ca
+ 1444 05c8 16       		.uleb128 0x16
+ 1445 05c9 00       		.byte	0
+ 1446 05ca 15       		.uleb128 0x15
+ 1447 05cb 11040000 		.4byte	.LASF49
+ 1448 05cf 0A       		.byte	0xa
+ 1449 05d0 15       		.byte	0x15
+ 1450 05d1 D7050000 		.4byte	0x5d7
+ 1451 05d5 16       		.uleb128 0x16
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccWPIHIG.s 			page 30
+
+
+ 1452 05d6 00       		.byte	0
+ 1453 05d7 15       		.uleb128 0x15
+ 1454 05d8 1A020000 		.4byte	.LASF50
+ 1455 05dc 0C       		.byte	0xc
+ 1456 05dd 13       		.byte	0x13
+ 1457 05de E4050000 		.4byte	0x5e4
+ 1458 05e2 16       		.uleb128 0x16
+ 1459 05e3 00       		.byte	0
+ 1460 05e4 14       		.uleb128 0x14
+ 1461 05e5 AF030000 		.4byte	.LASF51
+ 1462 05e9 06       		.byte	0x6
+ 1463 05ea 3D       		.byte	0x3d
+ 1464 05eb FA050000 		.4byte	0x5fa
+ 1465 05ef 13       		.uleb128 0x13
+ 1466 05f0 6B000000 		.4byte	0x6b
+ 1467 05f4 13       		.uleb128 0x13
+ 1468 05f5 6B000000 		.4byte	0x6b
+ 1469 05f9 00       		.byte	0
+ 1470 05fa 14       		.uleb128 0x14
+ 1471 05fb CB020000 		.4byte	.LASF52
+ 1472 05ff 06       		.byte	0x6
+ 1473 0600 3C       		.byte	0x3c
+ 1474 0601 0B060000 		.4byte	0x60b
+ 1475 0605 13       		.uleb128 0x13
+ 1476 0606 0B060000 		.4byte	0x60b
+ 1477 060a 00       		.byte	0
+ 1478 060b 18       		.uleb128 0x18
+ 1479 060c 04       		.byte	0x4
+ 1480 060d 11060000 		.4byte	0x611
+ 1481 0611 19       		.uleb128 0x19
+ 1482 0612 9A000000 		.4byte	0x9a
+ 1483 0616 12       		.uleb128 0x12
+ 1484 0617 82030000 		.4byte	.LASF54
+ 1485 061b 09       		.byte	0x9
+ 1486 061c 9D       		.byte	0x9d
+ 1487 061d 6B000000 		.4byte	0x6b
+ 1488 0621 2B060000 		.4byte	0x62b
+ 1489 0625 13       		.uleb128 0x13
+ 1490 0626 6B000000 		.4byte	0x6b
+ 1491 062a 00       		.byte	0
+ 1492 062b 14       		.uleb128 0x14
+ 1493 062c 28030000 		.4byte	.LASF55
+ 1494 0630 0A       		.byte	0xa
+ 1495 0631 1B       		.byte	0x1b
+ 1496 0632 3C060000 		.4byte	0x63c
+ 1497 0636 13       		.uleb128 0x13
+ 1498 0637 5D000000 		.4byte	0x5d
+ 1499 063b 00       		.byte	0
+ 1500 063c 17       		.uleb128 0x17
+ 1501 063d 0E000000 		.4byte	.LASF57
+ 1502 0641 05       		.byte	0x5
+ 1503 0642 18       		.byte	0x18
+ 1504 0643 8C000000 		.4byte	0x8c
+ 1505 0647 14       		.uleb128 0x14
+ 1506 0648 B8020000 		.4byte	.LASF58
+ 1507 064c 06       		.byte	0x6
+ 1508 064d 61       		.byte	0x61
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccWPIHIG.s 			page 31
+
+
+ 1509 064e 58060000 		.4byte	0x658
+ 1510 0652 13       		.uleb128 0x13
+ 1511 0653 81000000 		.4byte	0x81
+ 1512 0657 00       		.byte	0
+ 1513 0658 14       		.uleb128 0x14
+ 1514 0659 FC020000 		.4byte	.LASF59
+ 1515 065d 04       		.byte	0x4
+ 1516 065e 14       		.byte	0x14
+ 1517 065f 69060000 		.4byte	0x669
+ 1518 0663 13       		.uleb128 0x13
+ 1519 0664 5D000000 		.4byte	0x5d
+ 1520 0668 00       		.byte	0
+ 1521 0669 1A       		.uleb128 0x1a
+ 1522 066a 1D030000 		.4byte	.LASF63
+ 1523 066e 04       		.byte	0x4
+ 1524 066f 16       		.byte	0x16
+ 1525 0670 16       		.uleb128 0x16
+ 1526 0671 00       		.byte	0
+ 1527 0672 00       		.byte	0
+ 1528              		.section	.debug_abbrev,"",%progbits
+ 1529              	.Ldebug_abbrev0:
+ 1530 0000 01       		.uleb128 0x1
+ 1531 0001 11       		.uleb128 0x11
+ 1532 0002 01       		.byte	0x1
+ 1533 0003 25       		.uleb128 0x25
+ 1534 0004 0E       		.uleb128 0xe
+ 1535 0005 13       		.uleb128 0x13
+ 1536 0006 0B       		.uleb128 0xb
+ 1537 0007 03       		.uleb128 0x3
+ 1538 0008 0E       		.uleb128 0xe
+ 1539 0009 1B       		.uleb128 0x1b
+ 1540 000a 0E       		.uleb128 0xe
+ 1541 000b 55       		.uleb128 0x55
+ 1542 000c 17       		.uleb128 0x17
+ 1543 000d 11       		.uleb128 0x11
+ 1544 000e 01       		.uleb128 0x1
+ 1545 000f 10       		.uleb128 0x10
+ 1546 0010 17       		.uleb128 0x17
+ 1547 0011 00       		.byte	0
+ 1548 0012 00       		.byte	0
+ 1549 0013 02       		.uleb128 0x2
+ 1550 0014 24       		.uleb128 0x24
+ 1551 0015 00       		.byte	0
+ 1552 0016 0B       		.uleb128 0xb
+ 1553 0017 0B       		.uleb128 0xb
+ 1554 0018 3E       		.uleb128 0x3e
+ 1555 0019 0B       		.uleb128 0xb
+ 1556 001a 03       		.uleb128 0x3
+ 1557 001b 0E       		.uleb128 0xe
+ 1558 001c 00       		.byte	0
+ 1559 001d 00       		.byte	0
+ 1560 001e 03       		.uleb128 0x3
+ 1561 001f 24       		.uleb128 0x24
+ 1562 0020 00       		.byte	0
+ 1563 0021 0B       		.uleb128 0xb
+ 1564 0022 0B       		.uleb128 0xb
+ 1565 0023 3E       		.uleb128 0x3e
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccWPIHIG.s 			page 32
+
+
+ 1566 0024 0B       		.uleb128 0xb
+ 1567 0025 03       		.uleb128 0x3
+ 1568 0026 08       		.uleb128 0x8
+ 1569 0027 00       		.byte	0
+ 1570 0028 00       		.byte	0
+ 1571 0029 04       		.uleb128 0x4
+ 1572 002a 16       		.uleb128 0x16
+ 1573 002b 00       		.byte	0
+ 1574 002c 03       		.uleb128 0x3
+ 1575 002d 0E       		.uleb128 0xe
+ 1576 002e 3A       		.uleb128 0x3a
+ 1577 002f 0B       		.uleb128 0xb
+ 1578 0030 3B       		.uleb128 0x3b
+ 1579 0031 0B       		.uleb128 0xb
+ 1580 0032 49       		.uleb128 0x49
+ 1581 0033 13       		.uleb128 0x13
+ 1582 0034 00       		.byte	0
+ 1583 0035 00       		.byte	0
+ 1584 0036 05       		.uleb128 0x5
+ 1585 0037 2E       		.uleb128 0x2e
+ 1586 0038 01       		.byte	0x1
+ 1587 0039 3F       		.uleb128 0x3f
+ 1588 003a 19       		.uleb128 0x19
+ 1589 003b 03       		.uleb128 0x3
+ 1590 003c 0E       		.uleb128 0xe
+ 1591 003d 3A       		.uleb128 0x3a
+ 1592 003e 0B       		.uleb128 0xb
+ 1593 003f 3B       		.uleb128 0x3b
+ 1594 0040 0B       		.uleb128 0xb
+ 1595 0041 49       		.uleb128 0x49
+ 1596 0042 13       		.uleb128 0x13
+ 1597 0043 11       		.uleb128 0x11
+ 1598 0044 01       		.uleb128 0x1
+ 1599 0045 12       		.uleb128 0x12
+ 1600 0046 06       		.uleb128 0x6
+ 1601 0047 40       		.uleb128 0x40
+ 1602 0048 18       		.uleb128 0x18
+ 1603 0049 9742     		.uleb128 0x2117
+ 1604 004b 19       		.uleb128 0x19
+ 1605 004c 01       		.uleb128 0x1
+ 1606 004d 13       		.uleb128 0x13
+ 1607 004e 00       		.byte	0
+ 1608 004f 00       		.byte	0
+ 1609 0050 06       		.uleb128 0x6
+ 1610 0051 0B       		.uleb128 0xb
+ 1611 0052 01       		.byte	0x1
+ 1612 0053 55       		.uleb128 0x55
+ 1613 0054 17       		.uleb128 0x17
+ 1614 0055 01       		.uleb128 0x1
+ 1615 0056 13       		.uleb128 0x13
+ 1616 0057 00       		.byte	0
+ 1617 0058 00       		.byte	0
+ 1618 0059 07       		.uleb128 0x7
+ 1619 005a 34       		.uleb128 0x34
+ 1620 005b 00       		.byte	0
+ 1621 005c 03       		.uleb128 0x3
+ 1622 005d 0E       		.uleb128 0xe
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccWPIHIG.s 			page 33
+
+
+ 1623 005e 3A       		.uleb128 0x3a
+ 1624 005f 0B       		.uleb128 0xb
+ 1625 0060 3B       		.uleb128 0x3b
+ 1626 0061 0B       		.uleb128 0xb
+ 1627 0062 49       		.uleb128 0x49
+ 1628 0063 13       		.uleb128 0x13
+ 1629 0064 02       		.uleb128 0x2
+ 1630 0065 17       		.uleb128 0x17
+ 1631 0066 00       		.byte	0
+ 1632 0067 00       		.byte	0
+ 1633 0068 08       		.uleb128 0x8
+ 1634 0069 898201   		.uleb128 0x4109
+ 1635 006c 00       		.byte	0
+ 1636 006d 11       		.uleb128 0x11
+ 1637 006e 01       		.uleb128 0x1
+ 1638 006f 31       		.uleb128 0x31
+ 1639 0070 13       		.uleb128 0x13
+ 1640 0071 00       		.byte	0
+ 1641 0072 00       		.byte	0
+ 1642 0073 09       		.uleb128 0x9
+ 1643 0074 898201   		.uleb128 0x4109
+ 1644 0077 01       		.byte	0x1
+ 1645 0078 11       		.uleb128 0x11
+ 1646 0079 01       		.uleb128 0x1
+ 1647 007a 31       		.uleb128 0x31
+ 1648 007b 13       		.uleb128 0x13
+ 1649 007c 01       		.uleb128 0x1
+ 1650 007d 13       		.uleb128 0x13
+ 1651 007e 00       		.byte	0
+ 1652 007f 00       		.byte	0
+ 1653 0080 0A       		.uleb128 0xa
+ 1654 0081 8A8201   		.uleb128 0x410a
+ 1655 0084 00       		.byte	0
+ 1656 0085 02       		.uleb128 0x2
+ 1657 0086 18       		.uleb128 0x18
+ 1658 0087 9142     		.uleb128 0x2111
+ 1659 0089 18       		.uleb128 0x18
+ 1660 008a 00       		.byte	0
+ 1661 008b 00       		.byte	0
+ 1662 008c 0B       		.uleb128 0xb
+ 1663 008d 898201   		.uleb128 0x4109
+ 1664 0090 01       		.byte	0x1
+ 1665 0091 11       		.uleb128 0x11
+ 1666 0092 01       		.uleb128 0x1
+ 1667 0093 31       		.uleb128 0x31
+ 1668 0094 13       		.uleb128 0x13
+ 1669 0095 00       		.byte	0
+ 1670 0096 00       		.byte	0
+ 1671 0097 0C       		.uleb128 0xc
+ 1672 0098 2E       		.uleb128 0x2e
+ 1673 0099 01       		.byte	0x1
+ 1674 009a 3F       		.uleb128 0x3f
+ 1675 009b 19       		.uleb128 0x19
+ 1676 009c 03       		.uleb128 0x3
+ 1677 009d 0E       		.uleb128 0xe
+ 1678 009e 3A       		.uleb128 0x3a
+ 1679 009f 0B       		.uleb128 0xb
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccWPIHIG.s 			page 34
+
+
+ 1680 00a0 3B       		.uleb128 0x3b
+ 1681 00a1 0B       		.uleb128 0xb
+ 1682 00a2 49       		.uleb128 0x49
+ 1683 00a3 13       		.uleb128 0x13
+ 1684 00a4 11       		.uleb128 0x11
+ 1685 00a5 01       		.uleb128 0x1
+ 1686 00a6 12       		.uleb128 0x12
+ 1687 00a7 06       		.uleb128 0x6
+ 1688 00a8 40       		.uleb128 0x40
+ 1689 00a9 18       		.uleb128 0x18
+ 1690 00aa 9642     		.uleb128 0x2116
+ 1691 00ac 19       		.uleb128 0x19
+ 1692 00ad 01       		.uleb128 0x1
+ 1693 00ae 13       		.uleb128 0x13
+ 1694 00af 00       		.byte	0
+ 1695 00b0 00       		.byte	0
+ 1696 00b1 0D       		.uleb128 0xd
+ 1697 00b2 34       		.uleb128 0x34
+ 1698 00b3 00       		.byte	0
+ 1699 00b4 03       		.uleb128 0x3
+ 1700 00b5 08       		.uleb128 0x8
+ 1701 00b6 3A       		.uleb128 0x3a
+ 1702 00b7 0B       		.uleb128 0xb
+ 1703 00b8 3B       		.uleb128 0x3b
+ 1704 00b9 0B       		.uleb128 0xb
+ 1705 00ba 49       		.uleb128 0x49
+ 1706 00bb 13       		.uleb128 0x13
+ 1707 00bc 02       		.uleb128 0x2
+ 1708 00bd 17       		.uleb128 0x17
+ 1709 00be 00       		.byte	0
+ 1710 00bf 00       		.byte	0
+ 1711 00c0 0E       		.uleb128 0xe
+ 1712 00c1 34       		.uleb128 0x34
+ 1713 00c2 00       		.byte	0
+ 1714 00c3 03       		.uleb128 0x3
+ 1715 00c4 0E       		.uleb128 0xe
+ 1716 00c5 3A       		.uleb128 0x3a
+ 1717 00c6 0B       		.uleb128 0xb
+ 1718 00c7 3B       		.uleb128 0x3b
+ 1719 00c8 0B       		.uleb128 0xb
+ 1720 00c9 49       		.uleb128 0x49
+ 1721 00ca 13       		.uleb128 0x13
+ 1722 00cb 3F       		.uleb128 0x3f
+ 1723 00cc 19       		.uleb128 0x19
+ 1724 00cd 02       		.uleb128 0x2
+ 1725 00ce 18       		.uleb128 0x18
+ 1726 00cf 00       		.byte	0
+ 1727 00d0 00       		.byte	0
+ 1728 00d1 0F       		.uleb128 0xf
+ 1729 00d2 01       		.uleb128 0x1
+ 1730 00d3 01       		.byte	0x1
+ 1731 00d4 49       		.uleb128 0x49
+ 1732 00d5 13       		.uleb128 0x13
+ 1733 00d6 01       		.uleb128 0x1
+ 1734 00d7 13       		.uleb128 0x13
+ 1735 00d8 00       		.byte	0
+ 1736 00d9 00       		.byte	0
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccWPIHIG.s 			page 35
+
+
+ 1737 00da 10       		.uleb128 0x10
+ 1738 00db 21       		.uleb128 0x21
+ 1739 00dc 00       		.byte	0
+ 1740 00dd 49       		.uleb128 0x49
+ 1741 00de 13       		.uleb128 0x13
+ 1742 00df 2F       		.uleb128 0x2f
+ 1743 00e0 0B       		.uleb128 0xb
+ 1744 00e1 00       		.byte	0
+ 1745 00e2 00       		.byte	0
+ 1746 00e3 11       		.uleb128 0x11
+ 1747 00e4 2E       		.uleb128 0x2e
+ 1748 00e5 00       		.byte	0
+ 1749 00e6 3F       		.uleb128 0x3f
+ 1750 00e7 19       		.uleb128 0x19
+ 1751 00e8 03       		.uleb128 0x3
+ 1752 00e9 0E       		.uleb128 0xe
+ 1753 00ea 3A       		.uleb128 0x3a
+ 1754 00eb 0B       		.uleb128 0xb
+ 1755 00ec 3B       		.uleb128 0x3b
+ 1756 00ed 0B       		.uleb128 0xb
+ 1757 00ee 27       		.uleb128 0x27
+ 1758 00ef 19       		.uleb128 0x19
+ 1759 00f0 3C       		.uleb128 0x3c
+ 1760 00f1 19       		.uleb128 0x19
+ 1761 00f2 00       		.byte	0
+ 1762 00f3 00       		.byte	0
+ 1763 00f4 12       		.uleb128 0x12
+ 1764 00f5 2E       		.uleb128 0x2e
+ 1765 00f6 01       		.byte	0x1
+ 1766 00f7 3F       		.uleb128 0x3f
+ 1767 00f8 19       		.uleb128 0x19
+ 1768 00f9 03       		.uleb128 0x3
+ 1769 00fa 0E       		.uleb128 0xe
+ 1770 00fb 3A       		.uleb128 0x3a
+ 1771 00fc 0B       		.uleb128 0xb
+ 1772 00fd 3B       		.uleb128 0x3b
+ 1773 00fe 0B       		.uleb128 0xb
+ 1774 00ff 27       		.uleb128 0x27
+ 1775 0100 19       		.uleb128 0x19
+ 1776 0101 49       		.uleb128 0x49
+ 1777 0102 13       		.uleb128 0x13
+ 1778 0103 3C       		.uleb128 0x3c
+ 1779 0104 19       		.uleb128 0x19
+ 1780 0105 01       		.uleb128 0x1
+ 1781 0106 13       		.uleb128 0x13
+ 1782 0107 00       		.byte	0
+ 1783 0108 00       		.byte	0
+ 1784 0109 13       		.uleb128 0x13
+ 1785 010a 05       		.uleb128 0x5
+ 1786 010b 00       		.byte	0
+ 1787 010c 49       		.uleb128 0x49
+ 1788 010d 13       		.uleb128 0x13
+ 1789 010e 00       		.byte	0
+ 1790 010f 00       		.byte	0
+ 1791 0110 14       		.uleb128 0x14
+ 1792 0111 2E       		.uleb128 0x2e
+ 1793 0112 01       		.byte	0x1
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccWPIHIG.s 			page 36
+
+
+ 1794 0113 3F       		.uleb128 0x3f
+ 1795 0114 19       		.uleb128 0x19
+ 1796 0115 03       		.uleb128 0x3
+ 1797 0116 0E       		.uleb128 0xe
+ 1798 0117 3A       		.uleb128 0x3a
+ 1799 0118 0B       		.uleb128 0xb
+ 1800 0119 3B       		.uleb128 0x3b
+ 1801 011a 0B       		.uleb128 0xb
+ 1802 011b 27       		.uleb128 0x27
+ 1803 011c 19       		.uleb128 0x19
+ 1804 011d 3C       		.uleb128 0x3c
+ 1805 011e 19       		.uleb128 0x19
+ 1806 011f 01       		.uleb128 0x1
+ 1807 0120 13       		.uleb128 0x13
+ 1808 0121 00       		.byte	0
+ 1809 0122 00       		.byte	0
+ 1810 0123 15       		.uleb128 0x15
+ 1811 0124 2E       		.uleb128 0x2e
+ 1812 0125 01       		.byte	0x1
+ 1813 0126 3F       		.uleb128 0x3f
+ 1814 0127 19       		.uleb128 0x19
+ 1815 0128 03       		.uleb128 0x3
+ 1816 0129 0E       		.uleb128 0xe
+ 1817 012a 3A       		.uleb128 0x3a
+ 1818 012b 0B       		.uleb128 0xb
+ 1819 012c 3B       		.uleb128 0x3b
+ 1820 012d 0B       		.uleb128 0xb
+ 1821 012e 3C       		.uleb128 0x3c
+ 1822 012f 19       		.uleb128 0x19
+ 1823 0130 01       		.uleb128 0x1
+ 1824 0131 13       		.uleb128 0x13
+ 1825 0132 00       		.byte	0
+ 1826 0133 00       		.byte	0
+ 1827 0134 16       		.uleb128 0x16
+ 1828 0135 18       		.uleb128 0x18
+ 1829 0136 00       		.byte	0
+ 1830 0137 00       		.byte	0
+ 1831 0138 00       		.byte	0
+ 1832 0139 17       		.uleb128 0x17
+ 1833 013a 2E       		.uleb128 0x2e
+ 1834 013b 00       		.byte	0
+ 1835 013c 3F       		.uleb128 0x3f
+ 1836 013d 19       		.uleb128 0x19
+ 1837 013e 03       		.uleb128 0x3
+ 1838 013f 0E       		.uleb128 0xe
+ 1839 0140 3A       		.uleb128 0x3a
+ 1840 0141 0B       		.uleb128 0xb
+ 1841 0142 3B       		.uleb128 0x3b
+ 1842 0143 0B       		.uleb128 0xb
+ 1843 0144 27       		.uleb128 0x27
+ 1844 0145 19       		.uleb128 0x19
+ 1845 0146 49       		.uleb128 0x49
+ 1846 0147 13       		.uleb128 0x13
+ 1847 0148 3C       		.uleb128 0x3c
+ 1848 0149 19       		.uleb128 0x19
+ 1849 014a 00       		.byte	0
+ 1850 014b 00       		.byte	0
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccWPIHIG.s 			page 37
+
+
+ 1851 014c 18       		.uleb128 0x18
+ 1852 014d 0F       		.uleb128 0xf
+ 1853 014e 00       		.byte	0
+ 1854 014f 0B       		.uleb128 0xb
+ 1855 0150 0B       		.uleb128 0xb
+ 1856 0151 49       		.uleb128 0x49
+ 1857 0152 13       		.uleb128 0x13
+ 1858 0153 00       		.byte	0
+ 1859 0154 00       		.byte	0
+ 1860 0155 19       		.uleb128 0x19
+ 1861 0156 26       		.uleb128 0x26
+ 1862 0157 00       		.byte	0
+ 1863 0158 49       		.uleb128 0x49
+ 1864 0159 13       		.uleb128 0x13
+ 1865 015a 00       		.byte	0
+ 1866 015b 00       		.byte	0
+ 1867 015c 1A       		.uleb128 0x1a
+ 1868 015d 2E       		.uleb128 0x2e
+ 1869 015e 01       		.byte	0x1
+ 1870 015f 3F       		.uleb128 0x3f
+ 1871 0160 19       		.uleb128 0x19
+ 1872 0161 03       		.uleb128 0x3
+ 1873 0162 0E       		.uleb128 0xe
+ 1874 0163 3A       		.uleb128 0x3a
+ 1875 0164 0B       		.uleb128 0xb
+ 1876 0165 3B       		.uleb128 0x3b
+ 1877 0166 0B       		.uleb128 0xb
+ 1878 0167 3C       		.uleb128 0x3c
+ 1879 0168 19       		.uleb128 0x19
+ 1880 0169 00       		.byte	0
+ 1881 016a 00       		.byte	0
+ 1882 016b 00       		.byte	0
+ 1883              		.section	.debug_loc,"",%progbits
+ 1884              	.Ldebug_loc0:
+ 1885              	.LLST0:
+ 1886 0000 2C000000 		.4byte	.LVL6
+ 1887 0004 58000000 		.4byte	.LVL12
+ 1888 0008 0100     		.2byte	0x1
+ 1889 000a 54       		.byte	0x54
+ 1890 000b 60000000 		.4byte	.LVL13
+ 1891 000f 64000000 		.4byte	.LVL14
+ 1892 0013 0100     		.2byte	0x1
+ 1893 0015 54       		.byte	0x54
+ 1894 0016 00000000 		.4byte	0
+ 1895 001a 00000000 		.4byte	0
+ 1896              	.LLST1:
+ 1897 001e 0C000000 		.4byte	.LVL38
+ 1898 0022 12000000 		.4byte	.LVL39
+ 1899 0026 0200     		.2byte	0x2
+ 1900 0028 30       		.byte	0x30
+ 1901 0029 9F       		.byte	0x9f
+ 1902 002a 12000000 		.4byte	.LVL39
+ 1903 002e 1E000000 		.4byte	.LVL40
+ 1904 0032 0100     		.2byte	0x1
+ 1905 0034 53       		.byte	0x53
+ 1906 0035 1E000000 		.4byte	.LVL40
+ 1907 0039 20000000 		.4byte	.LVL41
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccWPIHIG.s 			page 38
+
+
+ 1908 003d 0300     		.2byte	0x3
+ 1909 003f 72       		.byte	0x72
+ 1910 0040 7F       		.sleb128 -1
+ 1911 0041 9F       		.byte	0x9f
+ 1912 0042 20000000 		.4byte	.LVL41
+ 1913 0046 22000000 		.4byte	.LVL42
+ 1914 004a 0100     		.2byte	0x1
+ 1915 004c 52       		.byte	0x52
+ 1916 004d 22000000 		.4byte	.LVL42
+ 1917 0051 28000000 		.4byte	.LVL43
+ 1918 0055 0100     		.2byte	0x1
+ 1919 0057 53       		.byte	0x53
+ 1920 0058 00000000 		.4byte	0
+ 1921 005c 00000000 		.4byte	0
+ 1922              	.LLST2:
+ 1923 0060 38000000 		.4byte	.LVL45
+ 1924 0064 54000000 		.4byte	.LVL50
+ 1925 0068 0100     		.2byte	0x1
+ 1926 006a 50       		.byte	0x50
+ 1927 006b 00000000 		.4byte	0
+ 1928 006f 00000000 		.4byte	0
+ 1929              	.LLST3:
+ 1930 0073 3C000000 		.4byte	.LVL46
+ 1931 0077 48000000 		.4byte	.LVL47
+ 1932 007b 0100     		.2byte	0x1
+ 1933 007d 53       		.byte	0x53
+ 1934 007e 48000000 		.4byte	.LVL47
+ 1935 0082 4C000000 		.4byte	.LVL48
+ 1936 0086 0600     		.2byte	0x6
+ 1937 0088 70       		.byte	0x70
+ 1938 0089 00       		.sleb128 0
+ 1939 008a 70       		.byte	0x70
+ 1940 008b 00       		.sleb128 0
+ 1941 008c 1E       		.byte	0x1e
+ 1942 008d 9F       		.byte	0x9f
+ 1943 008e 4C000000 		.4byte	.LVL48
+ 1944 0092 50000000 		.4byte	.LVL49
+ 1945 0096 0100     		.2byte	0x1
+ 1946 0098 53       		.byte	0x53
+ 1947 0099 50000000 		.4byte	.LVL49
+ 1948 009d 54000000 		.4byte	.LVL50
+ 1949 00a1 0600     		.2byte	0x6
+ 1950 00a3 70       		.byte	0x70
+ 1951 00a4 00       		.sleb128 0
+ 1952 00a5 70       		.byte	0x70
+ 1953 00a6 00       		.sleb128 0
+ 1954 00a7 1E       		.byte	0x1e
+ 1955 00a8 9F       		.byte	0x9f
+ 1956 00a9 00000000 		.4byte	0
+ 1957 00ad 00000000 		.4byte	0
+ 1958              		.section	.debug_aranges,"",%progbits
+ 1959 0000 4C000000 		.4byte	0x4c
+ 1960 0004 0200     		.2byte	0x2
+ 1961 0006 00000000 		.4byte	.Ldebug_info0
+ 1962 000a 04       		.byte	0x4
+ 1963 000b 00       		.byte	0
+ 1964 000c 0000     		.2byte	0
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccWPIHIG.s 			page 39
+
+
+ 1965 000e 0000     		.2byte	0
+ 1966 0010 00000000 		.4byte	.LFB0
+ 1967 0014 74000000 		.4byte	.LFE0-.LFB0
+ 1968 0018 00000000 		.4byte	.LFB1
+ 1969 001c 30000000 		.4byte	.LFE1-.LFB1
+ 1970 0020 00000000 		.4byte	.LFB2
+ 1971 0024 1C000000 		.4byte	.LFE2-.LFB2
+ 1972 0028 00000000 		.4byte	.LFB3
+ 1973 002c DC000000 		.4byte	.LFE3-.LFB3
+ 1974 0030 00000000 		.4byte	.LFB4
+ 1975 0034 88000000 		.4byte	.LFE4-.LFB4
+ 1976 0038 00000000 		.4byte	.LFB5
+ 1977 003c C4000000 		.4byte	.LFE5-.LFB5
+ 1978 0040 00000000 		.4byte	.LFB6
+ 1979 0044 14000000 		.4byte	.LFE6-.LFB6
+ 1980 0048 00000000 		.4byte	0
+ 1981 004c 00000000 		.4byte	0
+ 1982              		.section	.debug_ranges,"",%progbits
+ 1983              	.Ldebug_ranges0:
+ 1984 0000 2A000000 		.4byte	.LBB2
+ 1985 0004 58000000 		.4byte	.LBE2
+ 1986 0008 5A000000 		.4byte	.LBB3
+ 1987 000c 64000000 		.4byte	.LBE3
+ 1988 0010 00000000 		.4byte	0
+ 1989 0014 00000000 		.4byte	0
+ 1990 0018 00000000 		.4byte	.LFB0
+ 1991 001c 74000000 		.4byte	.LFE0
+ 1992 0020 00000000 		.4byte	.LFB1
+ 1993 0024 30000000 		.4byte	.LFE1
+ 1994 0028 00000000 		.4byte	.LFB2
+ 1995 002c 1C000000 		.4byte	.LFE2
+ 1996 0030 00000000 		.4byte	.LFB3
+ 1997 0034 DC000000 		.4byte	.LFE3
+ 1998 0038 00000000 		.4byte	.LFB4
+ 1999 003c 88000000 		.4byte	.LFE4
+ 2000 0040 00000000 		.4byte	.LFB5
+ 2001 0044 C4000000 		.4byte	.LFE5
+ 2002 0048 00000000 		.4byte	.LFB6
+ 2003 004c 14000000 		.4byte	.LFE6
+ 2004 0050 00000000 		.4byte	0
+ 2005 0054 00000000 		.4byte	0
+ 2006              		.section	.debug_line,"",%progbits
+ 2007              	.Ldebug_line0:
+ 2008 0000 CC010000 		.section	.debug_str,"MS",%progbits,1
+ 2008      0200D200 
+ 2008      00000201 
+ 2008      FB0E0D00 
+ 2008      01010101 
+ 2009              	.LASF47:
+ 2010 0000 44697370 		.ascii	"Display_sleep\000"
+ 2010      6C61795F 
+ 2010      736C6565 
+ 2010      7000
+ 2011              	.LASF57:
+ 2012 000e 44657465 		.ascii	"Detect_heartrate\000"
+ 2012      63745F68 
+ 2012      65617274 
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccWPIHIG.s 			page 40
+
+
+ 2012      72617465 
+ 2012      00
+ 2013              	.LASF31:
+ 2014 001f 74696D65 		.ascii	"timer_status\000"
+ 2014      725F7374 
+ 2014      61747573 
+ 2014      00
+ 2015              	.LASF61:
+ 2016 002c 2E5C7374 		.ascii	".\\states.c\000"
+ 2016      61746573 
+ 2016      2E6300
+ 2017              	.LASF30:
+ 2018 0037 68656172 		.ascii	"heartbeatCounter\000"
+ 2018      74626561 
+ 2018      74436F75 
+ 2018      6E746572 
+ 2018      00
+ 2019              	.LASF43:
+ 2020 0048 4C43445F 		.ascii	"LCD_WriteControl\000"
+ 2020      57726974 
+ 2020      65436F6E 
+ 2020      74726F6C 
+ 2020      00
+ 2021              	.LASF33:
+ 2022 0059 61766572 		.ascii	"average\000"
+ 2022      61676500 
+ 2023              	.LASF17:
+ 2024 0061 53544154 		.ascii	"STATE\000"
+ 2024      4500
+ 2025              	.LASF32:
+ 2026 0067 74696D65 		.ascii	"timer_value\000"
+ 2026      725F7661 
+ 2026      6C756500 
+ 2027              	.LASF16:
+ 2028 0073 73697A65 		.ascii	"sizetype\000"
+ 2028      74797065 
+ 2028      00
+ 2029              	.LASF24:
+ 2030 007c 64696666 		.ascii	"difference\000"
+ 2030      6572656E 
+ 2030      636500
+ 2031              	.LASF14:
+ 2032 0087 63686172 		.ascii	"char8\000"
+ 2032      3800
+ 2033              	.LASF46:
+ 2034 008d 43617053 		.ascii	"CapSense_UpdateEnabledBaselines\000"
+ 2034      656E7365 
+ 2034      5F557064 
+ 2034      61746545 
+ 2034      6E61626C 
+ 2035              	.LASF22:
+ 2036 00ad 53746174 		.ascii	"State_moving\000"
+ 2036      655F6D6F 
+ 2036      76696E67 
+ 2036      00
+ 2037              	.LASF2:
+ 2038 00ba 73686F72 		.ascii	"short int\000"
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccWPIHIG.s 			page 41
+
+
+ 2038      7420696E 
+ 2038      7400
+ 2039              	.LASF23:
+ 2040 00c4 636F756E 		.ascii	"countDown\000"
+ 2040      74446F77 
+ 2040      6E00
+ 2041              	.LASF10:
+ 2042 00ce 75696E74 		.ascii	"uint16\000"
+ 2042      313600
+ 2043              	.LASF42:
+ 2044 00d5 6D6F7669 		.ascii	"movingAverage\000"
+ 2044      6E674176 
+ 2044      65726167 
+ 2044      6500
+ 2045              	.LASF34:
+ 2046 00e3 696E6372 		.ascii	"increasingHr\000"
+ 2046      65617369 
+ 2046      6E674872 
+ 2046      00
+ 2047              	.LASF9:
+ 2048 00f0 75696E74 		.ascii	"uint8\000"
+ 2048      3800
+ 2049              	.LASF45:
+ 2050 00f6 43617053 		.ascii	"CapSense_ScanEnabledWidgets\000"
+ 2050      656E7365 
+ 2050      5F536361 
+ 2050      6E456E61 
+ 2050      626C6564 
+ 2051              	.LASF12:
+ 2052 0112 666C6F61 		.ascii	"float\000"
+ 2052      7400
+ 2053              	.LASF35:
+ 2054 0118 50524F46 		.ascii	"PROFILE\000"
+ 2054      494C4500 
+ 2055              	.LASF6:
+ 2056 0120 6C6F6E67 		.ascii	"long long int\000"
+ 2056      206C6F6E 
+ 2056      6720696E 
+ 2056      7400
+ 2057              	.LASF60:
+ 2058 012e 474E5520 		.ascii	"GNU C 4.8.4 20140526 (release) [ARM/embedded-4_8-br"
+ 2058      4320342E 
+ 2058      382E3420 
+ 2058      32303134 
+ 2058      30353236 
+ 2059 0161 616E6368 		.ascii	"anch revision 211358] -mcpu=cortex-m3 -mthumb -g -O"
+ 2059      20726576 
+ 2059      6973696F 
+ 2059      6E203231 
+ 2059      31333538 
+ 2060 0194 67202D66 		.ascii	"g -ffunction-sections\000"
+ 2060      66756E63 
+ 2060      74696F6E 
+ 2060      2D736563 
+ 2060      74696F6E 
+ 2061              	.LASF62:
+ 2062 01aa 433A5C72 		.ascii	"C:\\repositories\\embedded\\trunk\\CE4920Project1\\"
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccWPIHIG.s 			page 42
+
+
+ 2062      65706F73 
+ 2062      69746F72 
+ 2062      6965735C 
+ 2062      656D6265 
+ 2063 01d8 44657369 		.ascii	"Design01.cydsn\000"
+ 2063      676E3031 
+ 2063      2E637964 
+ 2063      736E00
+ 2064              	.LASF15:
+ 2065 01e7 63686172 		.ascii	"char\000"
+ 2065      00
+ 2066              	.LASF4:
+ 2067 01ec 6C6F6E67 		.ascii	"long int\000"
+ 2067      20696E74 
+ 2067      00
+ 2068              	.LASF53:
+ 2069 01f5 43617053 		.ascii	"CapSense_ReadSensorRaw\000"
+ 2069      656E7365 
+ 2069      5F526561 
+ 2069      6453656E 
+ 2069      736F7252 
+ 2070              	.LASF1:
+ 2071 020c 756E7369 		.ascii	"unsigned char\000"
+ 2071      676E6564 
+ 2071      20636861 
+ 2071      7200
+ 2072              	.LASF50:
+ 2073 021a 506C6179 		.ascii	"Play_startup_music\000"
+ 2073      5F737461 
+ 2073      72747570 
+ 2073      5F6D7573 
+ 2073      696300
+ 2074              	.LASF0:
+ 2075 022d 7369676E 		.ascii	"signed char\000"
+ 2075      65642063 
+ 2075      68617200 
+ 2076              	.LASF7:
+ 2077 0239 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 2077      206C6F6E 
+ 2077      6720756E 
+ 2077      7369676E 
+ 2077      65642069 
+ 2078              	.LASF8:
+ 2079 0250 756E7369 		.ascii	"unsigned int\000"
+ 2079      676E6564 
+ 2079      20696E74 
+ 2079      00
+ 2080              	.LASF48:
+ 2081 025d 53797374 		.ascii	"System_init\000"
+ 2081      656D5F69 
+ 2081      6E697400 
+ 2082              	.LASF5:
+ 2083 0269 6C6F6E67 		.ascii	"long unsigned int\000"
+ 2083      20756E73 
+ 2083      69676E65 
+ 2083      6420696E 
+ 2083      7400
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccWPIHIG.s 			page 43
+
+
+ 2084              	.LASF28:
+ 2085 027b 73706565 		.ascii	"speed\000"
+ 2085      6400
+ 2086              	.LASF27:
+ 2087 0281 53746174 		.ascii	"State_stop\000"
+ 2087      655F7374 
+ 2087      6F7000
+ 2088              	.LASF41:
+ 2089 028c 4D4F544F 		.ascii	"MOTOR_FAST_WALKING_SPEED\000"
+ 2089      525F4641 
+ 2089      53545F57 
+ 2089      414C4B49 
+ 2089      4E475F53 
+ 2090              	.LASF3:
+ 2091 02a5 73686F72 		.ascii	"short unsigned int\000"
+ 2091      7420756E 
+ 2091      7369676E 
+ 2091      65642069 
+ 2091      6E7400
+ 2092              	.LASF58:
+ 2093 02b8 4C43445F 		.ascii	"LCD_PrintU32Number\000"
+ 2093      5072696E 
+ 2093      74553332 
+ 2093      4E756D62 
+ 2093      657200
+ 2094              	.LASF52:
+ 2095 02cb 4C43445F 		.ascii	"LCD_PrintString\000"
+ 2095      5072696E 
+ 2095      74537472 
+ 2095      696E6700 
+ 2096              	.LASF40:
+ 2097 02db 4D4F544F 		.ascii	"MOTOR_WALKING_SPEED\000"
+ 2097      525F5741 
+ 2097      4C4B494E 
+ 2097      475F5350 
+ 2097      45454400 
+ 2098              	.LASF36:
+ 2099 02ef 63757272 		.ascii	"currentState\000"
+ 2099      656E7453 
+ 2099      74617465 
+ 2099      00
+ 2100              	.LASF59:
+ 2101 02fc 4D6F746F 		.ascii	"Motor_rampUp\000"
+ 2101      725F7261 
+ 2101      6D705570 
+ 2101      00
+ 2102              	.LASF39:
+ 2103 0309 4D4F544F 		.ascii	"MOTOR_RUNNING_SPEED\000"
+ 2103      525F5255 
+ 2103      4E4E494E 
+ 2103      475F5350 
+ 2103      45454400 
+ 2104              	.LASF63:
+ 2105 031d 4D6F746F 		.ascii	"Motor_stop\000"
+ 2105      725F7374 
+ 2105      6F7000
+ 2106              	.LASF55:
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccWPIHIG.s 			page 44
+
+
+ 2107 0328 44697370 		.ascii	"Display_profile_selection\000"
+ 2107      6C61795F 
+ 2107      70726F66 
+ 2107      696C655F 
+ 2107      73656C65 
+ 2108              	.LASF11:
+ 2109 0342 75696E74 		.ascii	"uint32\000"
+ 2109      333200
+ 2110              	.LASF18:
+ 2111 0349 53746174 		.ascii	"State_sleep\000"
+ 2111      655F736C 
+ 2111      65657000 
+ 2112              	.LASF38:
+ 2113 0355 73656C65 		.ascii	"selectedProfile\000"
+ 2113      63746564 
+ 2113      50726F66 
+ 2113      696C6500 
+ 2114              	.LASF13:
+ 2115 0365 646F7562 		.ascii	"double\000"
+ 2115      6C6500
+ 2116              	.LASF29:
+ 2117 036c 68656172 		.ascii	"heartrate\000"
+ 2117      74726174 
+ 2117      6500
+ 2118              	.LASF20:
+ 2119 0376 53746174 		.ascii	"State_start\000"
+ 2119      655F7374 
+ 2119      61727400 
+ 2120              	.LASF54:
+ 2121 0382 43617053 		.ascii	"CapSense_CheckIsWidgetActive\000"
+ 2121      656E7365 
+ 2121      5F436865 
+ 2121      636B4973 
+ 2121      57696467 
+ 2122              	.LASF56:
+ 2123 039f 43617053 		.ascii	"CapSense_IsBusy\000"
+ 2123      656E7365 
+ 2123      5F497342 
+ 2123      75737900 
+ 2124              	.LASF51:
+ 2125 03af 4C43445F 		.ascii	"LCD_Position\000"
+ 2125      506F7369 
+ 2125      74696F6E 
+ 2125      00
+ 2126              	.LASF25:
+ 2127 03bc 6368616E 		.ascii	"change\000"
+ 2127      676500
+ 2128              	.LASF44:
+ 2129 03c3 43794465 		.ascii	"CyDelay\000"
+ 2129      6C617900 
+ 2130              	.LASF21:
+ 2131 03cb 53746174 		.ascii	"State_profile_selection\000"
+ 2131      655F7072 
+ 2131      6F66696C 
+ 2131      655F7365 
+ 2131      6C656374 
+ 2132              	.LASF37:
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccWPIHIG.s 			page 45
+
+
+ 2133 03e3 50726576 		.ascii	"Prev_state\000"
+ 2133      5F737461 
+ 2133      746500
+ 2134              	.LASF26:
+ 2135 03ee 53746174 		.ascii	"State_heartrate_change\000"
+ 2135      655F6865 
+ 2135      61727472 
+ 2135      6174655F 
+ 2135      6368616E 
+ 2136              	.LASF19:
+ 2137 0405 53746174 		.ascii	"State_reset\000"
+ 2137      655F7265 
+ 2137      73657400 
+ 2138              	.LASF49:
+ 2139 0411 44697370 		.ascii	"Display_welcome_message\000"
+ 2139      6C61795F 
+ 2139      77656C63 
+ 2139      6F6D655F 
+ 2139      6D657373 
+ 2140              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.8.4 20140526 (release) [ARM/embedded-4_8-br
