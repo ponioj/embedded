@@ -1,20 +1,12 @@
-/* ========================================
- *
- * Copyright YOUR COMPANY, THE YEAR
- * All Rights Reserved
- * UNPUBLISHED, LICENSED SOFTWARE.
- *
- * CONFIDENTIAL AND PROPRIETARY INFORMATION
- * WHICH IS THE PROPERTY OF your company.
- *
- * ========================================
-*/
-
 #include "display.h"
 
 int loading_bar_speed_ms = 100;
 
-
+/************************************************
+ * Method that displays a welcome message to the
+ * user. It first displays a loading bar then
+ * displays "Welcome to My Treadmill"
+ ***********************************************/
 void Display_welcome_message(){
     LCD_ClearDisplay();
     int i;
@@ -30,6 +22,12 @@ void Display_welcome_message(){
     LCD_PrintString("My Treadmill");
 }   
 
+/************************************************
+ * Method that displays a fault message. It has
+ * a similar loading bar to the welcome message,
+ * but eventually displays "COMPONENT FAILED DO
+ * NOT USE"
+ ***********************************************/
 void Display_fault_message(){
     LCD_ClearDisplay();
     int i;
@@ -45,30 +43,10 @@ void Display_fault_message(){
     LCD_PrintString("  DO NOT USE!!  ");
 }   
 
-
-
-/*
-void Display_welcome_message(){
-    LCD_ClearDisplay();
-    LCD_Position(0,0);
-    LCD_PrintString("8");
-    int i;
-    for (i=0; i<14; i++){
-        LCD_PrintString("=");
-        CyDelay(loading_bar_speed_ms);
-    }
-    LCD_PrintString("D");
-}   
-*/
-void Display_sleep(){    
-    LCD_Position(0,0);
-    LCD_PrintString("Sleeping...");
-//        LCD_DrawHorizontalBG(0,0,8,i);
-//        LCD_PrintString("zzzzzz");
-//        CyDelay(1000);
-    
-}
-
+/************************************************
+ * Displays the profile based on what option
+ * the user is on when selecting profiles.
+ ***********************************************/
 void Display_profile_selection(int profile){
     int i;
     for (i=4;i>0;i--){
@@ -93,6 +71,5 @@ void Display_profile_selection(int profile){
         CyDelay(100);
     }
 }
-
 
 /* [] END OF FILE */

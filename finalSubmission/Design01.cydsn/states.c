@@ -1,14 +1,3 @@
-/* ========================================
- *
- * Copyright YOUR COMPANY, THE YEAR
- * All Rights Reserved
- * UNPUBLISHED, LICENSED SOFTWARE.
- *
- * CONFIDENTIAL AND PROPRIETARY INFORMATION
- * WHICH IS THE PROPERTY OF your company.
- *
- * ========================================
-*/
 #include "states.h"
 
 int selectedProfile = 0;
@@ -19,11 +8,13 @@ int MOTOR_WALKING_SPEED = 300;
 int MOTOR_FAST_WALKING_SPEED = 200;
 float movingAverage[] =  {0,0,0,0,0,0,0,0,0,0}; 
 
+/************************************************
+ * Reset state of the treadmill.
+ /**********************************************/
 STATE State_reset(){
     int hearthealth = HEARTRATE_HEALTH_Read();
     int motorhealth = MOTOR_HEALTH_Read();
     int uihealth = UI_HEALTH_Read();
-    
     RESET_CAUSE = ((hearthealth && motorhealth && uihealth) > 0);
     if(RESET_CAUSE == RESET_FAULT){
         System_fault_init();
@@ -43,9 +34,6 @@ STATE State_reset(){
             TERMINAL_WriteString("USER INTERFACE FAILED\n");
         }
         while(1) {
-           
-            
-            // TODO UART error message
         }
     }
     else if (RESET_CAUSE == RESET_NORMAL) {
@@ -57,9 +45,12 @@ STATE State_reset(){
         currentState = STATE_WAIT;
     }
     return currentState;
-    
 }
 
+/************************************************
+ * Wait state of the treadmill. Waits for the
+ * user to activate the touch slider.
+ /**********************************************/
 STATE State_wait(){
     LCD_ClearDisplay();
     Motor_stop();
@@ -82,6 +73,9 @@ STATE State_wait(){
     return currentState;
 }
 
+/************************************************
+ * State for selecting the profile. 
+ /**********************************************/
 STATE State_profile_selection(){
     if(Prev_state == STATE_PROFILE_SELECTION) {
         LCD_Position(0,0); 
@@ -128,6 +122,10 @@ STATE State_profile_selection(){
     return STATE_PROFILE_SELECTION;   
 }
 
+/************************************************
+ * State for slowly increasing the motor speed
+ * when the treadmill first starts.
+ /**********************************************/
 STATE State_rampup(){
     int i;
     int delay = 10;
@@ -140,12 +138,14 @@ STATE State_rampup(){
     return currentState;
 }
 
+/************************************************
+ * Reset state of the treadmill.
+ /**********************************************/
 STATE State_moving(){
     Prev_state = STATE_MOVING;
     TERMINAL_WriteNumber(heartrate);
     Detect_heartrate();
     int i;
-    
     for (i=0; i<9; i++){ 
         movingAverage[i]=movingAverage[i+1];
     }
@@ -161,11 +161,15 @@ STATE State_moving(){
         }
         currentState = STATE_HEARTRATE_CHANGE;
     }
-    
-//    CyDelay(100);
     return currentState;   
 }
 
+/************************************************
+ * State that it enters if the heartrate changes
+ * more than 10%. Depending on the profile and 
+ * the heartrate, the system reacts according
+ * to the profile.
+ **********************************************/
 STATE State_heartrate_change(){
     Prev_state = STATE_HEARTRATE_CHANGE;
     switch (selectedProfile){
@@ -198,13 +202,15 @@ STATE State_heartrate_change(){
     }
     return STATE_MOVING;   
 }
-
+/************************************************
+ * Stop state if the user hits the emergency
+ * stop button. Stops the motors and enteres
+ * the wait state. 
+ **********************************************/
 STATE State_stop(){
     Prev_state = STATE_STOP;
     Motor_stop();
     return STATE_WAIT; 
 }
-
-
 
 /* [] END OF FILE */

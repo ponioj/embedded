@@ -1,12 +1,6 @@
 /* ========================================
- *
- * Copyright YOUR COMPANY, THE YEAR
- * All Rights Reserved
- * UNPUBLISHED, LICENSED SOFTWARE.
- *
- * CONFIDENTIAL AND PROPRIETARY INFORMATION
- * WHICH IS THE PROPERTY OF your company.
- *
+ * Method that deals with moving the 
+ * motors.
  * ========================================
 */
 
@@ -21,7 +15,7 @@ void Motor_rampUp(int topSpeed);
 void Move_motor(int motorSpeed);
 void Motor_stop();
     
+#endif
 
 /* [] END OF FILE */
 
-#endif

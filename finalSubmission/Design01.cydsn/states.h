@@ -1,12 +1,6 @@
 /* ========================================
- *
- * Copyright John Ponio 2015
- * All Rights Reserved
- * UNPUBLISHED, LICENSED SOFTWARE.
- *
- * CONFIDENTIAL AND PROPRIETARY INFORMATION
- * WHICH IS THE PROPERTY OF JOHN PONIO.
- *
+ * File that deals with the states of the
+ * program.
  * ========================================
 */
 #ifndef STATES_H
@@ -20,13 +14,12 @@ typedef char * string;
 extern float heartrate;
 extern int RESET_CAUSE;
 float average;
-int increasingHr;                         // used as a bool
+int increasingHr;        
 
 int PROFILE;
 #define PROFILE_REGULAR 0
 #define PROFILE_FATBURN 1
 #define PROFILE_CARDIO 2
-
 
 #define STATE_WAIT 0
 #define STATE_RESET 1

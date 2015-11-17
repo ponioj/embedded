@@ -16,20 +16,24 @@ extern int endCounts;
 extern int speed;
 
 
+/************************************************
+ * Method to calculate the heartrate based on 
+ * the start and end values of a counter that
+ * is driven by interrupts which are driven by
+ * the heartbeat.
+ * @return heartrate The last recorded heartrate
+ ************************************************/
 float Detect_heartrate(void) {
     LCD_Position(0,0);
     LCD_PrintString("Heartrate: ");
-   
-//    LCD_PrintU32Number(endCounts);
     LCD_PrintString("      ");
     LCD_Position(1,0);
+    /* 600000 because the clock speed of the 
+     heartrate is set to kHz */
     heartrate = (600000/(endCounts-startCounts));
-//    LCD_PrintU32Number(startCounts);
     LCD_PrintU32Number(heartrate);
     LCD_PrintString("      ");
-    
     return heartrate;
 }
-
 
 /* [] END OF FILE */

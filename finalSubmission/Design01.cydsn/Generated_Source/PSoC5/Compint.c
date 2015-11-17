@@ -163,22 +163,8 @@ void Compint_Stop(void)
 *******************************************************************************/
 CY_ISR(Compint_Interrupt)
 {
-    /*  Place your Interrupt code here. */
-    /* `#START Compint_Interrupt` */
     endCounts = startCounts;
     startCounts = HeartbeatCounter_ReadCounter();
-    
-    /*
-    LCD_Position(0,0);
-    
-    LCD_PrintU32Number(endCounts);
-    LCD_PrintString("      ");
-    LCD_Position(1,0);
-    heartrate = (600000/(endCounts-startCounts));
-    LCD_PrintU32Number(startCounts);
-    LCD_PrintString("      ");
-    */
-    /* `#END` */
 }
 
 

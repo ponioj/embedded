@@ -1,18 +1,8 @@
-/* ========================================
- *
- * Copyright YOUR COMPANY, THE YEAR
- * All Rights Reserved
- * UNPUBLISHED, LICENSED SOFTWARE.
- *
- * CONFIDENTIAL AND PROPRIETARY INFORMATION
- * WHICH IS THE PROPERTY OF your company.
- *
- * ========================================
-*/
-
 #include "system.h"
 
-
+/***********************************************
+ * Method that initialies all syste components.
+ ***********************************************/
 void System_init(){
     Comp_Start();
     Comp_ZeroCal(); 
@@ -35,6 +25,11 @@ void System_init(){
     TERMINAL_WriteString("Welcome to my treadmill!\n\r");
 }
 
+/***********************************************
+ * Method that initialies a limited set of 
+ * system components so that there is enough to 
+ * alert the user of a problem.
+ ***********************************************/
 void System_fault_init(){
     LCD_Start();
     STOP_Start();

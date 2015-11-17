@@ -1,12 +1,6 @@
 /* ========================================
- *
- * Copyright YOUR COMPANY, THE YEAR
- * All Rights Reserved
- * UNPUBLISHED, LICENSED SOFTWARE.
- *
- * CONFIDENTIAL AND PROPRIETARY INFORMATION
- * WHICH IS THE PROPERTY OF your company.
- *
+ * File that deals with displaying 
+ * information on the LCD.
  * ========================================
 */
 
@@ -28,6 +22,7 @@ void Display_flash_profile();
 
 void Display_profile_selection(int profile);
 
+#endif
+
 /* [] END OF FILE */
 
-#endif

@@ -1,17 +1,11 @@
 /* ========================================
- *
- * Copyright YOUR COMPANY, THE YEAR
- * All Rights Reserved
- * UNPUBLISHED, LICENSED SOFTWARE.
- *
- * CONFIDENTIAL AND PROPRIETARY INFORMATION
- * WHICH IS THE PROPERTY OF your company.
- *
+ * THe main file for the treadmill. 
+ * Implements a state machine for the 
+ * different states of the treadmill. 
  * ========================================
 */
 #include <project.h>
 #include "states.h"
-/* State types and variables */
 
 extern STATE currentState;
 
@@ -19,7 +13,6 @@ int main()
 {
     CyGlobalIntEnable; /* Enable global interrupts. */
 
-   
     /* Place your initialization/startup code here (e.g. MyInst_Start()) */
     currentState = STATE_RESET;
     LCD_ClearDisplay();
@@ -51,10 +44,8 @@ int main()
             default:
                 break;
         }
-        
     }
     return 0;
-
 }
 
 /* [] END OF FILE */

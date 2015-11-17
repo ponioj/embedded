@@ -1,12 +1,11 @@
 /* ========================================
- *
- * Copyright YOUR COMPANY, THE YEAR
- * All Rights Reserved
- * UNPUBLISHED, LICENSED SOFTWARE.
- *
- * CONFIDENTIAL AND PROPRIETARY INFORMATION
- * WHICH IS THE PROPERTY OF your company.
- *
+ * Provides the base system files and 
+ * includes for the project. The 
+ * file also contains a method that 
+ * initializes all system components. If 
+ * the system is in a fault state, it 
+ * initializes a limited set of 
+ * components.
  * ========================================
 */
 
@@ -47,7 +46,6 @@
 void System_init();
 void System_fault_init();
 
+#endif
 
 /* [] END OF FILE */
-
-#endif

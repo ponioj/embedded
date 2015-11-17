@@ -13,16 +13,78 @@
 <v>Output</v>
 </TreeKeys>
 <TreeStates>
-<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="CE4920Project1\Design01\Header Files\heartrate.h">
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="CE4920Project1\Design01\Source Files\motor.c">
 <ExpandedNodeIds>
 <v>CE4920Project1</v>
+<v>CE4920Project1\Design01</v>
 <v>CE4920Project1\Design01\TopDesign</v>
+<v>CE4920Project1\Design01\Header Files</v>
+<v>CE4920Project1\Design01\Source Files</v>
+<v>CE4920Project1\Design01\Generated_Source</v>
+<v>CE4920Project1\Design01\Generated_Source\PSoC5</v>
+<v>CE4920Project1\Design01\Generated_Source\PSoC5\Compint</v>
+<v>CE4920Project1\Design01\Generated_Source\PSoC5\STOP</v>
 <v>CE4920Project1\USBFS_HID01\TopDesign</v>
+<v>CE4920Project1\USBFS_HID01\Source Files</v>
+<v>CE4920Project1\USBFS_HID01\Generated_Source</v>
+<v>CE4920Project1\USBFS_HID01\Generated_Source\PSoC5</v>
 </ExpandedNodeIds>
 <VisibleNodeIds>
 <v>CE4920Project1</v>
 <v>CE4920Project1\Design01</v>
-<v>CE4920Project1\USBFS_HID01</v>
+<v>CE4920Project1\Design01\TopDesign</v>
+<v>CE4920Project1\Design01\Design01.cydwr</v>
+<v>CE4920Project1\Design01\Header Files</v>
+<v>CE4920Project1\Design01\Header Files\delay.h</v>
+<v>CE4920Project1\Design01\Header Files\display.h</v>
+<v>CE4920Project1\Design01\Header Files\heartrate.h</v>
+<v>CE4920Project1\Design01\Header Files\motor.h</v>
+<v>CE4920Project1\Design01\Header Files\speaker.h</v>
+<v>CE4920Project1\Design01\Header Files\states.h</v>
+<v>CE4920Project1\Design01\Header Files\system.h</v>
+<v>CE4920Project1\Design01\Header Files\terminal.h</v>
+<v>CE4920Project1\Design01\Source Files</v>
+<v>CE4920Project1\Design01\Source Files\delay.asm</v>
+<v>CE4920Project1\Design01\Source Files\display.c</v>
+<v>CE4920Project1\Design01\Source Files\heartrate.c</v>
+<v>CE4920Project1\Design01\Source Files\main.c</v>
+<v>CE4920Project1\Design01\Source Files\motor.c</v>
+<v>CE4920Project1\Design01\Source Files\speaker.c</v>
+<v>CE4920Project1\Design01\Source Files\states.c</v>
+<v>CE4920Project1\Design01\Source Files\system.c</v>
+<v>CE4920Project1\Design01\Source Files\terminal.c</v>
+<v>CE4920Project1\Design01\Generated_Source</v>
+<v>CE4920Project1\Design01\Generated_Source\PSoC5</v>
+<v>CE4920Project1\Design01\Generated_Source\PSoC5\amp</v>
+<v>CE4920Project1\Design01\Generated_Source\PSoC5\CapSense</v>
+<v>CE4920Project1\Design01\Generated_Source\PSoC5\CapSense_AMuxCH0</v>
+<v>CE4920Project1\Design01\Generated_Source\PSoC5\CapSense_CompCH0</v>
+<v>CE4920Project1\Design01\Generated_Source\PSoC5\CapSense_IdacCH0</v>
+<v>CE4920Project1\Design01\Generated_Source\PSoC5\CapSense_IntClock</v>
+<v>CE4920Project1\Design01\Generated_Source\PSoC5\Comp</v>
+<v>CE4920Project1\Design01\Generated_Source\PSoC5\Compint</v>
+<v>CE4920Project1\Design01\Generated_Source\PSoC5\Compint\Compint.c</v>
+<v>CE4920Project1\Design01\Generated_Source\PSoC5\Compint\Compint.h</v>
+<v>CE4920Project1\Design01\Generated_Source\PSoC5\cy_boot</v>
+<v>CE4920Project1\Design01\Generated_Source\PSoC5\HeartbeatCounter</v>
+<v>CE4920Project1\Design01\Generated_Source\PSoC5\HEARTRATE_ANALOG_IN</v>
+<v>CE4920Project1\Design01\Generated_Source\PSoC5\HEARTRATE_HEALTH</v>
+<v>CE4920Project1\Design01\Generated_Source\PSoC5\LCD</v>
+<v>CE4920Project1\Design01\Generated_Source\PSoC5\LCD_LCDPort</v>
+<v>CE4920Project1\Design01\Generated_Source\PSoC5\LEFT_LED</v>
+<v>CE4920Project1\Design01\Generated_Source\PSoC5\MOTOR_HEALTH</v>
+<v>CE4920Project1\Design01\Generated_Source\PSoC5\PGA_1</v>
+<v>CE4920Project1\Design01\Generated_Source\PSoC5\PWM</v>
+<v>CE4920Project1\Design01\Generated_Source\PSoC5\PWM_Output</v>
+<v>CE4920Project1\Design01\Generated_Source\PSoC5\Speaker_Output</v>
+<v>CE4920Project1\Design01\Generated_Source\PSoC5\STOP</v>
+<v>CE4920Project1\Design01\Generated_Source\PSoC5\STOP\STOP.c</v>
+<v>CE4920Project1\Design01\Generated_Source\PSoC5\STOP\STOP.h</v>
+<v>CE4920Project1\Design01\Generated_Source\PSoC5\STOP_REQUEST</v>
+<v>CE4920Project1\Design01\Generated_Source\PSoC5\timer_clock_1</v>
+<v>CE4920Project1\Design01\Generated_Source\PSoC5\UI_HEALTH</v>
+<v>CE4920Project1\Design01\Generated_Source\PSoC5\USBUART</v>
+<v>CE4920Project1\Design01\Generated_Source\PSoC5\USBUART_Dm</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 <CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
@@ -214,6 +276,23 @@
 <v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\HeartbeatCounter_PM.lst</v>
 <v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\heartrate.lst</v>
 <v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\HEARTRATE_ANALOG_IN.lst</v>
+<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\HEARTRATE_HEALTH.lst</v>
+<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\LCD.lst</v>
+<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\LCD_BarGraph.lst</v>
+<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\LCD_LCDPort.lst</v>
+<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\LCD_PM.lst</v>
+<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\LEFT_LED.lst</v>
+<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\main.lst</v>
+<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\motor.lst</v>
+<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\MOTOR_HEALTH.lst</v>
+<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\PGA_1.lst</v>
+<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\PGA_1_PM.lst</v>
+<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\PWM.lst</v>
+<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\PWM_Output.lst</v>
+<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\PWM_PM.lst</v>
+<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\speaker.lst</v>
+<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\Speaker_Output.lst</v>
+<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\states.lst</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStates>
@@ -228,10 +307,28 @@
 <v>CE4920Project1\Design01\PSoC 5 Architecture TRM</v>
 <v>CE4920Project1\Design01\CY8C58LP Family Datasheet</v>
 <v>CE4920Project1\Design01\System Reference Guides</v>
+<v>CE4920Project1\Design01\System Reference Guides\cy_boot_v5_10</v>
+<v>CE4920Project1\Design01\CapSense_CSD_v3_50</v>
+<v>CE4920Project1\Design01\CharLCD_v2_10</v>
+<v>CE4920Project1\Design01\Comp_v2_0</v>
+<v>CE4920Project1\Design01\Counter_v3_0</v>
+<v>CE4920Project1\Design01\cy_clock_v2_20</v>
+<v>CE4920Project1\Design01\cy_constant_v1_0</v>
+<v>CE4920Project1\Design01\cy_isr_v1_70</v>
+<v>CE4920Project1\Design01\cy_pins_v2_10</v>
+<v>CE4920Project1\Design01\cy_vref_v1_60</v>
+<v>CE4920Project1\Design01\PGA_v2_0</v>
+<v>CE4920Project1\Design01\PWM_v3_30</v>
+<v>CE4920Project1\Design01\Timer_v2_70</v>
+<v>CE4920Project1\Design01\USBFS_v2_80</v>
+<v>CE4920Project1\Design01\WaveDAC8_v2_0</v>
+<v>CE4920Project1\Design01\ZeroTerminal</v>
 <v>CE4920Project1\USBFS_HID01</v>
 <v>CE4920Project1\USBFS_HID01\PSoC 5 Architecture TRM</v>
 <v>CE4920Project1\USBFS_HID01\CY8C58LP Family Datasheet</v>
 <v>CE4920Project1\USBFS_HID01\System Reference Guides</v>
+<v>CE4920Project1\USBFS_HID01\System Reference Guides\cy_boot_v5_10</v>
+<v>CE4920Project1\USBFS_HID01\USBFS_v2_80</v>
 </ExpandedNodeIds>
 <VisibleNodeIds>
 <v>CE4920Project1</v>
@@ -239,10 +336,28 @@
 <v>CE4920Project1\Design01\PSoC 5 Architecture TRM</v>
 <v>CE4920Project1\Design01\CY8C58LP Family Datasheet</v>
 <v>CE4920Project1\Design01\System Reference Guides</v>
+<v>CE4920Project1\Design01\System Reference Guides\cy_boot_v5_10</v>
+<v>CE4920Project1\Design01\CapSense_CSD_v3_50</v>
+<v>CE4920Project1\Design01\CharLCD_v2_10</v>
+<v>CE4920Project1\Design01\Comp_v2_0</v>
+<v>CE4920Project1\Design01\Counter_v3_0</v>
+<v>CE4920Project1\Design01\cy_clock_v2_20</v>
+<v>CE4920Project1\Design01\cy_constant_v1_0</v>
+<v>CE4920Project1\Design01\cy_isr_v1_70</v>
+<v>CE4920Project1\Design01\cy_pins_v2_10</v>
+<v>CE4920Project1\Design01\cy_vref_v1_60</v>
+<v>CE4920Project1\Design01\PGA_v2_0</v>
+<v>CE4920Project1\Design01\PWM_v3_30</v>
+<v>CE4920Project1\Design01\Timer_v2_70</v>
+<v>CE4920Project1\Design01\USBFS_v2_80</v>
+<v>CE4920Project1\Design01\WaveDAC8_v2_0</v>
+<v>CE4920Project1\Design01\ZeroTerminal</v>
 <v>CE4920Project1\USBFS_HID01</v>
 <v>CE4920Project1\USBFS_HID01\PSoC 5 Architecture TRM</v>
 <v>CE4920Project1\USBFS_HID01\CY8C58LP Family Datasheet</v>
 <v>CE4920Project1\USBFS_HID01\System Reference Guides</v>
+<v>CE4920Project1\USBFS_HID01\System Reference Guides\cy_boot_v5_10</v>
+<v>CE4920Project1\USBFS_HID01\USBFS_v2_80</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStatesV2>
@@ -252,21 +367,9 @@
 </CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997>
 <Unloaded />
 <OpenDocs>
-<name v=".\Design01.cydsn\Design01.cydwr" />
 <name v=".\Design01.cydsn\TopDesign\TopDesign.cysch" />
-<name v=".\Design01.cydsn\heartrate.c" />
 <name v=".\Design01.cydsn\states.c" />
-<name v=".\Design01.cydsn\system.c" />
 <name v=".\Design01.cydsn\motor.c" />
-<name v=".\Design01.cydsn\Generated_Source\PSoC5\Compint.c" />
-<name v=".\Design01.cydsn\main.c" />
-<name v=".\Design01.cydsn\system.h" />
-<name v=".\Design01.cydsn\Generated_Source\PSoC5\WDT.c" />
-<name v=".\Design01.cydsn\display.c" />
-<name v=".\Design01.cydsn\display.h" />
-<name v=".\Design01.cydsn\states.h" />
-<name v=".\Design01.cydsn\terminal.c" />
-<name v=".\Design01.cydsn\Generated_Source\PSoC5\STOP.c" />
 </OpenDocs>
 <config v="" />
 <AutoUpdate v="true" />
