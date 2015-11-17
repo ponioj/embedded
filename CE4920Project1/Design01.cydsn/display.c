@@ -30,6 +30,23 @@ void Display_welcome_message(){
     LCD_PrintString("My Treadmill");
 }   
 
+void Display_fault_message(){
+    LCD_ClearDisplay();
+    int i;
+    for (i=0; i<16; i++){
+        LCD_Position(0,i);
+        LCD_PutChar(LCD_CUSTOM_5);
+        CyDelay(loading_bar_speed_ms);
+    }
+    LCD_ClearDisplay();
+    LCD_Position(0,0);
+    LCD_PrintString("COMPONENT FAILED");
+    LCD_Position(1,0);
+    LCD_PrintString("  DO NOT USE!!  ");
+}   
+
+
+
 /*
 void Display_welcome_message(){
     LCD_ClearDisplay();

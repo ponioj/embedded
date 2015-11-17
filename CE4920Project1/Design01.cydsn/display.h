@@ -20,6 +20,8 @@
 
 void Display_welcome_message();
 
+void Display_fault_message();
+
 void Display_sleep();
 
 void Display_flash_profile();

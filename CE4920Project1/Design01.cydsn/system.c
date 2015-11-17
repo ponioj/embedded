@@ -31,8 +31,16 @@ void System_init(){
     WDT_Timer_Start();
     WDT_Start();
     CyWdtStart(CYWDT_1024_TICKS, CYWDT_LPMODE_NOCHANGE);
-//    USBUART_Start(0, USBUART_3V_OPERATION);
-//    TERMINAL_WriteString("Welcome to my treadmill!\n\r");
+    USBUART_Start(0, USBUART_3V_OPERATION);
+    TERMINAL_WriteString("Welcome to my treadmill!\n\r");
+}
+
+void System_fault_init(){
+    LCD_Start();
+    STOP_Start();
+    Start_motor();
+    USBUART_Start(0, USBUART_3V_OPERATION);
+    TERMINAL_WriteString("ERROR!\n");    
 }
 
 /* [] END OF FILE */

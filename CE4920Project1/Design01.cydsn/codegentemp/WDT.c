@@ -27,6 +27,7 @@
 ********************************************************************************/
 /* `#START WDT_intc` */
 #include "system.h"
+extern int RESET_CAUSE;
 /* `#END` */
 
 #ifndef CYINT_IRQ_BASE
@@ -161,14 +162,13 @@ CY_ISR(WDT_Interrupt)
     /*  Place your Interrupt code here. */
     /* `#START WDT_Interrupt` */
     
-    int hearthealth = HEARTRATE_HEALTH_Read();
-    int motorhealth = MOTOR_HEALTH_Read();
-    int uihealth = UI_HEALTH_Read();
-    LCD_Position(1,5);
-    LCD_PrintNumber(hearthealth);
-    LCD_PrintNumber(motorhealth);
-    LCD_PrintNumber(uihealth);
-    CyWdtClear();
+    
+    if((HEARTRATE_HEALTH_Read() > 0) && (MOTOR_HEALTH_Read() > 0) && (UI_HEALTH_Read() > 0)){
+        CyWdtClear();   
+        RESET_CAUSE = RESET_NORMAL;
+    } else {
+        RESET_CAUSE = RESET_FAULT;   
+    }
     /* `#END` */
 }
 

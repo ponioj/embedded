@@ -24,7 +24,7 @@
 ===================================================================== 
 Number of clocks: 11
 Clock: CapSense_IntClock          | Frequency: 28.34 MHz  | Target: 24.00 MHz  | 
-Clock: CyBUS_CLK                  | Frequency: 32.19 MHz  | Target: 24.00 MHz  | 
+Clock: CyBUS_CLK                  | Frequency: 32.67 MHz  | Target: 24.00 MHz  | 
 Clock: CyILO                      | N/A                   | Target: 0.10 MHz   | 
 Clock: CyIMO                      | N/A                   | Target: 24.00 MHz  | 
 Clock: CyMASTER_CLK               | N/A                   | Target: 24.00 MHz  | 
@@ -47,8 +47,8 @@ Clock: timer_clock_1(routed)      | N/A                   | Target: 0.01 MHz   |
 Launch Clock           Capture Clock      Constraint(R-R)  Slack(R-R)  Constraint(R-F)  Slack(R-F)  Constraint(F-F)  Slack(F-F)  Constraint(F-R)  Slack(F-R)  
 ---------------------  -----------------  ---------------  ----------  ---------------  ----------  ---------------  ----------  ---------------  ----------  
 CapSense_IntClock      CapSense_IntClock  41666.7          6386        N/A              N/A         N/A              N/A         N/A              N/A         
-CyBUS_CLK              CyBUS_CLK          41666.7          10597       N/A              N/A         N/A              N/A         N/A              N/A         
-timer_clock_1(routed)  CyBUS_CLK          41666.7          13945       N/A              N/A         N/A              N/A         41666.7          13945       
+CyBUS_CLK              CyBUS_CLK          41666.7          11061       N/A              N/A         N/A              N/A         N/A              N/A         
+timer_clock_1(routed)  CyBUS_CLK          41666.7          13742       N/A              N/A         N/A              N/A         41666.7          13742       
 
  =====================================================================
                     End of Clock Relationship Summary
@@ -73,7 +73,7 @@ Port Name  Setup to Clk  Clock Name:Phase
 
 Port Name          Clock to Out  Clock Name:Phase  
 -----------------  ------------  ----------------  
-PWM_Output(0)_PAD  22780         CyBUS_CLK:R       
+PWM_Output(0)_PAD  23618         CyBUS_CLK:R       
 
 
                          3.3::Pad to Pad
@@ -144,14 +144,14 @@ ClockBlock/dclk_glb_0                                      clockblockcell      0
 4.2::Critical Path Report for CyBUS_CLK
 ***************************************
 Clock: CyBUS_CLK
-Frequency: 32.19 MHz | Target: 24.00 MHz
+Frequency: 32.67 MHz | Target: 24.00 MHz
 
 ++++ Path 1 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
 Path Begin     : \HeartbeatCounter:CounterUDB:sCTRLReg:ctrlreg\/control_7
 Path End       : \HeartbeatCounter:CounterUDB:sC32:counterdp:u3\/ci
 Capture Clock  : \HeartbeatCounter:CounterUDB:sC32:counterdp:u3\/clock
-Path slack     : 10597p
+Path slack     : 11061p
 
 Capture Clock Arrival Time                             0
 + Clock path delay                                     0
@@ -162,9 +162,9 @@ End-of-path required time (ps)                     37437
 
 Launch Clock Arrival Time                       0
 + Clock path delay                          0
-+ Data path delay                       26839
++ Data path delay                       26376
 -------------------------------------   ----- 
-End-of-path arrival time (ps)           26839
+End-of-path arrival time (ps)           26376
  
 Launch Clock Path
 pin name                                                    model name      delay     AT  edge  Fanout
@@ -175,18 +175,18 @@ ClockBlock/clk_bus_glb                                      clockblockcell      
 Data path
 pin name                                                   model name     delay     AT  slack  edge  Fanout
 ---------------------------------------------------------  -------------  -----  -----  -----  ----  ------
-\HeartbeatCounter:CounterUDB:sCTRLReg:ctrlreg\/control_7   controlcell2    1210   1210  10597  RISE       1
-\HeartbeatCounter:CounterUDB:final_enable\/main_0          macrocell38     2251   3461  10597  RISE       1
-\HeartbeatCounter:CounterUDB:final_enable\/q               macrocell38     3350   6811  10597  RISE       1
-\HeartbeatCounter:CounterUDB:count_enable\/main_0          macrocell36     2242   9054  10597  RISE       1
-\HeartbeatCounter:CounterUDB:count_enable\/q               macrocell36     3350  12404  10597  RISE       1
-\HeartbeatCounter:CounterUDB:sC32:counterdp:u0\/cs_addr_1  datapathcell6   2706  15109  10597  RISE       1
-\HeartbeatCounter:CounterUDB:sC32:counterdp:u0\/co_msb     datapathcell6   5130  20239  10597  RISE       1
-\HeartbeatCounter:CounterUDB:sC32:counterdp:u1\/ci         datapathcell7      0  20239  10597  RISE       1
-\HeartbeatCounter:CounterUDB:sC32:counterdp:u1\/co_msb     datapathcell7   3300  23539  10597  RISE       1
-\HeartbeatCounter:CounterUDB:sC32:counterdp:u2\/ci         datapathcell8      0  23539  10597  RISE       1
-\HeartbeatCounter:CounterUDB:sC32:counterdp:u2\/co_msb     datapathcell8   3300  26839  10597  RISE       1
-\HeartbeatCounter:CounterUDB:sC32:counterdp:u3\/ci         datapathcell9      0  26839  10597  RISE       1
+\HeartbeatCounter:CounterUDB:sCTRLReg:ctrlreg\/control_7   controlcell2    1210   1210  11061  RISE       1
+\HeartbeatCounter:CounterUDB:final_enable\/main_0          macrocell38     2251   3461  11061  RISE       1
+\HeartbeatCounter:CounterUDB:final_enable\/q               macrocell38     3350   6811  11061  RISE       1
+\HeartbeatCounter:CounterUDB:count_enable\/main_0          macrocell36     2242   9054  11061  RISE       1
+\HeartbeatCounter:CounterUDB:count_enable\/q               macrocell36     3350  12404  11061  RISE       1
+\HeartbeatCounter:CounterUDB:sC32:counterdp:u0\/cs_addr_1  datapathcell6   2242  14646  11061  RISE       1
+\HeartbeatCounter:CounterUDB:sC32:counterdp:u0\/co_msb     datapathcell6   5130  19776  11061  RISE       1
+\HeartbeatCounter:CounterUDB:sC32:counterdp:u1\/ci         datapathcell7      0  19776  11061  RISE       1
+\HeartbeatCounter:CounterUDB:sC32:counterdp:u1\/co_msb     datapathcell7   3300  23076  11061  RISE       1
+\HeartbeatCounter:CounterUDB:sC32:counterdp:u2\/ci         datapathcell8      0  23076  11061  RISE       1
+\HeartbeatCounter:CounterUDB:sC32:counterdp:u2\/co_msb     datapathcell8   3300  26376  11061  RISE       1
+\HeartbeatCounter:CounterUDB:sC32:counterdp:u3\/ci         datapathcell9      0  26376  11061  RISE       1
 
 Capture Clock Path
 pin name                                                    model name      delay     AT  edge  Fanout
@@ -213,7 +213,7 @@ ClockBlock/clk_bus_glb                                      clockblockcell      
 Path Begin     : ClockBlock/dclk_1
 Path End       : \HeartbeatCounter:CounterUDB:sC32:counterdp:u3\/ci
 Capture Clock  : \HeartbeatCounter:CounterUDB:sC32:counterdp:u3\/clock
-Path slack     : 13945p
+Path slack     : 13742p
 
 Capture Clock Arrival Time                                         0
 + Clock path delay                                                 0
@@ -224,23 +224,23 @@ End-of-path required time (ps)                                 37437
 
 Launch Clock Arrival Time                       0
 + Clock path delay                          0
-+ Data path delay                       23491
++ Data path delay                       23694
 -------------------------------------   ----- 
-End-of-path arrival time (ps)           23491
+End-of-path arrival time (ps)           23694
  
 Data path
 pin name                                                   model name      delay     AT  slack  edge  Fanout
 ---------------------------------------------------------  --------------  -----  -----  -----  ----  ------
 ClockBlock/dclk_1                                          clockblockcell      0      0   COMP  RISE       1
-\HeartbeatCounter:CounterUDB:count_enable\/main_2          macrocell36      5706   5706  13945  RISE       1
-\HeartbeatCounter:CounterUDB:count_enable\/q               macrocell36      3350   9056  13945  RISE       1
-\HeartbeatCounter:CounterUDB:sC32:counterdp:u0\/cs_addr_1  datapathcell6    2706  11761  13945  RISE       1
-\HeartbeatCounter:CounterUDB:sC32:counterdp:u0\/co_msb     datapathcell6    5130  16891  13945  RISE       1
-\HeartbeatCounter:CounterUDB:sC32:counterdp:u1\/ci         datapathcell7       0  16891  13945  RISE       1
-\HeartbeatCounter:CounterUDB:sC32:counterdp:u1\/co_msb     datapathcell7    3300  20191  13945  RISE       1
-\HeartbeatCounter:CounterUDB:sC32:counterdp:u2\/ci         datapathcell8       0  20191  13945  RISE       1
-\HeartbeatCounter:CounterUDB:sC32:counterdp:u2\/co_msb     datapathcell8    3300  23491  13945  RISE       1
-\HeartbeatCounter:CounterUDB:sC32:counterdp:u3\/ci         datapathcell9       0  23491  13945  RISE       1
+\HeartbeatCounter:CounterUDB:count_enable\/main_2          macrocell36      6372   6372  13742  RISE       1
+\HeartbeatCounter:CounterUDB:count_enable\/q               macrocell36      3350   9722  13742  RISE       1
+\HeartbeatCounter:CounterUDB:sC32:counterdp:u0\/cs_addr_1  datapathcell6    2242  11964  13742  RISE       1
+\HeartbeatCounter:CounterUDB:sC32:counterdp:u0\/co_msb     datapathcell6    5130  17094  13742  RISE       1
+\HeartbeatCounter:CounterUDB:sC32:counterdp:u1\/ci         datapathcell7       0  17094  13742  RISE       1
+\HeartbeatCounter:CounterUDB:sC32:counterdp:u1\/co_msb     datapathcell7    3300  20394  13742  RISE       1
+\HeartbeatCounter:CounterUDB:sC32:counterdp:u2\/ci         datapathcell8       0  20394  13742  RISE       1
+\HeartbeatCounter:CounterUDB:sC32:counterdp:u2\/co_msb     datapathcell8    3300  23694  13742  RISE       1
+\HeartbeatCounter:CounterUDB:sC32:counterdp:u3\/ci         datapathcell9       0  23694  13742  RISE       1
 
 Capture Clock Path
 pin name                                                    model name      delay     AT  edge  Fanout
@@ -257,7 +257,7 @@ ClockBlock/clk_bus_glb                                      clockblockcell      
 Path Begin     : ClockBlock/dclk_1
 Path End       : \HeartbeatCounter:CounterUDB:sC32:counterdp:u3\/ci
 Capture Clock  : \HeartbeatCounter:CounterUDB:sC32:counterdp:u3\/clock
-Path slack     : 13945p
+Path slack     : 13742p
 
 Capture Clock Arrival Time                                               0
 + Clock path delay                                                       0
@@ -268,23 +268,23 @@ End-of-path required time (ps)                                    50037437
 
 Launch Clock Arrival Time                   50000000
 + Clock path delay                             0
-+ Data path delay                          23491
++ Data path delay                          23694
 -------------------------------------   -------- 
-End-of-path arrival time (ps)           50023491
+End-of-path arrival time (ps)           50023694
  
 Data path
 pin name                                                   model name      delay        AT  slack  edge  Fanout
 ---------------------------------------------------------  --------------  -----  --------  -----  ----  ------
 ClockBlock/dclk_1                                          clockblockcell      0  50000000   COMP  FALL       1
-\HeartbeatCounter:CounterUDB:count_enable\/main_2          macrocell36      5706  50005706  13945  FALL       1
-\HeartbeatCounter:CounterUDB:count_enable\/q               macrocell36      3350  50009056  13945  FALL       1
-\HeartbeatCounter:CounterUDB:sC32:counterdp:u0\/cs_addr_1  datapathcell6    2706  50011761  13945  FALL       1
-\HeartbeatCounter:CounterUDB:sC32:counterdp:u0\/co_msb     datapathcell6    5130  50016891  13945  FALL       1
-\HeartbeatCounter:CounterUDB:sC32:counterdp:u1\/ci         datapathcell7       0  50016891  13945  FALL       1
-\HeartbeatCounter:CounterUDB:sC32:counterdp:u1\/co_msb     datapathcell7    3300  50020191  13945  FALL       1
-\HeartbeatCounter:CounterUDB:sC32:counterdp:u2\/ci         datapathcell8       0  50020191  13945  FALL       1
-\HeartbeatCounter:CounterUDB:sC32:counterdp:u2\/co_msb     datapathcell8    3300  50023491  13945  FALL       1
-\HeartbeatCounter:CounterUDB:sC32:counterdp:u3\/ci         datapathcell9       0  50023491  13945  FALL       1
+\HeartbeatCounter:CounterUDB:count_enable\/main_2          macrocell36      6372  50006372  13742  FALL       1
+\HeartbeatCounter:CounterUDB:count_enable\/q               macrocell36      3350  50009722  13742  FALL       1
+\HeartbeatCounter:CounterUDB:sC32:counterdp:u0\/cs_addr_1  datapathcell6    2242  50011964  13742  FALL       1
+\HeartbeatCounter:CounterUDB:sC32:counterdp:u0\/co_msb     datapathcell6    5130  50017094  13742  FALL       1
+\HeartbeatCounter:CounterUDB:sC32:counterdp:u1\/ci         datapathcell7       0  50017094  13742  FALL       1
+\HeartbeatCounter:CounterUDB:sC32:counterdp:u1\/co_msb     datapathcell7    3300  50020394  13742  FALL       1
+\HeartbeatCounter:CounterUDB:sC32:counterdp:u2\/ci         datapathcell8       0  50020394  13742  FALL       1
+\HeartbeatCounter:CounterUDB:sC32:counterdp:u2\/co_msb     datapathcell8    3300  50023694  13742  FALL       1
+\HeartbeatCounter:CounterUDB:sC32:counterdp:u3\/ci         datapathcell9       0  50023694  13742  FALL       1
 
 Capture Clock Path
 pin name                                                    model name      delay     AT  edge  Fanout
@@ -301,7 +301,7 @@ ClockBlock/clk_bus_glb                                      clockblockcell      
 Path Begin     : \HeartbeatCounter:CounterUDB:sCTRLReg:ctrlreg\/control_7
 Path End       : \HeartbeatCounter:CounterUDB:sC32:counterdp:u3\/ci
 Capture Clock  : \HeartbeatCounter:CounterUDB:sC32:counterdp:u3\/clock
-Path slack     : 10597p
+Path slack     : 11061p
 
 Capture Clock Arrival Time                             0
 + Clock path delay                                     0
@@ -312,9 +312,9 @@ End-of-path required time (ps)                     37437
 
 Launch Clock Arrival Time                       0
 + Clock path delay                          0
-+ Data path delay                       26839
++ Data path delay                       26376
 -------------------------------------   ----- 
-End-of-path arrival time (ps)           26839
+End-of-path arrival time (ps)           26376
  
 Launch Clock Path
 pin name                                                    model name      delay     AT  edge  Fanout
@@ -325,18 +325,18 @@ ClockBlock/clk_bus_glb                                      clockblockcell      
 Data path
 pin name                                                   model name     delay     AT  slack  edge  Fanout
 ---------------------------------------------------------  -------------  -----  -----  -----  ----  ------
-\HeartbeatCounter:CounterUDB:sCTRLReg:ctrlreg\/control_7   controlcell2    1210   1210  10597  RISE       1
-\HeartbeatCounter:CounterUDB:final_enable\/main_0          macrocell38     2251   3461  10597  RISE       1
-\HeartbeatCounter:CounterUDB:final_enable\/q               macrocell38     3350   6811  10597  RISE       1
-\HeartbeatCounter:CounterUDB:count_enable\/main_0          macrocell36     2242   9054  10597  RISE       1
-\HeartbeatCounter:CounterUDB:count_enable\/q               macrocell36     3350  12404  10597  RISE       1
-\HeartbeatCounter:CounterUDB:sC32:counterdp:u0\/cs_addr_1  datapathcell6   2706  15109  10597  RISE       1
-\HeartbeatCounter:CounterUDB:sC32:counterdp:u0\/co_msb     datapathcell6   5130  20239  10597  RISE       1
-\HeartbeatCounter:CounterUDB:sC32:counterdp:u1\/ci         datapathcell7      0  20239  10597  RISE       1
-\HeartbeatCounter:CounterUDB:sC32:counterdp:u1\/co_msb     datapathcell7   3300  23539  10597  RISE       1
-\HeartbeatCounter:CounterUDB:sC32:counterdp:u2\/ci         datapathcell8      0  23539  10597  RISE       1
-\HeartbeatCounter:CounterUDB:sC32:counterdp:u2\/co_msb     datapathcell8   3300  26839  10597  RISE       1
-\HeartbeatCounter:CounterUDB:sC32:counterdp:u3\/ci         datapathcell9      0  26839  10597  RISE       1
+\HeartbeatCounter:CounterUDB:sCTRLReg:ctrlreg\/control_7   controlcell2    1210   1210  11061  RISE       1
+\HeartbeatCounter:CounterUDB:final_enable\/main_0          macrocell38     2251   3461  11061  RISE       1
+\HeartbeatCounter:CounterUDB:final_enable\/q               macrocell38     3350   6811  11061  RISE       1
+\HeartbeatCounter:CounterUDB:count_enable\/main_0          macrocell36     2242   9054  11061  RISE       1
+\HeartbeatCounter:CounterUDB:count_enable\/q               macrocell36     3350  12404  11061  RISE       1
+\HeartbeatCounter:CounterUDB:sC32:counterdp:u0\/cs_addr_1  datapathcell6   2242  14646  11061  RISE       1
+\HeartbeatCounter:CounterUDB:sC32:counterdp:u0\/co_msb     datapathcell6   5130  19776  11061  RISE       1
+\HeartbeatCounter:CounterUDB:sC32:counterdp:u1\/ci         datapathcell7      0  19776  11061  RISE       1
+\HeartbeatCounter:CounterUDB:sC32:counterdp:u1\/co_msb     datapathcell7   3300  23076  11061  RISE       1
+\HeartbeatCounter:CounterUDB:sC32:counterdp:u2\/ci         datapathcell8      0  23076  11061  RISE       1
+\HeartbeatCounter:CounterUDB:sC32:counterdp:u2\/co_msb     datapathcell8   3300  26376  11061  RISE       1
+\HeartbeatCounter:CounterUDB:sC32:counterdp:u3\/ci         datapathcell9      0  26376  11061  RISE       1
 
 Capture Clock Path
 pin name                                                    model name      delay     AT  edge  Fanout
@@ -553,7 +553,7 @@ ClockBlock/dclk_glb_0                                      clockblockcell      0
 Path Begin     : \HeartbeatCounter:CounterUDB:sCTRLReg:ctrlreg\/control_7
 Path End       : \HeartbeatCounter:CounterUDB:sC32:counterdp:u3\/ci
 Capture Clock  : \HeartbeatCounter:CounterUDB:sC32:counterdp:u3\/clock
-Path slack     : 10597p
+Path slack     : 11061p
 
 Capture Clock Arrival Time                             0
 + Clock path delay                                     0
@@ -564,9 +564,9 @@ End-of-path required time (ps)                     37437
 
 Launch Clock Arrival Time                       0
 + Clock path delay                          0
-+ Data path delay                       26839
++ Data path delay                       26376
 -------------------------------------   ----- 
-End-of-path arrival time (ps)           26839
+End-of-path arrival time (ps)           26376
  
 Launch Clock Path
 pin name                                                    model name      delay     AT  edge  Fanout
@@ -577,18 +577,18 @@ ClockBlock/clk_bus_glb                                      clockblockcell      
 Data path
 pin name                                                   model name     delay     AT  slack  edge  Fanout
 ---------------------------------------------------------  -------------  -----  -----  -----  ----  ------
-\HeartbeatCounter:CounterUDB:sCTRLReg:ctrlreg\/control_7   controlcell2    1210   1210  10597  RISE       1
-\HeartbeatCounter:CounterUDB:final_enable\/main_0          macrocell38     2251   3461  10597  RISE       1
-\HeartbeatCounter:CounterUDB:final_enable\/q               macrocell38     3350   6811  10597  RISE       1
-\HeartbeatCounter:CounterUDB:count_enable\/main_0          macrocell36     2242   9054  10597  RISE       1
-\HeartbeatCounter:CounterUDB:count_enable\/q               macrocell36     3350  12404  10597  RISE       1
-\HeartbeatCounter:CounterUDB:sC32:counterdp:u0\/cs_addr_1  datapathcell6   2706  15109  10597  RISE       1
-\HeartbeatCounter:CounterUDB:sC32:counterdp:u0\/co_msb     datapathcell6   5130  20239  10597  RISE       1
-\HeartbeatCounter:CounterUDB:sC32:counterdp:u1\/ci         datapathcell7      0  20239  10597  RISE       1
-\HeartbeatCounter:CounterUDB:sC32:counterdp:u1\/co_msb     datapathcell7   3300  23539  10597  RISE       1
-\HeartbeatCounter:CounterUDB:sC32:counterdp:u2\/ci         datapathcell8      0  23539  10597  RISE       1
-\HeartbeatCounter:CounterUDB:sC32:counterdp:u2\/co_msb     datapathcell8   3300  26839  10597  RISE       1
-\HeartbeatCounter:CounterUDB:sC32:counterdp:u3\/ci         datapathcell9      0  26839  10597  RISE       1
+\HeartbeatCounter:CounterUDB:sCTRLReg:ctrlreg\/control_7   controlcell2    1210   1210  11061  RISE       1
+\HeartbeatCounter:CounterUDB:final_enable\/main_0          macrocell38     2251   3461  11061  RISE       1
+\HeartbeatCounter:CounterUDB:final_enable\/q               macrocell38     3350   6811  11061  RISE       1
+\HeartbeatCounter:CounterUDB:count_enable\/main_0          macrocell36     2242   9054  11061  RISE       1
+\HeartbeatCounter:CounterUDB:count_enable\/q               macrocell36     3350  12404  11061  RISE       1
+\HeartbeatCounter:CounterUDB:sC32:counterdp:u0\/cs_addr_1  datapathcell6   2242  14646  11061  RISE       1
+\HeartbeatCounter:CounterUDB:sC32:counterdp:u0\/co_msb     datapathcell6   5130  19776  11061  RISE       1
+\HeartbeatCounter:CounterUDB:sC32:counterdp:u1\/ci         datapathcell7      0  19776  11061  RISE       1
+\HeartbeatCounter:CounterUDB:sC32:counterdp:u1\/co_msb     datapathcell7   3300  23076  11061  RISE       1
+\HeartbeatCounter:CounterUDB:sC32:counterdp:u2\/ci         datapathcell8      0  23076  11061  RISE       1
+\HeartbeatCounter:CounterUDB:sC32:counterdp:u2\/co_msb     datapathcell8   3300  26376  11061  RISE       1
+\HeartbeatCounter:CounterUDB:sC32:counterdp:u3\/ci         datapathcell9      0  26376  11061  RISE       1
 
 Capture Clock Path
 pin name                                                    model name      delay     AT  edge  Fanout
@@ -789,7 +789,7 @@ ClockBlock/clk_bus_glb                                      clockblockcell      
 Path Begin     : \HeartbeatCounter:CounterUDB:sCTRLReg:ctrlreg\/control_7
 Path End       : \HeartbeatCounter:CounterUDB:sC32:counterdp:u2\/ci
 Capture Clock  : \HeartbeatCounter:CounterUDB:sC32:counterdp:u2\/clock
-Path slack     : 13897p
+Path slack     : 14361p
 
 Capture Clock Arrival Time                             0
 + Clock path delay                                     0
@@ -800,9 +800,9 @@ End-of-path required time (ps)                     37437
 
 Launch Clock Arrival Time                       0
 + Clock path delay                          0
-+ Data path delay                       23539
++ Data path delay                       23076
 -------------------------------------   ----- 
-End-of-path arrival time (ps)           23539
+End-of-path arrival time (ps)           23076
  
 Launch Clock Path
 pin name                                                    model name      delay     AT  edge  Fanout
@@ -813,16 +813,16 @@ ClockBlock/clk_bus_glb                                      clockblockcell      
 Data path
 pin name                                                   model name     delay     AT  slack  edge  Fanout
 ---------------------------------------------------------  -------------  -----  -----  -----  ----  ------
-\HeartbeatCounter:CounterUDB:sCTRLReg:ctrlreg\/control_7   controlcell2    1210   1210  10597  RISE       1
-\HeartbeatCounter:CounterUDB:final_enable\/main_0          macrocell38     2251   3461  10597  RISE       1
-\HeartbeatCounter:CounterUDB:final_enable\/q               macrocell38     3350   6811  10597  RISE       1
-\HeartbeatCounter:CounterUDB:count_enable\/main_0          macrocell36     2242   9054  10597  RISE       1
-\HeartbeatCounter:CounterUDB:count_enable\/q               macrocell36     3350  12404  10597  RISE       1
-\HeartbeatCounter:CounterUDB:sC32:counterdp:u0\/cs_addr_1  datapathcell6   2706  15109  10597  RISE       1
-\HeartbeatCounter:CounterUDB:sC32:counterdp:u0\/co_msb     datapathcell6   5130  20239  10597  RISE       1
-\HeartbeatCounter:CounterUDB:sC32:counterdp:u1\/ci         datapathcell7      0  20239  10597  RISE       1
-\HeartbeatCounter:CounterUDB:sC32:counterdp:u1\/co_msb     datapathcell7   3300  23539  10597  RISE       1
-\HeartbeatCounter:CounterUDB:sC32:counterdp:u2\/ci         datapathcell8      0  23539  13897  RISE       1
+\HeartbeatCounter:CounterUDB:sCTRLReg:ctrlreg\/control_7   controlcell2    1210   1210  11061  RISE       1
+\HeartbeatCounter:CounterUDB:final_enable\/main_0          macrocell38     2251   3461  11061  RISE       1
+\HeartbeatCounter:CounterUDB:final_enable\/q               macrocell38     3350   6811  11061  RISE       1
+\HeartbeatCounter:CounterUDB:count_enable\/main_0          macrocell36     2242   9054  11061  RISE       1
+\HeartbeatCounter:CounterUDB:count_enable\/q               macrocell36     3350  12404  11061  RISE       1
+\HeartbeatCounter:CounterUDB:sC32:counterdp:u0\/cs_addr_1  datapathcell6   2242  14646  11061  RISE       1
+\HeartbeatCounter:CounterUDB:sC32:counterdp:u0\/co_msb     datapathcell6   5130  19776  11061  RISE       1
+\HeartbeatCounter:CounterUDB:sC32:counterdp:u1\/ci         datapathcell7      0  19776  11061  RISE       1
+\HeartbeatCounter:CounterUDB:sC32:counterdp:u1\/co_msb     datapathcell7   3300  23076  11061  RISE       1
+\HeartbeatCounter:CounterUDB:sC32:counterdp:u2\/ci         datapathcell8      0  23076  14361  RISE       1
 
 Capture Clock Path
 pin name                                                    model name      delay     AT  edge  Fanout
@@ -930,52 +930,6 @@ ClockBlock/clk_bus_glb                                      clockblockcell      
 
 ++++ Path 12 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin     : \HeartbeatCounter:CounterUDB:sCTRLReg:ctrlreg\/control_7
-Path End       : \HeartbeatCounter:CounterUDB:sC32:counterdp:u1\/ci
-Capture Clock  : \HeartbeatCounter:CounterUDB:sC32:counterdp:u1\/clock
-Path slack     : 17197p
-
-Capture Clock Arrival Time                             0
-+ Clock path delay                                     0
-+ Cycle adjust (CyBUS_CLK:R#1 vs. CyBUS_CLK:R#2)   41667
-- Setup time                                       -4230
-------------------------------------------------   ----- 
-End-of-path required time (ps)                     37437
-
-Launch Clock Arrival Time                       0
-+ Clock path delay                          0
-+ Data path delay                       20239
--------------------------------------   ----- 
-End-of-path arrival time (ps)           20239
- 
-Launch Clock Path
-pin name                                                    model name      delay     AT  edge  Fanout
-----------------------------------------------------------  --------------  -----  -----  ----  ------
-ClockBlock/clk_bus_glb                                      clockblockcell      0      0  RISE       1
-\HeartbeatCounter:CounterUDB:sCTRLReg:ctrlreg\/clock        controlcell2        0      0  RISE       1
-
-Data path
-pin name                                                   model name     delay     AT  slack  edge  Fanout
----------------------------------------------------------  -------------  -----  -----  -----  ----  ------
-\HeartbeatCounter:CounterUDB:sCTRLReg:ctrlreg\/control_7   controlcell2    1210   1210  10597  RISE       1
-\HeartbeatCounter:CounterUDB:final_enable\/main_0          macrocell38     2251   3461  10597  RISE       1
-\HeartbeatCounter:CounterUDB:final_enable\/q               macrocell38     3350   6811  10597  RISE       1
-\HeartbeatCounter:CounterUDB:count_enable\/main_0          macrocell36     2242   9054  10597  RISE       1
-\HeartbeatCounter:CounterUDB:count_enable\/q               macrocell36     3350  12404  10597  RISE       1
-\HeartbeatCounter:CounterUDB:sC32:counterdp:u0\/cs_addr_1  datapathcell6   2706  15109  10597  RISE       1
-\HeartbeatCounter:CounterUDB:sC32:counterdp:u0\/co_msb     datapathcell6   5130  20239  10597  RISE       1
-\HeartbeatCounter:CounterUDB:sC32:counterdp:u1\/ci         datapathcell7      0  20239  17197  RISE       1
-
-Capture Clock Path
-pin name                                                    model name      delay     AT  edge  Fanout
-----------------------------------------------------------  --------------  -----  -----  ----  ------
-ClockBlock/clk_bus_glb                                      clockblockcell      0      0  RISE       1
-\HeartbeatCounter:CounterUDB:sC32:counterdp:u1\/clock       datapathcell7       0      0  RISE       1
-
-
-
-++++ Path 13 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
-
 Path Begin     : \PWM:PWMUDB:dith_count_0\/q
 Path End       : \PWM:PWMUDB:dith_count_1\/main_0
 Capture Clock  : \PWM:PWMUDB:dith_count_1\/clock_0
@@ -1017,6 +971,52 @@ pin name                                                    model name      dela
 ----------------------------------------------------------  --------------  -----  -----  ----  ------
 ClockBlock/clk_bus_glb                                      clockblockcell      0      0  RISE       1
 \PWM:PWMUDB:dith_count_1\/clock_0                           macrocell52         0      0  RISE       1
+
+
+
+++++ Path 13 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin     : \HeartbeatCounter:CounterUDB:sCTRLReg:ctrlreg\/control_7
+Path End       : \HeartbeatCounter:CounterUDB:sC32:counterdp:u1\/ci
+Capture Clock  : \HeartbeatCounter:CounterUDB:sC32:counterdp:u1\/clock
+Path slack     : 17661p
+
+Capture Clock Arrival Time                             0
++ Clock path delay                                     0
++ Cycle adjust (CyBUS_CLK:R#1 vs. CyBUS_CLK:R#2)   41667
+- Setup time                                       -4230
+------------------------------------------------   ----- 
+End-of-path required time (ps)                     37437
+
+Launch Clock Arrival Time                       0
++ Clock path delay                          0
++ Data path delay                       19776
+-------------------------------------   ----- 
+End-of-path arrival time (ps)           19776
+ 
+Launch Clock Path
+pin name                                                    model name      delay     AT  edge  Fanout
+----------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/clk_bus_glb                                      clockblockcell      0      0  RISE       1
+\HeartbeatCounter:CounterUDB:sCTRLReg:ctrlreg\/clock        controlcell2        0      0  RISE       1
+
+Data path
+pin name                                                   model name     delay     AT  slack  edge  Fanout
+---------------------------------------------------------  -------------  -----  -----  -----  ----  ------
+\HeartbeatCounter:CounterUDB:sCTRLReg:ctrlreg\/control_7   controlcell2    1210   1210  11061  RISE       1
+\HeartbeatCounter:CounterUDB:final_enable\/main_0          macrocell38     2251   3461  11061  RISE       1
+\HeartbeatCounter:CounterUDB:final_enable\/q               macrocell38     3350   6811  11061  RISE       1
+\HeartbeatCounter:CounterUDB:count_enable\/main_0          macrocell36     2242   9054  11061  RISE       1
+\HeartbeatCounter:CounterUDB:count_enable\/q               macrocell36     3350  12404  11061  RISE       1
+\HeartbeatCounter:CounterUDB:sC32:counterdp:u0\/cs_addr_1  datapathcell6   2242  14646  11061  RISE       1
+\HeartbeatCounter:CounterUDB:sC32:counterdp:u0\/co_msb     datapathcell6   5130  19776  11061  RISE       1
+\HeartbeatCounter:CounterUDB:sC32:counterdp:u1\/ci         datapathcell7      0  19776  17661  RISE       1
+
+Capture Clock Path
+pin name                                                    model name      delay     AT  edge  Fanout
+----------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/clk_bus_glb                                      clockblockcell      0      0  RISE       1
+\HeartbeatCounter:CounterUDB:sC32:counterdp:u1\/clock       datapathcell7       0      0  RISE       1
 
 
 
@@ -1110,50 +1110,6 @@ ClockBlock/dclk_glb_0                                      clockblockcell      0
 
 ++++ Path 16 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-Path Begin     : \HeartbeatCounter:CounterUDB:sCTRLReg:ctrlreg\/control_7
-Path End       : \HeartbeatCounter:CounterUDB:sC32:counterdp:u2\/cs_addr_1
-Capture Clock  : \HeartbeatCounter:CounterUDB:sC32:counterdp:u2\/clock
-Path slack     : 19565p
-
-Capture Clock Arrival Time                             0
-+ Clock path delay                                     0
-+ Cycle adjust (CyBUS_CLK:R#1 vs. CyBUS_CLK:R#2)   41667
-- Setup time                                       -6060
-------------------------------------------------   ----- 
-End-of-path required time (ps)                     35607
-
-Launch Clock Arrival Time                       0
-+ Clock path delay                          0
-+ Data path delay                       16042
--------------------------------------   ----- 
-End-of-path arrival time (ps)           16042
- 
-Launch Clock Path
-pin name                                                    model name      delay     AT  edge  Fanout
-----------------------------------------------------------  --------------  -----  -----  ----  ------
-ClockBlock/clk_bus_glb                                      clockblockcell      0      0  RISE       1
-\HeartbeatCounter:CounterUDB:sCTRLReg:ctrlreg\/clock        controlcell2        0      0  RISE       1
-
-Data path
-pin name                                                   model name     delay     AT  slack  edge  Fanout
----------------------------------------------------------  -------------  -----  -----  -----  ----  ------
-\HeartbeatCounter:CounterUDB:sCTRLReg:ctrlreg\/control_7   controlcell2    1210   1210  10597  RISE       1
-\HeartbeatCounter:CounterUDB:final_enable\/main_0          macrocell38     2251   3461  10597  RISE       1
-\HeartbeatCounter:CounterUDB:final_enable\/q               macrocell38     3350   6811  10597  RISE       1
-\HeartbeatCounter:CounterUDB:count_enable\/main_0          macrocell36     2242   9054  10597  RISE       1
-\HeartbeatCounter:CounterUDB:count_enable\/q               macrocell36     3350  12404  10597  RISE       1
-\HeartbeatCounter:CounterUDB:sC32:counterdp:u2\/cs_addr_1  datapathcell8   3638  16042  19565  RISE       1
-
-Capture Clock Path
-pin name                                                    model name      delay     AT  edge  Fanout
-----------------------------------------------------------  --------------  -----  -----  ----  ------
-ClockBlock/clk_bus_glb                                      clockblockcell      0      0  RISE       1
-\HeartbeatCounter:CounterUDB:sC32:counterdp:u2\/clock       datapathcell8       0      0  RISE       1
-
-
-
-++++ Path 17 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
-
 Path Begin     : \WDT_Timer:TimerUDB:sCTRLReg:SyncCtl:ctrlreg\/control_7
 Path End       : \WDT_Timer:TimerUDB:sT24:timerdp:u2\/cs_addr_1
 Capture Clock  : \WDT_Timer:TimerUDB:sT24:timerdp:u2\/clock
@@ -1196,51 +1152,7 @@ ClockBlock/clk_bus_glb                                      clockblockcell      
 
 
 
-++++ Path 18 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
-
-Path Begin     : \HeartbeatCounter:CounterUDB:sCTRLReg:ctrlreg\/control_7
-Path End       : \HeartbeatCounter:CounterUDB:sC32:counterdp:u3\/cs_addr_1
-Capture Clock  : \HeartbeatCounter:CounterUDB:sC32:counterdp:u3\/clock
-Path slack     : 19579p
-
-Capture Clock Arrival Time                             0
-+ Clock path delay                                     0
-+ Cycle adjust (CyBUS_CLK:R#1 vs. CyBUS_CLK:R#2)   41667
-- Setup time                                       -6060
-------------------------------------------------   ----- 
-End-of-path required time (ps)                     35607
-
-Launch Clock Arrival Time                       0
-+ Clock path delay                          0
-+ Data path delay                       16028
--------------------------------------   ----- 
-End-of-path arrival time (ps)           16028
- 
-Launch Clock Path
-pin name                                                    model name      delay     AT  edge  Fanout
-----------------------------------------------------------  --------------  -----  -----  ----  ------
-ClockBlock/clk_bus_glb                                      clockblockcell      0      0  RISE       1
-\HeartbeatCounter:CounterUDB:sCTRLReg:ctrlreg\/clock        controlcell2        0      0  RISE       1
-
-Data path
-pin name                                                   model name     delay     AT  slack  edge  Fanout
----------------------------------------------------------  -------------  -----  -----  -----  ----  ------
-\HeartbeatCounter:CounterUDB:sCTRLReg:ctrlreg\/control_7   controlcell2    1210   1210  10597  RISE       1
-\HeartbeatCounter:CounterUDB:final_enable\/main_0          macrocell38     2251   3461  10597  RISE       1
-\HeartbeatCounter:CounterUDB:final_enable\/q               macrocell38     3350   6811  10597  RISE       1
-\HeartbeatCounter:CounterUDB:count_enable\/main_0          macrocell36     2242   9054  10597  RISE       1
-\HeartbeatCounter:CounterUDB:count_enable\/q               macrocell36     3350  12404  10597  RISE       1
-\HeartbeatCounter:CounterUDB:sC32:counterdp:u3\/cs_addr_1  datapathcell9   3624  16028  19579  RISE       1
-
-Capture Clock Path
-pin name                                                    model name      delay     AT  edge  Fanout
-----------------------------------------------------------  --------------  -----  -----  ----  ------
-ClockBlock/clk_bus_glb                                      clockblockcell      0      0  RISE       1
-\HeartbeatCounter:CounterUDB:sC32:counterdp:u3\/clock       datapathcell9       0      0  RISE       1
-
-
-
-++++ Path 19 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+++++ Path 17 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
 Path Begin     : \HeartbeatCounter:CounterUDB:sC32:counterdp:u0\/z0
 Path End       : \HeartbeatCounter:CounterUDB:sSTSReg:stsreg\/status_3
@@ -1290,7 +1202,7 @@ ClockBlock/clk_bus_glb                                      clockblockcell      
 
 
 
-++++ Path 20 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+++++ Path 18 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
 Path Begin     : \CapSense:MeasureCH0:UDB:Window:u0\/z0_comb
 Path End       : \CapSense:MeasureCH0:wndState_1\/main_0
@@ -1331,6 +1243,94 @@ pin name                                                   model name      delay
 ---------------------------------------------------------  --------------  -----  -----  ----  ------
 ClockBlock/dclk_glb_0                                      clockblockcell      0      0  RISE       1
 \CapSense:MeasureCH0:wndState_1\/clock_0                   macrocell27         0      0  RISE       1
+
+
+
+++++ Path 19 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin     : \HeartbeatCounter:CounterUDB:sCTRLReg:ctrlreg\/control_7
+Path End       : \HeartbeatCounter:CounterUDB:sC32:counterdp:u2\/cs_addr_1
+Capture Clock  : \HeartbeatCounter:CounterUDB:sC32:counterdp:u2\/clock
+Path slack     : 19899p
+
+Capture Clock Arrival Time                             0
++ Clock path delay                                     0
++ Cycle adjust (CyBUS_CLK:R#1 vs. CyBUS_CLK:R#2)   41667
+- Setup time                                       -6060
+------------------------------------------------   ----- 
+End-of-path required time (ps)                     35607
+
+Launch Clock Arrival Time                       0
++ Clock path delay                          0
++ Data path delay                       15708
+-------------------------------------   ----- 
+End-of-path arrival time (ps)           15708
+ 
+Launch Clock Path
+pin name                                                    model name      delay     AT  edge  Fanout
+----------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/clk_bus_glb                                      clockblockcell      0      0  RISE       1
+\HeartbeatCounter:CounterUDB:sCTRLReg:ctrlreg\/clock        controlcell2        0      0  RISE       1
+
+Data path
+pin name                                                   model name     delay     AT  slack  edge  Fanout
+---------------------------------------------------------  -------------  -----  -----  -----  ----  ------
+\HeartbeatCounter:CounterUDB:sCTRLReg:ctrlreg\/control_7   controlcell2    1210   1210  11061  RISE       1
+\HeartbeatCounter:CounterUDB:final_enable\/main_0          macrocell38     2251   3461  11061  RISE       1
+\HeartbeatCounter:CounterUDB:final_enable\/q               macrocell38     3350   6811  11061  RISE       1
+\HeartbeatCounter:CounterUDB:count_enable\/main_0          macrocell36     2242   9054  11061  RISE       1
+\HeartbeatCounter:CounterUDB:count_enable\/q               macrocell36     3350  12404  11061  RISE       1
+\HeartbeatCounter:CounterUDB:sC32:counterdp:u2\/cs_addr_1  datapathcell8   3304  15708  19899  RISE       1
+
+Capture Clock Path
+pin name                                                    model name      delay     AT  edge  Fanout
+----------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/clk_bus_glb                                      clockblockcell      0      0  RISE       1
+\HeartbeatCounter:CounterUDB:sC32:counterdp:u2\/clock       datapathcell8       0      0  RISE       1
+
+
+
+++++ Path 20 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin     : \HeartbeatCounter:CounterUDB:sCTRLReg:ctrlreg\/control_7
+Path End       : \HeartbeatCounter:CounterUDB:sC32:counterdp:u3\/cs_addr_1
+Capture Clock  : \HeartbeatCounter:CounterUDB:sC32:counterdp:u3\/clock
+Path slack     : 20042p
+
+Capture Clock Arrival Time                             0
++ Clock path delay                                     0
++ Cycle adjust (CyBUS_CLK:R#1 vs. CyBUS_CLK:R#2)   41667
+- Setup time                                       -6060
+------------------------------------------------   ----- 
+End-of-path required time (ps)                     35607
+
+Launch Clock Arrival Time                       0
++ Clock path delay                          0
++ Data path delay                       15565
+-------------------------------------   ----- 
+End-of-path arrival time (ps)           15565
+ 
+Launch Clock Path
+pin name                                                    model name      delay     AT  edge  Fanout
+----------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/clk_bus_glb                                      clockblockcell      0      0  RISE       1
+\HeartbeatCounter:CounterUDB:sCTRLReg:ctrlreg\/clock        controlcell2        0      0  RISE       1
+
+Data path
+pin name                                                   model name     delay     AT  slack  edge  Fanout
+---------------------------------------------------------  -------------  -----  -----  -----  ----  ------
+\HeartbeatCounter:CounterUDB:sCTRLReg:ctrlreg\/control_7   controlcell2    1210   1210  11061  RISE       1
+\HeartbeatCounter:CounterUDB:final_enable\/main_0          macrocell38     2251   3461  11061  RISE       1
+\HeartbeatCounter:CounterUDB:final_enable\/q               macrocell38     3350   6811  11061  RISE       1
+\HeartbeatCounter:CounterUDB:count_enable\/main_0          macrocell36     2242   9054  11061  RISE       1
+\HeartbeatCounter:CounterUDB:count_enable\/q               macrocell36     3350  12404  11061  RISE       1
+\HeartbeatCounter:CounterUDB:sC32:counterdp:u3\/cs_addr_1  datapathcell9   3161  15565  20042  RISE       1
+
+Capture Clock Path
+pin name                                                    model name      delay     AT  edge  Fanout
+----------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/clk_bus_glb                                      clockblockcell      0      0  RISE       1
+\HeartbeatCounter:CounterUDB:sC32:counterdp:u3\/clock       datapathcell9       0      0  RISE       1
 
 
 
@@ -1427,7 +1427,7 @@ ClockBlock/clk_bus_glb                                      clockblockcell      
 Path Begin     : \HeartbeatCounter:CounterUDB:sCTRLReg:ctrlreg\/control_7
 Path End       : \HeartbeatCounter:CounterUDB:sC32:counterdp:u1\/cs_addr_1
 Capture Clock  : \HeartbeatCounter:CounterUDB:sC32:counterdp:u1\/clock
-Path slack     : 20484p
+Path slack     : 20664p
 
 Capture Clock Arrival Time                             0
 + Clock path delay                                     0
@@ -1438,9 +1438,9 @@ End-of-path required time (ps)                     35607
 
 Launch Clock Arrival Time                       0
 + Clock path delay                          0
-+ Data path delay                       15123
++ Data path delay                       14942
 -------------------------------------   ----- 
-End-of-path arrival time (ps)           15123
+End-of-path arrival time (ps)           14942
  
 Launch Clock Path
 pin name                                                    model name      delay     AT  edge  Fanout
@@ -1451,12 +1451,12 @@ ClockBlock/clk_bus_glb                                      clockblockcell      
 Data path
 pin name                                                   model name     delay     AT  slack  edge  Fanout
 ---------------------------------------------------------  -------------  -----  -----  -----  ----  ------
-\HeartbeatCounter:CounterUDB:sCTRLReg:ctrlreg\/control_7   controlcell2    1210   1210  10597  RISE       1
-\HeartbeatCounter:CounterUDB:final_enable\/main_0          macrocell38     2251   3461  10597  RISE       1
-\HeartbeatCounter:CounterUDB:final_enable\/q               macrocell38     3350   6811  10597  RISE       1
-\HeartbeatCounter:CounterUDB:count_enable\/main_0          macrocell36     2242   9054  10597  RISE       1
-\HeartbeatCounter:CounterUDB:count_enable\/q               macrocell36     3350  12404  10597  RISE       1
-\HeartbeatCounter:CounterUDB:sC32:counterdp:u1\/cs_addr_1  datapathcell7   2719  15123  20484  RISE       1
+\HeartbeatCounter:CounterUDB:sCTRLReg:ctrlreg\/control_7   controlcell2    1210   1210  11061  RISE       1
+\HeartbeatCounter:CounterUDB:final_enable\/main_0          macrocell38     2251   3461  11061  RISE       1
+\HeartbeatCounter:CounterUDB:final_enable\/q               macrocell38     3350   6811  11061  RISE       1
+\HeartbeatCounter:CounterUDB:count_enable\/main_0          macrocell36     2242   9054  11061  RISE       1
+\HeartbeatCounter:CounterUDB:count_enable\/q               macrocell36     3350  12404  11061  RISE       1
+\HeartbeatCounter:CounterUDB:sC32:counterdp:u1\/cs_addr_1  datapathcell7   2539  14942  20664  RISE       1
 
 Capture Clock Path
 pin name                                                    model name      delay     AT  edge  Fanout
@@ -1467,50 +1467,6 @@ ClockBlock/clk_bus_glb                                      clockblockcell      
 
 
 ++++ Path 24 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
-
-Path Begin     : \HeartbeatCounter:CounterUDB:sCTRLReg:ctrlreg\/control_7
-Path End       : \HeartbeatCounter:CounterUDB:sC32:counterdp:u0\/cs_addr_1
-Capture Clock  : \HeartbeatCounter:CounterUDB:sC32:counterdp:u0\/clock
-Path slack     : 20497p
-
-Capture Clock Arrival Time                             0
-+ Clock path delay                                     0
-+ Cycle adjust (CyBUS_CLK:R#1 vs. CyBUS_CLK:R#2)   41667
-- Setup time                                       -6060
-------------------------------------------------   ----- 
-End-of-path required time (ps)                     35607
-
-Launch Clock Arrival Time                       0
-+ Clock path delay                          0
-+ Data path delay                       15109
--------------------------------------   ----- 
-End-of-path arrival time (ps)           15109
- 
-Launch Clock Path
-pin name                                                    model name      delay     AT  edge  Fanout
-----------------------------------------------------------  --------------  -----  -----  ----  ------
-ClockBlock/clk_bus_glb                                      clockblockcell      0      0  RISE       1
-\HeartbeatCounter:CounterUDB:sCTRLReg:ctrlreg\/clock        controlcell2        0      0  RISE       1
-
-Data path
-pin name                                                   model name     delay     AT  slack  edge  Fanout
----------------------------------------------------------  -------------  -----  -----  -----  ----  ------
-\HeartbeatCounter:CounterUDB:sCTRLReg:ctrlreg\/control_7   controlcell2    1210   1210  10597  RISE       1
-\HeartbeatCounter:CounterUDB:final_enable\/main_0          macrocell38     2251   3461  10597  RISE       1
-\HeartbeatCounter:CounterUDB:final_enable\/q               macrocell38     3350   6811  10597  RISE       1
-\HeartbeatCounter:CounterUDB:count_enable\/main_0          macrocell36     2242   9054  10597  RISE       1
-\HeartbeatCounter:CounterUDB:count_enable\/q               macrocell36     3350  12404  10597  RISE       1
-\HeartbeatCounter:CounterUDB:sC32:counterdp:u0\/cs_addr_1  datapathcell6   2706  15109  20497  RISE       1
-
-Capture Clock Path
-pin name                                                    model name      delay     AT  edge  Fanout
-----------------------------------------------------------  --------------  -----  -----  ----  ------
-ClockBlock/clk_bus_glb                                      clockblockcell      0      0  RISE       1
-\HeartbeatCounter:CounterUDB:sC32:counterdp:u0\/clock       datapathcell6       0      0  RISE       1
-
-
-
-++++ Path 25 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
 Path Begin     : \PWM:PWMUDB:sP16:pwmdp:u0\/cl0
 Path End       : Net_1668/main_0
@@ -1553,6 +1509,50 @@ pin name                                                    model name      dela
 ----------------------------------------------------------  --------------  -----  -----  ----  ------
 ClockBlock/clk_bus_glb                                      clockblockcell      0      0  RISE       1
 Net_1668/clock_0                                            macrocell2          0      0  RISE       1
+
+
+
+++++ Path 25 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin     : \HeartbeatCounter:CounterUDB:sCTRLReg:ctrlreg\/control_7
+Path End       : \HeartbeatCounter:CounterUDB:sC32:counterdp:u0\/cs_addr_1
+Capture Clock  : \HeartbeatCounter:CounterUDB:sC32:counterdp:u0\/clock
+Path slack     : 20961p
+
+Capture Clock Arrival Time                             0
++ Clock path delay                                     0
++ Cycle adjust (CyBUS_CLK:R#1 vs. CyBUS_CLK:R#2)   41667
+- Setup time                                       -6060
+------------------------------------------------   ----- 
+End-of-path required time (ps)                     35607
+
+Launch Clock Arrival Time                       0
++ Clock path delay                          0
++ Data path delay                       14646
+-------------------------------------   ----- 
+End-of-path arrival time (ps)           14646
+ 
+Launch Clock Path
+pin name                                                    model name      delay     AT  edge  Fanout
+----------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/clk_bus_glb                                      clockblockcell      0      0  RISE       1
+\HeartbeatCounter:CounterUDB:sCTRLReg:ctrlreg\/clock        controlcell2        0      0  RISE       1
+
+Data path
+pin name                                                   model name     delay     AT  slack  edge  Fanout
+---------------------------------------------------------  -------------  -----  -----  -----  ----  ------
+\HeartbeatCounter:CounterUDB:sCTRLReg:ctrlreg\/control_7   controlcell2    1210   1210  11061  RISE       1
+\HeartbeatCounter:CounterUDB:final_enable\/main_0          macrocell38     2251   3461  11061  RISE       1
+\HeartbeatCounter:CounterUDB:final_enable\/q               macrocell38     3350   6811  11061  RISE       1
+\HeartbeatCounter:CounterUDB:count_enable\/main_0          macrocell36     2242   9054  11061  RISE       1
+\HeartbeatCounter:CounterUDB:count_enable\/q               macrocell36     3350  12404  11061  RISE       1
+\HeartbeatCounter:CounterUDB:sC32:counterdp:u0\/cs_addr_1  datapathcell6   2242  14646  20961  RISE       1
+
+Capture Clock Path
+pin name                                                    model name      delay     AT  edge  Fanout
+----------------------------------------------------------  --------------  -----  -----  ----  ------
+ClockBlock/clk_bus_glb                                      clockblockcell      0      0  RISE       1
+\HeartbeatCounter:CounterUDB:sC32:counterdp:u0\/clock       datapathcell6       0      0  RISE       1
 
 
 
@@ -3139,7 +3139,7 @@ ClockBlock/dclk_glb_0                                      clockblockcell      0
 Path Begin     : ClockBlock/dclk_1
 Path End       : \HeartbeatCounter:CounterUDB:count_stored_i\/main_0
 Capture Clock  : \HeartbeatCounter:CounterUDB:count_stored_i\/clock_0
-Path slack     : 32446p
+Path slack     : 31792p
 
 Capture Clock Arrival Time                                               0
 + Clock path delay                                                       0
@@ -3150,15 +3150,15 @@ End-of-path required time (ps)                                    50038157
 
 Launch Clock Arrival Time                   50000000
 + Clock path delay                             0
-+ Data path delay                           5710
++ Data path delay                           6365
 -------------------------------------   -------- 
-End-of-path arrival time (ps)           50005710
+End-of-path arrival time (ps)           50006365
  
 Data path
 pin name                                             model name      delay        AT  slack  edge  Fanout
 ---------------------------------------------------  --------------  -----  --------  -----  ----  ------
 ClockBlock/dclk_1                                    clockblockcell      0  50000000   COMP  FALL       1
-\HeartbeatCounter:CounterUDB:count_stored_i\/main_0  macrocell37      5710  50005710  32446  FALL       1
+\HeartbeatCounter:CounterUDB:count_stored_i\/main_0  macrocell37      6365  50006365  31792  FALL       1
 
 Capture Clock Path
 pin name                                                    model name      delay     AT  edge  Fanout
@@ -3173,7 +3173,7 @@ ClockBlock/clk_bus_glb                                      clockblockcell      
 Path Begin     : ClockBlock_100k__SYNC_1/out
 Path End       : \WDT_Timer:TimerUDB:sT24:timerdp:u0\/clk_en
 Capture Clock  : \WDT_Timer:TimerUDB:sT24:timerdp:u0\/clock
-Path slack     : 32884p
+Path slack     : 32890p
 
 Capture Clock Arrival Time                             0
 + Clock path delay                                     0
@@ -3184,9 +3184,9 @@ End-of-path required time (ps)                     39567
 
 Launch Clock Arrival Time                      0
 + Clock path delay                         0
-+ Data path delay                       6683
++ Data path delay                       6677
 -------------------------------------   ---- 
-End-of-path arrival time (ps)           6683
+End-of-path arrival time (ps)           6677
  
 Launch Clock Path
 pin name                                                    model name      delay     AT  edge  Fanout
@@ -3197,8 +3197,8 @@ ClockBlock_100k__SYNC_1/clock                               synccell            
 Data path
 pin name                                     model name      delay     AT  slack  edge  Fanout
 -------------------------------------------  --------------  -----  -----  -----  ----  ------
-ClockBlock_100k__SYNC_1/out                  synccell         1020   1020  32884  RISE       1
-\WDT_Timer:TimerUDB:sT24:timerdp:u0\/clk_en  datapathcell12   5663   6683  32884  RISE       1
+ClockBlock_100k__SYNC_1/out                  synccell         1020   1020  32890  RISE       1
+\WDT_Timer:TimerUDB:sT24:timerdp:u0\/clk_en  datapathcell12   5657   6677  32890  RISE       1
 
 Capture Clock Path
 pin name                                                    model name      delay     AT  edge  Fanout
@@ -3517,7 +3517,7 @@ ClockBlock_100k__SYNC_1/clock                               synccell            
 Data path
 pin name                                     model name      delay     AT  slack  edge  Fanout
 -------------------------------------------  --------------  -----  -----  -----  ----  ------
-ClockBlock_100k__SYNC_1/out                  synccell         1020   1020  32884  RISE       1
+ClockBlock_100k__SYNC_1/out                  synccell         1020   1020  32890  RISE       1
 \WDT_Timer:TimerUDB:sT24:timerdp:u1\/clk_en  datapathcell13   5101   6121  33445  RISE       1
 
 Capture Clock Path
@@ -3733,7 +3733,7 @@ ClockBlock/clk_bus_glb                                      clockblockcell      
 Path Begin     : ClockBlock_100k__SYNC_2/out
 Path End       : \WDT_Timer:TimerUDB:sCTRLReg:SyncCtl:ctrlreg\/clk_en
 Capture Clock  : \WDT_Timer:TimerUDB:sCTRLReg:SyncCtl:ctrlreg\/clock
-Path slack     : 34881p
+Path slack     : 34861p
 
 Capture Clock Arrival Time                             0
 + Clock path delay                                     0
@@ -3744,9 +3744,9 @@ End-of-path required time (ps)                     39567
 
 Launch Clock Arrival Time                      0
 + Clock path delay                         0
-+ Data path delay                       4685
++ Data path delay                       4706
 -------------------------------------   ---- 
-End-of-path arrival time (ps)           4685
+End-of-path arrival time (ps)           4706
  
 Launch Clock Path
 pin name                                                    model name      delay     AT  edge  Fanout
@@ -3757,8 +3757,8 @@ ClockBlock_100k__SYNC_2/clock                               synccell            
 Data path
 pin name                                              model name    delay     AT  slack  edge  Fanout
 ----------------------------------------------------  ------------  -----  -----  -----  ----  ------
-ClockBlock_100k__SYNC_2/out                           synccell       1020   1020  34881  RISE       1
-\WDT_Timer:TimerUDB:sCTRLReg:SyncCtl:ctrlreg\/clk_en  controlcell4   3665   4685  34881  RISE       1
+ClockBlock_100k__SYNC_2/out                           synccell       1020   1020  34861  RISE       1
+\WDT_Timer:TimerUDB:sCTRLReg:SyncCtl:ctrlreg\/clk_en  controlcell4   3686   4706  34861  RISE       1
 
 Capture Clock Path
 pin name                                                    model name      delay     AT  edge  Fanout
@@ -3797,7 +3797,7 @@ ClockBlock_100k__SYNC_1/clock                               synccell            
 Data path
 pin name                     model name   delay     AT  slack  edge  Fanout
 ---------------------------  -----------  -----  -----  -----  ----  ------
-ClockBlock_100k__SYNC_1/out  synccell      1020   1020  32884  RISE       1
+ClockBlock_100k__SYNC_1/out  synccell      1020   1020  32890  RISE       1
 Net_1804/clk_en              macrocell3    3219   4239  35328  RISE       1
 
 Capture Clock Path
@@ -3837,7 +3837,7 @@ ClockBlock_100k__SYNC_1/clock                               synccell            
 Data path
 pin name                                  model name   delay     AT  slack  edge  Fanout
 ----------------------------------------  -----------  -----  -----  -----  ----  ------
-ClockBlock_100k__SYNC_1/out               synccell      1020   1020  32884  RISE       1
+ClockBlock_100k__SYNC_1/out               synccell      1020   1020  32890  RISE       1
 \WDT_Timer:TimerUDB:hwEnable_reg\/clk_en  macrocell65   3219   4239  35328  RISE       1
 
 Capture Clock Path
@@ -3877,7 +3877,7 @@ ClockBlock_100k__SYNC_1/clock                               synccell            
 Data path
 pin name                                   model name    delay     AT  slack  edge  Fanout
 -----------------------------------------  ------------  -----  -----  -----  ----  ------
-ClockBlock_100k__SYNC_1/out                synccell       1020   1020  32884  RISE       1
+ClockBlock_100k__SYNC_1/out                synccell       1020   1020  32890  RISE       1
 \WDT_Timer:TimerUDB:rstSts:stsreg\/clk_en  statusicell2   3219   4239  35328  RISE       1
 
 Capture Clock Path
@@ -3917,7 +3917,7 @@ ClockBlock_100k__SYNC_1/clock                               synccell            
 Data path
 pin name                                     model name      delay     AT  slack  edge  Fanout
 -------------------------------------------  --------------  -----  -----  -----  ----  ------
-ClockBlock_100k__SYNC_1/out                  synccell         1020   1020  32884  RISE       1
+ClockBlock_100k__SYNC_1/out                  synccell         1020   1020  32890  RISE       1
 \WDT_Timer:TimerUDB:sT24:timerdp:u2\/clk_en  datapathcell14   3219   4239  35328  RISE       1
 
 Capture Clock Path
@@ -3997,7 +3997,7 @@ ClockBlock_100k__SYNC_1/clock                               synccell            
 Data path
 pin name                                       model name   delay     AT  slack  edge  Fanout
 ---------------------------------------------  -----------  -----  -----  -----  ----  ------
-ClockBlock_100k__SYNC_1/out                    synccell      1020   1020  32884  RISE       1
+ClockBlock_100k__SYNC_1/out                    synccell      1020   1020  32890  RISE       1
 \WDT_Timer:TimerUDB:capture_out_reg_i\/clk_en  macrocell64   2292   3312  36255  RISE       1
 
 Capture Clock Path

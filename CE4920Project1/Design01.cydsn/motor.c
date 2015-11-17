@@ -14,7 +14,6 @@
 
 void Start_motor(){
     PWM_Start();
-//    Move_motor(100);
 }
 
 void Motor_rampUp(int topSpeed){
@@ -45,7 +44,6 @@ void Motor_stop(){
         CyDelay(delay);
     }
     Move_motor(0);          // just to ensure it's stopped
-    LCD_Position(1,0);
 }
 
 void Move_motor(int motorSpeed){

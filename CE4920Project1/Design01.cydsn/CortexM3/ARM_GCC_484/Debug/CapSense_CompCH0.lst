@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cc9veeWM.s 			page 1
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccFXYMmI.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cc9veeWM.s 			page 1
   30:.\Generated_Source\PSoC5/CapSense_CompCH0.c **** /* variable to decide whether or not to restore the control register in 
   31:.\Generated_Source\PSoC5/CapSense_CompCH0.c ****    Enable() API for PSoC5A only */
   32:.\Generated_Source\PSoC5/CapSense_CompCH0.c **** #if (CY_PSOC5A)
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cc9veeWM.s 			page 2
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccFXYMmI.s 			page 2
 
 
   33:.\Generated_Source\PSoC5/CapSense_CompCH0.c ****     static uint8 CapSense_CompCH0_restoreReg = 0u;
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cc9veeWM.s 			page 1
   87:.\Generated_Source\PSoC5/CapSense_CompCH0.c **** ********************************************************************************
   88:.\Generated_Source\PSoC5/CapSense_CompCH0.c **** *
   89:.\Generated_Source\PSoC5/CapSense_CompCH0.c **** * Summary:
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cc9veeWM.s 			page 3
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccFXYMmI.s 			page 3
 
 
   90:.\Generated_Source\PSoC5/CapSense_CompCH0.c **** *  Enable the Comparator
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cc9veeWM.s 			page 1
  144:.\Generated_Source\PSoC5/CapSense_CompCH0.c ****     }   
  145:.\Generated_Source\PSoC5/CapSense_CompCH0.c **** 
  146:.\Generated_Source\PSoC5/CapSense_CompCH0.c ****     /* Enable power to comparator */
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cc9veeWM.s 			page 4
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccFXYMmI.s 			page 4
 
 
  147:.\Generated_Source\PSoC5/CapSense_CompCH0.c ****     CapSense_CompCH0_Enable();    
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cc9veeWM.s 			page 1
  201:.\Generated_Source\PSoC5/CapSense_CompCH0.c ****                            (speed & CapSense_CompCH0_PWR_MODE_MASK);
  202:.\Generated_Source\PSoC5/CapSense_CompCH0.c **** 
  203:.\Generated_Source\PSoC5/CapSense_CompCH0.c ****     /* Set trim value for high speed comparator */
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cc9veeWM.s 			page 5
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccFXYMmI.s 			page 5
 
 
  204:.\Generated_Source\PSoC5/CapSense_CompCH0.c ****     if(speed == CapSense_CompCH0_HIGHSPEED)
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cc9veeWM.s 			page 1
  258:.\Generated_Source\PSoC5/CapSense_CompCH0.c **** * Function Name: CapSense_CompCH0_trimAdjust
  259:.\Generated_Source\PSoC5/CapSense_CompCH0.c **** ********************************************************************************
  260:.\Generated_Source\PSoC5/CapSense_CompCH0.c **** *
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cc9veeWM.s 			page 6
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccFXYMmI.s 			page 6
 
 
  261:.\Generated_Source\PSoC5/CapSense_CompCH0.c **** * Summary:
@@ -347,7 +347,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cc9veeWM.s 			page 1
   41              		.loc 1 288 0
   42 0004 1F4B     		ldr	r3, .L11
   43 0006 1D78     		ldrb	r5, [r3]	@ zero_extendqisi2
-  44 0008 05F00405 		and	r5, r5, #4
+  44 0008 05F00205 		and	r5, r5, #2
   45 000c EDB2     		uxtb	r5, r5
   46              	.LVL1:
  289:.\Generated_Source\PSoC5/CapSense_CompCH0.c ****     
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cc9veeWM.s 			page 1
  291:.\Generated_Source\PSoC5/CapSense_CompCH0.c ****     {    
  292:.\Generated_Source\PSoC5/CapSense_CompCH0.c ****         /* if comparator output is high, negative offset adjust is required */
  293:.\Generated_Source\PSoC5/CapSense_CompCH0.c ****         if ( cmpState != 0u )
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cc9veeWM.s 			page 7
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccFXYMmI.s 			page 7
 
 
   50              		.loc 1 293 0
@@ -374,7 +374,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cc9veeWM.s 			page 1
  302:.\Generated_Source\PSoC5/CapSense_CompCH0.c ****                 CapSense_CompCH0_TR0 |= CapSense_CompCH0_CMP_TR0_DIR;
   52              		.loc 1 302 0
   53 0014 A3F5AB53 		sub	r3, r3, #5472
-  54 0018 023B     		subs	r3, r3, #2
+  54 0018 043B     		subs	r3, r3, #4
   55 001a 1A78     		ldrb	r2, [r3]	@ zero_extendqisi2
   56 001c 42F01002 		orr	r2, r2, #16
   57 0020 1A70     		strb	r2, [r3]
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cc9veeWM.s 			page 1
  330:.\Generated_Source\PSoC5/CapSense_CompCH0.c **** 	/* PSoC3, PSoC5LP or later */
  331:.\Generated_Source\PSoC5/CapSense_CompCH0.c **** 	#if (CY_PSOC3 || CY_PSOC5LP)
  332:.\Generated_Source\PSoC5/CapSense_CompCH0.c ****     	if(nibble == 0u)
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cc9veeWM.s 			page 8
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccFXYMmI.s 			page 8
 
 
   68              		.loc 1 332 0
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cc9veeWM.s 			page 1
  370:.\Generated_Source\PSoC5/CapSense_CompCH0.c ****         
  371:.\Generated_Source\PSoC5/CapSense_CompCH0.c ****         /* Check for change in comparator output */
  372:.\Generated_Source\PSoC5/CapSense_CompCH0.c ****         if ((CapSense_CompCH0_WRK & CapSense_CompCH0_CMP_OUT_MASK) != cmpState)
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cc9veeWM.s 			page 9
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccFXYMmI.s 			page 9
 
 
   84              		.loc 1 372 0
@@ -513,7 +513,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cc9veeWM.s 			page 1
  108              	.LVL4:
  109              		.loc 1 372 0
  110 006a 98F80030 		ldrb	r3, [r8]	@ zero_extendqisi2
- 111 006e 03F00403 		and	r3, r3, #4
+ 111 006e 03F00203 		and	r3, r3, #2
  112 0072 DBB2     		uxtb	r3, r3
  113 0074 AB42     		cmp	r3, r5
  114 0076 03D1     		bne	.L1
@@ -535,10 +535,10 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cc9veeWM.s 			page 1
  128              		.align	2
  129              	.L11:
  130 0084 965B0040 		.word	1073765270
- 131 0088 35460040 		.word	1073759797
- 132 008c 34460040 		.word	1073759796
+ 131 0088 33460040 		.word	1073759795
+ 132 008c 32460040 		.word	1073759794
  133              		.cfi_endproc
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cc9veeWM.s 			page 10
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccFXYMmI.s 			page 10
 
 
  134              	.LFE6:
@@ -561,13 +561,13 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cc9veeWM.s 			page 1
  149              		.loc 1 101 0
  150 0000 054B     		ldr	r3, .L14
  151 0002 1A78     		ldrb	r2, [r3]	@ zero_extendqisi2
- 152 0004 42F00402 		orr	r2, r2, #4
+ 152 0004 42F00202 		orr	r2, r2, #2
  153 0008 1A70     		strb	r2, [r3]
  102:.\Generated_Source\PSoC5/CapSense_CompCH0.c ****     CapSense_CompCH0_STBY_PWRMGR |= CapSense_CompCH0_STBY_PWR_EN;
  154              		.loc 1 102 0
  155 000a 1033     		adds	r3, r3, #16
  156 000c 1A78     		ldrb	r2, [r3]	@ zero_extendqisi2
- 157 000e 42F00402 		orr	r2, r2, #4
+ 157 000e 42F00202 		orr	r2, r2, #2
  158 0012 1A70     		strb	r2, [r3]
  159 0014 7047     		bx	lr
  160              	.L15:
@@ -595,16 +595,16 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cc9veeWM.s 			page 1
  180              		.loc 1 168 0
  181 0000 054B     		ldr	r3, .L17
  182 0002 1A78     		ldrb	r2, [r3]	@ zero_extendqisi2
- 183 0004 02F0FB02 		and	r2, r2, #251
+ 183 0004 02F0FD02 		and	r2, r2, #253
  184 0008 1A70     		strb	r2, [r3]
  169:.\Generated_Source\PSoC5/CapSense_CompCH0.c ****     CapSense_CompCH0_STBY_PWRMGR &= (uint8)(~CapSense_CompCH0_STBY_PWR_EN);
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cc9veeWM.s 			page 11
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccFXYMmI.s 			page 11
 
 
  185              		.loc 1 169 0
  186 000a 1033     		adds	r3, r3, #16
  187 000c 1A78     		ldrb	r2, [r3]	@ zero_extendqisi2
- 188 000e 02F0FB02 		and	r2, r2, #251
+ 188 000e 02F0FD02 		and	r2, r2, #253
  189 0012 1A70     		strb	r2, [r3]
  190 0014 7047     		bx	lr
  191              	.L18:
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cc9veeWM.s 			page 1
  234 0028 7047     		bx	lr
  235              	.L20:
  226:.\Generated_Source\PSoC5/CapSense_CompCH0.c ****             CapSense_CompCH0_TR0 = CapSense_CompCH0_LS_TRIM_TR0;
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cc9veeWM.s 			page 12
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccFXYMmI.s 			page 12
 
 
  236              		.loc 1 226 0
@@ -678,13 +678,13 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cc9veeWM.s 			page 1
  249              	.L23:
  250              		.align	2
  251              	.L22:
- 252 0040 42580040 		.word	1073764418
- 253 0044 12010049 		.word	1224737042
- 254 0048 34460040 		.word	1073759796
- 255 004c 16010049 		.word	1224737046
- 256 0050 35460040 		.word	1073759797
- 257 0054 B1010049 		.word	1224737201
- 258 0058 B9010049 		.word	1224737209
+ 252 0040 41580040 		.word	1073764417
+ 253 0044 11010049 		.word	1224737041
+ 254 0048 32460040 		.word	1073759794
+ 255 004c 15010049 		.word	1224737045
+ 256 0050 33460040 		.word	1073759795
+ 257 0054 AF010049 		.word	1224737199
+ 258 0058 B7010049 		.word	1224737207
  259              		.cfi_endproc
  260              	.LFE4:
  261              		.size	CapSense_CompCH0_SetSpeed, .-CapSense_CompCH0_SetSpeed
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cc9veeWM.s 			page 1
  286 0010 1A70     		strb	r2, [r3]
   66:.\Generated_Source\PSoC5/CapSense_CompCH0.c ****             CapSense_CompCH0_CR &= (uint8)(~CapSense_CompCH0_PWRDWN_OVRD);
  287              		.loc 1 66 0
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cc9veeWM.s 			page 13
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccFXYMmI.s 			page 13
 
 
  288 0012 1A78     		ldrb	r2, [r3]	@ zero_extendqisi2
@@ -731,7 +731,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cc9veeWM.s 			page 1
  294 0020 1A70     		strb	r2, [r3]
   76:.\Generated_Source\PSoC5/CapSense_CompCH0.c ****     CapSense_CompCH0_CLK &= (uint8)(~CapSense_CompCH0_SYNCCLK_MASK);
  295              		.loc 1 76 0
- 296 0022 03F29523 		addw	r3, r3, #661
+ 296 0022 03F28E23 		addw	r3, r3, #654
  297 0026 1A78     		ldrb	r2, [r3]	@ zero_extendqisi2
  298 0028 02F0E702 		and	r2, r2, #231
  299 002c 1A70     		strb	r2, [r3]
@@ -744,7 +744,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cc9veeWM.s 			page 1
  305              	.L26:
  306              		.align	2
  307              	.L25:
- 308 0038 42580040 		.word	1073764418
+ 308 0038 41580040 		.word	1073764417
  309              		.cfi_endproc
  310              	.LFE0:
  311              		.size	CapSense_CompCH0_Init, .-CapSense_CompCH0_Init
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cc9veeWM.s 			page 1
  335              		.loc 1 143 0
  336 000c 0122     		movs	r2, #1
  337 000e 024B     		ldr	r3, .L29
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cc9veeWM.s 			page 14
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccFXYMmI.s 			page 14
 
 
  338 0010 1A70     		strb	r2, [r3]
@@ -815,7 +815,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cc9veeWM.s 			page 1
  366 0002 1878     		ldrb	r0, [r3]	@ zero_extendqisi2
  254:.\Generated_Source\PSoC5/CapSense_CompCH0.c **** }
  367              		.loc 1 254 0
- 368 0004 00F00400 		and	r0, r0, #4
+ 368 0004 00F00200 		and	r0, r0, #2
  369 0008 7047     		bx	lr
  370              	.L33:
  371 000a 00BF     		.align	2
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cc9veeWM.s 			page 1
  376:.\Generated_Source\PSoC5/CapSense_CompCH0.c ****     }    
  377:.\Generated_Source\PSoC5/CapSense_CompCH0.c **** }
  378:.\Generated_Source\PSoC5/CapSense_CompCH0.c **** 
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cc9veeWM.s 			page 15
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccFXYMmI.s 			page 15
 
 
  379:.\Generated_Source\PSoC5/CapSense_CompCH0.c **** 
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cc9veeWM.s 			page 1
  433:.\Generated_Source\PSoC5/CapSense_CompCH0.c **** *  6) Check if compare output is high, if so, set the MSb of course trim field 
  434:.\Generated_Source\PSoC5/CapSense_CompCH0.c **** *     to a 1.
  435:.\Generated_Source\PSoC5/CapSense_CompCH0.c **** *  7) Increment the course trim field until the compare output changes
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cc9veeWM.s 			page 16
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccFXYMmI.s 			page 16
 
 
  436:.\Generated_Source\PSoC5/CapSense_CompCH0.c **** *  8) Check if compare output is low, if so, set the MSb of fine trim field
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cc9veeWM.s 			page 1
  414 0016 0270     		strb	r2, [r0]
  461:.\Generated_Source\PSoC5/CapSense_CompCH0.c ****     CapSense_CompCH0_SW2 = 0x00u;
  415              		.loc 1 461 0
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cc9veeWM.s 			page 17
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccFXYMmI.s 			page 17
 
 
  416 0018 0A70     		strb	r2, [r1]
@@ -973,7 +973,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cc9veeWM.s 			page 1
  467:.\Generated_Source\PSoC5/CapSense_CompCH0.c ****     */
  468:.\Generated_Source\PSoC5/CapSense_CompCH0.c ****     tmpCR = CapSense_CompCH0_CR;
  420              		.loc 1 468 0
- 421 0020 A3F29123 		subw	r3, r3, #657
+ 421 0020 A3F28A23 		subw	r3, r3, #650
  422 0024 1F78     		ldrb	r7, [r3]	@ zero_extendqisi2
  423 0026 FFB2     		uxtb	r7, r7
  424              	.LVL15:
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cc9veeWM.s 			page 1
  445              	.L35:
  487:.\Generated_Source\PSoC5/CapSense_CompCH0.c ****     }
  488:.\Generated_Source\PSoC5/CapSense_CompCH0.c ****     else /* default to trim for fast modes */
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cc9veeWM.s 			page 18
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccFXYMmI.s 			page 18
 
 
  489:.\Generated_Source\PSoC5/CapSense_CompCH0.c ****     {
@@ -1044,7 +1044,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cc9veeWM.s 			page 1
  497:.\Generated_Source\PSoC5/CapSense_CompCH0.c ****     /* Restore routing registers for inP */
  498:.\Generated_Source\PSoC5/CapSense_CompCH0.c ****     CapSense_CompCH0_SW0 = tmpSW0;
  458              		.loc 1 498 0
- 459 005a 03F28E23 		addw	r3, r3, #654
+ 459 005a 03F28723 		addw	r3, r3, #647
  460 005e 1E70     		strb	r6, [r3]
  499:.\Generated_Source\PSoC5/CapSense_CompCH0.c ****     CapSense_CompCH0_SW2 = tmpSW2;
  461              		.loc 1 499 0
@@ -1065,7 +1065,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cc9veeWM.s 			page 1
  509:.\Generated_Source\PSoC5/CapSense_CompCH0.c ****         return ((uint16)((uint16)CapSense_CompCH0_TR1 << 8u) | (CapSense_CompCH0_TR0));        
  467              		.loc 1 509 0
  468 0068 A3F5A453 		sub	r3, r3, #5248
- 469 006c 1E3B     		subs	r3, r3, #30
+ 469 006c 183B     		subs	r3, r3, #24
  470 006e 1878     		ldrb	r0, [r3]	@ zero_extendqisi2
  471 0070 013B     		subs	r3, r3, #1
  472 0072 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
@@ -1078,14 +1078,14 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cc9veeWM.s 			page 1
  477              	.L38:
  478 007a 00BF     		.align	2
  479              	.L37:
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cc9veeWM.s 			page 19
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccFXYMmI.s 			page 19
 
 
- 480 007c D05A0040 		.word	1073765072
- 481 0080 D25A0040 		.word	1073765074
- 482 0084 D35A0040 		.word	1073765075
- 483 0088 34460040 		.word	1073759796
- 484 008c 42580040 		.word	1073764418
+ 480 007c C85A0040 		.word	1073765064
+ 481 0080 CA5A0040 		.word	1073765066
+ 482 0084 CB5A0040 		.word	1073765067
+ 483 0088 32460040 		.word	1073759794
+ 484 008c 41580040 		.word	1073764417
  485              		.cfi_endproc
  486              	.LFE7:
  487              		.size	CapSense_CompCH0_ZeroCal, .-CapSense_CompCH0_ZeroCal
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cc9veeWM.s 			page 1
  505 0004 1A70     		strb	r2, [r3]
  541:.\Generated_Source\PSoC5/CapSense_CompCH0.c ****         
  542:.\Generated_Source\PSoC5/CapSense_CompCH0.c ****         /* Stores value in the Analog Comparator trim register for N-type load */
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cc9veeWM.s 			page 20
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccFXYMmI.s 			page 20
 
 
  543:.\Generated_Source\PSoC5/CapSense_CompCH0.c ****         CapSense_CompCH0_TR1 = (uint8) (trimVal >> 8); 
@@ -1151,7 +1151,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cc9veeWM.s 			page 1
  512              	.L41:
  513 000e 00BF     		.align	2
  514              	.L40:
- 515 0010 34460040 		.word	1073759796
+ 515 0010 32460040 		.word	1073759794
  516              		.cfi_endproc
  517              	.LFE8:
  518              		.size	CapSense_CompCH0_LoadTrim, .-CapSense_CompCH0_LoadTrim
@@ -1198,14 +1198,14 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cc9veeWM.s 			page 1
  534 0002 1A78     		ldrb	r2, [r3]	@ zero_extendqisi2
  535 0004 42F00402 		orr	r2, r2, #4
  536 0008 1A70     		strb	r2, [r3]
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cc9veeWM.s 			page 21
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccFXYMmI.s 			page 21
 
 
  537 000a 7047     		bx	lr
  538              	.L44:
  539              		.align	2
  540              	.L43:
- 541 000c 42580040 		.word	1073764418
+ 541 000c 41580040 		.word	1073764417
  542              		.cfi_endproc
  543              	.LFE9:
  544              		.size	CapSense_CompCH0_PwrDwnOverrideEnable, .-CapSense_CompCH0_PwrDwnOverrideEnable
@@ -1253,12 +1253,12 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cc9veeWM.s 			page 1
  564              	.L47:
  565              		.align	2
  566              	.L46:
- 567 000c 42580040 		.word	1073764418
+ 567 000c 41580040 		.word	1073764417
  568              		.cfi_endproc
  569              	.LFE10:
  570              		.size	CapSense_CompCH0_PwrDwnOverrideDisable, .-CapSense_CompCH0_PwrDwnOverrideDisable
  571              		.global	CapSense_CompCH0_initVar
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cc9veeWM.s 			page 22
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccFXYMmI.s 			page 22
 
 
  572              		.bss
@@ -1278,47 +1278,47 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cc9veeWM.s 			page 1
  586 0006 00000000 		.4byte	.Ldebug_abbrev0
  587 000a 04       		.byte	0x4
  588 000b 01       		.uleb128 0x1
- 589 000c BF010000 		.4byte	.LASF35
+ 589 000c F9010000 		.4byte	.LASF35
  590 0010 01       		.byte	0x1
- 591 0011 99000000 		.4byte	.LASF36
- 592 0015 F5020000 		.4byte	.LASF37
+ 591 0011 D3000000 		.4byte	.LASF36
+ 592 0015 32000000 		.4byte	.LASF37
  593 0019 00000000 		.4byte	.Ldebug_ranges0+0
  594 001d 00000000 		.4byte	0
  595 0021 00000000 		.4byte	.Ldebug_line0
  596 0025 02       		.uleb128 0x2
  597 0026 01       		.byte	0x1
  598 0027 06       		.byte	0x6
- 599 0028 C2020000 		.4byte	.LASF0
+ 599 0028 FC020000 		.4byte	.LASF0
  600 002c 02       		.uleb128 0x2
  601 002d 01       		.byte	0x1
  602 002e 08       		.byte	0x8
- 603 002f D9000000 		.4byte	.LASF1
+ 603 002f 13010000 		.4byte	.LASF1
  604 0033 02       		.uleb128 0x2
  605 0034 02       		.byte	0x2
  606 0035 05       		.byte	0x5
- 607 0036 96020000 		.4byte	.LASF2
+ 607 0036 D0020000 		.4byte	.LASF2
  608 003a 02       		.uleb128 0x2
  609 003b 02       		.byte	0x2
  610 003c 07       		.byte	0x7
- 611 003d 4C000000 		.4byte	.LASF3
+ 611 003d 90000000 		.4byte	.LASF3
  612 0041 02       		.uleb128 0x2
  613 0042 04       		.byte	0x4
  614 0043 05       		.byte	0x5
- 615 0044 A0020000 		.4byte	.LASF4
+ 615 0044 DA020000 		.4byte	.LASF4
  616 0048 02       		.uleb128 0x2
  617 0049 04       		.byte	0x4
  618 004a 07       		.byte	0x7
- 619 004b F4000000 		.4byte	.LASF5
+ 619 004b 2E010000 		.4byte	.LASF5
  620 004f 02       		.uleb128 0x2
  621 0050 08       		.byte	0x8
  622 0051 05       		.byte	0x5
- 623 0052 4F020000 		.4byte	.LASF6
+ 623 0052 89020000 		.4byte	.LASF6
  624 0056 02       		.uleb128 0x2
  625 0057 08       		.byte	0x8
  626 0058 07       		.byte	0x7
- 627 0059 66010000 		.4byte	.LASF7
+ 627 0059 A0010000 		.4byte	.LASF7
  628 005d 03       		.uleb128 0x3
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cc9veeWM.s 			page 23
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccFXYMmI.s 			page 23
 
 
  629 005e 04       		.byte	0x4
@@ -1327,36 +1327,36 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cc9veeWM.s 			page 1
  632 0064 02       		.uleb128 0x2
  633 0065 04       		.byte	0x4
  634 0066 07       		.byte	0x7
- 635 0067 50010000 		.4byte	.LASF8
+ 635 0067 8A010000 		.4byte	.LASF8
  636 006b 04       		.uleb128 0x4
- 637 006c 06010000 		.4byte	.LASF9
+ 637 006c 40010000 		.4byte	.LASF9
  638 0070 02       		.byte	0x2
  639 0071 B4       		.byte	0xb4
  640 0072 2C000000 		.4byte	0x2c
  641 0076 04       		.uleb128 0x4
- 642 0077 2C010000 		.4byte	.LASF10
+ 642 0077 66010000 		.4byte	.LASF10
  643 007b 02       		.byte	0x2
  644 007c B5       		.byte	0xb5
  645 007d 3A000000 		.4byte	0x3a
  646 0081 04       		.uleb128 0x4
- 647 0082 33010000 		.4byte	.LASF11
+ 647 0082 6D010000 		.4byte	.LASF11
  648 0086 02       		.byte	0x2
  649 0087 B6       		.byte	0xb6
  650 0088 48000000 		.4byte	0x48
  651 008c 02       		.uleb128 0x2
  652 008d 04       		.byte	0x4
  653 008e 04       		.byte	0x4
- 654 008f CC000000 		.4byte	.LASF12
+ 654 008f 06010000 		.4byte	.LASF12
  655 0093 02       		.uleb128 0x2
  656 0094 08       		.byte	0x8
  657 0095 04       		.byte	0x4
- 658 0096 25010000 		.4byte	.LASF13
+ 658 0096 5F010000 		.4byte	.LASF13
  659 009a 02       		.uleb128 0x2
  660 009b 01       		.byte	0x1
  661 009c 08       		.byte	0x8
- 662 009d 79020000 		.4byte	.LASF14
+ 662 009d B3020000 		.4byte	.LASF14
  663 00a1 05       		.uleb128 0x5
- 664 00a2 E7000000 		.4byte	.LASF15
+ 664 00a2 21010000 		.4byte	.LASF15
  665 00a6 02       		.byte	0x2
  666 00a7 5E01     		.2byte	0x15e
  667 00a9 AD000000 		.4byte	0xad
@@ -1365,9 +1365,9 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cc9veeWM.s 			page 1
  670 00b2 02       		.uleb128 0x2
  671 00b3 04       		.byte	0x4
  672 00b4 07       		.byte	0x7
- 673 00b5 3B020000 		.4byte	.LASF16
+ 673 00b5 75020000 		.4byte	.LASF16
  674 00b9 07       		.uleb128 0x7
- 675 00ba 5D020000 		.4byte	.LASF38
+ 675 00ba 97020000 		.4byte	.LASF38
  676 00be 01       		.byte	0x1
  677 00bf 1A01     		.2byte	0x11a
  678 00c1 00000000 		.4byte	.LFB6
@@ -1376,28 +1376,28 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cc9veeWM.s 			page 1
  681 00ca 9C       		.byte	0x9c
  682 00cb 1F010000 		.4byte	0x11f
  683 00cf 08       		.uleb128 0x8
- 684 00d0 32030000 		.4byte	.LASF22
+ 684 00d0 39030000 		.4byte	.LASF22
  685 00d4 01       		.byte	0x1
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cc9veeWM.s 			page 24
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccFXYMmI.s 			page 24
 
 
  686 00d5 1A01     		.2byte	0x11a
  687 00d7 6B000000 		.4byte	0x6b
  688 00db 00000000 		.4byte	.LLST0
  689 00df 09       		.uleb128 0x9
- 690 00e0 EC000000 		.4byte	.LASF17
+ 690 00e0 26010000 		.4byte	.LASF17
  691 00e4 01       		.byte	0x1
  692 00e5 1C01     		.2byte	0x11c
  693 00e7 6B000000 		.4byte	0x6b
  694 00eb 21000000 		.4byte	.LLST1
  695 00ef 09       		.uleb128 0x9
- 696 00f0 44020000 		.4byte	.LASF18
+ 696 00f0 7E020000 		.4byte	.LASF18
  697 00f4 01       		.byte	0x1
  698 00f5 1C01     		.2byte	0x11c
  699 00f7 6B000000 		.4byte	0x6b
  700 00fb 58000000 		.4byte	.LLST2
  701 00ff 09       		.uleb128 0x9
- 702 0100 5D010000 		.4byte	.LASF19
+ 702 0100 97010000 		.4byte	.LASF19
  703 0104 01       		.byte	0x1
  704 0105 1D01     		.2byte	0x11d
  705 0107 6B000000 		.4byte	0x6b
@@ -1413,7 +1413,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cc9veeWM.s 			page 1
  715 011d 00       		.byte	0
  716 011e 00       		.byte	0
  717 011f 0C       		.uleb128 0xc
- 718 0120 7E020000 		.4byte	.LASF20
+ 718 0120 B8020000 		.4byte	.LASF20
  719 0124 01       		.byte	0x1
  720 0125 63       		.byte	0x63
  721 0126 00000000 		.4byte	.LFB1
@@ -1421,7 +1421,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cc9veeWM.s 			page 1
  723 012e 01       		.uleb128 0x1
  724 012f 9C       		.byte	0x9c
  725 0130 0C       		.uleb128 0xc
- 726 0131 3A010000 		.4byte	.LASF21
+ 726 0131 74010000 		.4byte	.LASF21
  727 0135 01       		.byte	0x1
  728 0136 A5       		.byte	0xa5
  729 0137 00000000 		.4byte	.LFB3
@@ -1429,7 +1429,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cc9veeWM.s 			page 1
  731 013f 01       		.uleb128 0x1
  732 0140 9C       		.byte	0x9c
  733 0141 0D       		.uleb128 0xd
- 734 0142 32000000 		.4byte	.LASF24
+ 734 0142 76000000 		.4byte	.LASF24
  735 0146 01       		.byte	0x1
  736 0147 C5       		.byte	0xc5
  737 0148 00000000 		.4byte	.LFB4
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cc9veeWM.s 			page 1
  740 0151 9C       		.byte	0x9c
  741 0152 64010000 		.4byte	0x164
  742 0156 0E       		.uleb128 0xe
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cc9veeWM.s 			page 25
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccFXYMmI.s 			page 25
 
 
  743 0157 25000000 		.4byte	.LASF23
@@ -1449,7 +1449,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cc9veeWM.s 			page 1
  748 0162 50       		.byte	0x50
  749 0163 00       		.byte	0
  750 0164 0D       		.uleb128 0xd
- 751 0165 83000000 		.4byte	.LASF25
+ 751 0165 BD000000 		.4byte	.LASF25
  752 0169 01       		.byte	0x1
  753 016a 33       		.byte	0x33
  754 016b 00000000 		.4byte	.LFB0
@@ -1484,7 +1484,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cc9veeWM.s 			page 1
  783 01ac 1F010000 		.4byte	0x11f
  784 01b0 00       		.byte	0
  785 01b1 10       		.uleb128 0x10
- 786 01b2 A3010000 		.4byte	.LASF39
+ 786 01b2 DD010000 		.4byte	.LASF39
  787 01b6 01       		.byte	0x1
  788 01b7 FB       		.byte	0xfb
  789 01b8 6B000000 		.4byte	0x6b
@@ -1493,12 +1493,12 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cc9veeWM.s 			page 1
  792 01c4 01       		.uleb128 0x1
  793 01c5 9C       		.byte	0x9c
  794 01c6 11       		.uleb128 0x11
- 795 01c7 A9020000 		.4byte	.LASF40
+ 795 01c7 E3020000 		.4byte	.LASF40
  796 01cb 01       		.byte	0x1
  797 01cc BF01     		.2byte	0x1bf
  798 01ce 76000000 		.4byte	0x76
  799 01d2 00000000 		.4byte	.LFB7
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cc9veeWM.s 			page 26
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccFXYMmI.s 			page 26
 
 
  800 01d6 90000000 		.4byte	.LFE7-.LFB7
@@ -1506,7 +1506,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cc9veeWM.s 			page 1
  802 01db 9C       		.byte	0x9c
  803 01dc 56020000 		.4byte	0x256
  804 01e0 09       		.uleb128 0x9
- 805 01e1 C5000000 		.4byte	.LASF27
+ 805 01e1 FF000000 		.4byte	.LASF27
  806 01e5 01       		.byte	0x1
  807 01e6 C101     		.2byte	0x1c1
  808 01e8 6B000000 		.4byte	0x6b
@@ -1518,7 +1518,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cc9veeWM.s 			page 1
  814 01f8 6B000000 		.4byte	0x6b
  815 01fc 91000000 		.4byte	.LLST5
  816 0200 09       		.uleb128 0x9
- 817 0201 D2000000 		.4byte	.LASF29
+ 817 0201 0C010000 		.4byte	.LASF29
  818 0205 01       		.byte	0x1
  819 0206 C301     		.2byte	0x1c3
  820 0208 6B000000 		.4byte	0x6b
@@ -1558,12 +1558,12 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cc9veeWM.s 			page 1
  854 0252 01       		.uleb128 0x1
  855 0253 30       		.byte	0x30
  856 0254 00       		.byte	0
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cc9veeWM.s 			page 27
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccFXYMmI.s 			page 27
 
 
  857 0255 00       		.byte	0
  858 0256 13       		.uleb128 0x13
- 859 0257 69000000 		.4byte	.LASF31
+ 859 0257 A3000000 		.4byte	.LASF31
  860 025b 01       		.byte	0x1
  861 025c 1102     		.2byte	0x211
  862 025e 00000000 		.4byte	.LFB8
@@ -1579,7 +1579,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cc9veeWM.s 			page 1
  872 0278 CA000000 		.4byte	.LLST8
  873 027c 00       		.byte	0
  874 027d 14       		.uleb128 0x14
- 875 027e 7D010000 		.4byte	.LASF33
+ 875 027e B7010000 		.4byte	.LASF33
  876 0282 01       		.byte	0x1
  877 0283 3502     		.2byte	0x235
  878 0285 00000000 		.4byte	.LFB9
@@ -1587,7 +1587,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cc9veeWM.s 			page 1
  880 028d 01       		.uleb128 0x1
  881 028e 9C       		.byte	0x9c
  882 028f 14       		.uleb128 0x14
- 883 0290 CE020000 		.4byte	.LASF34
+ 883 0290 08030000 		.4byte	.LASF34
  884 0294 01       		.byte	0x1
  885 0295 4B02     		.2byte	0x24b
  886 0297 00000000 		.4byte	.LFB10
@@ -1595,7 +1595,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cc9veeWM.s 			page 1
  888 029f 01       		.uleb128 0x1
  889 02a0 9C       		.byte	0x9c
  890 02a1 15       		.uleb128 0x15
- 891 02a2 0C010000 		.4byte	.LASF41
+ 891 02a2 46010000 		.4byte	.LASF41
  892 02a6 01       		.byte	0x1
  893 02a7 14       		.byte	0x14
  894 02a8 6B000000 		.4byte	0x6b
@@ -1603,7 +1603,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cc9veeWM.s 			page 1
  896 02ad 03       		.byte	0x3
  897 02ae 00000000 		.4byte	CapSense_CompCH0_initVar
  898 02b2 16       		.uleb128 0x16
- 899 02b3 5F000000 		.4byte	.LASF42
+ 899 02b3 2F030000 		.4byte	.LASF42
  900 02b7 03       		.byte	0x3
  901 02b8 78       		.byte	0x78
  902 02b9 17       		.uleb128 0x17
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cc9veeWM.s 			page 1
  911 0003 25       		.uleb128 0x25
  912 0004 0E       		.uleb128 0xe
  913 0005 13       		.uleb128 0x13
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cc9veeWM.s 			page 28
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccFXYMmI.s 			page 28
 
 
  914 0006 0B       		.uleb128 0xb
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cc9veeWM.s 			page 1
  968 003c 0B       		.uleb128 0xb
  969 003d 3B       		.uleb128 0x3b
  970 003e 05       		.uleb128 0x5
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cc9veeWM.s 			page 29
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccFXYMmI.s 			page 29
 
 
  971 003f 49       		.uleb128 0x49
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cc9veeWM.s 			page 1
  1025 0076 3A       		.uleb128 0x3a
  1026 0077 0B       		.uleb128 0xb
  1027 0078 3B       		.uleb128 0x3b
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cc9veeWM.s 			page 30
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccFXYMmI.s 			page 30
 
 
  1028 0079 05       		.uleb128 0x5
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cc9veeWM.s 			page 1
  1082 00b5 0E       		.uleb128 0xe
  1083 00b6 3A       		.uleb128 0x3a
  1084 00b7 0B       		.uleb128 0xb
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cc9veeWM.s 			page 31
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccFXYMmI.s 			page 31
 
 
  1085 00b8 3B       		.uleb128 0x3b
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cc9veeWM.s 			page 1
  1139 00f1 13       		.uleb128 0x13
  1140 00f2 11       		.uleb128 0x11
  1141 00f3 01       		.uleb128 0x1
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cc9veeWM.s 			page 32
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccFXYMmI.s 			page 32
 
 
  1142 00f4 12       		.uleb128 0x12
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cc9veeWM.s 			page 1
  1196 012e 0B       		.uleb128 0xb
  1197 012f 3B       		.uleb128 0x3b
  1198 0130 05       		.uleb128 0x5
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cc9veeWM.s 			page 33
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccFXYMmI.s 			page 33
 
 
  1199 0131 27       		.uleb128 0x27
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cc9veeWM.s 			page 1
  1253 0169 16       		.uleb128 0x16
  1254 016a 2E       		.uleb128 0x2e
  1255 016b 01       		.byte	0x1
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cc9veeWM.s 			page 34
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccFXYMmI.s 			page 34
 
 
  1256 016c 3F       		.uleb128 0x3f
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cc9veeWM.s 			page 1
  1310 0045 7C000000 		.4byte	.LVL6
  1311 0049 84000000 		.4byte	.LVL7
  1312 004d 0100     		.2byte	0x1
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cc9veeWM.s 			page 35
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccFXYMmI.s 			page 35
 
 
  1313 004f 54       		.byte	0x54
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cc9veeWM.s 			page 1
  1367 00e0 01       		.uleb128 0x1
  1368 00e1 50       		.byte	0x50
  1369 00e2 9F       		.byte	0x9f
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cc9veeWM.s 			page 36
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccFXYMmI.s 			page 36
 
 
  1370 00e3 00000000 		.4byte	0
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cc9veeWM.s 			page 1
  1424 0048 00000000 		.4byte	.LFB9
  1425 004c 10000000 		.4byte	.LFE9
  1426 0050 00000000 		.4byte	.LFB10
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cc9veeWM.s 			page 37
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccFXYMmI.s 			page 37
 
 
  1427 0054 10000000 		.4byte	.LFE10
@@ -2189,205 +2189,206 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cc9veeWM.s 			page 1
  1441              	.LASF28:
  1442 002b 746D7053 		.ascii	"tmpSW2\000"
  1442      573200
- 1443              	.LASF24:
- 1444 0032 43617053 		.ascii	"CapSense_CompCH0_SetSpeed\000"
- 1444      656E7365 
- 1444      5F436F6D 
- 1444      70434830 
- 1444      5F536574 
- 1445              	.LASF3:
- 1446 004c 73686F72 		.ascii	"short unsigned int\000"
- 1446      7420756E 
- 1446      7369676E 
- 1446      65642069 
- 1446      6E7400
- 1447              	.LASF42:
- 1448 005f 43794465 		.ascii	"CyDelayUs\000"
- 1448      6C617955 
- 1448      7300
- 1449              	.LASF31:
- 1450 0069 43617053 		.ascii	"CapSense_CompCH0_LoadTrim\000"
- 1450      656E7365 
- 1450      5F436F6D 
- 1450      70434830 
- 1450      5F4C6F61 
- 1451              	.LASF25:
- 1452 0083 43617053 		.ascii	"CapSense_CompCH0_Init\000"
- 1452      656E7365 
- 1452      5F436F6D 
- 1452      70434830 
- 1452      5F496E69 
- 1453              	.LASF36:
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cc9veeWM.s 			page 38
+ 1443              	.LASF37:
+ 1444 0032 433A5C55 		.ascii	"C:\\Users\\JohnP\\Desktop\\embedded\\trunk\\CE4920P"
+ 1444      73657273 
+ 1444      5C4A6F68 
+ 1444      6E505C44 
+ 1444      65736B74 
+ 1445 005f 726F6A65 		.ascii	"roject1\\Design01.cydsn\000"
+ 1445      6374315C 
+ 1445      44657369 
+ 1445      676E3031 
+ 1445      2E637964 
+ 1446              	.LASF24:
+ 1447 0076 43617053 		.ascii	"CapSense_CompCH0_SetSpeed\000"
+ 1447      656E7365 
+ 1447      5F436F6D 
+ 1447      70434830 
+ 1447      5F536574 
+ 1448              	.LASF3:
+ 1449 0090 73686F72 		.ascii	"short unsigned int\000"
+ 1449      7420756E 
+ 1449      7369676E 
+ 1449      65642069 
+ 1449      6E7400
+ 1450              	.LASF31:
+ 1451 00a3 43617053 		.ascii	"CapSense_CompCH0_LoadTrim\000"
+ 1451      656E7365 
+ 1451      5F436F6D 
+ 1451      70434830 
+ 1451      5F4C6F61 
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccFXYMmI.s 			page 38
 
 
- 1454 0099 2E5C4765 		.ascii	".\\Generated_Source\\PSoC5\\CapSense_CompCH0.c\000"
- 1454      6E657261 
- 1454      7465645F 
- 1454      536F7572 
- 1454      63655C50 
- 1455              	.LASF27:
- 1456 00c5 746D7053 		.ascii	"tmpSW0\000"
- 1456      573000
- 1457              	.LASF12:
- 1458 00cc 666C6F61 		.ascii	"float\000"
- 1458      7400
- 1459              	.LASF29:
- 1460 00d2 746D7053 		.ascii	"tmpSW3\000"
- 1460      573300
- 1461              	.LASF1:
- 1462 00d9 756E7369 		.ascii	"unsigned char\000"
- 1462      676E6564 
- 1462      20636861 
- 1462      7200
- 1463              	.LASF15:
- 1464 00e7 72656738 		.ascii	"reg8\000"
- 1464      00
- 1465              	.LASF17:
- 1466 00ec 7472696D 		.ascii	"trimCnt\000"
- 1466      436E7400 
- 1467              	.LASF5:
- 1468 00f4 6C6F6E67 		.ascii	"long unsigned int\000"
- 1468      20756E73 
- 1468      69676E65 
- 1468      6420696E 
- 1468      7400
- 1469              	.LASF9:
- 1470 0106 75696E74 		.ascii	"uint8\000"
- 1470      3800
- 1471              	.LASF41:
- 1472 010c 43617053 		.ascii	"CapSense_CompCH0_initVar\000"
- 1472      656E7365 
- 1472      5F436F6D 
- 1472      70434830 
- 1472      5F696E69 
- 1473              	.LASF13:
- 1474 0125 646F7562 		.ascii	"double\000"
- 1474      6C6500
- 1475              	.LASF10:
- 1476 012c 75696E74 		.ascii	"uint16\000"
- 1476      313600
- 1477              	.LASF11:
- 1478 0133 75696E74 		.ascii	"uint32\000"
- 1478      333200
- 1479              	.LASF21:
- 1480 013a 43617053 		.ascii	"CapSense_CompCH0_Stop\000"
- 1480      656E7365 
- 1480      5F436F6D 
- 1480      70434830 
- 1480      5F53746F 
- 1481              	.LASF8:
- 1482 0150 756E7369 		.ascii	"unsigned int\000"
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cc9veeWM.s 			page 39
+ 1452              	.LASF25:
+ 1453 00bd 43617053 		.ascii	"CapSense_CompCH0_Init\000"
+ 1453      656E7365 
+ 1453      5F436F6D 
+ 1453      70434830 
+ 1453      5F496E69 
+ 1454              	.LASF36:
+ 1455 00d3 2E5C4765 		.ascii	".\\Generated_Source\\PSoC5\\CapSense_CompCH0.c\000"
+ 1455      6E657261 
+ 1455      7465645F 
+ 1455      536F7572 
+ 1455      63655C50 
+ 1456              	.LASF27:
+ 1457 00ff 746D7053 		.ascii	"tmpSW0\000"
+ 1457      573000
+ 1458              	.LASF12:
+ 1459 0106 666C6F61 		.ascii	"float\000"
+ 1459      7400
+ 1460              	.LASF29:
+ 1461 010c 746D7053 		.ascii	"tmpSW3\000"
+ 1461      573300
+ 1462              	.LASF1:
+ 1463 0113 756E7369 		.ascii	"unsigned char\000"
+ 1463      676E6564 
+ 1463      20636861 
+ 1463      7200
+ 1464              	.LASF15:
+ 1465 0121 72656738 		.ascii	"reg8\000"
+ 1465      00
+ 1466              	.LASF17:
+ 1467 0126 7472696D 		.ascii	"trimCnt\000"
+ 1467      436E7400 
+ 1468              	.LASF5:
+ 1469 012e 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1469      20756E73 
+ 1469      69676E65 
+ 1469      6420696E 
+ 1469      7400
+ 1470              	.LASF9:
+ 1471 0140 75696E74 		.ascii	"uint8\000"
+ 1471      3800
+ 1472              	.LASF41:
+ 1473 0146 43617053 		.ascii	"CapSense_CompCH0_initVar\000"
+ 1473      656E7365 
+ 1473      5F436F6D 
+ 1473      70434830 
+ 1473      5F696E69 
+ 1474              	.LASF13:
+ 1475 015f 646F7562 		.ascii	"double\000"
+ 1475      6C6500
+ 1476              	.LASF10:
+ 1477 0166 75696E74 		.ascii	"uint16\000"
+ 1477      313600
+ 1478              	.LASF11:
+ 1479 016d 75696E74 		.ascii	"uint32\000"
+ 1479      333200
+ 1480              	.LASF21:
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccFXYMmI.s 			page 39
 
 
- 1482      676E6564 
- 1482      20696E74 
- 1482      00
- 1483              	.LASF19:
- 1484 015d 636D7053 		.ascii	"cmpState\000"
- 1484      74617465 
- 1484      00
- 1485              	.LASF7:
- 1486 0166 6C6F6E67 		.ascii	"long long unsigned int\000"
- 1486      206C6F6E 
- 1486      6720756E 
- 1486      7369676E 
- 1486      65642069 
- 1487              	.LASF33:
- 1488 017d 43617053 		.ascii	"CapSense_CompCH0_PwrDwnOverrideEnable\000"
- 1488      656E7365 
- 1488      5F436F6D 
- 1488      70434830 
- 1488      5F507772 
- 1489              	.LASF39:
- 1490 01a3 43617053 		.ascii	"CapSense_CompCH0_GetCompare\000"
- 1490      656E7365 
- 1490      5F436F6D 
- 1490      70434830 
- 1490      5F476574 
- 1491              	.LASF35:
- 1492 01bf 474E5520 		.ascii	"GNU C 4.8.4 20140526 (release) [ARM/embedded-4_8-br"
- 1492      4320342E 
- 1492      382E3420 
- 1492      32303134 
- 1492      30353236 
- 1493 01f2 616E6368 		.ascii	"anch revision 211358] -mcpu=cortex-m3 -mthumb -g -O"
- 1493      20726576 
- 1493      6973696F 
- 1493      6E203231 
- 1493      31333538 
- 1494 0225 67202D66 		.ascii	"g -ffunction-sections\000"
- 1494      66756E63 
- 1494      74696F6E 
- 1494      2D736563 
- 1494      74696F6E 
- 1495              	.LASF16:
- 1496 023b 73697A65 		.ascii	"sizetype\000"
- 1496      74797065 
- 1496      00
- 1497              	.LASF18:
- 1498 0244 7472696D 		.ascii	"trimCntMax\000"
- 1498      436E744D 
- 1498      617800
- 1499              	.LASF6:
- 1500 024f 6C6F6E67 		.ascii	"long long int\000"
- 1500      206C6F6E 
- 1500      6720696E 
- 1500      7400
- 1501              	.LASF38:
- 1502 025d 43617053 		.ascii	"CapSense_CompCH0_trimAdjust\000"
- 1502      656E7365 
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cc9veeWM.s 			page 40
+ 1481 0174 43617053 		.ascii	"CapSense_CompCH0_Stop\000"
+ 1481      656E7365 
+ 1481      5F436F6D 
+ 1481      70434830 
+ 1481      5F53746F 
+ 1482              	.LASF8:
+ 1483 018a 756E7369 		.ascii	"unsigned int\000"
+ 1483      676E6564 
+ 1483      20696E74 
+ 1483      00
+ 1484              	.LASF19:
+ 1485 0197 636D7053 		.ascii	"cmpState\000"
+ 1485      74617465 
+ 1485      00
+ 1486              	.LASF7:
+ 1487 01a0 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1487      206C6F6E 
+ 1487      6720756E 
+ 1487      7369676E 
+ 1487      65642069 
+ 1488              	.LASF33:
+ 1489 01b7 43617053 		.ascii	"CapSense_CompCH0_PwrDwnOverrideEnable\000"
+ 1489      656E7365 
+ 1489      5F436F6D 
+ 1489      70434830 
+ 1489      5F507772 
+ 1490              	.LASF39:
+ 1491 01dd 43617053 		.ascii	"CapSense_CompCH0_GetCompare\000"
+ 1491      656E7365 
+ 1491      5F436F6D 
+ 1491      70434830 
+ 1491      5F476574 
+ 1492              	.LASF35:
+ 1493 01f9 474E5520 		.ascii	"GNU C 4.8.4 20140526 (release) [ARM/embedded-4_8-br"
+ 1493      4320342E 
+ 1493      382E3420 
+ 1493      32303134 
+ 1493      30353236 
+ 1494 022c 616E6368 		.ascii	"anch revision 211358] -mcpu=cortex-m3 -mthumb -g -O"
+ 1494      20726576 
+ 1494      6973696F 
+ 1494      6E203231 
+ 1494      31333538 
+ 1495 025f 67202D66 		.ascii	"g -ffunction-sections\000"
+ 1495      66756E63 
+ 1495      74696F6E 
+ 1495      2D736563 
+ 1495      74696F6E 
+ 1496              	.LASF16:
+ 1497 0275 73697A65 		.ascii	"sizetype\000"
+ 1497      74797065 
+ 1497      00
+ 1498              	.LASF18:
+ 1499 027e 7472696D 		.ascii	"trimCntMax\000"
+ 1499      436E744D 
+ 1499      617800
+ 1500              	.LASF6:
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccFXYMmI.s 			page 40
 
 
- 1502      5F436F6D 
- 1502      70434830 
- 1502      5F747269 
- 1503              	.LASF14:
- 1504 0279 63686172 		.ascii	"char\000"
- 1504      00
- 1505              	.LASF20:
- 1506 027e 43617053 		.ascii	"CapSense_CompCH0_Enable\000"
- 1506      656E7365 
- 1506      5F436F6D 
- 1506      70434830 
- 1506      5F456E61 
- 1507              	.LASF2:
- 1508 0296 73686F72 		.ascii	"short int\000"
- 1508      7420696E 
- 1508      7400
- 1509              	.LASF4:
- 1510 02a0 6C6F6E67 		.ascii	"long int\000"
- 1510      20696E74 
- 1510      00
- 1511              	.LASF40:
- 1512 02a9 43617053 		.ascii	"CapSense_CompCH0_ZeroCal\000"
- 1512      656E7365 
- 1512      5F436F6D 
- 1512      70434830 
- 1512      5F5A6572 
- 1513              	.LASF0:
- 1514 02c2 7369676E 		.ascii	"signed char\000"
- 1514      65642063 
- 1514      68617200 
- 1515              	.LASF34:
- 1516 02ce 43617053 		.ascii	"CapSense_CompCH0_PwrDwnOverrideDisable\000"
- 1516      656E7365 
- 1516      5F436F6D 
- 1516      70434830 
- 1516      5F507772 
- 1517              	.LASF37:
- 1518 02f5 433A5C72 		.ascii	"C:\\repositories\\embedded\\trunk\\CE4920Project1\\"
- 1518      65706F73 
- 1518      69746F72 
- 1518      6965735C 
- 1518      656D6265 
- 1519 0323 44657369 		.ascii	"Design01.cydsn\000"
- 1519      676E3031 
- 1519      2E637964 
- 1519      736E00
+ 1501 0289 6C6F6E67 		.ascii	"long long int\000"
+ 1501      206C6F6E 
+ 1501      6720696E 
+ 1501      7400
+ 1502              	.LASF38:
+ 1503 0297 43617053 		.ascii	"CapSense_CompCH0_trimAdjust\000"
+ 1503      656E7365 
+ 1503      5F436F6D 
+ 1503      70434830 
+ 1503      5F747269 
+ 1504              	.LASF14:
+ 1505 02b3 63686172 		.ascii	"char\000"
+ 1505      00
+ 1506              	.LASF20:
+ 1507 02b8 43617053 		.ascii	"CapSense_CompCH0_Enable\000"
+ 1507      656E7365 
+ 1507      5F436F6D 
+ 1507      70434830 
+ 1507      5F456E61 
+ 1508              	.LASF2:
+ 1509 02d0 73686F72 		.ascii	"short int\000"
+ 1509      7420696E 
+ 1509      7400
+ 1510              	.LASF4:
+ 1511 02da 6C6F6E67 		.ascii	"long int\000"
+ 1511      20696E74 
+ 1511      00
+ 1512              	.LASF40:
+ 1513 02e3 43617053 		.ascii	"CapSense_CompCH0_ZeroCal\000"
+ 1513      656E7365 
+ 1513      5F436F6D 
+ 1513      70434830 
+ 1513      5F5A6572 
+ 1514              	.LASF0:
+ 1515 02fc 7369676E 		.ascii	"signed char\000"
+ 1515      65642063 
+ 1515      68617200 
+ 1516              	.LASF34:
+ 1517 0308 43617053 		.ascii	"CapSense_CompCH0_PwrDwnOverrideDisable\000"
+ 1517      656E7365 
+ 1517      5F436F6D 
+ 1517      70434830 
+ 1517      5F507772 
+ 1518              	.LASF42:
+ 1519 032f 43794465 		.ascii	"CyDelayUs\000"
+ 1519      6C617955 
+ 1519      7300
  1520              	.LASF22:
- 1521 0332 6E696262 		.ascii	"nibble\000"
+ 1521 0339 6E696262 		.ascii	"nibble\000"
  1521      6C6500
  1522              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.8.4 20140526 (release) [ARM/embedded-4_8-br

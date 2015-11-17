@@ -45,6 +45,7 @@
 #include "UI_HEALTH.h"
     
 void System_init();
+void System_fault_init();
 
 
 /* [] END OF FILE */

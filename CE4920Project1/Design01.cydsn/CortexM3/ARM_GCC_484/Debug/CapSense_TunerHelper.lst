@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cczfJazG.s 			page 1
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cc3R4Kvr.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cczfJazG.s 			page 1
   29:.\Generated_Source\PSoC5/CapSense_TunerHelper.c **** * Summary:
   30:.\Generated_Source\PSoC5/CapSense_TunerHelper.c **** *  Initializes CapSense CSD component and EzI2C communication componenet to use
   31:.\Generated_Source\PSoC5/CapSense_TunerHelper.c **** *  mailbox data structure for communication with Tuner GUI.
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cczfJazG.s 			page 2
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cc3R4Kvr.s 			page 2
 
 
   32:.\Generated_Source\PSoC5/CapSense_TunerHelper.c **** *  Start the scanning, after initialization complete.
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cczfJazG.s 			page 1
   69:.\Generated_Source\PSoC5/CapSense_TunerHelper.c ****                                         (void *) &CapSense_mailboxesComm);
   70:.\Generated_Source\PSoC5/CapSense_TunerHelper.c ****         
   71:.\Generated_Source\PSoC5/CapSense_TunerHelper.c ****         /* Starts scan all enabled sensors */
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cczfJazG.s 			page 3
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cc3R4Kvr.s 			page 3
 
 
   72:.\Generated_Source\PSoC5/CapSense_TunerHelper.c ****         CapSense_ScanEnabledWidgets();
@@ -171,17 +171,17 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cczfJazG.s 			page 1
   62 000c 82000000 		.4byte	.LASF15
   63 0010 01       		.byte	0x1
   64 0011 1B000000 		.4byte	.LASF16
-  65 0015 27010000 		.4byte	.LASF17
+  65 0015 03010000 		.4byte	.LASF17
   66 0019 00000000 		.4byte	.Ldebug_ranges0+0
   67 001d 00000000 		.4byte	0
   68 0021 00000000 		.4byte	.Ldebug_line0
   69 0025 02       		.uleb128 0x2
   70 0026 01       		.byte	0x1
   71 0027 06       		.byte	0x6
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cczfJazG.s 			page 4
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cc3R4Kvr.s 			page 4
 
 
-  72 0028 77010000 		.4byte	.LASF0
+  72 0028 7E010000 		.4byte	.LASF0
   73 002c 02       		.uleb128 0x2
   74 002d 01       		.byte	0x1
   75 002e 08       		.byte	0x8
@@ -189,15 +189,15 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cczfJazG.s 			page 1
   77 0033 02       		.uleb128 0x2
   78 0034 02       		.byte	0x2
   79 0035 05       		.byte	0x5
-  80 0036 9C010000 		.4byte	.LASF2
+  80 0036 A3010000 		.4byte	.LASF2
   81 003a 02       		.uleb128 0x2
   82 003b 02       		.byte	0x2
   83 003c 07       		.byte	0x7
-  84 003d 64010000 		.4byte	.LASF3
+  84 003d 6B010000 		.4byte	.LASF3
   85 0041 02       		.uleb128 0x2
   86 0042 04       		.byte	0x4
   87 0043 05       		.byte	0x5
-  88 0044 03010000 		.4byte	.LASF4
+  88 0044 47010000 		.4byte	.LASF4
   89 0048 02       		.uleb128 0x2
   90 0049 04       		.byte	0x4
   91 004a 07       		.byte	0x7
@@ -221,11 +221,11 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cczfJazG.s 			page 1
  109 006b 02       		.uleb128 0x2
  110 006c 04       		.byte	0x4
  111 006d 04       		.byte	0x4
- 112 006e 96010000 		.4byte	.LASF9
+ 112 006e 9D010000 		.4byte	.LASF9
  113 0072 02       		.uleb128 0x2
  114 0073 08       		.byte	0x8
  115 0074 04       		.byte	0x4
- 116 0075 20010000 		.4byte	.LASF10
+ 116 0075 64010000 		.4byte	.LASF10
  117 0079 02       		.uleb128 0x2
  118 007a 01       		.byte	0x1
  119 007b 08       		.byte	0x8
@@ -233,12 +233,12 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cczfJazG.s 			page 1
  121 0080 02       		.uleb128 0x2
  122 0081 04       		.byte	0x4
  123 0082 07       		.byte	0x7
- 124 0083 A6010000 		.4byte	.LASF12
+ 124 0083 AD010000 		.4byte	.LASF12
  125 0087 04       		.uleb128 0x4
- 126 0088 0C010000 		.4byte	.LASF13
+ 126 0088 50010000 		.4byte	.LASF13
  127 008c 01       		.byte	0x1
  128 008d 31       		.byte	0x31
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cczfJazG.s 			page 5
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cc3R4Kvr.s 			page 5
 
 
  129 008e 00000000 		.4byte	.LFB0
@@ -246,7 +246,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cczfJazG.s 			page 1
  131 0096 01       		.uleb128 0x1
  132 0097 9C       		.byte	0x9c
  133 0098 04       		.uleb128 0x4
- 134 0099 83010000 		.4byte	.LASF14
+ 134 0099 8A010000 		.4byte	.LASF14
  135 009d 01       		.byte	0x1
  136 009e 63       		.byte	0x63
  137 009f 00000000 		.4byte	.LFB1
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cczfJazG.s 			page 1
  183 0027 00       		.byte	0
  184 0028 00       		.byte	0
  185 0029 04       		.uleb128 0x4
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cczfJazG.s 			page 6
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cc3R4Kvr.s 			page 6
 
 
  186 002a 2E       		.uleb128 0x2e
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cczfJazG.s 			page 1
  235      206C6F6E 
  235      6720696E 
  235      7400
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cczfJazG.s 			page 7
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cc3R4Kvr.s 			page 7
 
 
  236              	.LASF8:
@@ -408,57 +408,58 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cczfJazG.s 			page 1
  250              	.LASF11:
  251 00fe 63686172 		.ascii	"char\000"
  251      00
- 252              	.LASF4:
- 253 0103 6C6F6E67 		.ascii	"long int\000"
- 253      20696E74 
- 253      00
- 254              	.LASF13:
- 255 010c 43617053 		.ascii	"CapSense_TunerStart\000"
- 255      656E7365 
- 255      5F54756E 
- 255      65725374 
- 255      61727400 
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cczfJazG.s 			page 8
+ 252              	.LASF17:
+ 253 0103 433A5C55 		.ascii	"C:\\Users\\JohnP\\Desktop\\embedded\\trunk\\CE4920P"
+ 253      73657273 
+ 253      5C4A6F68 
+ 253      6E505C44 
+ 253      65736B74 
+ 254 0130 726F6A65 		.ascii	"roject1\\Design01.cydsn\000"
+ 254      6374315C 
+ 254      44657369 
+ 254      676E3031 
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\cc3R4Kvr.s 			page 8
 
 
- 256              	.LASF10:
- 257 0120 646F7562 		.ascii	"double\000"
- 257      6C6500
- 258              	.LASF17:
- 259 0127 433A5C72 		.ascii	"C:\\repositories\\embedded\\trunk\\CE4920Project1\\"
- 259      65706F73 
- 259      69746F72 
- 259      6965735C 
- 259      656D6265 
- 260 0155 44657369 		.ascii	"Design01.cydsn\000"
- 260      676E3031 
- 260      2E637964 
- 260      736E00
+ 254      2E637964 
+ 255              	.LASF4:
+ 256 0147 6C6F6E67 		.ascii	"long int\000"
+ 256      20696E74 
+ 256      00
+ 257              	.LASF13:
+ 258 0150 43617053 		.ascii	"CapSense_TunerStart\000"
+ 258      656E7365 
+ 258      5F54756E 
+ 258      65725374 
+ 258      61727400 
+ 259              	.LASF10:
+ 260 0164 646F7562 		.ascii	"double\000"
+ 260      6C6500
  261              	.LASF3:
- 262 0164 73686F72 		.ascii	"short unsigned int\000"
+ 262 016b 73686F72 		.ascii	"short unsigned int\000"
  262      7420756E 
  262      7369676E 
  262      65642069 
  262      6E7400
  263              	.LASF0:
- 264 0177 7369676E 		.ascii	"signed char\000"
+ 264 017e 7369676E 		.ascii	"signed char\000"
  264      65642063 
  264      68617200 
  265              	.LASF14:
- 266 0183 43617053 		.ascii	"CapSense_TunerComm\000"
+ 266 018a 43617053 		.ascii	"CapSense_TunerComm\000"
  266      656E7365 
  266      5F54756E 
  266      6572436F 
  266      6D6D00
  267              	.LASF9:
- 268 0196 666C6F61 		.ascii	"float\000"
+ 268 019d 666C6F61 		.ascii	"float\000"
  268      7400
  269              	.LASF2:
- 270 019c 73686F72 		.ascii	"short int\000"
+ 270 01a3 73686F72 		.ascii	"short int\000"
  270      7420696E 
  270      7400
  271              	.LASF12:
- 272 01a6 73697A65 		.ascii	"sizetype\000"
+ 272 01ad 73697A65 		.ascii	"sizetype\000"
  272      74797065 
  272      00
  273              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.8.4 20140526 (release) [ARM/embedded-4_8-br

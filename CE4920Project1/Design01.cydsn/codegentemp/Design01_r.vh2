@@ -1,10 +1,9 @@
 -- Project:   Design01
--- Generated: 11/03/2015 21:15:57
+-- Generated: 11/04/2015 16:42:41
 -- PSoC Creator  3.2 SP1
 
 ENTITY Design01 IS
     PORT(
-        HEARTRATE_ANALOG_IN(0)_PAD : INOUT std_ulogic;
         HEARTRATE_HEALTH(0)_PAD : IN std_ulogic;
         LEFT_LED(0)_PAD : OUT std_ulogic;
         MOTOR_HEALTH(0)_PAD : IN std_ulogic;
@@ -462,10 +461,10 @@ ARCHITECTURE __DEFAULT__ OF Design01 IS
     ATTRIBUTE Location OF \CapSense:ClockGen:tmp_ppulse_udb\ : LABEL IS "U(0,5)";
     ATTRIBUTE lib_model OF \CapSense:CmodCH0(0)\ : LABEL IS "iocell9";
     ATTRIBUTE Location OF \CapSense:CmodCH0(0)\ : LABEL IS "P6[4]";
-    ATTRIBUTE Location OF \CapSense:CompCH0:ctComp\ : LABEL IS "F(Comparator,2)";
+    ATTRIBUTE Location OF \CapSense:CompCH0:ctComp\ : LABEL IS "F(Comparator,1)";
     ATTRIBUTE lib_model OF \CapSense:IdacCH0:Net_123\ : LABEL IS "macrocell14";
     ATTRIBUTE Location OF \CapSense:IdacCH0:Net_123\ : LABEL IS "U(2,1)";
-    ATTRIBUTE Location OF \CapSense:IdacCH0:viDAC8\ : LABEL IS "F(VIDAC,0)";
+    ATTRIBUTE Location OF \CapSense:IdacCH0:viDAC8\ : LABEL IS "F(VIDAC,3)";
     ATTRIBUTE lib_model OF \CapSense:Ioff_CH0\ : LABEL IS "macrocell15";
     ATTRIBUTE Location OF \CapSense:Ioff_CH0\ : LABEL IS "U(2,1)";
     ATTRIBUTE Location OF \CapSense:IsrCH0\ : LABEL IS "[IntrHod=(0)][IntrId=(3)]";
@@ -1192,7 +1191,6 @@ BEGIN
         PORT MAP(
             pa_out => HEARTRATE_ANALOG_IN(0)__PA,
             oe => open,
-            pad_in => HEARTRATE_ANALOG_IN(0)_PAD,
             in_clock => open,
             in_clock_en => '1',
             in_reset => '0',

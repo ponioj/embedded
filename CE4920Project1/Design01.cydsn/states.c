@@ -19,10 +19,50 @@ int MOTOR_WALKING_SPEED = 300;
 int MOTOR_FAST_WALKING_SPEED = 200;
 float movingAverage[] =  {0,0,0,0,0,0,0,0,0,0}; 
 
+STATE State_reset(){
+    int hearthealth = HEARTRATE_HEALTH_Read();
+    int motorhealth = MOTOR_HEALTH_Read();
+    int uihealth = UI_HEALTH_Read();
+    
+    RESET_CAUSE = ((hearthealth && motorhealth && uihealth) > 0);
+    if(RESET_CAUSE == RESET_FAULT){
+        System_fault_init();
+        Display_fault_message();
+        Move_motor(0);
+        Play_startup_music();
+        Prev_state= STATE_RESET;
+        currentState = STATE_RESET;
+        RESET_CAUSE = RESET_NORMAL; // make it restart normally if reset again
+        if (!hearthealth) {
+            TERMINAL_WriteString("HEART HEALTH FAILED\n");
+        }
+        if (!motorhealth) {
+            TERMINAL_WriteString("MOTOR FAILED\n");
+        }
+        if (!uihealth) {
+            TERMINAL_WriteString("USER INTERFACE FAILED\n");
+        }
+        while(1) {
+           
+            
+            // TODO UART error message
+        }
+    }
+    else if (RESET_CAUSE == RESET_NORMAL) {
+        System_init();
+        Move_motor(0);
+        Display_welcome_message();
+        Play_startup_music();
+        Prev_state = STATE_RESET;
+        currentState = STATE_WAIT;
+    }
+    return currentState;
+    
+}
 
-STATE State_sleep(){
+STATE State_wait(){
     LCD_ClearDisplay();
-    Display_sleep();
+    Motor_stop();
     CapSense_UpdateEnabledBaselines();
     CapSense_ScanEnabledWidgets();
 	while(CapSense_IsBusy() != 0);
@@ -31,8 +71,7 @@ STATE State_sleep(){
         for (countDown = 10; countDown > 0; countDown--) {
             CapSense_ScanEnabledWidgets();
             if (CapSense_ReadSensorRaw(CapSense_SENSOR_LINEARSLIDER0_E4__LS) > 15000){
-                Prev_state = STATE_SLEEP;
-                LCD_ClearDisplay();
+                Prev_state = STATE_WAIT;
                 currentState = STATE_PROFILE_SELECTION;
             }
             else {
@@ -43,22 +82,6 @@ STATE State_sleep(){
     return currentState;
 }
 
-STATE State_reset(){
-    System_init();
-    Display_welcome_message();
-    Play_startup_music();
-    Prev_state = STATE_RESET;
-    LCD_Position(0,0);
-    LCD_PrintString("RESET");
-    return STATE_START;
-}
-
-STATE State_start(){
-    LCD_PrintString("START");
-    Prev_state = STATE_START;
-    return STATE_PROFILE_SELECTION;   
-}
-
 STATE State_profile_selection(){
     if(Prev_state == STATE_PROFILE_SELECTION) {
         LCD_Position(0,0); 
@@ -67,7 +90,6 @@ STATE State_profile_selection(){
         LCD_ClearDisplay();  
         LCD_PrintString("Select a profile..");
         Prev_state = STATE_PROFILE_SELECTION;
-        
     }
     LCD_Position(1,0);
     CapSense_UpdateEnabledBaselines();
@@ -85,7 +107,7 @@ STATE State_profile_selection(){
     }
     else if (CapSense_CheckIsWidgetActive(CapSense_BUTTON1__BTN)) {
             Display_profile_selection(selectedProfile);
-            return STATE_MOVING;
+            return STATE_RAMPUP;
     }
     switch (selectedProfile){
         case PROFILE_REGULAR:
@@ -106,10 +128,24 @@ STATE State_profile_selection(){
     return STATE_PROFILE_SELECTION;   
 }
 
+STATE State_rampup(){
+    int i;
+    int delay = 10;
+    int rampMax = 80000/MOTOR_WALKING_SPEED;
+    for (i=0; i<rampMax; i++){
+        Move_motor(i);
+        CyDelay(delay);
+    }
+    currentState = STATE_MOVING;
+    return currentState;
+}
+
 STATE State_moving(){
     Prev_state = STATE_MOVING;
+    TERMINAL_WriteNumber(heartrate);
     Detect_heartrate();
     int i;
+    
     for (i=0; i<9; i++){ 
         movingAverage[i]=movingAverage[i+1];
     }
@@ -123,11 +159,10 @@ STATE State_moving(){
         else{
             increasingHr = 1;
         }
-        LCD_Position(1,5);
-        LCD_PrintNumber(increasingHr);
         currentState = STATE_HEARTRATE_CHANGE;
     }
-    CyDelay(100);
+    
+//    CyDelay(100);
     return currentState;   
 }
 
@@ -167,7 +202,7 @@ STATE State_heartrate_change(){
 STATE State_stop(){
     Prev_state = STATE_STOP;
     Motor_stop();
-    return STATE_SLEEP; 
+    return STATE_WAIT; 
 }
 
 

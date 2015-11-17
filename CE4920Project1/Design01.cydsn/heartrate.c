@@ -19,10 +19,15 @@ extern int speed;
 float Detect_heartrate(void) {
     LCD_Position(0,0);
     LCD_PrintString("Heartrate: ");
-    heartrate = (600000/(endCounts-startCounts));
+   
+//    LCD_PrintU32Number(endCounts);
+    LCD_PrintString("      ");
     LCD_Position(1,0);
+    heartrate = (600000/(endCounts-startCounts));
+//    LCD_PrintU32Number(startCounts);
     LCD_PrintU32Number(heartrate);
     LCD_PrintString("      ");
+    
     return heartrate;
 }
 

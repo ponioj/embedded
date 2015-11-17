@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccslCrab.s 			page 1
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccrBqXIe.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccslCrab.s 			page 1
   29:.\Generated_Source\PSoC5/WaveDAC8_1_Wave1_DMA_dma.c **** * 
   30:.\Generated_Source\PSoC5/WaveDAC8_1_Wave1_DMA_dma.c **** * 
   31:.\Generated_Source\PSoC5/WaveDAC8_1_Wave1_DMA_dma.c **** * 
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccslCrab.s 			page 2
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccrBqXIe.s 			page 2
 
 
   32:.\Generated_Source\PSoC5/WaveDAC8_1_Wave1_DMA_dma.c **** * WaveDAC8_1_Wave1_DMA__DRQ_CTL_REG
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccslCrab.s 			page 1
   86:.\Generated_Source\PSoC5/WaveDAC8_1_Wave1_DMA_dma.c **** *       
   87:.\Generated_Source\PSoC5/WaveDAC8_1_Wave1_DMA_dma.c **** *       
   88:.\Generated_Source\PSoC5/WaveDAC8_1_Wave1_DMA_dma.c **** *   UpperDestAddress.
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccslCrab.s 			page 3
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccrBqXIe.s 			page 3
 
 
   89:.\Generated_Source\PSoC5/WaveDAC8_1_Wave1_DMA_dma.c **** *       
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccslCrab.s 			page 1
  109:.\Generated_Source\PSoC5/WaveDAC8_1_Wave1_DMA_dma.c ****                                   (uint8)WaveDAC8_1_Wave1_DMA__TERMIN_SEL);
  110:.\Generated_Source\PSoC5/WaveDAC8_1_Wave1_DMA_dma.c **** 
  111:.\Generated_Source\PSoC5/WaveDAC8_1_Wave1_DMA_dma.c ****     /* Set the extended address for the transfers */
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccslCrab.s 			page 4
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccrBqXIe.s 			page 4
 
 
  112:.\Generated_Source\PSoC5/WaveDAC8_1_Wave1_DMA_dma.c ****     (void)CyDmaChSetExtendedAddress(WaveDAC8_1_Wave1_DMA_DmaHandle, UpperSrcAddress, UpperDestAddre
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccslCrab.s 			page 1
  135:.\Generated_Source\PSoC5/WaveDAC8_1_Wave1_DMA_dma.c **** *******************************************************************/
  136:.\Generated_Source\PSoC5/WaveDAC8_1_Wave1_DMA_dma.c **** void WaveDAC8_1_Wave1_DMA_DmaRelease(void) 
  137:.\Generated_Source\PSoC5/WaveDAC8_1_Wave1_DMA_dma.c **** {
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccslCrab.s 			page 5
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccrBqXIe.s 			page 5
 
 
   92              		.loc 1 137 0
@@ -282,10 +282,10 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccslCrab.s 			page 1
  128 0006 00000000 		.4byte	.Ldebug_abbrev0
  129 000a 04       		.byte	0x4
  130 000b 01       		.uleb128 0x1
- 131 000c F6000000 		.4byte	.LASF23
+ 131 000c 3A010000 		.4byte	.LASF23
  132 0010 01       		.byte	0x1
- 133 0011 D9010000 		.4byte	.LASF24
- 134 0015 3B020000 		.4byte	.LASF25
+ 133 0011 1D020000 		.4byte	.LASF24
+ 134 0015 19000000 		.4byte	.LASF25
  135 0019 00000000 		.4byte	.Ldebug_ranges0+0
  136 001d 00000000 		.4byte	0
  137 0021 00000000 		.4byte	.Ldebug_line0
@@ -296,69 +296,69 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccslCrab.s 			page 1
  142 002c 03       		.uleb128 0x3
  143 002d 04       		.byte	0x4
  144 002e 07       		.byte	0x7
- 145 002f D2000000 		.4byte	.LASF0
+ 145 002f 16010000 		.4byte	.LASF0
  146 0033 03       		.uleb128 0x3
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccslCrab.s 			page 6
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccrBqXIe.s 			page 6
 
 
  147 0034 01       		.byte	0x1
  148 0035 06       		.byte	0x6
- 149 0036 20020000 		.4byte	.LASF1
+ 149 0036 64020000 		.4byte	.LASF1
  150 003a 03       		.uleb128 0x3
  151 003b 01       		.byte	0x1
  152 003c 08       		.byte	0x8
- 153 003d 70000000 		.4byte	.LASF2
+ 153 003d B4000000 		.4byte	.LASF2
  154 0041 03       		.uleb128 0x3
  155 0042 02       		.byte	0x2
  156 0043 05       		.byte	0x5
- 157 0044 0D020000 		.4byte	.LASF3
+ 157 0044 51020000 		.4byte	.LASF3
  158 0048 03       		.uleb128 0x3
  159 0049 02       		.byte	0x2
  160 004a 07       		.byte	0x7
- 161 004b 38000000 		.4byte	.LASF4
+ 161 004b 7C000000 		.4byte	.LASF4
  162 004f 03       		.uleb128 0x3
  163 0050 04       		.byte	0x4
  164 0051 05       		.byte	0x5
- 165 0052 17020000 		.4byte	.LASF5
+ 165 0052 5B020000 		.4byte	.LASF5
  166 0056 03       		.uleb128 0x3
  167 0057 04       		.byte	0x4
  168 0058 07       		.byte	0x7
- 169 0059 89000000 		.4byte	.LASF6
+ 169 0059 CD000000 		.4byte	.LASF6
  170 005d 03       		.uleb128 0x3
  171 005e 08       		.byte	0x8
  172 005f 05       		.byte	0x5
- 173 0060 A6010000 		.4byte	.LASF7
+ 173 0060 EA010000 		.4byte	.LASF7
  174 0064 03       		.uleb128 0x3
  175 0065 08       		.byte	0x8
  176 0066 07       		.byte	0x7
- 177 0067 DF000000 		.4byte	.LASF8
+ 177 0067 23010000 		.4byte	.LASF8
  178 006b 03       		.uleb128 0x3
  179 006c 04       		.byte	0x4
  180 006d 07       		.byte	0x7
- 181 006e 9D010000 		.4byte	.LASF9
+ 181 006e E1010000 		.4byte	.LASF9
  182 0072 03       		.uleb128 0x3
  183 0073 01       		.byte	0x1
  184 0074 08       		.byte	0x8
- 185 0075 D4010000 		.4byte	.LASF10
+ 185 0075 18020000 		.4byte	.LASF10
  186 0079 04       		.uleb128 0x4
- 187 007a 9B000000 		.4byte	.LASF11
+ 187 007a DF000000 		.4byte	.LASF11
  188 007e 02       		.byte	0x2
  189 007f B4       		.byte	0xb4
  190 0080 3A000000 		.4byte	0x3a
  191 0084 04       		.uleb128 0x4
- 192 0085 CB000000 		.4byte	.LASF12
+ 192 0085 0F010000 		.4byte	.LASF12
  193 0089 02       		.byte	0x2
  194 008a B5       		.byte	0xb5
  195 008b 48000000 		.4byte	0x48
  196 008f 03       		.uleb128 0x3
  197 0090 04       		.byte	0x4
  198 0091 04       		.byte	0x4
- 199 0092 4B000000 		.4byte	.LASF13
+ 199 0092 8F000000 		.4byte	.LASF13
  200 0096 03       		.uleb128 0x3
  201 0097 08       		.byte	0x8
  202 0098 04       		.byte	0x4
- 203 0099 C4000000 		.4byte	.LASF14
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccslCrab.s 			page 7
+ 203 0099 08010000 		.4byte	.LASF14
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccrBqXIe.s 			page 7
 
 
  204 009d 05       		.uleb128 0x5
@@ -367,7 +367,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccslCrab.s 			page 1
  207 00a3 5601     		.2byte	0x156
  208 00a5 56000000 		.4byte	0x56
  209 00a9 06       		.uleb128 0x6
- 210 00aa A1000000 		.4byte	.LASF26
+ 210 00aa E5000000 		.4byte	.LASF26
  211 00ae 01       		.byte	0x1
  212 00af 61       		.byte	0x61
  213 00b0 79000000 		.4byte	0x79
@@ -377,13 +377,13 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccslCrab.s 			page 1
  217 00bd 9C       		.byte	0x9c
  218 00be 52010000 		.4byte	0x152
  219 00c2 07       		.uleb128 0x7
- 220 00c3 7E000000 		.4byte	.LASF16
+ 220 00c3 C2000000 		.4byte	.LASF16
  221 00c7 01       		.byte	0x1
  222 00c8 61       		.byte	0x61
  223 00c9 79000000 		.4byte	0x79
  224 00cd 00000000 		.4byte	.LLST0
  225 00d1 07       		.uleb128 0x7
- 226 00d2 29000000 		.4byte	.LASF17
+ 226 00d2 6D000000 		.4byte	.LASF17
  227 00d6 01       		.byte	0x1
  228 00d7 61       		.byte	0x61
  229 00d8 79000000 		.4byte	0x79
@@ -395,7 +395,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccslCrab.s 			page 1
  235 00e7 84000000 		.4byte	0x84
  236 00eb 42000000 		.4byte	.LLST2
  237 00ef 07       		.uleb128 0x7
- 238 00f0 72010000 		.4byte	.LASF19
+ 238 00f0 B6010000 		.4byte	.LASF19
  239 00f4 01       		.byte	0x1
  240 00f5 61       		.byte	0x61
  241 00f6 84000000 		.4byte	0x84
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccslCrab.s 			page 1
  258 0116 09       		.uleb128 0x9
  259 0117 01       		.uleb128 0x1
  260 0118 50       		.byte	0x50
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccslCrab.s 			page 8
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccrBqXIe.s 			page 8
 
 
  261 0119 01       		.uleb128 0x1
@@ -464,7 +464,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccslCrab.s 			page 1
  301 0150 00       		.byte	0
  302 0151 00       		.byte	0
  303 0152 0B       		.uleb128 0xb
- 304 0153 B4010000 		.4byte	.LASF27
+ 304 0153 F8010000 		.4byte	.LASF27
  305 0157 01       		.byte	0x1
  306 0158 88       		.byte	0x88
  307 0159 00000000 		.4byte	.LFB1
@@ -477,8 +477,8 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccslCrab.s 			page 1
  314 016c E9010000 		.4byte	0x1e9
  315 0170 00       		.byte	0
  316 0171 0D       		.uleb128 0xd
- 317 0172 51000000 		.4byte	.LASF28
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccslCrab.s 			page 9
+ 317 0172 95000000 		.4byte	.LASF28
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccrBqXIe.s 			page 9
 
 
  318 0176 01       		.byte	0x1
@@ -488,7 +488,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccslCrab.s 			page 1
  322 017d 03       		.byte	0x3
  323 017e 00000000 		.4byte	WaveDAC8_1_Wave1_DMA_DmaHandle
  324 0182 0E       		.uleb128 0xe
- 325 0183 78020000 		.4byte	.LASF20
+ 325 0183 7F020000 		.4byte	.LASF20
  326 0187 03       		.byte	0x3
  327 0188 34       		.byte	0x34
  328 0189 9D000000 		.4byte	0x9d
@@ -507,7 +507,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccslCrab.s 			page 1
  341 01ab 79000000 		.4byte	0x79
  342 01af 00       		.byte	0
  343 01b0 0E       		.uleb128 0xe
- 344 01b1 83010000 		.4byte	.LASF21
+ 344 01b1 C7010000 		.4byte	.LASF21
  345 01b5 03       		.byte	0x3
  346 01b6 2E       		.byte	0x2e
  347 01b7 9D000000 		.4byte	0x9d
@@ -520,7 +520,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccslCrab.s 			page 1
  354 01ca 84000000 		.4byte	0x84
  355 01ce 00       		.byte	0
  356 01cf 0E       		.uleb128 0xe
- 357 01d0 19000000 		.4byte	.LASF22
+ 357 01d0 5D000000 		.4byte	.LASF22
  358 01d4 03       		.byte	0x3
  359 01d5 2D       		.byte	0x2d
  360 01d6 9D000000 		.4byte	0x9d
@@ -531,14 +531,14 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccslCrab.s 			page 1
  365 01e4 79000000 		.4byte	0x79
  366 01e8 00       		.byte	0
  367 01e9 10       		.uleb128 0x10
- 368 01ea 2C020000 		.4byte	.LASF29
+ 368 01ea 70020000 		.4byte	.LASF29
  369 01ee 03       		.byte	0x3
  370 01ef 2B       		.byte	0x2b
  371 01f0 9D000000 		.4byte	0x9d
  372 01f4 0F       		.uleb128 0xf
  373 01f5 79000000 		.4byte	0x79
  374 01f9 00       		.byte	0
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccslCrab.s 			page 10
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccrBqXIe.s 			page 10
 
 
  375 01fa 00       		.byte	0
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccslCrab.s 			page 1
  429 0033 13       		.uleb128 0x13
  430 0034 00       		.byte	0
  431 0035 00       		.byte	0
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccslCrab.s 			page 11
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccrBqXIe.s 			page 11
 
 
  432 0036 05       		.uleb128 0x5
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccslCrab.s 			page 1
  486 006d 00       		.byte	0
  487 006e 08       		.uleb128 0x8
  488 006f 898201   		.uleb128 0x4109
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccslCrab.s 			page 12
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccrBqXIe.s 			page 12
 
 
  489 0072 01       		.byte	0x1
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccslCrab.s 			page 1
  543 00b0 00       		.byte	0
  544 00b1 11       		.uleb128 0x11
  545 00b2 01       		.uleb128 0x1
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccslCrab.s 			page 13
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccrBqXIe.s 			page 13
 
 
  546 00b3 31       		.uleb128 0x31
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccslCrab.s 			page 1
  600 00e9 03       		.uleb128 0x3
  601 00ea 0E       		.uleb128 0xe
  602 00eb 3A       		.uleb128 0x3a
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccslCrab.s 			page 14
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccrBqXIe.s 			page 14
 
 
  603 00ec 0B       		.uleb128 0xb
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccslCrab.s 			page 1
  657 005b 00000000 		.4byte	0
  658 005f 00000000 		.4byte	0
  659              	.LLST3:
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccslCrab.s 			page 15
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccrBqXIe.s 			page 15
 
 
  660 0063 00000000 		.4byte	.LVL0
@@ -892,163 +892,164 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccslCrab.s 			page 1
  701      72537263 
  701      41646472 
  701      65737300 
- 702              	.LASF22:
- 703 0019 4379446D 		.ascii	"CyDmaChPriority\000"
- 703      61436850 
- 703      72696F72 
- 703      69747900 
- 704              	.LASF17:
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccslCrab.s 			page 16
+ 702              	.LASF25:
+ 703 0019 433A5C55 		.ascii	"C:\\Users\\JohnP\\Desktop\\embedded\\trunk\\CE4920P"
+ 703      73657273 
+ 703      5C4A6F68 
+ 703      6E505C44 
+ 703      65736B74 
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccrBqXIe.s 			page 16
 
 
- 705 0029 52657165 		.ascii	"ReqestPerBurst\000"
- 705      73745065 
- 705      72427572 
- 705      737400
- 706              	.LASF4:
- 707 0038 73686F72 		.ascii	"short unsigned int\000"
- 707      7420756E 
- 707      7369676E 
- 707      65642069 
- 707      6E7400
- 708              	.LASF13:
- 709 004b 666C6F61 		.ascii	"float\000"
- 709      7400
- 710              	.LASF28:
- 711 0051 57617665 		.ascii	"WaveDAC8_1_Wave1_DMA_DmaHandle\000"
- 711      44414338 
- 711      5F315F57 
- 711      61766531 
- 711      5F444D41 
- 712              	.LASF2:
- 713 0070 756E7369 		.ascii	"unsigned char\000"
- 713      676E6564 
- 713      20636861 
- 713      7200
- 714              	.LASF16:
- 715 007e 42757273 		.ascii	"BurstCount\000"
- 715      74436F75 
- 715      6E7400
- 716              	.LASF6:
- 717 0089 6C6F6E67 		.ascii	"long unsigned int\000"
- 717      20756E73 
- 717      69676E65 
- 717      6420696E 
- 717      7400
- 718              	.LASF11:
- 719 009b 75696E74 		.ascii	"uint8\000"
- 719      3800
- 720              	.LASF26:
- 721 00a1 57617665 		.ascii	"WaveDAC8_1_Wave1_DMA_DmaInitialize\000"
- 721      44414338 
- 721      5F315F57 
- 721      61766531 
- 721      5F444D41 
- 722              	.LASF14:
- 723 00c4 646F7562 		.ascii	"double\000"
- 723      6C6500
- 724              	.LASF12:
- 725 00cb 75696E74 		.ascii	"uint16\000"
- 725      313600
- 726              	.LASF0:
- 727 00d2 756E7369 		.ascii	"unsigned int\000"
- 727      676E6564 
- 727      20696E74 
- 727      00
- 728              	.LASF8:
- 729 00df 6C6F6E67 		.ascii	"long long unsigned int\000"
- 729      206C6F6E 
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccslCrab.s 			page 17
+ 704 0046 726F6A65 		.ascii	"roject1\\Design01.cydsn\000"
+ 704      6374315C 
+ 704      44657369 
+ 704      676E3031 
+ 704      2E637964 
+ 705              	.LASF22:
+ 706 005d 4379446D 		.ascii	"CyDmaChPriority\000"
+ 706      61436850 
+ 706      72696F72 
+ 706      69747900 
+ 707              	.LASF17:
+ 708 006d 52657165 		.ascii	"ReqestPerBurst\000"
+ 708      73745065 
+ 708      72427572 
+ 708      737400
+ 709              	.LASF4:
+ 710 007c 73686F72 		.ascii	"short unsigned int\000"
+ 710      7420756E 
+ 710      7369676E 
+ 710      65642069 
+ 710      6E7400
+ 711              	.LASF13:
+ 712 008f 666C6F61 		.ascii	"float\000"
+ 712      7400
+ 713              	.LASF28:
+ 714 0095 57617665 		.ascii	"WaveDAC8_1_Wave1_DMA_DmaHandle\000"
+ 714      44414338 
+ 714      5F315F57 
+ 714      61766531 
+ 714      5F444D41 
+ 715              	.LASF2:
+ 716 00b4 756E7369 		.ascii	"unsigned char\000"
+ 716      676E6564 
+ 716      20636861 
+ 716      7200
+ 717              	.LASF16:
+ 718 00c2 42757273 		.ascii	"BurstCount\000"
+ 718      74436F75 
+ 718      6E7400
+ 719              	.LASF6:
+ 720 00cd 6C6F6E67 		.ascii	"long unsigned int\000"
+ 720      20756E73 
+ 720      69676E65 
+ 720      6420696E 
+ 720      7400
+ 721              	.LASF11:
+ 722 00df 75696E74 		.ascii	"uint8\000"
+ 722      3800
+ 723              	.LASF26:
+ 724 00e5 57617665 		.ascii	"WaveDAC8_1_Wave1_DMA_DmaInitialize\000"
+ 724      44414338 
+ 724      5F315F57 
+ 724      61766531 
+ 724      5F444D41 
+ 725              	.LASF14:
+ 726 0108 646F7562 		.ascii	"double\000"
+ 726      6C6500
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccrBqXIe.s 			page 17
 
 
- 729      6720756E 
- 729      7369676E 
- 729      65642069 
- 730              	.LASF23:
- 731 00f6 474E5520 		.ascii	"GNU C 4.8.4 20140526 (release) [ARM/embedded-4_8-br"
- 731      4320342E 
- 731      382E3420 
- 731      32303134 
- 731      30353236 
- 732 0129 616E6368 		.ascii	"anch revision 211358] -mcpu=cortex-m3 -mthumb -g -O"
- 732      20726576 
- 732      6973696F 
- 732      6E203231 
- 732      31333538 
- 733 015c 67202D66 		.ascii	"g -ffunction-sections\000"
- 733      66756E63 
- 733      74696F6E 
- 733      2D736563 
- 733      74696F6E 
- 734              	.LASF19:
- 735 0172 55707065 		.ascii	"UpperDestAddress\000"
- 735      72446573 
- 735      74416464 
- 735      72657373 
- 735      00
- 736              	.LASF21:
- 737 0183 4379446D 		.ascii	"CyDmaChSetExtendedAddress\000"
- 737      61436853 
- 737      65744578 
- 737      74656E64 
- 737      65644164 
- 738              	.LASF9:
- 739 019d 73697A65 		.ascii	"sizetype\000"
- 739      74797065 
- 739      00
- 740              	.LASF7:
- 741 01a6 6C6F6E67 		.ascii	"long long int\000"
- 741      206C6F6E 
- 741      6720696E 
- 741      7400
- 742              	.LASF27:
- 743 01b4 57617665 		.ascii	"WaveDAC8_1_Wave1_DMA_DmaRelease\000"
- 743      44414338 
- 743      5F315F57 
- 743      61766531 
- 743      5F444D41 
- 744              	.LASF10:
- 745 01d4 63686172 		.ascii	"char\000"
- 745      00
- 746              	.LASF24:
- 747 01d9 2E5C4765 		.ascii	".\\Generated_Source\\PSoC5\\WaveDAC8_1_Wave1_DMA_dm"
- 747      6E657261 
- 747      7465645F 
- 747      536F7572 
- 747      63655C50 
- 748 0209 612E6300 		.ascii	"a.c\000"
- 749              	.LASF3:
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccslCrab.s 			page 18
+ 727              	.LASF12:
+ 728 010f 75696E74 		.ascii	"uint16\000"
+ 728      313600
+ 729              	.LASF0:
+ 730 0116 756E7369 		.ascii	"unsigned int\000"
+ 730      676E6564 
+ 730      20696E74 
+ 730      00
+ 731              	.LASF8:
+ 732 0123 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 732      206C6F6E 
+ 732      6720756E 
+ 732      7369676E 
+ 732      65642069 
+ 733              	.LASF23:
+ 734 013a 474E5520 		.ascii	"GNU C 4.8.4 20140526 (release) [ARM/embedded-4_8-br"
+ 734      4320342E 
+ 734      382E3420 
+ 734      32303134 
+ 734      30353236 
+ 735 016d 616E6368 		.ascii	"anch revision 211358] -mcpu=cortex-m3 -mthumb -g -O"
+ 735      20726576 
+ 735      6973696F 
+ 735      6E203231 
+ 735      31333538 
+ 736 01a0 67202D66 		.ascii	"g -ffunction-sections\000"
+ 736      66756E63 
+ 736      74696F6E 
+ 736      2D736563 
+ 736      74696F6E 
+ 737              	.LASF19:
+ 738 01b6 55707065 		.ascii	"UpperDestAddress\000"
+ 738      72446573 
+ 738      74416464 
+ 738      72657373 
+ 738      00
+ 739              	.LASF21:
+ 740 01c7 4379446D 		.ascii	"CyDmaChSetExtendedAddress\000"
+ 740      61436853 
+ 740      65744578 
+ 740      74656E64 
+ 740      65644164 
+ 741              	.LASF9:
+ 742 01e1 73697A65 		.ascii	"sizetype\000"
+ 742      74797065 
+ 742      00
+ 743              	.LASF7:
+ 744 01ea 6C6F6E67 		.ascii	"long long int\000"
+ 744      206C6F6E 
+ 744      6720696E 
+ 744      7400
+ 745              	.LASF27:
+ 746 01f8 57617665 		.ascii	"WaveDAC8_1_Wave1_DMA_DmaRelease\000"
+ 746      44414338 
+ 746      5F315F57 
+ 746      61766531 
+ 746      5F444D41 
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccrBqXIe.s 			page 18
 
 
- 750 020d 73686F72 		.ascii	"short int\000"
- 750      7420696E 
- 750      7400
- 751              	.LASF5:
- 752 0217 6C6F6E67 		.ascii	"long int\000"
- 752      20696E74 
- 752      00
- 753              	.LASF1:
- 754 0220 7369676E 		.ascii	"signed char\000"
- 754      65642063 
- 754      68617200 
- 755              	.LASF29:
- 756 022c 4379446D 		.ascii	"CyDmaChDisable\000"
- 756      61436844 
- 756      69736162 
- 756      6C6500
- 757              	.LASF25:
- 758 023b 433A5C72 		.ascii	"C:\\repositories\\embedded\\trunk\\CE4920Project1\\"
- 758      65706F73 
- 758      69746F72 
- 758      6965735C 
- 758      656D6265 
- 759 0269 44657369 		.ascii	"Design01.cydsn\000"
- 759      676E3031 
- 759      2E637964 
- 759      736E00
+ 747              	.LASF10:
+ 748 0218 63686172 		.ascii	"char\000"
+ 748      00
+ 749              	.LASF24:
+ 750 021d 2E5C4765 		.ascii	".\\Generated_Source\\PSoC5\\WaveDAC8_1_Wave1_DMA_dm"
+ 750      6E657261 
+ 750      7465645F 
+ 750      536F7572 
+ 750      63655C50 
+ 751 024d 612E6300 		.ascii	"a.c\000"
+ 752              	.LASF3:
+ 753 0251 73686F72 		.ascii	"short int\000"
+ 753      7420696E 
+ 753      7400
+ 754              	.LASF5:
+ 755 025b 6C6F6E67 		.ascii	"long int\000"
+ 755      20696E74 
+ 755      00
+ 756              	.LASF1:
+ 757 0264 7369676E 		.ascii	"signed char\000"
+ 757      65642063 
+ 757      68617200 
+ 758              	.LASF29:
+ 759 0270 4379446D 		.ascii	"CyDmaChDisable\000"
+ 759      61436844 
+ 759      69736162 
+ 759      6C6500
  760              	.LASF20:
- 761 0278 4379446D 		.ascii	"CyDmaChSetConfiguration\000"
+ 761 027f 4379446D 		.ascii	"CyDmaChSetConfiguration\000"
  761      61436853 
  761      6574436F 
  761      6E666967 

@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccre2G9p.s 			page 1
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccNiZQNf.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccre2G9p.s 			page 1
   29:.\Generated_Source\PSoC5/LEFT_LED.c **** * Summary:
   30:.\Generated_Source\PSoC5/LEFT_LED.c **** *  Assign a new value to the digital port's data output register.  
   31:.\Generated_Source\PSoC5/LEFT_LED.c **** *
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccre2G9p.s 			page 2
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccNiZQNf.s 			page 2
 
 
   32:.\Generated_Source\PSoC5/LEFT_LED.c **** * Parameters:  
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccre2G9p.s 			page 1
   52:.\Generated_Source\PSoC5/LEFT_LED.c **** * 
   53:.\Generated_Source\PSoC5/LEFT_LED.c **** * Parameters:  
   54:.\Generated_Source\PSoC5/LEFT_LED.c **** *  mode:  Change the pins to one of the following drive modes.
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccre2G9p.s 			page 3
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccNiZQNf.s 			page 3
 
 
   55:.\Generated_Source\PSoC5/LEFT_LED.c **** *
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccre2G9p.s 			page 1
   79:.\Generated_Source\PSoC5/LEFT_LED.c **** * Summary:
   80:.\Generated_Source\PSoC5/LEFT_LED.c **** *  Read the current value on the pins of the Digital Port in right justified 
   81:.\Generated_Source\PSoC5/LEFT_LED.c **** *  form.
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccre2G9p.s 			page 4
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccNiZQNf.s 			page 4
 
 
   82:.\Generated_Source\PSoC5/LEFT_LED.c **** *
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccre2G9p.s 			page 1
  110:.\Generated_Source\PSoC5/LEFT_LED.c **** *  Returns the current value assigned to the Digital Port's data output register
  111:.\Generated_Source\PSoC5/LEFT_LED.c **** *  
  112:.\Generated_Source\PSoC5/LEFT_LED.c **** *******************************************************************************/
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccre2G9p.s 			page 5
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccNiZQNf.s 			page 5
 
 
  113:.\Generated_Source\PSoC5/LEFT_LED.c **** uint8 LEFT_LED_ReadDataReg(void) 
@@ -273,48 +273,48 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccre2G9p.s 			page 1
  142 0006 00000000 		.4byte	.Ldebug_abbrev0
  143 000a 04       		.byte	0x4
  144 000b 01       		.uleb128 0x1
- 145 000c B1000000 		.4byte	.LASF20
+ 145 000c F5000000 		.4byte	.LASF20
  146 0010 01       		.byte	0x1
- 147 0011 6F010000 		.4byte	.LASF21
- 148 0015 9F010000 		.4byte	.LASF22
+ 147 0011 B3010000 		.4byte	.LASF21
+ 148 0015 0E000000 		.4byte	.LASF22
  149 0019 00000000 		.4byte	.Ldebug_ranges0+0
  150 001d 00000000 		.4byte	0
  151 0021 00000000 		.4byte	.Ldebug_line0
  152 0025 02       		.uleb128 0x2
  153 0026 01       		.byte	0x1
  154 0027 06       		.byte	0x6
- 155 0028 93010000 		.4byte	.LASF0
+ 155 0028 D7010000 		.4byte	.LASF0
  156 002c 02       		.uleb128 0x2
  157 002d 01       		.byte	0x1
  158 002e 08       		.byte	0x8
- 159 002f 25000000 		.4byte	.LASF1
+ 159 002f 69000000 		.4byte	.LASF1
  160 0033 02       		.uleb128 0x2
  161 0034 02       		.byte	0x2
  162 0035 05       		.byte	0x5
- 163 0036 56010000 		.4byte	.LASF2
+ 163 0036 9A010000 		.4byte	.LASF2
  164 003a 02       		.uleb128 0x2
  165 003b 02       		.byte	0x2
  166 003c 07       		.byte	0x7
- 167 003d 4A000000 		.4byte	.LASF3
+ 167 003d 8E000000 		.4byte	.LASF3
  168 0041 02       		.uleb128 0x2
  169 0042 04       		.byte	0x4
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccre2G9p.s 			page 6
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccNiZQNf.s 			page 6
 
 
  170 0043 05       		.byte	0x5
- 171 0044 66010000 		.4byte	.LASF4
+ 171 0044 AA010000 		.4byte	.LASF4
  172 0048 02       		.uleb128 0x2
  173 0049 04       		.byte	0x4
  174 004a 07       		.byte	0x7
- 175 004b 38000000 		.4byte	.LASF5
+ 175 004b 7C000000 		.4byte	.LASF5
  176 004f 02       		.uleb128 0x2
  177 0050 08       		.byte	0x8
  178 0051 05       		.byte	0x5
- 179 0052 2D010000 		.4byte	.LASF6
+ 179 0052 71010000 		.4byte	.LASF6
  180 0056 02       		.uleb128 0x2
  181 0057 08       		.byte	0x8
  182 0058 07       		.byte	0x7
- 183 0059 86000000 		.4byte	.LASF7
+ 183 0059 CA000000 		.4byte	.LASF7
  184 005d 03       		.uleb128 0x3
  185 005e 04       		.byte	0x4
  186 005f 05       		.byte	0x5
@@ -322,33 +322,33 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccre2G9p.s 			page 1
  188 0064 02       		.uleb128 0x2
  189 0065 04       		.byte	0x4
  190 0066 07       		.byte	0x7
- 191 0067 79000000 		.4byte	.LASF8
+ 191 0067 BD000000 		.4byte	.LASF8
  192 006b 04       		.uleb128 0x4
- 193 006c 60010000 		.4byte	.LASF12
+ 193 006c A4010000 		.4byte	.LASF12
  194 0070 02       		.byte	0x2
  195 0071 B4       		.byte	0xb4
  196 0072 2C000000 		.4byte	0x2c
  197 0076 02       		.uleb128 0x2
  198 0077 04       		.byte	0x4
  199 0078 04       		.byte	0x4
- 200 0079 1F000000 		.4byte	.LASF9
+ 200 0079 63000000 		.4byte	.LASF9
  201 007d 02       		.uleb128 0x2
  202 007e 08       		.byte	0x8
  203 007f 04       		.byte	0x4
- 204 0080 72000000 		.4byte	.LASF10
+ 204 0080 B6000000 		.4byte	.LASF10
  205 0084 02       		.uleb128 0x2
  206 0085 01       		.byte	0x1
  207 0086 08       		.byte	0x8
- 208 0087 51010000 		.4byte	.LASF11
+ 208 0087 95010000 		.4byte	.LASF11
  209 008b 05       		.uleb128 0x5
- 210 008c 33000000 		.4byte	.LASF13
+ 210 008c 77000000 		.4byte	.LASF13
  211 0090 02       		.byte	0x2
  212 0091 5E01     		.2byte	0x15e
  213 0093 97000000 		.4byte	0x97
  214 0097 06       		.uleb128 0x6
  215 0098 6B000000 		.4byte	0x6b
  216 009c 07       		.uleb128 0x7
- 217 009d A2000000 		.4byte	.LASF14
+ 217 009d E6000000 		.4byte	.LASF14
  218 00a1 01       		.byte	0x1
  219 00a2 27       		.byte	0x27
  220 00a3 00000000 		.4byte	.LFB0
@@ -357,8 +357,8 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccre2G9p.s 			page 1
  223 00ac 9C       		.byte	0x9c
  224 00ad D0000000 		.4byte	0xd0
  225 00b1 08       		.uleb128 0x8
- 226 00b2 0E000000 		.4byte	.LASF16
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccre2G9p.s 			page 7
+ 226 00b2 52000000 		.4byte	.LASF16
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccNiZQNf.s 			page 7
 
 
  227 00b6 01       		.byte	0x1
@@ -366,14 +366,14 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccre2G9p.s 			page 1
  229 00b8 6B000000 		.4byte	0x6b
  230 00bc 00000000 		.4byte	.LLST0
  231 00c0 09       		.uleb128 0x9
- 232 00c1 14000000 		.4byte	.LASF23
+ 232 00c1 58000000 		.4byte	.LASF23
  233 00c5 01       		.byte	0x1
  234 00c6 29       		.byte	0x29
  235 00c7 6B000000 		.4byte	0x6b
  236 00cb 21000000 		.4byte	.LLST1
  237 00cf 00       		.byte	0
  238 00d0 07       		.uleb128 0x7
- 239 00d1 3B010000 		.4byte	.LASF15
+ 239 00d1 7F010000 		.4byte	.LASF15
  240 00d5 01       		.byte	0x1
  241 00d6 45       		.byte	0x45
  242 00d7 00000000 		.4byte	.LFB1
@@ -382,7 +382,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccre2G9p.s 			page 1
  245 00e0 9C       		.byte	0x9c
  246 00e1 F5000000 		.4byte	0xf5
  247 00e5 08       		.uleb128 0x8
- 248 00e6 9D000000 		.4byte	.LASF17
+ 248 00e6 E1000000 		.4byte	.LASF17
  249 00ea 01       		.byte	0x1
  250 00eb 45       		.byte	0x45
  251 00ec 6B000000 		.4byte	0x6b
@@ -398,7 +398,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccre2G9p.s 			page 1
  261 0108 01       		.uleb128 0x1
  262 0109 9C       		.byte	0x9c
  263 010a 0A       		.uleb128 0xa
- 264 010b 5D000000 		.4byte	.LASF19
+ 264 010b A1000000 		.4byte	.LASF19
  265 010f 01       		.byte	0x1
  266 0110 71       		.byte	0x71
  267 0111 6B000000 		.4byte	0x6b
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccre2G9p.s 			page 1
  281 0006 0B       		.uleb128 0xb
  282 0007 03       		.uleb128 0x3
  283 0008 0E       		.uleb128 0xe
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccre2G9p.s 			page 8
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccNiZQNf.s 			page 8
 
 
  284 0009 1B       		.uleb128 0x1b
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccre2G9p.s 			page 1
  338 003f 49       		.uleb128 0x49
  339 0040 13       		.uleb128 0x13
  340 0041 00       		.byte	0
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccre2G9p.s 			page 9
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccNiZQNf.s 			page 9
 
 
  341 0042 00       		.byte	0
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccre2G9p.s 			page 1
  395 0079 0B       		.uleb128 0xb
  396 007a 3B       		.uleb128 0x3b
  397 007b 0B       		.uleb128 0xb
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccre2G9p.s 			page 10
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccNiZQNf.s 			page 10
 
 
  398 007c 49       		.uleb128 0x49
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccre2G9p.s 			page 1
  452 0030 00000000 		.4byte	0
  453              	.LLST2:
  454 0034 00000000 		.4byte	.LVL4
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccre2G9p.s 			page 11
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccNiZQNf.s 			page 11
 
 
  455 0038 0C000000 		.4byte	.LVL5
@@ -655,132 +655,133 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccre2G9p.s 			page 1
  501      5F4C4544 
  501      5F526561 
  501      6400
- 502              	.LASF16:
- 503 000e 76616C75 		.ascii	"value\000"
- 503      6500
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccre2G9p.s 			page 12
+ 502              	.LASF22:
+ 503 000e 433A5C55 		.ascii	"C:\\Users\\JohnP\\Desktop\\embedded\\trunk\\CE4920P"
+ 503      73657273 
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccNiZQNf.s 			page 12
 
 
- 504              	.LASF23:
- 505 0014 73746174 		.ascii	"staticBits\000"
- 505      69634269 
- 505      747300
- 506              	.LASF9:
- 507 001f 666C6F61 		.ascii	"float\000"
- 507      7400
- 508              	.LASF1:
- 509 0025 756E7369 		.ascii	"unsigned char\000"
- 509      676E6564 
- 509      20636861 
- 509      7200
- 510              	.LASF13:
- 511 0033 72656738 		.ascii	"reg8\000"
- 511      00
- 512              	.LASF5:
- 513 0038 6C6F6E67 		.ascii	"long unsigned int\000"
- 513      20756E73 
- 513      69676E65 
- 513      6420696E 
- 513      7400
- 514              	.LASF3:
- 515 004a 73686F72 		.ascii	"short unsigned int\000"
- 515      7420756E 
- 515      7369676E 
- 515      65642069 
- 515      6E7400
- 516              	.LASF19:
- 517 005d 4C454654 		.ascii	"LEFT_LED_ReadDataReg\000"
- 517      5F4C4544 
- 517      5F526561 
- 517      64446174 
- 517      61526567 
- 518              	.LASF10:
- 519 0072 646F7562 		.ascii	"double\000"
- 519      6C6500
- 520              	.LASF8:
- 521 0079 756E7369 		.ascii	"unsigned int\000"
- 521      676E6564 
- 521      20696E74 
- 521      00
- 522              	.LASF7:
- 523 0086 6C6F6E67 		.ascii	"long long unsigned int\000"
- 523      206C6F6E 
- 523      6720756E 
- 523      7369676E 
- 523      65642069 
- 524              	.LASF17:
- 525 009d 6D6F6465 		.ascii	"mode\000"
- 525      00
- 526              	.LASF14:
- 527 00a2 4C454654 		.ascii	"LEFT_LED_Write\000"
- 527      5F4C4544 
- 527      5F577269 
- 527      746500
- 528              	.LASF20:
- 529 00b1 474E5520 		.ascii	"GNU C 4.8.4 20140526 (release) [ARM/embedded-4_8-br"
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccre2G9p.s 			page 13
+ 503      5C4A6F68 
+ 503      6E505C44 
+ 503      65736B74 
+ 504 003b 726F6A65 		.ascii	"roject1\\Design01.cydsn\000"
+ 504      6374315C 
+ 504      44657369 
+ 504      676E3031 
+ 504      2E637964 
+ 505              	.LASF16:
+ 506 0052 76616C75 		.ascii	"value\000"
+ 506      6500
+ 507              	.LASF23:
+ 508 0058 73746174 		.ascii	"staticBits\000"
+ 508      69634269 
+ 508      747300
+ 509              	.LASF9:
+ 510 0063 666C6F61 		.ascii	"float\000"
+ 510      7400
+ 511              	.LASF1:
+ 512 0069 756E7369 		.ascii	"unsigned char\000"
+ 512      676E6564 
+ 512      20636861 
+ 512      7200
+ 513              	.LASF13:
+ 514 0077 72656738 		.ascii	"reg8\000"
+ 514      00
+ 515              	.LASF5:
+ 516 007c 6C6F6E67 		.ascii	"long unsigned int\000"
+ 516      20756E73 
+ 516      69676E65 
+ 516      6420696E 
+ 516      7400
+ 517              	.LASF3:
+ 518 008e 73686F72 		.ascii	"short unsigned int\000"
+ 518      7420756E 
+ 518      7369676E 
+ 518      65642069 
+ 518      6E7400
+ 519              	.LASF19:
+ 520 00a1 4C454654 		.ascii	"LEFT_LED_ReadDataReg\000"
+ 520      5F4C4544 
+ 520      5F526561 
+ 520      64446174 
+ 520      61526567 
+ 521              	.LASF10:
+ 522 00b6 646F7562 		.ascii	"double\000"
+ 522      6C6500
+ 523              	.LASF8:
+ 524 00bd 756E7369 		.ascii	"unsigned int\000"
+ 524      676E6564 
+ 524      20696E74 
+ 524      00
+ 525              	.LASF7:
+ 526 00ca 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 526      206C6F6E 
+ 526      6720756E 
+ 526      7369676E 
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccNiZQNf.s 			page 13
 
 
- 529      4320342E 
- 529      382E3420 
- 529      32303134 
- 529      30353236 
- 530 00e4 616E6368 		.ascii	"anch revision 211358] -mcpu=cortex-m3 -mthumb -g -O"
- 530      20726576 
- 530      6973696F 
- 530      6E203231 
- 530      31333538 
- 531 0117 67202D66 		.ascii	"g -ffunction-sections\000"
- 531      66756E63 
- 531      74696F6E 
- 531      2D736563 
- 531      74696F6E 
- 532              	.LASF6:
- 533 012d 6C6F6E67 		.ascii	"long long int\000"
- 533      206C6F6E 
- 533      6720696E 
- 533      7400
- 534              	.LASF15:
- 535 013b 4C454654 		.ascii	"LEFT_LED_SetDriveMode\000"
- 535      5F4C4544 
- 535      5F536574 
- 535      44726976 
- 535      654D6F64 
- 536              	.LASF11:
- 537 0151 63686172 		.ascii	"char\000"
- 537      00
- 538              	.LASF2:
- 539 0156 73686F72 		.ascii	"short int\000"
- 539      7420696E 
- 539      7400
- 540              	.LASF12:
- 541 0160 75696E74 		.ascii	"uint8\000"
- 541      3800
- 542              	.LASF4:
- 543 0166 6C6F6E67 		.ascii	"long int\000"
- 543      20696E74 
- 543      00
- 544              	.LASF21:
- 545 016f 2E5C4765 		.ascii	".\\Generated_Source\\PSoC5\\LEFT_LED.c\000"
- 545      6E657261 
- 545      7465645F 
- 545      536F7572 
- 545      63655C50 
- 546              	.LASF0:
- 547 0193 7369676E 		.ascii	"signed char\000"
- 547      65642063 
- 547      68617200 
- 548              	.LASF22:
- 549 019f 433A5C72 		.ascii	"C:\\repositories\\embedded\\trunk\\CE4920Project1\\"
- 549      65706F73 
- 549      69746F72 
- 549      6965735C 
- 549      656D6265 
- 550 01cd 44657369 		.ascii	"Design01.cydsn\000"
- 550      676E3031 
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccre2G9p.s 			page 14
+ 526      65642069 
+ 527              	.LASF17:
+ 528 00e1 6D6F6465 		.ascii	"mode\000"
+ 528      00
+ 529              	.LASF14:
+ 530 00e6 4C454654 		.ascii	"LEFT_LED_Write\000"
+ 530      5F4C4544 
+ 530      5F577269 
+ 530      746500
+ 531              	.LASF20:
+ 532 00f5 474E5520 		.ascii	"GNU C 4.8.4 20140526 (release) [ARM/embedded-4_8-br"
+ 532      4320342E 
+ 532      382E3420 
+ 532      32303134 
+ 532      30353236 
+ 533 0128 616E6368 		.ascii	"anch revision 211358] -mcpu=cortex-m3 -mthumb -g -O"
+ 533      20726576 
+ 533      6973696F 
+ 533      6E203231 
+ 533      31333538 
+ 534 015b 67202D66 		.ascii	"g -ffunction-sections\000"
+ 534      66756E63 
+ 534      74696F6E 
+ 534      2D736563 
+ 534      74696F6E 
+ 535              	.LASF6:
+ 536 0171 6C6F6E67 		.ascii	"long long int\000"
+ 536      206C6F6E 
+ 536      6720696E 
+ 536      7400
+ 537              	.LASF15:
+ 538 017f 4C454654 		.ascii	"LEFT_LED_SetDriveMode\000"
+ 538      5F4C4544 
+ 538      5F536574 
+ 538      44726976 
+ 538      654D6F64 
+ 539              	.LASF11:
+ 540 0195 63686172 		.ascii	"char\000"
+ 540      00
+ 541              	.LASF2:
+ 542 019a 73686F72 		.ascii	"short int\000"
+ 542      7420696E 
+ 542      7400
+ 543              	.LASF12:
+ 544 01a4 75696E74 		.ascii	"uint8\000"
+ 544      3800
+ 545              	.LASF4:
+ 546 01aa 6C6F6E67 		.ascii	"long int\000"
+ 546      20696E74 
+ 546      00
+ 547              	.LASF21:
+ 548 01b3 2E5C4765 		.ascii	".\\Generated_Source\\PSoC5\\LEFT_LED.c\000"
+ 548      6E657261 
+ 548      7465645F 
+ 548      536F7572 
+ 548      63655C50 
+ 549              	.LASF0:
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccNiZQNf.s 			page 14
 
 
- 550      2E637964 
- 550      736E00
+ 550 01d7 7369676E 		.ascii	"signed char\000"
+ 550      65642063 
+ 550      68617200 
  551              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.8.4 20140526 (release) [ARM/embedded-4_8-br

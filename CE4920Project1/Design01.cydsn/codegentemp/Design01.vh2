@@ -2,7 +2,7 @@
 --	Conversion of Design01.v to vh2:
 --
 --	Cypress Semiconductor - WARP Version 6.3 IR 41
---	Tue Nov 03 21:15:44 2015
+--	Wed Nov 04 16:42:15 2015
 --
 
 USE cypress.cypress.all;
@@ -64,6 +64,7 @@ SIGNAL \WaveDAC8_1:VDAC8:Net_83\ : bit;
 SIGNAL \WaveDAC8_1:VDAC8:Net_81\ : bit;
 SIGNAL \WaveDAC8_1:VDAC8:Net_82\ : bit;
 TERMINAL \WaveDAC8_1:VDAC8:Net_77\ : bit;
+TERMINAL Net_1861 : bit;
 SIGNAL \WaveDAC8_1:Net_280\ : bit;
 SIGNAL \WaveDAC8_1:Net_80\ : bit;
 SIGNAL \WaveDAC8_1:cydff_1\ : bit;
@@ -523,7 +524,6 @@ SIGNAL Net_1032 : bit;
 SIGNAL \Comp:Net_9\ : bit;
 SIGNAL tmpOE__HEARTRATE_ANALOG_IN_net_0 : bit;
 SIGNAL tmpFB_0__HEARTRATE_ANALOG_IN_net_0 : bit;
-TERMINAL Net_1667 : bit;
 SIGNAL tmpIO_0__HEARTRATE_ANALOG_IN_net_0 : bit;
 TERMINAL tmpSIOVREF__HEARTRATE_ANALOG_IN_net_0 : bit;
 SIGNAL tmpINTERRUPT_0__HEARTRATE_ANALOG_IN_net_0 : bit;
@@ -1978,7 +1978,7 @@ one <=  ('1') ;
 \WaveDAC8_1:cy_analog_virtualmux_3_connect\:cy_connect_v1_0
 	GENERIC MAP(sig_width=>1,
 		is_net_join=>'0')
-	PORT MAP(signal1=>Net_1681,
+	PORT MAP(signal1=>Net_1861,
 		signal2=>\WaveDAC8_1:Net_256\);
 Speaker_Output:cy_psoc3_pins_v1_10
 	GENERIC MAP(id=>"6578865f-394e-4ed2-9257-0ddbe1184c39",
@@ -2834,7 +2834,7 @@ HEARTRATE_ANALOG_IN:cy_psoc3_pins_v1_10
 	PORT MAP(oe=>(one),
 		y=>(zero),
 		fb=>(tmpFB_0__HEARTRATE_ANALOG_IN_net_0),
-		analog=>Net_1667,
+		analog=>Net_1681,
 		io=>(tmpIO_0__HEARTRATE_ANALOG_IN_net_0),
 		siovref=>(tmpSIOVREF__HEARTRATE_ANALOG_IN_net_0),
 		annotation=>(open),

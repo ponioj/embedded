@@ -30,11 +30,8 @@ int main()
             case STATE_RESET:
                 currentState = State_reset();
                 break;
-            case STATE_START:
-                currentState = State_start();
-                break; 
-            case STATE_SLEEP:
-                currentState = State_sleep();
+            case STATE_WAIT:
+                currentState = State_wait();
                 break;
             case STATE_MOVING:
                 currentState = State_moving();
@@ -47,6 +44,9 @@ int main()
                 break;
             case STATE_HEARTRATE_CHANGE:
                 currentState = State_heartrate_change();
+                break;
+            case STATE_RAMPUP:
+                currentState = State_rampup();
                 break;
             default:
                 break;

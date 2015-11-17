@@ -160,7 +160,7 @@ CY_ISR(STOP_Interrupt)
 {
     /*  Place your Interrupt code here. */
     /* `#START STOP_Interrupt` */
-    currentState = STATE_STOP;
+    currentState = STATE_WAIT;
     /* `#END` */
 }
 

@@ -167,31 +167,16 @@ CY_ISR(Compint_Interrupt)
     /* `#START Compint_Interrupt` */
     endCounts = startCounts;
     startCounts = HeartbeatCounter_ReadCounter();
-/*
-    LCD_Position(0,0);
-    LCD_PrintU32Number(startCounts);
-    LCD_PrintString("     ");
-    LCD_Position(1,0);
-    LCD_PrintU32Number(endCounts);
-    LCD_PrintString("    ");
     
-*/    
-//    LCD_Position(0,0);
-//    LCD_PrintNumber(startCounts);
-//    LCD_PrintString(" ");
-//    LCD_PrintNumber(endCounts);
-//    TERMINAL_WriteNumber(heartrate);
-    /*
-    Compint_ClearPending();
-    if(timer_status == 0) { // timer is off
-        startCounts = HeartbeatCounter_ReadCounter();
-        timer_status = 1;
-    } else {                // timer is on at 24MHz
-        endCounts = HeartbeatCounter_ReadCounter();
-      heartrate = startCounts-HeartbeatCounter_ReadCounter();
-        timer_status = 0;
-    }
-    */
+    
+    LCD_Position(0,0);
+    
+    LCD_PrintU32Number(endCounts);
+    LCD_PrintString("      ");
+    LCD_Position(1,0);
+    heartrate = (600000/(endCounts-startCounts));
+    LCD_PrintU32Number(startCounts);
+    LCD_PrintString("      ");
     /* `#END` */
 }
 

@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccPhrqUu.s 			page 1
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccQk8BDq.s 			page 1
 
 
    1              		.syntax unified
@@ -56,2378 +56,2127 @@ ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccPhrqUu.s 			page 1
   27:.\Generated_Source\PSoC5/WDT.c **** ********************************************************************************/
   28:.\Generated_Source\PSoC5/WDT.c **** /* `#START WDT_intc` */
   29:.\Generated_Source\PSoC5/WDT.c **** #include "system.h"
-  30:.\Generated_Source\PSoC5/WDT.c **** /* `#END` */
-  31:.\Generated_Source\PSoC5/WDT.c **** 
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccPhrqUu.s 			page 2
+  30:.\Generated_Source\PSoC5/WDT.c **** extern int RESET_CAUSE;
+  31:.\Generated_Source\PSoC5/WDT.c **** /* `#END` */
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccQk8BDq.s 			page 2
 
 
-  32:.\Generated_Source\PSoC5/WDT.c **** #ifndef CYINT_IRQ_BASE
-  33:.\Generated_Source\PSoC5/WDT.c **** #define CYINT_IRQ_BASE      16
-  34:.\Generated_Source\PSoC5/WDT.c **** #endif /* CYINT_IRQ_BASE */
-  35:.\Generated_Source\PSoC5/WDT.c **** #ifndef CYINT_VECT_TABLE
-  36:.\Generated_Source\PSoC5/WDT.c **** #define CYINT_VECT_TABLE    ((cyisraddress **) CYREG_NVIC_VECT_OFFSET)
-  37:.\Generated_Source\PSoC5/WDT.c **** #endif /* CYINT_VECT_TABLE */
-  38:.\Generated_Source\PSoC5/WDT.c **** 
-  39:.\Generated_Source\PSoC5/WDT.c **** /* Declared in startup, used to set unused interrupts to. */
-  40:.\Generated_Source\PSoC5/WDT.c **** CY_ISR_PROTO(IntDefaultHandler);
-  41:.\Generated_Source\PSoC5/WDT.c **** 
+  32:.\Generated_Source\PSoC5/WDT.c **** 
+  33:.\Generated_Source\PSoC5/WDT.c **** #ifndef CYINT_IRQ_BASE
+  34:.\Generated_Source\PSoC5/WDT.c **** #define CYINT_IRQ_BASE      16
+  35:.\Generated_Source\PSoC5/WDT.c **** #endif /* CYINT_IRQ_BASE */
+  36:.\Generated_Source\PSoC5/WDT.c **** #ifndef CYINT_VECT_TABLE
+  37:.\Generated_Source\PSoC5/WDT.c **** #define CYINT_VECT_TABLE    ((cyisraddress **) CYREG_NVIC_VECT_OFFSET)
+  38:.\Generated_Source\PSoC5/WDT.c **** #endif /* CYINT_VECT_TABLE */
+  39:.\Generated_Source\PSoC5/WDT.c **** 
+  40:.\Generated_Source\PSoC5/WDT.c **** /* Declared in startup, used to set unused interrupts to. */
+  41:.\Generated_Source\PSoC5/WDT.c **** CY_ISR_PROTO(IntDefaultHandler);
   42:.\Generated_Source\PSoC5/WDT.c **** 
-  43:.\Generated_Source\PSoC5/WDT.c **** /*******************************************************************************
-  44:.\Generated_Source\PSoC5/WDT.c **** * Function Name: WDT_Start
-  45:.\Generated_Source\PSoC5/WDT.c **** ********************************************************************************
-  46:.\Generated_Source\PSoC5/WDT.c **** *
-  47:.\Generated_Source\PSoC5/WDT.c **** * Summary:
-  48:.\Generated_Source\PSoC5/WDT.c **** *  Set up the interrupt and enable it. This function disables the interrupt, 
-  49:.\Generated_Source\PSoC5/WDT.c **** *  sets the default interrupt vector, sets the priority from the value in the
-  50:.\Generated_Source\PSoC5/WDT.c **** *  Design Wide Resources Interrupt Editor, then enables the interrupt to the 
-  51:.\Generated_Source\PSoC5/WDT.c **** *  interrupt controller.
-  52:.\Generated_Source\PSoC5/WDT.c **** *
-  53:.\Generated_Source\PSoC5/WDT.c **** * Parameters:  
-  54:.\Generated_Source\PSoC5/WDT.c **** *   None
-  55:.\Generated_Source\PSoC5/WDT.c **** *
-  56:.\Generated_Source\PSoC5/WDT.c **** * Return:
-  57:.\Generated_Source\PSoC5/WDT.c **** *   None
-  58:.\Generated_Source\PSoC5/WDT.c **** *
-  59:.\Generated_Source\PSoC5/WDT.c **** *******************************************************************************/
-  60:.\Generated_Source\PSoC5/WDT.c **** void WDT_Start(void)
-  61:.\Generated_Source\PSoC5/WDT.c **** {
-  62:.\Generated_Source\PSoC5/WDT.c ****     /* For all we know the interrupt is active. */
-  63:.\Generated_Source\PSoC5/WDT.c ****     WDT_Disable();
-  64:.\Generated_Source\PSoC5/WDT.c **** 
-  65:.\Generated_Source\PSoC5/WDT.c ****     /* Set the ISR to point to the WDT Interrupt. */
-  66:.\Generated_Source\PSoC5/WDT.c ****     WDT_SetVector(&WDT_Interrupt);
-  67:.\Generated_Source\PSoC5/WDT.c **** 
-  68:.\Generated_Source\PSoC5/WDT.c ****     /* Set the priority. */
-  69:.\Generated_Source\PSoC5/WDT.c ****     WDT_SetPriority((uint8)WDT_INTC_PRIOR_NUMBER);
-  70:.\Generated_Source\PSoC5/WDT.c **** 
-  71:.\Generated_Source\PSoC5/WDT.c ****     /* Enable it. */
-  72:.\Generated_Source\PSoC5/WDT.c ****     WDT_Enable();
-  73:.\Generated_Source\PSoC5/WDT.c **** }
-  74:.\Generated_Source\PSoC5/WDT.c **** 
+  43:.\Generated_Source\PSoC5/WDT.c **** 
+  44:.\Generated_Source\PSoC5/WDT.c **** /*******************************************************************************
+  45:.\Generated_Source\PSoC5/WDT.c **** * Function Name: WDT_Start
+  46:.\Generated_Source\PSoC5/WDT.c **** ********************************************************************************
+  47:.\Generated_Source\PSoC5/WDT.c **** *
+  48:.\Generated_Source\PSoC5/WDT.c **** * Summary:
+  49:.\Generated_Source\PSoC5/WDT.c **** *  Set up the interrupt and enable it. This function disables the interrupt, 
+  50:.\Generated_Source\PSoC5/WDT.c **** *  sets the default interrupt vector, sets the priority from the value in the
+  51:.\Generated_Source\PSoC5/WDT.c **** *  Design Wide Resources Interrupt Editor, then enables the interrupt to the 
+  52:.\Generated_Source\PSoC5/WDT.c **** *  interrupt controller.
+  53:.\Generated_Source\PSoC5/WDT.c **** *
+  54:.\Generated_Source\PSoC5/WDT.c **** * Parameters:  
+  55:.\Generated_Source\PSoC5/WDT.c **** *   None
+  56:.\Generated_Source\PSoC5/WDT.c **** *
+  57:.\Generated_Source\PSoC5/WDT.c **** * Return:
+  58:.\Generated_Source\PSoC5/WDT.c **** *   None
+  59:.\Generated_Source\PSoC5/WDT.c **** *
+  60:.\Generated_Source\PSoC5/WDT.c **** *******************************************************************************/
+  61:.\Generated_Source\PSoC5/WDT.c **** void WDT_Start(void)
+  62:.\Generated_Source\PSoC5/WDT.c **** {
+  63:.\Generated_Source\PSoC5/WDT.c ****     /* For all we know the interrupt is active. */
+  64:.\Generated_Source\PSoC5/WDT.c ****     WDT_Disable();
+  65:.\Generated_Source\PSoC5/WDT.c **** 
+  66:.\Generated_Source\PSoC5/WDT.c ****     /* Set the ISR to point to the WDT Interrupt. */
+  67:.\Generated_Source\PSoC5/WDT.c ****     WDT_SetVector(&WDT_Interrupt);
+  68:.\Generated_Source\PSoC5/WDT.c **** 
+  69:.\Generated_Source\PSoC5/WDT.c ****     /* Set the priority. */
+  70:.\Generated_Source\PSoC5/WDT.c ****     WDT_SetPriority((uint8)WDT_INTC_PRIOR_NUMBER);
+  71:.\Generated_Source\PSoC5/WDT.c **** 
+  72:.\Generated_Source\PSoC5/WDT.c ****     /* Enable it. */
+  73:.\Generated_Source\PSoC5/WDT.c ****     WDT_Enable();
+  74:.\Generated_Source\PSoC5/WDT.c **** }
   75:.\Generated_Source\PSoC5/WDT.c **** 
-  76:.\Generated_Source\PSoC5/WDT.c **** /*******************************************************************************
-  77:.\Generated_Source\PSoC5/WDT.c **** * Function Name: WDT_StartEx
-  78:.\Generated_Source\PSoC5/WDT.c **** ********************************************************************************
-  79:.\Generated_Source\PSoC5/WDT.c **** *
-  80:.\Generated_Source\PSoC5/WDT.c **** * Summary:
-  81:.\Generated_Source\PSoC5/WDT.c **** *  Sets up the interrupt and enables it. This function disables the interrupt,
-  82:.\Generated_Source\PSoC5/WDT.c **** *  sets the interrupt vector based on the address passed in, sets the priority 
-  83:.\Generated_Source\PSoC5/WDT.c **** *  from the value in the Design Wide Resources Interrupt Editor, then enables 
-  84:.\Generated_Source\PSoC5/WDT.c **** *  the interrupt to the interrupt controller.
-  85:.\Generated_Source\PSoC5/WDT.c **** *  
-  86:.\Generated_Source\PSoC5/WDT.c **** *  When defining ISR functions, the CY_ISR and CY_ISR_PROTO macros should be 
-  87:.\Generated_Source\PSoC5/WDT.c **** *  used to provide consistent definition across compilers:
-  88:.\Generated_Source\PSoC5/WDT.c **** *  
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccPhrqUu.s 			page 3
+  76:.\Generated_Source\PSoC5/WDT.c **** 
+  77:.\Generated_Source\PSoC5/WDT.c **** /*******************************************************************************
+  78:.\Generated_Source\PSoC5/WDT.c **** * Function Name: WDT_StartEx
+  79:.\Generated_Source\PSoC5/WDT.c **** ********************************************************************************
+  80:.\Generated_Source\PSoC5/WDT.c **** *
+  81:.\Generated_Source\PSoC5/WDT.c **** * Summary:
+  82:.\Generated_Source\PSoC5/WDT.c **** *  Sets up the interrupt and enables it. This function disables the interrupt,
+  83:.\Generated_Source\PSoC5/WDT.c **** *  sets the interrupt vector based on the address passed in, sets the priority 
+  84:.\Generated_Source\PSoC5/WDT.c **** *  from the value in the Design Wide Resources Interrupt Editor, then enables 
+  85:.\Generated_Source\PSoC5/WDT.c **** *  the interrupt to the interrupt controller.
+  86:.\Generated_Source\PSoC5/WDT.c **** *  
+  87:.\Generated_Source\PSoC5/WDT.c **** *  When defining ISR functions, the CY_ISR and CY_ISR_PROTO macros should be 
+  88:.\Generated_Source\PSoC5/WDT.c **** *  used to provide consistent definition across compilers:
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccQk8BDq.s 			page 3
 
 
-  89:.\Generated_Source\PSoC5/WDT.c **** *  Function definition example:
-  90:.\Generated_Source\PSoC5/WDT.c **** *   CY_ISR(MyISR)
-  91:.\Generated_Source\PSoC5/WDT.c **** *   {
-  92:.\Generated_Source\PSoC5/WDT.c **** *   }
-  93:.\Generated_Source\PSoC5/WDT.c **** *   Function prototype example:
-  94:.\Generated_Source\PSoC5/WDT.c **** *   CY_ISR_PROTO(MyISR);
-  95:.\Generated_Source\PSoC5/WDT.c **** *
-  96:.\Generated_Source\PSoC5/WDT.c **** * Parameters:  
-  97:.\Generated_Source\PSoC5/WDT.c **** *   address: Address of the ISR to set in the interrupt vector table.
-  98:.\Generated_Source\PSoC5/WDT.c **** *
-  99:.\Generated_Source\PSoC5/WDT.c **** * Return:
- 100:.\Generated_Source\PSoC5/WDT.c **** *   None
- 101:.\Generated_Source\PSoC5/WDT.c **** *
- 102:.\Generated_Source\PSoC5/WDT.c **** *******************************************************************************/
- 103:.\Generated_Source\PSoC5/WDT.c **** void WDT_StartEx(cyisraddress address)
- 104:.\Generated_Source\PSoC5/WDT.c **** {
- 105:.\Generated_Source\PSoC5/WDT.c ****     /* For all we know the interrupt is active. */
- 106:.\Generated_Source\PSoC5/WDT.c ****     WDT_Disable();
- 107:.\Generated_Source\PSoC5/WDT.c **** 
- 108:.\Generated_Source\PSoC5/WDT.c ****     /* Set the ISR to point to the WDT Interrupt. */
- 109:.\Generated_Source\PSoC5/WDT.c ****     WDT_SetVector(address);
- 110:.\Generated_Source\PSoC5/WDT.c **** 
- 111:.\Generated_Source\PSoC5/WDT.c ****     /* Set the priority. */
- 112:.\Generated_Source\PSoC5/WDT.c ****     WDT_SetPriority((uint8)WDT_INTC_PRIOR_NUMBER);
- 113:.\Generated_Source\PSoC5/WDT.c **** 
- 114:.\Generated_Source\PSoC5/WDT.c ****     /* Enable it. */
- 115:.\Generated_Source\PSoC5/WDT.c ****     WDT_Enable();
- 116:.\Generated_Source\PSoC5/WDT.c **** }
- 117:.\Generated_Source\PSoC5/WDT.c **** 
+  89:.\Generated_Source\PSoC5/WDT.c **** *  
+  90:.\Generated_Source\PSoC5/WDT.c **** *  Function definition example:
+  91:.\Generated_Source\PSoC5/WDT.c **** *   CY_ISR(MyISR)
+  92:.\Generated_Source\PSoC5/WDT.c **** *   {
+  93:.\Generated_Source\PSoC5/WDT.c **** *   }
+  94:.\Generated_Source\PSoC5/WDT.c **** *   Function prototype example:
+  95:.\Generated_Source\PSoC5/WDT.c **** *   CY_ISR_PROTO(MyISR);
+  96:.\Generated_Source\PSoC5/WDT.c **** *
+  97:.\Generated_Source\PSoC5/WDT.c **** * Parameters:  
+  98:.\Generated_Source\PSoC5/WDT.c **** *   address: Address of the ISR to set in the interrupt vector table.
+  99:.\Generated_Source\PSoC5/WDT.c **** *
+ 100:.\Generated_Source\PSoC5/WDT.c **** * Return:
+ 101:.\Generated_Source\PSoC5/WDT.c **** *   None
+ 102:.\Generated_Source\PSoC5/WDT.c **** *
+ 103:.\Generated_Source\PSoC5/WDT.c **** *******************************************************************************/
+ 104:.\Generated_Source\PSoC5/WDT.c **** void WDT_StartEx(cyisraddress address)
+ 105:.\Generated_Source\PSoC5/WDT.c **** {
+ 106:.\Generated_Source\PSoC5/WDT.c ****     /* For all we know the interrupt is active. */
+ 107:.\Generated_Source\PSoC5/WDT.c ****     WDT_Disable();
+ 108:.\Generated_Source\PSoC5/WDT.c **** 
+ 109:.\Generated_Source\PSoC5/WDT.c ****     /* Set the ISR to point to the WDT Interrupt. */
+ 110:.\Generated_Source\PSoC5/WDT.c ****     WDT_SetVector(address);
+ 111:.\Generated_Source\PSoC5/WDT.c **** 
+ 112:.\Generated_Source\PSoC5/WDT.c ****     /* Set the priority. */
+ 113:.\Generated_Source\PSoC5/WDT.c ****     WDT_SetPriority((uint8)WDT_INTC_PRIOR_NUMBER);
+ 114:.\Generated_Source\PSoC5/WDT.c **** 
+ 115:.\Generated_Source\PSoC5/WDT.c ****     /* Enable it. */
+ 116:.\Generated_Source\PSoC5/WDT.c ****     WDT_Enable();
+ 117:.\Generated_Source\PSoC5/WDT.c **** }
  118:.\Generated_Source\PSoC5/WDT.c **** 
- 119:.\Generated_Source\PSoC5/WDT.c **** /*******************************************************************************
- 120:.\Generated_Source\PSoC5/WDT.c **** * Function Name: WDT_Stop
- 121:.\Generated_Source\PSoC5/WDT.c **** ********************************************************************************
- 122:.\Generated_Source\PSoC5/WDT.c **** *
- 123:.\Generated_Source\PSoC5/WDT.c **** * Summary:
- 124:.\Generated_Source\PSoC5/WDT.c **** *   Disables and removes the interrupt.
- 125:.\Generated_Source\PSoC5/WDT.c **** *
- 126:.\Generated_Source\PSoC5/WDT.c **** * Parameters:  
- 127:.\Generated_Source\PSoC5/WDT.c **** *   None
- 128:.\Generated_Source\PSoC5/WDT.c **** *
- 129:.\Generated_Source\PSoC5/WDT.c **** * Return:
- 130:.\Generated_Source\PSoC5/WDT.c **** *   None
- 131:.\Generated_Source\PSoC5/WDT.c **** *
- 132:.\Generated_Source\PSoC5/WDT.c **** *******************************************************************************/
- 133:.\Generated_Source\PSoC5/WDT.c **** void WDT_Stop(void)
- 134:.\Generated_Source\PSoC5/WDT.c **** {
- 135:.\Generated_Source\PSoC5/WDT.c ****     /* Disable this interrupt. */
- 136:.\Generated_Source\PSoC5/WDT.c ****     WDT_Disable();
- 137:.\Generated_Source\PSoC5/WDT.c **** 
- 138:.\Generated_Source\PSoC5/WDT.c ****     /* Set the ISR to point to the passive one. */
- 139:.\Generated_Source\PSoC5/WDT.c ****     WDT_SetVector(&IntDefaultHandler);
- 140:.\Generated_Source\PSoC5/WDT.c **** }
- 141:.\Generated_Source\PSoC5/WDT.c **** 
+ 119:.\Generated_Source\PSoC5/WDT.c **** 
+ 120:.\Generated_Source\PSoC5/WDT.c **** /*******************************************************************************
+ 121:.\Generated_Source\PSoC5/WDT.c **** * Function Name: WDT_Stop
+ 122:.\Generated_Source\PSoC5/WDT.c **** ********************************************************************************
+ 123:.\Generated_Source\PSoC5/WDT.c **** *
+ 124:.\Generated_Source\PSoC5/WDT.c **** * Summary:
+ 125:.\Generated_Source\PSoC5/WDT.c **** *   Disables and removes the interrupt.
+ 126:.\Generated_Source\PSoC5/WDT.c **** *
+ 127:.\Generated_Source\PSoC5/WDT.c **** * Parameters:  
+ 128:.\Generated_Source\PSoC5/WDT.c **** *   None
+ 129:.\Generated_Source\PSoC5/WDT.c **** *
+ 130:.\Generated_Source\PSoC5/WDT.c **** * Return:
+ 131:.\Generated_Source\PSoC5/WDT.c **** *   None
+ 132:.\Generated_Source\PSoC5/WDT.c **** *
+ 133:.\Generated_Source\PSoC5/WDT.c **** *******************************************************************************/
+ 134:.\Generated_Source\PSoC5/WDT.c **** void WDT_Stop(void)
+ 135:.\Generated_Source\PSoC5/WDT.c **** {
+ 136:.\Generated_Source\PSoC5/WDT.c ****     /* Disable this interrupt. */
+ 137:.\Generated_Source\PSoC5/WDT.c ****     WDT_Disable();
+ 138:.\Generated_Source\PSoC5/WDT.c **** 
+ 139:.\Generated_Source\PSoC5/WDT.c ****     /* Set the ISR to point to the passive one. */
+ 140:.\Generated_Source\PSoC5/WDT.c ****     WDT_SetVector(&IntDefaultHandler);
+ 141:.\Generated_Source\PSoC5/WDT.c **** }
  142:.\Generated_Source\PSoC5/WDT.c **** 
- 143:.\Generated_Source\PSoC5/WDT.c **** /*******************************************************************************
- 144:.\Generated_Source\PSoC5/WDT.c **** * Function Name: WDT_Interrupt
- 145:.\Generated_Source\PSoC5/WDT.c **** ********************************************************************************
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccPhrqUu.s 			page 4
+ 143:.\Generated_Source\PSoC5/WDT.c **** 
+ 144:.\Generated_Source\PSoC5/WDT.c **** /*******************************************************************************
+ 145:.\Generated_Source\PSoC5/WDT.c **** * Function Name: WDT_Interrupt
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccQk8BDq.s 			page 4
 
 
- 146:.\Generated_Source\PSoC5/WDT.c **** *
- 147:.\Generated_Source\PSoC5/WDT.c **** * Summary:
- 148:.\Generated_Source\PSoC5/WDT.c **** *   The default Interrupt Service Routine for WDT.
- 149:.\Generated_Source\PSoC5/WDT.c **** *
- 150:.\Generated_Source\PSoC5/WDT.c **** *   Add custom code between the coments to keep the next version of this file
- 151:.\Generated_Source\PSoC5/WDT.c **** *   from over writting your code.
- 152:.\Generated_Source\PSoC5/WDT.c **** *
- 153:.\Generated_Source\PSoC5/WDT.c **** * Parameters:  
- 154:.\Generated_Source\PSoC5/WDT.c **** *
- 155:.\Generated_Source\PSoC5/WDT.c **** * Return:
- 156:.\Generated_Source\PSoC5/WDT.c **** *   None
- 157:.\Generated_Source\PSoC5/WDT.c **** *
- 158:.\Generated_Source\PSoC5/WDT.c **** *******************************************************************************/
- 159:.\Generated_Source\PSoC5/WDT.c **** CY_ISR(WDT_Interrupt)
- 160:.\Generated_Source\PSoC5/WDT.c **** {
-  27              		.loc 1 160 0
+ 146:.\Generated_Source\PSoC5/WDT.c **** ********************************************************************************
+ 147:.\Generated_Source\PSoC5/WDT.c **** *
+ 148:.\Generated_Source\PSoC5/WDT.c **** * Summary:
+ 149:.\Generated_Source\PSoC5/WDT.c **** *   The default Interrupt Service Routine for WDT.
+ 150:.\Generated_Source\PSoC5/WDT.c **** *
+ 151:.\Generated_Source\PSoC5/WDT.c **** *   Add custom code between the coments to keep the next version of this file
+ 152:.\Generated_Source\PSoC5/WDT.c **** *   from over writting your code.
+ 153:.\Generated_Source\PSoC5/WDT.c **** *
+ 154:.\Generated_Source\PSoC5/WDT.c **** * Parameters:  
+ 155:.\Generated_Source\PSoC5/WDT.c **** *
+ 156:.\Generated_Source\PSoC5/WDT.c **** * Return:
+ 157:.\Generated_Source\PSoC5/WDT.c **** *   None
+ 158:.\Generated_Source\PSoC5/WDT.c **** *
+ 159:.\Generated_Source\PSoC5/WDT.c **** *******************************************************************************/
+ 160:.\Generated_Source\PSoC5/WDT.c **** CY_ISR(WDT_Interrupt)
+ 161:.\Generated_Source\PSoC5/WDT.c **** {
+  27              		.loc 1 161 0
   28              		.cfi_startproc
   29              		@ args = 0, pretend = 0, frame = 0
   30              		@ frame_needed = 0, uses_anonymous_args = 0
-  31 0000 70B5     		push	{r4, r5, r6, lr}
-  32              		.cfi_def_cfa_offset 16
-  33              		.cfi_offset 4, -16
-  34              		.cfi_offset 5, -12
-  35              		.cfi_offset 6, -8
-  36              		.cfi_offset 14, -4
- 161:.\Generated_Source\PSoC5/WDT.c ****     /*  Place your Interrupt code here. */
- 162:.\Generated_Source\PSoC5/WDT.c ****     /* `#START WDT_Interrupt` */
- 163:.\Generated_Source\PSoC5/WDT.c ****     
- 164:.\Generated_Source\PSoC5/WDT.c ****     int hearthealth = HEARTRATE_HEALTH_Read();
-  37              		.loc 1 164 0
-  38 0002 FFF7FEFF 		bl	HEARTRATE_HEALTH_Read
-  39              	.LVL0:
-  40 0006 0646     		mov	r6, r0
+  31 0000 08B5     		push	{r3, lr}
+  32              		.cfi_def_cfa_offset 8
+  33              		.cfi_offset 3, -8
+  34              		.cfi_offset 14, -4
+ 162:.\Generated_Source\PSoC5/WDT.c ****     /*  Place your Interrupt code here. */
+ 163:.\Generated_Source\PSoC5/WDT.c ****     /* `#START WDT_Interrupt` */
+ 164:.\Generated_Source\PSoC5/WDT.c ****     
+ 165:.\Generated_Source\PSoC5/WDT.c ****     
+ 166:.\Generated_Source\PSoC5/WDT.c ****     if((HEARTRATE_HEALTH_Read() > 0) && (MOTOR_HEALTH_Read() > 0) && (UI_HEALTH_Read() > 0)){
+  35              		.loc 1 166 0
+  36 0002 FFF7FEFF 		bl	HEARTRATE_HEALTH_Read
+  37              	.LVL0:
+  38 0006 58B1     		cbz	r0, .L2
+  39              		.loc 1 166 0 is_stmt 0 discriminator 1
+  40 0008 FFF7FEFF 		bl	MOTOR_HEALTH_Read
   41              	.LVL1:
- 165:.\Generated_Source\PSoC5/WDT.c ****     int motorhealth = MOTOR_HEALTH_Read();
-  42              		.loc 1 165 0
-  43 0008 FFF7FEFF 		bl	MOTOR_HEALTH_Read
+  42 000c 40B1     		cbz	r0, .L2
+  43 000e FFF7FEFF 		bl	UI_HEALTH_Read
   44              	.LVL2:
-  45 000c 0546     		mov	r5, r0
-  46              	.LVL3:
- 166:.\Generated_Source\PSoC5/WDT.c ****     int uihealth = UI_HEALTH_Read();
-  47              		.loc 1 166 0
-  48 000e FFF7FEFF 		bl	UI_HEALTH_Read
-  49              	.LVL4:
-  50 0012 0446     		mov	r4, r0
-  51              	.LVL5:
- 167:.\Generated_Source\PSoC5/WDT.c ****     LCD_Position(1,5);
-  52              		.loc 1 167 0
-  53 0014 0120     		movs	r0, #1
-  54              	.LVL6:
-  55 0016 0521     		movs	r1, #5
-  56 0018 FFF7FEFF 		bl	LCD_Position
-  57              	.LVL7:
- 168:.\Generated_Source\PSoC5/WDT.c ****     LCD_PrintNumber(hearthealth);
-  58              		.loc 1 168 0
-  59 001c 3046     		mov	r0, r6
-  60 001e FFF7FEFF 		bl	LCD_PrintU32Number
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccPhrqUu.s 			page 5
+  45 0012 28B1     		cbz	r0, .L2
+ 167:.\Generated_Source\PSoC5/WDT.c ****         CyWdtClear();   
+  46              		.loc 1 167 0 is_stmt 1
+  47 0014 FFF7FEFF 		bl	CyWdtClear
+  48              	.LVL3:
+ 168:.\Generated_Source\PSoC5/WDT.c ****         RESET_CAUSE = RESET_NORMAL;
+  49              		.loc 1 168 0
+  50 0018 0122     		movs	r2, #1
+  51 001a 034B     		ldr	r3, .L4
+  52 001c 1A60     		str	r2, [r3]
+  53 001e 08BD     		pop	{r3, pc}
+  54              	.L2:
+ 169:.\Generated_Source\PSoC5/WDT.c ****     } else {
+ 170:.\Generated_Source\PSoC5/WDT.c ****         RESET_CAUSE = RESET_FAULT;   
+  55              		.loc 1 170 0
+  56 0020 0022     		movs	r2, #0
+  57 0022 014B     		ldr	r3, .L4
+  58 0024 1A60     		str	r2, [r3]
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccQk8BDq.s 			page 5
 
 
-  61              	.LVL8:
- 169:.\Generated_Source\PSoC5/WDT.c ****     LCD_PrintNumber(motorhealth);
-  62              		.loc 1 169 0
-  63 0022 2846     		mov	r0, r5
-  64 0024 FFF7FEFF 		bl	LCD_PrintU32Number
-  65              	.LVL9:
- 170:.\Generated_Source\PSoC5/WDT.c ****     LCD_PrintNumber(uihealth);
-  66              		.loc 1 170 0
-  67 0028 2046     		mov	r0, r4
-  68 002a FFF7FEFF 		bl	LCD_PrintU32Number
-  69              	.LVL10:
- 171:.\Generated_Source\PSoC5/WDT.c ****     if((HEARTRATE_HEALTH_Read() > 0) && (MOTOR_HEALTH_Read() > 0) && (UI_HEALTH_Read() > 0)){
-  70              		.loc 1 171 0
-  71 002e FFF7FEFF 		bl	HEARTRATE_HEALTH_Read
-  72              	.LVL11:
-  73 0032 38B1     		cbz	r0, .L1
-  74              		.loc 1 171 0 is_stmt 0 discriminator 1
-  75 0034 FFF7FEFF 		bl	MOTOR_HEALTH_Read
-  76              	.LVL12:
-  77 0038 20B1     		cbz	r0, .L1
-  78 003a FFF7FEFF 		bl	UI_HEALTH_Read
-  79              	.LVL13:
-  80 003e 08B1     		cbz	r0, .L1
- 172:.\Generated_Source\PSoC5/WDT.c ****         CyWdtClear();   
-  81              		.loc 1 172 0 is_stmt 1
-  82 0040 FFF7FEFF 		bl	CyWdtClear
-  83              	.LVL14:
-  84              	.L1:
-  85 0044 70BD     		pop	{r4, r5, r6, pc}
-  86              		.cfi_endproc
-  87              	.LFE3:
-  88              		.size	WDT_Interrupt, .-WDT_Interrupt
-  89 0046 00BF     		.section	.text.WDT_SetVector,"ax",%progbits
-  90              		.align	2
-  91              		.global	WDT_SetVector
-  92              		.thumb
-  93              		.thumb_func
-  94              		.type	WDT_SetVector, %function
-  95              	WDT_SetVector:
-  96              	.LFB4:
- 173:.\Generated_Source\PSoC5/WDT.c ****     }
- 174:.\Generated_Source\PSoC5/WDT.c ****     /* `#END` */
- 175:.\Generated_Source\PSoC5/WDT.c **** }
- 176:.\Generated_Source\PSoC5/WDT.c **** 
- 177:.\Generated_Source\PSoC5/WDT.c **** 
- 178:.\Generated_Source\PSoC5/WDT.c **** /*******************************************************************************
- 179:.\Generated_Source\PSoC5/WDT.c **** * Function Name: WDT_SetVector
- 180:.\Generated_Source\PSoC5/WDT.c **** ********************************************************************************
- 181:.\Generated_Source\PSoC5/WDT.c **** *
- 182:.\Generated_Source\PSoC5/WDT.c **** * Summary:
- 183:.\Generated_Source\PSoC5/WDT.c **** *   Change the ISR vector for the Interrupt. Note calling WDT_Start
- 184:.\Generated_Source\PSoC5/WDT.c **** *   will override any effect this method would have had. To set the vector 
- 185:.\Generated_Source\PSoC5/WDT.c **** *   before the component has been started use WDT_StartEx instead.
- 186:.\Generated_Source\PSoC5/WDT.c **** * 
- 187:.\Generated_Source\PSoC5/WDT.c **** *   When defining ISR functions, the CY_ISR and CY_ISR_PROTO macros should be 
- 188:.\Generated_Source\PSoC5/WDT.c **** *   used to provide consistent definition across compilers:
- 189:.\Generated_Source\PSoC5/WDT.c **** *
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccPhrqUu.s 			page 6
+  59 0026 08BD     		pop	{r3, pc}
+  60              	.L5:
+  61              		.align	2
+  62              	.L4:
+  63 0028 00000000 		.word	RESET_CAUSE
+  64              		.cfi_endproc
+  65              	.LFE3:
+  66              		.size	WDT_Interrupt, .-WDT_Interrupt
+  67              		.section	.text.WDT_SetVector,"ax",%progbits
+  68              		.align	2
+  69              		.global	WDT_SetVector
+  70              		.thumb
+  71              		.thumb_func
+  72              		.type	WDT_SetVector, %function
+  73              	WDT_SetVector:
+  74              	.LFB4:
+ 171:.\Generated_Source\PSoC5/WDT.c ****     }
+ 172:.\Generated_Source\PSoC5/WDT.c ****     /* `#END` */
+ 173:.\Generated_Source\PSoC5/WDT.c **** }
+ 174:.\Generated_Source\PSoC5/WDT.c **** 
+ 175:.\Generated_Source\PSoC5/WDT.c **** 
+ 176:.\Generated_Source\PSoC5/WDT.c **** /*******************************************************************************
+ 177:.\Generated_Source\PSoC5/WDT.c **** * Function Name: WDT_SetVector
+ 178:.\Generated_Source\PSoC5/WDT.c **** ********************************************************************************
+ 179:.\Generated_Source\PSoC5/WDT.c **** *
+ 180:.\Generated_Source\PSoC5/WDT.c **** * Summary:
+ 181:.\Generated_Source\PSoC5/WDT.c **** *   Change the ISR vector for the Interrupt. Note calling WDT_Start
+ 182:.\Generated_Source\PSoC5/WDT.c **** *   will override any effect this method would have had. To set the vector 
+ 183:.\Generated_Source\PSoC5/WDT.c **** *   before the component has been started use WDT_StartEx instead.
+ 184:.\Generated_Source\PSoC5/WDT.c **** * 
+ 185:.\Generated_Source\PSoC5/WDT.c **** *   When defining ISR functions, the CY_ISR and CY_ISR_PROTO macros should be 
+ 186:.\Generated_Source\PSoC5/WDT.c **** *   used to provide consistent definition across compilers:
+ 187:.\Generated_Source\PSoC5/WDT.c **** *
+ 188:.\Generated_Source\PSoC5/WDT.c **** *   Function definition example:
+ 189:.\Generated_Source\PSoC5/WDT.c **** *   CY_ISR(MyISR)
+ 190:.\Generated_Source\PSoC5/WDT.c **** *   {
+ 191:.\Generated_Source\PSoC5/WDT.c **** *   }
+ 192:.\Generated_Source\PSoC5/WDT.c **** *
+ 193:.\Generated_Source\PSoC5/WDT.c **** *   Function prototype example:
+ 194:.\Generated_Source\PSoC5/WDT.c **** *     CY_ISR_PROTO(MyISR);
+ 195:.\Generated_Source\PSoC5/WDT.c **** *
+ 196:.\Generated_Source\PSoC5/WDT.c **** * Parameters:
+ 197:.\Generated_Source\PSoC5/WDT.c **** *   address: Address of the ISR to set in the interrupt vector table.
+ 198:.\Generated_Source\PSoC5/WDT.c **** *
+ 199:.\Generated_Source\PSoC5/WDT.c **** * Return:
+ 200:.\Generated_Source\PSoC5/WDT.c **** *   None
+ 201:.\Generated_Source\PSoC5/WDT.c **** *
+ 202:.\Generated_Source\PSoC5/WDT.c **** *******************************************************************************/
+ 203:.\Generated_Source\PSoC5/WDT.c **** void WDT_SetVector(cyisraddress address)
+ 204:.\Generated_Source\PSoC5/WDT.c **** {
+  75              		.loc 1 204 0
+  76              		.cfi_startproc
+  77              		@ args = 0, pretend = 0, frame = 0
+  78              		@ frame_needed = 0, uses_anonymous_args = 0
+  79              		@ link register save eliminated.
+  80              	.LVL4:
+ 205:.\Generated_Source\PSoC5/WDT.c ****     cyisraddress * ramVectorTable;
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccQk8BDq.s 			page 6
 
 
- 190:.\Generated_Source\PSoC5/WDT.c **** *   Function definition example:
- 191:.\Generated_Source\PSoC5/WDT.c **** *   CY_ISR(MyISR)
- 192:.\Generated_Source\PSoC5/WDT.c **** *   {
- 193:.\Generated_Source\PSoC5/WDT.c **** *   }
- 194:.\Generated_Source\PSoC5/WDT.c **** *
- 195:.\Generated_Source\PSoC5/WDT.c **** *   Function prototype example:
- 196:.\Generated_Source\PSoC5/WDT.c **** *     CY_ISR_PROTO(MyISR);
- 197:.\Generated_Source\PSoC5/WDT.c **** *
- 198:.\Generated_Source\PSoC5/WDT.c **** * Parameters:
- 199:.\Generated_Source\PSoC5/WDT.c **** *   address: Address of the ISR to set in the interrupt vector table.
- 200:.\Generated_Source\PSoC5/WDT.c **** *
- 201:.\Generated_Source\PSoC5/WDT.c **** * Return:
- 202:.\Generated_Source\PSoC5/WDT.c **** *   None
- 203:.\Generated_Source\PSoC5/WDT.c **** *
- 204:.\Generated_Source\PSoC5/WDT.c **** *******************************************************************************/
- 205:.\Generated_Source\PSoC5/WDT.c **** void WDT_SetVector(cyisraddress address)
- 206:.\Generated_Source\PSoC5/WDT.c **** {
-  97              		.loc 1 206 0
-  98              		.cfi_startproc
-  99              		@ args = 0, pretend = 0, frame = 0
- 100              		@ frame_needed = 0, uses_anonymous_args = 0
- 101              		@ link register save eliminated.
- 102              	.LVL15:
- 207:.\Generated_Source\PSoC5/WDT.c ****     cyisraddress * ramVectorTable;
+ 206:.\Generated_Source\PSoC5/WDT.c **** 
+ 207:.\Generated_Source\PSoC5/WDT.c ****     ramVectorTable = (cyisraddress *) *CYINT_VECT_TABLE;
+  81              		.loc 1 207 0
+  82 0000 014B     		ldr	r3, .L7
+  83 0002 1B68     		ldr	r3, [r3]
+  84              	.LVL5:
  208:.\Generated_Source\PSoC5/WDT.c **** 
- 209:.\Generated_Source\PSoC5/WDT.c ****     ramVectorTable = (cyisraddress *) *CYINT_VECT_TABLE;
- 103              		.loc 1 209 0
- 104 0000 014B     		ldr	r3, .L4
- 105 0002 1B68     		ldr	r3, [r3]
- 106              	.LVL16:
- 210:.\Generated_Source\PSoC5/WDT.c **** 
- 211:.\Generated_Source\PSoC5/WDT.c ****     ramVectorTable[CYINT_IRQ_BASE + (uint32)WDT__INTC_NUMBER] = address;
- 107              		.loc 1 211 0
- 108 0004 9864     		str	r0, [r3, #72]
- 109 0006 7047     		bx	lr
- 110              	.L5:
- 111              		.align	2
- 112              	.L4:
- 113 0008 08ED00E0 		.word	-536810232
- 114              		.cfi_endproc
- 115              	.LFE4:
- 116              		.size	WDT_SetVector, .-WDT_SetVector
- 117              		.section	.text.WDT_GetVector,"ax",%progbits
- 118              		.align	2
- 119              		.global	WDT_GetVector
- 120              		.thumb
- 121              		.thumb_func
- 122              		.type	WDT_GetVector, %function
- 123              	WDT_GetVector:
- 124              	.LFB5:
- 212:.\Generated_Source\PSoC5/WDT.c **** }
- 213:.\Generated_Source\PSoC5/WDT.c **** 
- 214:.\Generated_Source\PSoC5/WDT.c **** 
- 215:.\Generated_Source\PSoC5/WDT.c **** /*******************************************************************************
- 216:.\Generated_Source\PSoC5/WDT.c **** * Function Name: WDT_GetVector
- 217:.\Generated_Source\PSoC5/WDT.c **** ********************************************************************************
- 218:.\Generated_Source\PSoC5/WDT.c **** *
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccPhrqUu.s 			page 7
+ 209:.\Generated_Source\PSoC5/WDT.c ****     ramVectorTable[CYINT_IRQ_BASE + (uint32)WDT__INTC_NUMBER] = address;
+  85              		.loc 1 209 0
+  86 0004 9864     		str	r0, [r3, #72]
+  87 0006 7047     		bx	lr
+  88              	.L8:
+  89              		.align	2
+  90              	.L7:
+  91 0008 08ED00E0 		.word	-536810232
+  92              		.cfi_endproc
+  93              	.LFE4:
+  94              		.size	WDT_SetVector, .-WDT_SetVector
+  95              		.section	.text.WDT_GetVector,"ax",%progbits
+  96              		.align	2
+  97              		.global	WDT_GetVector
+  98              		.thumb
+  99              		.thumb_func
+ 100              		.type	WDT_GetVector, %function
+ 101              	WDT_GetVector:
+ 102              	.LFB5:
+ 210:.\Generated_Source\PSoC5/WDT.c **** }
+ 211:.\Generated_Source\PSoC5/WDT.c **** 
+ 212:.\Generated_Source\PSoC5/WDT.c **** 
+ 213:.\Generated_Source\PSoC5/WDT.c **** /*******************************************************************************
+ 214:.\Generated_Source\PSoC5/WDT.c **** * Function Name: WDT_GetVector
+ 215:.\Generated_Source\PSoC5/WDT.c **** ********************************************************************************
+ 216:.\Generated_Source\PSoC5/WDT.c **** *
+ 217:.\Generated_Source\PSoC5/WDT.c **** * Summary:
+ 218:.\Generated_Source\PSoC5/WDT.c **** *   Gets the "address" of the current ISR vector for the Interrupt.
+ 219:.\Generated_Source\PSoC5/WDT.c **** *
+ 220:.\Generated_Source\PSoC5/WDT.c **** * Parameters:
+ 221:.\Generated_Source\PSoC5/WDT.c **** *   None
+ 222:.\Generated_Source\PSoC5/WDT.c **** *
+ 223:.\Generated_Source\PSoC5/WDT.c **** * Return:
+ 224:.\Generated_Source\PSoC5/WDT.c **** *   Address of the ISR in the interrupt vector table.
+ 225:.\Generated_Source\PSoC5/WDT.c **** *
+ 226:.\Generated_Source\PSoC5/WDT.c **** *******************************************************************************/
+ 227:.\Generated_Source\PSoC5/WDT.c **** cyisraddress WDT_GetVector(void)
+ 228:.\Generated_Source\PSoC5/WDT.c **** {
+ 103              		.loc 1 228 0
+ 104              		.cfi_startproc
+ 105              		@ args = 0, pretend = 0, frame = 0
+ 106              		@ frame_needed = 0, uses_anonymous_args = 0
+ 107              		@ link register save eliminated.
+ 229:.\Generated_Source\PSoC5/WDT.c ****     cyisraddress * ramVectorTable;
+ 230:.\Generated_Source\PSoC5/WDT.c **** 
+ 231:.\Generated_Source\PSoC5/WDT.c ****     ramVectorTable = (cyisraddress *) *CYINT_VECT_TABLE;
+ 108              		.loc 1 231 0
+ 109 0000 014B     		ldr	r3, .L10
+ 110 0002 1B68     		ldr	r3, [r3]
+ 111              	.LVL6:
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccQk8BDq.s 			page 7
 
 
- 219:.\Generated_Source\PSoC5/WDT.c **** * Summary:
- 220:.\Generated_Source\PSoC5/WDT.c **** *   Gets the "address" of the current ISR vector for the Interrupt.
- 221:.\Generated_Source\PSoC5/WDT.c **** *
- 222:.\Generated_Source\PSoC5/WDT.c **** * Parameters:
- 223:.\Generated_Source\PSoC5/WDT.c **** *   None
- 224:.\Generated_Source\PSoC5/WDT.c **** *
- 225:.\Generated_Source\PSoC5/WDT.c **** * Return:
- 226:.\Generated_Source\PSoC5/WDT.c **** *   Address of the ISR in the interrupt vector table.
- 227:.\Generated_Source\PSoC5/WDT.c **** *
- 228:.\Generated_Source\PSoC5/WDT.c **** *******************************************************************************/
- 229:.\Generated_Source\PSoC5/WDT.c **** cyisraddress WDT_GetVector(void)
- 230:.\Generated_Source\PSoC5/WDT.c **** {
- 125              		.loc 1 230 0
- 126              		.cfi_startproc
- 127              		@ args = 0, pretend = 0, frame = 0
- 128              		@ frame_needed = 0, uses_anonymous_args = 0
- 129              		@ link register save eliminated.
- 231:.\Generated_Source\PSoC5/WDT.c ****     cyisraddress * ramVectorTable;
  232:.\Generated_Source\PSoC5/WDT.c **** 
- 233:.\Generated_Source\PSoC5/WDT.c ****     ramVectorTable = (cyisraddress *) *CYINT_VECT_TABLE;
- 130              		.loc 1 233 0
- 131 0000 014B     		ldr	r3, .L7
- 132 0002 1B68     		ldr	r3, [r3]
- 133              	.LVL17:
- 234:.\Generated_Source\PSoC5/WDT.c **** 
- 235:.\Generated_Source\PSoC5/WDT.c ****     return ramVectorTable[CYINT_IRQ_BASE + (uint32)WDT__INTC_NUMBER];
- 236:.\Generated_Source\PSoC5/WDT.c **** }
- 134              		.loc 1 236 0
- 135 0004 986C     		ldr	r0, [r3, #72]
- 136 0006 7047     		bx	lr
- 137              	.L8:
- 138              		.align	2
- 139              	.L7:
- 140 0008 08ED00E0 		.word	-536810232
- 141              		.cfi_endproc
- 142              	.LFE5:
- 143              		.size	WDT_GetVector, .-WDT_GetVector
- 144              		.section	.text.WDT_SetPriority,"ax",%progbits
- 145              		.align	2
- 146              		.global	WDT_SetPriority
- 147              		.thumb
- 148              		.thumb_func
- 149              		.type	WDT_SetPriority, %function
- 150              	WDT_SetPriority:
- 151              	.LFB6:
- 237:.\Generated_Source\PSoC5/WDT.c **** 
- 238:.\Generated_Source\PSoC5/WDT.c **** 
- 239:.\Generated_Source\PSoC5/WDT.c **** /*******************************************************************************
- 240:.\Generated_Source\PSoC5/WDT.c **** * Function Name: WDT_SetPriority
- 241:.\Generated_Source\PSoC5/WDT.c **** ********************************************************************************
- 242:.\Generated_Source\PSoC5/WDT.c **** *
- 243:.\Generated_Source\PSoC5/WDT.c **** * Summary:
- 244:.\Generated_Source\PSoC5/WDT.c **** *   Sets the Priority of the Interrupt. 
- 245:.\Generated_Source\PSoC5/WDT.c **** *
- 246:.\Generated_Source\PSoC5/WDT.c **** *   Note calling WDT_Start or WDT_StartEx will 
- 247:.\Generated_Source\PSoC5/WDT.c **** *   override any effect this API would have had. This API should only be called
- 248:.\Generated_Source\PSoC5/WDT.c **** *   after WDT_Start or WDT_StartEx has been called. 
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccPhrqUu.s 			page 8
-
-
- 249:.\Generated_Source\PSoC5/WDT.c **** *   To set the initial priority for the component, use the Design-Wide Resources
- 250:.\Generated_Source\PSoC5/WDT.c **** *   Interrupt Editor.
+ 233:.\Generated_Source\PSoC5/WDT.c ****     return ramVectorTable[CYINT_IRQ_BASE + (uint32)WDT__INTC_NUMBER];
+ 234:.\Generated_Source\PSoC5/WDT.c **** }
+ 112              		.loc 1 234 0
+ 113 0004 986C     		ldr	r0, [r3, #72]
+ 114 0006 7047     		bx	lr
+ 115              	.L11:
+ 116              		.align	2
+ 117              	.L10:
+ 118 0008 08ED00E0 		.word	-536810232
+ 119              		.cfi_endproc
+ 120              	.LFE5:
+ 121              		.size	WDT_GetVector, .-WDT_GetVector
+ 122              		.section	.text.WDT_SetPriority,"ax",%progbits
+ 123              		.align	2
+ 124              		.global	WDT_SetPriority
+ 125              		.thumb
+ 126              		.thumb_func
+ 127              		.type	WDT_SetPriority, %function
+ 128              	WDT_SetPriority:
+ 129              	.LFB6:
+ 235:.\Generated_Source\PSoC5/WDT.c **** 
+ 236:.\Generated_Source\PSoC5/WDT.c **** 
+ 237:.\Generated_Source\PSoC5/WDT.c **** /*******************************************************************************
+ 238:.\Generated_Source\PSoC5/WDT.c **** * Function Name: WDT_SetPriority
+ 239:.\Generated_Source\PSoC5/WDT.c **** ********************************************************************************
+ 240:.\Generated_Source\PSoC5/WDT.c **** *
+ 241:.\Generated_Source\PSoC5/WDT.c **** * Summary:
+ 242:.\Generated_Source\PSoC5/WDT.c **** *   Sets the Priority of the Interrupt. 
+ 243:.\Generated_Source\PSoC5/WDT.c **** *
+ 244:.\Generated_Source\PSoC5/WDT.c **** *   Note calling WDT_Start or WDT_StartEx will 
+ 245:.\Generated_Source\PSoC5/WDT.c **** *   override any effect this API would have had. This API should only be called
+ 246:.\Generated_Source\PSoC5/WDT.c **** *   after WDT_Start or WDT_StartEx has been called. 
+ 247:.\Generated_Source\PSoC5/WDT.c **** *   To set the initial priority for the component, use the Design-Wide Resources
+ 248:.\Generated_Source\PSoC5/WDT.c **** *   Interrupt Editor.
+ 249:.\Generated_Source\PSoC5/WDT.c **** *
+ 250:.\Generated_Source\PSoC5/WDT.c **** *   Note This API has no effect on Non-maskable interrupt NMI).
  251:.\Generated_Source\PSoC5/WDT.c **** *
- 252:.\Generated_Source\PSoC5/WDT.c **** *   Note This API has no effect on Non-maskable interrupt NMI).
- 253:.\Generated_Source\PSoC5/WDT.c **** *
- 254:.\Generated_Source\PSoC5/WDT.c **** * Parameters:
- 255:.\Generated_Source\PSoC5/WDT.c **** *   priority: Priority of the interrupt, 0 being the highest priority
- 256:.\Generated_Source\PSoC5/WDT.c **** *             PSoC 3 and PSoC 5LP: Priority is from 0 to 7.
- 257:.\Generated_Source\PSoC5/WDT.c **** *             PSoC 4: Priority is from 0 to 3.
- 258:.\Generated_Source\PSoC5/WDT.c **** *
- 259:.\Generated_Source\PSoC5/WDT.c **** * Return:
- 260:.\Generated_Source\PSoC5/WDT.c **** *   None
- 261:.\Generated_Source\PSoC5/WDT.c **** *
- 262:.\Generated_Source\PSoC5/WDT.c **** *******************************************************************************/
- 263:.\Generated_Source\PSoC5/WDT.c **** void WDT_SetPriority(uint8 priority)
- 264:.\Generated_Source\PSoC5/WDT.c **** {
- 152              		.loc 1 264 0
- 153              		.cfi_startproc
- 154              		@ args = 0, pretend = 0, frame = 0
- 155              		@ frame_needed = 0, uses_anonymous_args = 0
- 156              		@ link register save eliminated.
- 157              	.LVL18:
- 265:.\Generated_Source\PSoC5/WDT.c ****     *WDT_INTC_PRIOR = priority << 5;
- 158              		.loc 1 265 0
- 159 0000 4001     		lsls	r0, r0, #5
- 160              	.LVL19:
- 161 0002 C0B2     		uxtb	r0, r0
- 162 0004 014B     		ldr	r3, .L10
- 163 0006 1870     		strb	r0, [r3]
- 164 0008 7047     		bx	lr
- 165              	.L11:
- 166 000a 00BF     		.align	2
- 167              	.L10:
- 168 000c 02E400E0 		.word	-536812542
- 169              		.cfi_endproc
- 170              	.LFE6:
- 171              		.size	WDT_SetPriority, .-WDT_SetPriority
- 172              		.section	.text.WDT_GetPriority,"ax",%progbits
- 173              		.align	2
- 174              		.global	WDT_GetPriority
- 175              		.thumb
- 176              		.thumb_func
- 177              		.type	WDT_GetPriority, %function
- 178              	WDT_GetPriority:
- 179              	.LFB7:
- 266:.\Generated_Source\PSoC5/WDT.c **** }
- 267:.\Generated_Source\PSoC5/WDT.c **** 
- 268:.\Generated_Source\PSoC5/WDT.c **** 
- 269:.\Generated_Source\PSoC5/WDT.c **** /*******************************************************************************
- 270:.\Generated_Source\PSoC5/WDT.c **** * Function Name: WDT_GetPriority
- 271:.\Generated_Source\PSoC5/WDT.c **** ********************************************************************************
- 272:.\Generated_Source\PSoC5/WDT.c **** *
- 273:.\Generated_Source\PSoC5/WDT.c **** * Summary:
- 274:.\Generated_Source\PSoC5/WDT.c **** *   Gets the Priority of the Interrupt.
- 275:.\Generated_Source\PSoC5/WDT.c **** *
- 276:.\Generated_Source\PSoC5/WDT.c **** * Parameters:
- 277:.\Generated_Source\PSoC5/WDT.c **** *   None
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccPhrqUu.s 			page 9
+ 252:.\Generated_Source\PSoC5/WDT.c **** * Parameters:
+ 253:.\Generated_Source\PSoC5/WDT.c **** *   priority: Priority of the interrupt, 0 being the highest priority
+ 254:.\Generated_Source\PSoC5/WDT.c **** *             PSoC 3 and PSoC 5LP: Priority is from 0 to 7.
+ 255:.\Generated_Source\PSoC5/WDT.c **** *             PSoC 4: Priority is from 0 to 3.
+ 256:.\Generated_Source\PSoC5/WDT.c **** *
+ 257:.\Generated_Source\PSoC5/WDT.c **** * Return:
+ 258:.\Generated_Source\PSoC5/WDT.c **** *   None
+ 259:.\Generated_Source\PSoC5/WDT.c **** *
+ 260:.\Generated_Source\PSoC5/WDT.c **** *******************************************************************************/
+ 261:.\Generated_Source\PSoC5/WDT.c **** void WDT_SetPriority(uint8 priority)
+ 262:.\Generated_Source\PSoC5/WDT.c **** {
+ 130              		.loc 1 262 0
+ 131              		.cfi_startproc
+ 132              		@ args = 0, pretend = 0, frame = 0
+ 133              		@ frame_needed = 0, uses_anonymous_args = 0
+ 134              		@ link register save eliminated.
+ 135              	.LVL7:
+ 263:.\Generated_Source\PSoC5/WDT.c ****     *WDT_INTC_PRIOR = priority << 5;
+ 136              		.loc 1 263 0
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccQk8BDq.s 			page 8
 
 
- 278:.\Generated_Source\PSoC5/WDT.c **** *
- 279:.\Generated_Source\PSoC5/WDT.c **** * Return:
- 280:.\Generated_Source\PSoC5/WDT.c **** *   Priority of the interrupt, 0 being the highest priority
- 281:.\Generated_Source\PSoC5/WDT.c **** *    PSoC 3 and PSoC 5LP: Priority is from 0 to 7.
- 282:.\Generated_Source\PSoC5/WDT.c **** *    PSoC 4: Priority is from 0 to 3.
- 283:.\Generated_Source\PSoC5/WDT.c **** *
- 284:.\Generated_Source\PSoC5/WDT.c **** *******************************************************************************/
- 285:.\Generated_Source\PSoC5/WDT.c **** uint8 WDT_GetPriority(void)
- 286:.\Generated_Source\PSoC5/WDT.c **** {
- 180              		.loc 1 286 0
- 181              		.cfi_startproc
- 182              		@ args = 0, pretend = 0, frame = 0
- 183              		@ frame_needed = 0, uses_anonymous_args = 0
- 184              		@ link register save eliminated.
- 287:.\Generated_Source\PSoC5/WDT.c ****     uint8 priority;
- 288:.\Generated_Source\PSoC5/WDT.c **** 
+ 137 0000 4001     		lsls	r0, r0, #5
+ 138              	.LVL8:
+ 139 0002 C0B2     		uxtb	r0, r0
+ 140 0004 014B     		ldr	r3, .L13
+ 141 0006 1870     		strb	r0, [r3]
+ 142 0008 7047     		bx	lr
+ 143              	.L14:
+ 144 000a 00BF     		.align	2
+ 145              	.L13:
+ 146 000c 02E400E0 		.word	-536812542
+ 147              		.cfi_endproc
+ 148              	.LFE6:
+ 149              		.size	WDT_SetPriority, .-WDT_SetPriority
+ 150              		.section	.text.WDT_GetPriority,"ax",%progbits
+ 151              		.align	2
+ 152              		.global	WDT_GetPriority
+ 153              		.thumb
+ 154              		.thumb_func
+ 155              		.type	WDT_GetPriority, %function
+ 156              	WDT_GetPriority:
+ 157              	.LFB7:
+ 264:.\Generated_Source\PSoC5/WDT.c **** }
+ 265:.\Generated_Source\PSoC5/WDT.c **** 
+ 266:.\Generated_Source\PSoC5/WDT.c **** 
+ 267:.\Generated_Source\PSoC5/WDT.c **** /*******************************************************************************
+ 268:.\Generated_Source\PSoC5/WDT.c **** * Function Name: WDT_GetPriority
+ 269:.\Generated_Source\PSoC5/WDT.c **** ********************************************************************************
+ 270:.\Generated_Source\PSoC5/WDT.c **** *
+ 271:.\Generated_Source\PSoC5/WDT.c **** * Summary:
+ 272:.\Generated_Source\PSoC5/WDT.c **** *   Gets the Priority of the Interrupt.
+ 273:.\Generated_Source\PSoC5/WDT.c **** *
+ 274:.\Generated_Source\PSoC5/WDT.c **** * Parameters:
+ 275:.\Generated_Source\PSoC5/WDT.c **** *   None
+ 276:.\Generated_Source\PSoC5/WDT.c **** *
+ 277:.\Generated_Source\PSoC5/WDT.c **** * Return:
+ 278:.\Generated_Source\PSoC5/WDT.c **** *   Priority of the interrupt, 0 being the highest priority
+ 279:.\Generated_Source\PSoC5/WDT.c **** *    PSoC 3 and PSoC 5LP: Priority is from 0 to 7.
+ 280:.\Generated_Source\PSoC5/WDT.c **** *    PSoC 4: Priority is from 0 to 3.
+ 281:.\Generated_Source\PSoC5/WDT.c **** *
+ 282:.\Generated_Source\PSoC5/WDT.c **** *******************************************************************************/
+ 283:.\Generated_Source\PSoC5/WDT.c **** uint8 WDT_GetPriority(void)
+ 284:.\Generated_Source\PSoC5/WDT.c **** {
+ 158              		.loc 1 284 0
+ 159              		.cfi_startproc
+ 160              		@ args = 0, pretend = 0, frame = 0
+ 161              		@ frame_needed = 0, uses_anonymous_args = 0
+ 162              		@ link register save eliminated.
+ 285:.\Generated_Source\PSoC5/WDT.c ****     uint8 priority;
+ 286:.\Generated_Source\PSoC5/WDT.c **** 
+ 287:.\Generated_Source\PSoC5/WDT.c **** 
+ 288:.\Generated_Source\PSoC5/WDT.c ****     priority = *WDT_INTC_PRIOR >> 5;
+ 163              		.loc 1 288 0
+ 164 0000 014B     		ldr	r3, .L16
+ 165 0002 1878     		ldrb	r0, [r3]	@ zero_extendqisi2
+ 166              	.LVL9:
  289:.\Generated_Source\PSoC5/WDT.c **** 
- 290:.\Generated_Source\PSoC5/WDT.c ****     priority = *WDT_INTC_PRIOR >> 5;
- 185              		.loc 1 290 0
- 186 0000 014B     		ldr	r3, .L13
- 187 0002 1878     		ldrb	r0, [r3]	@ zero_extendqisi2
- 188              	.LVL20:
- 291:.\Generated_Source\PSoC5/WDT.c **** 
- 292:.\Generated_Source\PSoC5/WDT.c ****     return priority;
- 293:.\Generated_Source\PSoC5/WDT.c **** }
- 189              		.loc 1 293 0
- 190 0004 4009     		lsrs	r0, r0, #5
- 191              	.LVL21:
- 192 0006 7047     		bx	lr
- 193              	.L14:
- 194              		.align	2
- 195              	.L13:
- 196 0008 02E400E0 		.word	-536812542
- 197              		.cfi_endproc
- 198              	.LFE7:
- 199              		.size	WDT_GetPriority, .-WDT_GetPriority
- 200              		.section	.text.WDT_Enable,"ax",%progbits
- 201              		.align	2
- 202              		.global	WDT_Enable
- 203              		.thumb
- 204              		.thumb_func
- 205              		.type	WDT_Enable, %function
- 206              	WDT_Enable:
- 207              	.LFB8:
- 294:.\Generated_Source\PSoC5/WDT.c **** 
- 295:.\Generated_Source\PSoC5/WDT.c **** 
- 296:.\Generated_Source\PSoC5/WDT.c **** /*******************************************************************************
- 297:.\Generated_Source\PSoC5/WDT.c **** * Function Name: WDT_Enable
- 298:.\Generated_Source\PSoC5/WDT.c **** ********************************************************************************
- 299:.\Generated_Source\PSoC5/WDT.c **** *
- 300:.\Generated_Source\PSoC5/WDT.c **** * Summary:
- 301:.\Generated_Source\PSoC5/WDT.c **** *   Enables the interrupt to the interrupt controller. Do not call this function
- 302:.\Generated_Source\PSoC5/WDT.c **** *   unless ISR_Start() has been called or the functionality of the ISR_Start() 
- 303:.\Generated_Source\PSoC5/WDT.c **** *   function, which sets the vector and the priority, has been called.
- 304:.\Generated_Source\PSoC5/WDT.c **** *
- 305:.\Generated_Source\PSoC5/WDT.c **** * Parameters:
- 306:.\Generated_Source\PSoC5/WDT.c **** *   None
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccPhrqUu.s 			page 10
-
-
- 307:.\Generated_Source\PSoC5/WDT.c **** *
- 308:.\Generated_Source\PSoC5/WDT.c **** * Return:
- 309:.\Generated_Source\PSoC5/WDT.c **** *   None
- 310:.\Generated_Source\PSoC5/WDT.c **** *
- 311:.\Generated_Source\PSoC5/WDT.c **** *******************************************************************************/
- 312:.\Generated_Source\PSoC5/WDT.c **** void WDT_Enable(void)
- 313:.\Generated_Source\PSoC5/WDT.c **** {
- 208              		.loc 1 313 0
- 209              		.cfi_startproc
- 210              		@ args = 0, pretend = 0, frame = 0
- 211              		@ frame_needed = 0, uses_anonymous_args = 0
- 212              		@ link register save eliminated.
- 314:.\Generated_Source\PSoC5/WDT.c ****     /* Enable the general interrupt. */
- 315:.\Generated_Source\PSoC5/WDT.c ****     *WDT_INTC_SET_EN = WDT__INTC_MASK;
- 213              		.loc 1 315 0
- 214 0000 0422     		movs	r2, #4
- 215 0002 014B     		ldr	r3, .L16
- 216 0004 1A60     		str	r2, [r3]
- 217 0006 7047     		bx	lr
- 218              	.L17:
- 219              		.align	2
- 220              	.L16:
- 221 0008 00E100E0 		.word	-536813312
- 222              		.cfi_endproc
- 223              	.LFE8:
- 224              		.size	WDT_Enable, .-WDT_Enable
- 225              		.section	.text.WDT_GetState,"ax",%progbits
- 226              		.align	2
- 227              		.global	WDT_GetState
- 228              		.thumb
- 229              		.thumb_func
- 230              		.type	WDT_GetState, %function
- 231              	WDT_GetState:
- 232              	.LFB9:
- 316:.\Generated_Source\PSoC5/WDT.c **** }
- 317:.\Generated_Source\PSoC5/WDT.c **** 
- 318:.\Generated_Source\PSoC5/WDT.c **** 
- 319:.\Generated_Source\PSoC5/WDT.c **** /*******************************************************************************
- 320:.\Generated_Source\PSoC5/WDT.c **** * Function Name: WDT_GetState
- 321:.\Generated_Source\PSoC5/WDT.c **** ********************************************************************************
- 322:.\Generated_Source\PSoC5/WDT.c **** *
- 323:.\Generated_Source\PSoC5/WDT.c **** * Summary:
- 324:.\Generated_Source\PSoC5/WDT.c **** *   Gets the state (enabled, disabled) of the Interrupt.
- 325:.\Generated_Source\PSoC5/WDT.c **** *
- 326:.\Generated_Source\PSoC5/WDT.c **** * Parameters:
- 327:.\Generated_Source\PSoC5/WDT.c **** *   None
- 328:.\Generated_Source\PSoC5/WDT.c **** *
- 329:.\Generated_Source\PSoC5/WDT.c **** * Return:
- 330:.\Generated_Source\PSoC5/WDT.c **** *   1 if enabled, 0 if disabled.
- 331:.\Generated_Source\PSoC5/WDT.c **** *
- 332:.\Generated_Source\PSoC5/WDT.c **** *******************************************************************************/
- 333:.\Generated_Source\PSoC5/WDT.c **** uint8 WDT_GetState(void)
- 334:.\Generated_Source\PSoC5/WDT.c **** {
- 233              		.loc 1 334 0
- 234              		.cfi_startproc
- 235              		@ args = 0, pretend = 0, frame = 0
- 236              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccPhrqUu.s 			page 11
-
-
- 237              		@ link register save eliminated.
- 335:.\Generated_Source\PSoC5/WDT.c ****     /* Get the state of the general interrupt. */
- 336:.\Generated_Source\PSoC5/WDT.c ****     return ((*WDT_INTC_SET_EN & (uint32)WDT__INTC_MASK) != 0u) ? 1u:0u;
- 238              		.loc 1 336 0
- 239 0000 044B     		ldr	r3, .L21
- 240 0002 1B68     		ldr	r3, [r3]
- 241 0004 13F0040F 		tst	r3, #4
- 242 0008 01D0     		beq	.L20
- 243 000a 0120     		movs	r0, #1
- 244 000c 7047     		bx	lr
- 245              	.L20:
- 246 000e 0020     		movs	r0, #0
- 337:.\Generated_Source\PSoC5/WDT.c **** }
- 247              		.loc 1 337 0
- 248 0010 7047     		bx	lr
- 249              	.L22:
- 250 0012 00BF     		.align	2
- 251              	.L21:
- 252 0014 00E100E0 		.word	-536813312
- 253              		.cfi_endproc
- 254              	.LFE9:
- 255              		.size	WDT_GetState, .-WDT_GetState
- 256              		.section	.text.WDT_Disable,"ax",%progbits
- 257              		.align	2
- 258              		.global	WDT_Disable
- 259              		.thumb
- 260              		.thumb_func
- 261              		.type	WDT_Disable, %function
- 262              	WDT_Disable:
- 263              	.LFB10:
- 338:.\Generated_Source\PSoC5/WDT.c **** 
- 339:.\Generated_Source\PSoC5/WDT.c **** 
- 340:.\Generated_Source\PSoC5/WDT.c **** /*******************************************************************************
- 341:.\Generated_Source\PSoC5/WDT.c **** * Function Name: WDT_Disable
- 342:.\Generated_Source\PSoC5/WDT.c **** ********************************************************************************
- 343:.\Generated_Source\PSoC5/WDT.c **** *
- 344:.\Generated_Source\PSoC5/WDT.c **** * Summary:
- 345:.\Generated_Source\PSoC5/WDT.c **** *   Disables the Interrupt in the interrupt controller.
- 346:.\Generated_Source\PSoC5/WDT.c **** *
- 347:.\Generated_Source\PSoC5/WDT.c **** * Parameters:
- 348:.\Generated_Source\PSoC5/WDT.c **** *   None
- 349:.\Generated_Source\PSoC5/WDT.c **** *
- 350:.\Generated_Source\PSoC5/WDT.c **** * Return:
- 351:.\Generated_Source\PSoC5/WDT.c **** *   None
- 352:.\Generated_Source\PSoC5/WDT.c **** *
- 353:.\Generated_Source\PSoC5/WDT.c **** *******************************************************************************/
- 354:.\Generated_Source\PSoC5/WDT.c **** void WDT_Disable(void)
- 355:.\Generated_Source\PSoC5/WDT.c **** {
- 264              		.loc 1 355 0
- 265              		.cfi_startproc
- 266              		@ args = 0, pretend = 0, frame = 0
- 267              		@ frame_needed = 0, uses_anonymous_args = 0
- 268              		@ link register save eliminated.
- 356:.\Generated_Source\PSoC5/WDT.c ****     /* Disable the general interrupt. */
- 357:.\Generated_Source\PSoC5/WDT.c ****     *WDT_INTC_CLR_EN = WDT__INTC_MASK;
- 269              		.loc 1 357 0
- 270 0000 0422     		movs	r2, #4
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccPhrqUu.s 			page 12
-
-
- 271 0002 014B     		ldr	r3, .L24
- 272 0004 1A60     		str	r2, [r3]
- 273 0006 7047     		bx	lr
- 274              	.L25:
- 275              		.align	2
- 276              	.L24:
- 277 0008 80E100E0 		.word	-536813184
- 278              		.cfi_endproc
- 279              	.LFE10:
- 280              		.size	WDT_Disable, .-WDT_Disable
- 281              		.section	.text.WDT_Start,"ax",%progbits
- 282              		.align	2
- 283              		.global	WDT_Start
- 284              		.thumb
- 285              		.thumb_func
- 286              		.type	WDT_Start, %function
- 287              	WDT_Start:
- 288              	.LFB0:
-  61:.\Generated_Source\PSoC5/WDT.c **** {
- 289              		.loc 1 61 0
- 290              		.cfi_startproc
- 291              		@ args = 0, pretend = 0, frame = 0
- 292              		@ frame_needed = 0, uses_anonymous_args = 0
- 293 0000 08B5     		push	{r3, lr}
- 294              		.cfi_def_cfa_offset 8
- 295              		.cfi_offset 3, -8
- 296              		.cfi_offset 14, -4
-  63:.\Generated_Source\PSoC5/WDT.c ****     WDT_Disable();
- 297              		.loc 1 63 0
- 298 0002 FFF7FEFF 		bl	WDT_Disable
- 299              	.LVL22:
-  66:.\Generated_Source\PSoC5/WDT.c ****     WDT_SetVector(&WDT_Interrupt);
- 300              		.loc 1 66 0
- 301 0006 0448     		ldr	r0, .L27
- 302 0008 FFF7FEFF 		bl	WDT_SetVector
- 303              	.LVL23:
-  69:.\Generated_Source\PSoC5/WDT.c ****     WDT_SetPriority((uint8)WDT_INTC_PRIOR_NUMBER);
- 304              		.loc 1 69 0
- 305 000c 0720     		movs	r0, #7
- 306 000e FFF7FEFF 		bl	WDT_SetPriority
- 307              	.LVL24:
-  72:.\Generated_Source\PSoC5/WDT.c ****     WDT_Enable();
- 308              		.loc 1 72 0
- 309 0012 FFF7FEFF 		bl	WDT_Enable
- 310              	.LVL25:
- 311 0016 08BD     		pop	{r3, pc}
- 312              	.L28:
- 313              		.align	2
- 314              	.L27:
- 315 0018 00000000 		.word	WDT_Interrupt
- 316              		.cfi_endproc
- 317              	.LFE0:
- 318              		.size	WDT_Start, .-WDT_Start
- 319              		.section	.text.WDT_StartEx,"ax",%progbits
- 320              		.align	2
- 321              		.global	WDT_StartEx
- 322              		.thumb
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccPhrqUu.s 			page 13
-
-
- 323              		.thumb_func
- 324              		.type	WDT_StartEx, %function
- 325              	WDT_StartEx:
- 326              	.LFB1:
- 104:.\Generated_Source\PSoC5/WDT.c **** {
- 327              		.loc 1 104 0
- 328              		.cfi_startproc
- 329              		@ args = 0, pretend = 0, frame = 0
- 330              		@ frame_needed = 0, uses_anonymous_args = 0
- 331              	.LVL26:
- 332 0000 10B5     		push	{r4, lr}
- 333              		.cfi_def_cfa_offset 8
- 334              		.cfi_offset 4, -8
- 335              		.cfi_offset 14, -4
- 336 0002 0446     		mov	r4, r0
- 106:.\Generated_Source\PSoC5/WDT.c ****     WDT_Disable();
- 337              		.loc 1 106 0
- 338 0004 FFF7FEFF 		bl	WDT_Disable
- 339              	.LVL27:
- 109:.\Generated_Source\PSoC5/WDT.c ****     WDT_SetVector(address);
- 340              		.loc 1 109 0
- 341 0008 2046     		mov	r0, r4
- 342 000a FFF7FEFF 		bl	WDT_SetVector
- 343              	.LVL28:
- 112:.\Generated_Source\PSoC5/WDT.c ****     WDT_SetPriority((uint8)WDT_INTC_PRIOR_NUMBER);
- 344              		.loc 1 112 0
- 345 000e 0720     		movs	r0, #7
- 346 0010 FFF7FEFF 		bl	WDT_SetPriority
- 347              	.LVL29:
- 115:.\Generated_Source\PSoC5/WDT.c ****     WDT_Enable();
- 348              		.loc 1 115 0
- 349 0014 FFF7FEFF 		bl	WDT_Enable
- 350              	.LVL30:
- 351 0018 10BD     		pop	{r4, pc}
- 352              		.cfi_endproc
- 353              	.LFE1:
- 354              		.size	WDT_StartEx, .-WDT_StartEx
- 355 001a 00BF     		.section	.text.WDT_Stop,"ax",%progbits
- 356              		.align	2
- 357              		.global	WDT_Stop
- 358              		.thumb
- 359              		.thumb_func
- 360              		.type	WDT_Stop, %function
- 361              	WDT_Stop:
- 362              	.LFB2:
- 134:.\Generated_Source\PSoC5/WDT.c **** {
- 363              		.loc 1 134 0
- 364              		.cfi_startproc
- 365              		@ args = 0, pretend = 0, frame = 0
- 366              		@ frame_needed = 0, uses_anonymous_args = 0
- 367 0000 08B5     		push	{r3, lr}
- 368              		.cfi_def_cfa_offset 8
- 369              		.cfi_offset 3, -8
- 370              		.cfi_offset 14, -4
- 136:.\Generated_Source\PSoC5/WDT.c ****     WDT_Disable();
- 371              		.loc 1 136 0
- 372 0002 FFF7FEFF 		bl	WDT_Disable
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccPhrqUu.s 			page 14
-
-
- 373              	.LVL31:
- 139:.\Generated_Source\PSoC5/WDT.c ****     WDT_SetVector(&IntDefaultHandler);
- 374              		.loc 1 139 0
- 375 0006 0248     		ldr	r0, .L31
- 376 0008 FFF7FEFF 		bl	WDT_SetVector
- 377              	.LVL32:
- 378 000c 08BD     		pop	{r3, pc}
- 379              	.L32:
- 380 000e 00BF     		.align	2
- 381              	.L31:
- 382 0010 00000000 		.word	IntDefaultHandler
- 383              		.cfi_endproc
- 384              	.LFE2:
- 385              		.size	WDT_Stop, .-WDT_Stop
- 386              		.section	.text.WDT_SetPending,"ax",%progbits
- 387              		.align	2
- 388              		.global	WDT_SetPending
- 389              		.thumb
- 390              		.thumb_func
- 391              		.type	WDT_SetPending, %function
- 392              	WDT_SetPending:
- 393              	.LFB11:
- 358:.\Generated_Source\PSoC5/WDT.c **** }
- 359:.\Generated_Source\PSoC5/WDT.c **** 
- 360:.\Generated_Source\PSoC5/WDT.c **** 
- 361:.\Generated_Source\PSoC5/WDT.c **** /*******************************************************************************
- 362:.\Generated_Source\PSoC5/WDT.c **** * Function Name: WDT_SetPending
- 363:.\Generated_Source\PSoC5/WDT.c **** ********************************************************************************
- 364:.\Generated_Source\PSoC5/WDT.c **** *
- 365:.\Generated_Source\PSoC5/WDT.c **** * Summary:
- 366:.\Generated_Source\PSoC5/WDT.c **** *   Causes the Interrupt to enter the pending state, a software method of
- 367:.\Generated_Source\PSoC5/WDT.c **** *   generating the interrupt.
- 368:.\Generated_Source\PSoC5/WDT.c **** *
- 369:.\Generated_Source\PSoC5/WDT.c **** * Parameters:
- 370:.\Generated_Source\PSoC5/WDT.c **** *   None
- 371:.\Generated_Source\PSoC5/WDT.c **** *
- 372:.\Generated_Source\PSoC5/WDT.c **** * Return:
- 373:.\Generated_Source\PSoC5/WDT.c **** *   None
- 374:.\Generated_Source\PSoC5/WDT.c **** *
- 375:.\Generated_Source\PSoC5/WDT.c **** * Side Effects:
- 376:.\Generated_Source\PSoC5/WDT.c **** *   If interrupts are enabled and the interrupt is set up properly, the ISR is
- 377:.\Generated_Source\PSoC5/WDT.c **** *   entered (depending on the priority of this interrupt and other pending 
- 378:.\Generated_Source\PSoC5/WDT.c **** *   interrupts).
- 379:.\Generated_Source\PSoC5/WDT.c **** *
- 380:.\Generated_Source\PSoC5/WDT.c **** *******************************************************************************/
- 381:.\Generated_Source\PSoC5/WDT.c **** void WDT_SetPending(void)
- 382:.\Generated_Source\PSoC5/WDT.c **** {
- 394              		.loc 1 382 0
- 395              		.cfi_startproc
- 396              		@ args = 0, pretend = 0, frame = 0
- 397              		@ frame_needed = 0, uses_anonymous_args = 0
- 398              		@ link register save eliminated.
- 383:.\Generated_Source\PSoC5/WDT.c ****     *WDT_INTC_SET_PD = WDT__INTC_MASK;
- 399              		.loc 1 383 0
- 400 0000 0422     		movs	r2, #4
- 401 0002 014B     		ldr	r3, .L34
- 402 0004 1A60     		str	r2, [r3]
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccPhrqUu.s 			page 15
-
-
- 403 0006 7047     		bx	lr
- 404              	.L35:
- 405              		.align	2
- 406              	.L34:
- 407 0008 00E200E0 		.word	-536813056
- 408              		.cfi_endproc
- 409              	.LFE11:
- 410              		.size	WDT_SetPending, .-WDT_SetPending
- 411              		.section	.text.WDT_ClearPending,"ax",%progbits
- 412              		.align	2
- 413              		.global	WDT_ClearPending
- 414              		.thumb
- 415              		.thumb_func
- 416              		.type	WDT_ClearPending, %function
- 417              	WDT_ClearPending:
- 418              	.LFB12:
- 384:.\Generated_Source\PSoC5/WDT.c **** }
- 385:.\Generated_Source\PSoC5/WDT.c **** 
- 386:.\Generated_Source\PSoC5/WDT.c **** 
- 387:.\Generated_Source\PSoC5/WDT.c **** /*******************************************************************************
- 388:.\Generated_Source\PSoC5/WDT.c **** * Function Name: WDT_ClearPending
- 389:.\Generated_Source\PSoC5/WDT.c **** ********************************************************************************
- 390:.\Generated_Source\PSoC5/WDT.c **** *
- 391:.\Generated_Source\PSoC5/WDT.c **** * Summary:
- 392:.\Generated_Source\PSoC5/WDT.c **** *   Clears a pending interrupt in the interrupt controller.
- 393:.\Generated_Source\PSoC5/WDT.c **** *
- 394:.\Generated_Source\PSoC5/WDT.c **** *   Note Some interrupt sources are clear-on-read and require the block 
- 395:.\Generated_Source\PSoC5/WDT.c **** *   interrupt/status register to be read/cleared with the appropriate block API 
- 396:.\Generated_Source\PSoC5/WDT.c **** *   (GPIO, UART, and so on). Otherwise the ISR will continue to remain in 
- 397:.\Generated_Source\PSoC5/WDT.c **** *   pending state even though the interrupt itself is cleared using this API.
- 398:.\Generated_Source\PSoC5/WDT.c **** *
- 399:.\Generated_Source\PSoC5/WDT.c **** * Parameters:
- 400:.\Generated_Source\PSoC5/WDT.c **** *   None
- 401:.\Generated_Source\PSoC5/WDT.c **** *
- 402:.\Generated_Source\PSoC5/WDT.c **** * Return:
- 403:.\Generated_Source\PSoC5/WDT.c **** *   None
- 404:.\Generated_Source\PSoC5/WDT.c **** *
- 405:.\Generated_Source\PSoC5/WDT.c **** *******************************************************************************/
- 406:.\Generated_Source\PSoC5/WDT.c **** void WDT_ClearPending(void)
- 407:.\Generated_Source\PSoC5/WDT.c **** {
- 419              		.loc 1 407 0
- 420              		.cfi_startproc
- 421              		@ args = 0, pretend = 0, frame = 0
- 422              		@ frame_needed = 0, uses_anonymous_args = 0
- 423              		@ link register save eliminated.
- 408:.\Generated_Source\PSoC5/WDT.c ****     *WDT_INTC_CLR_PD = WDT__INTC_MASK;
- 424              		.loc 1 408 0
- 425 0000 0422     		movs	r2, #4
- 426 0002 014B     		ldr	r3, .L37
- 427 0004 1A60     		str	r2, [r3]
- 428 0006 7047     		bx	lr
- 429              	.L38:
- 430              		.align	2
- 431              	.L37:
- 432 0008 80E200E0 		.word	-536812928
- 433              		.cfi_endproc
- 434              	.LFE12:
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccPhrqUu.s 			page 16
-
-
- 435              		.size	WDT_ClearPending, .-WDT_ClearPending
- 436              		.comm	timer_value,4,4
- 437              		.comm	timer_status,4,4
- 438              		.comm	heartbeatCounter,4,4
- 439              		.comm	heartrate,4,4
- 440              		.comm	speed,4,4
- 441              		.comm	Prev_state,4,4
- 442              		.comm	currentState,4,4
- 443              		.comm	PROFILE,4,4
- 444              		.comm	increasingHr,4,4
- 445              		.comm	average,4,4
- 446              		.text
- 447              	.Letext0:
- 448              		.file 2 "Generated_Source\\PSoC5/cytypes.h"
- 449              		.file 3 "./states.h"
- 450              		.file 4 "./heartrate.h"
- 451              		.file 5 "./motor.h"
- 452              		.file 6 "Generated_Source\\PSoC5/HEARTRATE_HEALTH.h"
- 453              		.file 7 "Generated_Source\\PSoC5/MOTOR_HEALTH.h"
- 454              		.file 8 "Generated_Source\\PSoC5/UI_HEALTH.h"
- 455              		.file 9 "Generated_Source\\PSoC5/LCD.h"
- 456              		.file 10 "Generated_Source\\PSoC5/CyLib.h"
- 457              		.section	.debug_info,"",%progbits
- 458              	.Ldebug_info0:
- 459 0000 99040000 		.4byte	0x499
- 460 0004 0400     		.2byte	0x4
- 461 0006 00000000 		.4byte	.Ldebug_abbrev0
- 462 000a 04       		.byte	0x4
- 463 000b 01       		.uleb128 0x1
- 464 000c D4000000 		.4byte	.LASF53
- 465 0010 01       		.byte	0x1
- 466 0011 63010000 		.4byte	.LASF54
- 467 0015 2B030000 		.4byte	.LASF55
- 468 0019 00000000 		.4byte	.Ldebug_ranges0+0
- 469 001d 00000000 		.4byte	0
- 470 0021 00000000 		.4byte	.Ldebug_line0
- 471 0025 02       		.uleb128 0x2
- 472 0026 04       		.byte	0x4
- 473 0027 05       		.byte	0x5
- 474 0028 696E7400 		.ascii	"int\000"
- 475 002c 03       		.uleb128 0x3
- 476 002d 04       		.byte	0x4
- 477 002e 07       		.byte	0x7
- 478 002f D9010000 		.4byte	.LASF0
- 479 0033 03       		.uleb128 0x3
- 480 0034 01       		.byte	0x1
- 481 0035 06       		.byte	0x6
- 482 0036 00030000 		.4byte	.LASF1
- 483 003a 03       		.uleb128 0x3
- 484 003b 01       		.byte	0x1
- 485 003c 08       		.byte	0x8
- 486 003d 8E000000 		.4byte	.LASF2
- 487 0041 03       		.uleb128 0x3
- 488 0042 02       		.byte	0x2
- 489 0043 05       		.byte	0x5
- 490 0044 AD020000 		.4byte	.LASF3
- 491 0048 03       		.uleb128 0x3
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccPhrqUu.s 			page 17
-
-
- 492 0049 02       		.byte	0x2
- 493 004a 07       		.byte	0x7
- 494 004b 50010000 		.4byte	.LASF4
- 495 004f 03       		.uleb128 0x3
- 496 0050 04       		.byte	0x4
- 497 0051 05       		.byte	0x5
- 498 0052 E6020000 		.4byte	.LASF5
- 499 0056 03       		.uleb128 0x3
- 500 0057 04       		.byte	0x4
- 501 0058 07       		.byte	0x7
- 502 0059 C2000000 		.4byte	.LASF6
- 503 005d 03       		.uleb128 0x3
- 504 005e 08       		.byte	0x8
- 505 005f 05       		.byte	0x5
- 506 0060 00000000 		.4byte	.LASF7
- 507 0064 03       		.uleb128 0x3
- 508 0065 08       		.byte	0x8
- 509 0066 07       		.byte	0x7
- 510 0067 EE010000 		.4byte	.LASF8
- 511 006b 03       		.uleb128 0x3
- 512 006c 04       		.byte	0x4
- 513 006d 07       		.byte	0x7
- 514 006e 82020000 		.4byte	.LASF9
- 515 0072 04       		.uleb128 0x4
- 516 0073 04       		.byte	0x4
- 517 0074 78000000 		.4byte	0x78
- 518 0078 05       		.uleb128 0x5
- 519 0079 03       		.uleb128 0x3
- 520 007a 01       		.byte	0x1
- 521 007b 08       		.byte	0x8
- 522 007c 8B020000 		.4byte	.LASF10
- 523 0080 06       		.uleb128 0x6
- 524 0081 C5020000 		.4byte	.LASF11
- 525 0085 02       		.byte	0x2
- 526 0086 B4       		.byte	0xb4
- 527 0087 3A000000 		.4byte	0x3a
- 528 008b 06       		.uleb128 0x6
- 529 008c BE010000 		.4byte	.LASF12
- 530 0090 02       		.byte	0x2
- 531 0091 B5       		.byte	0xb5
- 532 0092 48000000 		.4byte	0x48
- 533 0096 06       		.uleb128 0x6
- 534 0097 C5010000 		.4byte	.LASF13
- 535 009b 02       		.byte	0x2
- 536 009c B6       		.byte	0xb6
- 537 009d 56000000 		.4byte	0x56
- 538 00a1 03       		.uleb128 0x3
- 539 00a2 04       		.byte	0x4
- 540 00a3 04       		.byte	0x4
- 541 00a4 82000000 		.4byte	.LASF14
- 542 00a8 03       		.uleb128 0x3
- 543 00a9 08       		.byte	0x8
- 544 00aa 04       		.byte	0x4
- 545 00ab 9B010000 		.4byte	.LASF15
- 546 00af 07       		.uleb128 0x7
- 547 00b0 9C000000 		.4byte	.LASF16
- 548 00b4 02       		.byte	0x2
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccPhrqUu.s 			page 18
-
-
- 549 00b5 5E01     		.2byte	0x15e
- 550 00b7 BB000000 		.4byte	0xbb
- 551 00bb 08       		.uleb128 0x8
- 552 00bc 80000000 		.4byte	0x80
- 553 00c0 07       		.uleb128 0x7
- 554 00c1 0E000000 		.4byte	.LASF17
- 555 00c5 02       		.byte	0x2
- 556 00c6 6001     		.2byte	0x160
- 557 00c8 CC000000 		.4byte	0xcc
- 558 00cc 08       		.uleb128 0x8
- 559 00cd 96000000 		.4byte	0x96
- 560 00d1 07       		.uleb128 0x7
- 561 00d2 42020000 		.4byte	.LASF18
- 562 00d6 02       		.byte	0x2
- 563 00d7 7001     		.2byte	0x170
- 564 00d9 72000000 		.4byte	0x72
- 565 00dd 06       		.uleb128 0x6
- 566 00de 88000000 		.4byte	.LASF19
- 567 00e2 03       		.byte	0x3
- 568 00e3 11       		.byte	0x11
- 569 00e4 25000000 		.4byte	0x25
- 570 00e8 09       		.uleb128 0x9
- 571 00e9 B7020000 		.4byte	.LASF23
- 572 00ed 01       		.byte	0x1
- 573 00ee 9F       		.byte	0x9f
- 574 00ef 00000000 		.4byte	.LFB3
- 575 00f3 46000000 		.4byte	.LFE3-.LFB3
- 576 00f7 01       		.uleb128 0x1
- 577 00f8 9C       		.byte	0x9c
- 578 00f9 BE010000 		.4byte	0x1be
- 579 00fd 0A       		.uleb128 0xa
- 580 00fe 14000000 		.4byte	.LASF20
- 581 0102 01       		.byte	0x1
- 582 0103 A4       		.byte	0xa4
- 583 0104 25000000 		.4byte	0x25
- 584 0108 00000000 		.4byte	.LLST0
- 585 010c 0A       		.uleb128 0xa
- 586 010d DA020000 		.4byte	.LASF21
- 587 0111 01       		.byte	0x1
- 588 0112 A5       		.byte	0xa5
- 589 0113 25000000 		.4byte	0x25
- 590 0117 28000000 		.4byte	.LLST1
- 591 011b 0A       		.uleb128 0xa
- 592 011c 39020000 		.4byte	.LASF22
- 593 0120 01       		.byte	0x1
- 594 0121 A6       		.byte	0xa6
- 595 0122 25000000 		.4byte	0x25
- 596 0126 50000000 		.4byte	.LLST2
- 597 012a 0B       		.uleb128 0xb
- 598 012b 06000000 		.4byte	.LVL0
- 599 012f 4D040000 		.4byte	0x44d
- 600 0133 0B       		.uleb128 0xb
- 601 0134 0C000000 		.4byte	.LVL2
- 602 0138 58040000 		.4byte	0x458
- 603 013c 0B       		.uleb128 0xb
- 604 013d 12000000 		.4byte	.LVL4
- 605 0141 63040000 		.4byte	0x463
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccPhrqUu.s 			page 19
-
-
- 606 0145 0C       		.uleb128 0xc
- 607 0146 1C000000 		.4byte	.LVL7
- 608 014a 6E040000 		.4byte	0x46e
- 609 014e 5D010000 		.4byte	0x15d
- 610 0152 0D       		.uleb128 0xd
- 611 0153 01       		.uleb128 0x1
- 612 0154 51       		.byte	0x51
- 613 0155 01       		.uleb128 0x1
- 614 0156 35       		.byte	0x35
- 615 0157 0D       		.uleb128 0xd
- 616 0158 01       		.uleb128 0x1
- 617 0159 50       		.byte	0x50
- 618 015a 01       		.uleb128 0x1
- 619 015b 31       		.byte	0x31
- 620 015c 00       		.byte	0
- 621 015d 0C       		.uleb128 0xc
- 622 015e 22000000 		.4byte	.LVL8
- 623 0162 84040000 		.4byte	0x484
- 624 0166 71010000 		.4byte	0x171
- 625 016a 0D       		.uleb128 0xd
- 626 016b 01       		.uleb128 0x1
- 627 016c 50       		.byte	0x50
- 628 016d 02       		.uleb128 0x2
- 629 016e 76       		.byte	0x76
- 630 016f 00       		.sleb128 0
- 631 0170 00       		.byte	0
- 632 0171 0C       		.uleb128 0xc
- 633 0172 28000000 		.4byte	.LVL9
- 634 0176 84040000 		.4byte	0x484
- 635 017a 85010000 		.4byte	0x185
- 636 017e 0D       		.uleb128 0xd
- 637 017f 01       		.uleb128 0x1
- 638 0180 50       		.byte	0x50
- 639 0181 02       		.uleb128 0x2
- 640 0182 75       		.byte	0x75
- 641 0183 00       		.sleb128 0
- 642 0184 00       		.byte	0
- 643 0185 0C       		.uleb128 0xc
- 644 0186 2E000000 		.4byte	.LVL10
- 645 018a 84040000 		.4byte	0x484
- 646 018e 99010000 		.4byte	0x199
- 647 0192 0D       		.uleb128 0xd
- 648 0193 01       		.uleb128 0x1
- 649 0194 50       		.byte	0x50
- 650 0195 02       		.uleb128 0x2
- 651 0196 74       		.byte	0x74
- 652 0197 00       		.sleb128 0
- 653 0198 00       		.byte	0
- 654 0199 0B       		.uleb128 0xb
- 655 019a 32000000 		.4byte	.LVL11
- 656 019e 4D040000 		.4byte	0x44d
- 657 01a2 0B       		.uleb128 0xb
- 658 01a3 38000000 		.4byte	.LVL12
- 659 01a7 58040000 		.4byte	0x458
- 660 01ab 0B       		.uleb128 0xb
- 661 01ac 3E000000 		.4byte	.LVL13
- 662 01b0 63040000 		.4byte	0x463
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccPhrqUu.s 			page 20
-
-
- 663 01b4 0B       		.uleb128 0xb
- 664 01b5 44000000 		.4byte	.LVL14
- 665 01b9 95040000 		.4byte	0x495
- 666 01bd 00       		.byte	0
- 667 01be 09       		.uleb128 0x9
- 668 01bf 82010000 		.4byte	.LASF24
- 669 01c3 01       		.byte	0x1
- 670 01c4 CD       		.byte	0xcd
- 671 01c5 00000000 		.4byte	.LFB4
- 672 01c9 0C000000 		.4byte	.LFE4-.LFB4
- 673 01cd 01       		.uleb128 0x1
- 674 01ce 9C       		.byte	0x9c
- 675 01cf EE010000 		.4byte	0x1ee
- 676 01d3 0E       		.uleb128 0xe
- 677 01d4 E6010000 		.4byte	.LASF27
- 678 01d8 01       		.byte	0x1
- 679 01d9 CD       		.byte	0xcd
- 680 01da D1000000 		.4byte	0xd1
- 681 01de 01       		.uleb128 0x1
- 682 01df 50       		.byte	0x50
- 683 01e0 0F       		.uleb128 0xf
- 684 01e1 90020000 		.4byte	.LASF25
- 685 01e5 01       		.byte	0x1
- 686 01e6 CF       		.byte	0xcf
- 687 01e7 EE010000 		.4byte	0x1ee
- 688 01eb 01       		.uleb128 0x1
- 689 01ec 53       		.byte	0x53
- 690 01ed 00       		.byte	0
- 691 01ee 04       		.uleb128 0x4
- 692 01ef 04       		.byte	0x4
- 693 01f0 D1000000 		.4byte	0xd1
- 694 01f4 10       		.uleb128 0x10
- 695 01f5 9F020000 		.4byte	.LASF29
- 696 01f9 01       		.byte	0x1
- 697 01fa E5       		.byte	0xe5
- 698 01fb D1000000 		.4byte	0xd1
- 699 01ff 00000000 		.4byte	.LFB5
- 700 0203 0C000000 		.4byte	.LFE5-.LFB5
- 701 0207 01       		.uleb128 0x1
- 702 0208 9C       		.byte	0x9c
- 703 0209 1B020000 		.4byte	0x21b
- 704 020d 0F       		.uleb128 0xf
- 705 020e 90020000 		.4byte	.LASF25
- 706 0212 01       		.byte	0x1
- 707 0213 E7       		.byte	0xe7
- 708 0214 EE010000 		.4byte	0x1ee
- 709 0218 01       		.uleb128 0x1
- 710 0219 53       		.byte	0x53
- 711 021a 00       		.byte	0
- 712 021b 11       		.uleb128 0x11
- 713 021c A2010000 		.4byte	.LASF26
- 714 0220 01       		.byte	0x1
- 715 0221 0701     		.2byte	0x107
- 716 0223 00000000 		.4byte	.LFB6
- 717 0227 10000000 		.4byte	.LFE6-.LFB6
- 718 022b 01       		.uleb128 0x1
- 719 022c 9C       		.byte	0x9c
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccPhrqUu.s 			page 21
-
-
- 720 022d 42020000 		.4byte	0x242
- 721 0231 12       		.uleb128 0x12
- 722 0232 62020000 		.4byte	.LASF28
- 723 0236 01       		.byte	0x1
- 724 0237 0701     		.2byte	0x107
- 725 0239 80000000 		.4byte	0x80
- 726 023d 78000000 		.4byte	.LLST3
- 727 0241 00       		.byte	0
- 728 0242 13       		.uleb128 0x13
- 729 0243 44000000 		.4byte	.LASF30
- 730 0247 01       		.byte	0x1
- 731 0248 1D01     		.2byte	0x11d
- 732 024a 80000000 		.4byte	0x80
- 733 024e 00000000 		.4byte	.LFB7
- 734 0252 0C000000 		.4byte	.LFE7-.LFB7
- 735 0256 01       		.uleb128 0x1
- 736 0257 9C       		.byte	0x9c
- 737 0258 6D020000 		.4byte	0x26d
- 738 025c 14       		.uleb128 0x14
- 739 025d 62020000 		.4byte	.LASF28
- 740 0261 01       		.byte	0x1
- 741 0262 1F01     		.2byte	0x11f
- 742 0264 80000000 		.4byte	0x80
- 743 0268 99000000 		.4byte	.LLST4
- 744 026c 00       		.byte	0
- 745 026d 15       		.uleb128 0x15
- 746 026e A1000000 		.4byte	.LASF31
- 747 0272 01       		.byte	0x1
- 748 0273 3801     		.2byte	0x138
- 749 0275 00000000 		.4byte	.LFB8
- 750 0279 0C000000 		.4byte	.LFE8-.LFB8
- 751 027d 01       		.uleb128 0x1
- 752 027e 9C       		.byte	0x9c
- 753 027f 16       		.uleb128 0x16
- 754 0280 6B020000 		.4byte	.LASF56
- 755 0284 01       		.byte	0x1
- 756 0285 4D01     		.2byte	0x14d
- 757 0287 80000000 		.4byte	0x80
- 758 028b 00000000 		.4byte	.LFB9
- 759 028f 18000000 		.4byte	.LFE9-.LFB9
- 760 0293 01       		.uleb128 0x1
- 761 0294 9C       		.byte	0x9c
- 762 0295 15       		.uleb128 0x15
- 763 0296 5D000000 		.4byte	.LASF32
- 764 029a 01       		.byte	0x1
- 765 029b 6201     		.2byte	0x162
- 766 029d 00000000 		.4byte	.LFB10
- 767 02a1 0C000000 		.4byte	.LFE10-.LFB10
- 768 02a5 01       		.uleb128 0x1
- 769 02a6 9C       		.byte	0x9c
- 770 02a7 09       		.uleb128 0x9
- 771 02a8 05020000 		.4byte	.LASF33
- 772 02ac 01       		.byte	0x1
- 773 02ad 3C       		.byte	0x3c
- 774 02ae 00000000 		.4byte	.LFB0
- 775 02b2 1C000000 		.4byte	.LFE0-.LFB0
- 776 02b6 01       		.uleb128 0x1
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccPhrqUu.s 			page 22
-
-
- 777 02b7 9C       		.byte	0x9c
- 778 02b8 F9020000 		.4byte	0x2f9
- 779 02bc 0B       		.uleb128 0xb
- 780 02bd 06000000 		.4byte	.LVL22
- 781 02c1 95020000 		.4byte	0x295
- 782 02c5 0C       		.uleb128 0xc
- 783 02c6 0C000000 		.4byte	.LVL23
- 784 02ca BE010000 		.4byte	0x1be
- 785 02ce DC020000 		.4byte	0x2dc
- 786 02d2 0D       		.uleb128 0xd
- 787 02d3 01       		.uleb128 0x1
- 788 02d4 50       		.byte	0x50
- 789 02d5 05       		.uleb128 0x5
- 790 02d6 03       		.byte	0x3
- 791 02d7 00000000 		.4byte	WDT_Interrupt
- 792 02db 00       		.byte	0
- 793 02dc 0C       		.uleb128 0xc
- 794 02dd 12000000 		.4byte	.LVL24
- 795 02e1 1B020000 		.4byte	0x21b
- 796 02e5 EF020000 		.4byte	0x2ef
- 797 02e9 0D       		.uleb128 0xd
- 798 02ea 01       		.uleb128 0x1
- 799 02eb 50       		.byte	0x50
- 800 02ec 01       		.uleb128 0x1
- 801 02ed 37       		.byte	0x37
- 802 02ee 00       		.byte	0
- 803 02ef 0B       		.uleb128 0xb
- 804 02f0 16000000 		.4byte	.LVL25
- 805 02f4 6D020000 		.4byte	0x26d
- 806 02f8 00       		.byte	0
- 807 02f9 09       		.uleb128 0x9
- 808 02fa 20000000 		.4byte	.LASF34
- 809 02fe 01       		.byte	0x1
- 810 02ff 67       		.byte	0x67
- 811 0300 00000000 		.4byte	.LFB1
- 812 0304 1A000000 		.4byte	.LFE1-.LFB1
- 813 0308 01       		.uleb128 0x1
- 814 0309 9C       		.byte	0x9c
- 815 030a 57030000 		.4byte	0x357
- 816 030e 17       		.uleb128 0x17
- 817 030f E6010000 		.4byte	.LASF27
- 818 0313 01       		.byte	0x1
- 819 0314 67       		.byte	0x67
- 820 0315 D1000000 		.4byte	0xd1
- 821 0319 B0000000 		.4byte	.LLST5
- 822 031d 0B       		.uleb128 0xb
- 823 031e 08000000 		.4byte	.LVL27
- 824 0322 95020000 		.4byte	0x295
- 825 0326 0C       		.uleb128 0xc
- 826 0327 0E000000 		.4byte	.LVL28
- 827 032b BE010000 		.4byte	0x1be
- 828 032f 3A030000 		.4byte	0x33a
- 829 0333 0D       		.uleb128 0xd
- 830 0334 01       		.uleb128 0x1
- 831 0335 50       		.byte	0x50
- 832 0336 02       		.uleb128 0x2
- 833 0337 74       		.byte	0x74
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccPhrqUu.s 			page 23
-
-
- 834 0338 00       		.sleb128 0
- 835 0339 00       		.byte	0
- 836 033a 0C       		.uleb128 0xc
- 837 033b 14000000 		.4byte	.LVL29
- 838 033f 1B020000 		.4byte	0x21b
- 839 0343 4D030000 		.4byte	0x34d
- 840 0347 0D       		.uleb128 0xd
- 841 0348 01       		.uleb128 0x1
- 842 0349 50       		.byte	0x50
- 843 034a 01       		.uleb128 0x1
- 844 034b 37       		.byte	0x37
- 845 034c 00       		.byte	0
- 846 034d 0B       		.uleb128 0xb
- 847 034e 18000000 		.4byte	.LVL30
- 848 0352 6D020000 		.4byte	0x26d
- 849 0356 00       		.byte	0
- 850 0357 09       		.uleb128 0x9
- 851 0358 54000000 		.4byte	.LASF35
- 852 035c 01       		.byte	0x1
- 853 035d 85       		.byte	0x85
- 854 035e 00000000 		.4byte	.LFB2
- 855 0362 14000000 		.4byte	.LFE2-.LFB2
- 856 0366 01       		.uleb128 0x1
- 857 0367 9C       		.byte	0x9c
- 858 0368 7F030000 		.4byte	0x37f
- 859 036c 0B       		.uleb128 0xb
- 860 036d 06000000 		.4byte	.LVL31
- 861 0371 95020000 		.4byte	0x295
- 862 0375 0B       		.uleb128 0xb
- 863 0376 0C000000 		.4byte	.LVL32
- 864 037a BE010000 		.4byte	0x1be
- 865 037e 00       		.byte	0
- 866 037f 15       		.uleb128 0x15
- 867 0380 0F020000 		.4byte	.LASF36
- 868 0384 01       		.byte	0x1
- 869 0385 7D01     		.2byte	0x17d
- 870 0387 00000000 		.4byte	.LFB11
- 871 038b 0C000000 		.4byte	.LFE11-.LFB11
- 872 038f 01       		.uleb128 0x1
- 873 0390 9C       		.byte	0x9c
- 874 0391 15       		.uleb128 0x15
- 875 0392 EF020000 		.4byte	.LASF37
- 876 0396 01       		.byte	0x1
- 877 0397 9601     		.2byte	0x196
- 878 0399 00000000 		.4byte	.LFB12
- 879 039d 0C000000 		.4byte	.LFE12-.LFB12
- 880 03a1 01       		.uleb128 0x1
- 881 03a2 9C       		.byte	0x9c
- 882 03a3 18       		.uleb128 0x18
- 883 03a4 78020000 		.4byte	.LASF38
- 884 03a8 04       		.byte	0x4
- 885 03a9 13       		.byte	0x13
- 886 03aa A1000000 		.4byte	0xa1
- 887 03ae 05       		.uleb128 0x5
- 888 03af 03       		.byte	0x3
- 889 03b0 00000000 		.4byte	heartrate
- 890 03b4 18       		.uleb128 0x18
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccPhrqUu.s 			page 24
-
-
- 891 03b5 31020000 		.4byte	.LASF39
- 892 03b9 03       		.byte	0x3
- 893 03ba 15       		.byte	0x15
- 894 03bb A1000000 		.4byte	0xa1
- 895 03bf 05       		.uleb128 0x5
- 896 03c0 03       		.byte	0x3
- 897 03c1 00000000 		.4byte	average
- 898 03c5 18       		.uleb128 0x18
- 899 03c6 CC010000 		.4byte	.LASF40
- 900 03ca 03       		.byte	0x3
- 901 03cb 16       		.byte	0x16
- 902 03cc 25000000 		.4byte	0x25
- 903 03d0 05       		.uleb128 0x5
- 904 03d1 03       		.byte	0x3
- 905 03d2 00000000 		.4byte	increasingHr
- 906 03d6 18       		.uleb128 0x18
- 907 03d7 69000000 		.4byte	.LASF41
- 908 03db 03       		.byte	0x3
- 909 03dc 18       		.byte	0x18
- 910 03dd 25000000 		.4byte	0x25
- 911 03e1 05       		.uleb128 0x5
- 912 03e2 03       		.byte	0x3
- 913 03e3 00000000 		.4byte	PROFILE
- 914 03e7 18       		.uleb128 0x18
- 915 03e8 2C000000 		.4byte	.LASF42
- 916 03ec 03       		.byte	0x3
- 917 03ed 35       		.byte	0x35
- 918 03ee DD000000 		.4byte	0xdd
- 919 03f2 05       		.uleb128 0x5
- 920 03f3 03       		.byte	0x3
- 921 03f4 00000000 		.4byte	currentState
- 922 03f8 18       		.uleb128 0x18
- 923 03f9 39000000 		.4byte	.LASF43
- 924 03fd 03       		.byte	0x3
- 925 03fe 37       		.byte	0x37
- 926 03ff DD000000 		.4byte	0xdd
- 927 0403 05       		.uleb128 0x5
- 928 0404 03       		.byte	0x3
- 929 0405 00000000 		.4byte	Prev_state
- 930 0409 18       		.uleb128 0x18
- 931 040a 5C020000 		.4byte	.LASF44
- 932 040e 05       		.byte	0x5
- 933 040f 12       		.byte	0x12
- 934 0410 25000000 		.4byte	0x25
- 935 0414 05       		.uleb128 0x5
- 936 0415 03       		.byte	0x3
- 937 0416 00000000 		.4byte	speed
- 938 041a 18       		.uleb128 0x18
- 939 041b 71000000 		.4byte	.LASF45
- 940 041f 04       		.byte	0x4
- 941 0420 14       		.byte	0x14
- 942 0421 A1000000 		.4byte	0xa1
- 943 0425 05       		.uleb128 0x5
- 944 0426 03       		.byte	0x3
- 945 0427 00000000 		.4byte	heartbeatCounter
- 946 042b 18       		.uleb128 0x18
- 947 042c 4F020000 		.4byte	.LASF46
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccPhrqUu.s 			page 25
-
-
- 948 0430 04       		.byte	0x4
- 949 0431 15       		.byte	0x15
- 950 0432 25000000 		.4byte	0x25
- 951 0436 05       		.uleb128 0x5
- 952 0437 03       		.byte	0x3
- 953 0438 00000000 		.4byte	timer_status
- 954 043c 18       		.uleb128 0x18
- 955 043d B2010000 		.4byte	.LASF47
- 956 0441 04       		.byte	0x4
- 957 0442 16       		.byte	0x16
- 958 0443 25000000 		.4byte	0x25
- 959 0447 05       		.uleb128 0x5
- 960 0448 03       		.byte	0x3
- 961 0449 00000000 		.4byte	timer_value
- 962 044d 19       		.uleb128 0x19
- 963 044e AC000000 		.4byte	.LASF48
- 964 0452 06       		.byte	0x6
- 965 0453 2B       		.byte	0x2b
- 966 0454 80000000 		.4byte	0x80
- 967 0458 19       		.uleb128 0x19
- 968 0459 0C030000 		.4byte	.LASF49
- 969 045d 07       		.byte	0x7
- 970 045e 2B       		.byte	0x2b
- 971 045f 80000000 		.4byte	0x80
- 972 0463 19       		.uleb128 0x19
- 973 0464 CB020000 		.4byte	.LASF50
- 974 0468 08       		.byte	0x8
- 975 0469 2B       		.byte	0x2b
- 976 046a 80000000 		.4byte	0x80
- 977 046e 1A       		.uleb128 0x1a
- 978 046f 1E030000 		.4byte	.LASF51
- 979 0473 09       		.byte	0x9
- 980 0474 3D       		.byte	0x3d
- 981 0475 84040000 		.4byte	0x484
- 982 0479 1B       		.uleb128 0x1b
- 983 047a 80000000 		.4byte	0x80
- 984 047e 1B       		.uleb128 0x1b
- 985 047f 80000000 		.4byte	0x80
- 986 0483 00       		.byte	0
- 987 0484 1A       		.uleb128 0x1a
- 988 0485 1E020000 		.4byte	.LASF52
- 989 0489 09       		.byte	0x9
- 990 048a 61       		.byte	0x61
- 991 048b 95040000 		.4byte	0x495
- 992 048f 1B       		.uleb128 0x1b
- 993 0490 96000000 		.4byte	0x96
- 994 0494 00       		.byte	0
- 995 0495 1C       		.uleb128 0x1c
- 996 0496 90010000 		.4byte	.LASF57
- 997 049a 0A       		.byte	0xa
- 998 049b 74       		.byte	0x74
- 999 049c 00       		.byte	0
- 1000              		.section	.debug_abbrev,"",%progbits
- 1001              	.Ldebug_abbrev0:
- 1002 0000 01       		.uleb128 0x1
- 1003 0001 11       		.uleb128 0x11
- 1004 0002 01       		.byte	0x1
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccPhrqUu.s 			page 26
-
-
- 1005 0003 25       		.uleb128 0x25
- 1006 0004 0E       		.uleb128 0xe
- 1007 0005 13       		.uleb128 0x13
- 1008 0006 0B       		.uleb128 0xb
- 1009 0007 03       		.uleb128 0x3
- 1010 0008 0E       		.uleb128 0xe
- 1011 0009 1B       		.uleb128 0x1b
- 1012 000a 0E       		.uleb128 0xe
- 1013 000b 55       		.uleb128 0x55
- 1014 000c 17       		.uleb128 0x17
- 1015 000d 11       		.uleb128 0x11
- 1016 000e 01       		.uleb128 0x1
- 1017 000f 10       		.uleb128 0x10
- 1018 0010 17       		.uleb128 0x17
- 1019 0011 00       		.byte	0
- 1020 0012 00       		.byte	0
- 1021 0013 02       		.uleb128 0x2
- 1022 0014 24       		.uleb128 0x24
- 1023 0015 00       		.byte	0
- 1024 0016 0B       		.uleb128 0xb
- 1025 0017 0B       		.uleb128 0xb
- 1026 0018 3E       		.uleb128 0x3e
- 1027 0019 0B       		.uleb128 0xb
- 1028 001a 03       		.uleb128 0x3
- 1029 001b 08       		.uleb128 0x8
- 1030 001c 00       		.byte	0
- 1031 001d 00       		.byte	0
- 1032 001e 03       		.uleb128 0x3
- 1033 001f 24       		.uleb128 0x24
- 1034 0020 00       		.byte	0
- 1035 0021 0B       		.uleb128 0xb
- 1036 0022 0B       		.uleb128 0xb
- 1037 0023 3E       		.uleb128 0x3e
- 1038 0024 0B       		.uleb128 0xb
- 1039 0025 03       		.uleb128 0x3
- 1040 0026 0E       		.uleb128 0xe
- 1041 0027 00       		.byte	0
- 1042 0028 00       		.byte	0
- 1043 0029 04       		.uleb128 0x4
- 1044 002a 0F       		.uleb128 0xf
- 1045 002b 00       		.byte	0
- 1046 002c 0B       		.uleb128 0xb
- 1047 002d 0B       		.uleb128 0xb
- 1048 002e 49       		.uleb128 0x49
- 1049 002f 13       		.uleb128 0x13
- 1050 0030 00       		.byte	0
- 1051 0031 00       		.byte	0
- 1052 0032 05       		.uleb128 0x5
- 1053 0033 15       		.uleb128 0x15
- 1054 0034 00       		.byte	0
- 1055 0035 27       		.uleb128 0x27
- 1056 0036 19       		.uleb128 0x19
- 1057 0037 00       		.byte	0
- 1058 0038 00       		.byte	0
- 1059 0039 06       		.uleb128 0x6
- 1060 003a 16       		.uleb128 0x16
- 1061 003b 00       		.byte	0
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccPhrqUu.s 			page 27
-
-
- 1062 003c 03       		.uleb128 0x3
- 1063 003d 0E       		.uleb128 0xe
- 1064 003e 3A       		.uleb128 0x3a
- 1065 003f 0B       		.uleb128 0xb
- 1066 0040 3B       		.uleb128 0x3b
- 1067 0041 0B       		.uleb128 0xb
- 1068 0042 49       		.uleb128 0x49
- 1069 0043 13       		.uleb128 0x13
- 1070 0044 00       		.byte	0
- 1071 0045 00       		.byte	0
- 1072 0046 07       		.uleb128 0x7
- 1073 0047 16       		.uleb128 0x16
- 1074 0048 00       		.byte	0
- 1075 0049 03       		.uleb128 0x3
- 1076 004a 0E       		.uleb128 0xe
- 1077 004b 3A       		.uleb128 0x3a
- 1078 004c 0B       		.uleb128 0xb
- 1079 004d 3B       		.uleb128 0x3b
- 1080 004e 05       		.uleb128 0x5
- 1081 004f 49       		.uleb128 0x49
- 1082 0050 13       		.uleb128 0x13
- 1083 0051 00       		.byte	0
- 1084 0052 00       		.byte	0
- 1085 0053 08       		.uleb128 0x8
- 1086 0054 35       		.uleb128 0x35
- 1087 0055 00       		.byte	0
- 1088 0056 49       		.uleb128 0x49
- 1089 0057 13       		.uleb128 0x13
- 1090 0058 00       		.byte	0
- 1091 0059 00       		.byte	0
- 1092 005a 09       		.uleb128 0x9
- 1093 005b 2E       		.uleb128 0x2e
- 1094 005c 01       		.byte	0x1
- 1095 005d 3F       		.uleb128 0x3f
- 1096 005e 19       		.uleb128 0x19
- 1097 005f 03       		.uleb128 0x3
- 1098 0060 0E       		.uleb128 0xe
- 1099 0061 3A       		.uleb128 0x3a
- 1100 0062 0B       		.uleb128 0xb
- 1101 0063 3B       		.uleb128 0x3b
- 1102 0064 0B       		.uleb128 0xb
- 1103 0065 27       		.uleb128 0x27
- 1104 0066 19       		.uleb128 0x19
- 1105 0067 11       		.uleb128 0x11
- 1106 0068 01       		.uleb128 0x1
- 1107 0069 12       		.uleb128 0x12
- 1108 006a 06       		.uleb128 0x6
- 1109 006b 40       		.uleb128 0x40
- 1110 006c 18       		.uleb128 0x18
- 1111 006d 9742     		.uleb128 0x2117
- 1112 006f 19       		.uleb128 0x19
- 1113 0070 01       		.uleb128 0x1
- 1114 0071 13       		.uleb128 0x13
- 1115 0072 00       		.byte	0
- 1116 0073 00       		.byte	0
- 1117 0074 0A       		.uleb128 0xa
- 1118 0075 34       		.uleb128 0x34
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccPhrqUu.s 			page 28
-
-
- 1119 0076 00       		.byte	0
- 1120 0077 03       		.uleb128 0x3
- 1121 0078 0E       		.uleb128 0xe
- 1122 0079 3A       		.uleb128 0x3a
- 1123 007a 0B       		.uleb128 0xb
- 1124 007b 3B       		.uleb128 0x3b
- 1125 007c 0B       		.uleb128 0xb
- 1126 007d 49       		.uleb128 0x49
- 1127 007e 13       		.uleb128 0x13
- 1128 007f 02       		.uleb128 0x2
- 1129 0080 17       		.uleb128 0x17
- 1130 0081 00       		.byte	0
- 1131 0082 00       		.byte	0
- 1132 0083 0B       		.uleb128 0xb
- 1133 0084 898201   		.uleb128 0x4109
- 1134 0087 00       		.byte	0
- 1135 0088 11       		.uleb128 0x11
- 1136 0089 01       		.uleb128 0x1
- 1137 008a 31       		.uleb128 0x31
- 1138 008b 13       		.uleb128 0x13
- 1139 008c 00       		.byte	0
- 1140 008d 00       		.byte	0
- 1141 008e 0C       		.uleb128 0xc
- 1142 008f 898201   		.uleb128 0x4109
- 1143 0092 01       		.byte	0x1
- 1144 0093 11       		.uleb128 0x11
- 1145 0094 01       		.uleb128 0x1
- 1146 0095 31       		.uleb128 0x31
- 1147 0096 13       		.uleb128 0x13
- 1148 0097 01       		.uleb128 0x1
- 1149 0098 13       		.uleb128 0x13
- 1150 0099 00       		.byte	0
- 1151 009a 00       		.byte	0
- 1152 009b 0D       		.uleb128 0xd
- 1153 009c 8A8201   		.uleb128 0x410a
- 1154 009f 00       		.byte	0
- 1155 00a0 02       		.uleb128 0x2
- 1156 00a1 18       		.uleb128 0x18
- 1157 00a2 9142     		.uleb128 0x2111
- 1158 00a4 18       		.uleb128 0x18
- 1159 00a5 00       		.byte	0
- 1160 00a6 00       		.byte	0
- 1161 00a7 0E       		.uleb128 0xe
- 1162 00a8 05       		.uleb128 0x5
- 1163 00a9 00       		.byte	0
- 1164 00aa 03       		.uleb128 0x3
- 1165 00ab 0E       		.uleb128 0xe
- 1166 00ac 3A       		.uleb128 0x3a
- 1167 00ad 0B       		.uleb128 0xb
- 1168 00ae 3B       		.uleb128 0x3b
- 1169 00af 0B       		.uleb128 0xb
- 1170 00b0 49       		.uleb128 0x49
- 1171 00b1 13       		.uleb128 0x13
- 1172 00b2 02       		.uleb128 0x2
- 1173 00b3 18       		.uleb128 0x18
- 1174 00b4 00       		.byte	0
- 1175 00b5 00       		.byte	0
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccPhrqUu.s 			page 29
-
-
- 1176 00b6 0F       		.uleb128 0xf
- 1177 00b7 34       		.uleb128 0x34
- 1178 00b8 00       		.byte	0
- 1179 00b9 03       		.uleb128 0x3
- 1180 00ba 0E       		.uleb128 0xe
- 1181 00bb 3A       		.uleb128 0x3a
- 1182 00bc 0B       		.uleb128 0xb
- 1183 00bd 3B       		.uleb128 0x3b
- 1184 00be 0B       		.uleb128 0xb
- 1185 00bf 49       		.uleb128 0x49
- 1186 00c0 13       		.uleb128 0x13
- 1187 00c1 02       		.uleb128 0x2
- 1188 00c2 18       		.uleb128 0x18
- 1189 00c3 00       		.byte	0
- 1190 00c4 00       		.byte	0
- 1191 00c5 10       		.uleb128 0x10
- 1192 00c6 2E       		.uleb128 0x2e
- 1193 00c7 01       		.byte	0x1
- 1194 00c8 3F       		.uleb128 0x3f
- 1195 00c9 19       		.uleb128 0x19
- 1196 00ca 03       		.uleb128 0x3
- 1197 00cb 0E       		.uleb128 0xe
- 1198 00cc 3A       		.uleb128 0x3a
- 1199 00cd 0B       		.uleb128 0xb
- 1200 00ce 3B       		.uleb128 0x3b
- 1201 00cf 0B       		.uleb128 0xb
- 1202 00d0 27       		.uleb128 0x27
- 1203 00d1 19       		.uleb128 0x19
- 1204 00d2 49       		.uleb128 0x49
- 1205 00d3 13       		.uleb128 0x13
- 1206 00d4 11       		.uleb128 0x11
- 1207 00d5 01       		.uleb128 0x1
- 1208 00d6 12       		.uleb128 0x12
- 1209 00d7 06       		.uleb128 0x6
- 1210 00d8 40       		.uleb128 0x40
- 1211 00d9 18       		.uleb128 0x18
- 1212 00da 9742     		.uleb128 0x2117
- 1213 00dc 19       		.uleb128 0x19
- 1214 00dd 01       		.uleb128 0x1
- 1215 00de 13       		.uleb128 0x13
- 1216 00df 00       		.byte	0
- 1217 00e0 00       		.byte	0
- 1218 00e1 11       		.uleb128 0x11
- 1219 00e2 2E       		.uleb128 0x2e
- 1220 00e3 01       		.byte	0x1
- 1221 00e4 3F       		.uleb128 0x3f
- 1222 00e5 19       		.uleb128 0x19
- 1223 00e6 03       		.uleb128 0x3
- 1224 00e7 0E       		.uleb128 0xe
- 1225 00e8 3A       		.uleb128 0x3a
- 1226 00e9 0B       		.uleb128 0xb
- 1227 00ea 3B       		.uleb128 0x3b
- 1228 00eb 05       		.uleb128 0x5
- 1229 00ec 27       		.uleb128 0x27
- 1230 00ed 19       		.uleb128 0x19
- 1231 00ee 11       		.uleb128 0x11
- 1232 00ef 01       		.uleb128 0x1
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccPhrqUu.s 			page 30
-
-
- 1233 00f0 12       		.uleb128 0x12
- 1234 00f1 06       		.uleb128 0x6
- 1235 00f2 40       		.uleb128 0x40
- 1236 00f3 18       		.uleb128 0x18
- 1237 00f4 9742     		.uleb128 0x2117
- 1238 00f6 19       		.uleb128 0x19
- 1239 00f7 01       		.uleb128 0x1
- 1240 00f8 13       		.uleb128 0x13
- 1241 00f9 00       		.byte	0
- 1242 00fa 00       		.byte	0
- 1243 00fb 12       		.uleb128 0x12
- 1244 00fc 05       		.uleb128 0x5
- 1245 00fd 00       		.byte	0
- 1246 00fe 03       		.uleb128 0x3
- 1247 00ff 0E       		.uleb128 0xe
- 1248 0100 3A       		.uleb128 0x3a
- 1249 0101 0B       		.uleb128 0xb
- 1250 0102 3B       		.uleb128 0x3b
- 1251 0103 05       		.uleb128 0x5
- 1252 0104 49       		.uleb128 0x49
- 1253 0105 13       		.uleb128 0x13
- 1254 0106 02       		.uleb128 0x2
- 1255 0107 17       		.uleb128 0x17
- 1256 0108 00       		.byte	0
- 1257 0109 00       		.byte	0
- 1258 010a 13       		.uleb128 0x13
- 1259 010b 2E       		.uleb128 0x2e
- 1260 010c 01       		.byte	0x1
- 1261 010d 3F       		.uleb128 0x3f
- 1262 010e 19       		.uleb128 0x19
- 1263 010f 03       		.uleb128 0x3
- 1264 0110 0E       		.uleb128 0xe
- 1265 0111 3A       		.uleb128 0x3a
- 1266 0112 0B       		.uleb128 0xb
- 1267 0113 3B       		.uleb128 0x3b
- 1268 0114 05       		.uleb128 0x5
- 1269 0115 27       		.uleb128 0x27
- 1270 0116 19       		.uleb128 0x19
- 1271 0117 49       		.uleb128 0x49
- 1272 0118 13       		.uleb128 0x13
- 1273 0119 11       		.uleb128 0x11
- 1274 011a 01       		.uleb128 0x1
- 1275 011b 12       		.uleb128 0x12
- 1276 011c 06       		.uleb128 0x6
- 1277 011d 40       		.uleb128 0x40
- 1278 011e 18       		.uleb128 0x18
- 1279 011f 9742     		.uleb128 0x2117
- 1280 0121 19       		.uleb128 0x19
- 1281 0122 01       		.uleb128 0x1
- 1282 0123 13       		.uleb128 0x13
- 1283 0124 00       		.byte	0
- 1284 0125 00       		.byte	0
- 1285 0126 14       		.uleb128 0x14
- 1286 0127 34       		.uleb128 0x34
- 1287 0128 00       		.byte	0
- 1288 0129 03       		.uleb128 0x3
- 1289 012a 0E       		.uleb128 0xe
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccPhrqUu.s 			page 31
-
-
- 1290 012b 3A       		.uleb128 0x3a
- 1291 012c 0B       		.uleb128 0xb
- 1292 012d 3B       		.uleb128 0x3b
- 1293 012e 05       		.uleb128 0x5
- 1294 012f 49       		.uleb128 0x49
- 1295 0130 13       		.uleb128 0x13
- 1296 0131 02       		.uleb128 0x2
- 1297 0132 17       		.uleb128 0x17
- 1298 0133 00       		.byte	0
- 1299 0134 00       		.byte	0
- 1300 0135 15       		.uleb128 0x15
- 1301 0136 2E       		.uleb128 0x2e
- 1302 0137 00       		.byte	0
- 1303 0138 3F       		.uleb128 0x3f
- 1304 0139 19       		.uleb128 0x19
- 1305 013a 03       		.uleb128 0x3
- 1306 013b 0E       		.uleb128 0xe
- 1307 013c 3A       		.uleb128 0x3a
- 1308 013d 0B       		.uleb128 0xb
- 1309 013e 3B       		.uleb128 0x3b
- 1310 013f 05       		.uleb128 0x5
- 1311 0140 27       		.uleb128 0x27
- 1312 0141 19       		.uleb128 0x19
- 1313 0142 11       		.uleb128 0x11
- 1314 0143 01       		.uleb128 0x1
- 1315 0144 12       		.uleb128 0x12
- 1316 0145 06       		.uleb128 0x6
- 1317 0146 40       		.uleb128 0x40
- 1318 0147 18       		.uleb128 0x18
- 1319 0148 9742     		.uleb128 0x2117
- 1320 014a 19       		.uleb128 0x19
- 1321 014b 00       		.byte	0
- 1322 014c 00       		.byte	0
- 1323 014d 16       		.uleb128 0x16
- 1324 014e 2E       		.uleb128 0x2e
- 1325 014f 00       		.byte	0
- 1326 0150 3F       		.uleb128 0x3f
- 1327 0151 19       		.uleb128 0x19
- 1328 0152 03       		.uleb128 0x3
- 1329 0153 0E       		.uleb128 0xe
- 1330 0154 3A       		.uleb128 0x3a
- 1331 0155 0B       		.uleb128 0xb
- 1332 0156 3B       		.uleb128 0x3b
- 1333 0157 05       		.uleb128 0x5
- 1334 0158 27       		.uleb128 0x27
- 1335 0159 19       		.uleb128 0x19
- 1336 015a 49       		.uleb128 0x49
- 1337 015b 13       		.uleb128 0x13
- 1338 015c 11       		.uleb128 0x11
- 1339 015d 01       		.uleb128 0x1
- 1340 015e 12       		.uleb128 0x12
- 1341 015f 06       		.uleb128 0x6
- 1342 0160 40       		.uleb128 0x40
- 1343 0161 18       		.uleb128 0x18
- 1344 0162 9742     		.uleb128 0x2117
- 1345 0164 19       		.uleb128 0x19
- 1346 0165 00       		.byte	0
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccPhrqUu.s 			page 32
-
-
- 1347 0166 00       		.byte	0
- 1348 0167 17       		.uleb128 0x17
- 1349 0168 05       		.uleb128 0x5
- 1350 0169 00       		.byte	0
- 1351 016a 03       		.uleb128 0x3
- 1352 016b 0E       		.uleb128 0xe
- 1353 016c 3A       		.uleb128 0x3a
- 1354 016d 0B       		.uleb128 0xb
- 1355 016e 3B       		.uleb128 0x3b
- 1356 016f 0B       		.uleb128 0xb
- 1357 0170 49       		.uleb128 0x49
- 1358 0171 13       		.uleb128 0x13
- 1359 0172 02       		.uleb128 0x2
- 1360 0173 17       		.uleb128 0x17
- 1361 0174 00       		.byte	0
- 1362 0175 00       		.byte	0
- 1363 0176 18       		.uleb128 0x18
- 1364 0177 34       		.uleb128 0x34
- 1365 0178 00       		.byte	0
- 1366 0179 03       		.uleb128 0x3
- 1367 017a 0E       		.uleb128 0xe
- 1368 017b 3A       		.uleb128 0x3a
- 1369 017c 0B       		.uleb128 0xb
- 1370 017d 3B       		.uleb128 0x3b
- 1371 017e 0B       		.uleb128 0xb
- 1372 017f 49       		.uleb128 0x49
- 1373 0180 13       		.uleb128 0x13
- 1374 0181 3F       		.uleb128 0x3f
- 1375 0182 19       		.uleb128 0x19
- 1376 0183 02       		.uleb128 0x2
- 1377 0184 18       		.uleb128 0x18
- 1378 0185 00       		.byte	0
- 1379 0186 00       		.byte	0
- 1380 0187 19       		.uleb128 0x19
- 1381 0188 2E       		.uleb128 0x2e
- 1382 0189 00       		.byte	0
- 1383 018a 3F       		.uleb128 0x3f
- 1384 018b 19       		.uleb128 0x19
- 1385 018c 03       		.uleb128 0x3
- 1386 018d 0E       		.uleb128 0xe
- 1387 018e 3A       		.uleb128 0x3a
- 1388 018f 0B       		.uleb128 0xb
- 1389 0190 3B       		.uleb128 0x3b
- 1390 0191 0B       		.uleb128 0xb
- 1391 0192 27       		.uleb128 0x27
- 1392 0193 19       		.uleb128 0x19
- 1393 0194 49       		.uleb128 0x49
- 1394 0195 13       		.uleb128 0x13
- 1395 0196 3C       		.uleb128 0x3c
- 1396 0197 19       		.uleb128 0x19
- 1397 0198 00       		.byte	0
- 1398 0199 00       		.byte	0
- 1399 019a 1A       		.uleb128 0x1a
- 1400 019b 2E       		.uleb128 0x2e
- 1401 019c 01       		.byte	0x1
- 1402 019d 3F       		.uleb128 0x3f
- 1403 019e 19       		.uleb128 0x19
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccPhrqUu.s 			page 33
-
-
- 1404 019f 03       		.uleb128 0x3
- 1405 01a0 0E       		.uleb128 0xe
- 1406 01a1 3A       		.uleb128 0x3a
- 1407 01a2 0B       		.uleb128 0xb
- 1408 01a3 3B       		.uleb128 0x3b
- 1409 01a4 0B       		.uleb128 0xb
- 1410 01a5 27       		.uleb128 0x27
- 1411 01a6 19       		.uleb128 0x19
- 1412 01a7 3C       		.uleb128 0x3c
- 1413 01a8 19       		.uleb128 0x19
- 1414 01a9 01       		.uleb128 0x1
- 1415 01aa 13       		.uleb128 0x13
- 1416 01ab 00       		.byte	0
- 1417 01ac 00       		.byte	0
- 1418 01ad 1B       		.uleb128 0x1b
- 1419 01ae 05       		.uleb128 0x5
- 1420 01af 00       		.byte	0
- 1421 01b0 49       		.uleb128 0x49
- 1422 01b1 13       		.uleb128 0x13
- 1423 01b2 00       		.byte	0
- 1424 01b3 00       		.byte	0
- 1425 01b4 1C       		.uleb128 0x1c
- 1426 01b5 2E       		.uleb128 0x2e
- 1427 01b6 00       		.byte	0
- 1428 01b7 3F       		.uleb128 0x3f
- 1429 01b8 19       		.uleb128 0x19
- 1430 01b9 03       		.uleb128 0x3
- 1431 01ba 0E       		.uleb128 0xe
- 1432 01bb 3A       		.uleb128 0x3a
- 1433 01bc 0B       		.uleb128 0xb
- 1434 01bd 3B       		.uleb128 0x3b
- 1435 01be 0B       		.uleb128 0xb
- 1436 01bf 27       		.uleb128 0x27
- 1437 01c0 19       		.uleb128 0x19
- 1438 01c1 3C       		.uleb128 0x3c
- 1439 01c2 19       		.uleb128 0x19
- 1440 01c3 00       		.byte	0
- 1441 01c4 00       		.byte	0
- 1442 01c5 00       		.byte	0
- 1443              		.section	.debug_loc,"",%progbits
- 1444              	.Ldebug_loc0:
- 1445              	.LLST0:
- 1446 0000 08000000 		.4byte	.LVL1
- 1447 0004 0B000000 		.4byte	.LVL2-1
- 1448 0008 0600     		.2byte	0x6
- 1449 000a 70       		.byte	0x70
- 1450 000b 00       		.sleb128 0
- 1451 000c 08       		.byte	0x8
- 1452 000d FF       		.byte	0xff
- 1453 000e 1A       		.byte	0x1a
- 1454 000f 9F       		.byte	0x9f
- 1455 0010 0B000000 		.4byte	.LVL2-1
- 1456 0014 46000000 		.4byte	.LFE3
- 1457 0018 0600     		.2byte	0x6
- 1458 001a 76       		.byte	0x76
- 1459 001b 00       		.sleb128 0
- 1460 001c 08       		.byte	0x8
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccPhrqUu.s 			page 34
-
-
- 1461 001d FF       		.byte	0xff
- 1462 001e 1A       		.byte	0x1a
- 1463 001f 9F       		.byte	0x9f
- 1464 0020 00000000 		.4byte	0
- 1465 0024 00000000 		.4byte	0
- 1466              	.LLST1:
- 1467 0028 0E000000 		.4byte	.LVL3
- 1468 002c 11000000 		.4byte	.LVL4-1
- 1469 0030 0600     		.2byte	0x6
- 1470 0032 70       		.byte	0x70
- 1471 0033 00       		.sleb128 0
- 1472 0034 08       		.byte	0x8
- 1473 0035 FF       		.byte	0xff
- 1474 0036 1A       		.byte	0x1a
- 1475 0037 9F       		.byte	0x9f
- 1476 0038 11000000 		.4byte	.LVL4-1
- 1477 003c 46000000 		.4byte	.LFE3
- 1478 0040 0600     		.2byte	0x6
- 1479 0042 75       		.byte	0x75
- 1480 0043 00       		.sleb128 0
- 1481 0044 08       		.byte	0x8
- 1482 0045 FF       		.byte	0xff
- 1483 0046 1A       		.byte	0x1a
- 1484 0047 9F       		.byte	0x9f
- 1485 0048 00000000 		.4byte	0
- 1486 004c 00000000 		.4byte	0
- 1487              	.LLST2:
- 1488 0050 14000000 		.4byte	.LVL5
- 1489 0054 16000000 		.4byte	.LVL6
- 1490 0058 0600     		.2byte	0x6
- 1491 005a 70       		.byte	0x70
- 1492 005b 00       		.sleb128 0
- 1493 005c 08       		.byte	0x8
- 1494 005d FF       		.byte	0xff
- 1495 005e 1A       		.byte	0x1a
- 1496 005f 9F       		.byte	0x9f
- 1497 0060 16000000 		.4byte	.LVL6
- 1498 0064 46000000 		.4byte	.LFE3
- 1499 0068 0600     		.2byte	0x6
- 1500 006a 74       		.byte	0x74
- 1501 006b 00       		.sleb128 0
- 1502 006c 08       		.byte	0x8
- 1503 006d FF       		.byte	0xff
- 1504 006e 1A       		.byte	0x1a
- 1505 006f 9F       		.byte	0x9f
- 1506 0070 00000000 		.4byte	0
- 1507 0074 00000000 		.4byte	0
- 1508              	.LLST3:
- 1509 0078 00000000 		.4byte	.LVL18
- 1510 007c 02000000 		.4byte	.LVL19
- 1511 0080 0100     		.2byte	0x1
- 1512 0082 50       		.byte	0x50
- 1513 0083 02000000 		.4byte	.LVL19
- 1514 0087 10000000 		.4byte	.LFE6
- 1515 008b 0400     		.2byte	0x4
- 1516 008d F3       		.byte	0xf3
- 1517 008e 01       		.uleb128 0x1
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccPhrqUu.s 			page 35
-
-
- 1518 008f 50       		.byte	0x50
- 1519 0090 9F       		.byte	0x9f
- 1520 0091 00000000 		.4byte	0
- 1521 0095 00000000 		.4byte	0
- 1522              	.LLST4:
- 1523 0099 04000000 		.4byte	.LVL20
- 1524 009d 06000000 		.4byte	.LVL21
- 1525 00a1 0500     		.2byte	0x5
- 1526 00a3 70       		.byte	0x70
- 1527 00a4 00       		.sleb128 0
- 1528 00a5 35       		.byte	0x35
- 1529 00a6 25       		.byte	0x25
- 1530 00a7 9F       		.byte	0x9f
- 1531 00a8 00000000 		.4byte	0
- 1532 00ac 00000000 		.4byte	0
- 1533              	.LLST5:
- 1534 00b0 00000000 		.4byte	.LVL26
- 1535 00b4 07000000 		.4byte	.LVL27-1
- 1536 00b8 0100     		.2byte	0x1
- 1537 00ba 50       		.byte	0x50
- 1538 00bb 07000000 		.4byte	.LVL27-1
- 1539 00bf 1A000000 		.4byte	.LFE1
- 1540 00c3 0100     		.2byte	0x1
- 1541 00c5 54       		.byte	0x54
- 1542 00c6 00000000 		.4byte	0
- 1543 00ca 00000000 		.4byte	0
- 1544              		.section	.debug_aranges,"",%progbits
- 1545 0000 7C000000 		.4byte	0x7c
- 1546 0004 0200     		.2byte	0x2
- 1547 0006 00000000 		.4byte	.Ldebug_info0
- 1548 000a 04       		.byte	0x4
- 1549 000b 00       		.byte	0
- 1550 000c 0000     		.2byte	0
- 1551 000e 0000     		.2byte	0
- 1552 0010 00000000 		.4byte	.LFB3
- 1553 0014 46000000 		.4byte	.LFE3-.LFB3
- 1554 0018 00000000 		.4byte	.LFB4
- 1555 001c 0C000000 		.4byte	.LFE4-.LFB4
- 1556 0020 00000000 		.4byte	.LFB5
- 1557 0024 0C000000 		.4byte	.LFE5-.LFB5
- 1558 0028 00000000 		.4byte	.LFB6
- 1559 002c 10000000 		.4byte	.LFE6-.LFB6
- 1560 0030 00000000 		.4byte	.LFB7
- 1561 0034 0C000000 		.4byte	.LFE7-.LFB7
- 1562 0038 00000000 		.4byte	.LFB8
- 1563 003c 0C000000 		.4byte	.LFE8-.LFB8
- 1564 0040 00000000 		.4byte	.LFB9
- 1565 0044 18000000 		.4byte	.LFE9-.LFB9
- 1566 0048 00000000 		.4byte	.LFB10
- 1567 004c 0C000000 		.4byte	.LFE10-.LFB10
- 1568 0050 00000000 		.4byte	.LFB0
- 1569 0054 1C000000 		.4byte	.LFE0-.LFB0
- 1570 0058 00000000 		.4byte	.LFB1
- 1571 005c 1A000000 		.4byte	.LFE1-.LFB1
- 1572 0060 00000000 		.4byte	.LFB2
- 1573 0064 14000000 		.4byte	.LFE2-.LFB2
- 1574 0068 00000000 		.4byte	.LFB11
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccPhrqUu.s 			page 36
-
-
- 1575 006c 0C000000 		.4byte	.LFE11-.LFB11
- 1576 0070 00000000 		.4byte	.LFB12
- 1577 0074 0C000000 		.4byte	.LFE12-.LFB12
- 1578 0078 00000000 		.4byte	0
- 1579 007c 00000000 		.4byte	0
- 1580              		.section	.debug_ranges,"",%progbits
- 1581              	.Ldebug_ranges0:
- 1582 0000 00000000 		.4byte	.LFB3
- 1583 0004 46000000 		.4byte	.LFE3
- 1584 0008 00000000 		.4byte	.LFB4
- 1585 000c 0C000000 		.4byte	.LFE4
- 1586 0010 00000000 		.4byte	.LFB5
- 1587 0014 0C000000 		.4byte	.LFE5
- 1588 0018 00000000 		.4byte	.LFB6
- 1589 001c 10000000 		.4byte	.LFE6
- 1590 0020 00000000 		.4byte	.LFB7
- 1591 0024 0C000000 		.4byte	.LFE7
- 1592 0028 00000000 		.4byte	.LFB8
- 1593 002c 0C000000 		.4byte	.LFE8
- 1594 0030 00000000 		.4byte	.LFB9
- 1595 0034 18000000 		.4byte	.LFE9
- 1596 0038 00000000 		.4byte	.LFB10
- 1597 003c 0C000000 		.4byte	.LFE10
- 1598 0040 00000000 		.4byte	.LFB0
- 1599 0044 1C000000 		.4byte	.LFE0
- 1600 0048 00000000 		.4byte	.LFB1
- 1601 004c 1A000000 		.4byte	.LFE1
- 1602 0050 00000000 		.4byte	.LFB2
- 1603 0054 14000000 		.4byte	.LFE2
- 1604 0058 00000000 		.4byte	.LFB11
- 1605 005c 0C000000 		.4byte	.LFE11
- 1606 0060 00000000 		.4byte	.LFB12
- 1607 0064 0C000000 		.4byte	.LFE12
- 1608 0068 00000000 		.4byte	0
- 1609 006c 00000000 		.4byte	0
- 1610              		.section	.debug_line,"",%progbits
- 1611              	.Ldebug_line0:
- 1612 0000 CC010000 		.section	.debug_str,"MS",%progbits,1
- 1612      0200D000 
- 1612      00000201 
- 1612      FB0E0D00 
- 1612      01010101 
- 1613              	.LASF7:
- 1614 0000 6C6F6E67 		.ascii	"long long int\000"
- 1614      206C6F6E 
- 1614      6720696E 
- 1614      7400
- 1615              	.LASF17:
- 1616 000e 72656733 		.ascii	"reg32\000"
- 1616      3200
- 1617              	.LASF20:
- 1618 0014 68656172 		.ascii	"hearthealth\000"
- 1618      74686561 
- 1618      6C746800 
- 1619              	.LASF34:
- 1620 0020 5744545F 		.ascii	"WDT_StartEx\000"
- 1620      53746172 
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccPhrqUu.s 			page 37
-
-
- 1620      74457800 
- 1621              	.LASF42:
- 1622 002c 63757272 		.ascii	"currentState\000"
- 1622      656E7453 
- 1622      74617465 
- 1622      00
- 1623              	.LASF43:
- 1624 0039 50726576 		.ascii	"Prev_state\000"
- 1624      5F737461 
- 1624      746500
- 1625              	.LASF30:
- 1626 0044 5744545F 		.ascii	"WDT_GetPriority\000"
- 1626      47657450 
- 1626      72696F72 
- 1626      69747900 
- 1627              	.LASF35:
- 1628 0054 5744545F 		.ascii	"WDT_Stop\000"
- 1628      53746F70 
- 1628      00
- 1629              	.LASF32:
- 1630 005d 5744545F 		.ascii	"WDT_Disable\000"
- 1630      44697361 
- 1630      626C6500 
- 1631              	.LASF41:
- 1632 0069 50524F46 		.ascii	"PROFILE\000"
- 1632      494C4500 
- 1633              	.LASF45:
- 1634 0071 68656172 		.ascii	"heartbeatCounter\000"
- 1634      74626561 
- 1634      74436F75 
- 1634      6E746572 
- 1634      00
- 1635              	.LASF14:
- 1636 0082 666C6F61 		.ascii	"float\000"
- 1636      7400
- 1637              	.LASF19:
- 1638 0088 53544154 		.ascii	"STATE\000"
- 1638      4500
- 1639              	.LASF2:
- 1640 008e 756E7369 		.ascii	"unsigned char\000"
- 1640      676E6564 
- 1640      20636861 
- 1640      7200
- 1641              	.LASF16:
- 1642 009c 72656738 		.ascii	"reg8\000"
- 1642      00
- 1643              	.LASF31:
- 1644 00a1 5744545F 		.ascii	"WDT_Enable\000"
- 1644      456E6162 
- 1644      6C6500
- 1645              	.LASF48:
- 1646 00ac 48454152 		.ascii	"HEARTRATE_HEALTH_Read\000"
- 1646      54524154 
- 1646      455F4845 
- 1646      414C5448 
- 1646      5F526561 
- 1647              	.LASF6:
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccPhrqUu.s 			page 38
-
-
- 1648 00c2 6C6F6E67 		.ascii	"long unsigned int\000"
- 1648      20756E73 
- 1648      69676E65 
- 1648      6420696E 
- 1648      7400
- 1649              	.LASF53:
- 1650 00d4 474E5520 		.ascii	"GNU C 4.8.4 20140526 (release) [ARM/embedded-4_8-br"
- 1650      4320342E 
- 1650      382E3420 
- 1650      32303134 
- 1650      30353236 
- 1651 0107 616E6368 		.ascii	"anch revision 211358] -mcpu=cortex-m3 -mthumb -g -O"
- 1651      20726576 
- 1651      6973696F 
- 1651      6E203231 
- 1651      31333538 
- 1652 013a 67202D66 		.ascii	"g -ffunction-sections\000"
- 1652      66756E63 
- 1652      74696F6E 
- 1652      2D736563 
- 1652      74696F6E 
- 1653              	.LASF4:
- 1654 0150 73686F72 		.ascii	"short unsigned int\000"
- 1654      7420756E 
- 1654      7369676E 
- 1654      65642069 
- 1654      6E7400
- 1655              	.LASF54:
- 1656 0163 2E5C4765 		.ascii	".\\Generated_Source\\PSoC5\\WDT.c\000"
- 1656      6E657261 
- 1656      7465645F 
- 1656      536F7572 
- 1656      63655C50 
- 1657              	.LASF24:
- 1658 0182 5744545F 		.ascii	"WDT_SetVector\000"
- 1658      53657456 
- 1658      6563746F 
- 1658      7200
- 1659              	.LASF57:
- 1660 0190 43795764 		.ascii	"CyWdtClear\000"
- 1660      74436C65 
- 1660      617200
- 1661              	.LASF15:
- 1662 019b 646F7562 		.ascii	"double\000"
- 1662      6C6500
- 1663              	.LASF26:
- 1664 01a2 5744545F 		.ascii	"WDT_SetPriority\000"
- 1664      53657450 
- 1664      72696F72 
- 1664      69747900 
- 1665              	.LASF47:
- 1666 01b2 74696D65 		.ascii	"timer_value\000"
- 1666      725F7661 
- 1666      6C756500 
- 1667              	.LASF12:
- 1668 01be 75696E74 		.ascii	"uint16\000"
- 1668      313600
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccPhrqUu.s 			page 39
-
-
- 1669              	.LASF13:
- 1670 01c5 75696E74 		.ascii	"uint32\000"
- 1670      333200
- 1671              	.LASF40:
- 1672 01cc 696E6372 		.ascii	"increasingHr\000"
- 1672      65617369 
- 1672      6E674872 
- 1672      00
- 1673              	.LASF0:
- 1674 01d9 756E7369 		.ascii	"unsigned int\000"
- 1674      676E6564 
- 1674      20696E74 
- 1674      00
- 1675              	.LASF27:
- 1676 01e6 61646472 		.ascii	"address\000"
- 1676      65737300 
- 1677              	.LASF8:
- 1678 01ee 6C6F6E67 		.ascii	"long long unsigned int\000"
- 1678      206C6F6E 
- 1678      6720756E 
- 1678      7369676E 
- 1678      65642069 
- 1679              	.LASF33:
- 1680 0205 5744545F 		.ascii	"WDT_Start\000"
- 1680      53746172 
- 1680      7400
- 1681              	.LASF36:
- 1682 020f 5744545F 		.ascii	"WDT_SetPending\000"
- 1682      53657450 
- 1682      656E6469 
- 1682      6E6700
- 1683              	.LASF52:
- 1684 021e 4C43445F 		.ascii	"LCD_PrintU32Number\000"
- 1684      5072696E 
- 1684      74553332 
- 1684      4E756D62 
- 1684      657200
- 1685              	.LASF39:
- 1686 0231 61766572 		.ascii	"average\000"
- 1686      61676500 
- 1687              	.LASF22:
- 1688 0239 75696865 		.ascii	"uihealth\000"
- 1688      616C7468 
- 1688      00
- 1689              	.LASF18:
- 1690 0242 63796973 		.ascii	"cyisraddress\000"
- 1690      72616464 
- 1690      72657373 
- 1690      00
- 1691              	.LASF46:
- 1692 024f 74696D65 		.ascii	"timer_status\000"
- 1692      725F7374 
- 1692      61747573 
- 1692      00
- 1693              	.LASF44:
- 1694 025c 73706565 		.ascii	"speed\000"
- 1694      6400
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccPhrqUu.s 			page 40
-
-
- 1695              	.LASF28:
- 1696 0262 7072696F 		.ascii	"priority\000"
- 1696      72697479 
- 1696      00
- 1697              	.LASF56:
- 1698 026b 5744545F 		.ascii	"WDT_GetState\000"
- 1698      47657453 
- 1698      74617465 
- 1698      00
- 1699              	.LASF38:
- 1700 0278 68656172 		.ascii	"heartrate\000"
- 1700      74726174 
- 1700      6500
- 1701              	.LASF9:
- 1702 0282 73697A65 		.ascii	"sizetype\000"
- 1702      74797065 
- 1702      00
- 1703              	.LASF10:
- 1704 028b 63686172 		.ascii	"char\000"
- 1704      00
- 1705              	.LASF25:
- 1706 0290 72616D56 		.ascii	"ramVectorTable\000"
- 1706      6563746F 
- 1706      72546162 
- 1706      6C6500
- 1707              	.LASF29:
- 1708 029f 5744545F 		.ascii	"WDT_GetVector\000"
- 1708      47657456 
- 1708      6563746F 
- 1708      7200
- 1709              	.LASF3:
- 1710 02ad 73686F72 		.ascii	"short int\000"
- 1710      7420696E 
- 1710      7400
- 1711              	.LASF23:
- 1712 02b7 5744545F 		.ascii	"WDT_Interrupt\000"
- 1712      496E7465 
- 1712      72727570 
- 1712      7400
- 1713              	.LASF11:
- 1714 02c5 75696E74 		.ascii	"uint8\000"
- 1714      3800
- 1715              	.LASF50:
- 1716 02cb 55495F48 		.ascii	"UI_HEALTH_Read\000"
- 1716      45414C54 
- 1716      485F5265 
- 1716      616400
- 1717              	.LASF21:
- 1718 02da 6D6F746F 		.ascii	"motorhealth\000"
- 1718      72686561 
- 1718      6C746800 
- 1719              	.LASF5:
- 1720 02e6 6C6F6E67 		.ascii	"long int\000"
- 1720      20696E74 
- 1720      00
- 1721              	.LASF37:
- 1722 02ef 5744545F 		.ascii	"WDT_ClearPending\000"
-ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccPhrqUu.s 			page 41
-
-
- 1722      436C6561 
- 1722      7250656E 
- 1722      64696E67 
- 1722      00
- 1723              	.LASF1:
- 1724 0300 7369676E 		.ascii	"signed char\000"
- 1724      65642063 
- 1724      68617200 
- 1725              	.LASF49:
- 1726 030c 4D4F544F 		.ascii	"MOTOR_HEALTH_Read\000"
- 1726      525F4845 
- 1726      414C5448 
- 1726      5F526561 
- 1726      6400
- 1727              	.LASF51:
- 1728 031e 4C43445F 		.ascii	"LCD_Position\000"
- 1728      506F7369 
- 1728      74696F6E 
- 1728      00
- 1729              	.LASF55:
- 1730 032b 433A5C72 		.ascii	"C:\\repositories\\embedded\\trunk\\CE4920Project1\\"
- 1730      65706F73 
- 1730      69746F72 
- 1730      6965735C 
- 1730      656D6265 
- 1731 0359 44657369 		.ascii	"Design01.cydsn\000"
- 1731      676E3031 
- 1731      2E637964 
- 1731      736E00
- 1732              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.8.4 20140526 (release) [ARM/embedded-4_8-br
+ 290:.\Generated_Source\PSoC5/WDT.c ****     return priority;
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccQk8BDq.s 			page 9
+
+
+ 291:.\Generated_Source\PSoC5/WDT.c **** }
+ 167              		.loc 1 291 0
+ 168 0004 4009     		lsrs	r0, r0, #5
+ 169              	.LVL10:
+ 170 0006 7047     		bx	lr
+ 171              	.L17:
+ 172              		.align	2
+ 173              	.L16:
+ 174 0008 02E400E0 		.word	-536812542
+ 175              		.cfi_endproc
+ 176              	.LFE7:
+ 177              		.size	WDT_GetPriority, .-WDT_GetPriority
+ 178              		.section	.text.WDT_Enable,"ax",%progbits
+ 179              		.align	2
+ 180              		.global	WDT_Enable
+ 181              		.thumb
+ 182              		.thumb_func
+ 183              		.type	WDT_Enable, %function
+ 184              	WDT_Enable:
+ 185              	.LFB8:
+ 292:.\Generated_Source\PSoC5/WDT.c **** 
+ 293:.\Generated_Source\PSoC5/WDT.c **** 
+ 294:.\Generated_Source\PSoC5/WDT.c **** /*******************************************************************************
+ 295:.\Generated_Source\PSoC5/WDT.c **** * Function Name: WDT_Enable
+ 296:.\Generated_Source\PSoC5/WDT.c **** ********************************************************************************
+ 297:.\Generated_Source\PSoC5/WDT.c **** *
+ 298:.\Generated_Source\PSoC5/WDT.c **** * Summary:
+ 299:.\Generated_Source\PSoC5/WDT.c **** *   Enables the interrupt to the interrupt controller. Do not call this function
+ 300:.\Generated_Source\PSoC5/WDT.c **** *   unless ISR_Start() has been called or the functionality of the ISR_Start() 
+ 301:.\Generated_Source\PSoC5/WDT.c **** *   function, which sets the vector and the priority, has been called.
+ 302:.\Generated_Source\PSoC5/WDT.c **** *
+ 303:.\Generated_Source\PSoC5/WDT.c **** * Parameters:
+ 304:.\Generated_Source\PSoC5/WDT.c **** *   None
+ 305:.\Generated_Source\PSoC5/WDT.c **** *
+ 306:.\Generated_Source\PSoC5/WDT.c **** * Return:
+ 307:.\Generated_Source\PSoC5/WDT.c **** *   None
+ 308:.\Generated_Source\PSoC5/WDT.c **** *
+ 309:.\Generated_Source\PSoC5/WDT.c **** *******************************************************************************/
+ 310:.\Generated_Source\PSoC5/WDT.c **** void WDT_Enable(void)
+ 311:.\Generated_Source\PSoC5/WDT.c **** {
+ 186              		.loc 1 311 0
+ 187              		.cfi_startproc
+ 188              		@ args = 0, pretend = 0, frame = 0
+ 189              		@ frame_needed = 0, uses_anonymous_args = 0
+ 190              		@ link register save eliminated.
+ 312:.\Generated_Source\PSoC5/WDT.c ****     /* Enable the general interrupt. */
+ 313:.\Generated_Source\PSoC5/WDT.c ****     *WDT_INTC_SET_EN = WDT__INTC_MASK;
+ 191              		.loc 1 313 0
+ 192 0000 0422     		movs	r2, #4
+ 193 0002 014B     		ldr	r3, .L19
+ 194 0004 1A60     		str	r2, [r3]
+ 195 0006 7047     		bx	lr
+ 196              	.L20:
+ 197              		.align	2
+ 198              	.L19:
+ 199 0008 00E100E0 		.word	-536813312
+ 200              		.cfi_endproc
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccQk8BDq.s 			page 10
+
+
+ 201              	.LFE8:
+ 202              		.size	WDT_Enable, .-WDT_Enable
+ 203              		.section	.text.WDT_GetState,"ax",%progbits
+ 204              		.align	2
+ 205              		.global	WDT_GetState
+ 206              		.thumb
+ 207              		.thumb_func
+ 208              		.type	WDT_GetState, %function
+ 209              	WDT_GetState:
+ 210              	.LFB9:
+ 314:.\Generated_Source\PSoC5/WDT.c **** }
+ 315:.\Generated_Source\PSoC5/WDT.c **** 
+ 316:.\Generated_Source\PSoC5/WDT.c **** 
+ 317:.\Generated_Source\PSoC5/WDT.c **** /*******************************************************************************
+ 318:.\Generated_Source\PSoC5/WDT.c **** * Function Name: WDT_GetState
+ 319:.\Generated_Source\PSoC5/WDT.c **** ********************************************************************************
+ 320:.\Generated_Source\PSoC5/WDT.c **** *
+ 321:.\Generated_Source\PSoC5/WDT.c **** * Summary:
+ 322:.\Generated_Source\PSoC5/WDT.c **** *   Gets the state (enabled, disabled) of the Interrupt.
+ 323:.\Generated_Source\PSoC5/WDT.c **** *
+ 324:.\Generated_Source\PSoC5/WDT.c **** * Parameters:
+ 325:.\Generated_Source\PSoC5/WDT.c **** *   None
+ 326:.\Generated_Source\PSoC5/WDT.c **** *
+ 327:.\Generated_Source\PSoC5/WDT.c **** * Return:
+ 328:.\Generated_Source\PSoC5/WDT.c **** *   1 if enabled, 0 if disabled.
+ 329:.\Generated_Source\PSoC5/WDT.c **** *
+ 330:.\Generated_Source\PSoC5/WDT.c **** *******************************************************************************/
+ 331:.\Generated_Source\PSoC5/WDT.c **** uint8 WDT_GetState(void)
+ 332:.\Generated_Source\PSoC5/WDT.c **** {
+ 211              		.loc 1 332 0
+ 212              		.cfi_startproc
+ 213              		@ args = 0, pretend = 0, frame = 0
+ 214              		@ frame_needed = 0, uses_anonymous_args = 0
+ 215              		@ link register save eliminated.
+ 333:.\Generated_Source\PSoC5/WDT.c ****     /* Get the state of the general interrupt. */
+ 334:.\Generated_Source\PSoC5/WDT.c ****     return ((*WDT_INTC_SET_EN & (uint32)WDT__INTC_MASK) != 0u) ? 1u:0u;
+ 216              		.loc 1 334 0
+ 217 0000 044B     		ldr	r3, .L24
+ 218 0002 1B68     		ldr	r3, [r3]
+ 219 0004 13F0040F 		tst	r3, #4
+ 220 0008 01D0     		beq	.L23
+ 221 000a 0120     		movs	r0, #1
+ 222 000c 7047     		bx	lr
+ 223              	.L23:
+ 224 000e 0020     		movs	r0, #0
+ 335:.\Generated_Source\PSoC5/WDT.c **** }
+ 225              		.loc 1 335 0
+ 226 0010 7047     		bx	lr
+ 227              	.L25:
+ 228 0012 00BF     		.align	2
+ 229              	.L24:
+ 230 0014 00E100E0 		.word	-536813312
+ 231              		.cfi_endproc
+ 232              	.LFE9:
+ 233              		.size	WDT_GetState, .-WDT_GetState
+ 234              		.section	.text.WDT_Disable,"ax",%progbits
+ 235              		.align	2
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccQk8BDq.s 			page 11
+
+
+ 236              		.global	WDT_Disable
+ 237              		.thumb
+ 238              		.thumb_func
+ 239              		.type	WDT_Disable, %function
+ 240              	WDT_Disable:
+ 241              	.LFB10:
+ 336:.\Generated_Source\PSoC5/WDT.c **** 
+ 337:.\Generated_Source\PSoC5/WDT.c **** 
+ 338:.\Generated_Source\PSoC5/WDT.c **** /*******************************************************************************
+ 339:.\Generated_Source\PSoC5/WDT.c **** * Function Name: WDT_Disable
+ 340:.\Generated_Source\PSoC5/WDT.c **** ********************************************************************************
+ 341:.\Generated_Source\PSoC5/WDT.c **** *
+ 342:.\Generated_Source\PSoC5/WDT.c **** * Summary:
+ 343:.\Generated_Source\PSoC5/WDT.c **** *   Disables the Interrupt in the interrupt controller.
+ 344:.\Generated_Source\PSoC5/WDT.c **** *
+ 345:.\Generated_Source\PSoC5/WDT.c **** * Parameters:
+ 346:.\Generated_Source\PSoC5/WDT.c **** *   None
+ 347:.\Generated_Source\PSoC5/WDT.c **** *
+ 348:.\Generated_Source\PSoC5/WDT.c **** * Return:
+ 349:.\Generated_Source\PSoC5/WDT.c **** *   None
+ 350:.\Generated_Source\PSoC5/WDT.c **** *
+ 351:.\Generated_Source\PSoC5/WDT.c **** *******************************************************************************/
+ 352:.\Generated_Source\PSoC5/WDT.c **** void WDT_Disable(void)
+ 353:.\Generated_Source\PSoC5/WDT.c **** {
+ 242              		.loc 1 353 0
+ 243              		.cfi_startproc
+ 244              		@ args = 0, pretend = 0, frame = 0
+ 245              		@ frame_needed = 0, uses_anonymous_args = 0
+ 246              		@ link register save eliminated.
+ 354:.\Generated_Source\PSoC5/WDT.c ****     /* Disable the general interrupt. */
+ 355:.\Generated_Source\PSoC5/WDT.c ****     *WDT_INTC_CLR_EN = WDT__INTC_MASK;
+ 247              		.loc 1 355 0
+ 248 0000 0422     		movs	r2, #4
+ 249 0002 014B     		ldr	r3, .L27
+ 250 0004 1A60     		str	r2, [r3]
+ 251 0006 7047     		bx	lr
+ 252              	.L28:
+ 253              		.align	2
+ 254              	.L27:
+ 255 0008 80E100E0 		.word	-536813184
+ 256              		.cfi_endproc
+ 257              	.LFE10:
+ 258              		.size	WDT_Disable, .-WDT_Disable
+ 259              		.section	.text.WDT_Start,"ax",%progbits
+ 260              		.align	2
+ 261              		.global	WDT_Start
+ 262              		.thumb
+ 263              		.thumb_func
+ 264              		.type	WDT_Start, %function
+ 265              	WDT_Start:
+ 266              	.LFB0:
+  62:.\Generated_Source\PSoC5/WDT.c **** {
+ 267              		.loc 1 62 0
+ 268              		.cfi_startproc
+ 269              		@ args = 0, pretend = 0, frame = 0
+ 270              		@ frame_needed = 0, uses_anonymous_args = 0
+ 271 0000 08B5     		push	{r3, lr}
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccQk8BDq.s 			page 12
+
+
+ 272              		.cfi_def_cfa_offset 8
+ 273              		.cfi_offset 3, -8
+ 274              		.cfi_offset 14, -4
+  64:.\Generated_Source\PSoC5/WDT.c ****     WDT_Disable();
+ 275              		.loc 1 64 0
+ 276 0002 FFF7FEFF 		bl	WDT_Disable
+ 277              	.LVL11:
+  67:.\Generated_Source\PSoC5/WDT.c ****     WDT_SetVector(&WDT_Interrupt);
+ 278              		.loc 1 67 0
+ 279 0006 0448     		ldr	r0, .L30
+ 280 0008 FFF7FEFF 		bl	WDT_SetVector
+ 281              	.LVL12:
+  70:.\Generated_Source\PSoC5/WDT.c ****     WDT_SetPriority((uint8)WDT_INTC_PRIOR_NUMBER);
+ 282              		.loc 1 70 0
+ 283 000c 0720     		movs	r0, #7
+ 284 000e FFF7FEFF 		bl	WDT_SetPriority
+ 285              	.LVL13:
+  73:.\Generated_Source\PSoC5/WDT.c ****     WDT_Enable();
+ 286              		.loc 1 73 0
+ 287 0012 FFF7FEFF 		bl	WDT_Enable
+ 288              	.LVL14:
+ 289 0016 08BD     		pop	{r3, pc}
+ 290              	.L31:
+ 291              		.align	2
+ 292              	.L30:
+ 293 0018 00000000 		.word	WDT_Interrupt
+ 294              		.cfi_endproc
+ 295              	.LFE0:
+ 296              		.size	WDT_Start, .-WDT_Start
+ 297              		.section	.text.WDT_StartEx,"ax",%progbits
+ 298              		.align	2
+ 299              		.global	WDT_StartEx
+ 300              		.thumb
+ 301              		.thumb_func
+ 302              		.type	WDT_StartEx, %function
+ 303              	WDT_StartEx:
+ 304              	.LFB1:
+ 105:.\Generated_Source\PSoC5/WDT.c **** {
+ 305              		.loc 1 105 0
+ 306              		.cfi_startproc
+ 307              		@ args = 0, pretend = 0, frame = 0
+ 308              		@ frame_needed = 0, uses_anonymous_args = 0
+ 309              	.LVL15:
+ 310 0000 10B5     		push	{r4, lr}
+ 311              		.cfi_def_cfa_offset 8
+ 312              		.cfi_offset 4, -8
+ 313              		.cfi_offset 14, -4
+ 314 0002 0446     		mov	r4, r0
+ 107:.\Generated_Source\PSoC5/WDT.c ****     WDT_Disable();
+ 315              		.loc 1 107 0
+ 316 0004 FFF7FEFF 		bl	WDT_Disable
+ 317              	.LVL16:
+ 110:.\Generated_Source\PSoC5/WDT.c ****     WDT_SetVector(address);
+ 318              		.loc 1 110 0
+ 319 0008 2046     		mov	r0, r4
+ 320 000a FFF7FEFF 		bl	WDT_SetVector
+ 321              	.LVL17:
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccQk8BDq.s 			page 13
+
+
+ 113:.\Generated_Source\PSoC5/WDT.c ****     WDT_SetPriority((uint8)WDT_INTC_PRIOR_NUMBER);
+ 322              		.loc 1 113 0
+ 323 000e 0720     		movs	r0, #7
+ 324 0010 FFF7FEFF 		bl	WDT_SetPriority
+ 325              	.LVL18:
+ 116:.\Generated_Source\PSoC5/WDT.c ****     WDT_Enable();
+ 326              		.loc 1 116 0
+ 327 0014 FFF7FEFF 		bl	WDT_Enable
+ 328              	.LVL19:
+ 329 0018 10BD     		pop	{r4, pc}
+ 330              		.cfi_endproc
+ 331              	.LFE1:
+ 332              		.size	WDT_StartEx, .-WDT_StartEx
+ 333 001a 00BF     		.section	.text.WDT_Stop,"ax",%progbits
+ 334              		.align	2
+ 335              		.global	WDT_Stop
+ 336              		.thumb
+ 337              		.thumb_func
+ 338              		.type	WDT_Stop, %function
+ 339              	WDT_Stop:
+ 340              	.LFB2:
+ 135:.\Generated_Source\PSoC5/WDT.c **** {
+ 341              		.loc 1 135 0
+ 342              		.cfi_startproc
+ 343              		@ args = 0, pretend = 0, frame = 0
+ 344              		@ frame_needed = 0, uses_anonymous_args = 0
+ 345 0000 08B5     		push	{r3, lr}
+ 346              		.cfi_def_cfa_offset 8
+ 347              		.cfi_offset 3, -8
+ 348              		.cfi_offset 14, -4
+ 137:.\Generated_Source\PSoC5/WDT.c ****     WDT_Disable();
+ 349              		.loc 1 137 0
+ 350 0002 FFF7FEFF 		bl	WDT_Disable
+ 351              	.LVL20:
+ 140:.\Generated_Source\PSoC5/WDT.c ****     WDT_SetVector(&IntDefaultHandler);
+ 352              		.loc 1 140 0
+ 353 0006 0248     		ldr	r0, .L34
+ 354 0008 FFF7FEFF 		bl	WDT_SetVector
+ 355              	.LVL21:
+ 356 000c 08BD     		pop	{r3, pc}
+ 357              	.L35:
+ 358 000e 00BF     		.align	2
+ 359              	.L34:
+ 360 0010 00000000 		.word	IntDefaultHandler
+ 361              		.cfi_endproc
+ 362              	.LFE2:
+ 363              		.size	WDT_Stop, .-WDT_Stop
+ 364              		.section	.text.WDT_SetPending,"ax",%progbits
+ 365              		.align	2
+ 366              		.global	WDT_SetPending
+ 367              		.thumb
+ 368              		.thumb_func
+ 369              		.type	WDT_SetPending, %function
+ 370              	WDT_SetPending:
+ 371              	.LFB11:
+ 356:.\Generated_Source\PSoC5/WDT.c **** }
+ 357:.\Generated_Source\PSoC5/WDT.c **** 
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccQk8BDq.s 			page 14
+
+
+ 358:.\Generated_Source\PSoC5/WDT.c **** 
+ 359:.\Generated_Source\PSoC5/WDT.c **** /*******************************************************************************
+ 360:.\Generated_Source\PSoC5/WDT.c **** * Function Name: WDT_SetPending
+ 361:.\Generated_Source\PSoC5/WDT.c **** ********************************************************************************
+ 362:.\Generated_Source\PSoC5/WDT.c **** *
+ 363:.\Generated_Source\PSoC5/WDT.c **** * Summary:
+ 364:.\Generated_Source\PSoC5/WDT.c **** *   Causes the Interrupt to enter the pending state, a software method of
+ 365:.\Generated_Source\PSoC5/WDT.c **** *   generating the interrupt.
+ 366:.\Generated_Source\PSoC5/WDT.c **** *
+ 367:.\Generated_Source\PSoC5/WDT.c **** * Parameters:
+ 368:.\Generated_Source\PSoC5/WDT.c **** *   None
+ 369:.\Generated_Source\PSoC5/WDT.c **** *
+ 370:.\Generated_Source\PSoC5/WDT.c **** * Return:
+ 371:.\Generated_Source\PSoC5/WDT.c **** *   None
+ 372:.\Generated_Source\PSoC5/WDT.c **** *
+ 373:.\Generated_Source\PSoC5/WDT.c **** * Side Effects:
+ 374:.\Generated_Source\PSoC5/WDT.c **** *   If interrupts are enabled and the interrupt is set up properly, the ISR is
+ 375:.\Generated_Source\PSoC5/WDT.c **** *   entered (depending on the priority of this interrupt and other pending 
+ 376:.\Generated_Source\PSoC5/WDT.c **** *   interrupts).
+ 377:.\Generated_Source\PSoC5/WDT.c **** *
+ 378:.\Generated_Source\PSoC5/WDT.c **** *******************************************************************************/
+ 379:.\Generated_Source\PSoC5/WDT.c **** void WDT_SetPending(void)
+ 380:.\Generated_Source\PSoC5/WDT.c **** {
+ 372              		.loc 1 380 0
+ 373              		.cfi_startproc
+ 374              		@ args = 0, pretend = 0, frame = 0
+ 375              		@ frame_needed = 0, uses_anonymous_args = 0
+ 376              		@ link register save eliminated.
+ 381:.\Generated_Source\PSoC5/WDT.c ****     *WDT_INTC_SET_PD = WDT__INTC_MASK;
+ 377              		.loc 1 381 0
+ 378 0000 0422     		movs	r2, #4
+ 379 0002 014B     		ldr	r3, .L37
+ 380 0004 1A60     		str	r2, [r3]
+ 381 0006 7047     		bx	lr
+ 382              	.L38:
+ 383              		.align	2
+ 384              	.L37:
+ 385 0008 00E200E0 		.word	-536813056
+ 386              		.cfi_endproc
+ 387              	.LFE11:
+ 388              		.size	WDT_SetPending, .-WDT_SetPending
+ 389              		.section	.text.WDT_ClearPending,"ax",%progbits
+ 390              		.align	2
+ 391              		.global	WDT_ClearPending
+ 392              		.thumb
+ 393              		.thumb_func
+ 394              		.type	WDT_ClearPending, %function
+ 395              	WDT_ClearPending:
+ 396              	.LFB12:
+ 382:.\Generated_Source\PSoC5/WDT.c **** }
+ 383:.\Generated_Source\PSoC5/WDT.c **** 
+ 384:.\Generated_Source\PSoC5/WDT.c **** 
+ 385:.\Generated_Source\PSoC5/WDT.c **** /*******************************************************************************
+ 386:.\Generated_Source\PSoC5/WDT.c **** * Function Name: WDT_ClearPending
+ 387:.\Generated_Source\PSoC5/WDT.c **** ********************************************************************************
+ 388:.\Generated_Source\PSoC5/WDT.c **** *
+ 389:.\Generated_Source\PSoC5/WDT.c **** * Summary:
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccQk8BDq.s 			page 15
+
+
+ 390:.\Generated_Source\PSoC5/WDT.c **** *   Clears a pending interrupt in the interrupt controller.
+ 391:.\Generated_Source\PSoC5/WDT.c **** *
+ 392:.\Generated_Source\PSoC5/WDT.c **** *   Note Some interrupt sources are clear-on-read and require the block 
+ 393:.\Generated_Source\PSoC5/WDT.c **** *   interrupt/status register to be read/cleared with the appropriate block API 
+ 394:.\Generated_Source\PSoC5/WDT.c **** *   (GPIO, UART, and so on). Otherwise the ISR will continue to remain in 
+ 395:.\Generated_Source\PSoC5/WDT.c **** *   pending state even though the interrupt itself is cleared using this API.
+ 396:.\Generated_Source\PSoC5/WDT.c **** *
+ 397:.\Generated_Source\PSoC5/WDT.c **** * Parameters:
+ 398:.\Generated_Source\PSoC5/WDT.c **** *   None
+ 399:.\Generated_Source\PSoC5/WDT.c **** *
+ 400:.\Generated_Source\PSoC5/WDT.c **** * Return:
+ 401:.\Generated_Source\PSoC5/WDT.c **** *   None
+ 402:.\Generated_Source\PSoC5/WDT.c **** *
+ 403:.\Generated_Source\PSoC5/WDT.c **** *******************************************************************************/
+ 404:.\Generated_Source\PSoC5/WDT.c **** void WDT_ClearPending(void)
+ 405:.\Generated_Source\PSoC5/WDT.c **** {
+ 397              		.loc 1 405 0
+ 398              		.cfi_startproc
+ 399              		@ args = 0, pretend = 0, frame = 0
+ 400              		@ frame_needed = 0, uses_anonymous_args = 0
+ 401              		@ link register save eliminated.
+ 406:.\Generated_Source\PSoC5/WDT.c ****     *WDT_INTC_CLR_PD = WDT__INTC_MASK;
+ 402              		.loc 1 406 0
+ 403 0000 0422     		movs	r2, #4
+ 404 0002 014B     		ldr	r3, .L40
+ 405 0004 1A60     		str	r2, [r3]
+ 406 0006 7047     		bx	lr
+ 407              	.L41:
+ 408              		.align	2
+ 409              	.L40:
+ 410 0008 80E200E0 		.word	-536812928
+ 411              		.cfi_endproc
+ 412              	.LFE12:
+ 413              		.size	WDT_ClearPending, .-WDT_ClearPending
+ 414              		.comm	timer_value,4,4
+ 415              		.comm	timer_status,4,4
+ 416              		.comm	heartbeatCounter,4,4
+ 417              		.comm	heartrate,4,4
+ 418              		.comm	speed,4,4
+ 419              		.comm	Prev_state,4,4
+ 420              		.comm	currentState,4,4
+ 421              		.comm	RESET_CAUSE,4,4
+ 422              		.comm	PROFILE,4,4
+ 423              		.comm	increasingHr,4,4
+ 424              		.comm	average,4,4
+ 425              		.text
+ 426              	.Letext0:
+ 427              		.file 2 "Generated_Source\\PSoC5/cytypes.h"
+ 428              		.file 3 "./states.h"
+ 429              		.file 4 "./heartrate.h"
+ 430              		.file 5 "./motor.h"
+ 431              		.file 6 "Generated_Source\\PSoC5/HEARTRATE_HEALTH.h"
+ 432              		.file 7 "Generated_Source\\PSoC5/MOTOR_HEALTH.h"
+ 433              		.file 8 "Generated_Source\\PSoC5/UI_HEALTH.h"
+ 434              		.file 9 "Generated_Source\\PSoC5/CyLib.h"
+ 435              		.section	.debug_info,"",%progbits
+ 436              	.Ldebug_info0:
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccQk8BDq.s 			page 16
+
+
+ 437 0000 DC030000 		.4byte	0x3dc
+ 438 0004 0400     		.2byte	0x4
+ 439 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 440 000a 04       		.byte	0x4
+ 441 000b 01       		.uleb128 0x1
+ 442 000c 06010000 		.4byte	.LASF48
+ 443 0010 01       		.byte	0x1
+ 444 0011 95010000 		.4byte	.LASF49
+ 445 0015 38000000 		.4byte	.LASF50
+ 446 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 447 001d 00000000 		.4byte	0
+ 448 0021 00000000 		.4byte	.Ldebug_line0
+ 449 0025 02       		.uleb128 0x2
+ 450 0026 04       		.byte	0x4
+ 451 0027 05       		.byte	0x5
+ 452 0028 696E7400 		.ascii	"int\000"
+ 453 002c 03       		.uleb128 0x3
+ 454 002d 04       		.byte	0x4
+ 455 002e 07       		.byte	0x7
+ 456 002f 04020000 		.4byte	.LASF0
+ 457 0033 03       		.uleb128 0x3
+ 458 0034 01       		.byte	0x1
+ 459 0035 06       		.byte	0x6
+ 460 0036 15030000 		.4byte	.LASF1
+ 461 003a 03       		.uleb128 0x3
+ 462 003b 01       		.byte	0x1
+ 463 003c 08       		.byte	0x8
+ 464 003d C0000000 		.4byte	.LASF2
+ 465 0041 03       		.uleb128 0x3
+ 466 0042 02       		.byte	0x2
+ 467 0043 05       		.byte	0x5
+ 468 0044 C2020000 		.4byte	.LASF3
+ 469 0048 03       		.uleb128 0x3
+ 470 0049 02       		.byte	0x2
+ 471 004a 07       		.byte	0x7
+ 472 004b 82010000 		.4byte	.LASF4
+ 473 004f 03       		.uleb128 0x3
+ 474 0050 04       		.byte	0x4
+ 475 0051 05       		.byte	0x5
+ 476 0052 EF020000 		.4byte	.LASF5
+ 477 0056 03       		.uleb128 0x3
+ 478 0057 04       		.byte	0x4
+ 479 0058 07       		.byte	0x7
+ 480 0059 F4000000 		.4byte	.LASF6
+ 481 005d 03       		.uleb128 0x3
+ 482 005e 08       		.byte	0x8
+ 483 005f 05       		.byte	0x5
+ 484 0060 00000000 		.4byte	.LASF7
+ 485 0064 03       		.uleb128 0x3
+ 486 0065 08       		.byte	0x8
+ 487 0066 07       		.byte	0x7
+ 488 0067 19020000 		.4byte	.LASF8
+ 489 006b 03       		.uleb128 0x3
+ 490 006c 04       		.byte	0x4
+ 491 006d 07       		.byte	0x7
+ 492 006e 97020000 		.4byte	.LASF9
+ 493 0072 04       		.uleb128 0x4
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccQk8BDq.s 			page 17
+
+
+ 494 0073 04       		.byte	0x4
+ 495 0074 78000000 		.4byte	0x78
+ 496 0078 05       		.uleb128 0x5
+ 497 0079 03       		.uleb128 0x3
+ 498 007a 01       		.byte	0x1
+ 499 007b 08       		.byte	0x8
+ 500 007c A0020000 		.4byte	.LASF10
+ 501 0080 06       		.uleb128 0x6
+ 502 0081 DA020000 		.4byte	.LASF11
+ 503 0085 02       		.byte	0x2
+ 504 0086 B4       		.byte	0xb4
+ 505 0087 3A000000 		.4byte	0x3a
+ 506 008b 06       		.uleb128 0x6
+ 507 008c F0010000 		.4byte	.LASF12
+ 508 0090 02       		.byte	0x2
+ 509 0091 B6       		.byte	0xb6
+ 510 0092 56000000 		.4byte	0x56
+ 511 0096 03       		.uleb128 0x3
+ 512 0097 04       		.byte	0x4
+ 513 0098 04       		.byte	0x4
+ 514 0099 BA000000 		.4byte	.LASF13
+ 515 009d 03       		.uleb128 0x3
+ 516 009e 08       		.byte	0x8
+ 517 009f 04       		.byte	0x4
+ 518 00a0 CD010000 		.4byte	.LASF14
+ 519 00a4 07       		.uleb128 0x7
+ 520 00a5 CE000000 		.4byte	.LASF15
+ 521 00a9 02       		.byte	0x2
+ 522 00aa 5E01     		.2byte	0x15e
+ 523 00ac B0000000 		.4byte	0xb0
+ 524 00b0 08       		.uleb128 0x8
+ 525 00b1 80000000 		.4byte	0x80
+ 526 00b5 07       		.uleb128 0x7
+ 527 00b6 0E000000 		.4byte	.LASF16
+ 528 00ba 02       		.byte	0x2
+ 529 00bb 6001     		.2byte	0x160
+ 530 00bd C1000000 		.4byte	0xc1
+ 531 00c1 08       		.uleb128 0x8
+ 532 00c2 8B000000 		.4byte	0x8b
+ 533 00c6 07       		.uleb128 0x7
+ 534 00c7 57020000 		.4byte	.LASF17
+ 535 00cb 02       		.byte	0x2
+ 536 00cc 7001     		.2byte	0x170
+ 537 00ce 72000000 		.4byte	0x72
+ 538 00d2 06       		.uleb128 0x6
+ 539 00d3 51020000 		.4byte	.LASF18
+ 540 00d7 03       		.byte	0x3
+ 541 00d8 11       		.byte	0x11
+ 542 00d9 25000000 		.4byte	0x25
+ 543 00dd 09       		.uleb128 0x9
+ 544 00de CC020000 		.4byte	.LASF19
+ 545 00e2 01       		.byte	0x1
+ 546 00e3 A0       		.byte	0xa0
+ 547 00e4 00000000 		.4byte	.LFB3
+ 548 00e8 2C000000 		.4byte	.LFE3-.LFB3
+ 549 00ec 01       		.uleb128 0x1
+ 550 00ed 9C       		.byte	0x9c
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccQk8BDq.s 			page 18
+
+
+ 551 00ee 17010000 		.4byte	0x117
+ 552 00f2 0A       		.uleb128 0xa
+ 553 00f3 06000000 		.4byte	.LVL0
+ 554 00f7 B7030000 		.4byte	0x3b7
+ 555 00fb 0A       		.uleb128 0xa
+ 556 00fc 0C000000 		.4byte	.LVL1
+ 557 0100 C2030000 		.4byte	0x3c2
+ 558 0104 0A       		.uleb128 0xa
+ 559 0105 12000000 		.4byte	.LVL2
+ 560 0109 CD030000 		.4byte	0x3cd
+ 561 010d 0A       		.uleb128 0xa
+ 562 010e 18000000 		.4byte	.LVL3
+ 563 0112 D8030000 		.4byte	0x3d8
+ 564 0116 00       		.byte	0
+ 565 0117 09       		.uleb128 0x9
+ 566 0118 B4010000 		.4byte	.LASF20
+ 567 011c 01       		.byte	0x1
+ 568 011d CB       		.byte	0xcb
+ 569 011e 00000000 		.4byte	.LFB4
+ 570 0122 0C000000 		.4byte	.LFE4-.LFB4
+ 571 0126 01       		.uleb128 0x1
+ 572 0127 9C       		.byte	0x9c
+ 573 0128 47010000 		.4byte	0x147
+ 574 012c 0B       		.uleb128 0xb
+ 575 012d 11020000 		.4byte	.LASF23
+ 576 0131 01       		.byte	0x1
+ 577 0132 CB       		.byte	0xcb
+ 578 0133 C6000000 		.4byte	0xc6
+ 579 0137 01       		.uleb128 0x1
+ 580 0138 50       		.byte	0x50
+ 581 0139 0C       		.uleb128 0xc
+ 582 013a A5020000 		.4byte	.LASF21
+ 583 013e 01       		.byte	0x1
+ 584 013f CD       		.byte	0xcd
+ 585 0140 47010000 		.4byte	0x147
+ 586 0144 01       		.uleb128 0x1
+ 587 0145 53       		.byte	0x53
+ 588 0146 00       		.byte	0
+ 589 0147 04       		.uleb128 0x4
+ 590 0148 04       		.byte	0x4
+ 591 0149 C6000000 		.4byte	0xc6
+ 592 014d 0D       		.uleb128 0xd
+ 593 014e B4020000 		.4byte	.LASF25
+ 594 0152 01       		.byte	0x1
+ 595 0153 E3       		.byte	0xe3
+ 596 0154 C6000000 		.4byte	0xc6
+ 597 0158 00000000 		.4byte	.LFB5
+ 598 015c 0C000000 		.4byte	.LFE5-.LFB5
+ 599 0160 01       		.uleb128 0x1
+ 600 0161 9C       		.byte	0x9c
+ 601 0162 74010000 		.4byte	0x174
+ 602 0166 0C       		.uleb128 0xc
+ 603 0167 A5020000 		.4byte	.LASF21
+ 604 016b 01       		.byte	0x1
+ 605 016c E5       		.byte	0xe5
+ 606 016d 47010000 		.4byte	0x147
+ 607 0171 01       		.uleb128 0x1
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccQk8BDq.s 			page 19
+
+
+ 608 0172 53       		.byte	0x53
+ 609 0173 00       		.byte	0
+ 610 0174 0E       		.uleb128 0xe
+ 611 0175 D4010000 		.4byte	.LASF22
+ 612 0179 01       		.byte	0x1
+ 613 017a 0501     		.2byte	0x105
+ 614 017c 00000000 		.4byte	.LFB6
+ 615 0180 10000000 		.4byte	.LFE6-.LFB6
+ 616 0184 01       		.uleb128 0x1
+ 617 0185 9C       		.byte	0x9c
+ 618 0186 9B010000 		.4byte	0x19b
+ 619 018a 0F       		.uleb128 0xf
+ 620 018b 77020000 		.4byte	.LASF24
+ 621 018f 01       		.byte	0x1
+ 622 0190 0501     		.2byte	0x105
+ 623 0192 80000000 		.4byte	0x80
+ 624 0196 00000000 		.4byte	.LLST0
+ 625 019a 00       		.byte	0
+ 626 019b 10       		.uleb128 0x10
+ 627 019c 7C000000 		.4byte	.LASF26
+ 628 01a0 01       		.byte	0x1
+ 629 01a1 1B01     		.2byte	0x11b
+ 630 01a3 80000000 		.4byte	0x80
+ 631 01a7 00000000 		.4byte	.LFB7
+ 632 01ab 0C000000 		.4byte	.LFE7-.LFB7
+ 633 01af 01       		.uleb128 0x1
+ 634 01b0 9C       		.byte	0x9c
+ 635 01b1 C6010000 		.4byte	0x1c6
+ 636 01b5 11       		.uleb128 0x11
+ 637 01b6 77020000 		.4byte	.LASF24
+ 638 01ba 01       		.byte	0x1
+ 639 01bb 1D01     		.2byte	0x11d
+ 640 01bd 80000000 		.4byte	0x80
+ 641 01c1 21000000 		.4byte	.LLST1
+ 642 01c5 00       		.byte	0
+ 643 01c6 12       		.uleb128 0x12
+ 644 01c7 D3000000 		.4byte	.LASF27
+ 645 01cb 01       		.byte	0x1
+ 646 01cc 3601     		.2byte	0x136
+ 647 01ce 00000000 		.4byte	.LFB8
+ 648 01d2 0C000000 		.4byte	.LFE8-.LFB8
+ 649 01d6 01       		.uleb128 0x1
+ 650 01d7 9C       		.byte	0x9c
+ 651 01d8 13       		.uleb128 0x13
+ 652 01d9 80020000 		.4byte	.LASF51
+ 653 01dd 01       		.byte	0x1
+ 654 01de 4B01     		.2byte	0x14b
+ 655 01e0 80000000 		.4byte	0x80
+ 656 01e4 00000000 		.4byte	.LFB9
+ 657 01e8 18000000 		.4byte	.LFE9-.LFB9
+ 658 01ec 01       		.uleb128 0x1
+ 659 01ed 9C       		.byte	0x9c
+ 660 01ee 12       		.uleb128 0x12
+ 661 01ef 95000000 		.4byte	.LASF28
+ 662 01f3 01       		.byte	0x1
+ 663 01f4 6001     		.2byte	0x160
+ 664 01f6 00000000 		.4byte	.LFB10
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccQk8BDq.s 			page 20
+
+
+ 665 01fa 0C000000 		.4byte	.LFE10-.LFB10
+ 666 01fe 01       		.uleb128 0x1
+ 667 01ff 9C       		.byte	0x9c
+ 668 0200 09       		.uleb128 0x9
+ 669 0201 30020000 		.4byte	.LASF29
+ 670 0205 01       		.byte	0x1
+ 671 0206 3D       		.byte	0x3d
+ 672 0207 00000000 		.4byte	.LFB0
+ 673 020b 1C000000 		.4byte	.LFE0-.LFB0
+ 674 020f 01       		.uleb128 0x1
+ 675 0210 9C       		.byte	0x9c
+ 676 0211 52020000 		.4byte	0x252
+ 677 0215 0A       		.uleb128 0xa
+ 678 0216 06000000 		.4byte	.LVL11
+ 679 021a EE010000 		.4byte	0x1ee
+ 680 021e 14       		.uleb128 0x14
+ 681 021f 0C000000 		.4byte	.LVL12
+ 682 0223 17010000 		.4byte	0x117
+ 683 0227 35020000 		.4byte	0x235
+ 684 022b 15       		.uleb128 0x15
+ 685 022c 01       		.uleb128 0x1
+ 686 022d 50       		.byte	0x50
+ 687 022e 05       		.uleb128 0x5
+ 688 022f 03       		.byte	0x3
+ 689 0230 00000000 		.4byte	WDT_Interrupt
+ 690 0234 00       		.byte	0
+ 691 0235 14       		.uleb128 0x14
+ 692 0236 12000000 		.4byte	.LVL13
+ 693 023a 74010000 		.4byte	0x174
+ 694 023e 48020000 		.4byte	0x248
+ 695 0242 15       		.uleb128 0x15
+ 696 0243 01       		.uleb128 0x1
+ 697 0244 50       		.byte	0x50
+ 698 0245 01       		.uleb128 0x1
+ 699 0246 37       		.byte	0x37
+ 700 0247 00       		.byte	0
+ 701 0248 0A       		.uleb128 0xa
+ 702 0249 16000000 		.4byte	.LVL14
+ 703 024d C6010000 		.4byte	0x1c6
+ 704 0251 00       		.byte	0
+ 705 0252 09       		.uleb128 0x9
+ 706 0253 14000000 		.4byte	.LASF30
+ 707 0257 01       		.byte	0x1
+ 708 0258 68       		.byte	0x68
+ 709 0259 00000000 		.4byte	.LFB1
+ 710 025d 1A000000 		.4byte	.LFE1-.LFB1
+ 711 0261 01       		.uleb128 0x1
+ 712 0262 9C       		.byte	0x9c
+ 713 0263 B0020000 		.4byte	0x2b0
+ 714 0267 16       		.uleb128 0x16
+ 715 0268 11020000 		.4byte	.LASF23
+ 716 026c 01       		.byte	0x1
+ 717 026d 68       		.byte	0x68
+ 718 026e C6000000 		.4byte	0xc6
+ 719 0272 38000000 		.4byte	.LLST2
+ 720 0276 0A       		.uleb128 0xa
+ 721 0277 08000000 		.4byte	.LVL16
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccQk8BDq.s 			page 21
+
+
+ 722 027b EE010000 		.4byte	0x1ee
+ 723 027f 14       		.uleb128 0x14
+ 724 0280 0E000000 		.4byte	.LVL17
+ 725 0284 17010000 		.4byte	0x117
+ 726 0288 93020000 		.4byte	0x293
+ 727 028c 15       		.uleb128 0x15
+ 728 028d 01       		.uleb128 0x1
+ 729 028e 50       		.byte	0x50
+ 730 028f 02       		.uleb128 0x2
+ 731 0290 74       		.byte	0x74
+ 732 0291 00       		.sleb128 0
+ 733 0292 00       		.byte	0
+ 734 0293 14       		.uleb128 0x14
+ 735 0294 14000000 		.4byte	.LVL18
+ 736 0298 74010000 		.4byte	0x174
+ 737 029c A6020000 		.4byte	0x2a6
+ 738 02a0 15       		.uleb128 0x15
+ 739 02a1 01       		.uleb128 0x1
+ 740 02a2 50       		.byte	0x50
+ 741 02a3 01       		.uleb128 0x1
+ 742 02a4 37       		.byte	0x37
+ 743 02a5 00       		.byte	0
+ 744 02a6 0A       		.uleb128 0xa
+ 745 02a7 18000000 		.4byte	.LVL19
+ 746 02ab C6010000 		.4byte	0x1c6
+ 747 02af 00       		.byte	0
+ 748 02b0 09       		.uleb128 0x9
+ 749 02b1 8C000000 		.4byte	.LASF31
+ 750 02b5 01       		.byte	0x1
+ 751 02b6 86       		.byte	0x86
+ 752 02b7 00000000 		.4byte	.LFB2
+ 753 02bb 14000000 		.4byte	.LFE2-.LFB2
+ 754 02bf 01       		.uleb128 0x1
+ 755 02c0 9C       		.byte	0x9c
+ 756 02c1 D8020000 		.4byte	0x2d8
+ 757 02c5 0A       		.uleb128 0xa
+ 758 02c6 06000000 		.4byte	.LVL20
+ 759 02ca EE010000 		.4byte	0x1ee
+ 760 02ce 0A       		.uleb128 0xa
+ 761 02cf 0C000000 		.4byte	.LVL21
+ 762 02d3 17010000 		.4byte	0x117
+ 763 02d7 00       		.byte	0
+ 764 02d8 12       		.uleb128 0x12
+ 765 02d9 3A020000 		.4byte	.LASF32
+ 766 02dd 01       		.byte	0x1
+ 767 02de 7B01     		.2byte	0x17b
+ 768 02e0 00000000 		.4byte	.LFB11
+ 769 02e4 0C000000 		.4byte	.LFE11-.LFB11
+ 770 02e8 01       		.uleb128 0x1
+ 771 02e9 9C       		.byte	0x9c
+ 772 02ea 12       		.uleb128 0x12
+ 773 02eb F8020000 		.4byte	.LASF33
+ 774 02ef 01       		.byte	0x1
+ 775 02f0 9401     		.2byte	0x194
+ 776 02f2 00000000 		.4byte	.LFB12
+ 777 02f6 0C000000 		.4byte	.LFE12-.LFB12
+ 778 02fa 01       		.uleb128 0x1
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccQk8BDq.s 			page 22
+
+
+ 779 02fb 9C       		.byte	0x9c
+ 780 02fc 17       		.uleb128 0x17
+ 781 02fd 8D020000 		.4byte	.LASF34
+ 782 0301 04       		.byte	0x4
+ 783 0302 13       		.byte	0x13
+ 784 0303 96000000 		.4byte	0x96
+ 785 0307 05       		.uleb128 0x5
+ 786 0308 03       		.byte	0x3
+ 787 0309 00000000 		.4byte	heartrate
+ 788 030d 17       		.uleb128 0x17
+ 789 030e 09030000 		.4byte	.LASF35
+ 790 0312 01       		.byte	0x1
+ 791 0313 1E       		.byte	0x1e
+ 792 0314 25000000 		.4byte	0x25
+ 793 0318 05       		.uleb128 0x5
+ 794 0319 03       		.byte	0x3
+ 795 031a 00000000 		.4byte	RESET_CAUSE
+ 796 031e 17       		.uleb128 0x17
+ 797 031f 49020000 		.4byte	.LASF36
+ 798 0323 03       		.byte	0x3
+ 799 0324 16       		.byte	0x16
+ 800 0325 96000000 		.4byte	0x96
+ 801 0329 05       		.uleb128 0x5
+ 802 032a 03       		.byte	0x3
+ 803 032b 00000000 		.4byte	average
+ 804 032f 17       		.uleb128 0x17
+ 805 0330 F7010000 		.4byte	.LASF37
+ 806 0334 03       		.byte	0x3
+ 807 0335 17       		.byte	0x17
+ 808 0336 25000000 		.4byte	0x25
+ 809 033a 05       		.uleb128 0x5
+ 810 033b 03       		.byte	0x3
+ 811 033c 00000000 		.4byte	increasingHr
+ 812 0340 17       		.uleb128 0x17
+ 813 0341 A1000000 		.4byte	.LASF38
+ 814 0345 03       		.byte	0x3
+ 815 0346 19       		.byte	0x19
+ 816 0347 25000000 		.4byte	0x25
+ 817 034b 05       		.uleb128 0x5
+ 818 034c 03       		.byte	0x3
+ 819 034d 00000000 		.4byte	PROFILE
+ 820 0351 17       		.uleb128 0x17
+ 821 0352 20000000 		.4byte	.LASF39
+ 822 0356 03       		.byte	0x3
+ 823 0357 3D       		.byte	0x3d
+ 824 0358 D2000000 		.4byte	0xd2
+ 825 035c 05       		.uleb128 0x5
+ 826 035d 03       		.byte	0x3
+ 827 035e 00000000 		.4byte	currentState
+ 828 0362 17       		.uleb128 0x17
+ 829 0363 2D000000 		.4byte	.LASF40
+ 830 0367 03       		.byte	0x3
+ 831 0368 3F       		.byte	0x3f
+ 832 0369 D2000000 		.4byte	0xd2
+ 833 036d 05       		.uleb128 0x5
+ 834 036e 03       		.byte	0x3
+ 835 036f 00000000 		.4byte	Prev_state
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccQk8BDq.s 			page 23
+
+
+ 836 0373 17       		.uleb128 0x17
+ 837 0374 71020000 		.4byte	.LASF41
+ 838 0378 05       		.byte	0x5
+ 839 0379 12       		.byte	0x12
+ 840 037a 25000000 		.4byte	0x25
+ 841 037e 05       		.uleb128 0x5
+ 842 037f 03       		.byte	0x3
+ 843 0380 00000000 		.4byte	speed
+ 844 0384 17       		.uleb128 0x17
+ 845 0385 A9000000 		.4byte	.LASF42
+ 846 0389 04       		.byte	0x4
+ 847 038a 14       		.byte	0x14
+ 848 038b 96000000 		.4byte	0x96
+ 849 038f 05       		.uleb128 0x5
+ 850 0390 03       		.byte	0x3
+ 851 0391 00000000 		.4byte	heartbeatCounter
+ 852 0395 17       		.uleb128 0x17
+ 853 0396 64020000 		.4byte	.LASF43
+ 854 039a 04       		.byte	0x4
+ 855 039b 15       		.byte	0x15
+ 856 039c 25000000 		.4byte	0x25
+ 857 03a0 05       		.uleb128 0x5
+ 858 03a1 03       		.byte	0x3
+ 859 03a2 00000000 		.4byte	timer_status
+ 860 03a6 17       		.uleb128 0x17
+ 861 03a7 E4010000 		.4byte	.LASF44
+ 862 03ab 04       		.byte	0x4
+ 863 03ac 16       		.byte	0x16
+ 864 03ad 25000000 		.4byte	0x25
+ 865 03b1 05       		.uleb128 0x5
+ 866 03b2 03       		.byte	0x3
+ 867 03b3 00000000 		.4byte	timer_value
+ 868 03b7 18       		.uleb128 0x18
+ 869 03b8 DE000000 		.4byte	.LASF45
+ 870 03bc 06       		.byte	0x6
+ 871 03bd 2B       		.byte	0x2b
+ 872 03be 80000000 		.4byte	0x80
+ 873 03c2 18       		.uleb128 0x18
+ 874 03c3 21030000 		.4byte	.LASF46
+ 875 03c7 07       		.byte	0x7
+ 876 03c8 2B       		.byte	0x2b
+ 877 03c9 80000000 		.4byte	0x80
+ 878 03cd 18       		.uleb128 0x18
+ 879 03ce E0020000 		.4byte	.LASF47
+ 880 03d2 08       		.byte	0x8
+ 881 03d3 2B       		.byte	0x2b
+ 882 03d4 80000000 		.4byte	0x80
+ 883 03d8 19       		.uleb128 0x19
+ 884 03d9 C2010000 		.4byte	.LASF52
+ 885 03dd 09       		.byte	0x9
+ 886 03de 74       		.byte	0x74
+ 887 03df 00       		.byte	0
+ 888              		.section	.debug_abbrev,"",%progbits
+ 889              	.Ldebug_abbrev0:
+ 890 0000 01       		.uleb128 0x1
+ 891 0001 11       		.uleb128 0x11
+ 892 0002 01       		.byte	0x1
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccQk8BDq.s 			page 24
+
+
+ 893 0003 25       		.uleb128 0x25
+ 894 0004 0E       		.uleb128 0xe
+ 895 0005 13       		.uleb128 0x13
+ 896 0006 0B       		.uleb128 0xb
+ 897 0007 03       		.uleb128 0x3
+ 898 0008 0E       		.uleb128 0xe
+ 899 0009 1B       		.uleb128 0x1b
+ 900 000a 0E       		.uleb128 0xe
+ 901 000b 55       		.uleb128 0x55
+ 902 000c 17       		.uleb128 0x17
+ 903 000d 11       		.uleb128 0x11
+ 904 000e 01       		.uleb128 0x1
+ 905 000f 10       		.uleb128 0x10
+ 906 0010 17       		.uleb128 0x17
+ 907 0011 00       		.byte	0
+ 908 0012 00       		.byte	0
+ 909 0013 02       		.uleb128 0x2
+ 910 0014 24       		.uleb128 0x24
+ 911 0015 00       		.byte	0
+ 912 0016 0B       		.uleb128 0xb
+ 913 0017 0B       		.uleb128 0xb
+ 914 0018 3E       		.uleb128 0x3e
+ 915 0019 0B       		.uleb128 0xb
+ 916 001a 03       		.uleb128 0x3
+ 917 001b 08       		.uleb128 0x8
+ 918 001c 00       		.byte	0
+ 919 001d 00       		.byte	0
+ 920 001e 03       		.uleb128 0x3
+ 921 001f 24       		.uleb128 0x24
+ 922 0020 00       		.byte	0
+ 923 0021 0B       		.uleb128 0xb
+ 924 0022 0B       		.uleb128 0xb
+ 925 0023 3E       		.uleb128 0x3e
+ 926 0024 0B       		.uleb128 0xb
+ 927 0025 03       		.uleb128 0x3
+ 928 0026 0E       		.uleb128 0xe
+ 929 0027 00       		.byte	0
+ 930 0028 00       		.byte	0
+ 931 0029 04       		.uleb128 0x4
+ 932 002a 0F       		.uleb128 0xf
+ 933 002b 00       		.byte	0
+ 934 002c 0B       		.uleb128 0xb
+ 935 002d 0B       		.uleb128 0xb
+ 936 002e 49       		.uleb128 0x49
+ 937 002f 13       		.uleb128 0x13
+ 938 0030 00       		.byte	0
+ 939 0031 00       		.byte	0
+ 940 0032 05       		.uleb128 0x5
+ 941 0033 15       		.uleb128 0x15
+ 942 0034 00       		.byte	0
+ 943 0035 27       		.uleb128 0x27
+ 944 0036 19       		.uleb128 0x19
+ 945 0037 00       		.byte	0
+ 946 0038 00       		.byte	0
+ 947 0039 06       		.uleb128 0x6
+ 948 003a 16       		.uleb128 0x16
+ 949 003b 00       		.byte	0
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccQk8BDq.s 			page 25
+
+
+ 950 003c 03       		.uleb128 0x3
+ 951 003d 0E       		.uleb128 0xe
+ 952 003e 3A       		.uleb128 0x3a
+ 953 003f 0B       		.uleb128 0xb
+ 954 0040 3B       		.uleb128 0x3b
+ 955 0041 0B       		.uleb128 0xb
+ 956 0042 49       		.uleb128 0x49
+ 957 0043 13       		.uleb128 0x13
+ 958 0044 00       		.byte	0
+ 959 0045 00       		.byte	0
+ 960 0046 07       		.uleb128 0x7
+ 961 0047 16       		.uleb128 0x16
+ 962 0048 00       		.byte	0
+ 963 0049 03       		.uleb128 0x3
+ 964 004a 0E       		.uleb128 0xe
+ 965 004b 3A       		.uleb128 0x3a
+ 966 004c 0B       		.uleb128 0xb
+ 967 004d 3B       		.uleb128 0x3b
+ 968 004e 05       		.uleb128 0x5
+ 969 004f 49       		.uleb128 0x49
+ 970 0050 13       		.uleb128 0x13
+ 971 0051 00       		.byte	0
+ 972 0052 00       		.byte	0
+ 973 0053 08       		.uleb128 0x8
+ 974 0054 35       		.uleb128 0x35
+ 975 0055 00       		.byte	0
+ 976 0056 49       		.uleb128 0x49
+ 977 0057 13       		.uleb128 0x13
+ 978 0058 00       		.byte	0
+ 979 0059 00       		.byte	0
+ 980 005a 09       		.uleb128 0x9
+ 981 005b 2E       		.uleb128 0x2e
+ 982 005c 01       		.byte	0x1
+ 983 005d 3F       		.uleb128 0x3f
+ 984 005e 19       		.uleb128 0x19
+ 985 005f 03       		.uleb128 0x3
+ 986 0060 0E       		.uleb128 0xe
+ 987 0061 3A       		.uleb128 0x3a
+ 988 0062 0B       		.uleb128 0xb
+ 989 0063 3B       		.uleb128 0x3b
+ 990 0064 0B       		.uleb128 0xb
+ 991 0065 27       		.uleb128 0x27
+ 992 0066 19       		.uleb128 0x19
+ 993 0067 11       		.uleb128 0x11
+ 994 0068 01       		.uleb128 0x1
+ 995 0069 12       		.uleb128 0x12
+ 996 006a 06       		.uleb128 0x6
+ 997 006b 40       		.uleb128 0x40
+ 998 006c 18       		.uleb128 0x18
+ 999 006d 9742     		.uleb128 0x2117
+ 1000 006f 19       		.uleb128 0x19
+ 1001 0070 01       		.uleb128 0x1
+ 1002 0071 13       		.uleb128 0x13
+ 1003 0072 00       		.byte	0
+ 1004 0073 00       		.byte	0
+ 1005 0074 0A       		.uleb128 0xa
+ 1006 0075 898201   		.uleb128 0x4109
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccQk8BDq.s 			page 26
+
+
+ 1007 0078 00       		.byte	0
+ 1008 0079 11       		.uleb128 0x11
+ 1009 007a 01       		.uleb128 0x1
+ 1010 007b 31       		.uleb128 0x31
+ 1011 007c 13       		.uleb128 0x13
+ 1012 007d 00       		.byte	0
+ 1013 007e 00       		.byte	0
+ 1014 007f 0B       		.uleb128 0xb
+ 1015 0080 05       		.uleb128 0x5
+ 1016 0081 00       		.byte	0
+ 1017 0082 03       		.uleb128 0x3
+ 1018 0083 0E       		.uleb128 0xe
+ 1019 0084 3A       		.uleb128 0x3a
+ 1020 0085 0B       		.uleb128 0xb
+ 1021 0086 3B       		.uleb128 0x3b
+ 1022 0087 0B       		.uleb128 0xb
+ 1023 0088 49       		.uleb128 0x49
+ 1024 0089 13       		.uleb128 0x13
+ 1025 008a 02       		.uleb128 0x2
+ 1026 008b 18       		.uleb128 0x18
+ 1027 008c 00       		.byte	0
+ 1028 008d 00       		.byte	0
+ 1029 008e 0C       		.uleb128 0xc
+ 1030 008f 34       		.uleb128 0x34
+ 1031 0090 00       		.byte	0
+ 1032 0091 03       		.uleb128 0x3
+ 1033 0092 0E       		.uleb128 0xe
+ 1034 0093 3A       		.uleb128 0x3a
+ 1035 0094 0B       		.uleb128 0xb
+ 1036 0095 3B       		.uleb128 0x3b
+ 1037 0096 0B       		.uleb128 0xb
+ 1038 0097 49       		.uleb128 0x49
+ 1039 0098 13       		.uleb128 0x13
+ 1040 0099 02       		.uleb128 0x2
+ 1041 009a 18       		.uleb128 0x18
+ 1042 009b 00       		.byte	0
+ 1043 009c 00       		.byte	0
+ 1044 009d 0D       		.uleb128 0xd
+ 1045 009e 2E       		.uleb128 0x2e
+ 1046 009f 01       		.byte	0x1
+ 1047 00a0 3F       		.uleb128 0x3f
+ 1048 00a1 19       		.uleb128 0x19
+ 1049 00a2 03       		.uleb128 0x3
+ 1050 00a3 0E       		.uleb128 0xe
+ 1051 00a4 3A       		.uleb128 0x3a
+ 1052 00a5 0B       		.uleb128 0xb
+ 1053 00a6 3B       		.uleb128 0x3b
+ 1054 00a7 0B       		.uleb128 0xb
+ 1055 00a8 27       		.uleb128 0x27
+ 1056 00a9 19       		.uleb128 0x19
+ 1057 00aa 49       		.uleb128 0x49
+ 1058 00ab 13       		.uleb128 0x13
+ 1059 00ac 11       		.uleb128 0x11
+ 1060 00ad 01       		.uleb128 0x1
+ 1061 00ae 12       		.uleb128 0x12
+ 1062 00af 06       		.uleb128 0x6
+ 1063 00b0 40       		.uleb128 0x40
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccQk8BDq.s 			page 27
+
+
+ 1064 00b1 18       		.uleb128 0x18
+ 1065 00b2 9742     		.uleb128 0x2117
+ 1066 00b4 19       		.uleb128 0x19
+ 1067 00b5 01       		.uleb128 0x1
+ 1068 00b6 13       		.uleb128 0x13
+ 1069 00b7 00       		.byte	0
+ 1070 00b8 00       		.byte	0
+ 1071 00b9 0E       		.uleb128 0xe
+ 1072 00ba 2E       		.uleb128 0x2e
+ 1073 00bb 01       		.byte	0x1
+ 1074 00bc 3F       		.uleb128 0x3f
+ 1075 00bd 19       		.uleb128 0x19
+ 1076 00be 03       		.uleb128 0x3
+ 1077 00bf 0E       		.uleb128 0xe
+ 1078 00c0 3A       		.uleb128 0x3a
+ 1079 00c1 0B       		.uleb128 0xb
+ 1080 00c2 3B       		.uleb128 0x3b
+ 1081 00c3 05       		.uleb128 0x5
+ 1082 00c4 27       		.uleb128 0x27
+ 1083 00c5 19       		.uleb128 0x19
+ 1084 00c6 11       		.uleb128 0x11
+ 1085 00c7 01       		.uleb128 0x1
+ 1086 00c8 12       		.uleb128 0x12
+ 1087 00c9 06       		.uleb128 0x6
+ 1088 00ca 40       		.uleb128 0x40
+ 1089 00cb 18       		.uleb128 0x18
+ 1090 00cc 9742     		.uleb128 0x2117
+ 1091 00ce 19       		.uleb128 0x19
+ 1092 00cf 01       		.uleb128 0x1
+ 1093 00d0 13       		.uleb128 0x13
+ 1094 00d1 00       		.byte	0
+ 1095 00d2 00       		.byte	0
+ 1096 00d3 0F       		.uleb128 0xf
+ 1097 00d4 05       		.uleb128 0x5
+ 1098 00d5 00       		.byte	0
+ 1099 00d6 03       		.uleb128 0x3
+ 1100 00d7 0E       		.uleb128 0xe
+ 1101 00d8 3A       		.uleb128 0x3a
+ 1102 00d9 0B       		.uleb128 0xb
+ 1103 00da 3B       		.uleb128 0x3b
+ 1104 00db 05       		.uleb128 0x5
+ 1105 00dc 49       		.uleb128 0x49
+ 1106 00dd 13       		.uleb128 0x13
+ 1107 00de 02       		.uleb128 0x2
+ 1108 00df 17       		.uleb128 0x17
+ 1109 00e0 00       		.byte	0
+ 1110 00e1 00       		.byte	0
+ 1111 00e2 10       		.uleb128 0x10
+ 1112 00e3 2E       		.uleb128 0x2e
+ 1113 00e4 01       		.byte	0x1
+ 1114 00e5 3F       		.uleb128 0x3f
+ 1115 00e6 19       		.uleb128 0x19
+ 1116 00e7 03       		.uleb128 0x3
+ 1117 00e8 0E       		.uleb128 0xe
+ 1118 00e9 3A       		.uleb128 0x3a
+ 1119 00ea 0B       		.uleb128 0xb
+ 1120 00eb 3B       		.uleb128 0x3b
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccQk8BDq.s 			page 28
+
+
+ 1121 00ec 05       		.uleb128 0x5
+ 1122 00ed 27       		.uleb128 0x27
+ 1123 00ee 19       		.uleb128 0x19
+ 1124 00ef 49       		.uleb128 0x49
+ 1125 00f0 13       		.uleb128 0x13
+ 1126 00f1 11       		.uleb128 0x11
+ 1127 00f2 01       		.uleb128 0x1
+ 1128 00f3 12       		.uleb128 0x12
+ 1129 00f4 06       		.uleb128 0x6
+ 1130 00f5 40       		.uleb128 0x40
+ 1131 00f6 18       		.uleb128 0x18
+ 1132 00f7 9742     		.uleb128 0x2117
+ 1133 00f9 19       		.uleb128 0x19
+ 1134 00fa 01       		.uleb128 0x1
+ 1135 00fb 13       		.uleb128 0x13
+ 1136 00fc 00       		.byte	0
+ 1137 00fd 00       		.byte	0
+ 1138 00fe 11       		.uleb128 0x11
+ 1139 00ff 34       		.uleb128 0x34
+ 1140 0100 00       		.byte	0
+ 1141 0101 03       		.uleb128 0x3
+ 1142 0102 0E       		.uleb128 0xe
+ 1143 0103 3A       		.uleb128 0x3a
+ 1144 0104 0B       		.uleb128 0xb
+ 1145 0105 3B       		.uleb128 0x3b
+ 1146 0106 05       		.uleb128 0x5
+ 1147 0107 49       		.uleb128 0x49
+ 1148 0108 13       		.uleb128 0x13
+ 1149 0109 02       		.uleb128 0x2
+ 1150 010a 17       		.uleb128 0x17
+ 1151 010b 00       		.byte	0
+ 1152 010c 00       		.byte	0
+ 1153 010d 12       		.uleb128 0x12
+ 1154 010e 2E       		.uleb128 0x2e
+ 1155 010f 00       		.byte	0
+ 1156 0110 3F       		.uleb128 0x3f
+ 1157 0111 19       		.uleb128 0x19
+ 1158 0112 03       		.uleb128 0x3
+ 1159 0113 0E       		.uleb128 0xe
+ 1160 0114 3A       		.uleb128 0x3a
+ 1161 0115 0B       		.uleb128 0xb
+ 1162 0116 3B       		.uleb128 0x3b
+ 1163 0117 05       		.uleb128 0x5
+ 1164 0118 27       		.uleb128 0x27
+ 1165 0119 19       		.uleb128 0x19
+ 1166 011a 11       		.uleb128 0x11
+ 1167 011b 01       		.uleb128 0x1
+ 1168 011c 12       		.uleb128 0x12
+ 1169 011d 06       		.uleb128 0x6
+ 1170 011e 40       		.uleb128 0x40
+ 1171 011f 18       		.uleb128 0x18
+ 1172 0120 9742     		.uleb128 0x2117
+ 1173 0122 19       		.uleb128 0x19
+ 1174 0123 00       		.byte	0
+ 1175 0124 00       		.byte	0
+ 1176 0125 13       		.uleb128 0x13
+ 1177 0126 2E       		.uleb128 0x2e
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccQk8BDq.s 			page 29
+
+
+ 1178 0127 00       		.byte	0
+ 1179 0128 3F       		.uleb128 0x3f
+ 1180 0129 19       		.uleb128 0x19
+ 1181 012a 03       		.uleb128 0x3
+ 1182 012b 0E       		.uleb128 0xe
+ 1183 012c 3A       		.uleb128 0x3a
+ 1184 012d 0B       		.uleb128 0xb
+ 1185 012e 3B       		.uleb128 0x3b
+ 1186 012f 05       		.uleb128 0x5
+ 1187 0130 27       		.uleb128 0x27
+ 1188 0131 19       		.uleb128 0x19
+ 1189 0132 49       		.uleb128 0x49
+ 1190 0133 13       		.uleb128 0x13
+ 1191 0134 11       		.uleb128 0x11
+ 1192 0135 01       		.uleb128 0x1
+ 1193 0136 12       		.uleb128 0x12
+ 1194 0137 06       		.uleb128 0x6
+ 1195 0138 40       		.uleb128 0x40
+ 1196 0139 18       		.uleb128 0x18
+ 1197 013a 9742     		.uleb128 0x2117
+ 1198 013c 19       		.uleb128 0x19
+ 1199 013d 00       		.byte	0
+ 1200 013e 00       		.byte	0
+ 1201 013f 14       		.uleb128 0x14
+ 1202 0140 898201   		.uleb128 0x4109
+ 1203 0143 01       		.byte	0x1
+ 1204 0144 11       		.uleb128 0x11
+ 1205 0145 01       		.uleb128 0x1
+ 1206 0146 31       		.uleb128 0x31
+ 1207 0147 13       		.uleb128 0x13
+ 1208 0148 01       		.uleb128 0x1
+ 1209 0149 13       		.uleb128 0x13
+ 1210 014a 00       		.byte	0
+ 1211 014b 00       		.byte	0
+ 1212 014c 15       		.uleb128 0x15
+ 1213 014d 8A8201   		.uleb128 0x410a
+ 1214 0150 00       		.byte	0
+ 1215 0151 02       		.uleb128 0x2
+ 1216 0152 18       		.uleb128 0x18
+ 1217 0153 9142     		.uleb128 0x2111
+ 1218 0155 18       		.uleb128 0x18
+ 1219 0156 00       		.byte	0
+ 1220 0157 00       		.byte	0
+ 1221 0158 16       		.uleb128 0x16
+ 1222 0159 05       		.uleb128 0x5
+ 1223 015a 00       		.byte	0
+ 1224 015b 03       		.uleb128 0x3
+ 1225 015c 0E       		.uleb128 0xe
+ 1226 015d 3A       		.uleb128 0x3a
+ 1227 015e 0B       		.uleb128 0xb
+ 1228 015f 3B       		.uleb128 0x3b
+ 1229 0160 0B       		.uleb128 0xb
+ 1230 0161 49       		.uleb128 0x49
+ 1231 0162 13       		.uleb128 0x13
+ 1232 0163 02       		.uleb128 0x2
+ 1233 0164 17       		.uleb128 0x17
+ 1234 0165 00       		.byte	0
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccQk8BDq.s 			page 30
+
+
+ 1235 0166 00       		.byte	0
+ 1236 0167 17       		.uleb128 0x17
+ 1237 0168 34       		.uleb128 0x34
+ 1238 0169 00       		.byte	0
+ 1239 016a 03       		.uleb128 0x3
+ 1240 016b 0E       		.uleb128 0xe
+ 1241 016c 3A       		.uleb128 0x3a
+ 1242 016d 0B       		.uleb128 0xb
+ 1243 016e 3B       		.uleb128 0x3b
+ 1244 016f 0B       		.uleb128 0xb
+ 1245 0170 49       		.uleb128 0x49
+ 1246 0171 13       		.uleb128 0x13
+ 1247 0172 3F       		.uleb128 0x3f
+ 1248 0173 19       		.uleb128 0x19
+ 1249 0174 02       		.uleb128 0x2
+ 1250 0175 18       		.uleb128 0x18
+ 1251 0176 00       		.byte	0
+ 1252 0177 00       		.byte	0
+ 1253 0178 18       		.uleb128 0x18
+ 1254 0179 2E       		.uleb128 0x2e
+ 1255 017a 00       		.byte	0
+ 1256 017b 3F       		.uleb128 0x3f
+ 1257 017c 19       		.uleb128 0x19
+ 1258 017d 03       		.uleb128 0x3
+ 1259 017e 0E       		.uleb128 0xe
+ 1260 017f 3A       		.uleb128 0x3a
+ 1261 0180 0B       		.uleb128 0xb
+ 1262 0181 3B       		.uleb128 0x3b
+ 1263 0182 0B       		.uleb128 0xb
+ 1264 0183 27       		.uleb128 0x27
+ 1265 0184 19       		.uleb128 0x19
+ 1266 0185 49       		.uleb128 0x49
+ 1267 0186 13       		.uleb128 0x13
+ 1268 0187 3C       		.uleb128 0x3c
+ 1269 0188 19       		.uleb128 0x19
+ 1270 0189 00       		.byte	0
+ 1271 018a 00       		.byte	0
+ 1272 018b 19       		.uleb128 0x19
+ 1273 018c 2E       		.uleb128 0x2e
+ 1274 018d 00       		.byte	0
+ 1275 018e 3F       		.uleb128 0x3f
+ 1276 018f 19       		.uleb128 0x19
+ 1277 0190 03       		.uleb128 0x3
+ 1278 0191 0E       		.uleb128 0xe
+ 1279 0192 3A       		.uleb128 0x3a
+ 1280 0193 0B       		.uleb128 0xb
+ 1281 0194 3B       		.uleb128 0x3b
+ 1282 0195 0B       		.uleb128 0xb
+ 1283 0196 27       		.uleb128 0x27
+ 1284 0197 19       		.uleb128 0x19
+ 1285 0198 3C       		.uleb128 0x3c
+ 1286 0199 19       		.uleb128 0x19
+ 1287 019a 00       		.byte	0
+ 1288 019b 00       		.byte	0
+ 1289 019c 00       		.byte	0
+ 1290              		.section	.debug_loc,"",%progbits
+ 1291              	.Ldebug_loc0:
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccQk8BDq.s 			page 31
+
+
+ 1292              	.LLST0:
+ 1293 0000 00000000 		.4byte	.LVL7
+ 1294 0004 02000000 		.4byte	.LVL8
+ 1295 0008 0100     		.2byte	0x1
+ 1296 000a 50       		.byte	0x50
+ 1297 000b 02000000 		.4byte	.LVL8
+ 1298 000f 10000000 		.4byte	.LFE6
+ 1299 0013 0400     		.2byte	0x4
+ 1300 0015 F3       		.byte	0xf3
+ 1301 0016 01       		.uleb128 0x1
+ 1302 0017 50       		.byte	0x50
+ 1303 0018 9F       		.byte	0x9f
+ 1304 0019 00000000 		.4byte	0
+ 1305 001d 00000000 		.4byte	0
+ 1306              	.LLST1:
+ 1307 0021 04000000 		.4byte	.LVL9
+ 1308 0025 06000000 		.4byte	.LVL10
+ 1309 0029 0500     		.2byte	0x5
+ 1310 002b 70       		.byte	0x70
+ 1311 002c 00       		.sleb128 0
+ 1312 002d 35       		.byte	0x35
+ 1313 002e 25       		.byte	0x25
+ 1314 002f 9F       		.byte	0x9f
+ 1315 0030 00000000 		.4byte	0
+ 1316 0034 00000000 		.4byte	0
+ 1317              	.LLST2:
+ 1318 0038 00000000 		.4byte	.LVL15
+ 1319 003c 07000000 		.4byte	.LVL16-1
+ 1320 0040 0100     		.2byte	0x1
+ 1321 0042 50       		.byte	0x50
+ 1322 0043 07000000 		.4byte	.LVL16-1
+ 1323 0047 1A000000 		.4byte	.LFE1
+ 1324 004b 0100     		.2byte	0x1
+ 1325 004d 54       		.byte	0x54
+ 1326 004e 00000000 		.4byte	0
+ 1327 0052 00000000 		.4byte	0
+ 1328              		.section	.debug_aranges,"",%progbits
+ 1329 0000 7C000000 		.4byte	0x7c
+ 1330 0004 0200     		.2byte	0x2
+ 1331 0006 00000000 		.4byte	.Ldebug_info0
+ 1332 000a 04       		.byte	0x4
+ 1333 000b 00       		.byte	0
+ 1334 000c 0000     		.2byte	0
+ 1335 000e 0000     		.2byte	0
+ 1336 0010 00000000 		.4byte	.LFB3
+ 1337 0014 2C000000 		.4byte	.LFE3-.LFB3
+ 1338 0018 00000000 		.4byte	.LFB4
+ 1339 001c 0C000000 		.4byte	.LFE4-.LFB4
+ 1340 0020 00000000 		.4byte	.LFB5
+ 1341 0024 0C000000 		.4byte	.LFE5-.LFB5
+ 1342 0028 00000000 		.4byte	.LFB6
+ 1343 002c 10000000 		.4byte	.LFE6-.LFB6
+ 1344 0030 00000000 		.4byte	.LFB7
+ 1345 0034 0C000000 		.4byte	.LFE7-.LFB7
+ 1346 0038 00000000 		.4byte	.LFB8
+ 1347 003c 0C000000 		.4byte	.LFE8-.LFB8
+ 1348 0040 00000000 		.4byte	.LFB9
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccQk8BDq.s 			page 32
+
+
+ 1349 0044 18000000 		.4byte	.LFE9-.LFB9
+ 1350 0048 00000000 		.4byte	.LFB10
+ 1351 004c 0C000000 		.4byte	.LFE10-.LFB10
+ 1352 0050 00000000 		.4byte	.LFB0
+ 1353 0054 1C000000 		.4byte	.LFE0-.LFB0
+ 1354 0058 00000000 		.4byte	.LFB1
+ 1355 005c 1A000000 		.4byte	.LFE1-.LFB1
+ 1356 0060 00000000 		.4byte	.LFB2
+ 1357 0064 14000000 		.4byte	.LFE2-.LFB2
+ 1358 0068 00000000 		.4byte	.LFB11
+ 1359 006c 0C000000 		.4byte	.LFE11-.LFB11
+ 1360 0070 00000000 		.4byte	.LFB12
+ 1361 0074 0C000000 		.4byte	.LFE12-.LFB12
+ 1362 0078 00000000 		.4byte	0
+ 1363 007c 00000000 		.4byte	0
+ 1364              		.section	.debug_ranges,"",%progbits
+ 1365              	.Ldebug_ranges0:
+ 1366 0000 00000000 		.4byte	.LFB3
+ 1367 0004 2C000000 		.4byte	.LFE3
+ 1368 0008 00000000 		.4byte	.LFB4
+ 1369 000c 0C000000 		.4byte	.LFE4
+ 1370 0010 00000000 		.4byte	.LFB5
+ 1371 0014 0C000000 		.4byte	.LFE5
+ 1372 0018 00000000 		.4byte	.LFB6
+ 1373 001c 10000000 		.4byte	.LFE6
+ 1374 0020 00000000 		.4byte	.LFB7
+ 1375 0024 0C000000 		.4byte	.LFE7
+ 1376 0028 00000000 		.4byte	.LFB8
+ 1377 002c 0C000000 		.4byte	.LFE8
+ 1378 0030 00000000 		.4byte	.LFB9
+ 1379 0034 18000000 		.4byte	.LFE9
+ 1380 0038 00000000 		.4byte	.LFB10
+ 1381 003c 0C000000 		.4byte	.LFE10
+ 1382 0040 00000000 		.4byte	.LFB0
+ 1383 0044 1C000000 		.4byte	.LFE0
+ 1384 0048 00000000 		.4byte	.LFB1
+ 1385 004c 1A000000 		.4byte	.LFE1
+ 1386 0050 00000000 		.4byte	.LFB2
+ 1387 0054 14000000 		.4byte	.LFE2
+ 1388 0058 00000000 		.4byte	.LFB11
+ 1389 005c 0C000000 		.4byte	.LFE11
+ 1390 0060 00000000 		.4byte	.LFB12
+ 1391 0064 0C000000 		.4byte	.LFE12
+ 1392 0068 00000000 		.4byte	0
+ 1393 006c 00000000 		.4byte	0
+ 1394              		.section	.debug_line,"",%progbits
+ 1395              	.Ldebug_line0:
+ 1396 0000 BE010000 		.section	.debug_str,"MS",%progbits,1
+ 1396      0200C700 
+ 1396      00000201 
+ 1396      FB0E0D00 
+ 1396      01010101 
+ 1397              	.LASF7:
+ 1398 0000 6C6F6E67 		.ascii	"long long int\000"
+ 1398      206C6F6E 
+ 1398      6720696E 
+ 1398      7400
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccQk8BDq.s 			page 33
+
+
+ 1399              	.LASF16:
+ 1400 000e 72656733 		.ascii	"reg32\000"
+ 1400      3200
+ 1401              	.LASF30:
+ 1402 0014 5744545F 		.ascii	"WDT_StartEx\000"
+ 1402      53746172 
+ 1402      74457800 
+ 1403              	.LASF39:
+ 1404 0020 63757272 		.ascii	"currentState\000"
+ 1404      656E7453 
+ 1404      74617465 
+ 1404      00
+ 1405              	.LASF40:
+ 1406 002d 50726576 		.ascii	"Prev_state\000"
+ 1406      5F737461 
+ 1406      746500
+ 1407              	.LASF50:
+ 1408 0038 433A5C55 		.ascii	"C:\\Users\\JohnP\\Desktop\\embedded\\trunk\\CE4920P"
+ 1408      73657273 
+ 1408      5C4A6F68 
+ 1408      6E505C44 
+ 1408      65736B74 
+ 1409 0065 726F6A65 		.ascii	"roject1\\Design01.cydsn\000"
+ 1409      6374315C 
+ 1409      44657369 
+ 1409      676E3031 
+ 1409      2E637964 
+ 1410              	.LASF26:
+ 1411 007c 5744545F 		.ascii	"WDT_GetPriority\000"
+ 1411      47657450 
+ 1411      72696F72 
+ 1411      69747900 
+ 1412              	.LASF31:
+ 1413 008c 5744545F 		.ascii	"WDT_Stop\000"
+ 1413      53746F70 
+ 1413      00
+ 1414              	.LASF28:
+ 1415 0095 5744545F 		.ascii	"WDT_Disable\000"
+ 1415      44697361 
+ 1415      626C6500 
+ 1416              	.LASF38:
+ 1417 00a1 50524F46 		.ascii	"PROFILE\000"
+ 1417      494C4500 
+ 1418              	.LASF42:
+ 1419 00a9 68656172 		.ascii	"heartbeatCounter\000"
+ 1419      74626561 
+ 1419      74436F75 
+ 1419      6E746572 
+ 1419      00
+ 1420              	.LASF13:
+ 1421 00ba 666C6F61 		.ascii	"float\000"
+ 1421      7400
+ 1422              	.LASF2:
+ 1423 00c0 756E7369 		.ascii	"unsigned char\000"
+ 1423      676E6564 
+ 1423      20636861 
+ 1423      7200
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccQk8BDq.s 			page 34
+
+
+ 1424              	.LASF15:
+ 1425 00ce 72656738 		.ascii	"reg8\000"
+ 1425      00
+ 1426              	.LASF27:
+ 1427 00d3 5744545F 		.ascii	"WDT_Enable\000"
+ 1427      456E6162 
+ 1427      6C6500
+ 1428              	.LASF45:
+ 1429 00de 48454152 		.ascii	"HEARTRATE_HEALTH_Read\000"
+ 1429      54524154 
+ 1429      455F4845 
+ 1429      414C5448 
+ 1429      5F526561 
+ 1430              	.LASF6:
+ 1431 00f4 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1431      20756E73 
+ 1431      69676E65 
+ 1431      6420696E 
+ 1431      7400
+ 1432              	.LASF48:
+ 1433 0106 474E5520 		.ascii	"GNU C 4.8.4 20140526 (release) [ARM/embedded-4_8-br"
+ 1433      4320342E 
+ 1433      382E3420 
+ 1433      32303134 
+ 1433      30353236 
+ 1434 0139 616E6368 		.ascii	"anch revision 211358] -mcpu=cortex-m3 -mthumb -g -O"
+ 1434      20726576 
+ 1434      6973696F 
+ 1434      6E203231 
+ 1434      31333538 
+ 1435 016c 67202D66 		.ascii	"g -ffunction-sections\000"
+ 1435      66756E63 
+ 1435      74696F6E 
+ 1435      2D736563 
+ 1435      74696F6E 
+ 1436              	.LASF4:
+ 1437 0182 73686F72 		.ascii	"short unsigned int\000"
+ 1437      7420756E 
+ 1437      7369676E 
+ 1437      65642069 
+ 1437      6E7400
+ 1438              	.LASF49:
+ 1439 0195 2E5C4765 		.ascii	".\\Generated_Source\\PSoC5\\WDT.c\000"
+ 1439      6E657261 
+ 1439      7465645F 
+ 1439      536F7572 
+ 1439      63655C50 
+ 1440              	.LASF20:
+ 1441 01b4 5744545F 		.ascii	"WDT_SetVector\000"
+ 1441      53657456 
+ 1441      6563746F 
+ 1441      7200
+ 1442              	.LASF52:
+ 1443 01c2 43795764 		.ascii	"CyWdtClear\000"
+ 1443      74436C65 
+ 1443      617200
+ 1444              	.LASF14:
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccQk8BDq.s 			page 35
+
+
+ 1445 01cd 646F7562 		.ascii	"double\000"
+ 1445      6C6500
+ 1446              	.LASF22:
+ 1447 01d4 5744545F 		.ascii	"WDT_SetPriority\000"
+ 1447      53657450 
+ 1447      72696F72 
+ 1447      69747900 
+ 1448              	.LASF44:
+ 1449 01e4 74696D65 		.ascii	"timer_value\000"
+ 1449      725F7661 
+ 1449      6C756500 
+ 1450              	.LASF12:
+ 1451 01f0 75696E74 		.ascii	"uint32\000"
+ 1451      333200
+ 1452              	.LASF37:
+ 1453 01f7 696E6372 		.ascii	"increasingHr\000"
+ 1453      65617369 
+ 1453      6E674872 
+ 1453      00
+ 1454              	.LASF0:
+ 1455 0204 756E7369 		.ascii	"unsigned int\000"
+ 1455      676E6564 
+ 1455      20696E74 
+ 1455      00
+ 1456              	.LASF23:
+ 1457 0211 61646472 		.ascii	"address\000"
+ 1457      65737300 
+ 1458              	.LASF8:
+ 1459 0219 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1459      206C6F6E 
+ 1459      6720756E 
+ 1459      7369676E 
+ 1459      65642069 
+ 1460              	.LASF29:
+ 1461 0230 5744545F 		.ascii	"WDT_Start\000"
+ 1461      53746172 
+ 1461      7400
+ 1462              	.LASF32:
+ 1463 023a 5744545F 		.ascii	"WDT_SetPending\000"
+ 1463      53657450 
+ 1463      656E6469 
+ 1463      6E6700
+ 1464              	.LASF36:
+ 1465 0249 61766572 		.ascii	"average\000"
+ 1465      61676500 
+ 1466              	.LASF18:
+ 1467 0251 53544154 		.ascii	"STATE\000"
+ 1467      4500
+ 1468              	.LASF17:
+ 1469 0257 63796973 		.ascii	"cyisraddress\000"
+ 1469      72616464 
+ 1469      72657373 
+ 1469      00
+ 1470              	.LASF43:
+ 1471 0264 74696D65 		.ascii	"timer_status\000"
+ 1471      725F7374 
+ 1471      61747573 
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccQk8BDq.s 			page 36
+
+
+ 1471      00
+ 1472              	.LASF41:
+ 1473 0271 73706565 		.ascii	"speed\000"
+ 1473      6400
+ 1474              	.LASF24:
+ 1475 0277 7072696F 		.ascii	"priority\000"
+ 1475      72697479 
+ 1475      00
+ 1476              	.LASF51:
+ 1477 0280 5744545F 		.ascii	"WDT_GetState\000"
+ 1477      47657453 
+ 1477      74617465 
+ 1477      00
+ 1478              	.LASF34:
+ 1479 028d 68656172 		.ascii	"heartrate\000"
+ 1479      74726174 
+ 1479      6500
+ 1480              	.LASF9:
+ 1481 0297 73697A65 		.ascii	"sizetype\000"
+ 1481      74797065 
+ 1481      00
+ 1482              	.LASF10:
+ 1483 02a0 63686172 		.ascii	"char\000"
+ 1483      00
+ 1484              	.LASF21:
+ 1485 02a5 72616D56 		.ascii	"ramVectorTable\000"
+ 1485      6563746F 
+ 1485      72546162 
+ 1485      6C6500
+ 1486              	.LASF25:
+ 1487 02b4 5744545F 		.ascii	"WDT_GetVector\000"
+ 1487      47657456 
+ 1487      6563746F 
+ 1487      7200
+ 1488              	.LASF3:
+ 1489 02c2 73686F72 		.ascii	"short int\000"
+ 1489      7420696E 
+ 1489      7400
+ 1490              	.LASF19:
+ 1491 02cc 5744545F 		.ascii	"WDT_Interrupt\000"
+ 1491      496E7465 
+ 1491      72727570 
+ 1491      7400
+ 1492              	.LASF11:
+ 1493 02da 75696E74 		.ascii	"uint8\000"
+ 1493      3800
+ 1494              	.LASF47:
+ 1495 02e0 55495F48 		.ascii	"UI_HEALTH_Read\000"
+ 1495      45414C54 
+ 1495      485F5265 
+ 1495      616400
+ 1496              	.LASF5:
+ 1497 02ef 6C6F6E67 		.ascii	"long int\000"
+ 1497      20696E74 
+ 1497      00
+ 1498              	.LASF33:
+ 1499 02f8 5744545F 		.ascii	"WDT_ClearPending\000"
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccQk8BDq.s 			page 37
+
+
+ 1499      436C6561 
+ 1499      7250656E 
+ 1499      64696E67 
+ 1499      00
+ 1500              	.LASF35:
+ 1501 0309 52455345 		.ascii	"RESET_CAUSE\000"
+ 1501      545F4341 
+ 1501      55534500 
+ 1502              	.LASF1:
+ 1503 0315 7369676E 		.ascii	"signed char\000"
+ 1503      65642063 
+ 1503      68617200 
+ 1504              	.LASF46:
+ 1505 0321 4D4F544F 		.ascii	"MOTOR_HEALTH_Read\000"
+ 1505      525F4845 
+ 1505      414C5448 
+ 1505      5F526561 
+ 1505      6400
+ 1506              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.8.4 20140526 (release) [ARM/embedded-4_8-br

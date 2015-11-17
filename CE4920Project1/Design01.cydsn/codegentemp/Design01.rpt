@@ -1,14 +1,14 @@
-Loading plugins phase: Elapsed time ==> 0s.426ms
+Loading plugins phase: Elapsed time ==> 1s.203ms
 Initializing data phase: Elapsed time ==> 0s.000ms
 <CYPRESSTAG name="CyDsfit arguments...">
-cydsfit arguments: -.fdsnotice -.fdswarpdepfile=warp_dependencies.txt -.fdselabdepfile=elab_dependencies.txt -.fdsbldfile=generated_files.txt -p C:\repositories\embedded\trunk\CE4920Project1\Design01.cydsn\Design01.cyprj -d CY8C5868AXI-LP035 -s C:\repositories\embedded\trunk\CE4920Project1\Design01.cydsn\Generated_Source\PSoC5 -- -yv2 -q10 -ygs -o0 -v3 -.fftcfgtype=LE</CYPRESSTAG>
+cydsfit arguments: -.fdsnotice -.fdswarpdepfile=warp_dependencies.txt -.fdselabdepfile=elab_dependencies.txt -.fdsbldfile=generated_files.txt -p C:\Users\JohnP\Desktop\embedded\trunk\CE4920Project1\Design01.cydsn\Design01.cyprj -d CY8C5868AXI-LP035 -s C:\Users\JohnP\Desktop\embedded\trunk\CE4920Project1\Design01.cydsn\Generated_Source\PSoC5 -- -yv2 -q10 -ygs -o0 -v3 -.fftcfgtype=LE</CYPRESSTAG>
 <CYPRESSTAG name="Design elaboration results...">
-ADD: sdb.M0065: information: Analog terminal "HEARTRATE_ANALOG_IN.analog_0" on TopDesign is unconnected.
- * C:\repositories\embedded\trunk\CE4920Project1\Design01.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1667)
- * C:\repositories\embedded\trunk\CE4920Project1\Design01.cydsn\TopDesign\TopDesign.cysch (Shape_36.1)
+ADD: sdb.M0065: information: Analog terminal "WaveDAC8_1.Wave" on TopDesign is unconnected.
+ * C:\Users\JohnP\Desktop\embedded\trunk\CE4920Project1\Design01.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1861)
+ * C:\Users\JohnP\Desktop\embedded\trunk\CE4920Project1\Design01.cydsn\TopDesign\TopDesign.cysch (Shape_73.8)
 
 </CYPRESSTAG>
-Elaboration phase: Elapsed time ==> 4s.481ms
+Elaboration phase: Elapsed time ==> 9s.532ms
 <CYPRESSTAG name="HDL generation results...">
 </CYPRESSTAG>
 HDL generation phase: Elapsed time ==> 0s.217ms
@@ -28,24 +28,24 @@ HDL generation phase: Elapsed time ==> 0s.217ms
 
 ======================================================================
 Compiling:  Design01.v
-Program  :   C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\warp\bin/warp.exe
-Options  :    -yv2 -q10 -ygs -o0 -v3 -.fftcfgtype=LE -ya -.fftprj=C:\repositories\embedded\trunk\CE4920Project1\Design01.cydsn\Design01.cyprj -dcpsoc3 Design01.v -verilog
+Program  :   C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\warp\bin/warp.exe
+Options  :    -yv2 -q10 -ygs -o0 -v3 -.fftcfgtype=LE -ya -.fftprj=C:\Users\JohnP\Desktop\embedded\trunk\CE4920Project1\Design01.cydsn\Design01.cyprj -dcpsoc3 Design01.v -verilog
 ======================================================================
 
 ======================================================================
 Compiling:  Design01.v
-Program  :   C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\warp\bin/warp.exe
-Options  :    -yv2 -q10 -ygs -o0 -v3 -.fftcfgtype=LE -ya -.fftprj=C:\repositories\embedded\trunk\CE4920Project1\Design01.cydsn\Design01.cyprj -dcpsoc3 Design01.v -verilog
+Program  :   C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\warp\bin/warp.exe
+Options  :    -yv2 -q10 -ygs -o0 -v3 -.fftcfgtype=LE -ya -.fftprj=C:\Users\JohnP\Desktop\embedded\trunk\CE4920Project1\Design01.cydsn\Design01.cyprj -dcpsoc3 Design01.v -verilog
 ======================================================================
 
 ======================================================================
 Compiling:  Design01.v
 Program  :   vlogfe
-Options  :    -yv2 -q10 -ygs -o0 -v3 -.fftcfgtype=LE -ya -.fftprj=C:\repositories\embedded\trunk\CE4920Project1\Design01.cydsn\Design01.cyprj -dcpsoc3 -verilog Design01.v
+Options  :    -yv2 -q10 -ygs -o0 -v3 -.fftcfgtype=LE -ya -.fftprj=C:\Users\JohnP\Desktop\embedded\trunk\CE4920Project1\Design01.cydsn\Design01.cyprj -dcpsoc3 -verilog Design01.v
 ======================================================================
 
 vlogfe V6.3 IR 41:  Verilog parser
-Tue Nov 03 21:15:42 2015
+Wed Nov 04 16:42:11 2015
 
 
 ======================================================================
@@ -55,53 +55,53 @@ Options  :    -yv2 -q10 Design01.v
 ======================================================================
 
 vpp V6.3 IR 41:  Verilog Pre-Processor
-Tue Nov 03 21:15:42 2015
+Wed Nov 04 16:42:11 2015
 
-Flattening file 'C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\warp\..\psoc\content\cyprimitives\CyPrimitives.cylib\ZeroTerminal\ZeroTerminal.v'
-Flattening file 'C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\warp\..\psoc\content\cyprimitives\CyPrimitives.cylib\cy_analog_virtualmux_v1_0\cy_analog_virtualmux_v1_0.v'
-Flattening file 'C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\warp\..\psoc\content\cyprimitives\CyPrimitives.cylib\demux_v1_10\demux_v1_10.v'
-Flattening file 'C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\warp\..\psoc\content\cyprimitives\CyPrimitives.cylib\cy_virtualmux_v1_0\cy_virtualmux_v1_0.v'
-Flattening file 'C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\warp\..\psoc\content\cyprimitives\CyPrimitives.cylib\or_v1_0\or_v1_0.v'
-Flattening file 'C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\warp\..\psoc\content\cyprimitives\CyPrimitives.cylib\cydff_v1_30\cydff_v1_30.v'
-Flattening file 'C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\warp\..\psoc\content\cyprimitives\CyPrimitives.cylib\not_v1_0\not_v1_0.v'
-Flattening file 'C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\warp\..\psoc\content\cyprimitives\CyPrimitives.cylib\cy_vref_v1_60\cy_vref_v1_60.v'
-Flattening file 'C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\warp\..\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CapSense_CSD_AMux_v3_50\CapSense_CSD_AMux_v3_50.v'
-Flattening file 'C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\warp\lib\common\cypress.v'
-Flattening file 'C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\warp\lib\common\cy_psoc3_inc.v'
-Flattening file 'C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\warp\..\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CapSense_CSD_MeasureCh_v3_50\CapSense_CSD_MeasureCh_v3_50.v'
-Flattening file 'C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\warp\lib\common\cypress.v'
-Flattening file 'C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\warp\..\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CapSense_CSD_ClockGen_v3_50\CapSense_CSD_ClockGen_v3_50.v'
-Flattening file 'C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\warp\lib\common\cypress.v'
-Flattening file 'C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\warp\..\psoc\content\cyprimitives\CyPrimitives.cylib\OneTerminal\OneTerminal.v'
-Flattening file 'C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\warp\..\psoc\content\cyprimitives\CyPrimitives.cylib\cy_constant_v1_0\cy_constant_v1_0.v'
-Flattening file 'C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\warp\..\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\B_Counter_v3_0\B_Counter_v3_0.v'
-Flattening file 'C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\warp\lib\common\cypress.v'
-Flattening file 'C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\warp\..\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\B_PWM_v3_30\B_PWM_v3_30.v'
-Flattening file 'C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\warp\lib\common\cypress.v'
-Flattening file 'C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\warp\..\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\B_Timer_v2_70\B_Timer_v2_70.v'
-Flattening file 'C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\warp\lib\common\cypress.v'
+Flattening file 'C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\warp\..\psoc\content\cyprimitives\CyPrimitives.cylib\ZeroTerminal\ZeroTerminal.v'
+Flattening file 'C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\warp\..\psoc\content\cyprimitives\CyPrimitives.cylib\cy_analog_virtualmux_v1_0\cy_analog_virtualmux_v1_0.v'
+Flattening file 'C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\warp\..\psoc\content\cyprimitives\CyPrimitives.cylib\demux_v1_10\demux_v1_10.v'
+Flattening file 'C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\warp\..\psoc\content\cyprimitives\CyPrimitives.cylib\cy_virtualmux_v1_0\cy_virtualmux_v1_0.v'
+Flattening file 'C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\warp\..\psoc\content\cyprimitives\CyPrimitives.cylib\or_v1_0\or_v1_0.v'
+Flattening file 'C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\warp\..\psoc\content\cyprimitives\CyPrimitives.cylib\cydff_v1_30\cydff_v1_30.v'
+Flattening file 'C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\warp\..\psoc\content\cyprimitives\CyPrimitives.cylib\not_v1_0\not_v1_0.v'
+Flattening file 'C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\warp\..\psoc\content\cyprimitives\CyPrimitives.cylib\cy_vref_v1_60\cy_vref_v1_60.v'
+Flattening file 'C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\warp\..\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CapSense_CSD_AMux_v3_50\CapSense_CSD_AMux_v3_50.v'
+Flattening file 'C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\warp\lib\common\cypress.v'
+Flattening file 'C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\warp\lib\common\cy_psoc3_inc.v'
+Flattening file 'C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\warp\..\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CapSense_CSD_MeasureCh_v3_50\CapSense_CSD_MeasureCh_v3_50.v'
+Flattening file 'C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\warp\lib\common\cypress.v'
+Flattening file 'C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\warp\..\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CapSense_CSD_ClockGen_v3_50\CapSense_CSD_ClockGen_v3_50.v'
+Flattening file 'C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\warp\lib\common\cypress.v'
+Flattening file 'C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\warp\..\psoc\content\cyprimitives\CyPrimitives.cylib\OneTerminal\OneTerminal.v'
+Flattening file 'C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\warp\..\psoc\content\cyprimitives\CyPrimitives.cylib\cy_constant_v1_0\cy_constant_v1_0.v'
+Flattening file 'C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\warp\..\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\B_Counter_v3_0\B_Counter_v3_0.v'
+Flattening file 'C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\warp\lib\common\cypress.v'
+Flattening file 'C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\warp\..\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\B_PWM_v3_30\B_PWM_v3_30.v'
+Flattening file 'C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\warp\lib\common\cypress.v'
+Flattening file 'C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\warp\..\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\B_Timer_v2_70\B_Timer_v2_70.v'
+Flattening file 'C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\warp\lib\common\cypress.v'
 
 vpp:  No errors.
 
 Library 'work' => directory 'lcpsoc3'
 General_symbol_table
 General_symbol_table
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\warp\lib\common\std.vhd'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\warp\lib\common\cypress.vhd'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\warp\lib\common\work\cypress.vif'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\warp\lib\ieee\work\stdlogic.vif'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\warp\lib\common\stdlogic\lpmpkg.vif'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\warp\lib\common\stdlogic\rtlpkg.vif'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\warp\lib\common\stdlogic\mod_cnst.vif'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\warp\lib\common\stdlogic\mod_mthv.vif'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\warp\lib\common\stdlogic\mod_genv.vif'.
+Linking 'C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\warp\lib\common\std.vhd'.
+Linking 'C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\warp\lib\common\cypress.vhd'.
+Linking 'C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\warp\lib\common\work\cypress.vif'.
+Linking 'C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\warp\lib\ieee\work\stdlogic.vif'.
+Linking 'C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\warp\lib\common\stdlogic\lpmpkg.vif'.
+Linking 'C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\warp\lib\common\stdlogic\rtlpkg.vif'.
+Linking 'C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\warp\lib\common\stdlogic\mod_cnst.vif'.
+Linking 'C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\warp\lib\common\stdlogic\mod_mthv.vif'.
+Linking 'C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\warp\lib\common\stdlogic\mod_genv.vif'.
 Using control file 'Design01.ctl'.
-C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\warp\..\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\B_PWM_v3_30\B_PWM_v3_30.v (line 947, col 46):  Note: Substituting module 'sub_vi_vv' for '-'.
-C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\warp\..\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\B_PWM_v3_30\B_PWM_v3_30.v (line 977, col 46):  Note: Substituting module 'add_vi_vv' for '+'.
-C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\warp\..\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\B_Timer_v2_70\B_Timer_v2_70.v (line 368, col 46):  Note: Substituting module 'cmp_vv_vv' for '='.
-C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\warp\..\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\B_Timer_v2_70\B_Timer_v2_70.v (line 374, col 62):  Note: Substituting module 'add_vv_vv' for '+'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\warp\lib\common\stdlogic\cy_psoc3pkg.vif'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\warp\lib\common\stdlogic\cy_psoc3.vif'.
+C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\warp\..\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\B_PWM_v3_30\B_PWM_v3_30.v (line 947, col 46):  Note: Substituting module 'sub_vi_vv' for '-'.
+C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\warp\..\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\B_PWM_v3_30\B_PWM_v3_30.v (line 977, col 46):  Note: Substituting module 'add_vi_vv' for '+'.
+C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\warp\..\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\B_Timer_v2_70\B_Timer_v2_70.v (line 368, col 46):  Note: Substituting module 'cmp_vv_vv' for '='.
+C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\warp\..\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\B_Timer_v2_70\B_Timer_v2_70.v (line 374, col 62):  Note: Substituting module 'add_vv_vv' for '+'.
+Linking 'C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\warp\lib\common\stdlogic\cy_psoc3pkg.vif'.
+Linking 'C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\warp\lib\common\stdlogic\cy_psoc3.vif'.
 
 vlogfe:  No errors.
 
@@ -109,44 +109,44 @@ vlogfe:  No errors.
 ======================================================================
 Compiling:  Design01.v
 Program  :   tovif
-Options  :    -yv2 -q10 -ygs -o0 -v3 -.fftcfgtype=LE -ya -.fftprj=C:\repositories\embedded\trunk\CE4920Project1\Design01.cydsn\Design01.cyprj -dcpsoc3 -verilog Design01.v
+Options  :    -yv2 -q10 -ygs -o0 -v3 -.fftcfgtype=LE -ya -.fftprj=C:\Users\JohnP\Desktop\embedded\trunk\CE4920Project1\Design01.cydsn\Design01.cyprj -dcpsoc3 -verilog Design01.v
 ======================================================================
 
 tovif V6.3 IR 41:  High-level synthesis
-Tue Nov 03 21:15:43 2015
+Wed Nov 04 16:42:12 2015
 
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\warp\lib\common\std.vhd'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\warp\lib\common\cypress.vhd'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\warp\lib\common\work\cypress.vif'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\warp\lib\ieee\work\stdlogic.vif'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\warp\lib\common\stdlogic\lpmpkg.vif'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\warp\lib\common\stdlogic\rtlpkg.vif'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\warp\lib\common\stdlogic\mod_cnst.vif'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\warp\lib\common\stdlogic\mod_mthv.vif'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\warp\lib\common\stdlogic\mod_genv.vif'.
-Linking 'C:\repositories\embedded\trunk\CE4920Project1\Design01.cydsn\codegentemp\Design01.ctl'.
-Linking 'C:\repositories\embedded\trunk\CE4920Project1\Design01.cydsn\codegentemp\Design01.v'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\ZeroTerminal\ZeroTerminal.v'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\cy_analog_virtualmux_v1_0\cy_analog_virtualmux_v1_0.v'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\demux_v1_10\demux_v1_10.v'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\cy_virtualmux_v1_0\cy_virtualmux_v1_0.v'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\or_v1_0\or_v1_0.v'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\cydff_v1_30\cydff_v1_30.v'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\not_v1_0\not_v1_0.v'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\cy_vref_v1_60\cy_vref_v1_60.v'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CapSense_CSD_AMux_v3_50\CapSense_CSD_AMux_v3_50.v'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\warp\lib\common\cypress.v'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\warp\lib\common\cy_psoc3_inc.v'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CapSense_CSD_MeasureCh_v3_50\CapSense_CSD_MeasureCh_v3_50.v'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CapSense_CSD_ClockGen_v3_50\CapSense_CSD_ClockGen_v3_50.v'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\OneTerminal\OneTerminal.v'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\cy_constant_v1_0\cy_constant_v1_0.v'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\B_Counter_v3_0\B_Counter_v3_0.v'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\B_PWM_v3_30\B_PWM_v3_30.v'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\B_Timer_v2_70\B_Timer_v2_70.v'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\warp\lib\common\stdlogic\cy_psoc3pkg.vif'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\warp\lib\common\stdlogic\cy_psoc3.vif'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\warp\lib\lcpsoc3\stdlogic\mod_cnst.vif'.
+Linking 'C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\warp\lib\common\std.vhd'.
+Linking 'C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\warp\lib\common\cypress.vhd'.
+Linking 'C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\warp\lib\common\work\cypress.vif'.
+Linking 'C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\warp\lib\ieee\work\stdlogic.vif'.
+Linking 'C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\warp\lib\common\stdlogic\lpmpkg.vif'.
+Linking 'C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\warp\lib\common\stdlogic\rtlpkg.vif'.
+Linking 'C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\warp\lib\common\stdlogic\mod_cnst.vif'.
+Linking 'C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\warp\lib\common\stdlogic\mod_mthv.vif'.
+Linking 'C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\warp\lib\common\stdlogic\mod_genv.vif'.
+Linking 'C:\Users\JohnP\Desktop\embedded\trunk\CE4920Project1\Design01.cydsn\codegentemp\Design01.ctl'.
+Linking 'C:\Users\JohnP\Desktop\embedded\trunk\CE4920Project1\Design01.cydsn\codegentemp\Design01.v'.
+Linking 'C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\ZeroTerminal\ZeroTerminal.v'.
+Linking 'C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\cy_analog_virtualmux_v1_0\cy_analog_virtualmux_v1_0.v'.
+Linking 'C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\demux_v1_10\demux_v1_10.v'.
+Linking 'C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\cy_virtualmux_v1_0\cy_virtualmux_v1_0.v'.
+Linking 'C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\or_v1_0\or_v1_0.v'.
+Linking 'C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\cydff_v1_30\cydff_v1_30.v'.
+Linking 'C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\not_v1_0\not_v1_0.v'.
+Linking 'C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\cy_vref_v1_60\cy_vref_v1_60.v'.
+Linking 'C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CapSense_CSD_AMux_v3_50\CapSense_CSD_AMux_v3_50.v'.
+Linking 'C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\warp\lib\common\cypress.v'.
+Linking 'C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\warp\lib\common\cy_psoc3_inc.v'.
+Linking 'C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CapSense_CSD_MeasureCh_v3_50\CapSense_CSD_MeasureCh_v3_50.v'.
+Linking 'C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CapSense_CSD_ClockGen_v3_50\CapSense_CSD_ClockGen_v3_50.v'.
+Linking 'C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\OneTerminal\OneTerminal.v'.
+Linking 'C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\cy_constant_v1_0\cy_constant_v1_0.v'.
+Linking 'C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\B_Counter_v3_0\B_Counter_v3_0.v'.
+Linking 'C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\B_PWM_v3_30\B_PWM_v3_30.v'.
+Linking 'C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\B_Timer_v2_70\B_Timer_v2_70.v'.
+Linking 'C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\warp\lib\common\stdlogic\cy_psoc3pkg.vif'.
+Linking 'C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\warp\lib\common\stdlogic\cy_psoc3.vif'.
+Linking 'C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\warp\lib\lcpsoc3\stdlogic\mod_cnst.vif'.
 
 tovif:  No errors.
 
@@ -154,45 +154,45 @@ tovif:  No errors.
 ======================================================================
 Compiling:  Design01.v
 Program  :   topld
-Options  :    -yv2 -q10 -ygs -o0 -v3 -.fftcfgtype=LE -ya -.fftprj=C:\repositories\embedded\trunk\CE4920Project1\Design01.cydsn\Design01.cyprj -dcpsoc3 -verilog Design01.v
+Options  :    -yv2 -q10 -ygs -o0 -v3 -.fftcfgtype=LE -ya -.fftprj=C:\Users\JohnP\Desktop\embedded\trunk\CE4920Project1\Design01.cydsn\Design01.cyprj -dcpsoc3 -verilog Design01.v
 ======================================================================
 
 topld V6.3 IR 41:  Synthesis and optimization
-Tue Nov 03 21:15:44 2015
+Wed Nov 04 16:42:14 2015
 
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\warp\lib\common\std.vhd'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\warp\lib\common\cypress.vhd'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\warp\lib\common\work\cypress.vif'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\warp\lib\ieee\work\stdlogic.vif'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\warp\lib\common\stdlogic\lpmpkg.vif'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\warp\lib\common\stdlogic\rtlpkg.vif'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\warp\lib\common\stdlogic\mod_cnst.vif'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\warp\lib\common\stdlogic\mod_mthv.vif'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\warp\lib\common\stdlogic\mod_genv.vif'.
-Linking 'C:\repositories\embedded\trunk\CE4920Project1\Design01.cydsn\codegentemp\Design01.ctl'.
-Linking 'C:\repositories\embedded\trunk\CE4920Project1\Design01.cydsn\codegentemp\Design01.v'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\ZeroTerminal\ZeroTerminal.v'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\cy_analog_virtualmux_v1_0\cy_analog_virtualmux_v1_0.v'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\demux_v1_10\demux_v1_10.v'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\cy_virtualmux_v1_0\cy_virtualmux_v1_0.v'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\or_v1_0\or_v1_0.v'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\cydff_v1_30\cydff_v1_30.v'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\not_v1_0\not_v1_0.v'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\cy_vref_v1_60\cy_vref_v1_60.v'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CapSense_CSD_AMux_v3_50\CapSense_CSD_AMux_v3_50.v'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\warp\lib\common\cypress.v'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\warp\lib\common\cy_psoc3_inc.v'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CapSense_CSD_MeasureCh_v3_50\CapSense_CSD_MeasureCh_v3_50.v'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CapSense_CSD_ClockGen_v3_50\CapSense_CSD_ClockGen_v3_50.v'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\OneTerminal\OneTerminal.v'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\cy_constant_v1_0\cy_constant_v1_0.v'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\B_Counter_v3_0\B_Counter_v3_0.v'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\B_PWM_v3_30\B_PWM_v3_30.v'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\B_Timer_v2_70\B_Timer_v2_70.v'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\warp\lib\common\stdlogic\cy_psoc3pkg.vif'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\warp\lib\common\stdlogic\cy_psoc3.vif'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\warp\lib\lcpsoc3\stdlogic\mod_cnst.vif'.
-Linking 'C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\warp\lib\lcpsoc3\stdlogic\cpsoc3.vif'.
+Linking 'C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\warp\lib\common\std.vhd'.
+Linking 'C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\warp\lib\common\cypress.vhd'.
+Linking 'C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\warp\lib\common\work\cypress.vif'.
+Linking 'C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\warp\lib\ieee\work\stdlogic.vif'.
+Linking 'C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\warp\lib\common\stdlogic\lpmpkg.vif'.
+Linking 'C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\warp\lib\common\stdlogic\rtlpkg.vif'.
+Linking 'C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\warp\lib\common\stdlogic\mod_cnst.vif'.
+Linking 'C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\warp\lib\common\stdlogic\mod_mthv.vif'.
+Linking 'C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\warp\lib\common\stdlogic\mod_genv.vif'.
+Linking 'C:\Users\JohnP\Desktop\embedded\trunk\CE4920Project1\Design01.cydsn\codegentemp\Design01.ctl'.
+Linking 'C:\Users\JohnP\Desktop\embedded\trunk\CE4920Project1\Design01.cydsn\codegentemp\Design01.v'.
+Linking 'C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\ZeroTerminal\ZeroTerminal.v'.
+Linking 'C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\cy_analog_virtualmux_v1_0\cy_analog_virtualmux_v1_0.v'.
+Linking 'C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\demux_v1_10\demux_v1_10.v'.
+Linking 'C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\cy_virtualmux_v1_0\cy_virtualmux_v1_0.v'.
+Linking 'C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\or_v1_0\or_v1_0.v'.
+Linking 'C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\cydff_v1_30\cydff_v1_30.v'.
+Linking 'C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\not_v1_0\not_v1_0.v'.
+Linking 'C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\cy_vref_v1_60\cy_vref_v1_60.v'.
+Linking 'C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CapSense_CSD_AMux_v3_50\CapSense_CSD_AMux_v3_50.v'.
+Linking 'C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\warp\lib\common\cypress.v'.
+Linking 'C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\warp\lib\common\cy_psoc3_inc.v'.
+Linking 'C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CapSense_CSD_MeasureCh_v3_50\CapSense_CSD_MeasureCh_v3_50.v'.
+Linking 'C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CapSense_CSD_ClockGen_v3_50\CapSense_CSD_ClockGen_v3_50.v'.
+Linking 'C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\OneTerminal\OneTerminal.v'.
+Linking 'C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\cy_constant_v1_0\cy_constant_v1_0.v'.
+Linking 'C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\B_Counter_v3_0\B_Counter_v3_0.v'.
+Linking 'C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\B_PWM_v3_30\B_PWM_v3_30.v'.
+Linking 'C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\B_Timer_v2_70\B_Timer_v2_70.v'.
+Linking 'C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\warp\lib\common\stdlogic\cy_psoc3pkg.vif'.
+Linking 'C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\warp\lib\common\stdlogic\cy_psoc3.vif'.
+Linking 'C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\warp\lib\lcpsoc3\stdlogic\mod_cnst.vif'.
+Linking 'C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\warp\lib\lcpsoc3\stdlogic\cpsoc3.vif'.
 
 ----------------------------------------------------------
 Detecting unused logic.
@@ -532,47 +532,47 @@ Removing Lhs of wire \PGA_1:Net_38\[31] = zero[8]
 Removing Lhs of wire \PGA_1:Net_39\[32] = zero[8]
 Removing Rhs of wire \WaveDAC8_1:Net_183\[50] = \WaveDAC8_1:demux:tmp__demux_0_reg\[55]
 Removing Rhs of wire \WaveDAC8_1:Net_107\[53] = \WaveDAC8_1:demux:tmp__demux_1_reg\[58]
-Removing Rhs of wire \WaveDAC8_1:Net_134\[56] = \WaveDAC8_1:cydff_1\[68]
+Removing Rhs of wire \WaveDAC8_1:Net_134\[56] = \WaveDAC8_1:cydff_1\[69]
 Removing Lhs of wire \WaveDAC8_1:Net_336\[57] = \WaveDAC8_1:Net_279\[41]
 Removing Lhs of wire \WaveDAC8_1:VDAC8:Net_83\[60] = zero[8]
 Removing Lhs of wire \WaveDAC8_1:VDAC8:Net_81\[61] = zero[8]
 Removing Lhs of wire \WaveDAC8_1:VDAC8:Net_82\[62] = zero[8]
-Removing Lhs of wire Net_353[69] = zero[8]
-Removing Lhs of wire tmpOE__Speaker_Output_net_0[71] = one[24]
-Removing Lhs of wire \CapSense:CompCH0:clock\[83] = zero[8]
-Removing Rhs of wire \CapSense:Cmp_CH0\[85] = \CapSense:CompCH0:Net_1\[84]
-Removing Lhs of wire \CapSense:IdacCH0:Net_125\[88] = zero[8]
-Removing Lhs of wire \CapSense:IdacCH0:Net_158\[89] = zero[8]
-Removing Rhs of wire \CapSense:IdacCH0:Net_123\[90] = \CapSense:IdacCH0:Net_157\[93]
-Removing Lhs of wire \CapSense:IdacCH0:Net_195\[96] = zero[8]
-Removing Lhs of wire \CapSense:tmpOE__CmodCH0_net_0\[99] = one[24]
-Removing Lhs of wire \CapSense:tmpOE__PortCH0_net_0\[106] = zero[8]
-Removing Rhs of wire \CapSense:PreChargeClk\[114] = \CapSense:ClockGen:tmp_pclk\[365]
-Removing Lhs of wire \CapSense:Net_375\[119] = zero[8]
-Removing Rhs of wire \CapSense:clk\[121] = \CapSense:Net_1644\[374]
-Removing Lhs of wire \CapSense:Net_373\[122] = one[24]
-Removing Rhs of wire \CapSense:DigitalClk\[125] = \CapSense:ClockGen:tmp_dpulse\[232]
-Removing Rhs of wire \CapSense:mrst\[202] = \CapSense:ClockGen:cstate_1\[359]
-Removing Lhs of wire \CapSense:MeasureCH0:load_enable\[208] = \CapSense:MeasureCH0:wndState_0\[205]
-Removing Rhs of wire \CapSense:Net_1603\[212] = \CapSense:MeasureCH0:wndState_3\[201]
-Removing Lhs of wire \CapSense:Net_371\[214] = one[24]
-Removing Rhs of wire \CapSense:ClockGen:inter_reset\[231] = \CapSense:ClockGen:cstate_0\[360]
-Removing Lhs of wire \CapSense:ClockGen:cs_addr_2\[234] = zero[8]
-Removing Rhs of wire \CapSense:ClockGen:cs_addr_1\[235] = \CapSense:ClockGen:z0\[239]
-Removing Lhs of wire \CapSense:ClockGen:cs_addr_0\[236] = \CapSense:ClockGen:inter_reset\[231]
-Removing Lhs of wire \CapSense:ClockGen:prs_cs_addr_2\[270] = \CapSense:ClockGen:inter_reset\[231]
-Removing Lhs of wire \CapSense:ClockGen:prs_cs_addr_1\[271] = zero[8]
-Removing Lhs of wire \CapSense:ClockGen:prs_cs_addr_0\[272] = \CapSense:ClockGen:clock_detect_reg\[219]
-Removing Lhs of wire \CapSense:ClockGen:tmp_ppulse\[356] = \CapSense:ClockGen:tmp_ppulse_reg\[353]
-Removing Lhs of wire \CapSense:ClockGen:mesen\[361] = \CapSense:ClockGen:control_1\[228]
-Removing Lhs of wire \CapSense:ClockGen:syncen\[362] = \CapSense:ClockGen:control_0\[229]
-Removing Lhs of wire \CapSense:ClockGen:prescaler\[363] = \CapSense:ClockGen:tmp_ppulse_reg\[353]
-Removing Lhs of wire \CapSense:ClockGen:bitstream\[364] = \CapSense:ClockGen:cmsb_reg\[347]
-Removing Lhs of wire \CapSense:ClockGen:work_en\[367] = \CapSense:ClockGen:cstate_2\[358]
-Removing Lhs of wire \CapSense:ClockGen:ch0en\[368] = \CapSense:ClockGen:control_2\[227]
-Removing Lhs of wire \Comp:clock\[410] = zero[8]
-Removing Rhs of wire Net_1032[412] = \Comp:Net_1\[411]
-Removing Lhs of wire tmpOE__HEARTRATE_ANALOG_IN_net_0[415] = one[24]
+Removing Lhs of wire Net_353[70] = zero[8]
+Removing Lhs of wire tmpOE__Speaker_Output_net_0[72] = one[24]
+Removing Lhs of wire \CapSense:CompCH0:clock\[84] = zero[8]
+Removing Rhs of wire \CapSense:Cmp_CH0\[86] = \CapSense:CompCH0:Net_1\[85]
+Removing Lhs of wire \CapSense:IdacCH0:Net_125\[89] = zero[8]
+Removing Lhs of wire \CapSense:IdacCH0:Net_158\[90] = zero[8]
+Removing Rhs of wire \CapSense:IdacCH0:Net_123\[91] = \CapSense:IdacCH0:Net_157\[94]
+Removing Lhs of wire \CapSense:IdacCH0:Net_195\[97] = zero[8]
+Removing Lhs of wire \CapSense:tmpOE__CmodCH0_net_0\[100] = one[24]
+Removing Lhs of wire \CapSense:tmpOE__PortCH0_net_0\[107] = zero[8]
+Removing Rhs of wire \CapSense:PreChargeClk\[115] = \CapSense:ClockGen:tmp_pclk\[366]
+Removing Lhs of wire \CapSense:Net_375\[120] = zero[8]
+Removing Rhs of wire \CapSense:clk\[122] = \CapSense:Net_1644\[375]
+Removing Lhs of wire \CapSense:Net_373\[123] = one[24]
+Removing Rhs of wire \CapSense:DigitalClk\[126] = \CapSense:ClockGen:tmp_dpulse\[233]
+Removing Rhs of wire \CapSense:mrst\[203] = \CapSense:ClockGen:cstate_1\[360]
+Removing Lhs of wire \CapSense:MeasureCH0:load_enable\[209] = \CapSense:MeasureCH0:wndState_0\[206]
+Removing Rhs of wire \CapSense:Net_1603\[213] = \CapSense:MeasureCH0:wndState_3\[202]
+Removing Lhs of wire \CapSense:Net_371\[215] = one[24]
+Removing Rhs of wire \CapSense:ClockGen:inter_reset\[232] = \CapSense:ClockGen:cstate_0\[361]
+Removing Lhs of wire \CapSense:ClockGen:cs_addr_2\[235] = zero[8]
+Removing Rhs of wire \CapSense:ClockGen:cs_addr_1\[236] = \CapSense:ClockGen:z0\[240]
+Removing Lhs of wire \CapSense:ClockGen:cs_addr_0\[237] = \CapSense:ClockGen:inter_reset\[232]
+Removing Lhs of wire \CapSense:ClockGen:prs_cs_addr_2\[271] = \CapSense:ClockGen:inter_reset\[232]
+Removing Lhs of wire \CapSense:ClockGen:prs_cs_addr_1\[272] = zero[8]
+Removing Lhs of wire \CapSense:ClockGen:prs_cs_addr_0\[273] = \CapSense:ClockGen:clock_detect_reg\[220]
+Removing Lhs of wire \CapSense:ClockGen:tmp_ppulse\[357] = \CapSense:ClockGen:tmp_ppulse_reg\[354]
+Removing Lhs of wire \CapSense:ClockGen:mesen\[362] = \CapSense:ClockGen:control_1\[229]
+Removing Lhs of wire \CapSense:ClockGen:syncen\[363] = \CapSense:ClockGen:control_0\[230]
+Removing Lhs of wire \CapSense:ClockGen:prescaler\[364] = \CapSense:ClockGen:tmp_ppulse_reg\[354]
+Removing Lhs of wire \CapSense:ClockGen:bitstream\[365] = \CapSense:ClockGen:cmsb_reg\[348]
+Removing Lhs of wire \CapSense:ClockGen:work_en\[368] = \CapSense:ClockGen:cstate_2\[359]
+Removing Lhs of wire \CapSense:ClockGen:ch0en\[369] = \CapSense:ClockGen:control_2\[228]
+Removing Lhs of wire \Comp:clock\[411] = zero[8]
+Removing Rhs of wire Net_1032[413] = \Comp:Net_1\[412]
+Removing Lhs of wire tmpOE__HEARTRATE_ANALOG_IN_net_0[416] = one[24]
 Removing Lhs of wire tmpOE__LEFT_LED_net_0[426] = one[24]
 Removing Lhs of wire tmpOE__amp_net_0[432] = one[24]
 Removing Lhs of wire Net_1146[438] = zero[8]
@@ -683,9 +683,9 @@ Removing Lhs of wire tmpOE__MOTOR_HEALTH_net_0[1309] = one[24]
 Removing Lhs of wire tmpOE__HEARTRATE_HEALTH_net_0[1315] = one[24]
 Removing Lhs of wire tmpOE__UI_HEALTH_net_0[1321] = one[24]
 Removing Lhs of wire \WaveDAC8_1:cydff_1\\D\[1326] = zero[8]
-Removing Lhs of wire \CapSense:ClockGen:clock_detect_reg\\D\[1331] = \CapSense:ClockGen:clock_detect\[357]
-Removing Lhs of wire \CapSense:ClockGen:tmp_ppulse_reg\\D\[1332] = \CapSense:ClockGen:tmp_ppulse_udb\[354]
-Removing Lhs of wire \CapSense:ClockGen:tmp_ppulse_dly\\D\[1333] = \CapSense:ClockGen:tmp_ppulse_reg\[353]
+Removing Lhs of wire \CapSense:ClockGen:clock_detect_reg\\D\[1331] = \CapSense:ClockGen:clock_detect\[358]
+Removing Lhs of wire \CapSense:ClockGen:tmp_ppulse_reg\\D\[1332] = \CapSense:ClockGen:tmp_ppulse_udb\[355]
+Removing Lhs of wire \CapSense:ClockGen:tmp_ppulse_dly\\D\[1333] = \CapSense:ClockGen:tmp_ppulse_reg\[354]
 Removing Lhs of wire \HeartbeatCounter:CounterUDB:prevCapture\\D\[1337] = zero[8]
 Removing Lhs of wire \HeartbeatCounter:CounterUDB:overflow_reg_i\\D\[1338] = \HeartbeatCounter:CounterUDB:overflow\[554]
 Removing Lhs of wire \HeartbeatCounter:CounterUDB:underflow_reg_i\\D\[1339] = \HeartbeatCounter:CounterUDB:underflow\[557]
@@ -709,18 +709,18 @@ Aliased 0 equations, 183 wires.
 
 topld:  No errors.
 
-CYPRESS_DIR    : C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\warp
-Warp Program   : C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\warp\bin/warp.exe
-Warp Arguments : -yv2 -q10 -ygs -o0 -v3 -.fftcfgtype=LE -ya -.fftprj=C:\repositories\embedded\trunk\CE4920Project1\Design01.cydsn\Design01.cyprj -dcpsoc3 Design01.v -verilog
+CYPRESS_DIR    : C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\warp
+Warp Program   : C:\Program Files\Cypress\PSoC Creator\3.2\PSoC Creator\warp\bin/warp.exe
+Warp Arguments : -yv2 -q10 -ygs -o0 -v3 -.fftcfgtype=LE -ya -.fftprj=C:\Users\JohnP\Desktop\embedded\trunk\CE4920Project1\Design01.cydsn\Design01.cyprj -dcpsoc3 Design01.v -verilog
 </CYPRESSTAG>
-Warp synthesis phase: Elapsed time ==> 2s.287ms
+Warp synthesis phase: Elapsed time ==> 5s.085ms
 <CYPRESSTAG name="Fitter results...">
 <CYPRESSTAG name="Fitter startup details...">
-cyp3fit: V3.2.0.6175, Family: PSoC3, Started at: Tuesday, 03 November 2015 21:15:44
-Options: -yv2 -q10 -ygs -o0 -v3 -.fftcfgtype=LE -ya -.fftprj=C:\repositories\embedded\trunk\CE4920Project1\Design01.cydsn\Design01.cyprj -d CY8C5868AXI-LP035 Design01.v -verilog
+cyp3fit: V3.2.0.6175, Family: PSoC3, Started at: Wednesday, 04 November 2015 16:42:15
+Options: -yv2 -q10 -ygs -o0 -v3 -.fftcfgtype=LE -ya -.fftprj=C:\Users\JohnP\Desktop\embedded\trunk\CE4920Project1\Design01.cydsn\Design01.cyprj -d CY8C5868AXI-LP035 Design01.v -verilog
 </CYPRESSTAG>
 <CYPRESSTAG name="Design parsing">
-Design parsing phase: Elapsed time ==> 0s.150ms
+Design parsing phase: Elapsed time ==> 0s.072ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Tech mapping">
 <CYPRESSTAG name="Initial Mapping" icon="FILE_RPT_TECHM">
@@ -1054,6 +1054,7 @@ Design Equations
             IO Voltage: 0
         PORT MAP (
             pa_out => HEARTRATE_ANALOG_IN(0)__PA ,
+            analog_term => Net_1681 ,
             pad => HEARTRATE_ANALOG_IN(0)_PAD );
         Properties:
         {
@@ -3726,10 +3727,11 @@ EMIF Fixed Blocks             :    0 :    1 :    1 :   0.00%
 LPF Fixed Blocks              :    0 :    2 :    2 :   0.00%
 SAR Fixed Blocks              :    0 :    2 :    2 :   0.00%
 </CYPRESSTAG>
-Technology Mapping: Elapsed time ==> 1s.216ms
-Tech mapping phase: Elapsed time ==> 1s.484ms
+Technology Mapping: Elapsed time ==> 3s.758ms
+Tech mapping phase: Elapsed time ==> 4s.065ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Analog Placement">
+Info: apr.M0002: Analog signal "\WaveDAC8_1:Net_189\" is connected to one terminal only. (App=cydsfit)
 Initial Analog Placement Results:
 IO_3@[IOP=(4)][IoId=(3)] : HEARTRATE_ANALOG_IN(0) (fixed)
 IO_7@[IOP=(12)][IoId=(7)] : HEARTRATE_HEALTH(0) (fixed)
@@ -3766,8 +3768,8 @@ SC[2]@[FFB(SC,2)] : \PGA_1:SC\
 USB[0]@[FFB(USB,0)] : \USBUART:USB\
 VIDAC[3]@[FFB(VIDAC,3)] : \WaveDAC8_1:VDAC8:viDAC8\
 Vref[1]@[FFB(Vref,1)] : vRef
-Log: apr.M0058: The analog placement iterative improvement is 49% done. (App=cydsfit)
-Log: apr.M0058: The analog placement iterative improvement is 77% done. (App=cydsfit)
+Log: apr.M0058: The analog placement iterative improvement is 59% done. (App=cydsfit)
+Log: apr.M0058: The analog placement iterative improvement is 86% done. (App=cydsfit)
 Analog Placement Results:
 IO_3@[IOP=(4)][IoId=(3)] : HEARTRATE_ANALOG_IN(0) (fixed)
 IO_7@[IOP=(12)][IoId=(7)] : HEARTRATE_HEALTH(0) (fixed)
@@ -3796,8 +3798,8 @@ IO_1@[IOP=(4)][IoId=(1)] : amp(0) (fixed)
 IO_7@[IOP=(15)][IoId=(7)] : \USBUART:Dm(0)\ (fixed)
 IO_6@[IOP=(15)][IoId=(6)] : \USBUART:Dp(0)\ (fixed)
 CsAbuf[0]@[FFB(CsAbuf,0)] : \CapSense:BufCH0\
-Comparator[2]@[FFB(Comparator,2)] : \CapSense:CompCH0:ctComp\
-VIDAC[0]@[FFB(VIDAC,0)] : \CapSense:IdacCH0:viDAC8\
+Comparator[1]@[FFB(Comparator,1)] : \CapSense:CompCH0:ctComp\
+VIDAC[3]@[FFB(VIDAC,3)] : \CapSense:IdacCH0:viDAC8\
 Vref[3]@[FFB(Vref,3)] : \CapSense:VrefRefCH0\
 Comparator[0]@[FFB(Comparator,0)] : \Comp:ctComp\
 SC[0]@[FFB(SC,0)] : \PGA_1:SC\
@@ -3805,10 +3807,10 @@ USB[0]@[FFB(USB,0)] : \USBUART:USB\
 VIDAC[2]@[FFB(VIDAC,2)] : \WaveDAC8_1:VDAC8:viDAC8\
 Vref[1]@[FFB(Vref,1)] : vRef
 
-Analog Placement phase: Elapsed time ==> 7s.679ms
+Analog Placement phase: Elapsed time ==> 14s.789ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Analog Routing">
-Analog Routing phase: Elapsed time ==> 0s.050ms
+Analog Routing phase: Elapsed time ==> 0s.044ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Analog Code Generation">
 ============ Analog Final Answer Routes ============
@@ -3846,19 +3848,26 @@ Map of net to items {
     capsense_0_vin
   }
   Net: \CapSense:Net_282\ {
-    comp_2_vplus
+    comp_1_vplus
   }
   Net: \CapSense:Net_1425\ {
-    vidac_0_iout
+    vidac_3_iout
+  }
+  Net: Net_1681 {
+    sc_0_vin
+    agl7_x_sc_0_vin
+    agl7
+    agl7_x_p4_3
+    p4_3
   }
   Net: \CapSense:Net_2129\ {
     common_vref_1024
     capsense_0_vref_1024
     capsense_0_vref_x_capsense_0_vref_1024
     capsense_0_vref
-    comp_02_vref_1024
-    comp_02_vref_1024_x_comp_2_vminus
-    comp_2_vminus
+    comp_13_vref_1024
+    comp_1_vminus_x_comp_13_vref_1024
+    comp_1_vminus
   }
   Net: \CapSense:IdacCH0:Net_124\ {
   }
@@ -3883,37 +3892,32 @@ Map of net to items {
   Net: \PGA_1:Net_17\ {
   }
   Net: \WaveDAC8_1:Net_189\ {
-    vidac_2_vout
-    agl4_x_vidac_2_vout
-    agl4
-    agl4_x_sc_0_vin
-    sc_0_vin
   }
   Net: \WaveDAC8_1:VDAC8:Net_77\ {
   }
   Net: AmuxNet::\CapSense:AMuxCH0\ {
     amuxbusl
-    amuxbusl_x_comp_2_vplus
     amuxbusl_x_amuxbusr
     amuxbusr
-    amuxbusr_x_p5_5
-    amuxbusl_x_vidac_0_iout
-    amuxbusr_x_p5_0
-    amuxbusr_x_p5_6
-    amuxbusr_x_p5_4
+    amuxbusr_x_comp_1_vplus
+    amuxbusr_x_vidac_3_iout
     amuxbusr_x_p5_3
+    amuxbusr_x_p5_0
     amuxbusr_x_p5_1
     amuxbusr_x_p5_2
+    amuxbusr_x_p5_6
+    amuxbusr_x_p5_4
+    amuxbusr_x_p5_5
     amuxbusl_x_p6_4
-    comp_2_vplus
-    p5_5
-    vidac_0_iout
-    p5_0
-    p5_6
-    p5_4
+    comp_1_vplus
+    vidac_3_iout
     p5_3
+    p5_0
     p5_1
     p5_2
+    p5_6
+    p5_4
+    p5_5
     p6_4
   }
 }
@@ -3923,13 +3927,18 @@ Map of item to net {
   agl0                                             -> \CapSense:Net_2149\
   agl0_x_capsense_0_vin                            -> \CapSense:Net_2149\
   capsense_0_vin                                   -> \CapSense:Net_2149\
+  sc_0_vin                                         -> Net_1681
+  agl7_x_sc_0_vin                                  -> Net_1681
+  agl7                                             -> Net_1681
+  agl7_x_p4_3                                      -> Net_1681
+  p4_3                                             -> Net_1681
   common_vref_1024                                 -> \CapSense:Net_2129\
   capsense_0_vref_1024                             -> \CapSense:Net_2129\
   capsense_0_vref_x_capsense_0_vref_1024           -> \CapSense:Net_2129\
   capsense_0_vref                                  -> \CapSense:Net_2129\
-  comp_02_vref_1024                                -> \CapSense:Net_2129\
-  comp_02_vref_1024_x_comp_2_vminus                -> \CapSense:Net_2129\
-  comp_2_vminus                                    -> \CapSense:Net_2129\
+  comp_13_vref_1024                                -> \CapSense:Net_2129\
+  comp_1_vminus_x_comp_13_vref_1024                -> \CapSense:Net_2129\
+  comp_1_vminus                                    -> \CapSense:Net_2129\
   p4_1                                             -> Net_569
   agl5_x_p4_1                                      -> Net_569
   agl5                                             -> Net_569
@@ -3944,11 +3953,6 @@ Map of item to net {
   comp_vref_vdda_0256                              -> Net_157
   comp_0_vminus_x_comp_vref_vdda_0256              -> Net_157
   comp_0_vminus                                    -> Net_157
-  vidac_2_vout                                     -> \WaveDAC8_1:Net_189\
-  agl4_x_vidac_2_vout                              -> \WaveDAC8_1:Net_189\
-  agl4                                             -> \WaveDAC8_1:Net_189\
-  agl4_x_sc_0_vin                                  -> \WaveDAC8_1:Net_189\
-  sc_0_vin                                         -> \WaveDAC8_1:Net_189\
   amuxbusl                                         -> \CapSense:Net_2072\
   p5_5                                             -> \CapSense:Net_1410_0\
   p5_6                                             -> \CapSense:Net_1410_1\
@@ -3957,19 +3961,19 @@ Map of item to net {
   p5_2                                             -> \CapSense:Net_1410_4\
   p5_3                                             -> \CapSense:Net_1410_5\
   p5_4                                             -> \CapSense:Net_1410_6\
-  comp_2_vplus                                     -> \CapSense:Net_282\
-  vidac_0_iout                                     -> \CapSense:Net_1425\
-  amuxbusl_x_comp_2_vplus                          -> AmuxNet::\CapSense:AMuxCH0\
+  comp_1_vplus                                     -> \CapSense:Net_282\
+  vidac_3_iout                                     -> \CapSense:Net_1425\
   amuxbusl_x_amuxbusr                              -> AmuxNet::\CapSense:AMuxCH0\
   amuxbusr                                         -> AmuxNet::\CapSense:AMuxCH0\
-  amuxbusr_x_p5_5                                  -> AmuxNet::\CapSense:AMuxCH0\
-  amuxbusl_x_vidac_0_iout                          -> AmuxNet::\CapSense:AMuxCH0\
-  amuxbusr_x_p5_0                                  -> AmuxNet::\CapSense:AMuxCH0\
-  amuxbusr_x_p5_6                                  -> AmuxNet::\CapSense:AMuxCH0\
-  amuxbusr_x_p5_4                                  -> AmuxNet::\CapSense:AMuxCH0\
+  amuxbusr_x_comp_1_vplus                          -> AmuxNet::\CapSense:AMuxCH0\
+  amuxbusr_x_vidac_3_iout                          -> AmuxNet::\CapSense:AMuxCH0\
   amuxbusr_x_p5_3                                  -> AmuxNet::\CapSense:AMuxCH0\
+  amuxbusr_x_p5_0                                  -> AmuxNet::\CapSense:AMuxCH0\
   amuxbusr_x_p5_1                                  -> AmuxNet::\CapSense:AMuxCH0\
   amuxbusr_x_p5_2                                  -> AmuxNet::\CapSense:AMuxCH0\
+  amuxbusr_x_p5_6                                  -> AmuxNet::\CapSense:AMuxCH0\
+  amuxbusr_x_p5_4                                  -> AmuxNet::\CapSense:AMuxCH0\
+  amuxbusr_x_p5_5                                  -> AmuxNet::\CapSense:AMuxCH0\
   amuxbusl_x_p6_4                                  -> AmuxNet::\CapSense:AMuxCH0\
 }
 Mux Info {
@@ -4075,21 +4079,25 @@ Mux Info {
     }
     Arm: 8 {
       Net:   \CapSense:Net_282\
-      Outer: amuxbusl_x_comp_2_vplus
+      Outer: amuxbusr_x_comp_1_vplus
       Inner: __open__
       Path {
-        comp_2_vplus
-        amuxbusl_x_comp_2_vplus
+        comp_1_vplus
+        amuxbusr_x_comp_1_vplus
+        amuxbusr
+        amuxbusl_x_amuxbusr
         amuxbusl
       }
     }
     Arm: 9 {
       Net:   \CapSense:Net_1425\
-      Outer: amuxbusl_x_vidac_0_iout
+      Outer: amuxbusr_x_vidac_3_iout
       Inner: __open__
       Path {
-        vidac_0_iout
-        amuxbusl_x_vidac_0_iout
+        vidac_3_iout
+        amuxbusr_x_vidac_3_iout
+        amuxbusr
+        amuxbusl_x_amuxbusr
         amuxbusl
       }
     }
@@ -4099,11 +4107,11 @@ Dump of CyP35AnalogRoutingResultsDB
 IsVddaHalfUsedForComp = True
 IsVddaHalfUsedForSar0 = False
 IsVddaHalfUsedForSar1 = False
-Analog Code Generation phase: Elapsed time ==> 0s.083ms
+Analog Code Generation phase: Elapsed time ==> 0s.217ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Digital Placement">
 <CYPRESSTAG name="Detailed placement messages">
-I2076: Total run-time: 1.9 sec.
+I2076: Total run-time: 4.0 sec.
 
 </CYPRESSTAG>
 <CYPRESSTAG name="PLD Packing">
@@ -4127,20 +4135,20 @@ PLD Packing Summary
 <CYPRESSTAG name="Packed PLD Contents">
 Packed PLD Contents not displayed at this verbose level.</CYPRESSTAG>
 </CYPRESSTAG>
-PLD Packing: Elapsed time ==> 0s.038ms
+PLD Packing: Elapsed time ==> 0s.000ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Partitioning">
 <CYPRESSTAG name="Initial Partitioning Summary">
 Initial Partitioning Summary not displayed at this verbose level.</CYPRESSTAG>
 <CYPRESSTAG name="Final Partitioning Summary">
 Final Partitioning Summary not displayed at this verbose level.</CYPRESSTAG>
-Partitioning: Elapsed time ==> 0s.506ms
+Partitioning: Elapsed time ==> 0s.526ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Simulated Annealing">
-Annealing: Elapsed time ==> 0s.047ms
+Annealing: Elapsed time ==> 0s.000ms
 <CYPRESSTAG name="Simulated Annealing Results">
 The seed used for moves was 114161200.
-Inital cost was 521, final cost is 521 (0.00% improvement).</CYPRESSTAG>
+Inital cost was 526, final cost is 526 (0.00% improvement).</CYPRESSTAG>
 </CYPRESSTAG>
 <CYPRESSTAG name="Final Placement Summary">
 
@@ -6503,6 +6511,7 @@ Pin : Name = HEARTRATE_ANALOG_IN(0)
         IO Voltage: 0
     PORT MAP (
         pa_out => HEARTRATE_ANALOG_IN(0)__PA ,
+        analog_term => Net_1681 ,
         pad => HEARTRATE_ANALOG_IN(0)_PAD );
     Properties:
     {
@@ -7314,7 +7323,7 @@ Comparator Fixed Block group 0:
         {
             cy_registers = ""
         }
-    Comparator Block @ [FFB(Comparator,2)]: 
+    Comparator Block @ [FFB(Comparator,1)]: 
     comparatorcell: Name =\CapSense:CompCH0:ctComp\
         PORT MAP (
             vplus => \CapSense:Net_282\ ,
@@ -7337,7 +7346,7 @@ SC Fixed Block group 0:
     sccell: Name =\PGA_1:SC\
         PORT MAP (
             vref => \PGA_1:Net_17\ ,
-            vin => \WaveDAC8_1:Net_189\ ,
+            vin => Net_1681 ,
             dyn_cntl_udb => __ZERO__ ,
             modout => \PGA_1:Net_41\ ,
             vout => Net_569 );
@@ -7380,20 +7389,6 @@ USB Fixed Block group 0:
             cy_registers = ""
         }
 VIDAC Fixed Block group 0: 
-    VIDAC Block @ [FFB(VIDAC,0)]: 
-    vidaccell: Name =\CapSense:IdacCH0:viDAC8\
-        PORT MAP (
-            reset => __ZERO__ ,
-            idir => __ZERO__ ,
-            ioff => \CapSense:IdacCH0:Net_123\ ,
-            vout => \CapSense:IdacCH0:Net_124\ ,
-            iout => \CapSense:Net_1425\ );
-        Properties:
-        {
-            cy_registers = ""
-            is_all_if_any = 0
-            reg_data = 0
-        }
     VIDAC Block @ [FFB(VIDAC,2)]: 
     vidaccell: Name =\WaveDAC8_1:VDAC8:viDAC8\
         PORT MAP (
@@ -7403,6 +7398,20 @@ VIDAC Fixed Block group 0:
             strobe_udb => \WaveDAC8_1:Net_279_local\ ,
             vout => \WaveDAC8_1:Net_189\ ,
             iout => \WaveDAC8_1:VDAC8:Net_77\ );
+        Properties:
+        {
+            cy_registers = ""
+            is_all_if_any = 0
+            reg_data = 0
+        }
+    VIDAC Block @ [FFB(VIDAC,3)]: 
+    vidaccell: Name =\CapSense:IdacCH0:viDAC8\
+        PORT MAP (
+            reset => __ZERO__ ,
+            idir => __ZERO__ ,
+            ioff => \CapSense:IdacCH0:Net_123\ ,
+            vout => \CapSense:IdacCH0:Net_124\ ,
+            iout => \CapSense:Net_1425\ );
         Properties:
         {
             cy_registers = ""
@@ -7490,7 +7499,7 @@ Port | Pin | Fixed |      Type |       Drive Mode |                   Name | Con
      |   6 |     * |      NONE |         CMOS_OUT |       \LCD:LCDPort(6)\ | 
 -----+-----+-------+-----------+------------------+------------------------+--------------------------------------------
    4 |   1 |     * |      NONE |      HI_Z_ANALOG |                 amp(0) | Analog(Net_569)
-     |   3 |     * |      NONE |      HI_Z_ANALOG | HEARTRATE_ANALOG_IN(0) | 
+     |   3 |     * |      NONE |      HI_Z_ANALOG | HEARTRATE_ANALOG_IN(0) | Analog(Net_1681)
      |   5 |     * |      NONE |    RES_PULL_DOWN |          PWM_Output(0) | In(Net_1668)
 -----+-----+-------+-----------+------------------+------------------------+--------------------------------------------
    5 |   0 |     * |      NONE |    OPEN_DRAIN_LO |  \CapSense:PortCH0(2)\ | In(__ZERO__), Analog(\CapSense:Net_1410_2\)
@@ -7516,33 +7525,33 @@ Port | Pin | Fixed |      Type |       Drive Mode |                   Name | Con
 </CYPRESSTAG>
 </CYPRESSTAG>
 </CYPRESSTAG>
-Digital component placer commit/Report: Elapsed time ==> 0s.034ms
-Digital Placement phase: Elapsed time ==> 3s.113ms
+Digital component placer commit/Report: Elapsed time ==> 0s.021ms
+Digital Placement phase: Elapsed time ==> 5s.731ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Digital Routing">
 Routing successful.
-Digital Routing phase: Elapsed time ==> 3s.229ms
+Digital Routing phase: Elapsed time ==> 5s.046ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Bitstream and API generation">
-Bitstream and API generation phase: Elapsed time ==> 0s.598ms
+Bitstream and API generation phase: Elapsed time ==> 1s.377ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Bitstream verification">
-Bitstream verification phase: Elapsed time ==> 0s.139ms
+Bitstream verification phase: Elapsed time ==> 0s.119ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Static timing analysis">
-Warning: sta.M0021: Design01_timing.html: Warning-1350: Asynchronous path(s) exist from "timer_clock_1(routed)" to "CyBUS_CLK". See the timing report for details. (File=C:\repositories\embedded\trunk\CE4920Project1\Design01.cydsn\Design01_timing.html)
+Warning: sta.M0021: Design01_timing.html: Warning-1350: Asynchronous path(s) exist from "timer_clock_1(routed)" to "CyBUS_CLK". See the timing report for details. (File=C:\Users\JohnP\Desktop\embedded\trunk\CE4920Project1\Design01.cydsn\Design01_timing.html)
 Timing report is in Design01_timing.html.
-Static timing analysis phase: Elapsed time ==> 0s.734ms
+Static timing analysis phase: Elapsed time ==> 1s.309ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Data reporting">
-Data reporting phase: Elapsed time ==> 0s.010ms
+Data reporting phase: Elapsed time ==> 0s.000ms
 </CYPRESSTAG>
 <CYPRESSTAG name="Database update...">
-Design database save phase: Elapsed time ==> 0s.283ms
+Design database save phase: Elapsed time ==> 0s.523ms
 </CYPRESSTAG>
-cydsfit: Elapsed time ==> 17s.610ms
+cydsfit: Elapsed time ==> 33s.339ms
 </CYPRESSTAG>
-Fitter phase: Elapsed time ==> 17s.702ms
-API generation phase: Elapsed time ==> 2s.456ms
-Dependency generation phase: Elapsed time ==> 0s.039ms
-Cleanup phase: Elapsed time ==> 0s.002ms
+Fitter phase: Elapsed time ==> 33s.484ms
+API generation phase: Elapsed time ==> 7s.558ms
+Dependency generation phase: Elapsed time ==> 0s.046ms
+Cleanup phase: Elapsed time ==> 0s.000ms
