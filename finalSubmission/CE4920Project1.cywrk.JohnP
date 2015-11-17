@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CyXmlSerializer>
+<!--This file is machine generated and read. It is not intended to be edited by hand.-->
+<!--Due to this, there is no schema for this file.-->
+<CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtWrkspcCustomData" version="4">
+<CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997 type_name="CyDesigner.Common.Base.CyCustomData" version="2">
+<userData>
+<dataGuid v="1b906a0f-a7b6-4e4d-a428-82f98b53cb35">
+<CyGuid_1b906a0f-a7b6-4e4d-a428-82f98b53cb35 type_name="CyDesigner.Common.ProjMgmt.GUI.CyExplorerWindow+CyExplorerWindowState" version="3" SelectedTab="Source">
+<TreeKeys>
+<v>Source</v>
+<v>Components</v>
+<v>Output</v>
+</TreeKeys>
+<TreeStates>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="CE4920Project1\Design01\Header Files\heartrate.h">
+<ExpandedNodeIds>
+<v>CE4920Project1</v>
+<v>CE4920Project1\Design01\TopDesign</v>
+<v>CE4920Project1\USBFS_HID01\TopDesign</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>CE4920Project1</v>
+<v>CE4920Project1\Design01</v>
+<v>CE4920Project1\USBFS_HID01</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
+<ExpandedNodeIds>
+<v>CE4920Project1</v>
+<v>CE4920Project1\Design01</v>
+<v>CE4920Project1\Design01\TopDesign</v>
+<v>CE4920Project1\Design01\TopDesign\TopDesign.cysch</v>
+<v>CE4920Project1\USBFS_HID01</v>
+<v>CE4920Project1\USBFS_HID01\TopDesign</v>
+<v>CE4920Project1\USBFS_HID01\TopDesign\TopDesign.cysch</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>CE4920Project1</v>
+<v>CE4920Project1\Design01</v>
+<v>CE4920Project1\Design01\TopDesign</v>
+<v>CE4920Project1\Design01\TopDesign\TopDesign.cysch</v>
+<v>CE4920Project1\USBFS_HID01</v>
+<v>CE4920Project1\USBFS_HID01\TopDesign</v>
+<v>CE4920Project1\USBFS_HID01\TopDesign\TopDesign.cysch</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
+<ExpandedNodeIds>
+<v>CE4920Project1</v>
+<v>CE4920Project1\Design01</v>
+<v>CE4920Project1\Design01\CortexM3</v>
+<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484</v>
+<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug</v>
+<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files</v>
+<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\amp.lst</v>
+<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\CapSense.lst</v>
+<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\CapSense_AMuxCH0.lst</v>
+<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\CapSense_CompCH0.lst</v>
+<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\CapSense_CompCH0_PM.lst</v>
+<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\CapSense_CSHL.lst</v>
+<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\CapSense_IdacCH0.lst</v>
+<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\CapSense_IdacCH0_PM.lst</v>
+<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\CapSense_INT.lst</v>
+<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\CapSense_IntClock.lst</v>
+<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\CapSense_Pins.lst</v>
+<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\CapSense_PM.lst</v>
+<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\CapSense_SMS_Wrapper.lst</v>
+<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\CapSense_TunerHelper.lst</v>
+<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\Cm3Start.lst</v>
+<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\Comp.lst</v>
+<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\Comp_PM.lst</v>
+<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\Compint.lst</v>
+<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\CyBootAsmGnu.lst</v>
+<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\CyDmac.lst</v>
+<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\cyfitter_cfg.lst</v>
+<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\CyFlash.lst</v>
+<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\CyLib.lst</v>
+<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\cymetadata.lst</v>
+<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\cyPm.lst</v>
+<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\CySpc.lst</v>
+<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\cyutils.lst</v>
+<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\display.lst</v>
+<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\HeartbeatCounter.lst</v>
+<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\HeartbeatCounter_PM.lst</v>
+<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\heartrate.lst</v>
+<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\HEARTRATE_ANALOG_IN.lst</v>
+<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\HEARTRATE_HEALTH.lst</v>
+<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\LCD.lst</v>
+<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\LCD_BarGraph.lst</v>
+<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\LCD_LCDPort.lst</v>
+<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\LCD_PM.lst</v>
+<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\LEFT_LED.lst</v>
+<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\main.lst</v>
+<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\motor.lst</v>
+<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\MOTOR_HEALTH.lst</v>
+<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\PGA_1.lst</v>
+<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\PGA_1_PM.lst</v>
+<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\PWM.lst</v>
+<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\PWM_Output.lst</v>
+<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\PWM_PM.lst</v>
+<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\speaker.lst</v>
+<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\Speaker_Output.lst</v>
+<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\states.lst</v>
+<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\STOP.lst</v>
+<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\STOP_REQUEST.lst</v>
+<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\system.lst</v>
+<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\terminal.lst</v>
+<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\timer_clock_1.lst</v>
+<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\UI_HEALTH.lst</v>
+<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\USBUART.lst</v>
+<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\USBUART_audio.lst</v>
+<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\USBUART_cdc.lst</v>
+<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\USBUART_cls.lst</v>
+<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\USBUART_descr.lst</v>
+<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\USBUART_Dm.lst</v>
+<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\USBUART_Dp.lst</v>
+<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\USBUART_drv.lst</v>
+<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\USBUART_episr.lst</v>
+<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\USBUART_hid.lst</v>
+<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\USBUART_midi.lst</v>
+<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\USBUART_std.lst</v>
+<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\USBUART_vnd.lst</v>
+<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\WaveDAC8_1.lst</v>
+<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\WaveDAC8_1_DacClk.lst</v>
+<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\WaveDAC8_1_PM.lst</v>
+<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\WaveDAC8_1_VDAC8.lst</v>
+<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\WaveDAC8_1_VDAC8_PM.lst</v>
+<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\WaveDAC8_1_Wave1_DMA_dma.lst</v>
+<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\WaveDAC8_1_Wave2_DMA_dma.lst</v>
+<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\WDT.lst</v>
+<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\WDT_Timer.lst</v>
+<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\WDT_Timer_PM.lst</v>
+<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Design01.elf</v>
+<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Design01.hex</v>
+<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Design01.map</v>
+<v>CE4920Project1\Design01\Design01.gpdsc</v>
+<v>CE4920Project1\Design01\Design01.rpt</v>
+<v>CE4920Project1\Design01\Design01_timing.html</v>
+<v>CE4920Project1\USBFS_HID01</v>
+<v>CE4920Project1\USBFS_HID01\CortexM3</v>
+<v>CE4920Project1\USBFS_HID01\CortexM3\ARM_GCC_484</v>
+<v>CE4920Project1\USBFS_HID01\CortexM3\ARM_GCC_484\Debug</v>
+<v>CE4920Project1\USBFS_HID01\CortexM3\ARM_GCC_484\Debug\Listing Files</v>
+<v>CE4920Project1\USBFS_HID01\CortexM3\ARM_GCC_484\Debug\Listing Files\Cm3Start.lst</v>
+<v>CE4920Project1\USBFS_HID01\CortexM3\ARM_GCC_484\Debug\Listing Files\CyBootAsmGnu.lst</v>
+<v>CE4920Project1\USBFS_HID01\CortexM3\ARM_GCC_484\Debug\Listing Files\CyDmac.lst</v>
+<v>CE4920Project1\USBFS_HID01\CortexM3\ARM_GCC_484\Debug\Listing Files\cyfitter_cfg.lst</v>
+<v>CE4920Project1\USBFS_HID01\CortexM3\ARM_GCC_484\Debug\Listing Files\CyFlash.lst</v>
+<v>CE4920Project1\USBFS_HID01\CortexM3\ARM_GCC_484\Debug\Listing Files\CyLib.lst</v>
+<v>CE4920Project1\USBFS_HID01\CortexM3\ARM_GCC_484\Debug\Listing Files\cymetadata.lst</v>
+<v>CE4920Project1\USBFS_HID01\CortexM3\ARM_GCC_484\Debug\Listing Files\cyPm.lst</v>
+<v>CE4920Project1\USBFS_HID01\CortexM3\ARM_GCC_484\Debug\Listing Files\CySpc.lst</v>
+<v>CE4920Project1\USBFS_HID01\CortexM3\ARM_GCC_484\Debug\Listing Files\cyutils.lst</v>
+<v>CE4920Project1\USBFS_HID01\CortexM3\ARM_GCC_484\Debug\Listing Files\main.lst</v>
+<v>CE4920Project1\USBFS_HID01\CortexM3\ARM_GCC_484\Debug\Listing Files\USBFS_1.lst</v>
+<v>CE4920Project1\USBFS_HID01\CortexM3\ARM_GCC_484\Debug\Listing Files\USBFS_1_audio.lst</v>
+<v>CE4920Project1\USBFS_HID01\CortexM3\ARM_GCC_484\Debug\Listing Files\USBFS_1_boot.lst</v>
+<v>CE4920Project1\USBFS_HID01\CortexM3\ARM_GCC_484\Debug\Listing Files\USBFS_1_cdc.lst</v>
+<v>CE4920Project1\USBFS_HID01\CortexM3\ARM_GCC_484\Debug\Listing Files\USBFS_1_cls.lst</v>
+<v>CE4920Project1\USBFS_HID01\CortexM3\ARM_GCC_484\Debug\Listing Files\USBFS_1_descr.lst</v>
+<v>CE4920Project1\USBFS_HID01\CortexM3\ARM_GCC_484\Debug\Listing Files\USBFS_1_Dm.lst</v>
+<v>CE4920Project1\USBFS_HID01\CortexM3\ARM_GCC_484\Debug\Listing Files\USBFS_1_Dp.lst</v>
+<v>CE4920Project1\USBFS_HID01\CortexM3\ARM_GCC_484\Debug\Listing Files\USBFS_1_drv.lst</v>
+<v>CE4920Project1\USBFS_HID01\CortexM3\ARM_GCC_484\Debug\Listing Files\USBFS_1_episr.lst</v>
+<v>CE4920Project1\USBFS_HID01\CortexM3\ARM_GCC_484\Debug\Listing Files\USBFS_1_hid.lst</v>
+<v>CE4920Project1\USBFS_HID01\CortexM3\ARM_GCC_484\Debug\Listing Files\USBFS_1_midi.lst</v>
+<v>CE4920Project1\USBFS_HID01\CortexM3\ARM_GCC_484\Debug\Listing Files\USBFS_1_pm.lst</v>
+<v>CE4920Project1\USBFS_HID01\CortexM3\ARM_GCC_484\Debug\Listing Files\USBFS_1_std.lst</v>
+<v>CE4920Project1\USBFS_HID01\CortexM3\ARM_GCC_484\Debug\Listing Files\USBFS_1_vnd.lst</v>
+<v>CE4920Project1\USBFS_HID01\CortexM3\ARM_GCC_484\Debug\USBFS_HID01.elf</v>
+<v>CE4920Project1\USBFS_HID01\CortexM3\ARM_GCC_484\Debug\USBFS_HID01.hex</v>
+<v>CE4920Project1\USBFS_HID01\CortexM3\ARM_GCC_484\Debug\USBFS_HID01.map</v>
+<v>CE4920Project1\USBFS_HID01\USBFS_HID01.gpdsc</v>
+<v>CE4920Project1\USBFS_HID01\USBFS_HID01.rpt</v>
+<v>CE4920Project1\USBFS_HID01\USBFS_HID01_timing.html</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>CE4920Project1</v>
+<v>CE4920Project1\Design01</v>
+<v>CE4920Project1\Design01\CortexM3</v>
+<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484</v>
+<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug</v>
+<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files</v>
+<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\amp.lst</v>
+<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\CapSense.lst</v>
+<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\CapSense_AMuxCH0.lst</v>
+<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\CapSense_CompCH0.lst</v>
+<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\CapSense_CompCH0_PM.lst</v>
+<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\CapSense_CSHL.lst</v>
+<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\CapSense_IdacCH0.lst</v>
+<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\CapSense_IdacCH0_PM.lst</v>
+<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\CapSense_INT.lst</v>
+<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\CapSense_IntClock.lst</v>
+<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\CapSense_Pins.lst</v>
+<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\CapSense_PM.lst</v>
+<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\CapSense_SMS_Wrapper.lst</v>
+<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\CapSense_TunerHelper.lst</v>
+<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\Cm3Start.lst</v>
+<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\Comp.lst</v>
+<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\Comp_PM.lst</v>
+<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\Compint.lst</v>
+<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\CyBootAsmGnu.lst</v>
+<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\CyDmac.lst</v>
+<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\cyfitter_cfg.lst</v>
+<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\CyFlash.lst</v>
+<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\CyLib.lst</v>
+<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\cymetadata.lst</v>
+<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\cyPm.lst</v>
+<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\CySpc.lst</v>
+<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\cyutils.lst</v>
+<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\display.lst</v>
+<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\HeartbeatCounter.lst</v>
+<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\HeartbeatCounter_PM.lst</v>
+<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\heartrate.lst</v>
+<v>CE4920Project1\Design01\CortexM3\ARM_GCC_484\Debug\Listing Files\HEARTRATE_ANALOG_IN.lst</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+</TreeStates>
+<TreeKeysV2>
+<v>Datasheet</v>
+</TreeKeysV2>
+<TreeStatesV2>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
+<ExpandedNodeIds>
+<v>CE4920Project1</v>
+<v>CE4920Project1\Design01</v>
+<v>CE4920Project1\Design01\PSoC 5 Architecture TRM</v>
+<v>CE4920Project1\Design01\CY8C58LP Family Datasheet</v>
+<v>CE4920Project1\Design01\System Reference Guides</v>
+<v>CE4920Project1\USBFS_HID01</v>
+<v>CE4920Project1\USBFS_HID01\PSoC 5 Architecture TRM</v>
+<v>CE4920Project1\USBFS_HID01\CY8C58LP Family Datasheet</v>
+<v>CE4920Project1\USBFS_HID01\System Reference Guides</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>CE4920Project1</v>
+<v>CE4920Project1\Design01</v>
+<v>CE4920Project1\Design01\PSoC 5 Architecture TRM</v>
+<v>CE4920Project1\Design01\CY8C58LP Family Datasheet</v>
+<v>CE4920Project1\Design01\System Reference Guides</v>
+<v>CE4920Project1\USBFS_HID01</v>
+<v>CE4920Project1\USBFS_HID01\PSoC 5 Architecture TRM</v>
+<v>CE4920Project1\USBFS_HID01\CY8C58LP Family Datasheet</v>
+<v>CE4920Project1\USBFS_HID01\System Reference Guides</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+</TreeStatesV2>
+</CyGuid_1b906a0f-a7b6-4e4d-a428-82f98b53cb35>
+</dataGuid>
+</userData>
+</CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997>
+<Unloaded />
+<OpenDocs>
+<name v=".\Design01.cydsn\Design01.cydwr" />
+<name v=".\Design01.cydsn\TopDesign\TopDesign.cysch" />
+<name v=".\Design01.cydsn\heartrate.c" />
+<name v=".\Design01.cydsn\states.c" />
+<name v=".\Design01.cydsn\system.c" />
+<name v=".\Design01.cydsn\motor.c" />
+<name v=".\Design01.cydsn\Generated_Source\PSoC5\Compint.c" />
+<name v=".\Design01.cydsn\main.c" />
+<name v=".\Design01.cydsn\system.h" />
+<name v=".\Design01.cydsn\Generated_Source\PSoC5\WDT.c" />
+<name v=".\Design01.cydsn\display.c" />
+<name v=".\Design01.cydsn\display.h" />
+<name v=".\Design01.cydsn\states.h" />
+<name v=".\Design01.cydsn\terminal.c" />
+<name v=".\Design01.cydsn\Generated_Source\PSoC5\STOP.c" />
+</OpenDocs>
+<config v="" />
+<AutoUpdate v="true" />
+</CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>
+</CyXmlSerializer>

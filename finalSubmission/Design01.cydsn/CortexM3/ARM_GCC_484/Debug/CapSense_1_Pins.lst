@@ -1,0 +1,603 @@
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccqBz0AO.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"CapSense_1_Pins.c"
+  15              		.text
+  16              	.Ltext0:
+  17              		.cfi_sections	.debug_frame
+  18              		.section	.text.CapSense_1_SetAllSensorsDriveMode,"ax",%progbits
+  19              		.align	2
+  20              		.global	CapSense_1_SetAllSensorsDriveMode
+  21              		.thumb
+  22              		.thumb_func
+  23              		.type	CapSense_1_SetAllSensorsDriveMode, %function
+  24              	CapSense_1_SetAllSensorsDriveMode:
+  25              	.LFB0:
+  26              		.file 1 ".\\Generated_Source\\PSoC5\\CapSense_1_Pins.c"
+   1:.\Generated_Source\PSoC5/CapSense_1_Pins.c **** /*******************************************************************************
+   2:.\Generated_Source\PSoC5/CapSense_1_Pins.c **** * File Name: CapSense_1_Pins.c
+   3:.\Generated_Source\PSoC5/CapSense_1_Pins.c **** * Version 3.50
+   4:.\Generated_Source\PSoC5/CapSense_1_Pins.c **** *
+   5:.\Generated_Source\PSoC5/CapSense_1_Pins.c **** * Description:
+   6:.\Generated_Source\PSoC5/CapSense_1_Pins.c **** *  This file contains API to enable firmware control of a Pins component.
+   7:.\Generated_Source\PSoC5/CapSense_1_Pins.c **** *
+   8:.\Generated_Source\PSoC5/CapSense_1_Pins.c **** * Note:
+   9:.\Generated_Source\PSoC5/CapSense_1_Pins.c **** *
+  10:.\Generated_Source\PSoC5/CapSense_1_Pins.c **** ********************************************************************************
+  11:.\Generated_Source\PSoC5/CapSense_1_Pins.c **** * Copyright 2008-2013, Cypress Semiconductor Corporation.  All rights reserved.
+  12:.\Generated_Source\PSoC5/CapSense_1_Pins.c **** * You may use this file only in accordance with the license, terms, conditions,
+  13:.\Generated_Source\PSoC5/CapSense_1_Pins.c **** * disclaimers, and limitations in the end user license agreement accompanying
+  14:.\Generated_Source\PSoC5/CapSense_1_Pins.c **** * the software package with which this file was provided.
+  15:.\Generated_Source\PSoC5/CapSense_1_Pins.c **** *******************************************************************************/
+  16:.\Generated_Source\PSoC5/CapSense_1_Pins.c **** 
+  17:.\Generated_Source\PSoC5/CapSense_1_Pins.c **** #include "CapSense_1_Pins.h"
+  18:.\Generated_Source\PSoC5/CapSense_1_Pins.c **** 
+  19:.\Generated_Source\PSoC5/CapSense_1_Pins.c **** 
+  20:.\Generated_Source\PSoC5/CapSense_1_Pins.c **** /*******************************************************************************
+  21:.\Generated_Source\PSoC5/CapSense_1_Pins.c **** * Function Name: CapSense_1_SetAllSensorsDriveMode
+  22:.\Generated_Source\PSoC5/CapSense_1_Pins.c **** ********************************************************************************
+  23:.\Generated_Source\PSoC5/CapSense_1_Pins.c **** *
+  24:.\Generated_Source\PSoC5/CapSense_1_Pins.c **** * Summary:
+  25:.\Generated_Source\PSoC5/CapSense_1_Pins.c **** *  Sets the drive mode for the all pins used by capacitive sensors within 
+  26:.\Generated_Source\PSoC5/CapSense_1_Pins.c **** *  CapSense component.
+  27:.\Generated_Source\PSoC5/CapSense_1_Pins.c **** * 
+  28:.\Generated_Source\PSoC5/CapSense_1_Pins.c **** * Parameters:  
+  29:.\Generated_Source\PSoC5/CapSense_1_Pins.c **** *  mode: Desired drive mode.
+  30:.\Generated_Source\PSoC5/CapSense_1_Pins.c **** *
+  31:.\Generated_Source\PSoC5/CapSense_1_Pins.c **** * Return: 
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccqBz0AO.s 			page 2
+
+
+  32:.\Generated_Source\PSoC5/CapSense_1_Pins.c **** *  None
+  33:.\Generated_Source\PSoC5/CapSense_1_Pins.c **** *
+  34:.\Generated_Source\PSoC5/CapSense_1_Pins.c **** *******************************************************************************/
+  35:.\Generated_Source\PSoC5/CapSense_1_Pins.c **** void CapSense_1_SetAllSensorsDriveMode(uint8 mode) 
+  36:.\Generated_Source\PSoC5/CapSense_1_Pins.c **** {
+  27              		.loc 1 36 0
+  28              		.cfi_startproc
+  29              		@ args = 0, pretend = 0, frame = 0
+  30              		@ frame_needed = 0, uses_anonymous_args = 0
+  31              		@ link register save eliminated.
+  32              	.LVL0:
+  37:.\Generated_Source\PSoC5/CapSense_1_Pins.c ****     /* Set pins drive mode */
+  38:.\Generated_Source\PSoC5/CapSense_1_Pins.c ****     CyPins_SetPinDriveMode(CapSense_1_PortCH0__DummyWidget__BTN, mode);
+  33              		.loc 1 38 0
+  34 0000 0023     		movs	r3, #0
+  35 0002 1A78     		ldrb	r2, [r3]	@ zero_extendqisi2
+  36 0004 02F0F102 		and	r2, r2, #241
+  37 0008 00F00E00 		and	r0, r0, #14
+  38              	.LVL1:
+  39 000c 0243     		orrs	r2, r2, r0
+  40 000e 1A70     		strb	r2, [r3]
+  41 0010 7047     		bx	lr
+  42              		.cfi_endproc
+  43              	.LFE0:
+  44              		.size	CapSense_1_SetAllSensorsDriveMode, .-CapSense_1_SetAllSensorsDriveMode
+  45 0012 00BF     		.section	.text.CapSense_1_SetAllCmodsDriveMode,"ax",%progbits
+  46              		.align	2
+  47              		.global	CapSense_1_SetAllCmodsDriveMode
+  48              		.thumb
+  49              		.thumb_func
+  50              		.type	CapSense_1_SetAllCmodsDriveMode, %function
+  51              	CapSense_1_SetAllCmodsDriveMode:
+  52              	.LFB1:
+  39:.\Generated_Source\PSoC5/CapSense_1_Pins.c **** 
+  40:.\Generated_Source\PSoC5/CapSense_1_Pins.c **** }
+  41:.\Generated_Source\PSoC5/CapSense_1_Pins.c **** 
+  42:.\Generated_Source\PSoC5/CapSense_1_Pins.c **** 
+  43:.\Generated_Source\PSoC5/CapSense_1_Pins.c **** 
+  44:.\Generated_Source\PSoC5/CapSense_1_Pins.c **** /*******************************************************************************
+  45:.\Generated_Source\PSoC5/CapSense_1_Pins.c **** * Function Name: CapSense_1_SetAllCmodsDriveMode
+  46:.\Generated_Source\PSoC5/CapSense_1_Pins.c **** ********************************************************************************
+  47:.\Generated_Source\PSoC5/CapSense_1_Pins.c **** *
+  48:.\Generated_Source\PSoC5/CapSense_1_Pins.c **** * Summary:
+  49:.\Generated_Source\PSoC5/CapSense_1_Pins.c **** *  Sets the drive mode for the all pins used by Cmod capacitors within CapSense 
+  50:.\Generated_Source\PSoC5/CapSense_1_Pins.c **** *  component.
+  51:.\Generated_Source\PSoC5/CapSense_1_Pins.c **** * 
+  52:.\Generated_Source\PSoC5/CapSense_1_Pins.c **** * Parameters:  
+  53:.\Generated_Source\PSoC5/CapSense_1_Pins.c **** *  mode: Desired drive mode.
+  54:.\Generated_Source\PSoC5/CapSense_1_Pins.c **** *
+  55:.\Generated_Source\PSoC5/CapSense_1_Pins.c **** * Return: 
+  56:.\Generated_Source\PSoC5/CapSense_1_Pins.c **** *  None
+  57:.\Generated_Source\PSoC5/CapSense_1_Pins.c **** *
+  58:.\Generated_Source\PSoC5/CapSense_1_Pins.c **** *******************************************************************************/
+  59:.\Generated_Source\PSoC5/CapSense_1_Pins.c **** void CapSense_1_SetAllCmodsDriveMode(uint8 mode) 
+  60:.\Generated_Source\PSoC5/CapSense_1_Pins.c **** {
+  53              		.loc 1 60 0
+  54              		.cfi_startproc
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccqBz0AO.s 			page 3
+
+
+  55              		@ args = 0, pretend = 0, frame = 0
+  56              		@ frame_needed = 0, uses_anonymous_args = 0
+  57              		@ link register save eliminated.
+  58              	.LVL2:
+  61:.\Generated_Source\PSoC5/CapSense_1_Pins.c ****    /* Set pins drive mode */
+  62:.\Generated_Source\PSoC5/CapSense_1_Pins.c ****     CyPins_SetPinDriveMode(CapSense_1_CmodCH0_Cmod_CH0, mode);
+  59              		.loc 1 62 0
+  60 0000 044B     		ldr	r3, .L3
+  61 0002 1A78     		ldrb	r2, [r3]	@ zero_extendqisi2
+  62 0004 02F0F102 		and	r2, r2, #241
+  63 0008 00F00E00 		and	r0, r0, #14
+  64              	.LVL3:
+  65 000c 0243     		orrs	r2, r2, r0
+  66 000e 1A70     		strb	r2, [r3]
+  67 0010 7047     		bx	lr
+  68              	.L4:
+  69 0012 00BF     		.align	2
+  70              	.L3:
+  71 0014 0C500040 		.word	1073762316
+  72              		.cfi_endproc
+  73              	.LFE1:
+  74              		.size	CapSense_1_SetAllCmodsDriveMode, .-CapSense_1_SetAllCmodsDriveMode
+  75              		.text
+  76              	.Letext0:
+  77              		.file 2 ".\\Generated_Source\\PSoC5\\cytypes.h"
+  78              		.section	.debug_info,"",%progbits
+  79              	.Ldebug_info0:
+  80 0000 E6000000 		.4byte	0xe6
+  81 0004 0400     		.2byte	0x4
+  82 0006 00000000 		.4byte	.Ldebug_abbrev0
+  83 000a 04       		.byte	0x4
+  84 000b 01       		.uleb128 0x1
+  85 000c 85000000 		.4byte	.LASF16
+  86 0010 01       		.byte	0x1
+  87 0011 8C010000 		.4byte	.LASF17
+  88 0015 0F010000 		.4byte	.LASF18
+  89 0019 00000000 		.4byte	.Ldebug_ranges0+0
+  90 001d 00000000 		.4byte	0
+  91 0021 00000000 		.4byte	.Ldebug_line0
+  92 0025 02       		.uleb128 0x2
+  93 0026 01       		.byte	0x1
+  94 0027 06       		.byte	0x6
+  95 0028 CA010000 		.4byte	.LASF0
+  96 002c 02       		.uleb128 0x2
+  97 002d 01       		.byte	0x1
+  98 002e 08       		.byte	0x8
+  99 002f 77000000 		.4byte	.LASF1
+ 100 0033 02       		.uleb128 0x2
+ 101 0034 02       		.byte	0x2
+ 102 0035 05       		.byte	0x5
+ 103 0036 F6010000 		.4byte	.LASF2
+ 104 003a 02       		.uleb128 0x2
+ 105 003b 02       		.byte	0x2
+ 106 003c 07       		.byte	0x7
+ 107 003d B7010000 		.4byte	.LASF3
+ 108 0041 02       		.uleb128 0x2
+ 109 0042 04       		.byte	0x4
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccqBz0AO.s 			page 4
+
+
+ 110 0043 05       		.byte	0x5
+ 111 0044 06010000 		.4byte	.LASF4
+ 112 0048 02       		.uleb128 0x2
+ 113 0049 04       		.byte	0x4
+ 114 004a 07       		.byte	0x7
+ 115 004b 48000000 		.4byte	.LASF5
+ 116 004f 02       		.uleb128 0x2
+ 117 0050 08       		.byte	0x8
+ 118 0051 05       		.byte	0x5
+ 119 0052 00000000 		.4byte	.LASF6
+ 120 0056 02       		.uleb128 0x2
+ 121 0057 08       		.byte	0x8
+ 122 0058 07       		.byte	0x7
+ 123 0059 5A000000 		.4byte	.LASF7
+ 124 005d 03       		.uleb128 0x3
+ 125 005e 04       		.byte	0x4
+ 126 005f 05       		.byte	0x5
+ 127 0060 696E7400 		.ascii	"int\000"
+ 128 0064 02       		.uleb128 0x2
+ 129 0065 04       		.byte	0x4
+ 130 0066 07       		.byte	0x7
+ 131 0067 0E000000 		.4byte	.LASF8
+ 132 006b 04       		.uleb128 0x4
+ 133 006c 42000000 		.4byte	.LASF12
+ 134 0070 02       		.byte	0x2
+ 135 0071 B4       		.byte	0xb4
+ 136 0072 2C000000 		.4byte	0x2c
+ 137 0076 02       		.uleb128 0x2
+ 138 0077 04       		.byte	0x4
+ 139 0078 04       		.byte	0x4
+ 140 0079 71000000 		.4byte	.LASF9
+ 141 007d 02       		.uleb128 0x2
+ 142 007e 08       		.byte	0x8
+ 143 007f 04       		.byte	0x4
+ 144 0080 85010000 		.4byte	.LASF10
+ 145 0084 02       		.uleb128 0x2
+ 146 0085 01       		.byte	0x1
+ 147 0086 08       		.byte	0x8
+ 148 0087 01010000 		.4byte	.LASF11
+ 149 008b 05       		.uleb128 0x5
+ 150 008c 00020000 		.4byte	.LASF13
+ 151 0090 02       		.byte	0x2
+ 152 0091 5E01     		.2byte	0x15e
+ 153 0093 97000000 		.4byte	0x97
+ 154 0097 06       		.uleb128 0x6
+ 155 0098 6B000000 		.4byte	0x6b
+ 156 009c 02       		.uleb128 0x2
+ 157 009d 04       		.byte	0x4
+ 158 009e 07       		.byte	0x7
+ 159 009f 05020000 		.4byte	.LASF14
+ 160 00a3 07       		.uleb128 0x7
+ 161 00a4 20000000 		.4byte	.LASF19
+ 162 00a8 01       		.byte	0x1
+ 163 00a9 23       		.byte	0x23
+ 164 00aa 00000000 		.4byte	.LFB0
+ 165 00ae 12000000 		.4byte	.LFE0-.LFB0
+ 166 00b2 01       		.uleb128 0x1
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccqBz0AO.s 			page 5
+
+
+ 167 00b3 9C       		.byte	0x9c
+ 168 00b4 C8000000 		.4byte	0xc8
+ 169 00b8 08       		.uleb128 0x8
+ 170 00b9 1B000000 		.4byte	.LASF15
+ 171 00bd 01       		.byte	0x1
+ 172 00be 23       		.byte	0x23
+ 173 00bf 6B000000 		.4byte	0x6b
+ 174 00c3 00000000 		.4byte	.LLST0
+ 175 00c7 00       		.byte	0
+ 176 00c8 09       		.uleb128 0x9
+ 177 00c9 D6010000 		.4byte	.LASF20
+ 178 00cd 01       		.byte	0x1
+ 179 00ce 3B       		.byte	0x3b
+ 180 00cf 00000000 		.4byte	.LFB1
+ 181 00d3 18000000 		.4byte	.LFE1-.LFB1
+ 182 00d7 01       		.uleb128 0x1
+ 183 00d8 9C       		.byte	0x9c
+ 184 00d9 08       		.uleb128 0x8
+ 185 00da 1B000000 		.4byte	.LASF15
+ 186 00de 01       		.byte	0x1
+ 187 00df 3B       		.byte	0x3b
+ 188 00e0 6B000000 		.4byte	0x6b
+ 189 00e4 21000000 		.4byte	.LLST1
+ 190 00e8 00       		.byte	0
+ 191 00e9 00       		.byte	0
+ 192              		.section	.debug_abbrev,"",%progbits
+ 193              	.Ldebug_abbrev0:
+ 194 0000 01       		.uleb128 0x1
+ 195 0001 11       		.uleb128 0x11
+ 196 0002 01       		.byte	0x1
+ 197 0003 25       		.uleb128 0x25
+ 198 0004 0E       		.uleb128 0xe
+ 199 0005 13       		.uleb128 0x13
+ 200 0006 0B       		.uleb128 0xb
+ 201 0007 03       		.uleb128 0x3
+ 202 0008 0E       		.uleb128 0xe
+ 203 0009 1B       		.uleb128 0x1b
+ 204 000a 0E       		.uleb128 0xe
+ 205 000b 55       		.uleb128 0x55
+ 206 000c 17       		.uleb128 0x17
+ 207 000d 11       		.uleb128 0x11
+ 208 000e 01       		.uleb128 0x1
+ 209 000f 10       		.uleb128 0x10
+ 210 0010 17       		.uleb128 0x17
+ 211 0011 00       		.byte	0
+ 212 0012 00       		.byte	0
+ 213 0013 02       		.uleb128 0x2
+ 214 0014 24       		.uleb128 0x24
+ 215 0015 00       		.byte	0
+ 216 0016 0B       		.uleb128 0xb
+ 217 0017 0B       		.uleb128 0xb
+ 218 0018 3E       		.uleb128 0x3e
+ 219 0019 0B       		.uleb128 0xb
+ 220 001a 03       		.uleb128 0x3
+ 221 001b 0E       		.uleb128 0xe
+ 222 001c 00       		.byte	0
+ 223 001d 00       		.byte	0
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccqBz0AO.s 			page 6
+
+
+ 224 001e 03       		.uleb128 0x3
+ 225 001f 24       		.uleb128 0x24
+ 226 0020 00       		.byte	0
+ 227 0021 0B       		.uleb128 0xb
+ 228 0022 0B       		.uleb128 0xb
+ 229 0023 3E       		.uleb128 0x3e
+ 230 0024 0B       		.uleb128 0xb
+ 231 0025 03       		.uleb128 0x3
+ 232 0026 08       		.uleb128 0x8
+ 233 0027 00       		.byte	0
+ 234 0028 00       		.byte	0
+ 235 0029 04       		.uleb128 0x4
+ 236 002a 16       		.uleb128 0x16
+ 237 002b 00       		.byte	0
+ 238 002c 03       		.uleb128 0x3
+ 239 002d 0E       		.uleb128 0xe
+ 240 002e 3A       		.uleb128 0x3a
+ 241 002f 0B       		.uleb128 0xb
+ 242 0030 3B       		.uleb128 0x3b
+ 243 0031 0B       		.uleb128 0xb
+ 244 0032 49       		.uleb128 0x49
+ 245 0033 13       		.uleb128 0x13
+ 246 0034 00       		.byte	0
+ 247 0035 00       		.byte	0
+ 248 0036 05       		.uleb128 0x5
+ 249 0037 16       		.uleb128 0x16
+ 250 0038 00       		.byte	0
+ 251 0039 03       		.uleb128 0x3
+ 252 003a 0E       		.uleb128 0xe
+ 253 003b 3A       		.uleb128 0x3a
+ 254 003c 0B       		.uleb128 0xb
+ 255 003d 3B       		.uleb128 0x3b
+ 256 003e 05       		.uleb128 0x5
+ 257 003f 49       		.uleb128 0x49
+ 258 0040 13       		.uleb128 0x13
+ 259 0041 00       		.byte	0
+ 260 0042 00       		.byte	0
+ 261 0043 06       		.uleb128 0x6
+ 262 0044 35       		.uleb128 0x35
+ 263 0045 00       		.byte	0
+ 264 0046 49       		.uleb128 0x49
+ 265 0047 13       		.uleb128 0x13
+ 266 0048 00       		.byte	0
+ 267 0049 00       		.byte	0
+ 268 004a 07       		.uleb128 0x7
+ 269 004b 2E       		.uleb128 0x2e
+ 270 004c 01       		.byte	0x1
+ 271 004d 3F       		.uleb128 0x3f
+ 272 004e 19       		.uleb128 0x19
+ 273 004f 03       		.uleb128 0x3
+ 274 0050 0E       		.uleb128 0xe
+ 275 0051 3A       		.uleb128 0x3a
+ 276 0052 0B       		.uleb128 0xb
+ 277 0053 3B       		.uleb128 0x3b
+ 278 0054 0B       		.uleb128 0xb
+ 279 0055 27       		.uleb128 0x27
+ 280 0056 19       		.uleb128 0x19
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccqBz0AO.s 			page 7
+
+
+ 281 0057 11       		.uleb128 0x11
+ 282 0058 01       		.uleb128 0x1
+ 283 0059 12       		.uleb128 0x12
+ 284 005a 06       		.uleb128 0x6
+ 285 005b 40       		.uleb128 0x40
+ 286 005c 18       		.uleb128 0x18
+ 287 005d 9742     		.uleb128 0x2117
+ 288 005f 19       		.uleb128 0x19
+ 289 0060 01       		.uleb128 0x1
+ 290 0061 13       		.uleb128 0x13
+ 291 0062 00       		.byte	0
+ 292 0063 00       		.byte	0
+ 293 0064 08       		.uleb128 0x8
+ 294 0065 05       		.uleb128 0x5
+ 295 0066 00       		.byte	0
+ 296 0067 03       		.uleb128 0x3
+ 297 0068 0E       		.uleb128 0xe
+ 298 0069 3A       		.uleb128 0x3a
+ 299 006a 0B       		.uleb128 0xb
+ 300 006b 3B       		.uleb128 0x3b
+ 301 006c 0B       		.uleb128 0xb
+ 302 006d 49       		.uleb128 0x49
+ 303 006e 13       		.uleb128 0x13
+ 304 006f 02       		.uleb128 0x2
+ 305 0070 17       		.uleb128 0x17
+ 306 0071 00       		.byte	0
+ 307 0072 00       		.byte	0
+ 308 0073 09       		.uleb128 0x9
+ 309 0074 2E       		.uleb128 0x2e
+ 310 0075 01       		.byte	0x1
+ 311 0076 3F       		.uleb128 0x3f
+ 312 0077 19       		.uleb128 0x19
+ 313 0078 03       		.uleb128 0x3
+ 314 0079 0E       		.uleb128 0xe
+ 315 007a 3A       		.uleb128 0x3a
+ 316 007b 0B       		.uleb128 0xb
+ 317 007c 3B       		.uleb128 0x3b
+ 318 007d 0B       		.uleb128 0xb
+ 319 007e 27       		.uleb128 0x27
+ 320 007f 19       		.uleb128 0x19
+ 321 0080 11       		.uleb128 0x11
+ 322 0081 01       		.uleb128 0x1
+ 323 0082 12       		.uleb128 0x12
+ 324 0083 06       		.uleb128 0x6
+ 325 0084 40       		.uleb128 0x40
+ 326 0085 18       		.uleb128 0x18
+ 327 0086 9742     		.uleb128 0x2117
+ 328 0088 19       		.uleb128 0x19
+ 329 0089 00       		.byte	0
+ 330 008a 00       		.byte	0
+ 331 008b 00       		.byte	0
+ 332              		.section	.debug_loc,"",%progbits
+ 333              	.Ldebug_loc0:
+ 334              	.LLST0:
+ 335 0000 00000000 		.4byte	.LVL0
+ 336 0004 0C000000 		.4byte	.LVL1
+ 337 0008 0100     		.2byte	0x1
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccqBz0AO.s 			page 8
+
+
+ 338 000a 50       		.byte	0x50
+ 339 000b 0C000000 		.4byte	.LVL1
+ 340 000f 12000000 		.4byte	.LFE0
+ 341 0013 0400     		.2byte	0x4
+ 342 0015 F3       		.byte	0xf3
+ 343 0016 01       		.uleb128 0x1
+ 344 0017 50       		.byte	0x50
+ 345 0018 9F       		.byte	0x9f
+ 346 0019 00000000 		.4byte	0
+ 347 001d 00000000 		.4byte	0
+ 348              	.LLST1:
+ 349 0021 00000000 		.4byte	.LVL2
+ 350 0025 0C000000 		.4byte	.LVL3
+ 351 0029 0100     		.2byte	0x1
+ 352 002b 50       		.byte	0x50
+ 353 002c 0C000000 		.4byte	.LVL3
+ 354 0030 18000000 		.4byte	.LFE1
+ 355 0034 0400     		.2byte	0x4
+ 356 0036 F3       		.byte	0xf3
+ 357 0037 01       		.uleb128 0x1
+ 358 0038 50       		.byte	0x50
+ 359 0039 9F       		.byte	0x9f
+ 360 003a 00000000 		.4byte	0
+ 361 003e 00000000 		.4byte	0
+ 362              		.section	.debug_aranges,"",%progbits
+ 363 0000 24000000 		.4byte	0x24
+ 364 0004 0200     		.2byte	0x2
+ 365 0006 00000000 		.4byte	.Ldebug_info0
+ 366 000a 04       		.byte	0x4
+ 367 000b 00       		.byte	0
+ 368 000c 0000     		.2byte	0
+ 369 000e 0000     		.2byte	0
+ 370 0010 00000000 		.4byte	.LFB0
+ 371 0014 12000000 		.4byte	.LFE0-.LFB0
+ 372 0018 00000000 		.4byte	.LFB1
+ 373 001c 18000000 		.4byte	.LFE1-.LFB1
+ 374 0020 00000000 		.4byte	0
+ 375 0024 00000000 		.4byte	0
+ 376              		.section	.debug_ranges,"",%progbits
+ 377              	.Ldebug_ranges0:
+ 378 0000 00000000 		.4byte	.LFB0
+ 379 0004 12000000 		.4byte	.LFE0
+ 380 0008 00000000 		.4byte	.LFB1
+ 381 000c 18000000 		.4byte	.LFE1
+ 382 0010 00000000 		.4byte	0
+ 383 0014 00000000 		.4byte	0
+ 384              		.section	.debug_line,"",%progbits
+ 385              	.Ldebug_line0:
+ 386 0000 74000000 		.section	.debug_str,"MS",%progbits,1
+ 386      02004E00 
+ 386      00000201 
+ 386      FB0E0D00 
+ 386      01010101 
+ 387              	.LASF6:
+ 388 0000 6C6F6E67 		.ascii	"long long int\000"
+ 388      206C6F6E 
+ 388      6720696E 
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccqBz0AO.s 			page 9
+
+
+ 388      7400
+ 389              	.LASF8:
+ 390 000e 756E7369 		.ascii	"unsigned int\000"
+ 390      676E6564 
+ 390      20696E74 
+ 390      00
+ 391              	.LASF15:
+ 392 001b 6D6F6465 		.ascii	"mode\000"
+ 392      00
+ 393              	.LASF19:
+ 394 0020 43617053 		.ascii	"CapSense_1_SetAllSensorsDriveMode\000"
+ 394      656E7365 
+ 394      5F315F53 
+ 394      6574416C 
+ 394      6C53656E 
+ 395              	.LASF12:
+ 396 0042 75696E74 		.ascii	"uint8\000"
+ 396      3800
+ 397              	.LASF5:
+ 398 0048 6C6F6E67 		.ascii	"long unsigned int\000"
+ 398      20756E73 
+ 398      69676E65 
+ 398      6420696E 
+ 398      7400
+ 399              	.LASF7:
+ 400 005a 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 400      206C6F6E 
+ 400      6720756E 
+ 400      7369676E 
+ 400      65642069 
+ 401              	.LASF9:
+ 402 0071 666C6F61 		.ascii	"float\000"
+ 402      7400
+ 403              	.LASF1:
+ 404 0077 756E7369 		.ascii	"unsigned char\000"
+ 404      676E6564 
+ 404      20636861 
+ 404      7200
+ 405              	.LASF16:
+ 406 0085 474E5520 		.ascii	"GNU C 4.8.4 20140526 (release) [ARM/embedded-4_8-br"
+ 406      4320342E 
+ 406      382E3420 
+ 406      32303134 
+ 406      30353236 
+ 407 00b8 616E6368 		.ascii	"anch revision 211358] -mcpu=cortex-m3 -mthumb -g -O"
+ 407      20726576 
+ 407      6973696F 
+ 407      6E203231 
+ 407      31333538 
+ 408 00eb 67202D66 		.ascii	"g -ffunction-sections\000"
+ 408      66756E63 
+ 408      74696F6E 
+ 408      2D736563 
+ 408      74696F6E 
+ 409              	.LASF11:
+ 410 0101 63686172 		.ascii	"char\000"
+ 410      00
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccqBz0AO.s 			page 10
+
+
+ 411              	.LASF4:
+ 412 0106 6C6F6E67 		.ascii	"long int\000"
+ 412      20696E74 
+ 412      00
+ 413              	.LASF18:
+ 414 010f 433A5C55 		.ascii	"C:\\Users\\JohnP\\OneDrive\\College\\2015-2016 Seni"
+ 414      73657273 
+ 414      5C4A6F68 
+ 414      6E505C4F 
+ 414      6E654472 
+ 415 013d 6F722059 		.ascii	"or Year\\0 Fall Quarter\\CE4920\\Lab\\project\\CE49"
+ 415      6561725C 
+ 415      30204661 
+ 415      6C6C2051 
+ 415      75617274 
+ 416 016b 32305072 		.ascii	"20Project1\\Design01.cydsn\000"
+ 416      6F6A6563 
+ 416      74315C44 
+ 416      65736967 
+ 416      6E30312E 
+ 417              	.LASF10:
+ 418 0185 646F7562 		.ascii	"double\000"
+ 418      6C6500
+ 419              	.LASF17:
+ 420 018c 2E5C4765 		.ascii	".\\Generated_Source\\PSoC5\\CapSense_1_Pins.c\000"
+ 420      6E657261 
+ 420      7465645F 
+ 420      536F7572 
+ 420      63655C50 
+ 421              	.LASF3:
+ 422 01b7 73686F72 		.ascii	"short unsigned int\000"
+ 422      7420756E 
+ 422      7369676E 
+ 422      65642069 
+ 422      6E7400
+ 423              	.LASF0:
+ 424 01ca 7369676E 		.ascii	"signed char\000"
+ 424      65642063 
+ 424      68617200 
+ 425              	.LASF20:
+ 426 01d6 43617053 		.ascii	"CapSense_1_SetAllCmodsDriveMode\000"
+ 426      656E7365 
+ 426      5F315F53 
+ 426      6574416C 
+ 426      6C436D6F 
+ 427              	.LASF2:
+ 428 01f6 73686F72 		.ascii	"short int\000"
+ 428      7420696E 
+ 428      7400
+ 429              	.LASF13:
+ 430 0200 72656738 		.ascii	"reg8\000"
+ 430      00
+ 431              	.LASF14:
+ 432 0205 73697A65 		.ascii	"sizetype\000"
+ 432      74797065 
+ 432      00
+ 433              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.8.4 20140526 (release) [ARM/embedded-4_8-br
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccqBz0AO.s 			page 11
+
+

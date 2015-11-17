@@ -1,0 +1,153 @@
+--------------- Rebuild Started: 10/27/2015 22:48:26 Project: Design01, Configuration: ARM GCC 4.8.4 Debug ---------------
+Deleting file ".\CortexM3\ARM_GCC_484\Debug\states.o"
+Deleting file ".\CortexM3\ARM_GCC_484\Debug\motor.o"
+Deleting file ".\CortexM3\ARM_GCC_484\Debug\speaker.o"
+Deleting file ".\CortexM3\ARM_GCC_484\Debug\display.o"
+Deleting file ".\CortexM3\ARM_GCC_484\Debug\system.o"
+Deleting file ".\CortexM3\ARM_GCC_484\Debug\heartrate.o"
+Deleting file ".\CortexM3\ARM_GCC_484\Debug\main.o"
+Deleting file ".\CortexM3\ARM_GCC_484\Debug\terminal.o"
+Deleting file ".\CortexM3\ARM_GCC_484\Debug\cyfitter_cfg.o"
+Deleting file ".\CortexM3\ARM_GCC_484\Debug\cymetadata.o"
+Deleting file ".\CortexM3\ARM_GCC_484\Debug\Cm3Start.o"
+Deleting file ".\CortexM3\ARM_GCC_484\Debug\CyBootAsmGnu.o"
+Deleting file ".\CortexM3\ARM_GCC_484\Debug\CyDmac.o"
+Deleting file ".\CortexM3\ARM_GCC_484\Debug\CyFlash.o"
+Deleting file ".\CortexM3\ARM_GCC_484\Debug\CyLib.o"
+Deleting file ".\CortexM3\ARM_GCC_484\Debug\cyPm.o"
+Deleting file ".\CortexM3\ARM_GCC_484\Debug\CySpc.o"
+Deleting file ".\CortexM3\ARM_GCC_484\Debug\cyutils.o"
+Deleting file ".\CortexM3\ARM_GCC_484\Debug\Pin_1.o"
+Deleting file ".\CortexM3\ARM_GCC_484\Debug\LCD.o"
+Deleting file ".\CortexM3\ARM_GCC_484\Debug\LCD_PM.o"
+Deleting file ".\CortexM3\ARM_GCC_484\Debug\LCD_BarGraph.o"
+Deleting file ".\CortexM3\ARM_GCC_484\Debug\LCD_LCDPort.o"
+Deleting file ".\CortexM3\ARM_GCC_484\Debug\Speaker_Output.o"
+Deleting file ".\CortexM3\ARM_GCC_484\Debug\CapSense.o"
+Deleting file ".\CortexM3\ARM_GCC_484\Debug\CapSense_CSHL.o"
+Deleting file ".\CortexM3\ARM_GCC_484\Debug\CapSense_INT.o"
+Deleting file ".\CortexM3\ARM_GCC_484\Debug\CapSense_Pins.o"
+Deleting file ".\CortexM3\ARM_GCC_484\Debug\CapSense_PM.o"
+Deleting file ".\CortexM3\ARM_GCC_484\Debug\CapSense_SMS_Wrapper.o"
+Deleting file ".\CortexM3\ARM_GCC_484\Debug\CapSense_TunerHelper.o"
+Deleting file ".\CortexM3\ARM_GCC_484\Debug\CapSense_CompCH0.o"
+Deleting file ".\CortexM3\ARM_GCC_484\Debug\CapSense_CompCH0_PM.o"
+Deleting file ".\CortexM3\ARM_GCC_484\Debug\CapSense_IdacCH0.o"
+Deleting file ".\CortexM3\ARM_GCC_484\Debug\CapSense_IdacCH0_PM.o"
+Deleting file ".\CortexM3\ARM_GCC_484\Debug\CapSense_AMuxCH0.o"
+Deleting file ".\CortexM3\ARM_GCC_484\Debug\CapSense_IntClock.o"
+Deleting file ".\CortexM3\ARM_GCC_484\Debug\HEARTRATE_ANALOG_IN.o"
+Deleting file ".\CortexM3\ARM_GCC_484\Debug\PGA_1.o"
+Deleting file ".\CortexM3\ARM_GCC_484\Debug\PGA_1_PM.o"
+Deleting file ".\CortexM3\ARM_GCC_484\Debug\Comp.o"
+Deleting file ".\CortexM3\ARM_GCC_484\Debug\Comp_PM.o"
+Deleting file ".\CortexM3\ARM_GCC_484\Debug\WaveDAC8_1_DacClk.o"
+Deleting file ".\CortexM3\ARM_GCC_484\Debug\WaveDAC8_1_Wave1_DMA_dma.o"
+Deleting file ".\CortexM3\ARM_GCC_484\Debug\WaveDAC8_1_Wave2_DMA_dma.o"
+Deleting file ".\CortexM3\ARM_GCC_484\Debug\WaveDAC8_1_VDAC8.o"
+Deleting file ".\CortexM3\ARM_GCC_484\Debug\WaveDAC8_1_VDAC8_PM.o"
+Deleting file ".\CortexM3\ARM_GCC_484\Debug\WaveDAC8_1.o"
+Deleting file ".\CortexM3\ARM_GCC_484\Debug\WaveDAC8_1_PM.o"
+Deleting file ".\CortexM3\ARM_GCC_484\Debug\amp.o"
+Deleting file ".\CortexM3\ARM_GCC_484\Debug\Compint.o"
+Deleting file ".\CortexM3\ARM_GCC_484\Debug\HeartbeatCounter.o"
+Deleting file ".\CortexM3\ARM_GCC_484\Debug\HeartbeatCounter_PM.o"
+Deleting file ".\CortexM3\ARM_GCC_484\Debug\USBUART.o"
+Deleting file ".\CortexM3\ARM_GCC_484\Debug\USBUART_audio.o"
+Deleting file ".\CortexM3\ARM_GCC_484\Debug\USBUART_BOOT.o"
+Deleting file ".\CortexM3\ARM_GCC_484\Debug\USBUART_cdc.o"
+Deleting file ".\CortexM3\ARM_GCC_484\Debug\USBUART_cls.o"
+Deleting file ".\CortexM3\ARM_GCC_484\Debug\USBUART_descr.o"
+Deleting file ".\CortexM3\ARM_GCC_484\Debug\USBUART_drv.o"
+Deleting file ".\CortexM3\ARM_GCC_484\Debug\USBUART_episr.o"
+Deleting file ".\CortexM3\ARM_GCC_484\Debug\USBUART_hid.o"
+Deleting file ".\CortexM3\ARM_GCC_484\Debug\USBUART_PM.o"
+Deleting file ".\CortexM3\ARM_GCC_484\Debug\USBUART_std.o"
+Deleting file ".\CortexM3\ARM_GCC_484\Debug\USBUART_vnd.o"
+Deleting file ".\CortexM3\ARM_GCC_484\Debug\USBUART_midi.o"
+Deleting file ".\CortexM3\ARM_GCC_484\Debug\USBUART_Dm.o"
+Deleting file ".\CortexM3\ARM_GCC_484\Debug\USBUART_Dp.o"
+Deleting file ".\CortexM3\ARM_GCC_484\Debug\timer_clock_1.o"
+Deleting file ".\CortexM3\ARM_GCC_484\Debug\PWM_Output.o"
+Deleting file ".\CortexM3\ARM_GCC_484\Debug\PWM.o"
+Deleting file ".\CortexM3\ARM_GCC_484\Debug\PWM_PM.o"
+Deleting file ".\CortexM3\ARM_GCC_484\Debug\Design01.hex"
+Deleting file ".\CortexM3\ARM_GCC_484\Debug\Design01.elf"
+Deleting file ".\CortexM3\ARM_GCC_484\Debug\Design01.map"
+Deleting file ".\Design01.cycdx"
+Deleting file ".\Design01.svd"
+Deleting file ".\Design01.rpt"
+Deleting file ".\Design01_timing.html"
+Deleting file ".\CortexM3\ARM_GCC_484\Debug\.deps\C_FILE.P"
+Deleting file ".\CortexM3\ARM_GCC_484\Debug\.deps\ARM_C_FILE.P"
+Deleting file ".\CortexM3\ARM_GCC_484\Debug\.deps\GNU_ARM_ASM_FILE.P"
+cydsfit.exe -.appdatapath "C:\Users\JohnP\AppData\Local\Cypress Semiconductor\PSoC Creator\3.2" -.fdsnotice -.fdswarpdepfile=warp_dependencies.txt -.fdselabdepfile=elab_dependencies.txt -.fdsbldfile=generated_files.txt -p "C:\Users\JohnP\OneDrive\College\2015-2016 Senior Year\0 Fall Quarter\CE4920 011\Lab\project\CE4920Project1\Design01.cydsn\Design01.cyprj" -d CY8C5868AXI-LP035 -s "C:\Users\JohnP\OneDrive\College\2015-2016 Senior Year\0 Fall Quarter\CE4920 011\Lab\project\CE4920Project1\Design01.cydsn\Generated_Source\PSoC5" -- -yv2 -q10 -ygs -o0 -v3 -.fftcfgtype=LE
+Elaborating Design...
+ADD: sdb.M0065: information: Analog terminal "HEARTRATE_ANALOG_IN.analog_0" on TopDesign is unconnected.
+ * C:\Users\JohnP\OneDrive\College\2015-2016 Senior Year\0 Fall Quarter\CE4920 011\Lab\project\CE4920Project1\Design01.cydsn\TopDesign\TopDesign.cysch (Signal: Net_1669)
+ * C:\Users\JohnP\OneDrive\College\2015-2016 Senior Year\0 Fall Quarter\CE4920 011\Lab\project\CE4920Project1\Design01.cydsn\TopDesign\TopDesign.cysch (Shape_36.1)
+HDL Generation ...
+Synthesis ...
+Place and Route ...
+Tech mapping ...
+ADD: pft.M0040: information: The following 2 pin(s) will be assigned a location by the fitter: \USBUART:Dm(0)\, \USBUART:Dp(0)\
+Analog Placement ...
+Log: apr.M0058: The analog placement iterative improvement is 51% done. (App=cydsfit)
+Log: apr.M0058: The analog placement iterative improvement is 76% done. (App=cydsfit)
+Analog Routing ...
+Analog Code Generation ...
+Digital Placement ...
+Digital Routing ...
+Bitstream Generation ...
+Static timing analysis ...
+Warning: sta.M0021: Design01_timing.html: Warning-1350: Asynchronous path(s) exist from "timer_clock_1(routed)" to "CyBUS_CLK". See the timing report for details. (File=C:\Users\JohnP\OneDrive\College\2015-2016 Senior Year\0 Fall Quarter\CE4920 011\Lab\project\CE4920Project1\Design01.cydsn\Design01_timing.html)
+API Generation ...
+Dependency Generation ...
+Clean Temporary Files ...
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -Wno-main -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_484\Debug/states.lst -g -D DEBUG -Wall -ffunction-sections -Og -c .\states.c -o .\CortexM3\ARM_GCC_484\Debug\states.o
+.\states.c: In function 'State_heartrate_change':
+.\states.c:145:29: warning: 'MOTOR_WALKING_SPEED' may be used uninitialized in this function [-Wmaybe-uninitialized]
+                 Motor_rampUp(MOTOR_WALKING_SPEED);
+                             ^
+.\states.c:148:29: warning: 'MOTOR_RUNNING_SPEED' may be used uninitialized in this function [-Wmaybe-uninitialized]
+                 Motor_rampUp(MOTOR_RUNNING_SPEED);
+                             ^
+.\states.c:161:29: warning: 'MOTOR_FAST_WALKING_SPEED' may be used uninitialized in this function [-Wmaybe-uninitialized]
+                 Motor_rampUp(MOTOR_FAST_WALKING_SPEED);
+                             ^
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -Wno-main -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_484\Debug/motor.lst -g -D DEBUG -Wall -ffunction-sections -Og -c .\motor.c -o .\CortexM3\ARM_GCC_484\Debug\motor.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -Wno-main -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_484\Debug/speaker.lst -g -D DEBUG -Wall -ffunction-sections -Og -c .\speaker.c -o .\CortexM3\ARM_GCC_484\Debug\speaker.o
+.\speaker.c: In function 'Play_song_one':
+.\speaker.c:59:5: warning: implicit declaration of function 'CyDelay' [-Wimplicit-function-declaration]
+     CyDelay(32);
+     ^
+.\speaker.c:67:5: warning: statement with no effect [-Wunused-value]
+     for (i; i>58; i--){
+     ^
+.\speaker.c: In function 'Play_note':
+.\speaker.c:77:9: warning: implicit declaration of function 'Speaker_Output_Write' [-Wimplicit-function-declaration]
+         Speaker_Output_Write(1);
+         ^
+.\speaker.c:78:9: warning: implicit declaration of function 'CyDelayUs' [-Wimplicit-function-declaration]
+         CyDelayUs(toneHalfPeriod);
+         ^
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -Wno-main -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_484\Debug/display.lst -g -D DEBUG -Wall -ffunction-sections -Og -c .\display.c -o .\CortexM3\ARM_GCC_484\Debug\display.o
+.\display.c: In function 'Display_profile_selection':
+.\display.c:61:18: error: 'REGULAR' undeclared (first use in this function)
+             case REGULAR:
+                  ^
+.\display.c:61:18: note: each undeclared identifier is reported only once for each function it appears in
+.\display.c:65:18: error: 'LIGHT' undeclared (first use in this function)
+             case LIGHT:
+                  ^
+.\display.c:69:18: error: 'HILLS' undeclared (first use in this function)
+             case HILLS:
+                  ^
+.\display.c:73:18: error: 'CARDIO' undeclared (first use in this function)
+             case CARDIO:
+                  ^
+.\display.c:77:18: error: 'FATBURN' undeclared (first use in this function)
+             case FATBURN:
+                  ^
+The command 'arm-none-eabi-gcc.exe' failed with exit code '1'.
+--------------- Rebuild Failed: 10/27/2015 22:49:04 ---------------

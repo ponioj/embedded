@@ -1,0 +1,335 @@
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccobWDjg.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"motors.c"
+  15              		.text
+  16              	.Ltext0:
+  17              		.cfi_sections	.debug_frame
+  18              		.section	.text.Start_motor,"ax",%progbits
+  19              		.align	2
+  20              		.global	Start_motor
+  21              		.thumb
+  22              		.thumb_func
+  23              		.type	Start_motor, %function
+  24              	Start_motor:
+  25              	.LFB0:
+  26              		.file 1 ".\\motors.c"
+   1:.\motors.c    **** /* ========================================
+   2:.\motors.c    ****  *
+   3:.\motors.c    ****  * Copyright YOUR COMPANY, THE YEAR
+   4:.\motors.c    ****  * All Rights Reserved
+   5:.\motors.c    ****  * UNPUBLISHED, LICENSED SOFTWARE.
+   6:.\motors.c    ****  *
+   7:.\motors.c    ****  * CONFIDENTIAL AND PROPRIETARY INFORMATION
+   8:.\motors.c    ****  * WHICH IS THE PROPERTY OF your company.
+   9:.\motors.c    ****  *
+  10:.\motors.c    ****  * ========================================
+  11:.\motors.c    **** */
+  12:.\motors.c    **** 
+  13:.\motors.c    **** void Start_motor(){
+  27              		.loc 1 13 0
+  28              		.cfi_startproc
+  29              		@ args = 0, pretend = 0, frame = 0
+  30              		@ frame_needed = 0, uses_anonymous_args = 0
+  31              		@ link register save eliminated.
+  32 0000 7047     		bx	lr
+  33              		.cfi_endproc
+  34              	.LFE0:
+  35              		.size	Start_motor, .-Start_motor
+  36 0002 00BF     		.section	.text.Move_motor,"ax",%progbits
+  37              		.align	2
+  38              		.global	Move_motor
+  39              		.thumb
+  40              		.thumb_func
+  41              		.type	Move_motor, %function
+  42              	Move_motor:
+  43              	.LFB1:
+  14:.\motors.c    ****     Move_motor(300);
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccobWDjg.s 			page 2
+
+
+  15:.\motors.c    **** }
+  16:.\motors.c    **** 
+  17:.\motors.c    **** void Move_motor(int speed){
+  44              		.loc 1 17 0
+  45              		.cfi_startproc
+  46              		@ args = 0, pretend = 0, frame = 0
+  47              		@ frame_needed = 0, uses_anonymous_args = 0
+  48              		@ link register save eliminated.
+  49              	.LVL0:
+  50 0000 7047     		bx	lr
+  51              		.cfi_endproc
+  52              	.LFE1:
+  53              		.size	Move_motor, .-Move_motor
+  54 0002 00BF     		.text
+  55              	.Letext0:
+  56              		.section	.debug_info,"",%progbits
+  57              	.Ldebug_info0:
+  58 0000 6B000000 		.4byte	0x6b
+  59 0004 0400     		.2byte	0x4
+  60 0006 00000000 		.4byte	.Ldebug_abbrev0
+  61 000a 04       		.byte	0x4
+  62 000b 01       		.uleb128 0x1
+  63 000c 9E000000 		.4byte	.LASF2
+  64 0010 01       		.byte	0x1
+  65 0011 76000000 		.4byte	.LASF3
+  66 0015 00000000 		.4byte	.LASF4
+  67 0019 00000000 		.4byte	.Ldebug_ranges0+0
+  68 001d 00000000 		.4byte	0
+  69 0021 00000000 		.4byte	.Ldebug_line0
+  70 0025 02       		.uleb128 0x2
+  71 0026 92000000 		.4byte	.LASF0
+  72 002a 01       		.byte	0x1
+  73 002b 0D       		.byte	0xd
+  74 002c 00000000 		.4byte	.LFB0
+  75 0030 02000000 		.4byte	.LFE0-.LFB0
+  76 0034 01       		.uleb128 0x1
+  77 0035 9C       		.byte	0x9c
+  78 0036 48000000 		.4byte	0x48
+  79 003a 03       		.uleb128 0x3
+  80 003b 87000000 		.4byte	.LASF1
+  81 003f 01       		.byte	0x1
+  82 0040 0E       		.byte	0xe
+  83 0041 48000000 		.4byte	0x48
+  84 0045 04       		.uleb128 0x4
+  85 0046 00       		.byte	0
+  86 0047 00       		.byte	0
+  87 0048 05       		.uleb128 0x5
+  88 0049 04       		.byte	0x4
+  89 004a 05       		.byte	0x5
+  90 004b 696E7400 		.ascii	"int\000"
+  91 004f 06       		.uleb128 0x6
+  92 0050 87000000 		.4byte	.LASF1
+  93 0054 01       		.byte	0x1
+  94 0055 11       		.byte	0x11
+  95 0056 00000000 		.4byte	.LFB1
+  96 005a 02000000 		.4byte	.LFE1-.LFB1
+  97 005e 01       		.uleb128 0x1
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccobWDjg.s 			page 3
+
+
+  98 005f 9C       		.byte	0x9c
+  99 0060 07       		.uleb128 0x7
+ 100 0061 81000000 		.4byte	.LASF5
+ 101 0065 01       		.byte	0x1
+ 102 0066 11       		.byte	0x11
+ 103 0067 48000000 		.4byte	0x48
+ 104 006b 01       		.uleb128 0x1
+ 105 006c 50       		.byte	0x50
+ 106 006d 00       		.byte	0
+ 107 006e 00       		.byte	0
+ 108              		.section	.debug_abbrev,"",%progbits
+ 109              	.Ldebug_abbrev0:
+ 110 0000 01       		.uleb128 0x1
+ 111 0001 11       		.uleb128 0x11
+ 112 0002 01       		.byte	0x1
+ 113 0003 25       		.uleb128 0x25
+ 114 0004 0E       		.uleb128 0xe
+ 115 0005 13       		.uleb128 0x13
+ 116 0006 0B       		.uleb128 0xb
+ 117 0007 03       		.uleb128 0x3
+ 118 0008 0E       		.uleb128 0xe
+ 119 0009 1B       		.uleb128 0x1b
+ 120 000a 0E       		.uleb128 0xe
+ 121 000b 55       		.uleb128 0x55
+ 122 000c 17       		.uleb128 0x17
+ 123 000d 11       		.uleb128 0x11
+ 124 000e 01       		.uleb128 0x1
+ 125 000f 10       		.uleb128 0x10
+ 126 0010 17       		.uleb128 0x17
+ 127 0011 00       		.byte	0
+ 128 0012 00       		.byte	0
+ 129 0013 02       		.uleb128 0x2
+ 130 0014 2E       		.uleb128 0x2e
+ 131 0015 01       		.byte	0x1
+ 132 0016 3F       		.uleb128 0x3f
+ 133 0017 19       		.uleb128 0x19
+ 134 0018 03       		.uleb128 0x3
+ 135 0019 0E       		.uleb128 0xe
+ 136 001a 3A       		.uleb128 0x3a
+ 137 001b 0B       		.uleb128 0xb
+ 138 001c 3B       		.uleb128 0x3b
+ 139 001d 0B       		.uleb128 0xb
+ 140 001e 11       		.uleb128 0x11
+ 141 001f 01       		.uleb128 0x1
+ 142 0020 12       		.uleb128 0x12
+ 143 0021 06       		.uleb128 0x6
+ 144 0022 40       		.uleb128 0x40
+ 145 0023 18       		.uleb128 0x18
+ 146 0024 9742     		.uleb128 0x2117
+ 147 0026 19       		.uleb128 0x19
+ 148 0027 01       		.uleb128 0x1
+ 149 0028 13       		.uleb128 0x13
+ 150 0029 00       		.byte	0
+ 151 002a 00       		.byte	0
+ 152 002b 03       		.uleb128 0x3
+ 153 002c 2E       		.uleb128 0x2e
+ 154 002d 01       		.byte	0x1
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccobWDjg.s 			page 4
+
+
+ 155 002e 3F       		.uleb128 0x3f
+ 156 002f 19       		.uleb128 0x19
+ 157 0030 03       		.uleb128 0x3
+ 158 0031 0E       		.uleb128 0xe
+ 159 0032 3A       		.uleb128 0x3a
+ 160 0033 0B       		.uleb128 0xb
+ 161 0034 3B       		.uleb128 0x3b
+ 162 0035 0B       		.uleb128 0xb
+ 163 0036 49       		.uleb128 0x49
+ 164 0037 13       		.uleb128 0x13
+ 165 0038 3C       		.uleb128 0x3c
+ 166 0039 19       		.uleb128 0x19
+ 167 003a 00       		.byte	0
+ 168 003b 00       		.byte	0
+ 169 003c 04       		.uleb128 0x4
+ 170 003d 18       		.uleb128 0x18
+ 171 003e 00       		.byte	0
+ 172 003f 00       		.byte	0
+ 173 0040 00       		.byte	0
+ 174 0041 05       		.uleb128 0x5
+ 175 0042 24       		.uleb128 0x24
+ 176 0043 00       		.byte	0
+ 177 0044 0B       		.uleb128 0xb
+ 178 0045 0B       		.uleb128 0xb
+ 179 0046 3E       		.uleb128 0x3e
+ 180 0047 0B       		.uleb128 0xb
+ 181 0048 03       		.uleb128 0x3
+ 182 0049 08       		.uleb128 0x8
+ 183 004a 00       		.byte	0
+ 184 004b 00       		.byte	0
+ 185 004c 06       		.uleb128 0x6
+ 186 004d 2E       		.uleb128 0x2e
+ 187 004e 01       		.byte	0x1
+ 188 004f 3F       		.uleb128 0x3f
+ 189 0050 19       		.uleb128 0x19
+ 190 0051 03       		.uleb128 0x3
+ 191 0052 0E       		.uleb128 0xe
+ 192 0053 3A       		.uleb128 0x3a
+ 193 0054 0B       		.uleb128 0xb
+ 194 0055 3B       		.uleb128 0x3b
+ 195 0056 0B       		.uleb128 0xb
+ 196 0057 27       		.uleb128 0x27
+ 197 0058 19       		.uleb128 0x19
+ 198 0059 11       		.uleb128 0x11
+ 199 005a 01       		.uleb128 0x1
+ 200 005b 12       		.uleb128 0x12
+ 201 005c 06       		.uleb128 0x6
+ 202 005d 40       		.uleb128 0x40
+ 203 005e 18       		.uleb128 0x18
+ 204 005f 9742     		.uleb128 0x2117
+ 205 0061 19       		.uleb128 0x19
+ 206 0062 00       		.byte	0
+ 207 0063 00       		.byte	0
+ 208 0064 07       		.uleb128 0x7
+ 209 0065 05       		.uleb128 0x5
+ 210 0066 00       		.byte	0
+ 211 0067 03       		.uleb128 0x3
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccobWDjg.s 			page 5
+
+
+ 212 0068 0E       		.uleb128 0xe
+ 213 0069 3A       		.uleb128 0x3a
+ 214 006a 0B       		.uleb128 0xb
+ 215 006b 3B       		.uleb128 0x3b
+ 216 006c 0B       		.uleb128 0xb
+ 217 006d 49       		.uleb128 0x49
+ 218 006e 13       		.uleb128 0x13
+ 219 006f 02       		.uleb128 0x2
+ 220 0070 18       		.uleb128 0x18
+ 221 0071 00       		.byte	0
+ 222 0072 00       		.byte	0
+ 223 0073 00       		.byte	0
+ 224              		.section	.debug_aranges,"",%progbits
+ 225 0000 24000000 		.4byte	0x24
+ 226 0004 0200     		.2byte	0x2
+ 227 0006 00000000 		.4byte	.Ldebug_info0
+ 228 000a 04       		.byte	0x4
+ 229 000b 00       		.byte	0
+ 230 000c 0000     		.2byte	0
+ 231 000e 0000     		.2byte	0
+ 232 0010 00000000 		.4byte	.LFB0
+ 233 0014 02000000 		.4byte	.LFE0-.LFB0
+ 234 0018 00000000 		.4byte	.LFB1
+ 235 001c 02000000 		.4byte	.LFE1-.LFB1
+ 236 0020 00000000 		.4byte	0
+ 237 0024 00000000 		.4byte	0
+ 238              		.section	.debug_ranges,"",%progbits
+ 239              	.Ldebug_ranges0:
+ 240 0000 00000000 		.4byte	.LFB0
+ 241 0004 02000000 		.4byte	.LFE0
+ 242 0008 00000000 		.4byte	.LFB1
+ 243 000c 02000000 		.4byte	.LFE1
+ 244 0010 00000000 		.4byte	0
+ 245 0014 00000000 		.4byte	0
+ 246              		.section	.debug_line,"",%progbits
+ 247              	.Ldebug_line0:
+ 248 0000 45000000 		.section	.debug_str,"MS",%progbits,1
+ 248      02002100 
+ 248      00000201 
+ 248      FB0E0D00 
+ 248      01010101 
+ 249              	.LASF4:
+ 250 0000 433A5C55 		.ascii	"C:\\Users\\JohnP\\OneDrive\\College\\2015-2016 Seni"
+ 250      73657273 
+ 250      5C4A6F68 
+ 250      6E505C4F 
+ 250      6E654472 
+ 251 002e 6F722059 		.ascii	"or Year\\0 Fall Quarter\\CE4920\\Lab\\project\\CE49"
+ 251      6561725C 
+ 251      30204661 
+ 251      6C6C2051 
+ 251      75617274 
+ 252 005c 32305072 		.ascii	"20Project1\\Design01.cydsn\000"
+ 252      6F6A6563 
+ 252      74315C44 
+ 252      65736967 
+ 252      6E30312E 
+ARM GAS  C:\Users\JohnP\AppData\Local\Temp\ccobWDjg.s 			page 6
+
+
+ 253              	.LASF3:
+ 254 0076 2E5C6D6F 		.ascii	".\\motors.c\000"
+ 254      746F7273 
+ 254      2E6300
+ 255              	.LASF5:
+ 256 0081 73706565 		.ascii	"speed\000"
+ 256      6400
+ 257              	.LASF1:
+ 258 0087 4D6F7665 		.ascii	"Move_motor\000"
+ 258      5F6D6F74 
+ 258      6F7200
+ 259              	.LASF0:
+ 260 0092 53746172 		.ascii	"Start_motor\000"
+ 260      745F6D6F 
+ 260      746F7200 
+ 261              	.LASF2:
+ 262 009e 474E5520 		.ascii	"GNU C 4.8.4 20140526 (release) [ARM/embedded-4_8-br"
+ 262      4320342E 
+ 262      382E3420 
+ 262      32303134 
+ 262      30353236 
+ 263 00d1 616E6368 		.ascii	"anch revision 211358] -mcpu=cortex-m3 -mthumb -g -O"
+ 263      20726576 
+ 263      6973696F 
+ 263      6E203231 
+ 263      31333538 
+ 264 0104 67202D66 		.ascii	"g -ffunction-sections\000"
+ 264      66756E63 
+ 264      74696F6E 
+ 264      2D736563 
+ 264      74696F6E 
+ 265              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.8.4 20140526 (release) [ARM/embedded-4_8-br
